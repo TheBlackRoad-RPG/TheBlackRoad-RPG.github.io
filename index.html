@@ -1508,8 +1508,8 @@ div.tocify {
 <p>Transitioned to a codeless save/load system. Hence, we have updated the save/load directory to “v1.39”. You can still load your old 1.38d2 codes to convert them to the 1.39 system.</p>
 </blockquote>
 <ul>
-<li>Saving will always write your save code to a file named <code>_lastsave.txt</code> and <code>&lt;class name&gt;.txt</code></li>
-<li>You can save to a different file per usual by specifying the name of the file, like in 1.38d2. For example, <code>-s intranger</code> would save to <code>intranger.txt</code>, <code>ranger.txt</code>, and <code>_lastsave.txt</code></li>
+<li>Saving will always write your save code to a file named <code>_lastsave.txt</code></li>
+<li>You can save to a different file per usual by specifying the name of the file, like in 1.38d2. For example, <code>-s intranger</code> would save to <code>intranger.txt</code>, and <code>_lastsave.txt</code>. If you do not specify a name, it instead save to <code>&lt;class name&gt;.txt</code> and <code>_lastsave.txt</code></li>
 <li><code>-l</code> and <code>-load</code> will default to loading the code stored in <code>_lastsave.txt</code>. If you want to load from a specific file, you must include it in the command. For example <code>-l ranger</code> will load the code in <code>ranger.txt</code></li>
 <li>If you load a hero from a file other than <code>_lastsave.txt</code>, <code>-s</code> and <code>-save</code> will always save the file to the same file name, unless specified otherwise</li>
 </ul>
@@ -1548,6 +1548,7 @@ div.tocify {
 <li>Edits to the terrain and adjusted select regions to better accommodate for collision 31 units’ pathing behaviour</li>
 <li>Removed a duplicate flag doodad from the Duel Arena</li>
 <li>Changed the SFX created on a loaded hero</li>
+<li>The default camera field is now 2500 units (previously 2850 units). This affects the <code>-out</code>/<code>-o</code></li>
 </ul>
 <hr />
 <ul>
@@ -2007,7 +2008,7 @@ div.tocify {
 <h2>Quest Helper</h2>
 <p>The Backpack now has the <strong>Quest Helper</strong> skill which does the following:</p>
 <blockquote>
-<p>Displays the location of active quests as well as NPCs that offer undiscovered ones within your level range.<br><br>Different quest types have different coloration:<br>● Undiscovered — White<br>● Normal — Yellow<br>● Bounty — Orange<br>● Titans — Red</p>
+<p>Displays the location of active quests within your level range, as well as NPCs that offer undiscovered ones within your level range.<br><br>Different quest types have different coloration:<br>● Undiscovered — White<br>● Normal — Yellow<br>● Bounty — Orange<br>● Titans — Red</p>
 </blockquote>
 </div>
 <div id="to-the-death" class="section level2">
@@ -2061,8 +2062,17 @@ div.tocify {
 <li><strong>Counter</strong> (Warlord)
 <ul>
 <li>Changed to a Personal 1 second cooldown (previously a Global 0.25 second cooldown)</li>
+<li>Now reduces the incoming auto-attack damage by 75%</li>
 <li>Changed to 10 // 11 // 12 // 13 // 14 // 15 // 17.5 // 20% chance to counter from 15% chance to counter</li>
 <li>Added a 0.50 // 0.55 // 0.60 // 0.65 // 0.70 // 0.75 // 0.80 // 0.85 Agility ratio to <strong>Counter</strong>’s base damage</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><strong>Nature’s Bulwark</strong> (Guardian of Nature)
+<ul>
+<li>The buff duration decreased to 6 seconds (from 8 seconds)</li>
+<li>No longer buffs attack speed via bonus attack speed%. Instead, it decreases the base attack speed cooldown from 2 seconds to 1.95 // 1.9 // 1.85 // 1.8 // 1.75 // 1.7 // 1.6 // 1.5 seconds for the duration</li>
 </ul></li>
 </ul>
 <hr />
@@ -2086,7 +2096,7 @@ div.tocify {
 <div id="shroud" class="section level3">
 <h3>Shroud</h3>
 <blockquote>
-<p><em>Effect One</em>—Whenever you cast the following spells:<br> ● <strong>Grave Seize</strong>: Gain three <strong>Shroud</strong> stacks.<br> ● <strong>Decimate</strong>: Gain two <strong>Shroud</strong> stacks (from <strong>Shroud</strong> Level 4 onwards).<br><br>An individual stack grants 1% // 1.25% // 1.5% // 2% // 2.5% // 3% // 4% // 5% damage reduction for 8 seconds. If an enemy attacks you while <strong>Shroud</strong> is active, a stack is consumed to deal 1.0 Strength magical damage to the attacker.<br><br>You can have up to six stacks active at one time.<br><br><em>Effect Two</em>—You have a base mana regeneration of 0.75 // 1 // 1.25 // 1.5 // 2 // 2.5 // 3 // 4 mana per second.</p>
+<p><em>Effect One</em>—Whenever you cast the following spells:<br> ● <strong>Grave Seize</strong>: Gain three <strong>Shroud</strong> stacks.<br> ● <strong>Decimate</strong>: Gain two <strong>Shroud</strong> stacks.<br><br>An individual stack grants 1% // 1.25% // 1.5% // 2% // 2.5% // 3% // 4% // 5% damage reduction for 8 seconds. If an enemy attacks you while <strong>Shroud</strong> is active, a stack is consumed to deal 1.0 Strength magical damage to the attacker.<br><br>You can have up to six stacks active at one time.<br><br><em>Effect Two</em>—You have a base mana regeneration of 0.75 // 1 // 1.25 // 1.5 // 2 // 3 // 4.5 // 6 mana per second.</p>
 </blockquote>
 </div>
 <div id="unbridled-khaos" class="section level3">
@@ -2244,7 +2254,7 @@ div.tocify {
 <div id="sphinx" class="section level2">
 <h2>Sphinx</h2>
 <blockquote>
-<p>A brand new bossfight aimed strictly for Level 135 Heroes. <strong>Sphinx</strong> begins with her <em>Active Form</em> abilities. Also, she now spawns an “inactive” encounter after slaying <strong>Gaea</strong>. A Level 135 Hero or greater can activate the encounter afterwards.</p>
+<p>A brand new bossfight aimed strictly for Level 135 Heroes. <strong>Sphinx</strong> begins with her <em>Active Form</em> abilities. Also, she now spawns an “inactive” encounter after slaying <strong>Gaea</strong>. A Level 135 Hero or greater can activate the encounter afterwards. There are no changes to <strong>Sphinx</strong>’s loot-table.</p>
 </blockquote>
 <div id="statistics-2" class="section level3">
 <h3>Statistics</h3>
@@ -2305,7 +2315,7 @@ div.tocify {
 <blockquote>
 <ul>
 <li>Health: 20 x “Entombed hero’s STR” + 15 x “Entombed hero’s INT”</li>
-<li>Health Regeneration: 937.5 per second</li>
+<li>Health Regeneration: 625 per second</li>
 <li>“Entombed hero’s STR” + “2 x Entombed hero’s AGI” + “Entombed hero’s INT base damage” (+2d50) Auto-Attack Damage with melee range</li>
 <li>1.4s Attack Cooldown</li>
 <li>“Entombed hero’s current armor value” Hero Armor</li>
