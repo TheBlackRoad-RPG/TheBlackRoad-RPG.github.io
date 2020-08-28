@@ -1,0 +1,710 @@
+---
+title: "The Black Road RPG v1.39 --- Changelog"
+author: "Unholy0ne, Alteisen (Av3n) and Dragonbane (ArthasFirestorm)"
+output: 
+  html_document: 
+    toc: yes
+    toc_depth: 2
+    toc_float:
+      collapsed: no
+    highlight: null
+    theme: readable
+    css: TBR.css
+---
+
+<!-- # Foreword -->
+
+<!-- > Soon^tm -->
+
+# Save/Load System
+
+> Transitioned to a codeless save/load system. Hence, we have updated the save/load directory to "v1.39". You can still load your old 1.38d2 codes to convert them to the 1.39 system.
+
+- Saving will always write your save code to a file named `_lastsave.txt`
+- You can save to a different file per usual by specifying the name of the file, like in 1.38d2. For example, `-s intranger` would save to `intranger.txt`, and `_lastsave.txt`. If you do not specify a name, it instead save to `<class name>.txt` and `_lastsave.txt`
+- `-l` and `-load` will default to loading the code stored in `_lastsave.txt`. If you want to load from a specific file, you must include it in the command. For example `-l ranger` will load the code in `ranger.txt`
+- If you load a hero from a file other than `_lastsave.txt`, `-s` and `-save` will always save the file to the same file name, unless specified otherwise
+
+---
+
+- Player names with special or accented characters can now create valid codes
+- Hero and bank are now included in a single save code
+- You can save up to 250,000 crafting materials (previously 237,000)
+- Addressed the legacy bug of Soul-Piercing Shot and Mark of Artemis being auto-levelled
+- Now saves the amount of experience your hero has, rather than the hero level
+- Updated the information embedded within the save code file
+  + Class, Hero Level, XP, Stats, and Spell Levels
+  + Profession, Profession Level, Gold and Crafting Materials
+  + Items in your hero's and bank's inventories
+
+# General
+
+- The map-name in the game creation screen is now coloured
+- Updated the map preview image and the loading screen
+- The upkeep window now states `Discord` rather than the map version
+- Re-enabled the Allies Button
+- Removed the single player checks (in order) to play the map
+- Changed the Crafting button's hotkey to `I` (previously `Tab`)
+- Hero Selection text now prints in white and incorporates "difficulty" into the text
+- Addressed a collection of typos and grammar issues
+- Added the `'Aloc'` ability to older spells' dummies which haven't been converted to the new code framework. Effectively, you should see fewer stray health-bars
+
+---
+
+- Adjusted the model scaling for the entire map (with respect to Classic graphics)
+- Collision sizes of the player characters have been updated --- You should now be able to path through nooks and crannies
+- Edits to the terrain and adjusted select regions to better accommodate for collision 31 units' pathing behaviour
+- Removed a duplicate flag doodad from the Duel Arena
+- Changed the SFX created on a loaded hero
+- The default camera field is now 2500 units (previously 2850 units). This affects the `-out`/`-o`
+
+---
+
+- **Adventuring Party** multiboard:
+  + Previously known as the **Party** multiboard
+  + Now colour-codes the player names
+  + The current XP Bonus is now printed in this multiboard, instead of being an on-screen text message
+
+## Bug-Fixes
+
+### (That don't fit under other categories)
+
+- Updated the Damage Detection System
+  + On-hit effects now only apply to the primary target. This primarily addresses the **Mark of Artemis** (Temple Guardian) and **Cleave** passive bugs
+- The map now specifically refers to a "fixed" dataset since the beginning of 1.39 development
+  + This addresses the issue where the 1.32.6 patch gave **Triremes** an extended initial cooldown
+  
+---
+
+- The triggered Z-calculations "should" no longer contribute to desyncs
+- Level 0 enemies no longer grant gold and experience
+- Removed miscellaneous triggered events which could cause **Ladon** (and potentially other units) to teleport to either **Uranus**' and/or **Gaea**'s arenas
+- Bosses no longer reset their health and mana if they level up
+- You can no longer issue orders for NPC units
+- Whenever players leave, the game now removes the player from their last known region
+- Spell objects which required the **Berserker Upgrade** no longer check research dependencies
+- Converted the coordinates of quest drops & tome drops to the player's hero location, prior to adding it to the backpack
+- **Mortal Heroes** can no longer drop their **Olympian Regalias**
+- Updated the logic for the Debuff system to address an extremely rare bug that forced casts the de-leveling process every 0.025s until it the debuff duration runs out
+
+## Chat Commands
+
+- Removed the `-sc` chat command. It has been superceded by the improved `-s` command
+- Removed the `-refresh` chat command
+- The voting procedure for `-kick` has been improved
+
+---
+
+- `-disarm` is a "Player 1"-only chat command which forcibly drops all items from the target player
+- `-info` now updates each player's Spell Damage and Spell Healing values
+- `-text` is a chat command "mutes" the decent proportion of the on-screen text messages
+- `-roll <name>` // `-r <name>`:
+  + Updated to include a `<name>` flag. Once used, the `-roll` board appears for `<name>` and displays your roll for it. Other players can join in on the roll by typing `-roll` / `-r`.
+  + The **Backpack** has the *Roll for Target item* ability activates the `-roll` board for the target item
+
+## Reforged Mode
+
+- Fixed the missing textures found in the Tribal Village
+- **Hades**, **Ladon**, and **Sphinx** now use their Reforged assets in Reforged mode
+- Enforced the following SD assets to be rendered in Reforged mode:
+  + **Cleric**'s Cleansing Flame
+  + **Temple Guardian**'s Fire of Apollo
+  + **Cerberus**'s pull mechanic
+  + **The Black Road**'s fire path
+  + **Hades**' avatar mechanic
+  + **Persephone**'s frost ring mechanic
+  + **Armor Plates**' SFX
+
+## Mobs
+
+- Added *Endurance Aura* to **Hulking Sea Monster** (Island of Storms) and **Hulking Ice Beast** (Tundra)
+- **Centaur Warlord** (Savage Jungle): No longer has *Endurance Aura*
+- **Highland Beasts** (Eastern Highlands) now attempt to cast *Mana Burn* when engaging enemy heroes again
+- **Rock Giant** (Eastern Highlands): Armor increased to 15 (from 0)
+- **Hillcrusher** (Eastern Highlands): Armor increased to 25 (from 5)
+- **Spirit of Chill** (Frozen Citadel): Armor increased to 10 (from 0)
+- **Ice Giant** (Frozen Citadel): Armor increased to 30 (from 0)
+
+---
+
+- **Dark Goblins** (Northern Trail) names now vary game-to-game (previously named Black Goblins). They can now be known as the following:
+  + Hobgoblins
+  + Dark Goblins
+  + Toughskin Goblins
+- **Cutthroats** (Thieves' Alcove) names now vary game-to-game. They can now be known as the following:
+  + Cutthroat
+  + Marauder
+  + Scoundrel
+
+---
+
+- **Creep** (Barbaric Plains): 
+  + Base auto-attack damage increased to 300 (from 110)
+  + Health increased to 18000 (from 3400)
+  + Health Regeneration increased to 54 (from 30)
+  + Armor increased to 25 (from 20)
+- **Sludge Beast** (Frigid Mountain): 
+  + Base auto-attack damage increased to 300 (from 175)
+  + Health increased to 18000 (from 5000)
+  + Health Regeneration increased to 54 (from 30)
+  + Armor increased to 25 (from 20)
+- **Mountain Bear** (Frigid Mountain):
+  + Base auto-attack damage increased to 300 (from 130)
+  + Health increased to 12500 (from 5000)
+- **Myr Reaver** (Isle of Issus):
+  + Base auto-attack damage increased to 200 (from 165) 
+  + Health increased to 7000 (from 5800)
+- **Myr Warrior** (Isle of Issus):
+  + Base auto-attack damage increased to 240 (from 210)
+  + Health increased to 8000 (from 6500)
+- **Horror** (Islet):
+  + Base auto-attack damage increased to 300 (from 150)
+  + Health increased to 18000 (from 4100)
+  + Health Regeneration increased to 54 (from 30)
+- **Handmaiden of Persephone** (Frozen Citadel):
+  + Armor increased to 15 (from 0)
+  + Changed Armor Type to Light (from Heavy)
+
+## Regions
+
+- **Eretria**: Adjusted a spawn region to no longer clip into the cliff
+- **Frigid Mountain**: Reloading the zone no longer places previously spawned **Sludge Beasts** at the map's origin
+- **Frozen Citadel**: 
+  + Improved the pathing under the Frozen Citadel's entrance arch 
+  + The bossfights should now only trigger when a player hero enters the corresponding arenas
+
+---
+
+- **Frigid Mountain**: Hard cap reduced to 4 (previously 5)
+- **Hunting Grounds**: Soft cap reduced to 6 (previously 7)
+- **Infested Woods**: Soft cap reduced to 8 (previously 12)
+- **Island of Storms**: Hard cap reduced to 4 (previously 6)
+- **Isle of Issus**: Soft cap reduced to 12 (previously 14)
+- **Islet**: Hard cap reduced to 4 (previously 7)
+- **Lawless Valley**: Hard cap reduced to 6 (previously 9)
+- **Northern Trail**: Hard cap reduced to 6 (previously 9)
+- **Savage Jungle**: Soft cap for sub-region B reduced to 12 (previously 16)
+- **Tribal Village**: Now attempts to spawn a minimum of 3 units (previously 2 units)
+- **Tundra**: Hard cap reduced to 5 (previously 7)
+
+---
+
+- **Eastern Highlands**: 
+  + Soft cap for sub-region A reduced to 6 (previously 8)
+  + Increased the spawn chance of **Rock Giants** to 50% from 40%
+- **Barbaric Plains**:
+  + Hard cap for sub-region A reduced to 4 (previously 6)
+  + Soft cap for sub-region B reduced to 9 (previously 11)
+- **Corinth**:
+  + Soft cap for sub-region B reduced to 9 (previously 14)
+  + Sub-region B player modifier increased to 1 (previously 0)
+  + **Minotaur Beastman** in sub-region B now have a 20% chance to spawn (previously 10% chance)
+- **Eretria**:
+  + Soft cap for sub-region A reduced to 8 (previously 10)
+  + Soft cap for sub-region A reduced to 7 (previously 7)
+- **Thieves' Alcove**:
+  + Hard cap reduced to 9 (previously 12)
+  + Now attempts to spawn a minimum of 3 units (previously 2 units)
+ 
+# Items
+
+- Adjusted how **Searing Flames of Prometheus** (Olympian Relic) and **Burning Hand of the War God** (Goldsmith) groups valid units for their triggered effects
+- **Cleric**'s Rebate for **Book of Skill Level Increase 8** now refunds 50% of the crafting materials cost
+- **Oracle**, **High Oracle**, and **Delphi** sets bonuses no longer increases Spell Power permanently
+- Regalia components' now state the correct level requirement
+- Summons from **Algore Charm**, **Crackling Charm**, and **Claw Charm** (Goldsmith) now lasts for 5 minutes rather than indefinitely
+- **Whetstones**, **Blunting Stone**, **Elixirs**, and **Draughts** now utilise the activation SFX they used to have
+- **Bone Wreath** and **Myrmidon Scale** are now unique
+
+---
+
+- **Beast Plate Armor** (Armorsmith): Now increases Armor by 60 as intended
+- **Crystal Helm** (Cyclops): Now increases Spell Healing by 450 as intended
+- **Dark Wizard Dagger** (Weaponsmith):
+  + No longer triggers on invalid Black Arrow (Ranger) targets
+  + Changed the SFX 
+- **Eris' Golden Apple of Discord** (Rare Drop): Now increases Spell Healing by 300 as intended
+- **Gem of the North** (Weaponsmith): Updated the icon to be distinct from the other compass gems
+- **Gem of the South** (Armorsmith): Updated the icon to be distinct from the other compass gems
+- **Gem of the East** (Goldsmith): Updated the icon to be distinct from the other compass gems
+- **Gem of the West** (Goldsmith): Updated the icon to be distinct from the other compass gems
+
+---
+
+- **Hephaestus' Thundering Axe** (Weaponsmith): Addressed a typo in the crafting tooltip
+- **Immortal Armor of Hephaestus** (Olympian Relic): Addressed a typo in the crafting error message 
+- **Regal Crown** (Cyclops): Now increases Spell Damage by 450 as intended
+- **Priam's Scepter** (Cavern of Dread): Now increases Attack Damage by 30
+- **Sacred Chestguard of the Olympians** (Olympian Regalia Piece): Now increases Spell Healing by 450 as intended
+- **Sacred Olympian Regalia** (Heletes): Now increases Spell Power by 1900 as intended
+- **Sacred Sword of the Olympians** (Olympian Regalia Piece): Now increases Spell Healing by 600 as intended
+- **Scepter of the Ice Queen** (Persephone): Now increases Spell Healing by 600 as intended
+
+---
+
+- **Scroll of the Lesser Beast** (Alchemy): Now centers it's AoE at the user's location
+- **Scroll of Superior Regeneration** (Alchemy): Now uses the scroll bypass for backpack item usage
+- **Summoning Stone** (Gaea, Hades, and Persephone): The tooltip now states which boss it dropped from
+- **Towering Shield of Athena** (Olympian Relic): Now states that it increases Armor by 100
+- **Wizard's Respite** (Metalsmith Theron): Now restricts it's component items from being equipped at the same time &mdash; **Dark Wizard's Dagger** (Weaponsmith) and **Hera's Blessing** (Goldsmith)
+
+## Crafting and Forging Recipe Changes
+
+### Forging
+
+- **Wizard's Respite** (Metalsmith Theron): 
+  + Dark Wizard's Dagger 
+  + Hera's Blessing 
+  + Gem of the East
+  + Gem of the North 
+  + 2 Sea Essence
+  + 2 Heart of Frost
+
+<small>(Previously: Dark Wizard's Dagger; Hera's Blessing; 2 Stone of Heaven; 2 Sea Essence; and 2 Heart of Frost)</small>
+
+### Weaponsmith
+
+- **Bow of Artemis**: 
+  + 2 Stone of Heaven
+  + 2 Blood Ruby
+  + Sea Essence
+  + Heart of Frost
+  
+<small>(Previously: 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; Sea Essence; and Heart of Frost)</small>
+ 
+- **Dark Wizard's Dagger**:
+  + 2 Stone of Heaven
+  + 2 Blood Ruby
+  + Runestone
+  + 1 Ruby Heart
+  
+<small>(Previously: 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; Runestone; and Ruby Heart)</small>
+
+- **Soul Blade**
+  + Gem of the North
+  + 5 Stone of Heaven
+  + 2 Meteoric Iron
+  
+<small>(Previously: Gem of the North and 5 Stone of Heaven)</small>
+
+### Armorsmith
+
+- **Adamantium Shield**: 
+  + 3 Meteoric Iron
+  + Blood Ruby
+  + 3 Lump of Pure Adamantium
+  
+<small>(Previously 2 Meteoric Iron; Burning Heart of Ladon; Blood Ruby; and 2 Lump of Pure Adamantium)</small>
+
+- **Shield of Living Bone**:
+  + 2 Stone of Heaven
+  + Ruby Heart
+  + Blood Ruby
+  + Heart of Frost
+  + Sea Essence
+  
+<small>(Previously Ruby Heart; Burning Heart of Ladon; Heart of Frost; and Sea Essence)</small>
+
+- **Adamantium Helm**:
+  + Gem of the South
+  + Adamantium Shield
+  + 4 Stone of Heaven
+  + Burning Heart of Ladon
+  + Blood Ruby
+  
+<small>(Previously Gem of the South; Adamantium Shield; and 4 Stone of Heaven)</small>
+
+- **Adamantium Tower**
+  + Gem of the South
+  + Shield of Living Bone
+  + 4 Stone of Heaven
+  + Burning Heart of Ladon
+  + Blood Ruby
+  
+<small>(Previously Gem of the South; Shield of Living Bone; and 4 Stone of Heaven)</small>
+
+### Goldsmith
+
+- **Burning Hand of the War God**:
+  + 2 Stone of Heaven
+  + Blood Ruby
+  + Gemstone of Apollo
+  + 2 Ruby Heart
+
+<small>(Previously 2 Stone of Heaven; Blood Ruby; Gemstone of Apollo; Burning Heart of Ladon; and Ruby Heart)</small>
+
+- **Iron Will of Hephaestus**:
+  + 2 Stone of Heaven
+  + Blood Ruby
+  + Ruby Heart
+  + 2 Meteoric Iron
+
+<small>(Previously 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; and 2 Meteoric Iron)</small>
+
+- **Aphrodite's Favor**:
+  + Gem of the East
+  + Gem of the West
+  + 4 Stone of Heaven
+  + 2 Blood Ruby
+
+<small>(Previously Gem of the East; Gem of the West; and 4 Stone of Heaven)</small>
+
+- **Gift of Hera**
+  + Gem of the East
+  + Regal Helm of Sparkling Crystal
+  + 4 Stone of Heaven
+  + 2 Sea Essence
+
+<small>(Previously Gem of the East; Regal Helm of Sparkling Crystal; and 4 Stone of Heaven)</small>
+
+# Quests
+
+- An empty quest board now prints `"Talk to Serius"` rather than `"Empty..."`
+- The **Quest Log** now counts down from how many Titans are alive
+  + Also, reworded the **Hades** objective
+- All Titan quests and **Lord of Hell** (Serius) now recommend a party-size of 5 players, and now include a [5] prefix
+- Added a suffix asterisk to **Uninvited Guests** (Nicanor)
+  + This keeps the styling consistent with other repeatable quests
+- Removed **Commander Therin** (Serius) from the list of available quests
+- **Trouble in the North** (Therin) now tasks you to find **Calliope** instead of **Serius**
+- Set the hero level requirement to get rewards from all of **Nicanor**'s quests to 60
+- **Cyclops** no longer automatically spawns after completing **Hillcrusher** (Draco). Completing **Hillcrusher** (Draco) now adds a button to **Draco** to start the **Cyclops** bossfight
+
+---
+
+- **Help Greyn** (Greyn): Now logs a `( Failed )` tag on the required quest objective if you fail the quest
+- **Bounty on Centaurs** (Phylas): Quest Level increased to 56 (from 55)
+- **Cutthroats** (Seryo): The threshold for quest completion now varies between 17 to 23 kills
+- **Dark Goblins** (Calliope): The threshold for quest completion now varies between 14 to 18 kills
+
+## Reassignments & New NPCs
+
+&mdash; **Calliope** (Northern Trail) now issues the following quests:
+
+> - Goblin Infestation
+> - "Dark Goblins"
+> - Bounty on Goblins
+> - Strong Iron Shields
+> - Captain Sepheus
+
+&mdash; **Stefanos** (Athens) now issues the following quests:
+
+> - Forest of Horrors
+> - Nest of Horrors
+> - Trouble at New Issus
+
+&mdash; **Artos** (Eretria) now issues the following quests:
+
+> - Aris' Tomb
+> - The Crypt
+> - Bounty on Undead
+
+&mdash; **Karissa** (Southern Highlands) now issues the following quest
+
+> - Savage Beasts (previously known as Soulless Beasts)
+
+&mdash; **Seryo** (Eastern Highlands) now issues the following quests:
+
+> - Demonic Residue 
+> - Servant of Hades
+> - "Cutthroats"
+> - Flesh Hunters
+> - True Stone
+
+&mdash; **Tethol** (Corinth) now issues the following quests:
+
+> - Revenge
+> - Minotaur Invaders
+> - Minotaur Beasts
+> - Bounty on Minotaurs
+> - Weapons of the Gods
+
+## Quest Helper
+
+The Backpack now has the **Quest Helper** skill which does the following:
+
+> Displays the location of active quests within your level range, as well as NPCs that offer undiscovered ones within your level range.<br><br>Different quest types have different coloration:<br>&#9679; Undiscovered &mdash; White<br>&#9679; Normal &mdash; Yellow<br>&#9679; Bounty &mdash; Orange<br>&#9679; Titans &mdash; Red
+
+## [3] To The Death
+
+### Information
+> - Assigned by Neleus and Pelias
+> - Quest Level: 35
+> - Gold Reward: 1500
+> - Experience Reward: 5000
+> - "*Side with one brother to defeat the other.*"
+
+# Classes
+
+- **Impale** (Warlord), **Cleave** (Barbarian), and **Dispatch** (Spartan Warrior) can no longer target mechanical units
+- **Assassinate** (Assassin) and **Eviscerate** (Assassin) tooltips were polished
+- **Walk in the Shadows** (Assassin) and **Assassinate** (Sin) SFX is correctly rendered again
+- **Charge** (Spartan Warrior): Buffed the valid *Taunt* range to 300 units (from 225 units)
+- **Hammer of Zeus** (Temple Guardian): The buff now lasts for 3 seconds
+- **Star Dust** (Ranger): SFX is correctly rendered above the ground again
+- **Phalanx** (Spartan Warrior): Recoded to address a bug where the bonuses were not applied
+- **Pray** (Temple Guardian): *Gift of Zeus*&mdash;Level 5's mana cost has been corrected to 85 mana
+- **Flash Point** (Magician): Adjusted it's base damage to 150 // 300 // 600 // 1000 // 1750 // 3000 // 4750 // 7500 (previously 300 // 525 // 900 // 1425 // 2400 // 3600 // 5250)
+
+---
+
+- **Cleave** (Barbarian):
+  + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
+  + Cooldown increased to 6 seconds (from 2.25 seconds)
+- **Dispatch** (Spartan Warrior):
+  + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
+  + Cooldown increased to 6 seconds (from 2.25 seconds)
+
+---
+
+- **Fire of Heaven** (Cleric):
+  + Adjusted the base damage of the single target component to 150 // 300 // 600 // 1000 // 1500 // 2750 // 4500 // 7000 (from 300 // 600 // 1000 // 1600 // 2400 // 3000 // 3700 // 5000)
+  + Adjusted the base damage of the AoE component to 120 // 240 // 480 // 800 // 1200 // 2200 // 3600 // 5600 (from 240 // 480 // 1000 // 1280 // 1920 // 2400 // 2960 // 4000)
+- **Light Set** (Cleric):
+  + Increased the AoE to 700 (previously 600)
+  + Reconfigured the on-attack trigger
+
+---
+
+- **Winds of War** (Warlord):
+  + Recoded to address a bug which caused the game to crash
+  + You can now cancel out of **Winds of War** by issuing a new command
+- **Impale** (Warlord):
+  + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
+  + Cooldown increased to 6 seconds (from 2.25 seconds)
+- **Counter** (Warlord):
+  + Changed to a Personal 1 second cooldown (previously a Global 0.25 second cooldown)
+  + Now reduces the incoming auto-attack damage by 75%
+  + Changed to 10 // 11 // 12 // 13 // 14 // 15 // 17.5 // 20% chance to counter from 15% chance to counter
+  + Added a 0.50 // 0.55 // 0.60 // 0.65 // 0.70 // 0.75 // 0.80 // 0.85 Agility ratio to **Counter**'s base damage
+  
+---
+
+## Guardian of Nature
+
+> Quality of life adjustments for the **Guardian** ahead of it's evitable rework
+
+- Rearranged the ability icons such that the spells are all on the same row
+- **Cataclysm** (Guardian of Nature): Mana costs set to 100 // 125 // 175 // 280 // 425 // 600 // 750 // 950 (from 150 // 275 // 425 // 600 // 850 // 1000 // 1000 // 1000)
+- **Roar** (Guardian of Nature): Cooldown increased to a 5 seconds (previously 0 seconds)
+
+---
+
+- **Earth Shock** (Guardian of Nature):
+  + Mana costs set to 35 // 70 // 120 // 195 // 260 // 340 // 420 // 500 (from 50 // 100 // 175 // 270 // 400 // 550 // 850)
+  + Hotkey set to W (from E)
+
+- **Tremor** (Guardian of Nature):
+  + Increased the chance to proc to 20% (from 15%)
+  + Added a 0.5 Spell Damage ratio to the proc
+
+- **Nature's Bulwark** (Guardian of Nature):
+  + SFX is now rendered correctly
+  + Hotkey set to E (from T)
+  + The buff duration decreased to 6 seconds (from 8 seconds)
+  + No longer buffs attack speed via bonus attack speed%. Instead, it decreases the base attack speed cooldown from 2 seconds to 1.85 // 1.8 // 1.75 // 1.7 // 1.65 // 1.6 // 1.55 // 1.5 seconds for the duration
+  
+- **Stone Set** (Guardian of Nature): 
+  + Increased the chance to proc to 37.5% (from 25%)
+  + Reduced the healing proc to adaptive 1.5 Strength or 0.5 Spell Damage (from 3.0 Strength or 1.0 Spell Damage)
+
+---
+
+## Khaos Champion
+
+> Third time's a charm?
+
+### Grave Seize
+
+> &mdash; No change
+
+### Requiem
+
+> &mdash; Removed the inner glow from **Requiem**'s buff SFX<br><br>*Mana Cost*: 10 // 15 // 20 // 25 // 30 // 45 // 60 // 75<br>*Effect*: Traps restless souls in a vortex which deals 30 // 45 // 75 // 150 // 300 // 600 // 1000 // 1500 (+0.15 Strength) magical damage per second to enemies within a 200 AoE of the *Khaos Champion*. If an enemy dies inside **Requiem**, the duration of **Requiem** extends by one second. Lasts for 30 seconds.<br>*Cooldown*: 60 // 58 // 56 // 54 // 52 // 50 // 48 // 45 seconds.
+
+### Shroud
+
+> *Effect One*&mdash;Whenever you cast the following spells:<br>  &#9679; **Grave Seize**: Gain three **Shroud** stacks.<br>  &#9679; **Decimate**: Gain two **Shroud** stacks.<br><br>An individual stack grants 1% // 1.25% // 1.5% // 2% // 2.5% // 3% // 4% // 5% damage reduction for 8 seconds. If an enemy attacks you while **Shroud** is active, a stack is consumed to deal 1.0 Strength magical damage to the attacker.<br><br>You can have up to six stacks active at one time.<br><br>*Effect Two*—You have a base mana regeneration of 0.75 // 1 // 1.25 // 1.5 // 2 // 3 // 4.5 // 6 mana per second.
+
+### Unbridled Khaos
+
+> *Effect*: Whenever you land a successful auto-attack: You have a 10% chance to deal additional base auto-attack damage, triggering on-hit effects. Then, gain a **Shroud** stack.<br>*Cooldown*: 1 second.
+
+### Decimate
+
+> &mdash; Replaces **Decimate Strength**<br><br>*Cast Range*: 450<br>*Mana Cost*: 5 // 7 // 15 // 20 // 25 // 30 // 40 // 55<br>*Effect*: Decimate all enemies in a 300 AoE, reducing their auto-attack damage by 10% // 12.5% // 15% // 17.5% // 20% // 25% // 30% // 35% for 8 seconds.<br>*Cooldown*: 15 seconds.
+
+### Dies Irae
+
+> &mdash; Replaces **Devour Affliction**<br><br>*Cast Range*: 700<br>*Mana Cost*: 10 // 15 // 20 // 25 // 30 // 45 // 60 // 75<br>*Effect*: You unleash a chorus of six spirits towards target location. Whenever a spirit hits an enemy unit: The spirit dissipates, dealing 200 // 350 // 500 // 650 // 800 // 950 // 1100 // 1250 (+0.3 Strength) magical damage to the unit. Then, gain a **Shroud** stack.<br>*Cooldown*: 20 seconds.
+
+### Khaos Set
+
+> &mdash; Changed to an on-hit effect (previously an on-attack effect)
+
+# Bosses
+
+Stat tome drops from bosses now have a level requirement which is equal to the slain boss' hero-level. For example, Ladon stat tome's level requirement is 85 instead of 140.
+
+- **Goretusk**: Changed the warning SFX for *Spike Barrage*
+  + It no longer delineates the complete segment but the direction of *Spike Barrage* is visually more consistent
+- **Treant** (Thea): Increased to level 15 from 9
+- **Uranus**: Added pathing blockers to prevent **Uranus** from landing in the water
+- **Ladon**: Now drops a +3 Stat Tome (previously +2)
+- **Hydra**: Now drops a +3 Stat Tome (previously +2)
+- **Chillhand**: 
+  + Now drops a +3 Stat Tome (previously +2)
+  + Chillhand's death now spawns the correct snow tile --- This addresses the brick tile bug in Reforged mode
+- **Chimaera**: Now drops a +3 Stat Tome (previously +2)
+- **Cerberus**: Now drops a +3 Stat Tome (previously +2)
+- **The Furies**: Now drops a +3 Stat Tome (previously +2)
+- **Persephone**: 
+  + Now drops a +4 Stat Tome (previously +2)
+  + Minor improvements to ensure Persephone's adds' AI run more consistently
+
+## Hades
+
+- Increased base health to 1488000 (from 1088555)
+- Increased base damage to 24399 (from 21950)
+- Increased base health regeneration to 970 (from 495)
+- Lowered the Critical Strike modifier to 5x (from 7x)
+- The level threshold to attack the Gates of Hell is now set to Level 150
+  + This matches **Lord of Hell**'s (Serius) Quest Level
+- Reduced the channelling time of **Flame Wave** to 1.5 seconds (from 3 seconds)
+- Increased the passive Strength bonus per kill to 250 (from 150)
+  + Note that this also apply to **Ker** kills
+- Pink is now able to trigger the summoning of **Hades** at the appropriate damage threshold 
+- Improved the reliability of the Gates of Hell threshold trigger
+
+## Neleus
+
+### Statistics
+
+- Health: 45000
+- Health Regeneration: 150 per second
+- 500 Auto-Attack Damage with melee range
+- 30 Fortified Armor
+
+### Bladestorm
+
+> **Neleus** targets an enemy hero, then he begins to **Bladestorm** towards the target shortly after. **Bladestorm** prevents **Neleus** from attacking and deals a total of 6250 physical damage in a 225 AoE around him. Lasts for 5 seconds.
+
+### Other
+
+Defeating **Neleus** drops one of the following items:
+
+- Battleforge Blade
+- Battleforge Plate
+- Deathbringer's Blade
+- Deathbringer's Mail
+- Divine Blade
+- Divine Plate
+- Khaos Blade
+- Khaos Shield
+- Night Blade
+- Night Cloak
+- Veteran's Breastplate
+- Veteran's Greatsword
+
+**Neleus**' health periodically resets if no player hero is in the arena for more than 3 seconds
+
+## Pelias
+
+### Statistics
+
+- Health: 40000
+- Health Regeneration: 120 per second
+- 500 Auto-Attack Damage with 1000 range
+- 30 Runic Armor
+
+### Runic Charge
+
+> A series of runes appear on the ground. After two seconds, Pelias begins channeling **Runic Charge** for three seconds, sending lightning through those runes. Any enemy caught by the **Runic Charge** takes 4000 magical damage.
+
+### Chain Lightning
+
+> Every third **Runic Charge** is replaced with a **Chain Lightning** cast. It deals 2750 magical damage to a random target within a 850 AoE, and bounces up to four times. Each bounce deals 10% less damage and the new target must be within 300 AoE of the current target.
+
+### Other
+
+Defeating **Pelias** drops one of the following items:
+
+- Robes of Power
+- Staff of Power
+- Hide of the Wild
+- Staff of the Wild
+- Ironwood Bow
+- Ironwood Chestplate
+- Robe of Shadows
+- Staff of Shadows
+- Robes of Light
+- Staff of Light
+- Stone Axe
+- Stone Shield
+
+**Pelias**' health periodically resets if no player hero is in the arena for more than 3 seconds
+
+## Sphinx
+
+> A brand new bossfight aimed strictly for Level 135 Heroes. **Sphinx** begins with her *Active Form* abilities. Also, she now spawns an "inactive" encounter after slaying **Gaea**. A Level 135 Hero or greater can activate the encounter afterwards. There are no changes to **Sphinx**'s loot-table.
+
+### Statistics
+
+- Health: 1250000
+- Health Regeneration: 2500 per second
+- 0 to all Hero Stats
+- 30000 Auto-Attack Damage with 250 range
+- 3s Attack Cooldown
+- 50 Divine Armor
+- 250 Movement Speed
+
+### Boulderfall (Active Form):
+
+> Three boulders to fall from the sky and land after 2 seconds. Units within range are dealt 10000 physical damage and are knocked back.
+
+### Chronowave (Active Form):
+
+> A second after the boulders drop, **Sphinx** will begin to channel **Chronowave**. Once **Sphinx** starts channelling it, she cannot be interrupted. After 3 seconds, a force field expands from **Sphinx**'s current origin which damages units caught by it for 15000 magical damage, as well as applying *Stifle III* and *Hinder III* on them for 5 seconds. However, if **Chronowave** hits a boulder, it is destroyed and grants nearby units protection from **Chronowave**. Once **Chronowave** expands, **Sphinx** cannot make any further actions for the next 5 seconds.
+
+### Entomb (Active Form):
+
+> **Sphinx** entombs a random hero after recovering from channelling **Chronowave**. The tomb prevents the target from naturally moving out of it and takes 15 hits to be destroyed. However, the entombed hero dies after 10 seconds without being freed. **Sphinx** heals herself for 20% of the entombed hero's current health and spawns a **Fallen Hero**.
+
+### Transition to Passive Form (Active Form):
+
+> If **Sphinx** drops below 50% HP, the next **Chronowave** launched transitions her to *Passive Form*, and summons the **Twinblades**. She cannot attack nor cast any of her *Active Form* spells. She remains in *Passive Form* for about next 300 seconds.
+
+### Timeless Body (Passive Form):
+
+> **Sphinx** takes 50% less damage.
+
+### Vengeful Gaze (Passive Form):
+
+> **Sphinx** selects a hero and takes two seconds to face it's current location while charging a beam. She fires the beam after two seconds, dealing 15000 magical damage units caught by the beam.
+
+### Meteor (Post-Passive Form): 
+
+> After **Timeless Body**, casts **Meteor** instead of **Boulderfall & Chronowave**. Then, every third **Boulderfall & Chronowave** is replaced with **Meteor**. **Sphinx** channels **Meteor** to a random location within a 200-600 range for 3 seconds. On impact, **Meteor** deals 5000 + *X* physical damage to all enemies within a 400 AoE and 5000 + *Y* physical damage to all enemies inside the **Barbaric Plains**. *X* = 10000 / *N*, where *N* is the number of enemies within 400 units of Meteor. *Y* = 5000 if *N* > 0,  otherwise *Y* = 10000.
+
+### Fallen Hero:
+
+> - Health: 20 x "Entombed hero's STR" + 15 x "Entombed hero's INT"
+- Health Regeneration: 625 per second
+- "Entombed hero's STR" + "2 x Entombed hero's AGI" + "Entombed hero's INT base damage" (+2d50) Auto-Attack Damage with melee range
+- 1.4s Attack Cooldown
+- "Entombed hero's current armor value" Hero Armor
+- 290 Movement Speed
+- Leashed to **Sphinx**
+
+### Twinblades:
+
+> - Health: 625000 --- This is shared health pool between both **Twinblades**. This means damaging one also "damages" the other.
+- Health Regeneration: 625 per second
+- 2498 (+2d50) Auto-Attack Damage with melee range
+- 1.4s Attack Cooldown
+- 88 Fortified // Runic armor
+- 290 Movement Speed
+- If both **Twinblades** are within close proximity of each other, they gain 75% damage reduction, 2500 bonus attack damage, and 50% increased attack speed
+- Dispatching the **Twinblades** pre-emptively ends **Sphinx**'s **Passive Form**
+- Leashed to **Sphinx**
+ 
