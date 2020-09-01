@@ -442,6 +442,7 @@ The Backpack now has the **Quest Helper** skill which does the following:
 - **Charge** (Spartan Warrior): Buffed the valid *Taunt* range to 300 units (from 225 units)
 - **Hammer of Zeus** (Temple Guardian): The buff now lasts for 3 seconds
 - **Star Dust** (Ranger): SFX is correctly rendered above the ground again
+- **Maelstrom** (Druid): SFX is correctly rendered above the ground again
 - **Phalanx** (Spartan Warrior): Recoded to address a bug where the bonuses were not applied
 - **Pray** (Temple Guardian): *Gift of Zeus*&mdash;Level 5's mana cost has been corrected to 85 mana
 - **Flash Point** (Magician): Adjusted it's base damage to 150 // 300 // 600 // 1000 // 1750 // 3000 // 4750 // 7500 (previously 300 // 525 // 900 // 1425 // 2400 // 3600 // 5250)
@@ -450,10 +451,10 @@ The Backpack now has the **Quest Helper** skill which does the following:
 
 - **Cleave** (Barbarian):
   + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
-  + Cooldown increased to 6 seconds (from 2.25 seconds)
+  + Cooldown increased to 3 seconds (from 2.25 seconds)
 - **Dispatch** (Spartan Warrior):
   + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
-  + Cooldown increased to 6 seconds (from 2.25 seconds)
+  + Cooldown increased to 3 seconds (from 2.25 seconds)
 
 ---
 
@@ -471,7 +472,7 @@ The Backpack now has the **Quest Helper** skill which does the following:
   + You can now cancel out of **Winds of War** by issuing a new command
 - **Impale** (Warlord):
   + Now enhances your next auto-attack for the spell effect &mdash; Similar to **Hammer of Zeus** (Temple Guardian)
-  + Cooldown increased to 6 seconds (from 2.25 seconds)
+  + Cooldown increased to 3 seconds (from 2.25 seconds)
 - **Counter** (Warlord):
   + Changed to a Personal 1 second cooldown (previously a Global 0.25 second cooldown)
   + Now reduces the incoming auto-attack damage by 75%
