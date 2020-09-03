@@ -23,7 +23,6 @@ output:
 - Saving will always write your save code to a file named `_lastsave.txt`
 - You can save to a different file per usual by specifying the name of the file, like in 1.38d2. For example, `-s intranger` would save to `intranger.txt`, and `_lastsave.txt`. If you do not specify a name, it instead save to `<class name>.txt` and `_lastsave.txt`
 - `-l` and `-load` will default to loading the code stored in `_lastsave.txt`. If you want to load from a specific file, you must include it in the command. For example `-l ranger` will load the code in `ranger.txt`
-- If you load a hero from a file other than `_lastsave.txt`, `-s` and `-save` will always save the file to the same file name, unless specified otherwise
 
 ---
 
@@ -89,7 +88,7 @@ output:
 
 ## Chat Commands
 
-- Removed the `-sc` chat command. It has been superceded by the improved `-s` command
+- The `-s` chat command now has the same functioanlity as the `-sc` chat command
 - Removed the `-refresh` chat command
 - The voting procedure for `-kick` has been improved
 
