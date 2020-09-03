@@ -88,7 +88,7 @@ output:
 
 ## Chat Commands
 
-- The `-s` chat command now has the same functioanlity as the `-sc` chat command
+- The `-s` chat command now has the same functionality as the `-sc` chat command
 - Removed the `-refresh` chat command
 - The voting procedure for `-kick` has been improved
 
