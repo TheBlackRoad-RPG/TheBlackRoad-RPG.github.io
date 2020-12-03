@@ -684,7 +684,7 @@ Defeating **Pelias** drops one of the following items:
 
 ### Meteor (Post-Passive Form): 
 
-> After **Timeless Body**, casts **Meteor** instead of **Boulderfall & Chronowave**. Then, every third **Boulderfall & Chronowave** is replaced with **Meteor**. **Sphinx** channels **Meteor** to a random location within a 200-600 range for 3 seconds. On impact, **Meteor** deals 5000 + *X* physical damage to all enemies within a 400 AoE and 5000 + *Y* physical damage to all enemies inside the **Barbaric Plains**. *X* = 10000 / *N*, where *N* is the number of enemies within 400 units of Meteor. *Y* = 5000 if *N* > 0,  otherwise *Y* = 10000.
+> After **Timeless Body**, casts **Meteor** instead of **Boulderfall & Chronowave**. Then, every third **Boulderfall & Chronowave** is replaced with **Meteor**. **Sphinx** channels **Meteor** to a random location within a 200-600 range for 3 seconds. On impact, **Meteor** deals 5000 + *X* physical damage to all enemies within a 400 AoE and *Y* physical damage to all enemies outside of the AoE but inside the **Barbaric** Plains. *X* = 10000 / *N*, where *N* is the number of enemies within 400 units of Meteor. *Y* = 5000 if *N* > 0, otherwise *Y* = 15000.
 
 ### Fallen Hero:
 
