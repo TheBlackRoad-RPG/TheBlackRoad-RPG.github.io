@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Unholy0ne and Alteisen (Av3n)" />
+<meta name="author" content="Unholy0ne, Alteisen (Av3n) and Dragonbane (ArthasFirestorm)" />
 
 
-<title>The Black Road RPG v1.39a — Changelog</title>
+<title>The Black Road RPG v1.39 — Changelog</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -1542,969 +1542,910 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">The Black Road RPG v1.39a — Changelog</h1>
-<h4 class="author">Unholy0ne and Alteisen (Av3n)</h4>
+<h1 class="title toc-ignore">The Black Road RPG v1.39 — Changelog</h1>
+<h4 class="author">Unholy0ne, Alteisen (Av3n) and Dragonbane (ArthasFirestorm)</h4>
 
 </div>
 
 
 <!-- # Foreword -->
 <!-- > Soon^tm -->
+<div id="saveload-system" class="section level1">
+<h1>Save/Load System</h1>
+<blockquote>
+<p>Transitioned to a codeless save/load system. Hence, we have updated the save/load directory to “v1.39”. You can still load your old 1.38d2 codes to convert them to the 1.39 system.</p>
+</blockquote>
+<ul>
+<li>Saving will always write your save code to a file named <code>_lastsave.txt</code></li>
+<li>You can save to a different file per usual by specifying the name of the file, like in 1.38d2. For example, <code>-s intranger</code> would save to <code>intranger.txt</code>, and <code>_lastsave.txt</code>. If you do not specify a name, it instead save to <code>&lt;class name&gt;.txt</code> and <code>_lastsave.txt</code></li>
+<li><code>-l</code> and <code>-load</code> will default to loading the code stored in <code>_lastsave.txt</code>. If you want to load from a specific file, you must include it in the command. For example <code>-l ranger</code> will load the code in <code>ranger.txt</code></li>
+</ul>
+<hr />
+<ul>
+<li>Player names with special or accented characters can now create valid codes</li>
+<li>Hero and bank are now included in a single save code</li>
+<li>You can save up to 250,000 crafting materials (previously 237,000)</li>
+<li>Addressed the legacy bug of Soul-Piercing Shot and Mark of Artemis being auto-levelled</li>
+<li>Now saves the amount of experience your hero has, rather than the hero level</li>
+<li>Updated the information embedded within the save code file
+<ul>
+<li>Class, Hero Level, XP, Stats, and Spell Levels</li>
+<li>Profession, Profession Level, Gold and Crafting Materials</li>
+<li>Items in your hero’s and bank’s inventories</li>
+</ul></li>
+</ul>
+</div>
 <div id="general" class="section level1">
 <h1>General</h1>
 <ul>
-<li>The <strong>death penalty</strong> is now 25% of your current level’s experience and 10% of your gold <em>(previously you lost gold based on your hero’s level)</em></li>
-<li><strong>Banks</strong> can only store items if you meet their level requirements</li>
-<li>When a player disconnects: Unique crafting components are now dropped at Athens <em>(previously the hero’s or backpack’s location)</em></li>
-<li>Loading (with 1.39’s system) and repicking now drops unique crafting components at Athens <em>(previously the hero’s or backpack’s location)</em></li>
+<li>The map-name in the game creation screen is now coloured</li>
+<li>Updated the map preview image and the loading screen</li>
+<li>The upkeep window now states <code>Discord</code> rather than the map version</li>
+<li>Re-enabled the Allies Button</li>
+<li>Removed the single player checks (in order) to play the map</li>
+<li>Changed the Crafting button’s hotkey to <code>I</code> (previously <code>Tab</code>)</li>
+<li>Hero Selection text now prints in white and incorporates “difficulty” into the text</li>
+<li>Addressed a collection of typos and grammar issues</li>
+<li>Added the <code>&#39;Aloc&#39;</code> ability to older spells’ dummies which haven’t been converted to the new code framework. Effectively, you should see fewer stray health-bars</li>
 </ul>
 <hr />
 <ul>
-<li>The <strong>Titans</strong>, <strong>Hades</strong> and <strong>Hydra</strong> now use a <strong>weighted probability</strong> to decide which class item to drop. The weighting is calculated from what classes are currently in-game.</li>
-<li>The majority of bosses now have 0 STR, AGI and INT stats but were buffed accordingly, so balance has not changed.</li>
-<li>Recoded the majority of how mobs and bosses drop items. The map now attempts to drop items around the dying unit</li>
+<li>Adjusted the model scaling for the entire map (with respect to Classic graphics)</li>
+<li>Collision sizes of the player characters have been updated — You should now be able to path through nooks and crannies</li>
+<li>Edits to the terrain and adjusted select regions to better accommodate for collision 31 units’ pathing behaviour</li>
+<li>Removed a duplicate flag doodad from the Duel Arena</li>
+<li>Changed the SFX created on a loaded hero</li>
+<li>The default camera field is now 2500 units (previously 2850 units). This affects the <code>-out</code>/<code>-o</code></li>
 </ul>
 <hr />
 <ul>
-<li>Removed the redundant hotkey prefixes</li>
-<li>Updated the <strong>Break</strong>’s FX and icon</li>
-<li>Updated the icons used for learning professions</li>
-<li>Updated the <strong>Minotaurs</strong>’ aesthetic to be consistent (<strong>Corinth</strong> and <strong>Minotaur Burrows</strong>)</li>
-<li><strong>Taunt</strong> can be dispelled now, and no longer issues a focused attack order</li>
-</ul>
-<hr />
-<ul>
-<li><strong>Active Quests</strong> multiboard no longer makes itself visible at the three-minute mark</li>
 <li><strong>Adventuring Party</strong> multiboard:
 <ul>
-<li>Redesigned to use icons to convey information</li>
-<li>Integrated death timers into the multiboard</li>
-<li>The width of the multiboard depends on the longest player name</li>
-</ul></li>
-<li>Adjusted the shadows for SD graphics</li>
-<li>Modernised the information presented in TBR tips</li>
-<li>Updated <code>UITile05</code> and <code>UITile06</code> to be invisible</li>
-<li>Updated the <strong>Backpack</strong> and <strong>Gold UI</strong> tooltips</li>
-</ul>
-<hr />
-<ul>
-<li><strong>Town teleporters</strong> now feature fixed button positions for each town teleport. Also, there is now an icon stating which zone a teleporter is located in</li>
-<li><strong>Retrain Strength/Agility/Intelligence</strong>: Costs 10000 gold <em>(previously 20000 gold)</em></li>
-<li><strong>Purchase Crafting Materials</strong>: Updated the icon and costs 1000 gold <em>(previously 1500 gold)</em></li>
-<li><strong>Purchase Lots of Crafting Materials</strong>: Updated the icon and costs 10000 gold <em>(previously 15000 gold)</em></li>
-<li><strong>Trireme</strong>:
-<ul>
-<li>Reduced the sight range to 600 <em>(from 1400 / 800)</em></li>
-<li>Increased the number of purchasable <strong>Triremes</strong> to 8 <em>(previously 5)</em></li>
+<li>Previously known as the <strong>Party</strong> multiboard</li>
+<li>Now colour-codes the player names</li>
+<li>The current XP Bonus is now printed in this multiboard, instead of being an on-screen text message</li>
 </ul></li>
 </ul>
 <div id="bug-fixes" class="section level2">
-<h2>Bug Fixes</h2>
+<h2>Bug-Fixes</h2>
+<div id="that-dont-fit-under-other-categories" class="section level3">
+<h3>(That don’t fit under other categories)</h3>
 <ul>
-<li><strong>Saving now properly soul-bind items</strong></li>
-<li>Whenever a single source of XP levels you up multiple times: You are now granted the correct number of stat points</li>
-<li><strong>Banks</strong> are no longer removed prior to loading or repicking your hero</li>
-<li>v1.38 (and older) loads no longer cause your bank to drop it’s items</li>
-<li><strong>Wizard’s Respite</strong> (Metalsmith Theron) components can no longer stack with <strong>Wizard’s Respite</strong></li>
-<li><strong>Crystal Helm</strong> (Cyclops) now drops properly due to the component clause if <strong>Regal Helm of Sparkling Crystal</strong> (Metalsmith Arcadios) is equipped</li>
-</ul>
-<hr />
+<li>Updated the Damage Detection System
 <ul>
-<li><strong>Draco</strong>’s healing ability no longer locks him out of other actions <em>(Eastern Highlands)</em></li>
-<li>Adjusted a spawn point in <strong>Northern Trail</strong> so mobs are no longer stuck on spawn</li>
-<li>Combining <strong>Olympian Gemstone Fragments</strong> no longer locks out other players from doing so for 0.25s</li>
-<li>Removed the vision bubble created at the map’s origin</li>
-</ul>
-<hr />
+<li>On-hit effects now only apply to the primary target. This primarily addresses the <strong>Mark of Artemis</strong> (Temple Guardian) and <strong>Cleave</strong> passive bugs</li>
+</ul></li>
+<li>The map now specifically refers to a “fixed” dataset since the beginning of 1.39 development
 <ul>
-<li>Killing <strong>Sphinx</strong> while <strong>Entomb</strong> is active now properly cleans up the restricted movement objects</li>
-<li><strong>Sphinx</strong> can no longer cast <strong>Chronowave</strong> and <strong>Meteor</strong> simultaneously</li>
-<li><strong>Hyperion</strong>’s EMP animation wind-up FX renders above the ground again</li>
-<li>Recoded how <strong>Neleus</strong>’ and <strong>Pelias</strong>’ permanent-corpses are generated</li>
-<li><strong>Medusa</strong> (Caverns of Dread) now resets once all heroes have left the arena ~ This prevents a bug where the bossfight no longer functions as intended under certain conditions</li>
-<li><strong>The Frozen Citadel</strong>:
-<ul>
-<li>Mob pack spawning uses the “inside” flag to determine whether a spawn should be visible on spawn</li>
-<li>It’s gate now uses a dedicated timer</li>
+<li>This addresses the issue where the 1.32.6 patch gave <strong>Triremes</strong> an extended initial cooldown</li>
 </ul></li>
 </ul>
+<hr />
+<ul>
+<li>The triggered Z-calculations “should” no longer contribute to desyncs</li>
+<li>Level 0 enemies no longer grant gold and experience</li>
+<li>Removed miscellaneous triggered events which could cause <strong>Ladon</strong> (and potentially other units) to teleport to either <strong>Uranus</strong>’ and/or <strong>Gaea</strong>’s arenas</li>
+<li>Bosses no longer reset their health and mana if they level up</li>
+<li>You can no longer issue orders for NPC units</li>
+<li>Whenever players leave, the game now removes the player from their last known region</li>
+<li>Spell objects which required the <strong>Berserker Upgrade</strong> no longer check research dependencies</li>
+<li>Converted the coordinates of quest drops &amp; tome drops to the player’s hero location, prior to adding it to the backpack</li>
+<li><strong>Mortal Heroes</strong> can no longer drop their <strong>Olympian Regalias</strong></li>
+<li>Updated the logic for the Debuff system to address an extremely rare bug that forced casts the de-leveling process every 0.025s until it the debuff duration runs out</li>
+</ul>
+</div>
 </div>
 <div id="chat-commands" class="section level2">
 <h2>Chat Commands</h2>
 <ul>
-<li><code>-load</code> / <code>-l</code> now registers the filename if you load from a text file <strong>other than</strong> *&quot;_lastsave.txt&quot;*. If you then use <code>-save</code> / <code>-s</code> without specifying a filename, it will save the code to the previously registered filename instead of defaulting to the class-name.</li>
-<li>Removed the <code>-sc</code> chat command as this has been superseded by the updated <code>-s</code> chat command.</li>
-<li>the flag for the <code>-text</code> command now saves</li>
-<li><code>-text</code> now “mutes” more on-screen text than before</li>
-<li><code>-stab</code> / <code>-slap</code> / <code>-smack</code> now work on yourself when there is only one-player in the game</li>
-<li>Updated the information printed by the <code>-help</code> chat command</li>
-<li><code>-ui</code> now shows ally icons directly below your hero icon</li>
-<li><code>-ui</code> no longer plays a sound FX. This might unintentionally remove sound FX used elsewhere for UI feedback</li>
-<li>Added the <code>-ui on</code> and <code>-ui off</code> chat commands. This shows all ally icons and hides all ally icons respectively.</li>
-</ul>
-</div>
-<div id="quests" class="section level2">
-<h2>Quests</h2>
-<ul>
-<li><strong>Minotaur Beasts</strong> (Tethol) renamed to <strong>Minotaur Fel-Bloods</strong> and updated the icon</li>
-<li><strong>Flesh Hunters</strong> (Seryo) now rewards a <strong>Blood Ruby</strong></li>
-<li><strong>Striking the Heart</strong> (Gaiana) no longer rewards a <strong>Blood Ruby</strong></li>
+<li>The <code>-s</code> chat command now has the same functionality as the <code>-sc</code> chat command</li>
+<li>Removed the <code>-refresh</code> chat command</li>
+<li>The voting procedure for <code>-kick</code> has been improved</li>
 </ul>
 <hr />
-</div>
-</div>
-<div id="minotaur-burrows" class="section level1">
-<h1>Minotaur Burrows</h1>
-<blockquote>
-<p>The smallest and earliest dungeon the players can attempt. This dungeon won’t be as punishing for a group of three players of any class as a result.</p>
-<p><strong>Dungeon Mechanic</strong>—Rune of Restoration: Successfully clearing a mob pack drops a Rune of Restoration. This heals nearby heroes for 2500 HP and 1500 MP over 3 seconds, however, it will be dispelled if the hero takes damage.</p>
-</blockquote>
-<div id="mobs" class="section level2">
-<h2>Mobs</h2>
-<div id="hallowed-offspring" class="section level3">
-<h3>Hallowed Offspring</h3>
-<div id="statistics" class="section level4">
-<h4>Statistics</h4>
 <ul>
-<li>HP: 17500</li>
-<li>HP Regen: 52,5</li>
-<li>MP: -</li>
-<li>Armor Type: Heavy</li>
-<li>Armor Value: 15</li>
-<li>Damage: 450–540 (2.5s cooldown)</li>
-<li>EXP &amp; Gold Modifier: x3</li>
-</ul>
-</div>
-<div id="charge" class="section level4">
-<h4>Charge</h4>
-<blockquote>
-<p><em>Cast Range</em>: 600</p>
-<p>The <strong>Offspring</strong> locks-in a random hero’s location after 2 seconds, then <strong>Charges</strong> towards it for 2 seconds. If the <strong>Offspring</strong> hits a unit or a wall, it deals 2500 magical damage in a 250 AoE and applies <strong>Stifle II</strong> which reduces movement speed by 35% for seconds. Charging into a wall drops a boulder where the <strong>Offspring</strong> charged from, and in the vicinity of a nearby target in a 750 AoE. Each boulder on impact deals 1000 physical damage and knockbacks units in a 150 AoE.</p>
-<p><em>Cooldown</em>: 12 seconds</p>
-</blockquote>
-</div>
-</div>
-<div id="minotaur-warlock" class="section level3">
-<h3>Minotaur Warlock</h3>
-<div id="statistics-1" class="section level4">
-<h4>Statistics</h4>
+<li><code>-disarm</code> is a “Player 1”-only chat command which forcibly drops all items from the target player</li>
+<li><code>-info</code> now updates each player’s Spell Damage and Spell Healing values</li>
+<li><code>-text</code> is a chat command “mutes” the decent proportion of the on-screen text messages</li>
+<li><code>-roll &lt;name&gt;</code> // <code>-r &lt;name&gt;</code>:
 <ul>
-<li>HP: 7500</li>
-<li>HP Regen: 22,5</li>
-<li>MP: 3000</li>
-<li>MP Regen: 15</li>
-<li>Armor Type: Light</li>
-<li>Armor Value: 10</li>
-<li>Damage: 160–190 (1.8s cooldown; 600 Range)</li>
-<li>EXP &amp; Gold Modifier: x3</li>
-</ul>
-</div>
-<div id="fireball" class="section level4">
-<h4>Fireball</h4>
-<blockquote>
-<p><em>Cast Range</em>: 700</p>
-<p><em>Mana Cost</em>: 500</p>
-<p><em>Channel Time</em>: 1 second</p>
-<p>The <strong>Warlock</strong> lobs a fireball at target unit’s location. It deals 1333 magical damage and <strong>stuns</strong> enemies for 2 seconds in a 150 AoE on impact.</p>
-<p><em>Cooldown</em>: 6 seconds</p>
-</blockquote>
-</div>
-</div>
-<div id="minotaur-mystic" class="section level3">
-<h3>Minotaur Mystic</h3>
-<div id="statistics-2" class="section level4">
-<h4>Statistics</h4>
-<ul>
-<li>HP: 7000</li>
-<li>HP Regen: 21</li>
-<li>MP: 3000</li>
-<li>MP Regen: 15</li>
-<li>Armor Type: Light</li>
-<li>Armor Value: 10</li>
-<li>Damage: 120–150 (1.8s cooldown; 600 Range)</li>
-<li>EXP &amp; Gold Modifier: x3</li>
-</ul>
-</div>
-<div id="healing-ward" class="section level4">
-<h4>Healing Ward</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 600</p>
-<p>The <strong>Mystic</strong> summons a healing ward which is immune to spells and take three auto-attacks to break. It heals 3% Maximum Health per second in a 600 AoE until destroyed. Lasts for 18 seconds.</p>
-<p><em>Cooldown</em>: 12 seconds</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div id="bosses" class="section level2">
-<h2>Bosses</h2>
-<div id="manslayer-lightbane" class="section level3">
-<h3>Manslayer &amp; Lightbane</h3>
-<div id="manslayerstatistics" class="section level4">
-<h4>Manslayer—Statistics</h4>
-<ul>
-<li>HP: 25000</li>
-<li>HP Regen: 75</li>
-<li>MP: -</li>
-<li>Armor Type: Fortified</li>
-<li>Armor Value: 15</li>
-<li>Damage: 500–500 (2.5s cooldown)</li>
-<li>STR/AGI/INT: 0</li>
-</ul>
-</div>
-<div id="frenzy" class="section level4">
-<h4>Frenzy</h4>
-<blockquote>
-<p>When <strong>Lightbane</strong> dies, <strong>Manslayer</strong> will fall into a <strong>Frenzy</strong> which increases it’s attack speed and damage by 100%.</p>
-</blockquote>
-</div>
-<div id="deafening-bellow" class="section level4">
-<h4>Deafening Bellow</h4>
-<blockquote>
-<p><strong>Manslayer</strong> takes 2 seconds to face a random hero’s location then bellows at it, dealing 2500 physical damage as well as displacing all enemies in a 850 unit line (200 unit width). <strong>Manslayer</strong> will prioritise targeting heroes nearby <strong>Lightbane</strong>’s totems.</p>
-<p><em>Cooldown</em>: 20 seconds</p>
-</blockquote>
-</div>
-<div id="cleaving-attack" class="section level4">
-<h4>Cleaving Attack</h4>
-<blockquote>
-<p>50% of the damage dealt with auto-attacks is dealt as true damage in a 250 AoE of the attacked unit</p>
-</blockquote>
-</div>
-<div id="lightbanestatistics" class="section level4">
-<h4>Lightbane—Statistics</h4>
-<ul>
-<li>HP: 15000</li>
-<li>HP Regen: 45</li>
-<li>MP: 5000</li>
-<li>MP Regen: 25</li>
-<li>Armor Type: Runic</li>
-<li>Armor Value: 10</li>
-<li>Damage: 350–350 (2s cooldown, 400 Range)</li>
-<li>STR/AGI/INT: 0</li>
-</ul>
-</div>
-<div id="frenzy-1" class="section level4">
-<h4>Frenzy</h4>
-<blockquote>
-<p>When <strong>Manslayer</strong> dies, <strong>Lightbane</strong> will fall into a <strong>Frenzy</strong> which increases it’s attack speed and damage by 100%.</p>
-</blockquote>
-</div>
-<div id="totemic-call" class="section level4">
-<h4>Totemic Call</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 400</p>
-<p><strong>Lightbane</strong> summons one of the following totems in a cyclical fashion. These Totems are immune to spells and take eight auto-attacks to break.</p>
-<ul>
-<li><strong>Blazing Totem</strong>: Every 13 seconds it locks onto a hero furthest away from it, then sequentially casts <strong>Fireball</strong> (<em>Minotaur Warlock</em>) three times on the targeted hero within 750 units, if the targeted hero runs out of the 750 AoE, it will just fire it at max distance towards that direction.</li>
-<li><strong>Lightning Totem</strong>: Every 10 seconds it attempts to stun a random enemy within the arena for 2 seconds. Also, it deals 500 magical damage per second within a 200 AoE.</li>
-<li><strong>Soothing Totem</strong>: Every 15 seconds it prepares to cast Healing Wave, focusing on whoever has the lowest amount of health. It heals 3750 health to that target, then heals the other for 2625 health if it is within 400 units of the target.</li>
-</ul>
-<p>The starting point of the totem spawn cycle is randomised.</p>
-<p><em>Cooldown</em>: 15 seconds</p>
-</blockquote>
-</div>
-</div>
-<div id="hallowed-one" class="section level3">
-<h3>Hallowed One</h3>
-<div id="statistics-3" class="section level4">
-<h4>Statistics</h4>
-<ul>
-<li>HP: 45000</li>
-<li>HP Regen: 135</li>
-<li>MP: -</li>
-<li>Armor Type: Divine</li>
-<li>Armor Value: 20</li>
-<li>Damage: 450–450 (2.5s cooldown)</li>
-<li>STR/AGI/INT: 0</li>
-</ul>
-</div>
-<div id="furious-charge" class="section level4">
-<h4>Furious Charge</h4>
-<blockquote>
-<p>The <strong>Hallowed One</strong> locks-in a random hero’s location after 2 seconds, then furiously charges towards it for 2 seconds. If the <strong>Hallowed One</strong> hits a unit, the edge of its arena or a wall, it deals 2500 magical damage in a 250 AoE and applies <strong>Stifle II</strong> which reduces movement speed by 35% for seconds. Then, it repeats this three more times where each subsequent <strong>Furious Charge</strong>’s lock-in period is reduced by 0.45 seconds.</p>
-<p>Charging into the edge of its arena or a wall drops two boulders in the vicinity of one-two targets in the arena. Each boulder on impact deals 1000 physical damage and knockbacks units in a 150 AoE.</p>
-<p><em>Cooldown</em>: 25 seconds</p>
-</blockquote>
-</div>
-<div id="rally" class="section level4">
-<h4>Rally</h4>
-<blockquote>
-<p>The <strong>Hallowed One</strong> summons an empowered <strong>Minotaur Warlock</strong> to the arena every 20 seconds. Their auto-attacks inflict <strong>Stifle I</strong>, slowing the target’s movement speed by 20% for 2 seconds, and cast <strong>Fireball</strong> which prioritises heroes who are not nearby the <strong>Hallowed One</strong>.</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div id="items" class="section level2">
-<h2>Items</h2>
-<div id="tooth-of-the-hallowed-one" class="section level3">
-<h3>Tooth of the Hallowed One</h3>
-<blockquote>
-<p>Increases Agility by 45 and grants you 10% chance to cause triple damage on each attack.</p>
-<p>Requires Level 45</p>
-<p><em>(Previously increases Agility by 15, Attack Damage by 35 and Attack Speed by 15%. Requires Level 25)</em></p>
-</blockquote>
-</div>
-<div id="hide-of-the-hallowed-one" class="section level3">
-<h3>Hide of the Hallowed One</h3>
-<blockquote>
-<p>Increases Armor by 30 and Health Regeneration by 30 Health per second.</p>
-<p>Requires Level 45</p>
-<p><em>(Previously Horn of the Hallowed One: Increases Strength, Agility and Intelligence by 10, Attack Damage by 30 and Attack Speed by 15%. Requires Level 25 Cannot be used by Warrior Classes)</em></p>
-</blockquote>
-</div>
-<div id="great-axe-of-the-minotaur-chieftain" class="section level3">
-<h3>Great Axe of the Minotaur Chieftain</h3>
-<blockquote>
-<p>Increases Strength by 45 and Attack Damage by 70.</p>
-<p>Requires Level 45</p>
-<p><em>(Previously increases Strength by 15 and Attack Damage by 60. Requires Level 25)</em></p>
-</blockquote>
-</div>
-<div id="minotauri-focus" class="section level3">
-<h3>Minotauri Focus</h3>
-<blockquote>
-<p>Increases Intelligence by 45 and Spell Power by 350.</p>
-<p>Requires Level 45</p>
-<p>Cannot be used by Warrior Classes</p>
-<p><em>(Previously High Shaman’s Staff: Increases Intelligence by 15, Mana Regeneration by 25% and Spell Power by 250. Requires Level 25 Cannot be used by Warrior Classes)</em></p>
-</blockquote>
-<hr />
-</div>
-</div>
-</div>
-<div id="the-fools-mausoleum" class="section level1">
-<h1>The Fools’ Mausoleum</h1>
-<blockquote>
-<p>A dungeon aimed at a party of three around Lv. 135.</p>
-<p><strong>Dungeon Mechanics</strong></p>
-<ul>
-<li><strong>Energy Field</strong>: Mobs spawn as you approach the energy fields</li>
-<li><strong>Rune Puzzle</strong>: After defeating all mobs within <em>The Fool’s Mausoleum</em>—Runes are revealed throughout the dungeon and the rune puzzle room is unlocked. The room contains eight of crystal lamps. You need to activate these lamps in sequence of the runes from the entrance towards the room. If there is an error in the sequence: The hero that made this input suffers 35% Maximum Health damage and receives a debuff which prevents lamp interaction for 10 seconds and resets the puzzle.
-<ul>
-<li>If the puzzle is solved, Midas’ room opens up.</li>
-<li>If the puzzle is failed 5 times, the gate to Midas’ room is weakend, and Midas’ is granted an additional mechanic.</li>
+<li>Updated to include a <code>&lt;name&gt;</code> flag. Once used, the <code>-roll</code> board appears for <code>&lt;name&gt;</code> and displays your roll for it. Other players can join in on the roll by typing <code>-roll</code> / <code>-r</code>.</li>
+<li>The <strong>Backpack</strong> has the <em>Roll for Target item</em> ability activates the <code>-roll</code> board for the target item</li>
 </ul></li>
 </ul>
-</blockquote>
-<div id="mobs-1" class="section level2">
+</div>
+<div id="reforged-mode" class="section level2">
+<h2>Reforged Mode</h2>
+<ul>
+<li>Fixed the missing textures found in the Tribal Village</li>
+<li><strong>Hades</strong>, <strong>Ladon</strong>, and <strong>Sphinx</strong> now use their Reforged assets in Reforged mode</li>
+<li>Enforced the following SD assets to be rendered in Reforged mode:
+<ul>
+<li><strong>Cleric</strong>’s Cleansing Flame</li>
+<li><strong>Temple Guardian</strong>’s Fire of Apollo</li>
+<li><strong>Cerberus</strong>’s pull mechanic</li>
+<li><strong>The Black Road</strong>’s fire path</li>
+<li><strong>Hades</strong>’ avatar mechanic</li>
+<li><strong>Persephone</strong>’s frost ring mechanic</li>
+<li><strong>Armor Plates</strong>’ SFX</li>
+</ul></li>
+</ul>
+</div>
+<div id="mobs" class="section level2">
 <h2>Mobs</h2>
-<div id="animated-armor" class="section level3">
-<h3>Animated Armor</h3>
-<div id="statistics-4" class="section level4">
-<h4>Statistics</h4>
 <ul>
-<li>HP: 75000</li>
-<li>HP Regen: 255</li>
-<li>MP: -</li>
-<li>Damage: 2000-2200 (2s cooldown; 100 Range)</li>
-<li>Armor Type: Fortified</li>
-<li>Armor Value: 60</li>
-<li>EXP &amp; Gold Modifier: x3</li>
+<li>Added <em>Endurance Aura</em> to <strong>Hulking Sea Monster</strong> (Island of Storms) and <strong>Hulking Ice Beast</strong> (Tundra)</li>
+<li><strong>Centaur Warlord</strong> (Savage Jungle): No longer has <em>Endurance Aura</em></li>
+<li><strong>Highland Beasts</strong> (Eastern Highlands) now attempt to cast <em>Mana Burn</em> when engaging enemy heroes again</li>
+<li><strong>Rock Giant</strong> (Eastern Highlands): Armor increased to 15 (from 0)</li>
+<li><strong>Hillcrusher</strong> (Eastern Highlands): Armor increased to 25 (from 5)</li>
+<li><strong>Spirit of Chill</strong> (Frozen Citadel): Armor increased to 10 (from 0)</li>
+<li><strong>Ice Giant</strong> (Frozen Citadel): Armor increased to 30 (from 0)</li>
 </ul>
-</div>
-<div id="incite-torment" class="section level4">
-<h4>Incite Torment</h4>
-<blockquote>
-<p><em>Cast Time</em>: 1.5 seconds</p>
-<p>The <strong>Animated Armor</strong> shrieks and deals 3000 physical damage to enemies within 275 units of the <strong>Armor</strong>. All enemies hit by <strong>Incite Torment</strong> are also <strong>Taunted</strong> for 3 seconds.</p>
-<p><em>Cooldown</em>: 10 seconds</p>
-</blockquote>
-</div>
-</div>
-<div id="cursed-weapon" class="section level3">
-<h3>Cursed Weapon</h3>
-<div id="statistics-5" class="section level4">
-<h4>Statistics</h4>
-<ul>
-<li>HP: 30000</li>
-<li>HP Regen: 150</li>
-<li>MP: 5000</li>
-<li>MP Regen: 0</li>
-<li>Damage: 3500-3850 (1.6s cooldown; 75 Range)</li>
-<li>Armor Type: Runic</li>
-<li>Armor Value: 40</li>
-<li>EXP &amp; Gold Modifier: x3</li>
-</ul>
-</div>
-<div id="parry" class="section level4">
-<h4>Parry</h4>
-<blockquote>
-<p>The <strong>Cursed Weapon</strong> has a 20% chance to reduce incoming auto-attack damage by 50%.</p>
-</blockquote>
-</div>
-<div id="fury" class="section level4">
-<h4>Fury</h4>
-<blockquote>
-<p>Each auto-attack restores 1000 mana. If it hasn’t attacked within 2 seconds, it begins to lose 500 mana per second.</p>
-</blockquote>
-</div>
-<div id="crazed-vortex" class="section level4">
-<h4>Crazed Vortex</h4>
-<blockquote>
-<p><em>Cast Range</em>: 500</p>
-<p><em>Mana Cost</em>: 3750</p>
-<p>The <strong>Cursed Weapon</strong> flies rapidly towards an enemy then begins to spin in place for 6 seconds. While spinning, the <strong>Cursed Weapon</strong> deals 2500 physical damage per second in an 100 AoE.</p>
-</blockquote>
-</div>
-</div>
-<div id="lich" class="section level3">
-<h3>Lich</h3>
-<div id="statistics-6" class="section level4">
-<h4>Statistics</h4>
-<ul>
-<li>HP: 45000</li>
-<li>HP Regen: 120</li>
-<li>MP: 16251</li>
-<li>MP Regen: 81.255</li>
-<li>Damage: 2500-2750 (2s cooldown; 600 Range)</li>
-<li>Armor Type: Runic</li>
-<li>Armor Value: 30</li>
-<li>EXP &amp; Gold Modifier: x3</li>
-</ul>
-</div>
-<div id="entropy-sphere" class="section level4">
-<h4>Entropy Sphere</h4>
-<blockquote>
-<p><em>Cast Range</em>: 600</p>
-<p><em>Mana Cost</em>: 6000</p>
-<p><em>Cast Time</em>: 3 seconds</p>
-<p>Grants an ally a shield that absorbs up to 45000 damage (pre-mitigation) for 6 seconds. If the shield is not broken, then at the end of its duration: The shield explodes dealing magical damage equal to the shield’s remaining health to enemies within 300 units.</p>
-<p><em>Cooldown</em>: 10 seconds</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div id="midas" class="section level2">
-<h2>Midas</h2>
-<div id="statistics-7" class="section level3">
-<h3>Statistics</h3>
-<blockquote>
-<p>Three rare drop chances, and drops a +4 stat tome</p>
-</blockquote>
-<ul>
-<li>HP: 637500</li>
-<li>HP Regen: 1275</li>
-<li>MP: -</li>
-<li>Armor Type: Divine</li>
-<li>Armor Value: 45</li>
-<li>Damage: 17500-17500 (2.35s cooldown; 150 range)</li>
-<li>STR/AGI/INT: 0</li>
-</ul>
-</div>
-<div id="leap" class="section level3">
-<h3>Leap</h3>
-<blockquote>
-<p><strong>Midas</strong> focuses on a player’s location, then leaps there after 1.25 seconds. On impact, he deals 5000 physical damage in an 150 AoE and stunning affected targets for 3 seconds. This mechanic repeats twice for a total of three times</p>
-</blockquote>
-</div>
-<div id="cleave" class="section level3">
-<h3>Cleave</h3>
-<blockquote>
-<p><strong>Midas</strong> leaps to the centre of the throne room. Shortly after, he begins channeling a mighty swing in a random direction. After 2 seconds, <strong>Midas</strong> cleaves all enemies in front of him (within a 120° triangle). Enemies hit by the cleave suffer 2500 physical damage and are inflicted with <strong>Grievous Wound</strong>, causing them to take 5000 physical damage over 10 seconds. <strong>Grievous Wound</strong> can stack up to 4 times. This mechanic repeats 3 times for a total of 4 times.</p>
-</blockquote>
-</div>
-<div id="living-braziersfire-elementals" class="section level3">
-<h3>Living Braziers—Fire Elementals</h3>
-<div id="statistics-8" class="section level4">
-<h4>Statistics</h4>
-<ul>
-<li>HP: 150000</li>
-<li>HP Regen: 300</li>
-<li>MP: 18000</li>
-<li>MP Regen: -100</li>
-<li>Armor Type: Runic</li>
-<li>Armor Value: 30</li>
-</ul>
-<blockquote>
-<p>A <strong>Fire Elemental</strong> spawns at each brazier as soon as you engage <strong>Midas</strong>. Each <strong>Fire Elemental</strong> emits three flames which rotate around it. A target hit by these flames is inflicted with <strong>Burning</strong>, which causes it to suffer 7500 magical damage over 3.5 seconds. Furthermore, they teleport to a location near a player every 10 seconds. Once a <strong>Fire Elemental</strong> runs out of mana, it dies and does not respawn.</p>
-</blockquote>
-</div>
-</div>
-<div id="alerted" class="section level3">
-<h3>Alerted!</h3>
-<blockquote>
-<p><strong>Activation Condition:</strong> Fail the <strong>Rune Puzzle</strong> 5 times.</p>
-<p>Two glaive traps are activated in the throne room that travel on a fixed route. On contact with a glaive, the hero suffers 500 physical damage and is pushed backwards for approximately 0.5s.</p>
-</blockquote>
-</div>
-</div>
-<div id="items-1" class="section level2">
-<h2>Items</h2>
-<div id="pactolus-essence" class="section level3">
-<h3>Pactolus’ Essence</h3>
-<p>Dropped by <strong>Lich</strong> (1%), <strong>Animated Armor</strong> (1%), and <strong>Cursed Weapon</strong> (1%)</p>
-<blockquote>
-<p><em>Within the crystallized exterior lingers a mysterious liquid gently swirling in perpetual motion.</em></p>
-<p>Requires Level 120</p>
-</blockquote>
-</div>
-<div id="ring-of-regret" class="section level3">
-<h3>Ring of Regret</h3>
-<p>Dropped by <strong>Midas</strong></p>
-<blockquote>
-<p>Increases Strength by 120. Grants <strong>Magic Protection</strong>.</p>
-<p><strong>Magic Protection</strong>—Reduces magical damage taken depending on Maximum Health.</p>
-<p>• ≤ 24999: Reduces magical damage by 4000.</p>
-<p>• ≤ 49999: Reduces magical damage by 2000.</p>
-<p>• ≥ 50000: Reduces magical damage by 1000.</p>
-<p>Requires Level 120</p>
-<p>Khaos Champion, Barbarian, Warlord, Assassin only</p>
-</blockquote>
-</div>
-<div id="midas-band-of-vigor" class="section level3">
-<h3>Midas’ Band of Vigor</h3>
-<p>Forged by <strong>Metalsmith Galen</strong>. Requires Pactolus’ Essence, Ring of Regret, Gem of the West, 2 Stones of Heaven, 1 Blood Ruby and 2 Ruby Hearts</p>
-<blockquote>
-<p>Increases Strength by 160. Grants <strong>Magic Protection</strong> and <strong>Mighty Leap</strong>.</p>
-<p><strong>Magic Protection</strong>—Reduces magical damage taken depending on Maximum Health.</p>
-<p>• ≤ 24999: Reduces magical damage by 4000.</p>
-<p>• ≤ 49999: Reduces magical damage by 2000.</p>
-<p>• ≥ 50000: Reduces magical damage by 1000.</p>
-<p><strong>Mighty Leap</strong>—Leap to a target area within range to inflict 5000 physical damage in a 150 AoE and <strong>Stun</strong> affected targets for 3 seconds upon impact. Cooldown: 60 seconds</p>
-<p>Requires Level 135</p>
-<p>Khaos Champion, Barbarian, Warlord, Assassin only</p>
-</blockquote>
-</div>
-<div id="silenus-talisman" class="section level3">
-<h3>Silenus’ Talisman</h3>
-<p>Dropped by <strong>Midas</strong></p>
-<blockquote>
-<p>Increases Intelligence and Strength by 60. Grants a 10% chance to <strong>Enfeeble I</strong> a spell target for 8 seconds, reducing its Magic Resistance by 5%. (Auto-cast spells cannot trigger this effect if the target is already <strong>Enfeebled</strong>).</p>
-<p>Requires Level 120</p>
-<p>Cannot be used by Warrior classes</p>
-</blockquote>
-</div>
-<div id="midas-pendant-of-wisdom" class="section level3">
-<h3>Midas’ Pendant of Wisdom</h3>
-<p>Forged by <strong>Metalsmith Galen</strong>. Requires Pactolus’ Essence, Silenus’ Talisman, Gem of the West, 2 Stones of Heaven, 1 Blood Ruby and 2 Ruby Hearts</p>
-<blockquote>
-<p>Increases Intelligence by 60 and Strength by 100. Grants <strong>Blaze o’ Glory</strong> and 10% chance to <strong>Enfeeble I</strong> a spell target for 8 seconds, reducing its Magic Resistance by 5%. (Auto-cast spells cannot trigger this effect if the target is already <strong>Enfeebled</strong>).</p>
-<p><strong>Blaze o’ Glory</strong>—Summon a Fire Elemental to a target location that emits flames in a 164 AoE. Effected targets suffer from <strong>Burning</strong> which inflicts 7500 magical damage over 3.5 seconds. Cooldown: 60 seconds</p>
-<p>Requires Level 135</p>
-<p>Cannot be used by Warrior classes</p>
-</blockquote>
 <hr />
+<ul>
+<li><strong>Dark Goblins</strong> (Northern Trail) names now vary game-to-game (previously named Black Goblins). They can now be known as the following:
+<ul>
+<li>Hobgoblins</li>
+<li>Dark Goblins</li>
+<li>Toughskin Goblins</li>
+</ul></li>
+<li><strong>Cutthroats</strong> (Thieves’ Alcove) names now vary game-to-game. They can now be known as the following:
+<ul>
+<li>Cutthroat</li>
+<li>Marauder</li>
+<li>Scoundrel</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><strong>Creep</strong> (Barbaric Plains):
+<ul>
+<li>Base auto-attack damage increased to 300 (from 110)</li>
+<li>Health increased to 18000 (from 3400)</li>
+<li>Health Regeneration increased to 54 (from 30)</li>
+<li>Armor increased to 25 (from 20)</li>
+</ul></li>
+<li><strong>Sludge Beast</strong> (Frigid Mountain):
+<ul>
+<li>Base auto-attack damage increased to 300 (from 175)</li>
+<li>Health increased to 18000 (from 5000)</li>
+<li>Health Regeneration increased to 54 (from 30)</li>
+<li>Armor increased to 25 (from 20)</li>
+</ul></li>
+<li><strong>Mountain Bear</strong> (Frigid Mountain):
+<ul>
+<li>Base auto-attack damage increased to 300 (from 130)</li>
+<li>Health increased to 12500 (from 5000)</li>
+</ul></li>
+<li><strong>Myr Reaver</strong> (Isle of Issus):
+<ul>
+<li>Base auto-attack damage increased to 200 (from 165)</li>
+<li>Health increased to 7000 (from 5800)</li>
+</ul></li>
+<li><strong>Myr Warrior</strong> (Isle of Issus):
+<ul>
+<li>Base auto-attack damage increased to 240 (from 210)</li>
+<li>Health increased to 8000 (from 6500)</li>
+</ul></li>
+<li><strong>Horror</strong> (Islet):
+<ul>
+<li>Base auto-attack damage increased to 300 (from 150)</li>
+<li>Health increased to 18000 (from 4100)</li>
+<li>Health Regeneration increased to 54 (from 30)</li>
+</ul></li>
+<li><strong>Handmaiden of Persephone</strong> (Frozen Citadel):
+<ul>
+<li>Armor increased to 15 (from 0)</li>
+<li>Changed Armor Type to Light (from Heavy)</li>
+</ul></li>
+</ul>
+</div>
+<div id="regions" class="section level2">
+<h2>Regions</h2>
+<ul>
+<li><strong>Eretria</strong>: Adjusted a spawn region to no longer clip into the cliff</li>
+<li><strong>Frigid Mountain</strong>: Reloading the zone no longer places previously spawned <strong>Sludge Beasts</strong> at the map’s origin</li>
+<li><strong>Frozen Citadel</strong>:
+<ul>
+<li>Improved the pathing under the Frozen Citadel’s entrance arch</li>
+<li>The bossfights should now only trigger when a player hero enters the corresponding arenas</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><strong>Frigid Mountain</strong>: Hard cap reduced to 4 (previously 5)</li>
+<li><strong>Hunting Grounds</strong>: Soft cap reduced to 6 (previously 7)</li>
+<li><strong>Infested Woods</strong>: Soft cap reduced to 8 (previously 12)</li>
+<li><strong>Island of Storms</strong>: Hard cap reduced to 4 (previously 6)</li>
+<li><strong>Isle of Issus</strong>: Soft cap reduced to 12 (previously 14)</li>
+<li><strong>Islet</strong>: Hard cap reduced to 4 (previously 7)</li>
+<li><strong>Lawless Valley</strong>: Hard cap reduced to 6 (previously 9)</li>
+<li><strong>Northern Trail</strong>: Hard cap reduced to 6 (previously 9)</li>
+<li><strong>Savage Jungle</strong>: Soft cap for sub-region B reduced to 12 (previously 16)</li>
+<li><strong>Tribal Village</strong>: Now attempts to spawn a minimum of 3 units (previously 2 units)</li>
+<li><strong>Tundra</strong>: Hard cap reduced to 5 (previously 7)</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Eastern Highlands</strong>:
+<ul>
+<li>Soft cap for sub-region A reduced to 6 (previously 8)</li>
+<li>Increased the spawn chance of <strong>Rock Giants</strong> to 50% from 40%</li>
+</ul></li>
+<li><strong>Barbaric Plains</strong>:
+<ul>
+<li>Hard cap for sub-region A reduced to 4 (previously 6)</li>
+<li>Soft cap for sub-region B reduced to 9 (previously 11)</li>
+</ul></li>
+<li><strong>Corinth</strong>:
+<ul>
+<li>Soft cap for sub-region B reduced to 9 (previously 14)</li>
+<li>Sub-region B player modifier increased to 1 (previously 0)</li>
+<li><strong>Minotaur Beastman</strong> in sub-region B now have a 20% chance to spawn (previously 10% chance)</li>
+</ul></li>
+<li><strong>Eretria</strong>:
+<ul>
+<li>Soft cap for sub-region A reduced to 8 (previously 10)</li>
+<li>Soft cap for sub-region A reduced to 7 (previously 7)</li>
+</ul></li>
+<li><strong>Thieves’ Alcove</strong>:
+<ul>
+<li>Hard cap reduced to 9 (previously 12)</li>
+<li>Now attempts to spawn a minimum of 3 units (previously 2 units)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="items" class="section level1">
+<h1>Items</h1>
+<ul>
+<li>Adjusted how <strong>Searing Flames of Prometheus</strong> (Olympian Relic) and <strong>Burning Hand of the War God</strong> (Goldsmith) groups valid units for their triggered effects</li>
+<li><strong>Cleric</strong>’s Rebate for <strong>Book of Skill Level Increase 8</strong> now refunds 50% of the crafting materials cost</li>
+<li><strong>Oracle</strong>, <strong>High Oracle</strong>, and <strong>Delphi</strong> sets bonuses no longer increases Spell Power permanently</li>
+<li>Regalia components’ now state the correct level requirement</li>
+<li>Summons from <strong>Algore Charm</strong>, <strong>Crackling Charm</strong>, and <strong>Claw Charm</strong> (Goldsmith) now lasts for 5 minutes rather than indefinitely</li>
+<li><strong>Whetstones</strong>, <strong>Blunting Stone</strong>, <strong>Elixirs</strong>, and <strong>Draughts</strong> now utilise the activation SFX they used to have</li>
+<li><strong>Bone Wreath</strong> and <strong>Myrmidon Scale</strong> are now unique</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Beast Plate Armor</strong> (Armorsmith): Now increases Armor by 60 as intended</li>
+<li><strong>Crystal Helm</strong> (Cyclops): Now increases Spell Healing by 450 as intended</li>
+<li><strong>Dark Wizard Dagger</strong> (Weaponsmith):
+<ul>
+<li>No longer triggers on invalid Black Arrow (Ranger) targets</li>
+<li>Changed the SFX</li>
+</ul></li>
+<li><strong>Eris’ Golden Apple of Discord</strong> (Rare Drop): Now increases Spell Healing by 300 as intended</li>
+<li><strong>Gem of the North</strong> (Weaponsmith): Updated the icon to be distinct from the other compass gems</li>
+<li><strong>Gem of the South</strong> (Armorsmith): Updated the icon to be distinct from the other compass gems</li>
+<li><strong>Gem of the East</strong> (Goldsmith): Updated the icon to be distinct from the other compass gems</li>
+<li><strong>Gem of the West</strong> (Goldsmith): Updated the icon to be distinct from the other compass gems</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Hephaestus’ Thundering Axe</strong> (Weaponsmith): Addressed a typo in the crafting tooltip</li>
+<li><strong>Immortal Armor of Hephaestus</strong> (Olympian Relic): Addressed a typo in the crafting error message</li>
+<li><strong>Regal Crown</strong> (Cyclops): Now increases Spell Damage by 450 as intended</li>
+<li><strong>Priam’s Scepter</strong> (Cavern of Dread): Now increases Attack Damage by 30</li>
+<li><strong>Sacred Chestguard of the Olympians</strong> (Olympian Regalia Piece): Now increases Spell Healing by 450 as intended</li>
+<li><strong>Sacred Olympian Regalia</strong> (Heletes): Now increases Spell Power by 1900 as intended</li>
+<li><strong>Sacred Sword of the Olympians</strong> (Olympian Regalia Piece): Now increases Spell Healing by 600 as intended</li>
+<li><strong>Scepter of the Ice Queen</strong> (Persephone): Now increases Spell Healing by 600 as intended</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Scroll of the Lesser Beast</strong> (Alchemy): Now centers it’s AoE at the user’s location</li>
+<li><strong>Scroll of Superior Regeneration</strong> (Alchemy): Now uses the scroll bypass for backpack item usage</li>
+<li><strong>Summoning Stone</strong> (Gaea, Hades, and Persephone): The tooltip now states which boss it dropped from</li>
+<li><strong>Towering Shield of Athena</strong> (Olympian Relic): Now states that it increases Armor by 100</li>
+<li><strong>Wizard’s Respite</strong> (Metalsmith Theron): Now restricts it’s component items from being equipped at the same time — <strong>Dark Wizard’s Dagger</strong> (Weaponsmith) and <strong>Hera’s Blessing</strong> (Goldsmith)</li>
+</ul>
+<div id="crafting-and-forging-recipe-changes" class="section level2">
+<h2>Crafting and Forging Recipe Changes</h2>
+<div id="forging" class="section level3">
+<h3>Forging</h3>
+<ul>
+<li><strong>Wizard’s Respite</strong> (Metalsmith Theron):
+<ul>
+<li>Dark Wizard’s Dagger</li>
+<li>Hera’s Blessing</li>
+<li>Gem of the East</li>
+<li>Gem of the North</li>
+<li>2 Sea Essence</li>
+<li>2 Heart of Frost</li>
+</ul></li>
+</ul>
+<p><small>(Previously: Dark Wizard’s Dagger; Hera’s Blessing; 2 Stone of Heaven; 2 Sea Essence; and 2 Heart of Frost)</small></p>
+</div>
+<div id="weaponsmith" class="section level3">
+<h3>Weaponsmith</h3>
+<ul>
+<li><strong>Bow of Artemis</strong>:
+<ul>
+<li>2 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+<li>Sea Essence</li>
+<li>Heart of Frost</li>
+</ul></li>
+</ul>
+<p><small>(Previously: 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; Sea Essence; and Heart of Frost)</small></p>
+<ul>
+<li><strong>Dark Wizard’s Dagger</strong>:
+<ul>
+<li>2 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+<li>Runestone</li>
+<li>1 Ruby Heart</li>
+</ul></li>
+</ul>
+<p><small>(Previously: 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; Runestone; and Ruby Heart)</small></p>
+<ul>
+<li><strong>Soul Blade</strong>
+<ul>
+<li>Gem of the North</li>
+<li>5 Stone of Heaven</li>
+<li>2 Meteoric Iron</li>
+</ul></li>
+</ul>
+<p><small>(Previously: Gem of the North and 5 Stone of Heaven)</small></p>
+</div>
+<div id="armorsmith" class="section level3">
+<h3>Armorsmith</h3>
+<ul>
+<li><strong>Adamantium Shield</strong>:
+<ul>
+<li>3 Meteoric Iron</li>
+<li>Blood Ruby</li>
+<li>3 Lump of Pure Adamantium</li>
+</ul></li>
+</ul>
+<p><small>(Previously 2 Meteoric Iron; Burning Heart of Ladon; Blood Ruby; and 2 Lump of Pure Adamantium)</small></p>
+<ul>
+<li><strong>Shield of Living Bone</strong>:
+<ul>
+<li>2 Stone of Heaven</li>
+<li>Ruby Heart</li>
+<li>Blood Ruby</li>
+<li>Heart of Frost</li>
+<li>Sea Essence</li>
+</ul></li>
+</ul>
+<p><small>(Previously Ruby Heart; Burning Heart of Ladon; Heart of Frost; and Sea Essence)</small></p>
+<ul>
+<li><strong>Adamantium Helm</strong>:
+<ul>
+<li>Gem of the South</li>
+<li>Adamantium Shield</li>
+<li>4 Stone of Heaven</li>
+<li>Burning Heart of Ladon</li>
+<li>Blood Ruby</li>
+</ul></li>
+</ul>
+<p><small>(Previously Gem of the South; Adamantium Shield; and 4 Stone of Heaven)</small></p>
+<ul>
+<li><strong>Adamantium Tower</strong>
+<ul>
+<li>Gem of the South</li>
+<li>Shield of Living Bone</li>
+<li>4 Stone of Heaven</li>
+<li>Burning Heart of Ladon</li>
+<li>Blood Ruby</li>
+</ul></li>
+</ul>
+<p><small>(Previously Gem of the South; Shield of Living Bone; and 4 Stone of Heaven)</small></p>
+</div>
+<div id="goldsmith" class="section level3">
+<h3>Goldsmith</h3>
+<ul>
+<li><strong>Burning Hand of the War God</strong>:
+<ul>
+<li>2 Stone of Heaven</li>
+<li>Blood Ruby</li>
+<li>Gemstone of Apollo</li>
+<li>2 Ruby Heart</li>
+</ul></li>
+</ul>
+<p><small>(Previously 2 Stone of Heaven; Blood Ruby; Gemstone of Apollo; Burning Heart of Ladon; and Ruby Heart)</small></p>
+<ul>
+<li><strong>Iron Will of Hephaestus</strong>:
+<ul>
+<li>2 Stone of Heaven</li>
+<li>Blood Ruby</li>
+<li>Ruby Heart</li>
+<li>2 Meteoric Iron</li>
+</ul></li>
+</ul>
+<p><small>(Previously 2 Stone of Heaven; Blood Ruby; Burning Heart of Ladon; and 2 Meteoric Iron)</small></p>
+<ul>
+<li><strong>Aphrodite’s Favor</strong>:
+<ul>
+<li>Gem of the East</li>
+<li>Gem of the West</li>
+<li>4 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+</ul></li>
+</ul>
+<p><small>(Previously Gem of the East; Gem of the West; and 4 Stone of Heaven)</small></p>
+<ul>
+<li><strong>Gift of Hera</strong>
+<ul>
+<li>Gem of the East</li>
+<li>Regal Helm of Sparkling Crystal</li>
+<li>4 Stone of Heaven</li>
+<li>2 Sea Essence</li>
+</ul></li>
+</ul>
+<p><small>(Previously Gem of the East; Regal Helm of Sparkling Crystal; and 4 Stone of Heaven)</small></p>
+</div>
+</div>
+</div>
+<div id="quests" class="section level1">
+<h1>Quests</h1>
+<ul>
+<li>An empty quest board now prints <code>&quot;Talk to Serius&quot;</code> rather than <code>&quot;Empty...&quot;</code></li>
+<li>The <strong>Quest Log</strong> now counts down from how many Titans are alive
+<ul>
+<li>Also, reworded the <strong>Hades</strong> objective</li>
+</ul></li>
+<li>All Titan quests and <strong>Lord of Hell</strong> (Serius) now recommend a party-size of 5 players, and now include a [5] prefix</li>
+<li>Added a suffix asterisk to <strong>Uninvited Guests</strong> (Nicanor)
+<ul>
+<li>This keeps the styling consistent with other repeatable quests</li>
+</ul></li>
+<li>Removed <strong>Commander Therin</strong> (Serius) from the list of available quests</li>
+<li><strong>Trouble in the North</strong> (Therin) now tasks you to find <strong>Calliope</strong> instead of <strong>Serius</strong></li>
+<li>Set the hero level requirement to get rewards from all of <strong>Nicanor</strong>’s quests to 60</li>
+<li><strong>Cyclops</strong> no longer automatically spawns after completing <strong>Hillcrusher</strong> (Draco). Completing <strong>Hillcrusher</strong> (Draco) now adds a button to <strong>Draco</strong> to start the <strong>Cyclops</strong> bossfight</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Help Greyn</strong> (Greyn): Now logs a <code>( Failed )</code> tag on the required quest objective if you fail the quest</li>
+<li><strong>Bounty on Centaurs</strong> (Phylas): Quest Level increased to 56 (from 55)</li>
+<li><strong>Cutthroats</strong> (Seryo): The threshold for quest completion now varies between 17 to 23 kills</li>
+<li><strong>Dark Goblins</strong> (Calliope): The threshold for quest completion now varies between 14 to 18 kills</li>
+</ul>
+<div id="reassignments-new-npcs" class="section level2">
+<h2>Reassignments &amp; New NPCs</h2>
+<p>— <strong>Calliope</strong> (Northern Trail) now issues the following quests:</p>
+<blockquote>
+<ul>
+<li>Goblin Infestation</li>
+<li>“Dark Goblins”</li>
+<li>Bounty on Goblins</li>
+<li>Strong Iron Shields</li>
+<li>Captain Sepheus</li>
+</ul>
+</blockquote>
+<p>— <strong>Stefanos</strong> (Athens) now issues the following quests:</p>
+<blockquote>
+<ul>
+<li>Forest of Horrors</li>
+<li>Nest of Horrors</li>
+<li>Trouble at New Issus</li>
+</ul>
+</blockquote>
+<p>— <strong>Artos</strong> (Eretria) now issues the following quests:</p>
+<blockquote>
+<ul>
+<li>Aris’ Tomb</li>
+<li>The Crypt</li>
+<li>Bounty on Undead</li>
+</ul>
+</blockquote>
+<p>— <strong>Karissa</strong> (Southern Highlands) now issues the following quest</p>
+<blockquote>
+<ul>
+<li>Savage Beasts (previously known as Soulless Beasts)</li>
+</ul>
+</blockquote>
+<p>— <strong>Seryo</strong> (Eastern Highlands) now issues the following quests:</p>
+<blockquote>
+<ul>
+<li>Demonic Residue</li>
+<li>Servant of Hades</li>
+<li>“Cutthroats”</li>
+<li>Flesh Hunters</li>
+<li>True Stone</li>
+</ul>
+</blockquote>
+<p>— <strong>Tethol</strong> (Corinth) now issues the following quests:</p>
+<blockquote>
+<ul>
+<li>Revenge</li>
+<li>Minotaur Invaders</li>
+<li>Minotaur Beasts</li>
+<li>Bounty on Minotaurs</li>
+<li>Weapons of the Gods</li>
+</ul>
+</blockquote>
+</div>
+<div id="quest-helper" class="section level2">
+<h2>Quest Helper</h2>
+<p>The Backpack now has the <strong>Quest Helper</strong> skill which does the following:</p>
+<blockquote>
+<p>Displays the location of active quests within your level range, as well as NPCs that offer undiscovered ones within your level range.<br><br>Different quest types have different coloration:<br>● Undiscovered — White<br>● Normal — Yellow<br>● Bounty — Orange<br>● Titans — Red</p>
+</blockquote>
+</div>
+<div id="to-the-death" class="section level2">
+<h2>[3] To The Death</h2>
+<div id="information" class="section level3">
+<h3>Information</h3>
+<blockquote>
+<ul>
+<li>Assigned by Neleus and Pelias</li>
+<li>Quest Level: 35</li>
+<li>Gold Reward: 1500</li>
+<li>Experience Reward: 5000</li>
+<li>“<em>Side with one brother to defeat the other.</em>”</li>
+</ul>
+</blockquote>
 </div>
 </div>
 </div>
 <div id="classes" class="section level1">
 <h1>Classes</h1>
 <ul>
-<li>Updated <strong>Ranger</strong>’s sound set to Archer <em>(previously Sylvanas)</em></li>
-<li>Updated <strong>Barbarian</strong>’s Cast Point to 0.3s <em>(from 0.5s)</em></li>
-<li>Updated <strong>Magician</strong>’s Cast Backswing to 0.75s <em>(from 2.4s)</em></li>
-<li>Updated <strong>Guardian of Nature</strong>’s Cast Backswing and Cast Point to 0.5s and 0.3s respectively <em>(from 1.67s and 0.5s)</em></li>
-<li><strong>Star Dust</strong> (Ranger): Changed the buff application method</li>
+<li><strong>Impale</strong> (Warlord), <strong>Cleave</strong> (Barbarian), and <strong>Dispatch</strong> (Spartan Warrior) can no longer target mechanical units</li>
+<li><strong>Assassinate</strong> (Assassin) and <strong>Eviscerate</strong> (Assassin) tooltips were polished</li>
+<li><strong>Walk in the Shadows</strong> (Assassin) and <strong>Assassinate</strong> (Sin) SFX is correctly rendered again</li>
+<li><strong>Charge</strong> (Spartan Warrior): Buffed the valid <em>Taunt</em> range to 300 units (from 225 units)</li>
+<li><strong>Hammer of Zeus</strong> (Temple Guardian): The buff now lasts for 3 seconds</li>
+<li><strong>Star Dust</strong> (Ranger): SFX is correctly rendered above the ground again</li>
+<li><strong>Maelstrom</strong> (Druid): SFX is correctly rendered above the ground again</li>
+<li><strong>Phalanx</strong> (Spartan Warrior): Recoded to address a bug where the bonuses were not applied</li>
+<li><strong>Pray</strong> (Temple Guardian): <em>Gift of Zeus</em>—Level 5’s mana cost has been corrected to 85 mana</li>
+<li><strong>Flash Point</strong> (Magician): Adjusted it’s base damage to 150 // 300 // 600 // 1000 // 1750 // 3000 // 4750 // 7500 (previously 300 // 525 // 900 // 1425 // 2400 // 3600 // 5250)</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Cleave</strong> (Barbarian):
+<ul>
+<li>Now enhances your next auto-attack for the spell effect — Similar to <strong>Hammer of Zeus</strong> (Temple Guardian)</li>
+<li>Cooldown increased to 3 seconds (from 2.25 seconds)</li>
+</ul></li>
+<li><strong>Dispatch</strong> (Spartan Warrior):
+<ul>
+<li>Now enhances your next auto-attack for the spell effect — Similar to <strong>Hammer of Zeus</strong> (Temple Guardian)</li>
+<li>Cooldown increased to 3 seconds (from 2.25 seconds)</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><strong>Fire of Heaven</strong> (Cleric):
+<ul>
+<li>Adjusted the base damage of the single target component to 150 // 300 // 600 // 1000 // 1500 // 2750 // 4500 // 7000 (from 300 // 600 // 1000 // 1600 // 2400 // 3000 // 3700 // 5000)</li>
+<li>Adjusted the base damage of the AoE component to 120 // 240 // 480 // 800 // 1200 // 2200 // 3600 // 5600 (from 240 // 480 // 1000 // 1280 // 1920 // 2400 // 2960 // 4000)</li>
+</ul></li>
+<li><strong>Light Set</strong> (Cleric):
+<ul>
+<li>Increased the AoE to 700 (previously 600)</li>
+<li>Reconfigured the on-attack trigger</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><strong>Winds of War</strong> (Warlord):
+<ul>
+<li>Recoded to address a bug which caused the game to crash</li>
+<li>You can now cancel out of <strong>Winds of War</strong> by issuing a new command</li>
+</ul></li>
+<li><strong>Impale</strong> (Warlord):
+<ul>
+<li>Now enhances your next auto-attack for the spell effect — Similar to <strong>Hammer of Zeus</strong> (Temple Guardian)</li>
+<li>Cooldown increased to 3 seconds (from 2.25 seconds)</li>
+</ul></li>
+<li><strong>Counter</strong> (Warlord):
+<ul>
+<li>Changed to a Personal 1 second cooldown (previously a Global 0.25 second cooldown)</li>
+<li>Now reduces the incoming auto-attack damage by 75%</li>
+<li>Changed to 10 // 11 // 12 // 13 // 14 // 15 // 17.5 // 20% chance to counter from 15% chance to counter</li>
+<li>Added a 0.50 // 0.55 // 0.60 // 0.65 // 0.70 // 0.75 // 0.80 // 0.85 Agility ratio to <strong>Counter</strong>’s base damage</li>
+</ul></li>
+</ul>
+<hr />
+<div id="guardian-of-nature" class="section level2">
+<h2>Guardian of Nature</h2>
+<blockquote>
+<p>Quality of life adjustments for the <strong>Guardian</strong> ahead of it’s evitable rework</p>
+</blockquote>
+<ul>
+<li>Rearranged the ability icons such that the spells are all on the same row</li>
+<li><strong>Cataclysm</strong> (Guardian of Nature): Mana costs set to 100 // 125 // 175 // 280 // 425 // 600 // 750 // 950 (from 150 // 275 // 425 // 600 // 850 // 1000 // 1000 // 1000)</li>
+<li><strong>Roar</strong> (Guardian of Nature): Cooldown increased to a 5 seconds (previously 0 seconds)</li>
 </ul>
 <hr />
 <ul>
 <li><strong>Earth Shock</strong> (Guardian of Nature):
 <ul>
-<li>No longer momentarily distorts the terrain</li>
-<li>Updated the missile and on-hit FXs</li>
-<li>The missile now applies both the base and bonus damage—Rather than a delayed AoE at the target point to deal the bonus damage</li>
+<li>Mana costs set to 35 // 70 // 120 // 195 // 260 // 340 // 420 // 500 (from 50 // 100 // 175 // 270 // 400 // 550 // 850)</li>
+<li>Hotkey set to W (from E)</li>
 </ul></li>
-<li><strong>Stone Set</strong> (Guardian of Nature): FX scale is now consistent</li>
-</ul>
-<hr />
+<li><strong>Tremor</strong> (Guardian of Nature):
 <ul>
-<li><strong>Decimate</strong> (Khaos Champion): Increased the <em>Z</em>-height of the FX</li>
-<li><strong>Unbridled Khaos</strong> (Khaos Champion): The bonus auto-attack now triggers on-hit effects <em>(as intended)</em></li>
-</ul>
-<hr />
-<ul>
-<li><strong>Frost Chain</strong> (Magician): Now a proper point target spell</li>
-<li><strong>Flame Spire</strong> (Magician): No longer applies a missing debuff object</li>
-<li><strong>Power Set</strong> (Magician): Tidied up the tooltip</li>
-</ul>
-<hr />
-<ul>
-<li><strong>Winds of War</strong> (Warlord): <strong>Counter</strong> no longer cancels <strong>Winds of War</strong>’s animation</li>
-<li><strong>Bum Rush</strong> (Warlord): The <strong>Warlord</strong> is now placed 32 units before the target, rather than on the target</li>
-</ul>
-<hr />
-<div id="cleric" class="section level2">
-<h2>Cleric</h2>
-<blockquote>
-<p>Received an updated kit</p>
-</blockquote>
-<ul>
-<li>Adjusted the auto-attack missile launch origin</li>
-<li>Updated sound set to Sorceress <em>(previously Naisha)</em></li>
-</ul>
-<hr />
-<div id="q-holy-light" class="section level4">
-<h4>(Q) Holy Light</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850</p>
-<p>Heals 200 / 400 / 800 / 1200 / 2000 / 3000 / 4500 / 7500 (+Spell Healing) health to an ally, or deals 100 / 200 / 400 / 600 / 1000 / 1500 / 2250 / 3750 (+0.75 Spell Damage) magical damage to an enemy. <strong>Holy Light</strong> is 30% more effective if the target is on <strong>Hallowed Ground</strong>.</p>
-<p><em>Cooldown</em>: 4.5 seconds.</p>
-</blockquote>
-</div>
-<div id="w-hallowed-ground" class="section level4">
-<h4>(W) Hallowed Ground</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200</p>
-<p>Sanctifies a 275 AoE zone which heals for a total of 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+Spell Healing) health over 12 seconds. The zone also deals a total of 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+Spell Damage) magical damage over 12 seconds.</p>
-<p>A valid target can only be affected by one instance of <strong>Hallowed Ground</strong>.</p>
-<p><em>Cooldown</em>: 12 seconds.</p>
-</blockquote>
-</div>
-<div id="e-shield-of-faith" class="section level4">
-<h4>(E) Shield of Faith</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800</p>
-<p>Envelop an ally in a sphere of divine protection, granting it Stun Immunity and 10 / 12.5 / 15 / 17.5 / 20 / 22.5 / 25 / 30% damage reduction for 15 seconds.</p>
-<p><em>Cooldown</em>: 20 seconds.</p>
-</blockquote>
-</div>
-<div id="r-transcendence" class="section level4">
-<h4>(R) Transcendence</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 100 / 200 / 350 / 550 / 800 / 1100 / 1600 / 2400</p>
-<p>Your auto-attacks are imbued with divine wrath, dealing an additional 0.15 / 0.2 / 0.25 / 0.3 / 0.35/ 0.4 / 0.45 / 0.5 Spell Damage magical damage. They also heal allies within a 650 AoE for the total damage inflicted. Lasts for 10 seconds.</p>
-<p><em>Cooldown</em>: 30 seconds.</p>
-</blockquote>
-</div>
-<div id="f-rebirth" class="section level4">
-<h4>(F) Rebirth</h4>
-<blockquote>
-<p><em>Mana Cost</em>: 150 / 300 / 500 / 800 / 1200 / 1650 / 2400 / 3600</p>
-<p>Channels the divine for 3 seconds to revive an allied hero with 25% / 30% / 35% / 40% / 45% / 50% / 60% / 75% Maximum Health and Mana upon completion. This also refunds 50% / 55% / 60% / 65% / 70% / 75% / 85% / 100% of their death penalty.</p>
-<p><em>Passive</em>—When slain while <strong>Rebirth</strong> is off cooldown: <strong>Rebirth</strong> revives you after 3 seconds and goes on cooldown for 180 seconds instead. (This does not cost mana). This effect does not take priority over other sources of auto-revival.</p>
-<p><em>Cooldown</em>: 60 seconds.</p>
-</blockquote>
-</div>
-<div id="rebate" class="section level4">
-<h4>Rebate</h4>
-<blockquote>
-<p>You receive a 50% rebate when purchasing <strong>Books of Skill Increase</strong> and the <strong>Journeyman’s Field Guide</strong>.</p>
-</blockquote>
-</div>
-<div id="light-regalia" class="section level4">
-<h4>Light Regalia</h4>
-<blockquote>
-<p>Activating <strong>Transcendence</strong> reduces your other spells’ cooldowns by 10 seconds.</p>
-</blockquote>
-<hr />
-</div>
-</div>
-<div id="druid" class="section level2">
-<h2>Druid</h2>
-<ul>
-<li>Updated the Cast Backswing and Cast Point to 0.75s and 0.3s respectively <em>(from 1.17s and 0.5s)</em></li>
-</ul>
-<hr />
-<div id="rejuvenation" class="section level4">
-<h4>Rejuvenation</h4>
-<ul>
-<li>Heals 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 over 10 seconds <em>(previously 280 / 560 / 980 / 1600 / 2350 / 3200 / 5000 / 7500)</em>.</li>
-<li>If a unit has multiple instances of Rejuvenation, it heals using the instance with the highest heal. All <strong>Rejuvenation</strong> instances on the same target do have their own individual durations.</li>
-<li>Updated the buff FX and icon</li>
-</ul>
-</div>
-<div id="lightning-strike" class="section level4">
-<h4>Lightning Strike</h4>
-<ul>
-<li>No longer momentarily distorts the terrain</li>
-<li>Slows all enemies for 6 seconds <em>(previously, select enemy types were slowed for 3 seconds instead)</em></li>
-<li>Casting <strong>Lightning Strike</strong> now uses the <em>Druid</em>’s spell animation</li>
-</ul>
-</div>
-<div id="reclamation" class="section level4">
-<h4>Reclamation</h4>
-<ul>
-<li>Replaces <strong>Mind Blast</strong></li>
-</ul>
-<blockquote>
-<p><em>Mana Cost</em>: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850</p>
-<p>Convoke nearby spirits to purify the target, dealing 100 /200 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+ Spell Damage) magical damage over 3 seconds. The spirits also siphon 50 / 100 / 150 / 350 / 700 / 1500 / 2850 / 5000 mana from the target and transfer it to the <strong>Druid</strong> over this period.</p>
-<p><em>Cooldown</em>: 10 seconds</p>
-</blockquote>
-</div>
-<div id="maelstrom" class="section level4">
-<h4>Maelstrom</h4>
-<ul>
-<li>Nerfed the total damage dealt to 600 / 1200 / 1800 / 3000 / 4200 / 6600 / 10000 / 15000 <em>(previously 1000 / 2000 / 4500 / 6000 / 7500 / 10000 / 12500 / 17500)</em></li>
-<li>Lasts for 2.5 seconds for all levels <em>(previously Level 8 lasted for 3 seconds)</em></li>
-<li>Updated FX</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="spartan-warrior" class="section level2">
-<h2>Spartan Warrior</h2>
-<ul>
-<li><strong>Phalanx</strong>: The ability which grants the Evasion bonus is now has it’s icon hidden from the command card. Note that the tooltip never stated the correct value</li>
-<li><strong>Dispatch</strong>: Removed the offending white-space character from the Level 6 tooltip</li>
-</ul>
-<hr />
-<div id="throw-javelin" class="section level4">
-<h4>Throw Javelin</h4>
-<ul>
-<li>No longer momentarily distorts the terrain</li>
-<li>Updated the missile and on-hit FXs</li>
-<li>The missile now applies both the base and bonus damage—Rather than a delayed AoE at the target point to deal the bonus damage</li>
-</ul>
-</div>
-<div id="charge-1" class="section level4">
-<h4>Charge</h4>
-<ul>
-<li>The <strong>Spartan Warrior</strong> is now placed 32 units before the target, rather than on the target</li>
-<li>The position of the <strong>Spartan Warrior</strong> is updated once the missile approximately reaches the target</li>
-<li>No longer momentarily distorts the terrain</li>
-<li>Issues an attack command once you complete <strong>Charge</strong></li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="temple-guardian" class="section level2">
-<h2>Temple Guardian</h2>
-<ul>
-<li><strong>Gift of the Gods</strong>: Removed the delay for applying the Spell Healing bonus</li>
-<li><strong>Pray</strong>: Refactored the code to address the rare bug where <strong>Gift of Athena</strong> could permanently reduce Spell Power</li>
-<li><strong>Mark of Artemis</strong>: The bonus damage no longer counts as an additional auto-attack</li>
-<li><strong>Divine Set</strong> (Temple Guardian): FX renders its SD asset in Reforged graphics</li>
-</ul>
-<hr />
-<div id="fire-of-apollo" class="section level4">
-<h4>Fire of Apollo</h4>
-<ul>
-<li>Updated FX</li>
-<li>Fixed a bug where it dealt double its base damage</li>
-<li>No longer momentarily distorts the terrain</li>
-</ul>
-</div>
-<div id="hestias-touch" class="section level4">
-<h4>Hestia’s Touch</h4>
-<ul>
-<li>No longer has a unique debuff for each spell level</li>
-</ul>
-<blockquote>
-<p><em>Mana Cost</em>: 30 / 60 / 95 / 135 / 180 / 230 / 285 / 350</p>
-<p>Marks an enemy to be touched by the virgin goddess Hestia for 10 seconds <em>(previously 30 seconds)</em>. Whenever they are auto-attacked, they lose 3 / 5 / 7 / 10 / 15 / 30 / 60 / 100 mana and the attacker restores up to 1.5 / 2.5 / 3.5 / 5 / 7.5 / 15 / 30 / 50 mana. If the attacker is a Warrior Class, they restore up to 0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 2.5 / 3 mana instead.</p>
-<p><em>(Previously: Target loses 8 / 16 / 24 / 32 / 40 / 48 / 56 / 64 mana each auto-attack. Attackers restore 8 / 16 / 24 / 32 / 40 / 48 / 56 / 64 mana. If the attacker is a Warrior Class, restore 0.5 / 1 / 1.5 / 2 / 2.5 / 3 / 3 / 3 mana)</em></p>
-<p>Cooldown: 15 seconds <em>(previously 1 second)</em>.</p>
-</blockquote>
-<hr />
-</div>
-</div>
-</div>
-<div id="items-2" class="section level1">
-<h1>Items</h1>
-<ul>
-<li>Added grid hotkeys to all purchasable items found in <strong>Athens</strong></li>
-<li>Adjusted the walking animation to be smoother with an active <strong>Speed Scroll</strong></li>
-<li><strong>Scroll of Town Portal</strong> now attempts to break channelling spells prior to teleporting, for example <strong>Winds of War</strong> (Warlord)</li>
-<li><strong>Olympian Gemstone</strong>: Creating one now fades in-and-out the white mask over 3 seconds and only shows for the player creating it</li>
-<li><strong>Tome of Stat Increase +8</strong> (Book Shop): Costs 250000 gold <em>(previously 300000 gold)</em></li>
-</ul>
-<hr />
-<ul>
-<li>Many of the consumables now have updated item models</li>
-<li>Cardinal direction gems now have distinct item models</li>
-<li><strong>Armor Plates</strong> variants have updated item and buff icons</li>
-<li><strong>Elixir of Spell Power</strong> variants has an updated buff icon</li>
-<li><strong>Wild Regalia</strong> has an updated icon</li>
-</ul>
-<hr />
-<ul>
-<li><strong>Summoning Stone</strong>: Hades’ summoning stone now states it drops from Hades</li>
-<li><strong>Scroll of Regeneration</strong> (Scrolls): Now states the correct amount of charges</li>
-<li><strong>Thundering Hammer of Zeus</strong> (Olympian Relic): Now states the hidden Chain Lightning on attack effect</li>
-<li><strong>Ring of the Frozen Citadel</strong> (Metalsmith Theron):
-<ul>
-<li>Now states that it cannot be used by Warrior Classes</li>
-<li>Clarified the potency of the slow effect</li>
+<li>Increased the chance to proc to 20% (from 15%)</li>
+<li>Added a 0.5 Spell Damage ratio to the proc</li>
 </ul></li>
-</ul>
-<div id="craftingforging" class="section level2">
-<h2>Crafting/Forging</h2>
+<li><strong>Nature’s Bulwark</strong> (Guardian of Nature):
 <ul>
-<li>Olympian Relic forging icons are now their item icon instead of a generic hammer icon</li>
-<li><strong>Ares Bloodthristy Spear</strong> (Olympian Relic): Now requires <strong>Heartstone Ring of Strength</strong> instead of <strong>Heartstone Ring of Agility</strong></li>
-<li><strong>Towering Shield of Athena</strong> (Olympian Relic): Now prints the correct error message if you have missing components</li>
-<li><strong>Medallion of Greater Stamina</strong> (Goldsmith): Increased crafting material cost to 250 <em>(previously 100)</em></li>
-<li><strong>Pendant of Greater Mana</strong> (Goldsmith): Increased crafting material cost to 250 <em>(previously 100)</em></li>
-<li><strong>Adamantium Tower</strong> (Armorsmith): <strong>Shield of the Living Bone</strong> is correctly printed as an Orange item in the craft information prompt</li>
-<li><strong>Full Plate</strong> (Armorsmith):
+<li>SFX is now rendered correctly</li>
+<li>Hotkey set to E (from T)</li>
+<li>The buff duration decreased to 6 seconds (from 8 seconds)</li>
+<li>No longer buffs attack speed via bonus attack speed%. Instead, it decreases the base attack speed cooldown from 2 seconds to 1.85 // 1.8 // 1.75 // 1.7 // 1.65 // 1.6 // 1.55 // 1.5 seconds for the duration</li>
+</ul></li>
+<li><strong>Stone Set</strong> (Guardian of Nature):
 <ul>
-<li>Removed the two <strong>Meteoric Iron</strong> and two <strong>Tempered Steel</strong> requirement</li>
-<li>Increased crafting material cost to 300 <em>(previously 200)</em></li>
+<li>Increased the chance to proc to 37.5% (from 25%)</li>
+<li>Reduced the healing proc to adaptive 1.5 Strength or 0.5 Spell Damage (from 3.0 Strength or 1.0 Spell Damage)</li>
 </ul></li>
 </ul>
 <hr />
 </div>
-<div id="dragonscale-rings" class="section level2">
-<h2>Dragonscale Rings</h2>
-<div id="red-dragonscale-ring" class="section level4">
-<h4>Red Dragonscale Ring</h4>
+<div id="khaos-champion" class="section level2">
+<h2>Khaos Champion</h2>
 <blockquote>
-<p>Increases Strength by 50, Agility by 25 and Intelligence by 1 and grants 15% Magic Resistance.</p>
-<p>Requires Level 55</p>
-<p><em>(Previously increases Strength by 50, Agility by 25 and Intelligence by 1 and grants 25% Magic Resistance.)</em></p>
+<p>Third time’s a charm?</p>
+</blockquote>
+<div id="grave-seize" class="section level3">
+<h3>Grave Seize</h3>
+<blockquote>
+<p>— No change</p>
 </blockquote>
 </div>
-<div id="green-dragonscale-ring" class="section level4">
-<h4>Green Dragonscale Ring</h4>
+<div id="requiem" class="section level3">
+<h3>Requiem</h3>
 <blockquote>
-<p>Increases Strength by 25, Agility by 40 and Intelligence by 10 and grants 15% Magic Resistance.</p>
-<p>Requires Level 55</p>
-<p>Cannot be used by Warrior Classes</p>
-<p><em>(Previously increases Strength, Agility and Intelligence by 30. Also grants 25% Magic Resistance.)</em></p>
+<p>— Removed the inner glow from <strong>Requiem</strong>’s buff SFX<br><br><em>Mana Cost</em>: 10 // 15 // 20 // 25 // 30 // 45 // 60 // 75<br><em>Effect</em>: Traps restless souls in a vortex which deals 30 // 45 // 75 // 150 // 300 // 600 // 1000 // 1500 (+0.15 Strength) magical damage per second to enemies within a 200 AoE of the <em>Khaos Champion</em>. If an enemy dies inside <strong>Requiem</strong>, the duration of <strong>Requiem</strong> extends by one second. Lasts for 30 seconds.<br><em>Cooldown</em>: 60 // 58 // 56 // 54 // 52 // 50 // 48 // 45 seconds.</p>
 </blockquote>
 </div>
-<div id="white-dragonscale-ring" class="section level4">
-<h4>White Dragonscale Ring</h4>
+<div id="shroud" class="section level3">
+<h3>Shroud</h3>
 <blockquote>
-<p>Increases Strength by 25 and Intelligence by 50 and grants 15% Magic Resistance.</p>
-<p>Requires Level 55</p>
-<p>Cannot be used by Warrior Classes</p>
-<p><em>(Previously increases Intelligence by 40 and Strength and Agility by 25. Also reduces damage taken from spells by 25%.)</em></p>
+<p><em>Effect One</em>—Whenever you cast the following spells:<br> ● <strong>Grave Seize</strong>: Gain three <strong>Shroud</strong> stacks.<br> ● <strong>Decimate</strong>: Gain two <strong>Shroud</strong> stacks.<br><br>An individual stack grants 1% // 1.25% // 1.5% // 2% // 2.5% // 3% // 4% // 5% damage reduction for 8 seconds. If an enemy attacks you while <strong>Shroud</strong> is active, a stack is consumed to deal 1.0 Strength magical damage to the attacker.<br><br>You can have up to six stacks active at one time.<br><br><em>Effect Two</em>—You have a base mana regeneration of 0.75 // 1 // 1.25 // 1.5 // 2 // 3 // 4.5 // 6 mana per second.</p>
 </blockquote>
 </div>
-<div id="red-dragonscale-ring-of-addiction" class="section level4">
-<h4>Red Dragonscale Ring of Addiction</h4>
+<div id="unbridled-khaos" class="section level3">
+<h3>Unbridled Khaos</h3>
 <blockquote>
-<p>Increases Strength by 130, Agility by 105, Intelligence by 3 and grants 20% Magic Resistance.</p>
-<p>Requires Level 115</p>
-<p><em>(Previously increases Strength by 130, Agility by 105, Intelligence by 3 and grants 25% Magic Resistance.)</em></p>
+<p><em>Effect</em>: Whenever you land a successful auto-attack: You have a 10% chance to deal additional base auto-attack damage, triggering on-hit effects. Then, gain a <strong>Shroud</strong> stack.<br><em>Cooldown</em>: 1 second.</p>
 </blockquote>
 </div>
-<div id="green-dragonscale-ring-of-addiction" class="section level4">
-<h4>Green Dragonscale Ring of Addiction</h4>
+<div id="decimate" class="section level3">
+<h3>Decimate</h3>
 <blockquote>
-<p>Increases Strength by 85, Agility by 100 and Intelligence by 70 and grants 20% Magic Resistance.</p>
-<p>Requires Level 115</p>
-<p>Cannot be used by Warrior Classes</p>
-<p><em>(Previously increases Strength, Agility and Intelligence by 90 and grants 25% Magic Resistance.)</em></p>
+<p>— Replaces <strong>Decimate Strength</strong><br><br><em>Cast Range</em>: 450<br><em>Mana Cost</em>: 5 // 7 // 15 // 20 // 25 // 30 // 40 // 55<br><em>Effect</em>: Decimate all enemies in a 300 AoE, reducing their auto-attack damage by 10% // 12.5% // 15% // 17.5% // 20% // 25% // 30% // 35% for 8 seconds.<br><em>Cooldown</em>: 15 seconds.</p>
 </blockquote>
 </div>
-<div id="white-dragonscale-ring-of-addiction" class="section level4">
-<h4>White Dragonscale Ring of Addiction</h4>
+<div id="dies-irae" class="section level3">
+<h3>Dies Irae</h3>
 <blockquote>
-<p>Increases Strength by 85, Agility by 60 and Intelligence by 110 and grants 20% Magic Resistance.</p>
-<p>Requires Level 115</p>
-<p>Cannot be used by Warrior Classes</p>
-<p><em>(Previously increases Strength and Agility by 85, Intelligence by 100 and grants 25% Magic Resistance.)</em></p>
+<p>— Replaces <strong>Devour Affliction</strong><br><br><em>Cast Range</em>: 700<br><em>Mana Cost</em>: 10 // 15 // 20 // 25 // 30 // 45 // 60 // 75<br><em>Effect</em>: You unleash a chorus of six spirits towards target location. Whenever a spirit hits an enemy unit: The spirit dissipates, dealing 200 // 350 // 500 // 650 // 800 // 950 // 1100 // 1250 (+0.3 Strength) magical damage to the unit. Then, gain a <strong>Shroud</strong> stack.<br><em>Cooldown</em>: 20 seconds.</p>
 </blockquote>
-<hr />
+</div>
+<div id="khaos-set" class="section level3">
+<h3>Khaos Set</h3>
+<blockquote>
+<p>— Changed to an on-hit effect (previously an on-attack effect)</p>
+</blockquote>
 </div>
 </div>
-<div id="auto-revival-items" class="section level2">
-<h2>Auto-Revival Items</h2>
-<div id="ankh-of-reincarnation" class="section level4">
-<h4>Ankh of Reincarnation</h4>
+</div>
+<div id="bosses" class="section level1">
+<h1>Bosses</h1>
+<p>Stat tome drops from bosses now have a level requirement which is equal to the slain boss’ hero-level. For example, Ladon stat tome’s level requirement is 85 instead of 140.</p>
 <ul>
-<li>Crafting an <strong>Ankh</strong> no longer imposes a timer which prevents crafting of subsequent <strong>Ankh</strong>s</li>
-</ul>
-<blockquote>
-<p>When slain, you will be revived with 25% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 10 minutes.</p>
-<p><em>(Previously: Revives with 1500 Health.)</em></p>
-</blockquote>
-</div>
-<div id="draught-of-the-phoenix" class="section level4">
-<h4>Draught of the Phoenix</h4>
-<blockquote>
-<p>When slain, you will be revived with 50% of your Maximum Health and Maximum Mana after 5 seconds; Also, subsequent item effects cannot revive you for 10 minutes.</p>
-<p><em>(Previously: Revives with 100% of your Maximum Health and Maximum Mana)</em></p>
-</blockquote>
-</div>
-<div id="chestguard-of-aphrodites-champion" class="section level4">
-<h4>Chestguard of Aphrodite’s Champion</h4>
-<blockquote>
-<p>When slain, you will be revived with 50% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 10 minutes.</p>
-<p><em>(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)</em></p>
-</blockquote>
-</div>
-<div id="plates-of-the-ancients" class="section level4">
-<h4>Plates of the Ancients</h4>
-<blockquote>
-<p>When slain, you will be revived with 75% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 7 minutes.</p>
-<p><em>(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)</em></p>
-</blockquote>
-</div>
-<div id="immortal-armor-of-hephaestus" class="section level4">
-<h4>Immortal Armor of Hephaestus</h4>
-<blockquote>
-<p>When slain, you will be revived with 75% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 5 minutes.</p>
-<p><em>(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)</em></p>
-</blockquote>
-<hr />
-</div>
-</div>
-</div>
-<div id="forces-of-hell" class="section level1">
-<h1>Forces of Hell</h1>
-<blockquote>
-<p><strong>All Enemies, that use Mana</strong> now have updated maximum mana and mana regeneration values</p>
-</blockquote>
+<li><strong>Goretusk</strong>: Changed the warning SFX for <em>Spike Barrage</em>
 <ul>
-<li><strong>Chimaera</strong> (Frozen Citadel):
-<ul>
-<li><strong>Flame Strike</strong> no longer causes it to run away</li>
-<li><strong>Flame Strike</strong> now only damages enemies</li>
+<li>It no longer delineates the complete segment but the direction of <em>Spike Barrage</em> is visually more consistent</li>
 </ul></li>
-<li><strong>Ladon</strong> (Savage Jungle):
+<li><strong>Treant</strong> (Thea): Increased to level 15 from 9</li>
+<li><strong>Uranus</strong>: Added pathing blockers to prevent <strong>Uranus</strong> from landing in the water</li>
+<li><strong>Ladon</strong>: Now drops a +3 Stat Tome (previously +2)</li>
+<li><strong>Hydra</strong>: Now drops a +3 Stat Tome (previously +2)</li>
+<li><strong>Chillhand</strong>:
 <ul>
-<li>No longer levels up</li>
-<li><strong>Fiery Grasp</strong> now deals 1800 magical damage over three seconds and <strong>stuns</strong> for the duration. <em>(Previously: deals 1500 magical damage over five seconds and “Entangles” for the duration)</em></li>
-<li><strong>Fiery Grasp</strong> costs 1500 mana</li>
+<li>Now drops a +3 Stat Tome (previously +2)</li>
+<li>Chillhand’s death now spawns the correct snow tile — This addresses the brick tile bug in Reforged mode</li>
 </ul></li>
-<li><strong>Cyclops</strong> (Eastern Highlands) no longer has the <strong>War Stomp</strong> ability</li>
-<li><strong>Gaea</strong> (Base Form): Her Thunder Clap ability no longer distorts terrain and stuns no longer lock her out from casting it</li>
-</ul>
-<hr />
+<li><strong>Chimaera</strong>: Now drops a +3 Stat Tome (previously +2)</li>
+<li><strong>Cerberus</strong>: Now drops a +3 Stat Tome (previously +2)</li>
+<li><strong>The Furies</strong>: Now drops a +3 Stat Tome (previously +2)</li>
+<li><strong>Persephone</strong>:
 <ul>
-<li><strong>War Stomp</strong> (Boss/Mob Abilities)
-<ul>
-<li>No longer momentarily distorts the terrain</li>
-<li>The following bosses/mobs now use <strong>War Stomp</strong> reactively: Destroyers; Gethos the Mighty; Furbolg Chieftain; Hulking Centaur Berzerkers; and Centaur Warlords</li>
-<li>The following bosses/mobs now have a 2 second cast time for <strong>War Stomp</strong>: Destroyer; Gethos the Mighty; Furbolg Chieftain; Hulking Centaur Berzerker; and Centaur Warlord</li>
-</ul></li>
-<li><strong>Ice Ring</strong> (Ice Giant):
-<ul>
-<li>No longer momentarily distorts the terrain</li>
-<li>Uses the Ensnare debuff instead of an unique debuff to prevent movement for heroes</li>
-<li>Now stuns targets that are not heroes, e.g. Goldsmith summons</li>
-<li>Updated FX</li>
-</ul></li>
-<li><strong>Hillcrusher</strong> drops more appropriate items:
-<ol style="list-style-type: decimal">
-<li>Full Plate <em>(previously Boots of Agility)</em></li>
-<li>Mighty Axe <em>(previously Gauntlets of Might)</em></li>
-<li>Medallion of Greater Stamina <em>(previously Robes of Enlightenment)</em></li>
-<li>Heart Blade</li>
-<li>Myrmidon Scale</li>
-<li>Eris’ Golden Apple of Discord</li>
-<li>Bone Wreath</li>
-</ol></li>
-</ul>
-<hr />
-<ul>
-<li><strong>Ker</strong> (Hades): Buffed Attack Damage to 15000 <em>(from 8000)</em></li>
-<li><strong>Fallen Priest</strong> (Persephone):
-<ul>
-<li>Buffed HP to 10000 <em>(from 7100)</em></li>
-<li>Buffed Heal amount to 3000 <em>(from 1500)</em></li>
+<li>Now drops a +4 Stat Tome (previously +2)</li>
+<li>Minor improvements to ensure Persephone’s adds’ AI run more consistently</li>
 </ul></li>
 </ul>
-<div id="hyperion" class="section level2">
-<h2>Hyperion</h2>
+<div id="hades" class="section level2">
+<h2>Hades</h2>
 <ul>
-<li>Auto-Attack splash damage can no longer hit items</li>
-<li>The <strong>Thunder Bolt</strong> spell no longer forces you to attack Hyperion if you are idling too close to him</li>
-<li>The <strong>Fireball</strong> spell no longer forces you to attack Hyperion if you are idling too close to him. Also, updated the missile SFX to make it more distinct</li>
+<li>Increased base health to 1488000 (from 1088555)</li>
+<li>Increased base damage to 24399 (from 21950)</li>
+<li>Increased base health regeneration to 970 (from 495)</li>
+<li>Lowered the Critical Strike modifier to 5x (from 7x)</li>
+<li>The level threshold to attack the Gates of Hell is now set to Level 150
+<ul>
+<li>This matches <strong>Lord of Hell</strong>’s (Serius) Quest Level</li>
+</ul></li>
+<li>Reduced the channelling time of <strong>Flame Wave</strong> to 1.5 seconds (from 3 seconds)</li>
+<li>Increased the passive Strength bonus per kill to 250 (from 150)
+<ul>
+<li>Note that this also apply to <strong>Ker</strong> kills</li>
+</ul></li>
+<li>Pink is now able to trigger the summoning of <strong>Hades</strong> at the appropriate damage threshold</li>
+<li>Improved the reliability of the Gates of Hell threshold trigger</li>
 </ul>
+</div>
+<div id="neleus" class="section level2">
+<h2>Neleus</h2>
+<div id="statistics" class="section level3">
+<h3>Statistics</h3>
+<ul>
+<li>Health: 45000</li>
+<li>Health Regeneration: 150 per second</li>
+<li>500 Auto-Attack Damage with melee range</li>
+<li>30 Fortified Armor</li>
+</ul>
+</div>
+<div id="bladestorm" class="section level3">
+<h3>Bladestorm</h3>
+<blockquote>
+<p><strong>Neleus</strong> targets an enemy hero, then he begins to <strong>Bladestorm</strong> towards the target shortly after. <strong>Bladestorm</strong> prevents <strong>Neleus</strong> from attacking and deals a total of 6250 physical damage in a 225 AoE around him. Lasts for 5 seconds.</p>
+</blockquote>
+</div>
+<div id="other" class="section level3">
+<h3>Other</h3>
+<p>Defeating <strong>Neleus</strong> drops one of the following items:</p>
+<ul>
+<li>Battleforge Blade</li>
+<li>Battleforge Plate</li>
+<li>Deathbringer’s Blade</li>
+<li>Deathbringer’s Mail</li>
+<li>Divine Blade</li>
+<li>Divine Plate</li>
+<li>Khaos Blade</li>
+<li>Khaos Shield</li>
+<li>Night Blade</li>
+<li>Night Cloak</li>
+<li>Veteran’s Breastplate</li>
+<li>Veteran’s Greatsword</li>
+</ul>
+<p><strong>Neleus</strong>’ health periodically resets if no player hero is in the arena for more than 3 seconds</p>
+</div>
+</div>
+<div id="pelias" class="section level2">
+<h2>Pelias</h2>
+<div id="statistics-1" class="section level3">
+<h3>Statistics</h3>
+<ul>
+<li>Health: 40000</li>
+<li>Health Regeneration: 120 per second</li>
+<li>500 Auto-Attack Damage with 1000 range</li>
+<li>30 Runic Armor</li>
+</ul>
+</div>
+<div id="runic-charge" class="section level3">
+<h3>Runic Charge</h3>
+<blockquote>
+<p>A series of runes appear on the ground. After two seconds, Pelias begins channeling <strong>Runic Charge</strong> for three seconds, sending lightning through those runes. Any enemy caught by the <strong>Runic Charge</strong> takes 4000 magical damage.</p>
+</blockquote>
+</div>
+<div id="chain-lightning" class="section level3">
+<h3>Chain Lightning</h3>
+<blockquote>
+<p>Every third <strong>Runic Charge</strong> is replaced with a <strong>Chain Lightning</strong> cast. It deals 2750 magical damage to a random target within a 850 AoE, and bounces up to four times. Each bounce deals 10% less damage and the new target must be within 300 AoE of the current target.</p>
+</blockquote>
+</div>
+<div id="other-1" class="section level3">
+<h3>Other</h3>
+<p>Defeating <strong>Pelias</strong> drops one of the following items:</p>
+<ul>
+<li>Robes of Power</li>
+<li>Staff of Power</li>
+<li>Hide of the Wild</li>
+<li>Staff of the Wild</li>
+<li>Ironwood Bow</li>
+<li>Ironwood Chestplate</li>
+<li>Robe of Shadows</li>
+<li>Staff of Shadows</li>
+<li>Robes of Light</li>
+<li>Staff of Light</li>
+<li>Stone Axe</li>
+<li>Stone Shield</li>
+</ul>
+<p><strong>Pelias</strong>’ health periodically resets if no player hero is in the arena for more than 3 seconds</p>
+</div>
 </div>
 <div id="sphinx" class="section level2">
 <h2>Sphinx</h2>
+<blockquote>
+<p>A brand new bossfight aimed strictly for Level 135 Heroes. <strong>Sphinx</strong> begins with her <em>Active Form</em> abilities. Also, she now spawns an “inactive” encounter after slaying <strong>Gaea</strong>. A Level 135 Hero or greater can activate the encounter afterwards. There are no changes to <strong>Sphinx</strong>’s loot-table.</p>
+</blockquote>
+<div id="statistics-2" class="section level3">
+<h3>Statistics</h3>
 <ul>
-<li><strong>Entomb</strong>: Costs 3000 mana</li>
-<li><strong>Twinblades</strong> have a leash range of 1000 units (previously 1500 units)</li>
-<li><strong>Vengeful Gaze</strong> uses a fixed value to calculate the FX’s Z-angle</li>
-<li>Added two rare drop calls, for a total of three rare drop calls.</li>
+<li>Health: 1250000</li>
+<li>Health Regeneration: 2500 per second</li>
+<li>0 to all Hero Stats</li>
+<li>30000 Auto-Attack Damage with 250 range</li>
+<li>3s Attack Cooldown</li>
+<li>50 Divine Armor</li>
+<li>250 Movement Speed</li>
 </ul>
+</div>
+<div id="boulderfall-active-form" class="section level3">
+<h3>Boulderfall (Active Form):</h3>
+<blockquote>
+<p>Three boulders to fall from the sky and land after 2 seconds. Units within range are dealt 10000 physical damage and are knocked back.</p>
+</blockquote>
+</div>
+<div id="chronowave-active-form" class="section level3">
+<h3>Chronowave (Active Form):</h3>
+<blockquote>
+<p>A second after the boulders drop, <strong>Sphinx</strong> will begin to channel <strong>Chronowave</strong>. Once <strong>Sphinx</strong> starts channelling it, she cannot be interrupted. After 3 seconds, a force field expands from <strong>Sphinx</strong>’s current origin which damages units caught by it for 15000 magical damage, as well as applying <em>Stifle III</em> and <em>Hinder III</em> on them for 5 seconds. However, if <strong>Chronowave</strong> hits a boulder, it is destroyed and grants nearby units protection from <strong>Chronowave</strong>. Once <strong>Chronowave</strong> expands, <strong>Sphinx</strong> cannot make any further actions for the next 5 seconds.</p>
+</blockquote>
+</div>
+<div id="entomb-active-form" class="section level3">
+<h3>Entomb (Active Form):</h3>
+<blockquote>
+<p><strong>Sphinx</strong> entombs a random hero after recovering from channelling <strong>Chronowave</strong>. The tomb prevents the target from naturally moving out of it and takes 15 hits to be destroyed. However, the entombed hero dies after 10 seconds without being freed. <strong>Sphinx</strong> heals herself for 20% of the entombed hero’s current health and spawns a <strong>Fallen Hero</strong>.</p>
+</blockquote>
+</div>
+<div id="transition-to-passive-form-active-form" class="section level3">
+<h3>Transition to Passive Form (Active Form):</h3>
+<blockquote>
+<p>If <strong>Sphinx</strong> drops below 50% HP, the next <strong>Chronowave</strong> launched transitions her to <em>Passive Form</em>, and summons the <strong>Twinblades</strong>. She cannot attack nor cast any of her <em>Active Form</em> spells. She remains in <em>Passive Form</em> for about next 300 seconds.</p>
+</blockquote>
+</div>
+<div id="timeless-body-passive-form" class="section level3">
+<h3>Timeless Body (Passive Form):</h3>
+<blockquote>
+<p><strong>Sphinx</strong> takes 50% less damage.</p>
+</blockquote>
+</div>
+<div id="vengeful-gaze-passive-form" class="section level3">
+<h3>Vengeful Gaze (Passive Form):</h3>
+<blockquote>
+<p><strong>Sphinx</strong> selects a hero and takes two seconds to face it’s current location while charging a beam. She fires the beam after two seconds, dealing 15000 magical damage units caught by the beam.</p>
+</blockquote>
+</div>
+<div id="meteor-post-passive-form" class="section level3">
+<h3>Meteor (Post-Passive Form):</h3>
+<blockquote>
+<p>After <strong>Timeless Body</strong>, casts <strong>Meteor</strong> instead of <strong>Boulderfall &amp; Chronowave</strong>. Then, every third <strong>Boulderfall &amp; Chronowave</strong> is replaced with <strong>Meteor</strong>. <strong>Sphinx</strong> channels <strong>Meteor</strong> to a random location within a 200-600 range for 3 seconds. On impact, <strong>Meteor</strong> deals 5000 + <em>X</em> physical damage to all enemies within a 400 AoE and <em>Y</em> physical damage to all enemies outside of the AoE but inside the <strong>Barbaric</strong> Plains. <em>X</em> = 10000 / <em>N</em>, where <em>N</em> is the number of enemies within 400 units of Meteor. <em>Y</em> = 5000 if <em>N</em> &gt; 0, otherwise <em>Y</em> = 15000.</p>
+</blockquote>
+</div>
+<div id="fallen-hero" class="section level3">
+<h3>Fallen Hero:</h3>
+<blockquote>
+<ul>
+<li>Health: 20 x “Entombed hero’s STR” + 15 x “Entombed hero’s INT”</li>
+<li>Health Regeneration: 625 per second</li>
+<li>“Entombed hero’s STR” + “2 x Entombed hero’s AGI” + “Entombed hero’s INT base damage” (+2d50) Auto-Attack Damage with melee range</li>
+<li>1.4s Attack Cooldown</li>
+<li>“Entombed hero’s current armor value” Hero Armor</li>
+<li>290 Movement Speed</li>
+<li>Leashed to <strong>Sphinx</strong></li>
+</ul>
+</blockquote>
+</div>
+<div id="twinblades" class="section level3">
+<h3>Twinblades:</h3>
+<blockquote>
+<ul>
+<li>Health: 625000 — This is shared health pool between both <strong>Twinblades</strong>. This means damaging one also “damages” the other.</li>
+<li>Health Regeneration: 625 per second</li>
+<li>2498 (+2d50) Auto-Attack Damage with melee range</li>
+<li>1.4s Attack Cooldown</li>
+<li>88 Fortified // Runic armor</li>
+<li>290 Movement Speed</li>
+<li>If both <strong>Twinblades</strong> are within close proximity of each other, they gain 75% damage reduction, 2500 bonus attack damage, and 50% increased attack speed</li>
+<li>Dispatching the <strong>Twinblades</strong> pre-emptively ends <strong>Sphinx</strong>’s <strong>Passive Form</strong></li>
+<li>Leashed to <strong>Sphinx</strong></li>
+</ul>
+</blockquote>
+</div>
 </div>
 </div>
 
