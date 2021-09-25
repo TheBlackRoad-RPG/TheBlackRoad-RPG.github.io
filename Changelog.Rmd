@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39a --- Changelog"
+title: "The Black Road RPG v1.39b --- Changelog"
 author: "Unholy0ne and Alteisen (Av3n)"
 output: 
   html_document: 
@@ -12,863 +12,110 @@ output:
     css: TBR.css
 ---
 
+<!-- Foreword -->
+
 # General
-
-* The **death penalty** is now 25% of your current level's experience and 10% of your gold *(previously you lost gold based on your hero's level)*
-* **Banks** can only store items if you meet their level requirements
-* When a player disconnects: Unique crafting components are now dropped at Athens *(previously the hero's or backpack's location)*
-* Loading (with 1.39's system) and repicking now drops unique crafting components at Athens *(previously the hero's or backpack's location)*
-
----
-
-* The **Titans**, **Hades** and **Hydra** now use a **weighted probability** to decide which class item to drop. The weighting is calculated from what classes are currently in-game.
-* The majority of bosses now have 0 STR, AGI and INT stats but were buffed accordingly, so balance has not changed.
-* Recoded the majority of how mobs and bosses drop items. The map now attempts to drop items around the dying unit
-
----
-
-* Removed the redundant hotkey prefixes
-* Updated the **Break**'s FX and icon
-* Updated the icons used for learning professions
-* Updated the **Minotaurs**' aesthetic to be consistent (**Corinth** and **Minotaur Burrows**)
-* **Taunt** can be dispelled now, and no longer issues a focused attack order
-
----
-
-* **Active Quests** multiboard no longer makes itself visible at the three-minute mark
-* **Adventuring Party** multiboard:
-  * Redesigned to to use icons to convey information
-  * Integrated death timers into the multiboard
-  * The width of the multiboard depends on the longest player name
-* Adjusted the shadows for SD graphics
-* Modernised the information presented in TBR tips
-* Updated `UITile05` and `UITile06` to be invisible
-* Updated the **Backpack** and **Gold UI** tooltips
-
----
-
-* **Town teleporters** now feature fixed button positions for each town teleport. Also, there is now an icon stating which zone a teleporter is located in
-* **Retrain Strength/Agility/Intelligence**: Costs 10000 gold *(previously 20000 gold)*
-* **Purchase Crafting Materials**: Updated the icon and costs 1000 gold *(previously 1500 gold)*
-* **Purchase Lots of Crafting Materials**: Updated the icon and costs 10000 gold *(previously 15000 gold)*
-* **Trireme**:
-  * Reduced the sight range to 600 *(from 1400 / 800)*
-  * Increased the number of purchasable **Triremes** to 8 *(previously 5)*
-
-## Bug Fixes
-
-* **Saving now properly soul-bind items**
-* Whenever a single source of XP levels you up multiple times: You are now granted the correct number of stat points
-* **Banks** are no longer removed prior to loading or repicking your hero
-* v1.38 (and older) loads no longer cause your bank to drop it's items
-* **Wizard's Respite** (Metalsmith Theron) components can no longer stack with **Wizard's Respite**
-* **Crystal Helm** (Cyclops) now drops properly due to the component clause if **Regal Helm of Sparkling Crystal** (Metalsmith Arcadios) is equipped
-
----
-
-* **Draco**'s healing ability no longer locks him out of other actions *(Eastern Highlands)*
-* Adjusted a spawn point in **Northern Trail** so mobs are no longer stuck on spawn
-* Combining **Olympian Gemstone Fragments** no longer locks out other players from doing so for 0.25s
-* Removed the vision bubble created at the map's origin
-
----
-
-* Killing **Sphinx** while **Entomb** is active now properly cleans up the restricted movement objects
-* **Sphinx** can no longer cast **Chronowave** and **Meteor** simultaneously
-* **Hyperion**'s EMP animation wind-up FX renders above the ground again
-* Recoded how **Neleus**' and **Pelias**' permanent-corpses are generated
-* **Medusa** (Caverns of Dread) now resets once all heroes have left the arena ~ This prevents a bug where the bossfight no longer functions as intended under certain conditions
-* **The Frozen Citadel**:
-  * Mob pack spawning uses the "inside" flag to determine whether a spawn should be visible on spawn
-  * It's gate now uses a dedicated timer
-
-## Chat Commands
-
-* `-load` / `-l` now registers the filename if you load from a text file **other than** *"_lastsave.txt"*. If you then use `-save` / `-s` without specifying a filename, it will save the code to the previously registered filename instead of defaulting to the class-name.
-* Removed the `-sc` chat command as this has been superseded by the updated `-s` chat command.
-* the flag for the `-text` command now saves
-* `-text` now "mutes" more on-screen text than before
-* `-stab` / `-slap` / `-smack` now work on yourself when there is only one-player in the game
-* Updated the information printed by the `-help` chat command
-* `-ui` now shows ally icons directly below your hero icon
-* `-ui` no longer plays a sound FX. This might unintentionally remove sound FX used elsewhere for UI feedback
-* Added the `-ui on` and `-ui off` chat commands. This shows all ally icons and hides all ally icons respectively.
 
 ## Quests
 
-* **Minotaur Beasts** (Tethol) renamed to **Minotaur Fel-Bloods** and updated the icon
-* **Flesh Hunters** (Seryo) now rewards a **Blood Ruby**
-* **Striking the Heart** (Gaiana) no longer rewards a **Blood Ruby**
-
-----
-
-# Minotaur Burrows
-
-> The smallest and earliest dungeon the players can attempt. This dungeon won't be as punishing for a group of three players of any class as a result.
->
->  **Dungeon Mechanic**---Rune of Restoration: Successfully clearing a mob pack drops a Rune of Restoration. This heals nearby heroes for 2500 HP and 1500 MP over 3 seconds, however, it can be dispelled if the hero takes damage.
-
-## Mobs
-
-### Hallowed Offspring
-
-#### Statistics
-
-* HP: 17500
-* HP Regen: 52,5
-* MP: -
-* Armor Type: Heavy
-* Armor Value: 15
-* Damage: 450–540 (2.5s cooldown)
-* EXP & Gold Modifier: x3
-
-#### Charge
-
-> *Cast Range*: 600
->
-> The **Offspring** locks-in a random hero’s location after 2 seconds, then **Charges** towards it for 2 seconds. If the **Offspring** hits a unit or a wall, it deals 2500 magical damage in a 250 AoE and applies **Stifle II** which reduces movement speed by 35% for seconds. Charging into a wall drops a boulder where the **Offspring** charged from, and in the vicinity of a nearby target in a 750 AoE. Each boulder on impact deals 1000 physical damage and knockbacks units in a 150 AoE.
->
-> *Cooldown*: 12 seconds
-
-### Minotaur Warlock
-
-#### Statistics
-
-* HP: 7500
-* HP Regen: 22,5
-* MP: 3000
-* MP Regen: 15
-* Armor Type: Light
-* Armor Value: 10
-* Damage: 160–190 (1.8s cooldown; 600 Range)
-* EXP & Gold Modifier: x3
-
-#### Fireball
-
-> *Cast Range*: 700
-> 
-> *Mana Cost*: 500
->
-> *Channel Time*: 1 second
->
-> The **Warlock** lobs a fireball at target unit's location. It deals 1333 magical damage and **stuns** enemies for 2 seconds in a 150 AoE on impact.
->
-> *Cooldown*: 6 seconds
-
-### Minotaur Mystic
-
-#### Statistics
-
-* HP: 7000
-* HP Regen: 21
-* MP: 3000
-* MP Regen: 15
-* Armor Type: Light
-* Armor Value: 10
-* Damage: 120–150 (1.8s cooldown; 600 Range)
-* EXP & Gold Modifier: x3
-
-#### Healing Ward
-
-> *Mana Cost*: 600
->
-The **Mystic** summons a healing ward which is immune to spells and take three auto-attacks to break. It heals 3% Maximum Health per second in a 600 AoE until destroyed. Lasts for 18 seconds.
->
-> *Cooldown*: 12 seconds
-
-## Bosses
-
-### Manslayer & Lightbane
-
-#### Manslayer---Statistics
-
-* HP: 25000
-* HP Regen: 75
-* MP: -
-* Armor Type: Fortified
-* Armor Value: 15
-* Damage: 500–500 (2.5s cooldown)
-* STR/AGI/INT: 0
-
-#### Frenzy
-
-> When **Lightbane** dies, **Manslayer** will fall into a **Frenzy** which increases it's attack speed and damage by 100%.
-
-#### Deafening Bellow
-
-> **Manslayer** takes 2 seconds to face a random hero's location then bellows at it, dealing 2500 physical damage as well as displacing all enemies in a 850 unit line (200 unit width). **Manslayer** will prioritise targeting heroes nearby **Lightbane**'s totems.
->
-> *Cooldown*: 20 seconds
-
-#### Cleaving Attack
-
-> 50% of the damage dealt with auto-attacks is dealt as true damage in a 250 AoE of the attacked unit
-
-#### Lightbane---Statistics
-
-* HP: 15000
-* HP Regen: 45
-* MP: 5000
-* MP Regen: 25
-* Armor Type: Runic
-* Armor Value: 10
-* Damage: 350–350 (2s cooldown, 400 Range)
-* STR/AGI/INT: 0
-
-#### Frenzy
-
-> When **Manslayer** dies, **Lightbane** will fall into a **Frenzy** which increases it's attack speed and damage by 100%.
-
-#### Totemic Call
-
-> *Mana Cost*: 400
->
-> **Lightbane** summons one of the following totems in a cyclical fashion. These Totems are immune to spells and take eight auto-attacks to break.
->
-> * **Blazing Totem**: Every 13 seconds it locks onto a hero furthest away from it, then sequentially casts **Fireball** (*Minotaur Warlock*) three times on the targeted hero within 750 units, if the targeted hero runs out of the 750 AoE, it will just fire it at max distance towards that direction.
-> * **Lightning Totem**: Every 10 seconds it attempts to stun a random enemy within the arena for 2 seconds. Also, it deals 500 magical damage per second within a 200 AoE.
-> * **Soothing Totem**: Every 15 seconds it prepares to cast Healing Wave, focusing on whoever has the lowest amount of health. It heals 3750 health to that target, then heals the other for 2625 health if it is within 400 units of the target.
-> 
-> The starting point of the totem spawn cycle is randomised.
-> 
-> *Cooldown*: 15 seconds
-
-### Hallowed One
-
-#### Statistics
-
-* HP: 45000
-* HP Regen: 135
-* MP: -
-* Armor Type: Divine
-* Armor Value: 20
-* Damage: 450–450 (2.5s cooldown)
-* STR/AGI/INT: 0
-
-#### Furious Charge
-
-> The **Hallowed One** locks-in a random hero’s location after 2 seconds, then furiously charges towards it for 2 seconds. If the **Hallowed One** hits a unit, the edge of its arena or a wall, it deals 2500 magical damage in a 250 AoE and applies **Stifle II** which reduces movement speed by 35% for seconds. Then, it repeats this three more times where each subsequent **Furious Charge**'s lock-in period is reduced by 0.45 seconds.
->
-> Charging into the edge of its arena or a wall drops two boulders in the vicinity of one-two targets in the arena. Each boulder on impact deals 1000 physical damage and knockbacks units in a 150 AoE.
->
-> *Cooldown*: 25 seconds
-
-#### Rally
-
-> The **Hallowed One** summons an empowered **Minotaur Warlock** to the arena every 20 seconds. Their auto-attacks inflict **Stifle I**, slowing the target's movement speed by 20% for 2 seconds, and cast **Fireball** which prioritises heroes who are not nearby the **Hallowed One**.
-
 ## Items
 
-### Tooth of the Hallowed One
-
-> Increases Agility by 45 and grants you 10% chance to cause triple damage on each attack.
->
-> Requires Level 45
->
-> *(Previously increases Agility by 15, Attack Damage by 35 and Attack Speed by 15%. Requires Level 25)*
-
-### Hide of the Hallowed One
-
-> Increases Armor by 30 and Health Regeneration by 30 Health per second.
->
-> Requires Level 45
->
-> *(Previously Horn of the Hallowed One: Increases Strength, Agility and Intelligence by 10, Attack Damage by 30 and Attack Speed by 15%. Requires Level 25 Cannot be used by Warrior Classes)*
-
-### Great Axe of the Minotaur Chieftain
-
-> Increases Strength by 45 and Attack Damage by 70.
->
-> Requires Level 45
->
-> *(Previously increases Strength by 15 and Attack Damage by 60. Requires Level 25)*
-
-### Minotauri Focus
-
-> Increases Intelligence by 45 and Spell Power by 350.
->
-> Requires Level 45
->
-> Cannot be used by Warrior Classes
->
-> *(Previously High Shaman's Staff: Increases Intelligence by 15, Mana Regeneration by 25% and Spell Power by 250. Requires Level 25 Cannot be used by Warrior Classes)*
-
 ---
 
-# The Fools' Mausoleum
+# Backpack
+
+## Skins
+
+## Skills
+Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking Trainer Yegor when you're nearby will allow you to purchase backpack skills. All backpacks start with the Town Portal skill by default.
+
+### Town Portal
+#### Cost: 0g / 150,000g / 225,000g
+> Teleports the user to Athens.  
+> *Cooldown:* 7 / 4 / 1 minutes  
+
+### Swiftness
+#### Cost: 75,000g / 150,000g / 225,000g
+> Increases your Movement Speed by 50%. Lasts 3 minutes.  
+> *Cooldown:* 7 / 4 / 1 minutes
+
+### Gift of Life
+#### Cost: 75,000g / 150,000g / 225,000g
+> Restores health equal to 15% / 25% / 35% of your hero's Maximum Health (capped at 7500 / 12500 / 17500).  
+> *Cooldown:* 7 / 5 / 3 minutes
+
+### Gift of Magic
+#### Cost: 75,000g / 150,000g / 225,000g
+> Restores mana equal to 15% / 25% / 35% of your hero's Maximum Mana (capped at 3750 / 6250 / 8750).  
+> *Cooldown:* 7 / 5 / 3 minutes
+
+### Gift of Endurance
+#### Cost: 75,000g / 150,000g / 225,000g
+> Increases your Strength by 25 / 50 /75.  
+> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
+
+### Gift of Dexterity
+#### Cost: 75,000g / 150,000g / 225,000g
+> Increases your Agility by 25 / 50 /75.  
+> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
+
+### Gift of Wisdom
+#### Cost: 75,000g / 150,000g / 225,000g
+> Increases your Intelligence by 25 / 50 /75.  
+> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
+
+### Vigorous
+#### Cost: 250,000g
+> Increases your base Maximum Health by 5%.  
+> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
+
+### Ferocity
+#### Cost: 250,000g
+> Increases your base Attack Damage by 5%.  
+> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
+
+### Aptitude
+#### Cost: 250,000g
+> Increases your base Spell Power by 5%.  
+> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
+
+### Toughness
+#### Cost: 250,000g
+> Increases your base Armor by 5%.  
+> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
 
-> A dungeon aimed at a party of three around Lv. 135.
->
-> **Dungeon Mechanics**
->
-> * **Energy Field**: Mobs spawn as you approach the energy fields
-> * **Rune Puzzle**: After defeating all mobs within *The Fool's Mausoleum*---Runes are revealed throughout the dungeon and the rune puzzle room is unlocked. The room contains eight of crystal lamps. You need to activate these lamps in sequence of the runes from the entrance towards the room. If there is an error in the sequence: The hero that made this input suffers 35% Maximum Health damage and receives a debuff which prevents lamp interaction for 10 seconds and resets the puzzle.
->   * If the puzzle is solved, Midas' room opens up.
->   * If the puzzle is failed 5 times, the gate to Midas' room is weakend, and Midas' is granted an additional mechanic.
-
-## Mobs
-
-### Animated Armor
-
-#### Statistics
-
-* HP: 75000
-* HP Regen: 255
-* MP: -
-* Damage: 2000-2200 (2s cooldown; 100 Range)
-* Armor Type: Fortified
-* Armor Value: 60
-* EXP & Gold Modifier: x3
-
-#### Incite Torment
-
-> *Cast Time*: 1.5 seconds
->
-> The **Animated Armor** shrieks and deals 3000 physical damage to enemies within 275 units of the **Armor**. All enemies hit by **Incite Torment** are also **Taunted** for 3 seconds. 
->
-> *Cooldown*: 10 seconds
-
-### Cursed Weapon
-
-#### Statistics
-
-* HP: 30000
-* HP Regen: 150
-* MP: 5000
-* MP Regen: 0
-* Damage: 3500-3850 (1.6s cooldown; 75 Range)
-* Armor Type: Runic
-* Armor Value: 40
-* EXP & Gold Modifier: x3
-
-#### Parry
-
-> The **Cursed Weapon** has a 20% chance to reduce incoming auto-attack damage by 50%.
-
-#### Fury
-
-> Each auto-attack restores 1000 mana. If it hasn't attacked within 2 seconds, it begins to lose 500 mana per second.
-
-#### Crazed Vortex
-
-> *Cast Range*: 500
->
-> *Mana Cost*: 3750
->
-> The **Cursed Weapon** flies rapidly towards an enemy then begins to spin in place for 6 seconds. While spinning, the **Cursed Weapon** deals 2500 physical damage per second in an 100 AoE.
-
-### Lich
-
-#### Statistics
-
-* HP: 45000
-* HP Regen: 120
-* MP: 16251
-* MP Regen: 81.255
-* Damage: 2500-2750 (2s cooldown; 600 Range)
-* Armor Type: Runic
-* Armor Value: 30
-* EXP & Gold Modifier: x3
-
-#### Entropy Sphere
-
-> *Cast Range*: 600
->
-> *Mana Cost*: 6000
->
-> *Cast Time*: 3 seconds
->
-> Grants an ally a shield that absorbs up to 45000 damage (pre-mitigation) for 6 seconds. If the shield is not broken, then at the end of its duration: The shield explodes dealing magical damage equal to the shield's remaining health to enemies within 300 units.
-> 
-> *Cooldown*: 10 seconds
-
-## Midas
-
-### Statistics
-
-> Three rare drop chances, and drops a +4 stat tome
-
-* HP: 637500
-* HP Regen: 1275
-* MP: -
-* Armor Type: Divine
-* Armor Value: 45
-* Damage: 17500-17500 (2.35s cooldown; 150 range)
-* STR/AGI/INT: 0
-
-### Leap
-
-> **Midas** focuses on a player's location, then leaps there after 1.25 seconds. On impact, he deals 5000 physical damage in an 150 AoE and stunning affected targets for 3 seconds.
-This mechanic repeats twice for a total of three times
-
-### Cleave
-
-> **Midas** leaps to the centre of the throne room. Shortly after, he begins channeling a mighty swing in a random direction. After 2 seconds, **Midas** cleaves all enemies in front of him (within a 120° triangle). Enemies hit by the cleave suffer 2500 physical damage and are inflicted with **Grievous Wound**, causing them to take 5000 physical damage over 10 seconds. **Grievous Wound** can stack up to 4 times.
-This mechanic repeats 3 times for a total of 4 times.
-
-### Living Braziers---Fire Elementals
-
-#### Statistics
-
-* HP: 150000
-* HP Regen: 300
-* MP: 18000
-* MP Regen: -100
-* Armor Type: Runic
-* Armor Value: 30
-
-> A **Fire Elemental** spawns at each brazier as soon as you engage **Midas**. Each **Fire Elemental** emits three flames which rotate around it. A target hit by these flames is inflicted with **Burning**, which causes it to suffer 7500 magical damage over 3.5 seconds. Furthermore, they teleport to a location near a player every 10 seconds. Once a **Fire Elemental** runs out of mana, it dies and does not respawn. 
-
-### Alerted!
-
-> **Activation Condition:** Fail the **Rune Puzzle** 5 times.
-> 
-> Two glaive traps are activated in the throne room that travel on a fixed route. On contact with a glaive, the hero suffers 500 physical damage and is pushed backwards for approximately 0.5s.
-
-## Items
-
-### Pactolus' Essence
-
-Dropped by **Lich** (1%), **Animated Armor** (1%), and **Cursed Weapon** (1%)
-
-> *Within the crystallized exterior lingers a mysterious liquid gently swirling in perpetual motion.*
->
-> Requires Level 120
-
-### Ring of Regret
-
-Dropped by **Midas**
-
-> Increases Strength by 120. Grants **Magic Protection**.
-> 
-> **Magic Protection**---Reduces magical damage taken depending on Maximum Health.
->
-> • ≤ 24999: Reduces magical damage by 4000.
->
-> • ≤ 49999: Reduces magical damage by 2000.
->
-> • ≥ 50000: Reduces magical damage by 1000.
-> 
-> Requires Level 120
->
-> Khaos Champion, Barbarian, Warlord, Assassin only
-
-### Midas' Band of Vigor
-
-Forged by **Metalsmith Galen**. Requires Pactolus' Essence, Ring of Regret, Gem of the West, 2 Stones of Heaven, 1 Blood Ruby and 2 Ruby Hearts
-
-> Increases Strength by 160. Grants **Magic Protection** and **Mighty Leap**.
-> 
-> **Magic Protection**---Reduces magical damage taken depending on Maximum Health.
->
-> • ≤ 24999: Reduces magical damage by 4000.
->
-> • ≤ 49999: Reduces magical damage by 2000.
->
-> • ≥ 50000: Reduces magical damage by 1000.
-> 
-> **Mighty Leap**---Leap to a target area within range to inflict 5000 physical damage in a 150 AoE and **Stun** affected targets for 3 seconds upon impact. 
-> Cooldown: 60 seconds
-> 
-> Requires Level 135
->
-> Khaos Champion, Barbarian, Warlord, Assassin only
-  
-### Silenus' Talisman
-
-Dropped by **Midas**
-
-> Increases Intelligence and Strength by 60. Grants a 10% chance to **Enfeeble I** a spell target for 8 seconds, reducing its Magic Resistance by 5%. (Auto-cast spells cannot trigger this effect if the target is already **Enfeebled**).
->
-> Requires Level 120
->
-> Cannot be used by Warrior classes
-
-### Midas' Pendant of Wisdom
-
-Forged by **Metalsmith Galen**. Requires Pactolus' Essence, Silenus' Talisman, Gem of the West, 2 Stones of Heaven, 1 Blood Ruby and 2 Ruby Hearts
-
-> Increases Intelligence by 60 and Strength by 100. Grants **Blaze o' Glory** and 10% chance to **Enfeeble I** a spell target for 8 seconds, reducing its Magic Resistance by 5%. (Auto-cast spells cannot trigger this effect if the target is already **Enfeebled**).
-> 
-> **Blaze o' Glory**---Summon a Fire Elemental to a target location that emits flames in a 164 AoE. Effected targets suffer from **Burning** which inflicts 7500 magical damage over 3.5 seconds.
-> Cooldown: 60 seconds
-> 
-> Requires Level 135
->
-> Cannot be used by Warrior classes
-
----
-
-# Classes
-
-* Updated **Ranger**'s sound set to Archer *(previously Sylvanas)*
-* Updated **Barbarian**'s Cast Point to 0.3s *(from 0.5s)*
-* Updated **Magician**'s Cast Backswing to 0.75s *(from 2.4s)*
-* Updated **Guardian of Nature**'s Cast Backswing and Cast Point to 0.5s and 0.3s respectively *(from 1.67s and 0.5s)*
-* **Star Dust** (Ranger): Changed the buff application method
-
----
-
-* **Earth Shock** (Guardian of Nature):
-  * No longer momentarily distorts the terrain
-  * Updated the missile and on-hit FXs
-  * The missile now applies both the base and bonus damage---Rather than a delayed AoE at the target point to deal the bonus damage
-* **Stone Set** (Guardian of Nature): FX scale is now consistent
-
----
-
-* **Decimate** (Khaos Champion): Increased the *Z*-height of the FX
-* **Unbridled Khaos** (Khaos Champion): The bonus auto-attack now triggers on-hit effects *(as intended)*
-
----
-
-* **Frost Chain** (Magician): Now a proper point target spell
-* **Flame Spire** (Magician): No longer applies a missing debuff object
-* **Power Set** (Magician): Tidied up the tooltip
-
----
-
-* **Winds of War** (Warlord): **Counter** no longer cancels **Winds of War**'s animation
-* **Bum Rush** (Warlord): The **Warlord** is now placed 32 units before the target, rather than on the target
-
----
-
-## Cleric
-
-> Received an updated kit
-
-* Adjusted the auto-attack missile launch origin
-* Updated sound set to Sorceress *(previously Naisha)*
-
----
-
-#### (Q) Holy Light
-
-> *Mana Cost*: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
-> 
-> Heals 200 / 400 / 800 / 1200 / 2000 / 3000 / 4500 / 7500 (+Spell Healing) health to an ally, or deals 100 / 200 / 400 / 600 / 1000 / 1500 / 2250 / 3750 (+0.75 Spell Damage) magical damage to an enemy. **Holy Light** is 30% more effective if the target is on **Hallowed Ground**.
-> 
-> *Cooldown*: 4.5 seconds.
-
-#### (W) Hallowed Ground
-
-> *Mana Cost*: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200
-> 
-> Sanctifies a 275 AoE zone which heals for a total of 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+Spell Healing) health over 12 seconds. The zone  also deals a total of 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+Spell Damage) magical damage over 12 seconds.
->
-> A valid target can only be affected by one instance of **Hallowed Ground**.
->
-> *Cooldown*: 12 seconds.
-
-#### (E) Shield of Faith
-
-> *Mana Cost*: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800
-> 
-> Envelop an ally in a sphere of divine protection, granting it Stun Immunity and 10 / 12.5 / 15 / 17.5 / 20 / 22.5 / 25 / 30% damage reduction for 15 seconds.
->
-> *Cooldown*: 20 seconds.
-
-#### (R) Transcendence
-
-> *Mana Cost*: 100 / 200 / 350 / 550 / 800 / 1100 / 1600 / 2400
->
-> Your auto-attacks are imbued with divine wrath, dealing an additional 0.15 / 0.2 / 0.25 / 0.3 / 0.35/ 0.4 / 0.45 / 0.5 Spell Damage magical damage. They also heal allies within a 650 AoE for the total damage inflicted.
-> Lasts for 10 seconds.
->
-> *Cooldown*: 30 seconds.
-
-#### (F) Rebirth
-
-> *Mana Cost*: 150 / 300 / 500 / 800 / 1200 / 1650 / 2400 / 3600
->
-> Channels the divine for 3 seconds to revive an allied hero with 25% / 30% / 35% / 40% / 45% / 50% / 60% / 75% Maximum Health and Mana upon completion. This also refunds 50% / 55% / 60% / 65% / 70% / 75% / 85% / 100% of their death penalty.
->
-> *Passive*—When slain while **Rebirth** is off cooldown: **Rebirth** revives you after 3 seconds and goes on cooldown for 180 seconds instead. (This does not cost mana). This effect does not take priority over other sources of auto-revival.
->
-> *Cooldown*: 60 seconds.
-
-#### Rebate
-
-> You receive a 50% rebate when purchasing **Books of Skill Increase** and the **Journeyman's Field Guide**. 
-
-#### Light Regalia
-
-> Activating **Transcendence** reduces your other spells' cooldowns by 10 seconds.
-
----
-
-## Druid
-
-* Updated the Cast Backswing and Cast Point to 0.75s and 0.3s respectively *(from 1.17s and 0.5s)*
-
----
-
-#### Rejuvenation
-
-* Heals  300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 over 10 seconds *(previously 280 / 560 / 980 / 1600 / 2350 / 3200 / 5000 / 7500)*.
-* If a unit has multiple instances of Rejuvenation, it heals using the instance with the highest heal. All **Rejuvenation** instances on the same target do have their own individual durations.
-* Updated the buff FX and icon
-
-#### Lightning Strike 
-
-* No longer momentarily distorts the terrain
-* Slows all enemies for 6 seconds *(previously, select enemy types were slowed for 3 seconds instead)*
-* Casting **Lightning Strike** now uses the *Druid*'s spell animation
-
-#### Reclamation 
-
-* Replaces __Mind Blast__
-
-> *Mana Cost*: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
->
-> Convoke nearby spirits to purify the target, dealing 100 /200 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+ Spell Damage) magical damage over 3 seconds. The spirits also siphon 50 / 100 / 150 / 350 / 700 / 1500 / 2850 / 5000 mana from the target and transfer it to the **Druid** over this period.
-> 
-> *Cooldown*: 10 seconds
-
-#### Maelstrom
-
-* Nerfed the total damage dealt to 600 / 1200 / 1800 / 3000 / 4200 / 6600 / 10000 / 15000 *(previously 1000 / 2000 / 4500 / 6000 / 7500 / 10000 / 12500 / 17500)*
-* Lasts for 2.5 seconds for all levels *(previously Level 8 lasted for 3 seconds)*
-* Updated FX
-
----
-
-## Spartan Warrior
-
-* **Phalanx**: The ability which grants the Evasion bonus is now has it's icon hidden from the command card. Note that the tooltip never stated the correct value
-* **Dispatch**: Removed the offending white-space character from the Level 6 tooltip
-
----
-
-#### Throw Javelin
-
-* No longer momentarily distorts the terrain
-* Updated the missile and on-hit FXs
-* The missile now applies both the base and bonus damage---Rather than a delayed AoE at the target point to deal the bonus damage
-
-#### Charge
-
-* The **Spartan Warrior** is now placed 32 units before the target, rather than on the target
-* The position of the **Spartan Warrior** is updated once the missile approximately reaches the target
-* No longer momentarily distorts the terrain
-* Issues an attack command once you complete **Charge**
-  
----
-
-## Temple Guardian
-
-* **Gift of the Gods**: Removed the delay for applying the Spell Healing bonus
-* **Pray**: Refactored the code to address the rare bug where **Gift of Athena** could permanently reduce Spell Power
-* **Mark of Artemis**: The bonus damage no longer counts as an additional auto-attack
-* **Divine Set** (Temple Guardian): FX renders its SD asset in Reforged graphics
-
----
-
-#### Fire of Apollo
-
-* Updated FX
-* Fixed a bug where it dealt double it's base damage
-* No longer momentarily distorts the terrain
-  
-#### Hestia's Touch
-
-* No longer has a unique debuff for each spell level
-
-> *Mana Cost*: 30 / 60 / 95 / 135 / 180 / 230 / 285 / 350
->
-> Marks an enemy to be touched by the virgin goddess Hestia for 10 seconds *(previously 30 seconds)*. Whenever they are auto-attacked, they lose 3 / 5 / 7 / 10 / 15 / 30 / 60 / 100 mana and the attacker restores up to 1.5 / 2.5 / 3.5 / 5 / 7.5 / 15 / 30 / 50 mana. If the attacker is a Warrior Class, they restore up to 0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 2.5 / 3 mana instead.
-> 
-> *(Previously: Target loses 8 / 16 / 24 / 32 / 40 / 48 / 56 / 64 mana each auto-attack. Attackers restore 8 / 16 / 24 / 32 / 40 / 48 / 56 / 64 mana. If the attacker is a Warrior Class, restore 0.5 / 1 / 1.5 / 2 / 2.5 / 3 / 3 / 3 mana)*
-> 
-> Cooldown: 15 seconds *(previously 1 second)*.
-
----
-
-# Items
-
-* Added grid hotkeys to all purchasable items found in **Athens**
-* Adjusted the walking animation to be smoother with an active **Speed Scroll**
-* **Scroll of Town Portal** now attempts to break channelling spells prior to teleporting, for example **Winds of War** (Warlord)
-* **Olympian Gemstone**: Creating one now fades in-and-out the white mask over 3 seconds and only shows for the player creating it
-* **Tome of Stat Increase +8** (Book Shop): Costs 250000 gold *(previously 300000 gold)*
-
----
-
-* Many of the consumables now have updated item models
-* Cardinal direction gems now have distinct item models
-* **Armor Plates** variants have updated item and buff icons
-* **Elixir of Spell Power** variants has an updated buff icon
-* **Wild Regalia** has an updated icon
-
----
-
-* **Summoning Stone**: Hades' summoning stone now states it drops from Hades
-* **Scroll of Regeneration** (Scrolls): Now states the correct amount of charges
-* **Thundering Hammer of Zeus** (Olympian Relic): Now states the hidden Chain Lightning on attack effect
-* **Ring of the Frozen Citadel** (Metalsmith Theron): 
-  * Now states that it cannot be used by Warrior Classes
-  * Clarified the potency of the slow effect
-
-## Crafting/Forging
-
-* Olympian Relic forging icons are now their item icon instead of a generic hammer icon
-* **Ares Bloodthristy Spear** (Olympian Relic): Now requires **Heartstone Ring of Strength** instead of **Heartstone Ring of Agility**
-* **Towering Shield of Athena** (Olympian Relic): Now prints the correct error message if you have missing components
-* **Medallion of Greater Stamina** (Goldsmith): Increased crafting material cost to 250 *(previously 100)*
-* **Pendant of Greater Mana** (Goldsmith): Increased crafting material cost to 250 *(previously 100)*
-* **Adamantium Tower** (Armorsmith): **Shield of the Living Bone** is correctly printed as an Orange item in the craft information prompt
-* **Full Plate** (Armorsmith):
-  * Removed the two **Meteoric Iron** and two **Tempered Steel** requirement
-  * Increased crafting material cost to 300 *(previously 200)*
-
----
-
-## Dragonscale Rings
-
-#### Red Dragonscale Ring
-
-> Increases Strength by 50, Agility by 25 and Intelligence by 1 and grants 15% Magic Resistance. 
->
-> Requires Level 55
->
-> *(Previously increases Strength by 50, Agility by 25 and Intelligence by 1 and grants 25% Magic Resistance.)*
-
-#### Green Dragonscale Ring
-
-> Increases Strength by 25, Agility by 40 and Intelligence by 10 and grants 15% Magic Resistance.
->
-> Requires Level 55
->
-> Cannot be used by Warrior Classes
->
-> *(Previously increases Strength, Agility and Intelligence by 30. Also grants 25% Magic Resistance.)*
-
-#### White Dragonscale Ring
-
-> Increases Strength by 25 and Intelligence by 50 and grants 15% Magic Resistance.
->
-> Requires Level 55
->
-> Cannot be used by Warrior Classes
->
-> *(Previously increases Intelligence by 40 and Strength and Agility by 25. Also reduces damage taken from spells by 25%.)*
-  
-#### Red Dragonscale Ring of Addiction
-
-> Increases Strength by 130, Agility by 105, Intelligence by 3 and grants 20% Magic Resistance.
->
-> Requires Level 115
->
-> *(Previously increases Strength by 130, Agility by 105, Intelligence by 3 and grants 25% Magic Resistance.)*
-  
-#### Green Dragonscale Ring of Addiction
-
-> Increases Strength by 85, Agility by 100 and Intelligence by 70 and grants 20% Magic Resistance.
->
-> Requires Level 115
->
-> Cannot be used by Warrior Classes
->
-> *(Previously increases Strength, Agility and Intelligence by 90 and grants 25% Magic Resistance.)*
-
-#### White Dragonscale Ring of Addiction
-
-> Increases Strength by 85, Agility by 60 and Intelligence by 110 and grants 20% Magic Resistance.
->
-> Requires Level 115
->
-> Cannot be used by Warrior Classes
->
-> *(Previously increases Strength and Agility by 85, Intelligence by 100 and grants 25% Magic Resistance.)*
-
----
-
-## Auto-Revival Items
-
-#### Ankh of Reincarnation
-
-* Crafting an **Ankh** no longer imposes a timer which prevents crafting of subsequent **Ankh**s
-
-> When slain, you will be revived with 25% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 10 minutes.
-> 
-> *(Previously: Revives with 1500 Health.)*
-  
-#### Draught of the Phoenix
-
-> When slain, you will be revived with 50% of your Maximum Health and Maximum Mana after 5 seconds; Also, subsequent item effects cannot revive you for 10 minutes.
->
-> *(Previously: Revives with 100% of your Maximum Health and Maximum Mana)*
-
-#### Chestguard of Aphrodite's Champion
-
-> When slain, you will be revived with 50% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 10 minutes.
->
-> *(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)*
-
-#### Plates of the Ancients
-
-> When slain, you will be revived with 75% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 7 minutes.
->
-> *(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)*
-
-#### Immortal Armor of Hephaestus
-
-> When slain, you will be revived with 75% of your Maximum Health and Maximum Mana after 7 seconds; Also, subsequent item effects cannot revive you for 5 minutes.
->
-> *(Previously: Revives with 100% of your Maximum Health and Maximum Mana; Cooldown: 5 minutes)*
-  
 ---
 
 # Forces of Hell
 
-> **All Enemies, that use Mana** now have updated maximum mana and mana regeneration values
-
-* **Chimaera** (Frozen Citadel):
-  * **Flame Strike** no longer causes it to run away
-  * **Flame Strike** now only damages enemies
-* **Ladon** (Savage Jungle):
-  * No longer levels up
-  * **Fiery Grasp** now deals 1800 magical damage over three seconds and **stuns** for the duration. *(Previously: deals 1500 magical damage over five seconds and "Entangles" for the duration)*
-  * **Fiery Grasp** costs 1500 mana
-* **Cyclops** (Eastern Highlands) no longer has the **War Stomp** ability
-* **Gaea** (Base Form): Her Thunder Clap ability no longer distorts terrain and stuns no longer lock her out from casting it
-  
 ---
 
-* **War Stomp** (Boss/Mob Abilities)
-  * No longer momentarily distorts the terrain
-  * The following bosses/mobs now use **War Stomp** reactively: Destroyers; Gethos the Mighty; Furbolg Chieftain; Hulking Centaur Berzerkers; and Centaur Warlords
-  * The following bosses/mobs now have a 2 second cast time for **War Stomp**: Destroyer; Gethos the Mighty; Furbolg Chieftain; Hulking Centaur Berzerker; and Centaur Warlord
-* **Ice Ring** (Ice Giant): 
-  * No longer momentarily distorts the terrain
-  * Uses the Ensnare debuff instead of an unique debuff to prevent movement for heroes
-  * Now stuns targets that are not heroes, e.g. Goldsmith summons
-  * Updated FX
-* **Hillcrusher** drops more appropriate items:
-  1. Full Plate *(previously Boots of Agility)*
-  2. Mighty Axe *(previously Gauntlets of Might)*
-  3. Medallion of Greater Stamina *(previously Robes of Enlightenment)*
-  4. Heart Blade
-  5. Myrmidon Scale
-  6. Eris' Golden Apple of Discord
-  7. Bone Wreath
+# Assassin
 
 ---
-  
-* **Ker** (Hades): Buffed Attack Damage to 15000 *(from 8000)*
-* **Fallen Priest** (Persephone): 
-  * Buffed HP to 10000 *(from 7100)*
-  * Buffed Heal amount to 3000 *(from 1500)*
 
-## Hyperion
+# Cleric
 
-* Auto-Attack splash damage can no longer hit items
-* The **Thunder Bolt** spell no longer forces you to attack Hyperion if you are idling too close to him
-* The **Fireball** spell no longer forces you to attack Hyperion if you are idling too close to him. Also, updated the missile SFX to make it more distinct
-  
-## Sphinx
+---
 
-* **Entomb**: Costs 3000 mana
-* **Twinblades** have a leash range of 1000 units (previously 1500 units)
-* **Vengeful Gaze** uses a fixed value to calculate the FX's Z-angle
-* Added two rare drop calls, for a total of three rare drop calls.
+# Druid
+
+---
+
+# Guardian of Nature
+
+---
+
+# Khaos Champion
+
+---
+
+# Warlock
+
+---
+
+# Temple Guardian
+
+---
+
+# Bug Fixes
