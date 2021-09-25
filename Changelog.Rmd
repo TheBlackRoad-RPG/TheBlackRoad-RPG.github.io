@@ -20,14 +20,35 @@ output:
 
 ## Items
 
+- Removed *Journeyman's Field Guide*. All classes now start with the ability granted by it instead
+
 ---
 
 # Backpack
 
-## Skins
+## Skins 
+The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin for 50,000g you to purchase from *Beastmaster Damien*!
+
+### Proven Adventurer
+> Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin
+
+### I am Legend
+> Reach level 200. This unlocks the Nether Dragon skin
+
+### Weighed, measured and found wanting
+> Dispatch 30 Minibosses. This unlocks the Chimaera skin
+
+### Orphan-Maker
+> Acquire a rare *Bronze Dragon Egg* from Ladon and bring it to *Damien*. This unlocks the Bronze Dragon skin
+
+### You picked the wrong house, fool
+> Take care of *Uninvited Guests* 100 times. This unlocks the Frost Wyrm skin
+
+### Full House
+> Defeat *Hyperion* while all family members are still alive. This unlocks the Phoenix skin
 
 ## Skills
-Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking Trainer Yegor when you're nearby will allow you to purchase backpack skills. All backpacks start with the Town Portal skill by default.
+Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking *Trainer Yegor* when you are nearby will allow you to purchase backpack skills. All backpacks start with the *Town Portal* skill by default.
 
 ### Town Portal
 #### Cost: 0g / 150,000g / 225,000g
@@ -110,11 +131,30 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 ---
 
-# Warlock
+# Ranger
 
 ---
 
 # Temple Guardian
+
+---
+
+# Warlock
+
+### Sadism
+> You gain a *Sadism* stack whenever a *Tormented* enemy dies. Then become *Sadistic* for the next 8 seconds if you were not already.  
+>   
+> When *Sadism* naturally times out recover mana equal to the number of *Sadism* stacks:  
+>   
+> - 1 Stack: 3% Maximum Mana
+> - 2 Stacks: 6% Maximum Mana
+> - 3 Stacks: 12% Maximum Mana
+> - 4 Stacks: 24% Maximum Mana
+> - 5 Stacks: 36% Maximum Mana
+>   
+> You can have up to five stacks active at one time.  
+>   
+> Cooldown: 12 seconds.
 
 ---
 
