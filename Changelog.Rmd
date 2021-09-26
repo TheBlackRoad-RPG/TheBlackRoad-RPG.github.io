@@ -16,6 +16,8 @@ output:
 
 # General
 
+- **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
+
 ## Quests
 
 ## Items
@@ -27,7 +29,7 @@ output:
 # Backpack
 
 ## Skins 
-The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin for 50,000g you to purchase from *Beastmaster Damien*!
+The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin that you can purchase for 50,000g from *Beastmaster Damien*!
 
 ### Proven Adventurer
 > Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin
@@ -113,6 +115,18 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Assassin
 
+- Updated the model's attachment points
+
+### Lethal Poison
+
+- Deals 3.0 Agility physical damage over 4 seconds (previously over 6 seconds)
+- A FX is used to denote a *Lethal Poison* proc (previously floating text)
+
+### Night Set
+
+- Each bounce of *Dancing Dagger* now applies *Lethal Poison* (previously a 15% chance to proc)
+- Enhances *Lethal Poison* to deal 5.0 Agility physical damage over 4 seconds (previously improved *Lethal Poison* chance to proc to 15% from 5%)
+
 ---
 
 # Cleric
@@ -141,6 +155,12 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Warlock
 
+### Twisted Font
+Adjusted the mana shield conversion rate to 1.35 / 1.3 / 1.25 / 1.2 / 1.15 / 1.1 / 1.05 / 1 (from 1/.75 / 1.65 / 1.55 / 1.45 / 1.35 / 1.25 / 1.15 / 1)
+
+### Death Wave
+Standardised the base damage for Level 2 to 150 (from 100)
+
 ### Sadism
 > You gain a *Sadism* stack whenever a *Tormented* enemy dies. Then become *Sadistic* for the next 8 seconds if you were not already.  
 >   
@@ -159,3 +179,5 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 ---
 
 # Bug Fixes
+
+- *Lethal Poison* (Assassin) now deals the correct damage per tick
