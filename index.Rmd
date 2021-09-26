@@ -12,16 +12,48 @@ output:
     css: TBR.css
 ---
 
-<!-- Foreword -->
-
 # General
 
+You can no longer load **1.38d2** codes. See Hive Workshop download page for a link to **1.39a2** if you need to convert a **1.38d2** code
+
+Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a backup of the **1.39a2** code is saved into a subfolder called `1.39a2 backups`
+
+---
+
 - **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
+- Adjusted the pathing map along **Eretria**'s shoreline
 - Updated the *Field Equipment* shop (Incursion Point).  See [Items] for more details
+- Implemented grid hotkeys to the rest of the game objects that can support the functionality
 
 ## Quests
 
+#### A Rare Specimen - *Beastmaster Damien*
+> Triggers when the *Bronze Dragon Egg* is dropped by *Ladon*  
+> Quest Level 85  
+> Rewards 1,000xp  
+> Report to *Damien*  
+> **Reward:** Unlocks the Orphan-Maker achievement
+
+##### Gone with the Wind - *Attis*
+> Triggers when you talk to *Attis* in **Estallah**  
+> Quest Level 130  
+> Rewards 1,000xp  
+> Find the "pirate"  
+> **Reward:** Reveals *Dolios* at the entrance of **The Fools' Mausoleum**
+
+##### History's Teachings - *Dolios*
+> Triggers when you talk to *Dolios*  
+> Quest Level 130  
+> Rewards 12,500g and 25,000xp  
+> Find five artifacts and a *Pactolus' Essence* in **The Fools' Mausoleum**  
+> **Reward:** *Dolios* drops a *Pactolus Essence*
+
 ## Items
+
+- *Book of Skill Increase* (Books): Rebuilt the UI
+- *Book of Single Skill Reset* (Seryo) replaces *Book of All Skills Reset*. *Book of Single Skill Reset* costs 5000 crafting materials
+
+---
 
 - *Leather Armor* (Field Equipment): No longer increases Agility by 3
 - *Potion of Minor Regeneration* (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3
@@ -44,7 +76,7 @@ The save/load system now tracks six unique achievements for each hero. Completin
 ### Proven Adventurer
 > Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin
 
-#### Notes
+#### Note
 Any quest color-tagged with orange does not count towards **Proven Adventurer**
 
 ### I am Legend
@@ -53,13 +85,26 @@ Any quest color-tagged with orange does not count towards **Proven Adventurer**
 ### Weighed, measured and found wanting
 > Dispatch 30 Minibosses. This unlocks the Chimaera skin
 
-#### Notes
-The Minibosses are: Nukacha; Mance Swiftsword; Rokthul; Forest Terror; Manticore; Goretusk; Rockwatcher Feldblade; Bullroarer the Twisted; Gethos the Mighty; The Dark Knight; Lucas Farblaze; The Black Knight; Heiros Darkfiend; Nasty Big Pointy Teeth!!
+#### Note
+The Minibosses are:
+<small>
+
+  |  
+------------- | -------------
+Nukacha | Mance Swiftsword
+Rokthul | Forest Terror
+Manticore | Goretusk
+Rockwatcher Feldblade | Bullroarer the Twisted
+Gethos the Mighty | The Dark Knight
+Lucas Farblaze | The Black Knight
+Heiros Darkfiend | Nasty Big Pointy Teeth!!
+
+</small>
 
 ### Orphan-Maker
 > Acquire a rare *Bronze Dragon Egg* from Ladon and bring it to *Damien*. This unlocks the Bronze Dragon skin
 
-#### Notes
+#### Note
 This is tied to activating the *A Rare Specimen* (Beastmaster Damien) quest
 
 ### You picked the wrong house, fool
@@ -132,6 +177,10 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Forces of Hell
 
+## Ladon
+
+- Now has a 3% chance to drop a *Bronze Dragon Egg*
+
 ---
 
 # Assassin
@@ -163,15 +212,68 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 - Now only heals for 50% of the total damage dealt (previously 100%)
 
 ### Rebirth
-It now attempts to close the submenu if: (1) you die with it open; (2) the channel is interrupted by crowd-control; (3) whenever your target is revived (by another Cleric and/or the natural respawn)
+It now attempts to close the submenu if:
+
+1. You die with it open
+2. The channel is interrupted by crowd-control
+3. Whenever your target is revived (by another Cleric and/or the natural respawn)
 
 ---
 
 # Druid
 
+- Updated the icon to match the model
+- Updated the model's attachment points
+- Removed the lightning FX attached to the model
+
+### Rejuvenation
+
+### Nature's Wrath
+
+### Thunderbolt
+#### Replaces Lightning Strike
+
+### Maelstrom
+
+### Manifest Aspect
+
+#### Aspect of the Dryad
+
+#### Aspect of the Oread
+
+#### Aspect of the Nereid
+
+### Wild Set
+ 
 ---
 
 # Guardian of Nature
+
+### Roar
+
+- Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27 / 29 / 31 / 33 / 35 / 37 / 39 / 42 %)
+- Armor bonus adjusted to 5 / 10 / 15 / 20 / 25 / 30 / 40 / 50 (from 12 / 16 / 20 / 25 / 30 / 30 / 35 / 40 / 50)
+- Mana cost increased to 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 (from 12 / 16 / 20 / 25 / 30 / 35 / 40 / 50)
+- Duration decreased to 30 seconds (from 2 minutes)
+- Cooldown increased to 15 seconds (from 5 seconds)
+
+### Earth Shock
+
+- Damage adjusted to 50 / 150 / 350 / 700 / 1250 / 2500 / 3750 / 5000 +3.0 Strength *or* +1.0 Spell Damage (from 125 / 250 / 500 / 1000 / 2000 / 4000 / 8000 / 16000 +1.0 Spell Damage)
+- Mana cost decreased to 50 / 75 / 100 / 150 / 200 / 300 / 400 / 500 (from 50 / 100 / 175 / 270 / 400 / 550 / 700 / 850)
+- No longer damages structures (an undocumented change from 1.39a2)
+
+### Cataclysm
+
+- Damage adjusted to 100 / 300 / 700 / 1400 / 2500 / 5000 / 7500 / 10000 +6.0 Strength *and* +1.2 Spell Damage (from 1000 / 2500 / 5000 / 8000 / 12000 / 20000 / 35000 / 50000 +1.0 Spell Damage)
+- Mana cost adjusted to 100 / 150 / 200 / 300 / 450 / 600 / 900 / 1200 (from 150 / 275 / 425 / 600 / 850 / 1000 / 1000 / 1000)
+- Cooldown adjusted to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 30 seconds)
+- No longer deals magical damage over time to enemies hit by it
+
+### Tremor
+
+- Now only has a single skill level
+- Damage adjusted to 1.5 Strength and 0.35 Spell Damage (from 225 / 450 / 700 / 1000 / 1350 / 1600 / 2000 / 2300 +0.5 Spell Damage)
 
 ---
 
@@ -213,6 +315,13 @@ No longer damages structures (an undocumented change from 1.39a2)
 
 # Temple Guardian
 
+### Mark of Artemis
+
+- Adjusted the effect to deal an additional 10 / 20 / 30 / 50 / 70 / 90 / 120 / 150 physical damage (previously 5 / 10 / 15 / 20 / 25 / 30 / 35 / 40 and increases by 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 for each proc)
+- Recoded such that proc occurs when auto-attack damage is registered (previously at the beginning of the attack animation)
+- Duration decreased to 15 seconds (from 45 seconds)
+- Cooldown increased to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 1 second)
+
 ---
 
 # Warlock
@@ -243,6 +352,14 @@ Standardised the base damage for Level 2 to 150 (from 100)
 # Bug Fixes
 
 - The *Noirepyh* scarecrow now has the correct armor value
+- **The Fools' Mausoleum** mobs now have their intended levels
+	- *Cursed Weapon* is Level 120 (previously Level 100)
+	- *Animated Armor* is Level 125 (previously Level 100)
+	- *Lich* is Level 130 (previously Level 100)
+
+---
+
+- *Green Dragonscale Ring of Addiction* (Metalsmith Zoticus) now grants the correct stats
 
 ---
 

@@ -241,18 +241,57 @@ div.tocify {
 </div>
 
 
-<!-- Foreword -->
 <div id="general" class="section level1">
 <h1>General</h1>
+<p>You can no longer load <strong>1.38d2</strong> codes. See Hive Workshop download page for a link to <strong>1.39a2</strong> if you need to convert a <strong>1.38d2</strong> code</p>
+<p>Whenever you load a <strong>1.39a2</strong> code, it is converted to a <strong>1.39b</strong> code and a backup of the <strong>1.39a2</strong> code is saved into a subfolder called <code>1.39a2 backups</code></p>
+<hr />
 <ul>
 <li><strong>The Fools’ Mausoleum</strong> puzzle attempts decreased to 3 (from 5)</li>
+<li>Adjusted the pathing map along <strong>Eretria</strong>’s shoreline</li>
 <li>Updated the <em>Field Equipment</em> shop (Incursion Point). See <a href="#items">Items</a> for more details</li>
+<li>Implemented grid hotkeys to the rest of the game objects that can support the functionality</li>
 </ul>
 <div id="quests" class="section level2">
 <h2>Quests</h2>
+<div id="a-rare-specimen---beastmaster-damien" class="section level4">
+<h4>A Rare Specimen - <em>Beastmaster Damien</em></h4>
+<blockquote>
+<p>Triggers when the <em>Bronze Dragon Egg</em> is dropped by <em>Ladon</em><br />
+Quest Level 85<br />
+Rewards 1,000xp<br />
+Report to <em>Damien</em><br />
+<strong>Reward:</strong> Unlocks the Orphan-Maker achievement</p>
+</blockquote>
+<div id="gone-with-the-wind---attis" class="section level5">
+<h5>Gone with the Wind - <em>Attis</em></h5>
+<blockquote>
+<p>Triggers when you talk to <em>Attis</em> in <strong>Estallah</strong><br />
+Quest Level 130<br />
+Rewards 1,000xp<br />
+Find the “pirate”<br />
+<strong>Reward:</strong> Reveals <em>Dolios</em> at the entrance of <strong>The Fools’ Mausoleum</strong></p>
+</blockquote>
+</div>
+<div id="historys-teachings---dolios" class="section level5">
+<h5>History’s Teachings - <em>Dolios</em></h5>
+<blockquote>
+<p>Triggers when you talk to <em>Dolios</em><br />
+Quest Level 130<br />
+Rewards 12,500g and 25,000xp<br />
+Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ Mausoleum</strong><br />
+<strong>Reward:</strong> <em>Dolios</em> drops a <em>Pactolus Essence</em></p>
+</blockquote>
+</div>
+</div>
 </div>
 <div id="items" class="section level2">
 <h2>Items</h2>
+<ul>
+<li><em>Book of Skill Increase</em> (Books): Rebuilt the UI</li>
+<li><em>Book of Single Skill Reset</em> (Seryo) replaces <em>Book of All Skills Reset</em>. <em>Book of Single Skill Reset</em> costs 5000 crafting materials</li>
+</ul>
+<hr />
 <ul>
 <li><em>Leather Armor</em> (Field Equipment): No longer increases Agility by 3</li>
 <li><em>Potion of Minor Regeneration</em> (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3</li>
@@ -278,8 +317,8 @@ div.tocify {
 <blockquote>
 <p>Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin</p>
 </blockquote>
-<div id="notes" class="section level4">
-<h4>Notes</h4>
+<div id="note" class="section level4">
+<h4>Note</h4>
 <p>Any quest color-tagged with orange does not count towards <strong>Proven Adventurer</strong></p>
 </div>
 </div>
@@ -294,9 +333,42 @@ div.tocify {
 <blockquote>
 <p>Dispatch 30 Minibosses. This unlocks the Chimaera skin</p>
 </blockquote>
-<div id="notes-1" class="section level4">
-<h4>Notes</h4>
-<p>The Minibosses are: Nukacha; Mance Swiftsword; Rokthul; Forest Terror; Manticore; Goretusk; Rockwatcher Feldblade; Bullroarer the Twisted; Gethos the Mighty; The Dark Knight; Lucas Farblaze; The Black Knight; Heiros Darkfiend; Nasty Big Pointy Teeth!!</p>
+<div id="note-1" class="section level4">
+<h4>Note</h4>
+<p>The Minibosses are: <small></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Nukacha</td>
+<td>Mance Swiftsword</td>
+</tr>
+<tr class="even">
+<td>Rokthul</td>
+<td>Forest Terror</td>
+</tr>
+<tr class="odd">
+<td>Manticore</td>
+<td>Goretusk</td>
+</tr>
+<tr class="even">
+<td>Rockwatcher Feldblade</td>
+<td>Bullroarer the Twisted</td>
+</tr>
+<tr class="odd">
+<td>Gethos the Mighty</td>
+<td>The Dark Knight</td>
+</tr>
+<tr class="even">
+<td>Lucas Farblaze</td>
+<td>The Black Knight</td>
+</tr>
+<tr class="odd">
+<td>Heiros Darkfiend</td>
+<td>Nasty Big Pointy Teeth!!</td>
+</tr>
+</tbody>
+</table>
+<p></small></p>
 </div>
 </div>
 <div id="orphan-maker" class="section level3">
@@ -304,8 +376,8 @@ div.tocify {
 <blockquote>
 <p>Acquire a rare <em>Bronze Dragon Egg</em> from Ladon and bring it to <em>Damien</em>. This unlocks the Bronze Dragon skin</p>
 </blockquote>
-<div id="notes-2" class="section level4">
-<h4>Notes</h4>
+<div id="note-2" class="section level4">
+<h4>Note</h4>
 <p>This is tied to activating the <em>A Rare Specimen</em> (Beastmaster Damien) quest</p>
 </div>
 </div>
@@ -441,7 +513,13 @@ div.tocify {
 </div>
 <div id="forces-of-hell" class="section level1">
 <h1>Forces of Hell</h1>
+<div id="ladon" class="section level2">
+<h2>Ladon</h2>
+<ul>
+<li>Now has a 3% chance to drop a <em>Bronze Dragon Egg</em></li>
+</ul>
 <hr />
+</div>
 </div>
 <div id="assassin" class="section level1">
 <h1>Assassin</h1>
@@ -481,17 +559,91 @@ div.tocify {
 </div>
 <div id="rebirth" class="section level3">
 <h3>Rebirth</h3>
-<p>It now attempts to close the submenu if: (1) you die with it open; (2) the channel is interrupted by crowd-control; (3) whenever your target is revived (by another Cleric and/or the natural respawn)</p>
+<p>It now attempts to close the submenu if:</p>
+<ol style="list-style-type: decimal">
+<li>You die with it open</li>
+<li>The channel is interrupted by crowd-control</li>
+<li>Whenever your target is revived (by another Cleric and/or the natural respawn)</li>
+</ol>
 <hr />
 </div>
 </div>
 <div id="druid" class="section level1">
 <h1>Druid</h1>
+<ul>
+<li>Updated the icon to match the model</li>
+<li>Updated the model’s attachment points</li>
+<li>Removed the lightning FX attached to the model</li>
+</ul>
+<div id="rejuvenation" class="section level3">
+<h3>Rejuvenation</h3>
+</div>
+<div id="natures-wrath" class="section level3">
+<h3>Nature’s Wrath</h3>
+</div>
+<div id="thunderbolt" class="section level3">
+<h3>Thunderbolt</h3>
+<div id="replaces-lightning-strike" class="section level4">
+<h4>Replaces Lightning Strike</h4>
+</div>
+</div>
+<div id="maelstrom" class="section level3">
+<h3>Maelstrom</h3>
+</div>
+<div id="manifest-aspect" class="section level3">
+<h3>Manifest Aspect</h3>
+<div id="aspect-of-the-dryad" class="section level4">
+<h4>Aspect of the Dryad</h4>
+</div>
+<div id="aspect-of-the-oread" class="section level4">
+<h4>Aspect of the Oread</h4>
+</div>
+<div id="aspect-of-the-nereid" class="section level4">
+<h4>Aspect of the Nereid</h4>
+</div>
+</div>
+<div id="wild-set" class="section level3">
+<h3>Wild Set</h3>
 <hr />
+</div>
 </div>
 <div id="guardian-of-nature" class="section level1">
 <h1>Guardian of Nature</h1>
+<div id="roar" class="section level3">
+<h3>Roar</h3>
+<ul>
+<li>Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27 / 29 / 31 / 33 / 35 / 37 / 39 / 42 %)</li>
+<li>Armor bonus adjusted to 5 / 10 / 15 / 20 / 25 / 30 / 40 / 50 (from 12 / 16 / 20 / 25 / 30 / 30 / 35 / 40 / 50)</li>
+<li>Mana cost increased to 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 (from 12 / 16 / 20 / 25 / 30 / 35 / 40 / 50)</li>
+<li>Duration decreased to 30 seconds (from 2 minutes)</li>
+<li>Cooldown increased to 15 seconds (from 5 seconds)</li>
+</ul>
+</div>
+<div id="earth-shock" class="section level3">
+<h3>Earth Shock</h3>
+<ul>
+<li>Damage adjusted to 50 / 150 / 350 / 700 / 1250 / 2500 / 3750 / 5000 +3.0 Strength <em>or</em> +1.0 Spell Damage (from 125 / 250 / 500 / 1000 / 2000 / 4000 / 8000 / 16000 +1.0 Spell Damage)</li>
+<li>Mana cost decreased to 50 / 75 / 100 / 150 / 200 / 300 / 400 / 500 (from 50 / 100 / 175 / 270 / 400 / 550 / 700 / 850)</li>
+<li>No longer damages structures (an undocumented change from 1.39a2)</li>
+</ul>
+</div>
+<div id="cataclysm" class="section level3">
+<h3>Cataclysm</h3>
+<ul>
+<li>Damage adjusted to 100 / 300 / 700 / 1400 / 2500 / 5000 / 7500 / 10000 +6.0 Strength <em>and</em> +1.2 Spell Damage (from 1000 / 2500 / 5000 / 8000 / 12000 / 20000 / 35000 / 50000 +1.0 Spell Damage)</li>
+<li>Mana cost adjusted to 100 / 150 / 200 / 300 / 450 / 600 / 900 / 1200 (from 150 / 275 / 425 / 600 / 850 / 1000 / 1000 / 1000)</li>
+<li>Cooldown adjusted to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 30 seconds)</li>
+<li>No longer deals magical damage over time to enemies hit by it</li>
+</ul>
+</div>
+<div id="tremor" class="section level3">
+<h3>Tremor</h3>
+<ul>
+<li>Now only has a single skill level</li>
+<li>Damage adjusted to 1.5 Strength and 0.35 Spell Damage (from 225 / 450 / 700 / 1000 / 1350 / 1600 / 2000 / 2300 +0.5 Spell Damage)</li>
+</ul>
 <hr />
+</div>
 </div>
 <div id="khaos-champion" class="section level1">
 <h1>Khaos Champion</h1>
@@ -539,7 +691,16 @@ div.tocify {
 </div>
 <div id="temple-guardian" class="section level1">
 <h1>Temple Guardian</h1>
+<div id="mark-of-artemis" class="section level3">
+<h3>Mark of Artemis</h3>
+<ul>
+<li>Adjusted the effect to deal an additional 10 / 20 / 30 / 50 / 70 / 90 / 120 / 150 physical damage (previously 5 / 10 / 15 / 20 / 25 / 30 / 35 / 40 and increases by 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 for each proc)</li>
+<li>Recoded such that proc occurs when auto-attack damage is registered (previously at the beginning of the attack animation)</li>
+<li>Duration decreased to 15 seconds (from 45 seconds)</li>
+<li>Cooldown increased to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 1 second)</li>
+</ul>
 <hr />
+</div>
 </div>
 <div id="warlock" class="section level1">
 <h1>Warlock</h1>
@@ -573,6 +734,16 @@ div.tocify {
 <h1>Bug Fixes</h1>
 <ul>
 <li>The <em>Noirepyh</em> scarecrow now has the correct armor value</li>
+<li><strong>The Fools’ Mausoleum</strong> mobs now have their intended levels
+<ul>
+<li><em>Cursed Weapon</em> is Level 120 (previously Level 100)</li>
+<li><em>Animated Armor</em> is Level 125 (previously Level 100)</li>
+<li><em>Lich</em> is Level 130 (previously Level 100)</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
+<li><em>Green Dragonscale Ring of Addiction</em> (Metalsmith Zoticus) now grants the correct stats</li>
 </ul>
 <hr />
 <ul>
