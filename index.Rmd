@@ -20,12 +20,32 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 
 ---
 
-- **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
-- Adjusted the pathing map along **Eretria**'s shoreline
-- Updated the *Field Equipment* shop (Incursion Point).  See [Items] for more details
+- Updated the crafting hotkey to `Tab` (previously `G`)
 - Implemented grid hotkeys to the rest of the game objects that can support the functionality
+- The macOS filepath for the CustomMapData folder in **Saving and Loading** (F9)
+- Hero selection heroes now have the *Codeless Save and Load* passive which summarises the features of the save/load system
+
+---
+
+- Updated how the map script attempts group and filter units
+- Updated the FX for the *Ensnare* generic debuff. Also, the code for applying *Ensnare* has been adjusted to cast it near-instaneously
+- When the *Taunt* generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it
+- Updated how *backpacks* use items and it now consistently stops the *backpack* from item usage when your hero is dead or stunned
+- Cleaned up the following tooltips: *Cleave* (Barbarian); *Impale* (Warlord); *Hammer of Zeus* (Temple Guardian); *Dispatch* (Spartan Warrior); and *Moon Bind* (Ranger)
+
+---
+
+- Adjusted the pathing map along **Eretria**'s shoreline
+- **Temple of Apollo** (Isle of Issus) now has feedback FX when acquiring the *Gemstone of Apollo*
+- **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
+- **The Fools' Mausoleum**  walls are doodads (and can no longer be targeted)
+- Updated the *Field Equipment* shop (Incursion Point). See [Items] for more details
+
+---
 
 ## Quests
+
+- **Striking the Heart** (Gaiana) now rewards 3,000g and 7,500xp (previously 1,500 and 5,000 respectively)
 
 #### A Rare Specimen - *Beastmaster Damien*
 > Triggers when the *Bronze Dragon Egg* is dropped by *Ladon*  
@@ -42,11 +62,13 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 > **Reward:** Reveals *Dolios* at the entrance of **The Fools' Mausoleum**
 
 ##### History's Teachings - *Dolios*
-> Triggers when you talk to *Dolios*  
+> Triggers when you talk to *Dolios* at the entrance of **The Fools' Mausoleum**    
 > Quest Level 130  
 > Rewards 12,500g and 25,000xp  
 > Find five artifacts and a *Pactolus' Essence* in **The Fools' Mausoleum**  
 > **Reward:** *Dolios* drops a *Pactolus Essence*
+
+---
 
 ## Items
 
@@ -55,6 +77,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 
 ---
 
+- *Lesser Whetstone*, *Whetstone*, *Greater Whetstone*, & *Superior Whetstone* (Weaponsmith): Now grants it's bonus as a buff
 - *Leather Armor* (Field Equipment): No longer increases Agility by 3
 - *Potion of Minor Regeneration* (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3
 - *Talisman of Minor Spell Power* (New Item @ Field Equipment): Increases Spell Power by 30. Requires Level 3. Cannot be used by Warrior Classes
@@ -68,9 +91,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 
 ---
 
-# Backpack
-
-## Skins 
+# Backpack Skins 
 The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin that you can purchase for 50,000g from *Beastmaster Damien*!
 
 ### Proven Adventurer
@@ -115,7 +136,7 @@ This is tied to activating the *A Rare Specimen* (Beastmaster Damien) quest
 
 ---
 
-## Skills
+# Backpack Skills
 Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking *Trainer Yegor* when you are nearby will allow you to purchase and rank up backpack skills. All backpacks start with the *Town Portal* skill by default.
 
 ### Town Portal
@@ -177,9 +198,7 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Forces of Hell
 
-## Ladon
-
-- Now has a 3% chance to drop a *Bronze Dragon Egg*
+- **Ladon** (Savage Jungle): Now has a 3% chance to drop a *Bronze Dragon Egg*
 
 ---
 
@@ -228,30 +247,81 @@ It now attempts to close the submenu if:
 
 ### Rejuvenation
 
+- Cooldown increased to 3 seconds (from 1 second)
+- Improved the iteration algorithm
+
+> *Aspect of the Dryad*---*Rejuvenation* dispels a *debilitating debuff*. Also if the target does not have *Rejuvenation* active, *Soothing Presence*'s persists for an additional 3 seconds after *Aspect of the Dryad* dissipates.
+
 ### Nature's Wrath
+> Mana Cost: 35 / 70 / 115 / 185 / 275 / 400 / 600 / 900  
+>   
+> Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+Spell Damage) physical damage and *Ensnare* the target to prevent it's movement for 2 / 2 / 2.5 / 2.5 / 3 / 3 / 3.5 / 3.5 seconds.  
+>  
+> *Aspect of the Oread*---*Nature's Wrath* **empowers** the next aspect manifested within 30 seconds. This reduces the aspect's enhanced spell cooldown(s) by 0.5 seconds and can stack up to *nine* times. (This effect cannot reduce a spell's cooldown below 1 second).  
+>  
+> Cooldown: 6 seconds.
 
 ### Thunderbolt
 #### Replaces Lightning Strike
+> Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750  
+>   
+> Blasts out a bolt of thunder towards a target location, dealing 150 / 300 / 500 / 800 / 1100 / 1600 / 2500 / 3750 (+Spell Damage) magical damage in a line. Enemies caught within are *thunderstruck* for 18 seconds. *Thunderstruck* enemies take 25% more damage from *Thunderbolt* and stacks up to two times.  
+>  
+> *Aspect of the Nereid*---Reduces *Thunderbolt*'s cooldown to 12 seconds. Enemies struck also have their armor reduced by 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25 for 8 seconds.  
+>  
+> Cooldown: 15 seconds.
 
 ### Maelstrom
+Cooldown increased to 21 seconds (from 18 seconds)
+
+> *Aspect of the Nereid*---Reduces *Maelstrom*'s cooldown to 18 seconds.
 
 ### Manifest Aspect
-
 #### Aspect of the Dryad
+> The *Druid* manifests the power of the Dryads which grants the following:  
+>   
+> * Grants *Soothing Presence*.  
+> * Enhances *Rejuvenation*.  
+>   
+> Lasts for 20 seconds.  
+>   
+> *Soothing Presence*---Allies within a 300 AoE restore health equal to 1% of their Maximum Health  per second, and restore mana equal to 1% of their Maximum Mana  per second.  
+>   
+> Cooldown: 60 seconds.
 
 #### Aspect of the Oread
+> The *Druid* manifests the power of the Oreads which grants the following:  
+>   
+> * Sets your auto-attack cooldown to 2 seconds.  
+> * Reduces your attack-range to 450.  
+> * Auto-attacks have a 8% chance to *Nature's Wrath*.  
+> * Enhances *Nature's Wrath*.  
+>   
+> Lasts for 20 seconds.  
+>   
+> Cooldown: 60 seconds.
 
 #### Aspect of the Nereid
+> The *Druid* manifests the power of the Nereids which grants the following:  
+>   
+> * Sets your auto-attack cooldown to 3.5 seconds.  
+> * Auto-attacks deal splash damage in a 300 AoE.  
+> * Enhances *Maelstrom* and *Thunderbolt*.  
+>   
+> Lasts for 20 seconds.  
+>   
+> Cooldown: 60 seconds.
 
 ### Wild Set
- 
+> *Reclamation* also reduces your *Manifest Aspect* cooldowns by 8 seconds
+
 ---
 
 # Guardian of Nature
 
 ### Roar
 
-- Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27 / 29 / 31 / 33 / 35 / 37 / 39 / 42 %)
+- Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27% / 29% / 31% / 33% / 35% / 37% / 39% / 42%)
 - Armor bonus adjusted to 5 / 10 / 15 / 20 / 25 / 30 / 40 / 50 (from 12 / 16 / 20 / 25 / 30 / 30 / 35 / 40 / 50)
 - Mana cost increased to 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 (from 12 / 16 / 20 / 25 / 30 / 35 / 40 / 50)
 - Duration decreased to 30 seconds (from 2 minutes)
@@ -360,6 +430,7 @@ Standardised the base damage for Level 2 to 150 (from 100)
 ---
 
 - *Green Dragonscale Ring of Addiction* (Metalsmith Zoticus) now grants the correct stats
+- *Heart Blade* (Orange Drop): No longer breaks the item "*uniqueness*" rule
 
 ---
 

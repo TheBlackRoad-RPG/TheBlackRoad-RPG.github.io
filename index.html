@@ -247,13 +247,33 @@ div.tocify {
 <p>Whenever you load a <strong>1.39a2</strong> code, it is converted to a <strong>1.39b</strong> code and a backup of the <strong>1.39a2</strong> code is saved into a subfolder called <code>1.39a2 backups</code></p>
 <hr />
 <ul>
-<li><strong>The Fools’ Mausoleum</strong> puzzle attempts decreased to 3 (from 5)</li>
-<li>Adjusted the pathing map along <strong>Eretria</strong>’s shoreline</li>
-<li>Updated the <em>Field Equipment</em> shop (Incursion Point). See <a href="#items">Items</a> for more details</li>
+<li>Updated the crafting hotkey to <code>Tab</code> (previously <code>G</code>)</li>
 <li>Implemented grid hotkeys to the rest of the game objects that can support the functionality</li>
+<li>The macOS filepath for the CustomMapData folder in <strong>Saving and Loading</strong> (F9)</li>
+<li>Hero selection heroes now have the <em>Codeless Save and Load</em> passive which summarises the features of the save/load system</li>
 </ul>
+<hr />
+<ul>
+<li>Updated how the map script attempts group and filter units</li>
+<li>Updated the FX for the <em>Ensnare</em> generic debuff. Also, the code for applying <em>Ensnare</em> has been adjusted to cast it near-instaneously</li>
+<li>When the <em>Taunt</em> generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it</li>
+<li>Updated how <em>backpacks</em> use items and it now consistently stops the <em>backpack</em> from item usage when your hero is dead or stunned</li>
+<li>Cleaned up the following tooltips: <em>Cleave</em> (Barbarian); <em>Impale</em> (Warlord); <em>Hammer of Zeus</em> (Temple Guardian); <em>Dispatch</em> (Spartan Warrior); and <em>Moon Bind</em> (Ranger)</li>
+</ul>
+<hr />
+<ul>
+<li>Adjusted the pathing map along <strong>Eretria</strong>’s shoreline</li>
+<li><strong>Temple of Apollo</strong> (Isle of Issus) now has feedback FX when acquiring the <em>Gemstone of Apollo</em></li>
+<li><strong>The Fools’ Mausoleum</strong> puzzle attempts decreased to 3 (from 5)</li>
+<li><strong>The Fools’ Mausoleum</strong> walls are doodads (and can no longer be targeted)</li>
+<li>Updated the <em>Field Equipment</em> shop (Incursion Point). See <a href="#items">Items</a> for more details</li>
+</ul>
+<hr />
 <div id="quests" class="section level2">
 <h2>Quests</h2>
+<ul>
+<li><strong>Striking the Heart</strong> (Gaiana) now rewards 3,000g and 7,500xp (previously 1,500 and 5,000 respectively)</li>
+</ul>
 <div id="a-rare-specimen---beastmaster-damien" class="section level4">
 <h4>A Rare Specimen - <em>Beastmaster Damien</em></h4>
 <blockquote>
@@ -276,12 +296,13 @@ Find the “pirate”<br />
 <div id="historys-teachings---dolios" class="section level5">
 <h5>History’s Teachings - <em>Dolios</em></h5>
 <blockquote>
-<p>Triggers when you talk to <em>Dolios</em><br />
+<p>Triggers when you talk to <em>Dolios</em> at the entrance of <strong>The Fools’ Mausoleum</strong><br />
 Quest Level 130<br />
 Rewards 12,500g and 25,000xp<br />
 Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ Mausoleum</strong><br />
 <strong>Reward:</strong> <em>Dolios</em> drops a <em>Pactolus Essence</em></p>
 </blockquote>
+<hr />
 </div>
 </div>
 </div>
@@ -293,6 +314,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 </ul>
 <hr />
 <ul>
+<li><em>Lesser Whetstone</em>, <em>Whetstone</em>, <em>Greater Whetstone</em>, &amp; <em>Superior Whetstone</em> (Weaponsmith): Now grants it’s bonus as a buff</li>
 <li><em>Leather Armor</em> (Field Equipment): No longer increases Agility by 3</li>
 <li><em>Potion of Minor Regeneration</em> (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3</li>
 <li><em>Talisman of Minor Spell Power</em> (New Item @ Field Equipment): Increases Spell Power by 30. Requires Level 3. Cannot be used by Warrior Classes</li>
@@ -307,10 +329,8 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <hr />
 </div>
 </div>
-<div id="backpack" class="section level1">
-<h1>Backpack</h1>
-<div id="skins" class="section level2">
-<h2>Skins</h2>
+<div id="backpack-skins" class="section level1">
+<h1>Backpack Skins</h1>
 <p>The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin that you can purchase for 50,000g from <em>Beastmaster Damien</em>!</p>
 <div id="proven-adventurer" class="section level3">
 <h3>Proven Adventurer</h3>
@@ -395,8 +415,8 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <hr />
 </div>
 </div>
-<div id="skills" class="section level2">
-<h2>Skills</h2>
+<div id="backpack-skills" class="section level1">
+<h1>Backpack Skills</h1>
 <p>Your backpack can now learn skills and you have <strong>seven skill points</strong> to assign to these skills. Clicking <em>Trainer Yegor</em> when you are nearby will allow you to purchase and rank up backpack skills. All backpacks start with the <em>Town Portal</em> skill by default.</p>
 <div id="town-portal" class="section level3">
 <h3>Town Portal</h3>
@@ -510,16 +530,12 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 </div>
 </div>
 </div>
-</div>
 <div id="forces-of-hell" class="section level1">
 <h1>Forces of Hell</h1>
-<div id="ladon" class="section level2">
-<h2>Ladon</h2>
 <ul>
-<li>Now has a 3% chance to drop a <em>Bronze Dragon Egg</em></li>
+<li><strong>Ladon</strong> (Savage Jungle): Now has a 3% chance to drop a <em>Bronze Dragon Egg</em></li>
 </ul>
 <hr />
-</div>
 </div>
 <div id="assassin" class="section level1">
 <h1>Assassin</h1>
@@ -577,33 +593,96 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 </ul>
 <div id="rejuvenation" class="section level3">
 <h3>Rejuvenation</h3>
+<ul>
+<li>Cooldown increased to 3 seconds (from 1 second)</li>
+<li>Improved the iteration algorithm</li>
+</ul>
+<blockquote>
+<p><em>Aspect of the Dryad</em>—<em>Rejuvenation</em> dispels a <em>debilitating debuff</em>. Also if the target does not have <em>Rejuvenation</em> active, <em>Soothing Presence</em>’s persists for an additional 3 seconds after <em>Aspect of the Dryad</em> dissipates.</p>
+</blockquote>
 </div>
 <div id="natures-wrath" class="section level3">
 <h3>Nature’s Wrath</h3>
+<blockquote>
+<p>Mana Cost: 35 / 70 / 115 / 185 / 275 / 400 / 600 / 900</p>
+<p>Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+Spell Damage) physical damage and <em>Ensnare</em> the target to prevent it’s movement for 2 / 2 / 2.5 / 2.5 / 3 / 3 / 3.5 / 3.5 seconds.</p>
+<p><em>Aspect of the Oread</em>—<em>Nature’s Wrath</em> <strong>empowers</strong> the next aspect manifested within 30 seconds. This reduces the aspect’s enhanced spell cooldown(s) by 0.5 seconds and can stack up to <em>nine</em> times. (This effect cannot reduce a spell’s cooldown below 1 second).</p>
+<p>Cooldown: 6 seconds.</p>
+</blockquote>
 </div>
 <div id="thunderbolt" class="section level3">
 <h3>Thunderbolt</h3>
 <div id="replaces-lightning-strike" class="section level4">
 <h4>Replaces Lightning Strike</h4>
+<blockquote>
+<p>Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750</p>
+<p>Blasts out a bolt of thunder towards a target location, dealing 150 / 300 / 500 / 800 / 1100 / 1600 / 2500 / 3750 (+Spell Damage) magical damage in a line. Enemies caught within are <em>thunderstruck</em> for 18 seconds. <em>Thunderstruck</em> enemies take 25% more damage from <em>Thunderbolt</em> and stacks up to two times.</p>
+<p><em>Aspect of the Nereid</em>—Reduces <em>Thunderbolt</em>’s cooldown to 12 seconds. Enemies struck also have their armor reduced by 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25 for 8 seconds.</p>
+<p>Cooldown: 15 seconds.</p>
+</blockquote>
 </div>
 </div>
 <div id="maelstrom" class="section level3">
 <h3>Maelstrom</h3>
+<p>Cooldown increased to 21 seconds (from 18 seconds)</p>
+<blockquote>
+<p><em>Aspect of the Nereid</em>—Reduces <em>Maelstrom</em>’s cooldown to 18 seconds.</p>
+</blockquote>
 </div>
 <div id="manifest-aspect" class="section level3">
 <h3>Manifest Aspect</h3>
 <div id="aspect-of-the-dryad" class="section level4">
 <h4>Aspect of the Dryad</h4>
+<blockquote>
+<p>The <em>Druid</em> manifests the power of the Dryads which grants the following:</p>
+<ul>
+<li>Grants <em>Soothing Presence</em>.<br />
+</li>
+<li>Enhances <em>Rejuvenation</em>.</li>
+</ul>
+<p>Lasts for 20 seconds.</p>
+<p><em>Soothing Presence</em>—Allies within a 300 AoE restore health equal to 1% of their Maximum Health per second, and restore mana equal to 1% of their Maximum Mana per second.</p>
+<p>Cooldown: 60 seconds.</p>
+</blockquote>
 </div>
 <div id="aspect-of-the-oread" class="section level4">
 <h4>Aspect of the Oread</h4>
+<blockquote>
+<p>The <em>Druid</em> manifests the power of the Oreads which grants the following:</p>
+<ul>
+<li>Sets your auto-attack cooldown to 2 seconds.<br />
+</li>
+<li>Reduces your attack-range to 450.<br />
+</li>
+<li>Auto-attacks have a 8% chance to <em>Nature’s Wrath</em>.<br />
+</li>
+<li>Enhances <em>Nature’s Wrath</em>.</li>
+</ul>
+<p>Lasts for 20 seconds.</p>
+<p>Cooldown: 60 seconds.</p>
+</blockquote>
 </div>
 <div id="aspect-of-the-nereid" class="section level4">
 <h4>Aspect of the Nereid</h4>
+<blockquote>
+<p>The <em>Druid</em> manifests the power of the Nereids which grants the following:</p>
+<ul>
+<li>Sets your auto-attack cooldown to 3.5 seconds.<br />
+</li>
+<li>Auto-attacks deal splash damage in a 300 AoE.<br />
+</li>
+<li>Enhances <em>Maelstrom</em> and <em>Thunderbolt</em>.</li>
+</ul>
+<p>Lasts for 20 seconds.</p>
+<p>Cooldown: 60 seconds.</p>
+</blockquote>
 </div>
 </div>
 <div id="wild-set" class="section level3">
 <h3>Wild Set</h3>
+<blockquote>
+<p><em>Reclamation</em> also reduces your <em>Manifest Aspect</em> cooldowns by 8 seconds</p>
+</blockquote>
 <hr />
 </div>
 </div>
@@ -612,7 +691,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <div id="roar" class="section level3">
 <h3>Roar</h3>
 <ul>
-<li>Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27 / 29 / 31 / 33 / 35 / 37 / 39 / 42 %)</li>
+<li>Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27% / 29% / 31% / 33% / 35% / 37% / 39% / 42%)</li>
 <li>Armor bonus adjusted to 5 / 10 / 15 / 20 / 25 / 30 / 40 / 50 (from 12 / 16 / 20 / 25 / 30 / 30 / 35 / 40 / 50)</li>
 <li>Mana cost increased to 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 (from 12 / 16 / 20 / 25 / 30 / 35 / 40 / 50)</li>
 <li>Duration decreased to 30 seconds (from 2 minutes)</li>
@@ -744,6 +823,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <hr />
 <ul>
 <li><em>Green Dragonscale Ring of Addiction</em> (Metalsmith Zoticus) now grants the correct stats</li>
+<li><em>Heart Blade</em> (Orange Drop): No longer breaks the item “<em>uniqueness</em>” rule</li>
 </ul>
 <hr />
 <ul>
