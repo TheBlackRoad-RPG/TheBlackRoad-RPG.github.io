@@ -17,12 +17,22 @@ output:
 # General
 
 - **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
+- Updated the *Field Equipment* shop (Incursion Point).  See [Items] for more details
 
 ## Quests
 
 ## Items
 
-- Removed *Journeyman's Field Guide*. All classes now start with the ability granted by it instead
+- *Leather Armor* (Field Equipment): No longer increases Agility by 3
+- *Potion of Minor Regeneration* (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3
+- *Talisman of Minor Spell Power* (New Item @ Field Equipment): Increases Spell Power by 30. Requires Level 3. Cannot be used by Warrior Classes
+
+---
+
+- Removed *Journeyman's Field Guide* (Field Equipment & Books). All classes now start with the ability granted by it instead
+- Removed *Ring Mail* (Field Equipment)
+- Renamed *Talisman of Minor Stamina* (Field Equipment) to *Medallion of Minor Stamina*
+- Renamed *Talisman of Minor Mana* (Field Equipment) to *Pendant of Minor Mana*
 
 ---
 
@@ -34,14 +44,23 @@ The save/load system now tracks six unique achievements for each hero. Completin
 ### Proven Adventurer
 > Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin
 
+#### Notes
+Any quest color-tagged with orange does not count towards **Proven Adventurer**
+
 ### I am Legend
 > Reach level 200. This unlocks the Nether Dragon skin
 
 ### Weighed, measured and found wanting
 > Dispatch 30 Minibosses. This unlocks the Chimaera skin
 
+#### Notes
+The Minibosses are: Nukacha; Mance Swiftsword; Rokthul; Forest Terror; Manticore; Goretusk; Rockwatcher Feldblade; Bullroarer the Twisted; Gethos the Mighty; The Dark Knight; Lucas Farblaze; The Black Knight; Heiros Darkfiend; Nasty Big Pointy Teeth!!
+
 ### Orphan-Maker
 > Acquire a rare *Bronze Dragon Egg* from Ladon and bring it to *Damien*. This unlocks the Bronze Dragon skin
+
+#### Notes
+This is tied to activating the *A Rare Specimen* (Beastmaster Damien) quest
 
 ### You picked the wrong house, fool
 > Take care of *Uninvited Guests* 100 times. This unlocks the Frost Wyrm skin
@@ -49,8 +68,10 @@ The save/load system now tracks six unique achievements for each hero. Completin
 ### Full House
 > Defeat *Hyperion* while all family members are still alive. This unlocks the Phoenix skin
 
+---
+
 ## Skills
-Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking *Trainer Yegor* when you are nearby will allow you to purchase backpack skills. All backpacks start with the *Town Portal* skill by default.
+Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking *Trainer Yegor* when you are nearby will allow you to purchase and rank up backpack skills. All backpacks start with the *Town Portal* skill by default.
 
 ### Town Portal
 #### Cost: 0g / 150,000g / 225,000g
@@ -116,11 +137,12 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 # Assassin
 
 - Updated the model's attachment points
+- Adjusted the use of colour describing the additional effect attached to *Walk in the Shadows* to be consistent with *Shroud* (Khaos Champion)
 
 ### Lethal Poison
 
 - Deals 3.0 Agility physical damage over 4 seconds (previously over 6 seconds)
-- A FX is used to denote a *Lethal Poison* proc (previously floating text)
+- FX is now used to denote a *Lethal Poison* proc (previously floating text)
 
 ### Night Set
 
@@ -130,6 +152,18 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 ---
 
 # Cleric
+
+- Changed to Jaina's soundset (previously Sorceress)
+- Adjusted the use of colour describing the additional effect attached to *Rebirth* to be consistent with *Shroud* (Khaos Champion)
+
+### Transcendence
+
+- Now lasts for 16 / 18 / 20 / 22 / 24 / 26 / 28 / 30 seconds or Agility / 18 auto-attacks [min. 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10] (previously 10 seconds)
+- Reduced the Spell Damage ratio to 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.35 (from 0.15 / 0.2 / 0.25 / 0.3 / 0.35/ 0.4 / 0.45 / 0.5)
+- Now only heals for 50% of the total damage dealt (previously 100%)
+
+### Rebirth
+It now attempts to close the submenu if: (1) you die with it open; (2) the channel is interrupted by crowd-control; (3) whenever your target is revived (by another Cleric and/or the natural respawn)
 
 ---
 
@@ -143,9 +177,37 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Khaos Champion
 
+### Dies Irae
+Increased the Strength ratio to 0.5 (from 0.3)
+
+### Shroud
+
+- If an enemy attacks you while *Shroud* is active: Consumes a stack if none were consumed in the past 0.25 seconds. (Previously consumes a stack if an enemy attacks you while *Shroud* is active)
+- Reduced the base mana regeneration to 0.75 / 1.0 / 1.25 / 1.5 / 2.0 / 2.75 / 3.5 / 4.5 per second (from 0.75 / 1.0 / 1.25 / 1.5 / 2.0 / 3.0 / 4.5 / 6.0)
+- Updated the retaliation FX
+
 ---
 
 # Ranger
+
+### Moon Bind
+Updated the FX
+
+### Star Dust
+
+- Improved the iteration algorithm
+- Updated buff FX
+- Multiple *Star Dusts* no longer stack. Only the strongest *Star Dust* heals per tick
+
+---
+
+# Spartan Warrior
+
+### Dispatch
+The bleed effect no longer affects on structures
+
+### Throw Javelin
+No longer damages structures (an undocumented change from 1.39a2)
 
 ---
 
@@ -180,4 +242,11 @@ Standardised the base damage for Level 2 to 150 (from 100)
 
 # Bug Fixes
 
+- The *Noirepyh* scarecrow now has the correct armor value
+
+---
+
 - *Lethal Poison* (Assassin) now deals the correct damage per tick
+- *Rebirth* (Cleric) correctly updates the internal "is the hero dead" flag. This also addresses *Rebirth* disabling backpack item use
+- Activating *Artemis' Blessing* (Ranger) in the middle of an attack animation no longer prevents *Ironwood Set* (Ranger) from triggering
+- *Black Arrow*'s (Ranger) Level 8 tooltip now states the correct base damage values for both components
