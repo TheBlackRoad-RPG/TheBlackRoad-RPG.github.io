@@ -72,7 +72,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 
 ## Items
 
-- *Book of Skill Increase* (Books): Rebuilt the UI
+- *Book of Skill Increase* (Books): Rebuilt the UI for selecting a skill to improve
 - *Book of Single Skill Reset* (Seryo) replaces *Book of All Skills Reset*. *Book of Single Skill Reset* costs 5000 crafting materials
 
 ---
@@ -198,7 +198,21 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 # Forces of Hell
 
+- Increased the collision size of the **Sphinx**'s *Entomb* object to 48 (previously 32)
+- Adjusted the spawn zone of **Minotaur Grunts** near *Tethol* (Corinth)
+- The blue AoE target circles have been updated to be more accurate
+	- **Hyperion**'s *EMP* target circle now features a visible timer FX
+	- **Manticore**'s *Poison Spray* target circle now features a visible timer FX
 - **Ladon** (Savage Jungle): Now has a 3% chance to drop a *Bronze Dragon Egg*
+
+## The Frozen Citadel
+
+**The Frozen Citadel**'s respawn logic partially reverted back to the pre-`1.39a/a2` logic. Mobs only become visible if all players in the citadel exit to *Nicanor* before triggering the respawn.  
+This should also addresses the *Ice Giant* bug where they do not spawn correctly
+
+- Citadel mobs now reset their position, health, and mana
+- *Ice Giant*'s no longer camp a spot after casting *Ice Ring*
+- *Ice Giant*s now have a 0.5 second cast animation 
 
 ---
 
@@ -253,7 +267,7 @@ It now attempts to close the submenu if:
 > *Aspect of the Dryad*---*Rejuvenation* dispels a *debilitating debuff*. Also if the target does not have *Rejuvenation* active, *Soothing Presence*'s persists for an additional 3 seconds after *Aspect of the Dryad* dissipates.
 
 ### Nature's Wrath
-> Mana Cost: 35 / 70 / 115 / 185 / 275 / 400 / 600 / 900  
+> Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850  
 >   
 > Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+Spell Damage) physical damage and *Ensnare* the target to prevent it's movement for 2 / 2 / 2.5 / 2.5 / 3 / 3 / 3.5 / 3.5 seconds.  
 >  
@@ -263,7 +277,7 @@ It now attempts to close the submenu if:
 
 ### Thunderbolt
 #### Replaces Lightning Strike
-> Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750  
+> Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200  
 >   
 > Blasts out a bolt of thunder towards a target location, dealing 150 / 300 / 500 / 800 / 1100 / 1600 / 2500 / 3750 (+Spell Damage) magical damage in a line. Enemies caught within are *thunderstruck* for 18 seconds. *Thunderstruck* enemies take 25% more damage from *Thunderbolt* and stacks up to two times.  
 >  
@@ -271,8 +285,13 @@ It now attempts to close the submenu if:
 >  
 > Cooldown: 15 seconds.
 
+### Reclamation
+Mana cost decreased to 25 / 50 / 85 / 140 / 215 / 310 / 425 / 560 (previously 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850)
+
 ### Maelstrom
-Cooldown increased to 21 seconds (from 18 seconds)
+
+- Mana cost adjusted to 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800 (previously 100 / 125 / 175 / 280 / 425 / 600 / 750 / 950)
+- Cooldown increased to 21 seconds (from 18 seconds)
 
 > *Aspect of the Nereid*---Reduces *Maelstrom*'s cooldown to 18 seconds.
 

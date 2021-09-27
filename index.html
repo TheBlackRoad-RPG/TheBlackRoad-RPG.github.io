@@ -309,7 +309,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <div id="items" class="section level2">
 <h2>Items</h2>
 <ul>
-<li><em>Book of Skill Increase</em> (Books): Rebuilt the UI</li>
+<li><em>Book of Skill Increase</em> (Books): Rebuilt the UI for selecting a skill to improve</li>
 <li><em>Book of Single Skill Reset</em> (Seryo) replaces <em>Book of All Skills Reset</em>. <em>Book of Single Skill Reset</em> costs 5000 crafting materials</li>
 </ul>
 <hr />
@@ -533,9 +533,26 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <div id="forces-of-hell" class="section level1">
 <h1>Forces of Hell</h1>
 <ul>
+<li>Increased the collision size of the <strong>Sphinx</strong>’s <em>Entomb</em> object to 48 (previously 32)</li>
+<li>Adjusted the spawn zone of <strong>Minotaur Grunts</strong> near <em>Tethol</em> (Corinth)</li>
+<li>The blue AoE target circles have been updated to be more accurate
+<ul>
+<li><strong>Hyperion</strong>’s <em>EMP</em> target circle now features a visible timer FX</li>
+<li><strong>Manticore</strong>’s <em>Poison Spray</em> target circle now features a visible timer FX</li>
+</ul></li>
 <li><strong>Ladon</strong> (Savage Jungle): Now has a 3% chance to drop a <em>Bronze Dragon Egg</em></li>
 </ul>
+<div id="the-frozen-citadel" class="section level2">
+<h2>The Frozen Citadel</h2>
+<p><strong>The Frozen Citadel</strong>’s respawn logic partially reverted back to the pre-<code>1.39a/a2</code> logic. Mobs only become visible if all players in the citadel exit to <em>Nicanor</em> before triggering the respawn.<br />
+This should also addresses the <em>Ice Giant</em> bug where they do not spawn correctly</p>
+<ul>
+<li>Citadel mobs now reset their position, health, and mana</li>
+<li><em>Ice Giant</em>’s no longer camp a spot after casting <em>Ice Ring</em></li>
+<li><em>Ice Giant</em>s now have a 0.5 second cast animation</li>
+</ul>
 <hr />
+</div>
 </div>
 <div id="assassin" class="section level1">
 <h1>Assassin</h1>
@@ -604,7 +621,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <div id="natures-wrath" class="section level3">
 <h3>Nature’s Wrath</h3>
 <blockquote>
-<p>Mana Cost: 35 / 70 / 115 / 185 / 275 / 400 / 600 / 900</p>
+<p>Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850</p>
 <p>Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+Spell Damage) physical damage and <em>Ensnare</em> the target to prevent it’s movement for 2 / 2 / 2.5 / 2.5 / 3 / 3 / 3.5 / 3.5 seconds.</p>
 <p><em>Aspect of the Oread</em>—<em>Nature’s Wrath</em> <strong>empowers</strong> the next aspect manifested within 30 seconds. This reduces the aspect’s enhanced spell cooldown(s) by 0.5 seconds and can stack up to <em>nine</em> times. (This effect cannot reduce a spell’s cooldown below 1 second).</p>
 <p>Cooldown: 6 seconds.</p>
@@ -615,16 +632,23 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 <div id="replaces-lightning-strike" class="section level4">
 <h4>Replaces Lightning Strike</h4>
 <blockquote>
-<p>Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750</p>
+<p>Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200</p>
 <p>Blasts out a bolt of thunder towards a target location, dealing 150 / 300 / 500 / 800 / 1100 / 1600 / 2500 / 3750 (+Spell Damage) magical damage in a line. Enemies caught within are <em>thunderstruck</em> for 18 seconds. <em>Thunderstruck</em> enemies take 25% more damage from <em>Thunderbolt</em> and stacks up to two times.</p>
 <p><em>Aspect of the Nereid</em>—Reduces <em>Thunderbolt</em>’s cooldown to 12 seconds. Enemies struck also have their armor reduced by 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25 for 8 seconds.</p>
 <p>Cooldown: 15 seconds.</p>
 </blockquote>
 </div>
 </div>
+<div id="reclamation" class="section level3">
+<h3>Reclamation</h3>
+<p>Mana cost decreased to 25 / 50 / 85 / 140 / 215 / 310 / 425 / 560 (previously 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850)</p>
+</div>
 <div id="maelstrom" class="section level3">
 <h3>Maelstrom</h3>
-<p>Cooldown increased to 21 seconds (from 18 seconds)</p>
+<ul>
+<li>Mana cost adjusted to 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800 (previously 100 / 125 / 175 / 280 / 425 / 600 / 750 / 950)</li>
+<li>Cooldown increased to 21 seconds (from 18 seconds)</li>
+</ul>
 <blockquote>
 <p><em>Aspect of the Nereid</em>—Reduces <em>Maelstrom</em>’s cooldown to 18 seconds.</p>
 </blockquote>
