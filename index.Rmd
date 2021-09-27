@@ -31,6 +31,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 - Updated the FX for the *Ensnare* generic debuff. Also, the code for applying *Ensnare* has been adjusted to cast it near-instaneously
 - When the *Taunt* generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it
 - Updated how *backpacks* use items and it now consistently stops the *backpack* from item usage when your hero is dead or stunned
+- Updated *Purchase a Bank*'s tooltip to remove a redundant line that no longer applies
 - Cleaned up the following tooltips: *Cleave* (Barbarian); *Impale* (Warlord); *Hammer of Zeus* (Temple Guardian); *Dispatch* (Spartan Warrior); and *Moon Bind* (Ranger)
 
 ---
@@ -207,8 +208,7 @@ Your backpack can now learn skills and you have **seven skill points** to assign
 
 ## The Frozen Citadel
 
-**The Frozen Citadel**'s respawn logic partially reverted back to the pre-`1.39a/a2` logic. Mobs only become visible if all players in the citadel exit to *Nicanor* before triggering the respawn.  
-This should also addresses the *Ice Giant* bug where they do not spawn correctly
+**The Frozen Citadel**'s respawn logic partially reverted back to the pre-`1.39a/a2` logic. Mobs only become visible if all players in the citadel exit to *Nicanor* before triggering the respawn. (This should also addresses the *Ice Giant* bug where they do not spawn correctly)
 
 - Citadel mobs now reset their position, health, and mana
 - *Ice Giant*'s no longer camp a spot after casting *Ice Ring*
@@ -440,16 +440,25 @@ Standardised the base damage for Level 2 to 150 (from 100)
 
 # Bug Fixes
 
+- Fixed the inconsistent behaviour of *Neleus*' & *Pelias*' perma-death animations
+- *Ladon* can no longer teleport due to frame-perfect execution of the *Ensnare* debuff followed by another generic debuff
 - The *Noirepyh* scarecrow now has the correct armor value
 - **The Fools' Mausoleum** mobs now have their intended levels
 	- *Cursed Weapon* is Level 120 (previously Level 100)
 	- *Animated Armor* is Level 125 (previously Level 100)
 	- *Lich* is Level 130 (previously Level 100)
+- The runes for the **The Fools' Mausoleum** puzzle should no longer be displaced on spawn
+- *Midas*' *Alerted* buff no longer has an empty tooltip
+- *Midas*' *Leap* mechanic no longer reduces *Midas*' animation scale to zero when leaping long distances
+- The scripted auto-attack target selection for *Hyperion* and his family no longer bugs out due to the locked-in target being out of range
+- *Hyperion*'s *Minotaur Strongholds* now also displaces units on spawn. This prevents heroes from being stuck in them
 
 ---
 
-- *Green Dragonscale Ring of Addiction* (Metalsmith Zoticus) now grants the correct stats
-- *Heart Blade* (Orange Drop): No longer breaks the item "*uniqueness*" rule
+- `-save`/`-s` chat command no longer generates save/load codes when watching a replay
+- `-ui on` and `-ui off` now has consistent behaviour
+- Addressed the typos in several "start of game" messages
+- Fixed numerous timer and group leaks which may had inadvertently caused other bugs
 
 ---
 
@@ -457,3 +466,8 @@ Standardised the base damage for Level 2 to 150 (from 100)
 - *Rebirth* (Cleric) correctly updates the internal "is the hero dead" flag. This also addresses *Rebirth* disabling backpack item use
 - Activating *Artemis' Blessing* (Ranger) in the middle of an attack animation no longer prevents *Ironwood Set* (Ranger) from triggering
 - *Black Arrow*'s (Ranger) Level 8 tooltip now states the correct base damage values for both components
+- *Green Dragonscale Ring of Addiction* (Metalsmith Zoticus) now grants the correct stats
+- *Heart Blade* (Orange Drop): No longer breaks the item "*uniqueness*" rule
+- *Midas' Band of Vigor* and *Ring of Regret* (Midas): *Magic Protection* no longer underflows and heals the hero
+- *Blazing Sword of Helios* (Olympian Relic): Now states the correct crafting components if you have missing components when crafting it
+- Completing *Guard the Shipment* (Cavalorn) now renders an exclamation mark FX over *Serius* if *Trouble in the North* (Therin) was not completed.

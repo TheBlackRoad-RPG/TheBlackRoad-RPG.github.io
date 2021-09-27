@@ -258,6 +258,7 @@ div.tocify {
 <li>Updated the FX for the <em>Ensnare</em> generic debuff. Also, the code for applying <em>Ensnare</em> has been adjusted to cast it near-instaneously</li>
 <li>When the <em>Taunt</em> generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it</li>
 <li>Updated how <em>backpacks</em> use items and it now consistently stops the <em>backpack</em> from item usage when your hero is dead or stunned</li>
+<li>Updated <em>Purchase a Bank</em>’s tooltip to remove a redundant line that no longer applies</li>
 <li>Cleaned up the following tooltips: <em>Cleave</em> (Barbarian); <em>Impale</em> (Warlord); <em>Hammer of Zeus</em> (Temple Guardian); <em>Dispatch</em> (Spartan Warrior); and <em>Moon Bind</em> (Ranger)</li>
 </ul>
 <hr />
@@ -544,8 +545,7 @@ Find five artifacts and a <em>Pactolus’ Essence</em> in <strong>The Fools’ M
 </ul>
 <div id="the-frozen-citadel" class="section level2">
 <h2>The Frozen Citadel</h2>
-<p><strong>The Frozen Citadel</strong>’s respawn logic partially reverted back to the pre-<code>1.39a/a2</code> logic. Mobs only become visible if all players in the citadel exit to <em>Nicanor</em> before triggering the respawn.<br />
-This should also addresses the <em>Ice Giant</em> bug where they do not spawn correctly</p>
+<p><strong>The Frozen Citadel</strong>’s respawn logic partially reverted back to the pre-<code>1.39a/a2</code> logic. Mobs only become visible if all players in the citadel exit to <em>Nicanor</em> before triggering the respawn. (This should also addresses the <em>Ice Giant</em> bug where they do not spawn correctly)</p>
 <ul>
 <li>Citadel mobs now reset their position, health, and mana</li>
 <li><em>Ice Giant</em>’s no longer camp a spot after casting <em>Ice Ring</em></li>
@@ -836,6 +836,8 @@ This should also addresses the <em>Ice Giant</em> bug where they do not spawn co
 <div id="bug-fixes" class="section level1">
 <h1>Bug Fixes</h1>
 <ul>
+<li>Fixed the inconsistent behaviour of <em>Neleus</em>’ &amp; <em>Pelias</em>’ perma-death animations</li>
+<li><em>Ladon</em> can no longer teleport due to frame-perfect execution of the <em>Ensnare</em> debuff followed by another generic debuff</li>
 <li>The <em>Noirepyh</em> scarecrow now has the correct armor value</li>
 <li><strong>The Fools’ Mausoleum</strong> mobs now have their intended levels
 <ul>
@@ -843,11 +845,18 @@ This should also addresses the <em>Ice Giant</em> bug where they do not spawn co
 <li><em>Animated Armor</em> is Level 125 (previously Level 100)</li>
 <li><em>Lich</em> is Level 130 (previously Level 100)</li>
 </ul></li>
+<li>The runes for the <strong>The Fools’ Mausoleum</strong> puzzle should no longer be displaced on spawn</li>
+<li><em>Midas</em>’ <em>Alerted</em> buff no longer has an empty tooltip</li>
+<li><em>Midas</em>’ <em>Leap</em> mechanic no longer reduces <em>Midas</em>’ animation scale to zero when leaping long distances</li>
+<li>The scripted auto-attack target selection for <em>Hyperion</em> and his family no longer bugs out due to the locked-in target being out of range</li>
+<li><em>Hyperion</em>’s <em>Minotaur Strongholds</em> now also displaces units on spawn. This prevents heroes from being stuck in them</li>
 </ul>
 <hr />
 <ul>
-<li><em>Green Dragonscale Ring of Addiction</em> (Metalsmith Zoticus) now grants the correct stats</li>
-<li><em>Heart Blade</em> (Orange Drop): No longer breaks the item “<em>uniqueness</em>” rule</li>
+<li><code>-save</code>/<code>-s</code> chat command no longer generates save/load codes when watching a replay</li>
+<li><code>-ui on</code> and <code>-ui off</code> now has consistent behaviour</li>
+<li>Addressed the typos in several “start of game” messages</li>
+<li>Fixed numerous timer and group leaks which may had inadvertently caused other bugs</li>
 </ul>
 <hr />
 <ul>
@@ -855,6 +864,11 @@ This should also addresses the <em>Ice Giant</em> bug where they do not spawn co
 <li><em>Rebirth</em> (Cleric) correctly updates the internal “is the hero dead” flag. This also addresses <em>Rebirth</em> disabling backpack item use</li>
 <li>Activating <em>Artemis’ Blessing</em> (Ranger) in the middle of an attack animation no longer prevents <em>Ironwood Set</em> (Ranger) from triggering</li>
 <li><em>Black Arrow</em>’s (Ranger) Level 8 tooltip now states the correct base damage values for both components</li>
+<li><em>Green Dragonscale Ring of Addiction</em> (Metalsmith Zoticus) now grants the correct stats</li>
+<li><em>Heart Blade</em> (Orange Drop): No longer breaks the item “<em>uniqueness</em>” rule</li>
+<li><em>Midas’ Band of Vigor</em> and <em>Ring of Regret</em> (Midas): <em>Magic Protection</em> no longer underflows and heals the hero</li>
+<li><em>Blazing Sword of Helios</em> (Olympian Relic): Now states the correct crafting components if you have missing components when crafting it</li>
+<li>Completing <em>Guard the Shipment</em> (Cavalorn) now renders an exclamation mark FX over <em>Serius</em> if <em>Trouble in the North</em> (Therin) was not completed.</li>
 </ul>
 </div>
 
