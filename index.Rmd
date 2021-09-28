@@ -32,6 +32,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 - When the *Taunt* generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it
 - Updated how *backpacks* use items and it now consistently stops the *backpack* from item usage when your hero is dead or stunned
 - Updated *Purchase a Bank*'s tooltip to remove a redundant line that no longer applies
+- Crafting only adds the crafted item to the backpack, if it fails to be added to the hero
 - Cleaned up the following tooltips: *Cleave* (Barbarian); *Impale* (Warlord); *Hammer of Zeus* (Temple Guardian); *Dispatch* (Spartan Warrior); and *Moon Bind* (Ranger)
 
 ---
@@ -66,7 +67,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 > Triggers when you talk to *Dolios* at the entrance of **The Fools' Mausoleum**    
 > Quest Level 130  
 > Rewards 12,500g and 25,000xp  
-> Find five artifacts and a *Pactolus' Essence* in **The Fools' Mausoleum**  
+> Find five artifacts and a "fresh" *Pactolus' Essence* in **The Fools' Mausoleum**  
 > **Reward:** *Dolios* drops a *Pactolus Essence*
 
 ---
@@ -82,6 +83,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 - *Leather Armor* (Field Equipment): No longer increases Agility by 3
 - *Potion of Minor Regeneration* (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3
 - *Talisman of Minor Spell Power* (New Item @ Field Equipment): Increases Spell Power by 30. Requires Level 3. Cannot be used by Warrior Classes
+- *Ankh of Reincarnation* (Alchemist): Updated the code to simply remove the item when the effect procs instead of dropping then removing it 
 
 ---
 
