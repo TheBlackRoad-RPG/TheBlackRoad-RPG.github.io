@@ -12,11 +12,52 @@ output:
     css: TBR.css
 ---
 
-# General
+# Foreword
 
 You can no longer load **1.38d2** codes. See Hive Workshop download page for a link to **1.39a2** if you need to convert a **1.38d2** code
 
 Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a backup of the **1.39a2** code is saved into a subfolder called `1.39a2 backups`
+
+# 1.39b2 Changes
+
+- Updated the text generation by the save/load system to produce valid text files to read-in. Primarily affects *Guardian of Nature* saves
+- Restructured the buff removal calls for the **Ensnare** debuff
+- Updated the map to show the war3mapPreview image in the Wc3 1.32 client
+- **You picked the wrong house, fool** now only counts runs you've personally participated in. This uses the same threshold condition as the second to tenth runs of *Uninvited Guests* (Nicanor)
+- Adjusted the doodad placement at **Athen's** backpack zone to prevent teleports clipping into a location which traps you between the barn and fence
+
+---
+
+- Updated the *Druid*'s difficulty level to reflect the changes made in 1.39b
+- **Counter** (Warlord):  *Books of Skill Increase* and *Single Skill Reset* now work as intended
+- **Assassinate** (Assassin), **Charge** (Spartan Warrior), and **Bum Rush** (Warlord) are now coded smarter to avoid in blinking units into deep water. Also, *Charge* and *Bum Rush* no longer interrupt queue'd orders
+- **Transcendence** (Cleric) now works with *Midas' Pendant of Wisdom* and *Silenus' Talisman*. This uses the same rules as *Black Arrow* (Ranger) to determine whether the proc applies because this spell __modifies__ auto-attack
+- **Thunderbolt** (Druid): AoE width increased to 125 (from 100)
+- **Rejuvenation** (Druid): Cooldown reduced to 2.5 seconds (from 3)
+- **Sadism** (Warlock): Rescaled to stack up to four times (from five). Now restores 4% / 8% / 16% / 32% Maximum Mana (from 3% / 6% / 12% / 24% / 36%)
+
+---
+
+- Clarified that **Midas' Pendant of Wisdom** + **Silenus' Talisman** special-case affects spells which enhance auto-attacks. Note that neither *Aspect of the Oread* or *Aspect of the Nereid* (Druid) do not trigger the *Enfeeble* proc
+- **Enchanted Diamond Dust**, **Tempered Steel**, **Sapphire**, **Power Stone** drop rate increased to 25/833 from two separate low probability rolls (Undocumented change in 1.39b)
+
+---
+
+- *Oceanus*' arena no longer has a random hole in the pathing map
+- **Hyperion** and family's auto-attack lock-on leash now actually matches their attack range
+- Adjusted the save/load code again to not break replays?
+- Reverted the changes to **Manifest Aspect** (Druid) duration made in Beta20211003
+- Reverted the changes to **Empower Aspect** (Nature's Wrath - Aspect of the Oread) duration made in Beta20211003
+- **Blaze o' Glory** (Midas' of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted
+
+---
+
+- Re-coded how *Sphinx*,  *Manslayer* / *Lightbane*, and *Hallowed One* cleans up their adds. This means that the rare grouping bug will no longer remove random units
+- Introduced a bit more safety to how mob groups are cleaned in **The Fools' Mausoleum**
+- The auto-attack target script for **Hyperion** and his family now recognises when their locked target is dead
+- Updated the A.I. scripting for **Theia**'s *Rejuvenation* and *Frost Armor* casts
+
+# General
 
 ---
 

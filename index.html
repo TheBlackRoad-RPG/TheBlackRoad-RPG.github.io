@@ -241,10 +241,54 @@ div.tocify {
 </div>
 
 
-<div id="general" class="section level1">
-<h1>General</h1>
+<div id="foreword" class="section level1">
+<h1>Foreword</h1>
 <p>You can no longer load <strong>1.38d2</strong> codes. See Hive Workshop download page for a link to <strong>1.39a2</strong> if you need to convert a <strong>1.38d2</strong> code</p>
 <p>Whenever you load a <strong>1.39a2</strong> code, it is converted to a <strong>1.39b</strong> code and a backup of the <strong>1.39a2</strong> code is saved into a subfolder called <code>1.39a2 backups</code></p>
+</div>
+<div id="b2-changes" class="section level1">
+<h1>1.39b2 Changes</h1>
+<ul>
+<li>Updated the text generation by the save/load system to produce valid text files to read-in. Primarily affects <em>Guardian of Nature</em> saves</li>
+<li>Restructured the buff removal calls for the <strong>Ensnare</strong> debuff</li>
+<li>Updated the map to show the war3mapPreview image in the Wc3 1.32 client</li>
+<li><strong>You picked the wrong house, fool</strong> now only counts runs you’ve personally participated in. This uses the same threshold condition as the second to tenth runs of <em>Uninvited Guests</em> (Nicanor)</li>
+<li>Adjusted the doodad placement at <strong>Athen’s</strong> backpack zone to prevent teleports clipping into a location which traps you between the barn and fence</li>
+</ul>
+<hr />
+<ul>
+<li>Updated the <em>Druid</em>’s difficulty level to reflect the changes made in 1.39b</li>
+<li><strong>Counter</strong> (Warlord): <em>Books of Skill Increase</em> and <em>Single Skill Reset</em> now work as intended</li>
+<li><strong>Assassinate</strong> (Assassin), <strong>Charge</strong> (Spartan Warrior), and <strong>Bum Rush</strong> (Warlord) are now coded smarter to avoid in blinking units into deep water. Also, <em>Charge</em> and <em>Bum Rush</em> no longer interrupt queue’d orders</li>
+<li><strong>Transcendence</strong> (Cleric) now works with <em>Midas’ Pendant of Wisdom</em> and <em>Silenus’ Talisman</em>. This uses the same rules as <em>Black Arrow</em> (Ranger) to determine whether the proc applies because this spell <strong>modifies</strong> auto-attack</li>
+<li><strong>Thunderbolt</strong> (Druid): AoE width increased to 125 (from 100)</li>
+<li><strong>Rejuvenation</strong> (Druid): Cooldown reduced to 2.5 seconds (from 3)</li>
+<li><strong>Sadism</strong> (Warlock): Rescaled to stack up to four times (from five). Now restores 4% / 8% / 16% / 32% Maximum Mana (from 3% / 6% / 12% / 24% / 36%)</li>
+</ul>
+<hr />
+<ul>
+<li>Clarified that <strong>Midas’ Pendant of Wisdom</strong> + <strong>Silenus’ Talisman</strong> special-case affects spells which enhance auto-attacks. Note that neither <em>Aspect of the Oread</em> or <em>Aspect of the Nereid</em> (Druid) do not trigger the <em>Enfeeble</em> proc</li>
+<li><strong>Enchanted Diamond Dust</strong>, <strong>Tempered Steel</strong>, <strong>Sapphire</strong>, <strong>Power Stone</strong> drop rate increased to 25/833 from two separate low probability rolls (Undocumented change in 1.39b)</li>
+</ul>
+<hr />
+<ul>
+<li><em>Oceanus</em>’ arena no longer has a random hole in the pathing map</li>
+<li><strong>Hyperion</strong> and family’s auto-attack lock-on leash now actually matches their attack range</li>
+<li>Adjusted the save/load code again to not break replays?</li>
+<li>Reverted the changes to <strong>Manifest Aspect</strong> (Druid) duration made in Beta20211003</li>
+<li>Reverted the changes to <strong>Empower Aspect</strong> (Nature’s Wrath - Aspect of the Oread) duration made in Beta20211003</li>
+<li><strong>Blaze o’ Glory</strong> (Midas’ of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted</li>
+</ul>
+<hr />
+<ul>
+<li>Re-coded how <em>Sphinx</em>, <em>Manslayer</em> / <em>Lightbane</em>, and <em>Hallowed One</em> cleans up their adds. This means that the rare grouping bug will no longer remove random units</li>
+<li>Introduced a bit more safety to how mob groups are cleaned in <strong>The Fools’ Mausoleum</strong></li>
+<li>The auto-attack target script for <strong>Hyperion</strong> and his family now recognises when their locked target is dead</li>
+<li>Updated the A.I. scripting for <strong>Theia</strong>’s <em>Rejuvenation</em> and <em>Frost Armor</em> casts</li>
+</ul>
+</div>
+<div id="general" class="section level1">
+<h1>General</h1>
 <hr />
 <ul>
 <li>Updated the crafting hotkey to <code>Tab</code> (previously <code>G</code>)</li>
