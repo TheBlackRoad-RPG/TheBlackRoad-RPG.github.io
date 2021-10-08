@@ -25,6 +25,7 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 - Updated the map to show the war3mapPreview image in the Wc3 1.32 client
 - **You picked the wrong house, fool** now only counts runs you've personally participated in. This uses the same threshold condition as the second to tenth runs of *Uninvited Guests* (Nicanor)
 - Adjusted the doodad placement at **Athen's** backpack zone to prevent teleports clipping into a location which traps you between the barn and fence
+- Adjusted the save/load code again to not break replays?
 
 ---
 
@@ -40,18 +41,12 @@ Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a b
 
 - Clarified that **Midas' Pendant of Wisdom** + **Silenus' Talisman** special-case affects spells which enhance auto-attacks. Note that neither *Aspect of the Oread* or *Aspect of the Nereid* (Druid) do not trigger the *Enfeeble* proc
 - **Enchanted Diamond Dust**, **Tempered Steel**, **Sapphire**, **Power Stone** drop rate increased to 25/833 from two separate low probability rolls (Undocumented change in 1.39b)
+- **Blaze o' Glory** (Midas' of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted
 
 ---
 
 - *Oceanus*' arena no longer has a random hole in the pathing map
 - **Hyperion** and family's auto-attack lock-on leash now actually matches their attack range
-- Adjusted the save/load code again to not break replays?
-- Reverted the changes to **Manifest Aspect** (Druid) duration made in Beta20211003
-- Reverted the changes to **Empower Aspect** (Nature's Wrath - Aspect of the Oread) duration made in Beta20211003
-- **Blaze o' Glory** (Midas' of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted
-
----
-
 - Re-coded how *Sphinx*,  *Manslayer* / *Lightbane*, and *Hallowed One* cleans up their adds. This means that the rare grouping bug will no longer remove random units
 - Introduced a bit more safety to how mob groups are cleaned in **The Fools' Mausoleum**
 - The auto-attack target script for **Hyperion** and his family now recognises when their locked target is dead

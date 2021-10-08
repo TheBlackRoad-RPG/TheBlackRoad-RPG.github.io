@@ -254,6 +254,7 @@ div.tocify {
 <li>Updated the map to show the war3mapPreview image in the Wc3 1.32 client</li>
 <li><strong>You picked the wrong house, fool</strong> now only counts runs you’ve personally participated in. This uses the same threshold condition as the second to tenth runs of <em>Uninvited Guests</em> (Nicanor)</li>
 <li>Adjusted the doodad placement at <strong>Athen’s</strong> backpack zone to prevent teleports clipping into a location which traps you between the barn and fence</li>
+<li>Adjusted the save/load code again to not break replays?</li>
 </ul>
 <hr />
 <ul>
@@ -269,18 +270,12 @@ div.tocify {
 <ul>
 <li>Clarified that <strong>Midas’ Pendant of Wisdom</strong> + <strong>Silenus’ Talisman</strong> special-case affects spells which enhance auto-attacks. Note that neither <em>Aspect of the Oread</em> or <em>Aspect of the Nereid</em> (Druid) do not trigger the <em>Enfeeble</em> proc</li>
 <li><strong>Enchanted Diamond Dust</strong>, <strong>Tempered Steel</strong>, <strong>Sapphire</strong>, <strong>Power Stone</strong> drop rate increased to 25/833 from two separate low probability rolls (Undocumented change in 1.39b)</li>
+<li><strong>Blaze o’ Glory</strong> (Midas’ of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted</li>
 </ul>
 <hr />
 <ul>
 <li><em>Oceanus</em>’ arena no longer has a random hole in the pathing map</li>
 <li><strong>Hyperion</strong> and family’s auto-attack lock-on leash now actually matches their attack range</li>
-<li>Adjusted the save/load code again to not break replays?</li>
-<li>Reverted the changes to <strong>Manifest Aspect</strong> (Druid) duration made in Beta20211003</li>
-<li>Reverted the changes to <strong>Empower Aspect</strong> (Nature’s Wrath - Aspect of the Oread) duration made in Beta20211003</li>
-<li><strong>Blaze o’ Glory</strong> (Midas’ of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted</li>
-</ul>
-<hr />
-<ul>
 <li>Re-coded how <em>Sphinx</em>, <em>Manslayer</em> / <em>Lightbane</em>, and <em>Hallowed One</em> cleans up their adds. This means that the rare grouping bug will no longer remove random units</li>
 <li>Introduced a bit more safety to how mob groups are cleaned in <strong>The Fools’ Mausoleum</strong></li>
 <li>The auto-attack target script for <strong>Hyperion</strong> and his family now recognises when their locked target is dead</li>
