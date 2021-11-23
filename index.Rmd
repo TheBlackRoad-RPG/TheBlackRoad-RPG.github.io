@@ -90,7 +90,7 @@ We are also pre-emptively reducing the Critical Strike multipliers on items with
 - `-save` no longer sets the ownership of unique crafting components to the player that triggered the command
 - Updated how all hero spells group targets
 - *Grave Seize* (Khaos Champion) tracks when the *Stun* debuff wears off rather than when the *Stun Immunity* buff to apply the *Taunt* debuff. This hypothetically addresses the bug where *Grave Seize* can pull another player hero for infinite time after a duel concludes
-- The *Burning* debuff (*Midas* and *Blaze o' Glory*) is updated to no longer reset the tick-rate. This addresses the inconsistent damage dealt to stationary targetse
+- The *Burning* debuff (*Midas* and *Blaze o' Glory*) is updated to no longer reset the tick-rate. This addresses the inconsistent damage dealt to stationary targets
 
 ---
 
@@ -128,5 +128,5 @@ Movement speed bonuses from permanent items now stack additively (previously onl
 *Valor* (Spartan Warrior)
 
 - Duration reduced to 30 seconds (from 2 minutes)
-- Cooldown increase to 30 seconds (from 1 second)
-- Recovers 240 / 480 / 780 / 1140 / 1560 / 2100 / 2850 / 3900 (+Spell Healing) Total HP over 30 seconds [previously 960 / 1920 / 3120 / 4560 / 6240 / 8400 / 11400 / 15600 Total HP (+Spell Healing) over 30 seconds]
+- Cooldown increased to 30 seconds (from 1 second)
+- Recovers 240 / 480 / 780 / 1140 / 1560 / 2100 / 2850 / 3900 (+0.3 Spell Healing) Total HP over 30 seconds [previously 960 / 1920 / 3120 / 4560 / 6240 / 8400 / 11400 / 15600 Total HP (+Spell Healing) over 2 minutes]
