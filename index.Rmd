@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39b --- Changelog"
+title: "The Black Road RPG v1.39b3 --- Changelog"
 author: "Unholy0ne and Alteisen (Av3n)"
 output: 
   html_document: 
@@ -12,500 +12,121 @@ output:
     css: TBR.css
 ---
 
-# Foreword
-
-You can no longer load **1.38d2** codes. See Hive Workshop download page for a link to **1.39a2** if you need to convert a **1.38d2** code
-
-Whenever you load a **1.39a2** code, it is converted to a **1.39b** code and a backup of the **1.39a2** code is saved into a subfolder called `1.39a2 backups`
-
-# 1.39b2 Changes
-
-- Updated the text generation by the save/load system to produce valid text files to read-in. Primarily affects *Guardian of Nature* saves
-- Restructured the buff removal calls for the **Ensnare** debuff
-- Updated the map to show the war3mapPreview image in the Wc3 1.32 client
-- **You picked the wrong house, fool** now only counts runs you've personally participated in. This uses the same threshold condition as the second to tenth runs of *Uninvited Guests* (Nicanor)
-- Adjusted the doodad placement at **Athen's** backpack zone to prevent teleports clipping into a location which traps you between the barn and fence
-- Adjusted the save/load code again to not break replays?
-
----
-
-- Updated the *Druid*'s difficulty level to reflect the changes made in 1.39b
-- **Counter** (Warlord):  *Books of Skill Increase* and *Single Skill Reset* now work as intended
-- **Assassinate** (Assassin), **Charge** (Spartan Warrior), and **Bum Rush** (Warlord) are now coded smarter to avoid in blinking units into deep water. Also, *Charge* and *Bum Rush* no longer interrupt queue'd orders
-- **Transcendence** (Cleric) now works with *Midas' Pendant of Wisdom* and *Silenus' Talisman*. This uses the same rules as *Black Arrow* (Ranger) to determine whether the proc applies because this spell __modifies__ auto-attack
-- **Thunderbolt** (Druid): AoE width increased to 125 (from 100)
-- **Rejuvenation** (Druid): Cooldown reduced to 2.5 seconds (from 3)
-- **Sadism** (Warlock): Rescaled to stack up to four times (from five). Now restores 4% / 8% / 16% / 32% Maximum Mana (from 3% / 6% / 12% / 24% / 36%)
-
----
-
-- Clarified that **Midas' Pendant of Wisdom** + **Silenus' Talisman** special-case affects spells which enhance auto-attacks. Note that neither *Aspect of the Oread* or *Aspect of the Nereid* (Druid) do not trigger the *Enfeeble* proc
-- **Enchanted Diamond Dust**, **Tempered Steel**, **Sapphire**, **Power Stone** drop rate increased to 25/833 from two separate low probability rolls (Undocumented change in 1.39b)
-- **Blaze o' Glory** (Midas' of the Pendant of Wisdom): The origin of the flames are now centred on where the Fire Elemental spawns rather than where the spell was targeted
-
----
-
-- *Oceanus*' arena no longer has a random hole in the pathing map
-- **Hyperion** and family's auto-attack lock-on leash now actually matches their attack range
-- Re-coded how *Sphinx*,  *Manslayer* / *Lightbane*, and *Hallowed One* cleans up their adds. This means that the rare grouping bug will no longer remove random units
-- Introduced a bit more safety to how mob groups are cleaned in **The Fools' Mausoleum**
-- The auto-attack target script for **Hyperion** and his family now recognises when their locked target is dead
-- Updated the A.I. scripting for **Theia**'s *Rejuvenation* and *Frost Armor* casts
-
-# General
-
----
-
-- Updated the crafting hotkey to `Tab` (previously `G`)
-- Implemented grid hotkeys to the rest of the game objects that can support the functionality
-- The macOS filepath for the CustomMapData folder in **Saving and Loading** (F9)
-- Hero selection heroes now have the *Codeless Save and Load* passive which summarises the features of the save/load system
-
----
-
-- Updated how the map script attempts group and filter units
-- Updated the FX for the *Ensnare* generic debuff. Also, the code for applying *Ensnare* has been adjusted to cast it near-instaneously
-- When the *Taunt* generic debuff expires: It now issues a stop order to the taunted unit if it cannot auto-attack the last unit that taunted it
-- Updated how *backpacks* use items and it now consistently stops the *backpack* from item usage when your hero is dead or stunned
-- Updated *Purchase a Bank*'s tooltip to remove a redundant line that no longer applies
-- Crafting only adds the crafted item to the backpack, if it fails to be added to the hero
-- Cleaned up the following tooltips: *Cleave* (Barbarian); *Impale* (Warlord); *Hammer of Zeus* (Temple Guardian); *Dispatch* (Spartan Warrior); and *Moon Bind* (Ranger)
-
----
-
-- Adjusted the pathing map along **Eretria**'s shoreline
-- **Temple of Apollo** (Isle of Issus) now has feedback FX when acquiring the *Gemstone of Apollo*
-- **The Fools' Mausoleum** puzzle attempts decreased to 3 (from 5)
-- **The Fools' Mausoleum**  walls are doodads (and can no longer be targeted)
-- Updated the *Field Equipment* shop (Incursion Point). See [Items] for more details
-
----
-
-## Quests
-
-- **Striking the Heart** (Gaiana) now rewards 3,000g and 7,500xp (previously 1,500 and 5,000 respectively)
-
-#### A Rare Specimen - *Beastmaster Damien*
-> Triggers when the *Bronze Dragon Egg* is dropped by *Ladon*  
-> Quest Level 85  
-> Rewards 1,000xp  
-> Report to *Damien*  
-> **Reward:** Unlocks the Orphan-Maker achievement
-
-##### Gone with the Wind - *Attis*
-> Triggers when you talk to *Attis* in **Estallah**  
-> Quest Level 130  
-> Rewards 1,000xp  
-> Find the "pirate"  
-> **Reward:** Reveals *Dolios* at the entrance of **The Fools' Mausoleum**
-
-##### History's Teachings - *Dolios*
-> Triggers when you talk to *Dolios* at the entrance of **The Fools' Mausoleum**    
-> Quest Level 130  
-> Rewards 12,500g and 25,000xp  
-> Find five artifacts and a "fresh" *Pactolus' Essence* in **The Fools' Mausoleum**  
-> **Reward:** *Dolios* drops a *Pactolus Essence*
-
----
-
-## Items
-
-- *Book of Skill Increase* (Books): Rebuilt the UI for selecting a skill to improve
-- *Book of Single Skill Reset* (Seryo) replaces *Book of All Skills Reset*. *Book of Single Skill Reset* costs 5000 crafting materials
-
----
-
-- *Lesser Whetstone*, *Whetstone*, *Greater Whetstone*, & *Superior Whetstone* (Weaponsmith): Now grants it's bonus as a buff
-- *Leather Armor* (Field Equipment): No longer increases Agility by 3
-- *Potion of Minor Regeneration* (New Item @ Field Equipment): Grants 3 Health Regeneration per second. Has 2 charges. Lasts 10 minutes. Consumable. Requires Level 3
-- *Talisman of Minor Spell Power* (New Item @ Field Equipment): Increases Spell Power by 30. Requires Level 3. Cannot be used by Warrior Classes
-- *Ankh of Reincarnation* (Alchemist): Updated the code to simply remove the item when the effect procs instead of dropping then removing it 
-
----
-
-- Removed *Journeyman's Field Guide* (Field Equipment & Books). All classes now start with the ability granted by it instead
-- Removed *Ring Mail* (Field Equipment)
-- Renamed *Talisman of Minor Stamina* (Field Equipment) to *Medallion of Minor Stamina*
-- Renamed *Talisman of Minor Mana* (Field Equipment) to *Pendant of Minor Mana*
-
----
-
-# Backpack Skins 
-The save/load system now tracks six unique achievements for each hero. Completing an achievement unlocks a backpack skin that you can purchase for 50,000g from *Beastmaster Damien*!
-
-### Proven Adventurer
-> Complete non-repeatable quests 50 times. This unlocks the Faerie Dragon skin
-
-#### Note
-Any quest color-tagged with orange does not count towards **Proven Adventurer**
-
-### I am Legend
-> Reach level 200. This unlocks the Nether Dragon skin
-
-### Weighed, measured and found wanting
-> Dispatch 30 Minibosses. This unlocks the Chimaera skin
-
-#### Note
-The Minibosses are:
-<small>
-
-  |  
-------------- | -------------
-Nukacha | Mance Swiftsword
-Rokthul | Forest Terror
-Manticore | Goretusk
-Rockwatcher Feldblade | Bullroarer the Twisted
-Gethos the Mighty | The Dark Knight
-Lucas Farblaze | The Black Knight
-Heiros Darkfiend | Nasty Big Pointy Teeth!!
-
-</small>
-
-### Orphan-Maker
-> Acquire a rare *Bronze Dragon Egg* from Ladon and bring it to *Damien*. This unlocks the Bronze Dragon skin
-
-#### Note
-This is tied to activating the *A Rare Specimen* (Beastmaster Damien) quest
-
-### You picked the wrong house, fool
-> Take care of *Uninvited Guests* 100 times. This unlocks the Frost Wyrm skin
-
-### Full House
-> Defeat *Hyperion* while all family members are still alive. This unlocks the Phoenix skin
-
----
-
-# Backpack Skills
-Your backpack can now learn skills and you have **seven skill points** to assign to these skills. Clicking *Trainer Yegor* when you are nearby will allow you to purchase and rank up backpack skills. All backpacks start with the *Town Portal* skill by default.
-
-### Town Portal
-#### Cost: 0g / 150,000g / 225,000g
-> Teleports the user to Athens.  
-> *Cooldown:* 7 / 4 / 1 minutes  
-
-### Swiftness
-#### Cost: 75,000g / 150,000g / 225,000g
-> Increases your Movement Speed by 50%. Lasts 3 minutes.  
-> *Cooldown:* 7 / 4 / 1 minutes
-
-### Gift of Life
-#### Cost: 75,000g / 150,000g / 225,000g
-> Restores health equal to 15% / 25% / 35% of your hero's Maximum Health (capped at 7500 / 12500 / 17500).  
-> *Cooldown:* 7 / 5 / 3 minutes
-
-### Gift of Magic
-#### Cost: 75,000g / 150,000g / 225,000g
-> Restores mana equal to 15% / 25% / 35% of your hero's Maximum Mana (capped at 3750 / 6250 / 8750).  
-> *Cooldown:* 7 / 5 / 3 minutes
-
-### Gift of Endurance
-#### Cost: 75,000g / 150,000g / 225,000g
-> Increases your Strength by 25 / 50 /75.  
-> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
-
-### Gift of Dexterity
-#### Cost: 75,000g / 150,000g / 225,000g
-> Increases your Agility by 25 / 50 /75.  
-> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
-
-### Gift of Wisdom
-#### Cost: 75,000g / 150,000g / 225,000g
-> Increases your Intelligence by 25 / 50 /75.  
-> *Unique* --- Choose from either *Gift of Endurance*, *Gift of Dexterity*, or *Gift of Wisdom*
-
-### Vigorous
-#### Cost: 250,000g
-> Increases your base Maximum Health by 5%.  
-> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
-
-### Ferocity
-#### Cost: 250,000g
-> Increases your base Attack Damage by 5%.  
-> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
-
-### Aptitude
-#### Cost: 250,000g
-> Increases your base Spell Power by 5%.  
-> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
-
-### Toughness
-#### Cost: 250,000g
-> Increases your base Armor by 5%.  
-> *Unique* --- Choose from either *Vigorous*, *Ferocity*, *Aptitude*, or *Toughness*
-
----
-
-# Forces of Hell
-
-- Increased the collision size of the **Sphinx**'s *Entomb* object to 48 (previously 32)
-- Adjusted the spawn zone of **Minotaur Grunts** near *Tethol* (Corinth)
-- The blue AoE target circles have been updated to be more accurate
-	- **Hyperion**'s *EMP* target circle now features a visible timer FX
-	- **Manticore**'s *Poison Spray* target circle now features a visible timer FX
-- **Ladon** (Savage Jungle): Now has a 3% chance to drop a *Bronze Dragon Egg*
-
-## The Frozen Citadel
-
-**The Frozen Citadel**'s respawn logic partially reverted back to the pre-`1.39a/a2` logic. Mobs only become visible if all players in the citadel exit to *Nicanor* before triggering the respawn. (This should also addresses the *Ice Giant* bug where they do not spawn correctly)
-
-- Citadel mobs now reset their position, health, and mana
-- *Ice Giant*'s no longer camp a spot after casting *Ice Ring*
-- *Ice Giant*s now have a 0.5 second cast animation 
-
----
-
-# Assassin
-
-- Updated the model's attachment points
-- Adjusted the use of colour describing the additional effect attached to *Walk in the Shadows* to be consistent with *Shroud* (Khaos Champion)
-
-### Lethal Poison
-
-- Deals 3.0 Agility physical damage over 4 seconds (previously over 6 seconds)
-- FX is now used to denote a *Lethal Poison* proc (previously floating text)
-
-### Night Set
-
-- Each bounce of *Dancing Dagger* now applies *Lethal Poison* (previously a 15% chance to proc)
-- Enhances *Lethal Poison* to deal 5.0 Agility physical damage over 4 seconds (previously improved *Lethal Poison* chance to proc to 15% from 5%)
-
----
-
-# Cleric
-
-- Changed to Jaina's soundset (previously Sorceress)
-- Adjusted the use of colour describing the additional effect attached to *Rebirth* to be consistent with *Shroud* (Khaos Champion)
-
-### Transcendence
-
-- Now lasts for 16 / 18 / 20 / 22 / 24 / 26 / 28 / 30 seconds or Agility / 18 auto-attacks [min. 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10] (previously 10 seconds)
-- Reduced the Spell Damage ratio to 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.35 (from 0.15 / 0.2 / 0.25 / 0.3 / 0.35/ 0.4 / 0.45 / 0.5)
-- Now only heals for 50% of the total damage dealt (previously 100%)
-
-### Rebirth
-It now attempts to close the submenu if:
-
-1. You die with it open
-2. The channel is interrupted by crowd-control
-3. Whenever your target is revived (by another Cleric and/or the natural respawn)
-
----
-
-# Druid
-
-- Updated the icon to match the model
-- Updated the model's attachment points
-- Removed the lightning FX attached to the model
-
-### Rejuvenation
-
-- Cooldown increased to 3 seconds (from 1 second)
-- Improved the iteration algorithm
-
-> *Aspect of the Dryad*---*Rejuvenation* dispels a *debilitating debuff*. Also if the target does not have *Rejuvenation* active, *Soothing Presence*'s persists for an additional 3 seconds after *Aspect of the Dryad* dissipates.
-
-### Nature's Wrath
-> Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850  
->   
-> Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+Spell Damage) physical damage and *Ensnare* the target to prevent it's movement for 2 / 2 / 2.5 / 2.5 / 3 / 3 / 3.5 / 3.5 seconds.  
->  
-> *Aspect of the Oread*---*Nature's Wrath* **empowers** the next aspect manifested within 30 seconds. This reduces the aspect's enhanced spell cooldown(s) by 0.5 seconds and can stack up to *nine* times. (This effect cannot reduce a spell's cooldown below 1 second).  
->  
-> Cooldown: 6 seconds.
-
-### Thunderbolt
-#### Replaces Lightning Strike
-> Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200  
->   
-> Blasts out a bolt of thunder towards a target location, dealing 100 / 175 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+Spell Damage) magical damage in a line. Enemies caught within are *thunderstruck* for 18 seconds. *Thunderstruck* enemies take 25% more damage from *Thunderbolt* and stacks up to two times.  
->  
-> *Aspect of the Nereid*---Reduces *Thunderbolt*'s cooldown to 12 seconds. Enemies struck also have their armor reduced by 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25 for 8 seconds.  
->  
-> Cooldown: 15 seconds.
-
-### Reclamation
-Mana cost decreased to 25 / 50 / 85 / 140 / 215 / 310 / 425 / 560 (previously 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850)
-
-### Maelstrom
-
-- Mana cost adjusted to 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800 (previously 100 / 125 / 175 / 280 / 425 / 600 / 750 / 950)
-- Cooldown increased to 21 seconds (from 18 seconds)
-
-> *Aspect of the Nereid*---Reduces *Maelstrom*'s cooldown to 18 seconds.
-
-### Manifest Aspect
-#### Aspect of the Dryad
-> The *Druid* manifests the power of the Dryads which grants the following:  
->   
-> * Grants *Soothing Presence*.  
-> * Enhances *Rejuvenation*.  
->   
-> Lasts for 20 seconds.  
->   
-> *Soothing Presence*---Allies within a 300 AoE restore health equal to 1% of their Maximum Health  per second, and restore mana equal to 1% of their Maximum Mana  per second.  
->   
-> Cooldown: 60 seconds.
-
-#### Aspect of the Oread
-> The *Druid* manifests the power of the Oreads which grants the following:  
->   
-> * Sets your auto-attack cooldown to 2 seconds.  
-> * Reduces your attack-range to 450.  
-> * Auto-attacks have a 8% chance to *Nature's Wrath*.  
-> * Enhances *Nature's Wrath*.  
->   
-> Lasts for 20 seconds.  
->   
-> Cooldown: 60 seconds.
-
-#### Aspect of the Nereid
-> The *Druid* manifests the power of the Nereids which grants the following:  
->   
-> * Sets your auto-attack cooldown to 3.5 seconds.  
-> * Auto-attacks deal splash damage in a 300 AoE.  
-> * Enhances *Maelstrom* and *Thunderbolt*.  
->   
-> Lasts for 20 seconds.  
->   
-> Cooldown: 60 seconds.
-
-### Wild Set
-> *Reclamation* also reduces your *Manifest Aspect* cooldowns by 8 seconds
-
----
-
-# Guardian of Nature
-
-### Roar
-
-- Damage bonus decreased to 15% / 17.5% / 20% / 22.5% / 25% / 27.5% / 30% / 35% (from 27% / 29% / 31% / 33% / 35% / 37% / 39% / 42%)
-- Armor bonus adjusted to 5 / 10 / 15 / 20 / 25 / 30 / 40 / 50 (from 12 / 16 / 20 / 25 / 30 / 30 / 35 / 40 / 50)
-- Mana cost increased to 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 (from 12 / 16 / 20 / 25 / 30 / 35 / 40 / 50)
-- Duration decreased to 30 seconds (from 2 minutes)
-- Cooldown increased to 15 seconds (from 5 seconds)
-
-### Earth Shock
-
-- Damage adjusted to 50 / 150 / 350 / 700 / 1250 / 2500 / 3750 / 5000 +3.0 Strength *or* +1.0 Spell Damage (from 125 / 250 / 500 / 1000 / 2000 / 4000 / 8000 / 16000 +1.0 Spell Damage)
-- Mana cost decreased to 50 / 75 / 100 / 150 / 200 / 300 / 400 / 500 (from 50 / 100 / 175 / 270 / 400 / 550 / 700 / 850)
-- No longer damages structures (an undocumented change from 1.39a2)
-
-### Cataclysm
-
-- Damage adjusted to 100 / 300 / 700 / 1400 / 2500 / 5000 / 7500 / 10000 +6.0 Strength *and* +1.2 Spell Damage (from 1000 / 2500 / 5000 / 8000 / 12000 / 20000 / 35000 / 50000 +1.0 Spell Damage)
-- Mana cost adjusted to 100 / 150 / 200 / 300 / 450 / 600 / 900 / 1200 (from 150 / 275 / 425 / 600 / 850 / 1000 / 1000 / 1000)
-- Cooldown adjusted to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 30 seconds)
-- No longer deals magical damage over time to enemies hit by it
-
-### Tremor
-
-- Now only has a single skill level
-- Damage adjusted to 1.5 Strength and 0.35 Spell Damage (from 225 / 450 / 700 / 1000 / 1350 / 1600 / 2000 / 2300 +0.5 Spell Damage)
-
----
-
-# Khaos Champion
-
-### Dies Irae
-Increased the Strength ratio to 0.5 (from 0.3)
-
-### Shroud
-
-- If an enemy attacks you while *Shroud* is active: Consumes a stack if none were consumed in the past 0.25 seconds. (Previously consumes a stack if an enemy attacks you while *Shroud* is active)
-- Reduced the base mana regeneration to 0.75 / 1.0 / 1.25 / 1.5 / 2.0 / 2.75 / 3.5 / 4.5 per second (from 0.75 / 1.0 / 1.25 / 1.5 / 2.0 / 3.0 / 4.5 / 6.0)
-- Updated the retaliation FX
-
----
-
-# Ranger
-
-### Moon Bind
-Updated the FX
-
-### Star Dust
-
-- Improved the iteration algorithm
-- Updated buff FX
-- Multiple *Star Dusts* no longer stack. Only the strongest *Star Dust* heals per tick
-
----
-
-# Spartan Warrior
-
-### Dispatch
-The bleed effect no longer affects on structures
-
-### Throw Javelin
-No longer damages structures (an undocumented change from 1.39a2)
-
----
-
-# Temple Guardian
-
-### Mark of Artemis
-
-- Adjusted the effect to deal an additional 10 / 20 / 30 / 50 / 70 / 90 / 120 / 150 physical damage (previously 5 / 10 / 15 / 20 / 25 / 30 / 35 / 40 and increases by 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 for each proc)
-- Recoded such that proc occurs when auto-attack damage is registered (previously at the beginning of the attack animation)
-- Duration decreased to 15 seconds (from 45 seconds)
-- Cooldown increased to 45 / 43 / 41 / 39 / 37 / 35 / 33 / 30 seconds (from 1 second)
-
----
-
-# Warlock
-
-### Twisted Font
-Adjusted the mana shield conversion rate to 1.35 / 1.3 / 1.25 / 1.2 / 1.15 / 1.1 / 1.05 / 1 (from 1/.75 / 1.65 / 1.55 / 1.45 / 1.35 / 1.25 / 1.15 / 1)
-
-### Death Wave
-Standardised the base damage for Level 2 to 150 (from 100)
-
-### Sadism
-> You gain a *Sadism* stack whenever a *Tormented* enemy dies. Then become *Sadistic* for the next 8 seconds if you were not already.  
->   
-> When *Sadism* naturally times out recover mana equal to the number of *Sadism* stacks:  
->   
-> - 1 Stack: 3% Maximum Mana
-> - 2 Stacks: 6% Maximum Mana
-> - 3 Stacks: 12% Maximum Mana
-> - 4 Stacks: 24% Maximum Mana
-> - 5 Stacks: 36% Maximum Mana
->   
-> You can have up to five stacks active at one time.  
->   
-> Cooldown: 12 seconds.
-
----
+# New Achievements
+
+1. *Summoning Game Done Quick*<br>Place all three *Summoning Stones* in the *Fountain of Light* within 12 minutes of game start
+2. *I would walk 500 miles (again)*<br>Personally participate in defeating every Titan (including Hades) without teleporting once
+
+> The following teleports invalidate the completion of this achievement: the town teleporters, *Town Portal* (Backpack), *Scroll of Town Portal* (Scrolls), *Boots of Marathon* (Armorsmith), *Phylas*, *Obelisk of Poseidon*, *Temple of Poseidon* and *Alcon*
+
+
+# Boats
+
+- *Trireme* renamed to *Boat*
+- Hiring a *Boat* now replaces your previous boat (if applicable)
+- *Boat*s have a collision size of 8. This hypothetically reduces boat bunching at a single location. (Previously a collision size of 0)
+- *Boat*s now only transports a single hero unit. (Previously 8 non-mechanical units)
+- The ability to *scuttle* a *Boat* has been removed in light of the new replacement framework
+- *Shipyard* refreshes the stock of *Boats* at a rate of 1 second. (Previously 9 seconds)
+- *Two boat skins* are now available and (tentatively) cost 1000 crafting materials:
+  + The *Ferry skin* is unlocked by completing the *I would walk 500 miles (again)* achievement
+  + The *Frigate skin* is unlocked by completing the *Summoning Game Done Quick* achievement
+  
+# Critical Strike Refactor
+Critical Strike has been swapped to a coded system from base Wc3 mechanics. The following list describes what this change entails: 
+
+- Critical Strike is now checked on-hit (before damage mitigation) rather than on-attack
+- Each Critical Strike source is now rolled independently, and if there are multiple success, these multiplier stack additively. For example, if you a x2.5 and a x4.0 Critical Stike, your auto-attack has a x6.5 Critical Strike multiplier
+- Any default Critical Strike animations no longer play when a Critical Strike is triggered
+- *Black Arrow* and *Transcendence* enhanced auto-attacks no longer have their on-hit effects cancelled out due to a Critical Strike
+
+We are also pre-emptively reducing the Critical Strike multipliers on items with this refactor:
+
+- *Tooth of the Hallowed One* (Hallowed One): Critical Strike multiplier reduced to 2.5 (from 3.0)
+- *Adamantium Lance* (Metalsmith Arcadios): Critical Strike multiplier reduced to 2.5 (from 3.0)
+- *Wraithblade* (Champion's Armory): Critical Strike multiplier reduced to 2.5 (from 3.0)
+- *Sword of Destruction* (Relic): Critical Strike multiplier reduced to 3.5 (from 4.0)
+- *Blazing Sword of Helios* (Olympian Relic): Critical Strike multiplier reduced to 4.0 (from 4.5)
+  
+# Hyperion
+  
+- *Theia*'s Rejuvenation (and Frost Armor on *Hyperion* when skipping *Theia*) A.I. now triggers when any of the family is damaged (previously auto-attacks)
+- *Hyperion*'s and the family's turn rate has been increased to 0.2 (previously 0.1)
+- Buffed *Hyperion*'s and the family's auto-attacks and armor values to account for the addition of *Backpack Skills* in `1.39b`:
+  + *Hyperion* ~ Damage: 116000 → 120000; Armor: 102 → 130
+  + *Theia* ~ Base Damage: 76000 → 78625; Armor: 40 → 49
+  + *Selene* ~ Base Damage: 33500 → 34655; Armor: 67 → 83
+  + *Helios* ~ Base Damage: 53000 → 54830; Armor: 77 → 96
+  + *Eos* ~ Base Damage: 28250 → 29225; Armor: 57 → 70
+  + *Noirepyh Scarecrow* ~ Armor: 102 → 130
 
 # Bug Fixes
 
-- Fixed the inconsistent behaviour of *Neleus*' & *Pelias*' perma-death animations
-- *Ladon* can no longer teleport due to frame-perfect execution of the *Ensnare* debuff followed by another generic debuff
-- The *Noirepyh* scarecrow now has the correct armor value
-- **The Fools' Mausoleum** mobs now have their intended levels
-	- *Cursed Weapon* is Level 120 (previously Level 100)
-	- *Animated Armor* is Level 125 (previously Level 100)
-	- *Lich* is Level 130 (previously Level 100)
-- The runes for the **The Fools' Mausoleum** puzzle should no longer be displaced on spawn
-- *Midas*' *Alerted* buff no longer has an empty tooltip
-- *Midas*' *Leap* mechanic no longer reduces *Midas*' animation scale to zero when leaping long distances
-- The scripted auto-attack target selection for *Hyperion* and his family no longer bugs out due to the locked-in target being out of range
-- *Hyperion*'s *Minotaur Strongholds* now also displaces units on spawn. This prevents heroes from being stuck in them
+- *Tooth of the Hallowed One* (Hallowed One) now adheres to the item uniqueness rule
+- Adjusted a spawn/patrol zone within the *Eastern Highlands* to not intentionally clip the cliff that surrounds Gaea's arena
+- *Draught of the Phoenix*'s (Alchemist) crafting tooltip now reflects the updated effect introduced in `1.39a`
+- *Veteran's Regalia* (Spartan Warrior) no longer grants the unlisted Evasion ability
+- *Ice Ring*'s (Ice Giant) cast FX is reverted back to `1.39a2`'s cast FX
 
 ---
 
-- `-save`/`-s` chat command no longer generates save/load codes when watching a replay
-- `-ui on` and `-ui off` now has consistent behaviour
-- Addressed the typos in several "start of game" messages
-- Fixed numerous timer and group leaks which may had inadvertently caused other bugs
+- *Ensnare* now uses a pool of dummy casters to prevent a rare bug, where flying enemies (only *Uranus* as of `1.39b2`) can teleport across the map to where another generic debuff was cast. 
+- *Requiem* (Khaos Champion) now registers a duration increase when either *Neleus* or *Pelias* are slain
+- *Backpack Skin* shadows are now rendered properly (as seen in *Athens*). *NB: The wisp skin does not have a shadow*
+- Removed an erroneous space in *Tome of Stat Increase +8*'s (Books) tooltip
+- *Pray*'s (Temple Guardian) base object now shows the mana cost
 
 ---
 
-- *Lethal Poison* (Assassin) now deals the correct damage per tick
-- *Rebirth* (Cleric) correctly updates the internal "is the hero dead" flag. This also addresses *Rebirth* disabling backpack item use
-- Activating *Artemis' Blessing* (Ranger) in the middle of an attack animation no longer prevents *Ironwood Set* (Ranger) from triggering
-- *Black Arrow*'s (Ranger) Level 8 tooltip now states the correct base damage values for both components
-- *Green Dragonscale Ring of Addiction* (Metalsmith Zoticus) now grants the correct stats
-- *Heart Blade* (Orange Drop): No longer breaks the item "*uniqueness*" rule
-- *Midas' Band of Vigor* and *Ring of Regret* (Midas): *Magic Protection* no longer underflows and heals the hero
-- *Blazing Sword of Helios* (Olympian Relic): Now states the correct crafting components if you have missing components when crafting it
-- Completing *Guard the Shipment* (Cavalorn) now renders an exclamation mark FX over *Serius* if *Trouble in the North* (Therin) was not completed.
+- Both `-repick` and creating a new character no longer sets the backpack skill points for the player "below" you to 7 (for the former) and to 6 (for the latter)
+- *Sadism* (Warlock) no longer generates its consumption FX while you're inside a boat
+- *Walk in the Shadows* (Assassin) no longer attempts to continuously applies it damage buff while you're inside a boat
+- Added a condition to *Theia*'s AI for casting *Rejuvenation* and *Frost Armor*. This condition prevents her from casting either spell if she is already attempting to
+- Fixed a rare bug where resetting the *Manslayer* and *Lightbane* (Minotaur Burrows) doesn't respawn both of them
+
+---
+
+- *A Rare Specimen* (Damien), *Gone with the Wind* (Attis), and *History's Teachings* (Dolios) are now registered with the *Quest Helper* (Backpack)
+- `-save` no longer sets the ownership of unique crafting components to the player that triggered the command
+- Updated how all hero spells group targets
+- *Grave Seize* (Khaos Champion) tracks when the *Stun* debuff wears off rather than when the *Stun Immunity* buff to apply the *Taunt* debuff. This hypothetically addresses the bug where *Grave Seize* can pull another player hero for infinite time after a duel concludes
+- The *Burning* debuff (*Midas* and *Blaze o' Glory*) is updated to no longer reset the tick-rate. This addresses the inconsistent damage dealt to stationary targetse
+
+---
+
+- The crafting tooltip for *Midas' Pendant of Wisdom* (Metalsmith Galen) now mirrors the item description
+- Fixed the typos present in *Hyperion*'s messages when he summons either *Helios* or *Theia* first
+- Boss kills no longer grant XP via default Warcraft 3 mechanics. To compensate for this, the XP modifier for bosses was increased to 25 (from 6)
+
+# Other
+
+- *Tome of Stat Increase +8* (Books) grants all eight stats at once. (Previously grants them once at a time)
+- *Fire of Apollo* (Temple Guardian): Updated so it's DoT component deals 4 ticks per second (from 1 tick per second)
+- Backpack skins now refund their cost if you rebuy a backpack skin you already have active
+- The *Taunt* debuff now dispels if the caster and target are no longer enemies
+- *Blaze o' Glory*'s (Midas' Pendant of Wisdom) Fire Elemental summon now lasts for 10 seconds (down from 30 seconds). The summon's duration is also now explicitly stated in the tooltip
+
+---
+
+- *Draught of Destruction, Heaven and Life* (Alchemy) have their crafting material cost increased to 2500 (previously 500)
+- The following interaction hotkeys are now properly exposed: *Escort the Pack Beast* (Cavalorn); *Read aloud from the Crumbling Tome* (Caverns of Dread); *Help Neleus* (Neleus); *Help Pelias* (Pelias); *Escort Greyn* (Greyn); *Interact* (Crystal Lamp); and *Open the Gate* (Eretria)
+- *Hyperion*'s Thunder Bolt now queues a stand animation after the spell animation instead of entering a freeze frame
+
+---
+
+Movement speed bonuses from permanent items now stack additively (previously only takes the highest). This affects the following items:
+
+- *Ares Bloodthirsty Spear* (Olympian Relic)
+- *Shadow Blade* (Relic)
+- *Boot of Hermes* (Makarios - Caverns of Dread)
+- *The Winged God's Blessed Boots* (Metalsmith Galen)
+- *Boots of Marathon* (Armorsmith)
+- *Myrmidon Scale* (Rare Drop)
+
+---
+
+*Valor* (Spartan Warrior)
+
+- Duration reduced to 30 seconds (from 2 minutes)
+- Cooldown increase to 30 seconds (from 1 second)
+- Recovers 240 / 480 / 780 / 1140 / 1560 / 2100 / 2850 / 3900 (+Spell Healing) Total HP over 30 seconds [previously 960 / 1920 / 3120 / 4560 / 6240 / 8400 / 11400 / 15600 Total HP (+Spell Healing) over 30 seconds]
