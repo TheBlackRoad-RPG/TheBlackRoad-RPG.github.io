@@ -28,7 +28,7 @@ output:
 - *Boat*s now only transports a single hero unit. (Previously 8 non-mechanical units)
 - The ability to *scuttle* a *Boat* has been removed in light of the new replacement framework
 - *Shipyard* refreshes the stock of *Boats* at a rate of 1 second. (Previously 9 seconds)
-- *Two boat skins* are now available and (tentatively) cost 1000 crafting materials:
+- *Two boat skins* are now available and cost 1000 crafting materials:
   + The *Ferry skin* is unlocked by completing the *I would walk 500 miles (again)* achievement
   + The *Frigate skin* is unlocked by completing the *Summoning Game Done Quick* achievement
   
