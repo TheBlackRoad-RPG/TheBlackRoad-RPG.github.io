@@ -1529,6 +1529,23 @@ stack with <em>Scroll of the Lesser Beast</em> and <em>Scroll of the
 Beast</em> (Alchemy)</li>
 <li>Added a section on item uniqueness to the TBR Mechanics F9
 entry</li>
+<li>Reformatted <em>Aphrodite’s Favour</em>’s (Goldsmith) item tooltip
+to be like <em>Midas’ Ring of Vigor</em> (Metalsmith Galen)</li>
+<li>Defeating <em>Hades</em> now cleans up all <em>Ker</em> adds</li>
+<li>The level requirement for a bank has been reduced to 60.
+<small>(Previously 85)</small></li>
+</ul>
+<hr>
+<ul>
+<li>A number of UI buttons now happen on-click rather than on-release as
+a side effect of addressing an UI bug. See <a href="#bug-fixes">Bug
+Fixes</a> for more details</li>
+<li>The Hero Selection heroes now register 0 damage from all
+sources</li>
+<li>Improved the language of <em>Silenus’ Talisman</em> (Midas) and
+<em>Midas’ Pendant of Wisdom</em> (Metalsmith Galen) to clarify that the
+effect doesn’t proc for spell-enhanced auto-attacks if the target is
+already <strong>Enfeebled</strong></li>
 </ul>
 </div>
 <div id="sedah-scarecrow" class="section level1">
@@ -1542,6 +1559,9 @@ entry</li>
 <!-- (5) Buttons to configure the Sedah Scarecrow to Hades, Hyperion, and No Resistances durabilities -->
 <!-- (6) Features a Close and Reset Timer button -->
 <!-- The user interface tracks only tracks the damage you've dealt to it and it doesn't start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it. -->
+<!-- - The auto-close functionality when you're too far away from Sedah Scarecrow now runs as you open the UI -->
+<!-- Added timer length functionality to the DPS UI. This allows you to set an infinite, 30s, 60s, or 180s timer. Swapping between timer lengths resets your DPS numbers.  -->
+<!-- A fixed length timer "memorises" the buffs you had active when the timer is started. (The infinite length timer retains the old buff tracking functionality). -->
 <p>We’ve removed the Noirepyh Scarecrow as the functionality of having
 two scarecrows has been superseded.</p>
 </div>
@@ -1556,27 +1576,43 @@ to 2.0 (from 1.0).</li>
 <div id="spartan-warrior" class="section level2">
 <h2>Spartan Warrior</h2>
 <ul>
-<li>Updated the model</li>
+<li>Updated the model and icon</li>
 <li>The soundset changed to <em>Garithos</em> (from <em>Arthas with
 Frostmourne</em>)</li>
-<li>Updated the icon</li>
+<li><strong>Dispatch</strong></li>
 <li><strong>Valor</strong>
 <ul>
 <li>Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600.
 <small>(Previously 25 / 50 / 85 / 140 / 210 / 300 / 405 /
 525)</small></li>
 <li>AoE decreased to 300. <small>(Previously 600)</small></li>
-<li>Now restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 /
-0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35
-/ 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing)</li>
+<li>Restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4
+/ 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 /
+0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing)</li>
 <li>No longer grants an armor bonus for the duration</li>
 <li>Duration decreased to 3 seconds (from 12 seconds)</li>
 <li>Cooldown decreased to 12 seconds (from 30 seconds)</li>
 </ul></li>
 </ul>
+<!-- - Dispatch (Spartan Warrior) -->
+<!-- - Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 STR and +0.5 SD) from 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 STR and +0.5 SD) -->
+<!-- - Veteran's Set (Spartan Warrior) -->
+<!-- - Reworded the effect -->
+<!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
+<p><!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage --></p>
 </div>
 <div id="guardian-of-nature" class="section level2">
 <h2>Guardian of Nature</h2>
+<ul>
+<li><strong>Embolden</strong> <small>(replaces Roar)</small>
+<!-- ~ Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage for the duration -->
+<!-- ~ No longer grants bonus armor for the duration -->
+<!-- ~ AoE: 600 -->
+<!-- ~ Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 -->
+<!-- ~ Duration: 6 seconds --> <!-- ~ Cooldown: 15 seconds -->
+<!-- - Embolden (Guardian of Nature): Increased the duration to 6.5s (from 6s) --></li>
+</ul>
+<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
 </div>
 </div>
 <div id="bug-fixes" class="section level1">
@@ -1612,56 +1648,31 @@ Highlands</em> to address mobs spawning on cliff faces</li>
 <li>The save/load system now correctly encrypts and decrypts the value
 stored for the <em>You picked the wrong house, fool</em>
 achievement</li>
-<li>Fixed typos in F9 help and <em>Gift of Wisdom</em> (Familiar
-Skill)</li>
+<li>Fixed typos in F9 help, <em>Gift of Wisdom</em> (Familiar Skill),
+and <em>Draught of the Phoenix</em>’s (Alchemist) crafting
+description</li>
 </ul>
 <hr>
-<!-- - Embolden (Guardian of Nature) ~ replaces Roar -->
-<!-- ~ Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage for the duration -->
-<!-- ~ No longer grants bonus armor for the duration -->
-<!-- ~ AoE: 600 -->
-<!-- ~ Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 -->
-<!-- ~ Duration: 6 seconds -->
-<!-- ~ Cooldown: 15 seconds -->
-<!-- Bug Fixes -->
-<!-- - Dancing Dagger (Assassin) no longer bounces to structures -->
-<!-- - Added a failsafe for Uranus' item drops if neither the ground or air forms are currently in the arena -->
-<!-- - Updated the code for Winds of War (Warlord), Chronowave (Sphinx), Thunderbolt (Druid), Maelstrom (Druid), and Death Wave (Warlock) to not depend on the same code that can cause the the grouping bug (for the time being) -->
-<!-- Other -->
-<!-- - Reformatted Aphrodite's Favour (Goldsmith)  item tooltip to read like Midas' Ring of Vigor -->
-<!-- - Defeating Hades now cleans up all Ker adds -->
-<!-- Adjustments to Sedah Scarecrow -->
-<!-- - The Boss Template buttons now fire on-click -->
-<!-- - Single-clicks for the  - and + buttons now fire on-release -->
-<!-- - Holding the - and + buttons for at least one second begins decrementing / incrementing the Scarecrow's armor or resist by steps of 10 per second -->
-<!-- - The Armor Type buttons now have a highlight effect when hovering over them -->
-<!-- - [Bug Fix] Abilities such as Hallowed Ground now work on Sedah Scarecrow again -->
-<!-- - The auto-close functionality when you're too far away from Sedah Scarecrow now runs as you open the UI -->
-<!-- Other -->
-<!-- - The level requirement for a bank has been reduced to 60 (from 85). -->
-<!-- - A number of UI buttons now happen on-click rather than on-release as a side effect of addressing an UI bug. See #Bug-Fixes for more details -->
-<!-- - Addressed a typo in Draught of the Phoenix's (Alchemist) crafting description -->
-<!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage. -->
-<!-- - The Hero Selection heroes now register 0 damage from all sources. -->
-<!-- Bug Fixes -->
+<ul>
+<li><em>Dancing Dagger</em> (Assassin) no longer bounces to
+structures</li>
+<li>Added a fail-safe for <em>Uranus</em>’ item drops if neither the
+ground or air forms are currently in the arena</li>
+<li>Multi-clicking UI buttons no longer registers multiple trigger
+events</li>
+<li><em>Selene</em> (Hyperion) is now the damage source for her Meteor
+Shower ability (rather than <em>Hyperion</em>)</li>
+<li>Updated the Warrior class intelligence level-ups to factor in how
+many levels are granted by a single-source of XP
+<ul>
+<li><strong>Not</strong>e: This change does not retroactively address
+loads with the incorrect amount of intelligence)</li>
+</ul></li>
+</ul>
+<hr>
 <!-- - Applying Ensnare to an already Ensnared unit now correctly sets the duration to the incoming Ensnare -->
 <!-- - Fly-height is properly reset to zero when Mighty Leap (Midas' Band of Vigor) is interrupted by an Ensnare effect -->
 <!-- - Made further adjustments to how the map groups units for enumeration. This addresses the bug with Winds of War (Warlord), Maelstrom & Thunderbolt (Druid), Death Wave (Warlock) and Sphinx's Chronowave mechanic that uses groups to track which units has been hit previously -->
-<!-- - Updated the Warrior class intelligence level-ups to factor in how many levels are granted by a single-source of XP. (NB: This change does not retroactively address loads with the incorrect amount of intelligence) -->
-<!-- - Multi-clicking UI buttons no longer registers multiple trigger events -->
-<!-- - Selene (Hyperion) is now the damage source for her Meteor Shower ability (rather than Hyperion).  -->
-<!-- Heroes -->
-<!-- - Dispatch (Spartan Warrior) -->
-<!-- - Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 STR and +0.5 SD) from 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 STR and +0.5 SD) -->
-<!-- - Veteran's Set (Spartan Warrior) -->
-<!-- - Reworded the effect -->
-<!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
-<!-- Sedah Scarecrow -->
-<!-- Added timer length functionality to the DPS UI. This allows you to set an infinite, 30s, 60s, or 180s timer. Swapping between timer lengths resets your DPS numbers.  -->
-<!-- A fixed length timer "memorises" the buffs you had active when the timer is started. (The infinite length timer retains the old buff tracking functionality). -->
-<!-- Other -->
-<!-- - Improved the language of Silenus' Talisman (Midas) and Midas' Pendant of Wisdom (Metalsmith Galen) to clarify that the effect doesn't proc for spell-enhanced auto-attacks if the target is already Enfeebled. -->
-<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
 </div>
 
 
