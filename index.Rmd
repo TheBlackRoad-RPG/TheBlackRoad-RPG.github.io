@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39b3 --- Changelog"
+title: "The Black Road RPG v1.39b4 --- Changelog"
 author: "Unholy0ne and Alteisen (Av3n)"
 output: 
   html_document: 
@@ -12,121 +12,125 @@ output:
     css: TBR.css
 ---
 
-# New Achievements
+# General
 
-1. *Summoning Game Done Quick*<br>Place all three *Summoning Stones* in the *Fountain of Light* within 12 minutes of game start
-2. *I would walk 500 miles (again)*<br>Personally participate in defeating every Titan (including Hades) without teleporting once
+# Sedah Scarecrow
 
-> The following teleports invalidate the completion of this achievement: the town teleporters, *Town Portal* (Backpack), *Scroll of Town Portal* (Scrolls), *Boots of Marathon* (Armorsmith), *Phylas*, *Obelisk of Poseidon*, *Temple of Poseidon* and *Alcon*
+# Heroes
+
+## Spartan Warrior
+
+## Guardian of Nature
 
 
-# Boats
-
-- *Trireme* renamed to *Boat*
-- Hiring a *Boat* now replaces your previous boat (if applicable)
-- *Boat*s have a collision size of 8. This hypothetically reduces boat bunching at a single location. (Previously a collision size of 0)
-- *Boat*s now only transports a single hero unit. (Previously 8 non-mechanical units)
-- The ability to *scuttle* a *Boat* has been removed in light of the new replacement framework
-- *Shipyard* refreshes the stock of *Boats* at a rate of 1 second. (Previously 9 seconds)
-- *Two boat skins* are now available and cost 1000 crafting materials:
-  + The *Ferry skin* is unlocked by completing the *I would walk 500 miles (again)* achievement
-  + The *Frigate skin* is unlocked by completing the *Summoning Game Done Quick* achievement
-  
-# Critical Strike Refactor
-Critical Strike has been swapped to a coded system from base Wc3 mechanics. The following list describes what this change entails: 
-
-- Critical Strike is now checked on-hit (before damage mitigation) rather than on-attack
-- Each Critical Strike source is now rolled independently, and if there are multiple success, these multiplier stack additively. For example, if you a x2.5 and a x4.0 Critical Stike, your auto-attack has a x6.5 Critical Strike multiplier
-- Any default Critical Strike animations no longer play when a Critical Strike is triggered
-- *Black Arrow* and *Transcendence* enhanced auto-attacks no longer have their on-hit effects cancelled out due to a Critical Strike
-
-We are also pre-emptively reducing the Critical Strike multipliers on items with this refactor:
-
-- *Tooth of the Hallowed One* (Hallowed One): Critical Strike multiplier reduced to 2.5 (from 3.0)
-- *Adamantium Lance* (Metalsmith Arcadios): Critical Strike multiplier reduced to 2.5 (from 3.0)
-- *Wraithblade* (Champion's Armory): Critical Strike multiplier reduced to 2.5 (from 3.0)
-- *Sword of Destruction* (Relic): Critical Strike multiplier reduced to 3.5 (from 4.0)
-- *Blazing Sword of Helios* (Olympian Relic): Critical Strike multiplier reduced to 4.0 (from 4.5)
-  
-# Hyperion
-  
-- *Theia*'s Rejuvenation (and Frost Armor on *Hyperion* when skipping *Theia*) A.I. now triggers when any of the family is damaged (previously auto-attacks)
-- *Hyperion*'s and the family's turn rate has been increased to 0.2 (previously 0.1)
-- Buffed *Hyperion*'s and the family's auto-attacks and armor values to account for the addition of *Backpack Skills* in `1.39b`:
-  + *Hyperion* ~ Damage: 116000 → 120000; Armor: 102 → 130
-  + *Theia* ~ Base Damage: 76000 → 78625; Armor: 40 → 49
-  + *Selene* ~ Base Damage: 33500 → 34655; Armor: 67 → 83
-  + *Helios* ~ Base Damage: 53000 → 54830; Armor: 77 → 96
-  + *Eos* ~ Base Damage: 28250 → 29225; Armor: 57 → 70
-  + *Noirepyh Scarecrow* ~ Armor: 102 → 130
 
 # Bug Fixes
 
-- *Tooth of the Hallowed One* (Hallowed One) now adheres to the item uniqueness rule
-- Adjusted a spawn/patrol zone within the *Eastern Highlands* to not intentionally clip the cliff that surrounds Gaea's arena
-- *Draught of the Phoenix*'s (Alchemist) crafting tooltip now reflects the updated effect introduced in `1.39a`
-- *Veteran's Regalia* (Spartan Warrior) no longer grants the unlisted Evasion ability
-- *Ice Ring*'s (Ice Giant) cast FX is reverted back to `1.39a2`'s cast FX
+<!-- General -->
+<!-- - Backpack have been renamed into Familiar -->
+<!-- - Updated the boat replacement system to handle two concurrent boats. (This also means that the refund functionality has been removed) -->
+<!-- - Olympian Gemstone Shards (Hyperion) now state the amount of charges in the generated save-code file -->
+<!-- - Thundering Hammer of Zeus and Savage War Axe of Hephaestus are now simultaneously equippable under the current item uniqueness framework. See Bug Fixes for the reason why this occurred -->
+<!-- - The Fire Elemental summon from the Blaze o' Glory item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration -->
+<!-- - The Roar item ability on Ares' Bloodthirsty Spear (Olympian Relic) now features a unique icon to indicate that it doesn't stack with Scroll of the Lesser Beast and Scroll of the Beast (Alchemy) -->
+<!-- - Added a section on item uniqueness to the TBR Mechanics F9 entry -->
 
----
+<!-- Heroes -->
+<!-- - Updated the Spartan Warrior model -->
+<!-- - Valor (Spartan Warrior) -->
+<!-- ~ Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600 (previously 25 / 50 / 85 / 140 / 210 / 300 / 405 / 525) -->
+<!-- ~ AoE decreased to 300 (from 600) -->
+<!-- ~ Restores 1.0 Strength + 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.45 / 0.55 / 0.65 Spell Healing over the duration -->
+<!-- ~ No longer grants an armor bonus for the duration -->
+<!-- ~ Duration decreased to 3 seconds (from 12 seconds) -->
+<!-- ~ Cooldown decreased to 12 seconds (from 30 seconds) -->
 
-- *Ensnare* now uses a pool of dummy casters to prevent a rare bug, where flying enemies (only *Uranus* as of `1.39b2`) can teleport across the map to where another generic debuff was cast. 
-- *Requiem* (Khaos Champion) now registers a duration increase when either *Neleus* or *Pelias* are slain
-- *Backpack Skin* shadows are now rendered properly (as seen in *Athens*). *NB: The wisp skin does not have a shadow*
-- Removed an erroneous space in *Tome of Stat Increase +8*'s (Books) tooltip
-- *Pray*'s (Temple Guardian) base object now shows the mana cost
+<!-- Sedah Scarecrow (DPS Dummy) -->
+<!-- The Sedah Scarecrow has been overhauled for DPS feedback purposes. It is no longer hostile by default and requires you to manually activate it by "purchasing" a token within 1000 units of it. Upon purchase, it becomes hostile and an user interface pops-up above the command card which details: -->
+<!-- (1) Hero Information -->
+<!-- (2) DPS calculations for Total, Physical, and Magical DPS. The calculation for DPS uses an average (mean) updated every second -->
+<!-- (3) Misc. Statistics -->
+<!-- (4) Ability to adjust the durability of the Sedah Scarecrow -->
+<!-- (5) Buttons to configure the Sedah Scarecrow to Hades, Hyperion, and No Resistances durabilities -->
+<!-- (6) Features a Close and Reset Timer button -->
 
----
+<!-- The user interface tracks only tracks the damage you've dealt to it and it doesn't start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it. -->
 
-- Both `-repick` and creating a new character no longer sets the backpack skill points for the player "below" you to 7 (for the former) and to 6 (for the latter)
-- *Sadism* (Warlock) no longer generates its consumption FX while you're inside a boat
-- *Walk in the Shadows* (Assassin) no longer attempts to continuously applies it damage buff while you're inside a boat
-- Added a condition to *Theia*'s AI for casting *Rejuvenation* and *Frost Armor*. This condition prevents her from casting either spell if she is already attempting to
-- Fixed a rare bug where resetting the *Manslayer* and *Lightbane* (Minotaur Burrows) doesn't respawn both of them
+<!-- We've removed the Noirepyh Scarecrow as the functionality of having two scarecrows has been superseded. -->
 
----
+<!-- Bug Fixes -->
+<!-- - Transcendence (Cleric) auto-attacks on the DPS dummy now properly calculates the heal -->
+<!-- - Adamantium Scythe (Medusa) tooltip correctly states that it has a critical strike multiplier of 2.5 times -->
+<!-- - Assassinate (Assassin), Bum Rush (Warlord) and Charge (Spartan Warrior) path-finding has been updated to mimic pre-1.39b3 behaviour and attempts to find better placement options than before. It also has a better failsafe of simply closing the distance if a pathable spot cannot be found. Furthermore, all three spells now share the same trait that Assassinate (and previously Charge) has where the blink doesn't occur if you're within 125 units of the target -->
+<!-- - The item uniqueness check non longer prints an error message no longer prints error messages when a familiar picks up a unique item. This is because item uniqueness is only enforced for heroes -->
+<!-- - Picking up Savage War Axe of Hephaestus (Aeacus) no longer triggers the Thundering Hammer of Zeus (Olympian Relic) item uniqueness error message when you already have Hephaestus Thundering Axe (Weaponsmith) -->
+<!-- - Picking up Warrior class exclusive items now states that Khaos Champion is a Warrior class hero -->
+<!-- - Midas' Pendant of Wisdom's (Metalsmith Galen) Enfeeble proc for spell damage is functional again -->
+<!-- - Updated spawn regions in the Tundra and Southern Highlands to address mobs spawning on cliff faces -->
+<!-- - The save/load system now correctly encrypts and decrypts the value stored for the You picked the wrong house, fool achievement -->
+<!-- - Fixed typos in F9 help and Gift of Wisdom (Familiar Skill) -->
 
-- *A Rare Specimen* (Damien), *Gone with the Wind* (Attis), and *History's Teachings* (Dolios) are now registered with the *Quest Helper* (Backpack)
-- `-save` no longer sets the ownership of unique crafting components to the player that triggered the command
-- Updated how all hero spells group targets
-- *Grave Seize* (Khaos Champion) tracks when the *Stun* debuff wears off rather than when the *Stun Immunity* buff to apply the *Taunt* debuff. This hypothetically addresses the bug where *Grave Seize* can pull another player hero for infinite time after a duel concludes
-- The *Burning* debuff (*Midas* and *Blaze o' Glory*) is updated to no longer reset the tick-rate. This addresses the inconsistent damage dealt to stationary targets
+<!-- Heroes -->
+<!-- - The Spartan Warrior soundset is changed to Garithos (from Arthas with Forstmourne) -->
+<!-- - Updated the icon for Spartan Warrior -->
+<!-- - Embolden (Guardian of Nature) ~ replaces Roar -->
+<!-- ~ Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage for the duration -->
+<!-- ~ No longer grants bonus armor for the duration -->
+<!-- ~ AoE: 600 -->
+<!-- ~ Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 -->
+<!-- ~ Duration: 6 seconds -->
+<!-- ~ Cooldown: 15 seconds -->
 
----
+<!-- Bug Fixes -->
+<!-- - Dancing Dagger (Assassin) no longer bounces to structures -->
+<!-- - Added a failsafe for Uranus' item drops if neither the ground or air forms are currently in the arena -->
+<!-- - Updated the code for Winds of War (Warlord), Chronowave (Sphinx), Thunderbolt (Druid), Maelstrom (Druid), and Death Wave (Warlock) to not depend on the same code that can cause the the grouping bug (for the time being) -->
 
-- The crafting tooltip for *Midas' Pendant of Wisdom* (Metalsmith Galen) now mirrors the item description
-- Fixed the typos present in *Hyperion*'s messages when he summons either *Helios* or *Theia* first
-- Boss kills no longer grant XP via default Warcraft 3 mechanics. To compensate for this, the XP modifier for bosses was increased to 25 (from 6)
+<!-- Other -->
+<!-- - Reformatted Aphrodite's Favour (Goldsmith)  item tooltip to read like Midas' Ring of Vigor -->
+<!-- - Defeating Hades now cleans up all Ker adds -->
 
-# Other
+<!-- Heroes -->
+<!-- - Impale (Warlord): Agility modifier reduced to 5.0 (from 6.0). -->
+<!-- - Grave Seize (Khaos Champion): Strength modifier increased to 2.0 (from 1.0). -->
 
-- *Tome of Stat Increase +8* (Books) grants all eight stats at once. (Previously grants them once at a time)
-- *Fire of Apollo* (Temple Guardian): Updated so it's DoT component deals 4 ticks per second (from 1 tick per second)
-- Backpack skins now refund their cost if you rebuy a backpack skin you already have active
-- The *Taunt* debuff now dispels if the caster and target are no longer enemies
-- *Blaze o' Glory*'s (Midas' Pendant of Wisdom) Fire Elemental summon now lasts for 10 seconds (down from 30 seconds). The summon's duration is also now explicitly stated in the tooltip
+<!-- Adjustments to Sedah Scarecrow -->
+<!-- - The Boss Template buttons now fire on-click -->
+<!-- - Single-clicks for the  - and + buttons now fire on-release -->
+<!-- - Holding the - and + buttons for at least one second begins decrementing / incrementing the Scarecrow's armor or resist by steps of 10 per second -->
+<!-- - The Armor Type buttons now have a highlight effect when hovering over them -->
+<!-- - [Bug Fix] Abilities such as Hallowed Ground now work on Sedah Scarecrow again -->
+<!-- - The auto-close functionality when you're too far away from Sedah Scarecrow now runs as you open the UI -->
 
----
+<!-- Other -->
+<!-- - The level requirement for a bank has been reduced to 60 (from 85). -->
+<!-- - A number of UI buttons now happen on-click rather than on-release as a side effect of addressing an UI bug. See #Bug-Fixes for more details -->
+<!-- - Addressed a typo in Draught of the Phoenix's (Alchemist) crafting description -->
+<!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage. -->
+<!-- - The Hero Selection heroes now register 0 damage from all sources. -->
 
-- *Draught of Destruction, Heaven and Life* (Alchemy) have their crafting material cost increased to 2500 (previously 500)
-- The following interaction hotkeys are now properly exposed: *Escort the Pack Beast* (Cavalorn); *Read aloud from the Crumbling Tome* (Caverns of Dread); *Help Neleus* (Neleus); *Help Pelias* (Pelias); *Escort Greyn* (Greyn); *Interact* (Crystal Lamp); and *Open the Gate* (Eretria)
-- *Hyperion*'s Thunder Bolt now queues a stand animation after the spell animation instead of entering a freeze frame
+<!-- Bug Fixes -->
+<!-- - Applying Ensnare to an already Ensnared unit now correctly sets the duration to the incoming Ensnare -->
+<!-- - Fly-height is properly reset to zero when Mighty Leap (Midas' Band of Vigor) is interrupted by an Ensnare effect -->
+<!-- - Made further adjustments to how the map groups units for enumeration. This addresses the bug with Winds of War (Warlord), Maelstrom & Thunderbolt (Druid), Death Wave (Warlock) and Sphinx's Chronowave mechanic that uses groups to track which units has been hit previously -->
+<!-- - Updated the Warrior class intelligence level-ups to factor in how many levels are granted by a single-source of XP. (NB: This change does not retroactively address loads with the incorrect amount of intelligence) -->
+<!-- - Multi-clicking UI buttons no longer registers multiple trigger events -->
+<!-- - Selene (Hyperion) is now the damage source for her Meteor Shower ability (rather than Hyperion).  -->
 
----
 
-Movement speed bonuses from permanent items now stack additively (previously only takes the highest). This affects the following items:
+<!-- Heroes -->
+<!-- - Valor (Spartan Warrior) -->
+<!-- ~ Now restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing) over the duration -->
+<!-- - Dispatch (Spartan Warrior) -->
+<!-- - Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 STR and +0.5 SD) from 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 STR and +0.5 SD) -->
+<!-- - Veteran's Set (Spartan Warrior) -->
+<!-- - Reworded the effect -->
+<!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
 
-- *Ares Bloodthirsty Spear* (Olympian Relic)
-- *Shadow Blade* (Relic)
-- *Boot of Hermes* (Makarios - Caverns of Dread)
-- *The Winged God's Blessed Boots* (Metalsmith Galen)
-- *Boots of Marathon* (Armorsmith)
-- *Myrmidon Scale* (Rare Drop)
+<!-- Sedah Scarecrow -->
+<!-- Added timer length functionality to the DPS UI. This allows you to set an infinite, 30s, 60s, or 180s timer. Swapping between timer lengths resets your DPS numbers.  -->
+<!-- A fixed length timer "memorises" the buffs you had active when the timer is started. (The infinite length timer retains the old buff tracking functionality). -->
 
----
-
-*Valor* (Spartan Warrior)
-
-- Duration reduced to 30 seconds (from 2 minutes)
-- Cooldown increased to 30 seconds (from 1 second)
-- Recovers 240 / 480 / 780 / 1140 / 1560 / 2100 / 2850 / 3900 (+0.3 Spell Healing) Total HP over 30 seconds [previously 960 / 1920 / 3120 / 4560 / 6240 / 8400 / 11400 / 15600 Total HP (+Spell Healing) over 2 minutes]
+<!-- Other -->
+<!-- - Improved the language of Silenus' Talisman (Midas) and Midas' Pendant of Wisdom (Metalsmith Galen) to clarify that the effect doesn't proc for spell-enhanced auto-attacks if the target is already Enfeebled. -->
+<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
