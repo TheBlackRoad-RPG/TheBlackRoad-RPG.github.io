@@ -13,38 +13,18 @@ output:
 ---
 
 # General
+- *Backpack* have been renamed into *Familiar*
+- Updated the boat replacement system to handle two concurrent boats. (This also means that the refund functionality has been removed)
+- *Olympian Gemstone Shards* (Hyperion) now state the amount of charges in the generated save-code file
+- *Thundering Hammer of Zeus* (Olympian Relic) and *Savage War Axe of Hephaestus* (Aeacus) are now simultaneously equippable under the current item uniqueness framework. See [Bug Fixes] for the reason why this occurred
+- The *Fire Elemental* summon from the *Blaze o' Glory* item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration (just like the *Fire Elemental* adds in the Midas fight)
+
+<hr>
+
+- The *Roar* ability on *Ares' Bloodthirsty Spear* (Olympian Relic) now features a unique icon to indicate that it doesn't stack with *Scroll of the Lesser Beast* and *Scroll of the Beast* (Alchemy)
+- Added a section on item uniqueness to the TBR Mechanics F9 entry
 
 # Sedah Scarecrow
-
-# Heroes
-
-## Spartan Warrior
-
-## Guardian of Nature
-
-
-
-# Bug Fixes
-
-<!-- General -->
-<!-- - Backpack have been renamed into Familiar -->
-<!-- - Updated the boat replacement system to handle two concurrent boats. (This also means that the refund functionality has been removed) -->
-<!-- - Olympian Gemstone Shards (Hyperion) now state the amount of charges in the generated save-code file -->
-<!-- - Thundering Hammer of Zeus and Savage War Axe of Hephaestus are now simultaneously equippable under the current item uniqueness framework. See Bug Fixes for the reason why this occurred -->
-<!-- - The Fire Elemental summon from the Blaze o' Glory item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration -->
-<!-- - The Roar item ability on Ares' Bloodthirsty Spear (Olympian Relic) now features a unique icon to indicate that it doesn't stack with Scroll of the Lesser Beast and Scroll of the Beast (Alchemy) -->
-<!-- - Added a section on item uniqueness to the TBR Mechanics F9 entry -->
-
-<!-- Heroes -->
-<!-- - Updated the Spartan Warrior model -->
-<!-- - Valor (Spartan Warrior) -->
-<!-- ~ Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600 (previously 25 / 50 / 85 / 140 / 210 / 300 / 405 / 525) -->
-<!-- ~ AoE decreased to 300 (from 600) -->
-<!-- ~ Restores 1.0 Strength + 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.45 / 0.55 / 0.65 Spell Healing over the duration -->
-<!-- ~ No longer grants an armor bonus for the duration -->
-<!-- ~ Duration decreased to 3 seconds (from 12 seconds) -->
-<!-- ~ Cooldown decreased to 12 seconds (from 30 seconds) -->
-
 <!-- Sedah Scarecrow (DPS Dummy) -->
 <!-- The Sedah Scarecrow has been overhauled for DPS feedback purposes. It is no longer hostile by default and requires you to manually activate it by "purchasing" a token within 1000 units of it. Upon purchase, it becomes hostile and an user interface pops-up above the command card which details: -->
 <!-- (1) Hero Information -->
@@ -56,23 +36,45 @@ output:
 
 <!-- The user interface tracks only tracks the damage you've dealt to it and it doesn't start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it. -->
 
-<!-- We've removed the Noirepyh Scarecrow as the functionality of having two scarecrows has been superseded. -->
+We've removed the Noirepyh Scarecrow as the functionality of having two scarecrows has been superseded.
 
-<!-- Bug Fixes -->
-<!-- - Transcendence (Cleric) auto-attacks on the DPS dummy now properly calculates the heal -->
-<!-- - Adamantium Scythe (Medusa) tooltip correctly states that it has a critical strike multiplier of 2.5 times -->
-<!-- - Assassinate (Assassin), Bum Rush (Warlord) and Charge (Spartan Warrior) path-finding has been updated to mimic pre-1.39b3 behaviour and attempts to find better placement options than before. It also has a better failsafe of simply closing the distance if a pathable spot cannot be found. Furthermore, all three spells now share the same trait that Assassinate (and previously Charge) has where the blink doesn't occur if you're within 125 units of the target -->
-<!-- - The item uniqueness check non longer prints an error message no longer prints error messages when a familiar picks up a unique item. This is because item uniqueness is only enforced for heroes -->
-<!-- - Picking up Savage War Axe of Hephaestus (Aeacus) no longer triggers the Thundering Hammer of Zeus (Olympian Relic) item uniqueness error message when you already have Hephaestus Thundering Axe (Weaponsmith) -->
-<!-- - Picking up Warrior class exclusive items now states that Khaos Champion is a Warrior class hero -->
-<!-- - Midas' Pendant of Wisdom's (Metalsmith Galen) Enfeeble proc for spell damage is functional again -->
-<!-- - Updated spawn regions in the Tundra and Southern Highlands to address mobs spawning on cliff faces -->
-<!-- - The save/load system now correctly encrypts and decrypts the value stored for the You picked the wrong house, fool achievement -->
-<!-- - Fixed typos in F9 help and Gift of Wisdom (Familiar Skill) -->
+# Heroes
+- *Impale* (Warlord): Agility modifier reduced to 5.0 (from 6.0).
+- *Grave Seize* (Khaos Champion): Strength modifier increased to 2.0 (from 1.0).
 
-<!-- Heroes -->
-<!-- - The Spartan Warrior soundset is changed to Garithos (from Arthas with Forstmourne) -->
-<!-- - Updated the icon for Spartan Warrior -->
+## Spartan Warrior
+- Updated the model
+- The soundset changed to *Garithos* (from *Arthas with Frostmourne*)
+- Updated the icon
+- **Valor**
+  + Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600. <small>(Previously 25 / 50 / 85 / 140 / 210 / 300 / 405 / 525)</small>
+  + AoE decreased to 300. <small>(Previously 600)</small>
+  + Now restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing)
+  + No longer grants an armor bonus for the duration
+  + Duration decreased to 3 seconds (from 12 seconds)
+  + Cooldown decreased to 12 seconds (from 30 seconds)
+
+## Guardian of Nature
+
+
+
+# Bug Fixes
+- *Transcendence* (Cleric) auto-attacks on the DPS dummy now properly calculates the heal
+- *Adamantium Scythe* (Medusa) tooltip correctly states that it has a critical strike multiplier of 2.5
+- *Assassinate* (Assassin), *Bum Rush* (Warlord) and *Charge* (Spartan Warrior) path-finding has been updated to mimic pre-1.39b3 behaviour and attempts to find better placement options than before. It also has a better failsafe of simply closing the distance if a pathable spot cannot be found. Furthermore, all three spells now share the same trait that Assassinate (and previously Charge) has where the blink doesn't occur if you're within 125 units of the target
+- The item uniqueness check non longer prints an error message no longer prints error messages when a familiar picks up a unique item. This is because item uniqueness is only enforced for heroes
+- Picking up *Savage War Axe of Hephaestus* (Aeacus) no longer triggers the *Thundering Hammer of Zeus* (Olympian Relic) item uniqueness error message when you already have *Hephaestus Thundering Axe* (Weaponsmith)
+
+<hr>
+
+- Picking up Warrior class exclusive items now states that *Khaos Champion* is a Warrior class hero
+- *Midas' Pendant of Wisdom*'s (Metalsmith Galen) Enfeeble proc for spell damage is functional again
+- Updated spawn regions in the *Tundra* and *Southern Highlands* to address mobs spawning on cliff faces
+- The save/load system now correctly encrypts and decrypts the value stored for the *You picked the wrong house, fool* achievement
+- Fixed typos in F9 help and *Gift of Wisdom* (Familiar Skill)
+
+<hr>
+
 <!-- - Embolden (Guardian of Nature) ~ replaces Roar -->
 <!-- ~ Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage for the duration -->
 <!-- ~ No longer grants bonus armor for the duration -->
@@ -89,10 +91,6 @@ output:
 <!-- Other -->
 <!-- - Reformatted Aphrodite's Favour (Goldsmith)  item tooltip to read like Midas' Ring of Vigor -->
 <!-- - Defeating Hades now cleans up all Ker adds -->
-
-<!-- Heroes -->
-<!-- - Impale (Warlord): Agility modifier reduced to 5.0 (from 6.0). -->
-<!-- - Grave Seize (Khaos Champion): Strength modifier increased to 2.0 (from 1.0). -->
 
 <!-- Adjustments to Sedah Scarecrow -->
 <!-- - The Boss Template buttons now fire on-click -->
@@ -119,8 +117,6 @@ output:
 
 
 <!-- Heroes -->
-<!-- - Valor (Spartan Warrior) -->
-<!-- ~ Now restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing) over the duration -->
 <!-- - Dispatch (Spartan Warrior) -->
 <!-- - Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 STR and +0.5 SD) from 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 STR and +0.5 SD) -->
 <!-- - Veteran's Set (Spartan Warrior) -->
