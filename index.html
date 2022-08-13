@@ -1524,13 +1524,13 @@ the Midas fight)</li>
 <hr>
 <ul>
 <li>The <em>Roar</em> ability on <em>Ares’ Bloodthirsty Spear</em>
-(Olympian Relic) now features a unique icon to indicate that it doesn’t
+(Olympian Relic) now features a unique icon to indicate that it does
 stack with <em>Scroll of the Lesser Beast</em> and <em>Scroll of the
 Beast</em> (Alchemy)</li>
 <li>Added a section on item uniqueness to the TBR Mechanics F9
 entry</li>
-<li>Reformatted <em>Aphrodite’s Favour</em>’s (Goldsmith) item tooltip
-to be like <em>Midas’ Ring of Vigor</em> (Metalsmith Galen)</li>
+<li>Reformatted <em>Aphrodite’s Favor</em>’s (Goldsmith) item tooltip to
+be like <em>Midas’ Ring of Vigor</em> (Metalsmith Galen)</li>
 <li>Defeating <em>Hades</em> now cleans up all <em>Ker</em> adds</li>
 <li>The level requirement for a bank has been reduced to 60.
 <small>(Previously 85)</small></li>
@@ -1546,6 +1546,12 @@ sources</li>
 <em>Midas’ Pendant of Wisdom</em> (Metalsmith Galen) to clarify that the
 effect doesn’t proc for spell-enhanced auto-attacks if the target is
 already <strong>Enfeebled</strong></li>
+<li>Made further adjustments to how the map groups units for
+enumeration. This change should address the bug with <em>Winds of
+War</em> (Warlord), <em>Maelstrom</em> &amp; <em>Thunderbolt</em>
+(Druid), <em>Death Wave</em> (Warlock) and <em>Sphinx</em>’s Chronowave
+mechanic that uses groups to track which units has been hit
+previously</li>
 </ul>
 </div>
 <div id="sedah-scarecrow" class="section level1">
@@ -1556,7 +1562,9 @@ already <strong>Enfeebled</strong></li>
 <!-- (2) DPS calculations for Total, Physical, and Magical DPS. The calculation for DPS uses an average (mean) updated every second -->
 <!-- (3) Misc. Statistics -->
 <!-- (4) Ability to adjust the durability of the Sedah Scarecrow -->
-<!-- (5) Buttons to configure the Sedah Scarecrow to Hades, Hyperion, and No Resistances durabilities -->
+<!-- (5) Buttons to configure the Sedah Scarecrow to Hades, Hyperion, and No Resistances durabilities
+Prints Base Stats
+-->
 <!-- (6) Features a Close and Reset Timer button -->
 <!-- The user interface tracks only tracks the damage you've dealt to it and it doesn't start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it. -->
 <!-- - The auto-close functionality when you're too far away from Sedah Scarecrow now runs as you open the UI -->
@@ -1579,38 +1587,47 @@ to 2.0 (from 1.0).</li>
 <li>Updated the model and icon</li>
 <li>The soundset changed to <em>Garithos</em> (from <em>Arthas with
 Frostmourne</em>)</li>
-<li><strong>Dispatch</strong></li>
+<li><strong>Dispatch</strong>
+<ul>
+<li>Reduced the damage of the bleed component to 100 / 200 / 350 / 550 /
+850 / 1250 / 2000 / 3000 (+2.0 Strength and +0.5 Spell Damage).
+<small>(Previously 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500
+(+3.0 Strength and +0.5 Spell Damage)</small></li>
+</ul></li>
 <li><strong>Valor</strong>
 <ul>
+<li>Restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4
+/ 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 /
+0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing) health over 3 seconds
+<ul>
+<li><small>(Previously it restored 960 / 1920 / 3120 / 45600 / 62240 /
+8400 / 11400 / 15600 (+Spell Healing) health over 12
+seconds)</small></li>
+</ul></li>
+<li>No longer grants an armor bonus for the duration</li>
+<li>AoE decreased to 300. <small>(Previously 600)</small></li>
 <li>Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600.
 <small>(Previously 25 / 50 / 85 / 140 / 210 / 300 / 405 /
 525)</small></li>
-<li>AoE decreased to 300. <small>(Previously 600)</small></li>
-<li>Restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4
-/ 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 /
-0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing)</li>
-<li>No longer grants an armor bonus for the duration</li>
-<li>Duration decreased to 3 seconds (from 12 seconds)</li>
 <li>Cooldown decreased to 12 seconds (from 30 seconds)</li>
 </ul></li>
+<li><strong>Veteran’s Set</strong></li>
 </ul>
-<!-- - Dispatch (Spartan Warrior) -->
-<!-- - Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 STR and +0.5 SD) from 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 STR and +0.5 SD) -->
-<!-- - Veteran's Set (Spartan Warrior) -->
-<!-- - Reworded the effect -->
 <!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
-<p><!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage --></p>
+<!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage -->
 </div>
 <div id="guardian-of-nature" class="section level2">
 <h2>Guardian of Nature</h2>
 <ul>
 <li><strong>Embolden</strong> <small>(replaces Roar)</small>
-<!-- ~ Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage for the duration -->
-<!-- ~ No longer grants bonus armor for the duration -->
-<!-- ~ AoE: 600 -->
-<!-- ~ Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600 -->
-<!-- ~ Duration: 6 seconds --> <!-- ~ Cooldown: 15 seconds -->
-<!-- - Embolden (Guardian of Nature): Increased the duration to 6.5s (from 6s) --></li>
+<ul>
+<li>Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325
+Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65
+Intelligence bonus damage. Lasts for 6.5 seconds</li>
+<li>AoE: 600</li>
+<li>Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600</li>
+<li>Cooldown: 15 seconds</li>
+</ul></li>
 </ul>
 <!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
 </div>
@@ -1629,9 +1646,9 @@ before. It also has a better failsafe of simply closing the distance if
 a pathable spot cannot be found. Furthermore, all three spells now share
 the same trait that Assassinate (and previously Charge) has where the
 blink doesn’t occur if you’re within 125 units of the target</li>
-<li>The item uniqueness check non longer prints an error message no
-longer prints error messages when a familiar picks up a unique item.
-This is because item uniqueness is only enforced for heroes</li>
+<li>The item uniqueness check no longer prints error messages when a
+familiar picks up a unique item. This is because item uniqueness is only
+enforced for heroes</li>
 <li>Picking up <em>Savage War Axe of Hephaestus</em> (Aeacus) no longer
 triggers the <em>Thundering Hammer of Zeus</em> (Olympian Relic) item
 uniqueness error message when you already have <em>Hephaestus Thundering
@@ -1670,9 +1687,13 @@ loads with the incorrect amount of intelligence)</li>
 </ul></li>
 </ul>
 <hr>
-<!-- - Applying Ensnare to an already Ensnared unit now correctly sets the duration to the incoming Ensnare -->
-<!-- - Fly-height is properly reset to zero when Mighty Leap (Midas' Band of Vigor) is interrupted by an Ensnare effect -->
-<!-- - Made further adjustments to how the map groups units for enumeration. This addresses the bug with Winds of War (Warlord), Maelstrom & Thunderbolt (Druid), Death Wave (Warlock) and Sphinx's Chronowave mechanic that uses groups to track which units has been hit previously -->
+<ul>
+<li>Applying <em>Ensnare</em> to an unit that is already
+<em>Ensnared</em> now correctly refreshes the duration to the incoming
+<em>Ensnare</em> debuff</li>
+<li>Fly-height is properly reset to zero when <em>Mighty Leap</em>
+(Midas’ Band of Vigor) is interrupted by an <em>Ensnare</em> effect</li>
+</ul>
 </div>
 
 
