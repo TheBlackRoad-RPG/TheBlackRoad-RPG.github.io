@@ -1519,7 +1519,7 @@ under the current item uniqueness framework. See <a href="#bug-fixes">Bug Fixes<
 <li>The <em>Fire Elemental</em> summon from the <em>Blaze o’ Glory</em>
 item ability (Midas’ Pendant of Wisdom) now has a mana pool which
 reflects it’s duration (just like the <em>Fire Elemental</em> adds in
-the Midas fight)</li>
+the <em>Midas</em> fight)</li>
 </ul>
 <hr>
 <ul>
@@ -1550,9 +1550,10 @@ already <strong>Enfeebled</strong></li>
 enumeration. This change should address the bug with <em>Winds of
 War</em> (Warlord), <em>Maelstrom</em> &amp; <em>Thunderbolt</em>
 (Druid), <em>Death Wave</em> (Warlock) and <em>Sphinx</em>’s Chronowave
-mechanic that uses groups to track which units has been hit
-previously</li>
+mechanic that uses groups to track which units has been hit previously
+<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  --></li>
 </ul>
+<hr>
 </div>
 <div id="sedah-scarecrow" class="section level1">
 <h1>Sedah Scarecrow</h1>
@@ -1593,6 +1594,8 @@ Frostmourne</em>)</li>
 850 / 1250 / 2000 / 3000 (+2.0 Strength and +0.5 Spell Damage).
 <small>(Previously 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500
 (+3.0 Strength and +0.5 Spell Damage)</small></li>
+<li>[Bug Fix] The bleed component now deals pure magical damage.
+<small>(Instead of mixed damage)</small></li>
 </ul></li>
 <li><strong>Valor</strong>
 <ul>
@@ -1611,25 +1614,43 @@ seconds)</small></li>
 525)</small></li>
 <li>Cooldown decreased to 12 seconds (from 30 seconds)</li>
 </ul></li>
-<li><strong>Veteran’s Set</strong></li>
+<li><strong>Throw Javelin</strong>
+<ul>
+<li>[Bug Fix] The base damage is properly calculated. <small>(Previously
+no base damage was being factored into the damage
+calculation)</small></li>
+</ul></li>
+<li><strong>Veteran’s Set</strong>
+<ul>
+<li>Now increases both Strength ratios on <strong>Dispatch</strong>
+(Spartan Warrior) to 3.0 from 2.0</li>
+</ul></li>
 </ul>
-<!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
-<!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage -->
 </div>
 <div id="guardian-of-nature" class="section level2">
 <h2>Guardian of Nature</h2>
 <ul>
 <li><strong>Embolden</strong> <small>(replaces Roar)</small>
 <ul>
-<li>Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325
-Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65
-Intelligence bonus damage. Lasts for 6.5 seconds</li>
-<li>AoE: 600</li>
+<li>Unleashes a mighty roar that grants nearby allies in a 600 AoE 0.15
+/ 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35
+/ 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage. Lasts
+for 6.5 seconds.</li>
 <li>Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600</li>
 <li>Cooldown: 15 seconds</li>
 </ul></li>
+<li><strong>Cataclysm</strong>
+<ul>
+<li>[Typo Fix] The scaling calculation is properly listed as +6.0
+Strength <strong>and</strong> +1.2 Spell Damage</li>
+</ul></li>
+<li><strong>Tremor</strong>
+<ul>
+<li>[Bug Fix] The on-hit damage to the target is now magical damage.
+<small>(Instead of true damage that was only reduced by the target’s
+armor value).</small></li>
+</ul></li>
 </ul>
-<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
 </div>
 </div>
 <div id="bug-fixes" class="section level1">
@@ -1666,8 +1687,9 @@ Highlands</em> to address mobs spawning on cliff faces</li>
 stored for the <em>You picked the wrong house, fool</em>
 achievement</li>
 <li>Fixed typos in F9 help, <em>Gift of Wisdom</em> (Familiar Skill),
-and <em>Draught of the Phoenix</em>’s (Alchemist) crafting
-description</li>
+<em>Spartan Full Plate</em> (Armorsmith), <em>Spartan Full Plate</em> ’s
+(Armorsmith) crafting description and <em>Draught of the Phoenix</em>’s
+(Alchemist) crafting description</li>
 </ul>
 <hr>
 <ul>
@@ -1682,7 +1704,7 @@ Shower ability (rather than <em>Hyperion</em>)</li>
 <li>Updated the Warrior class intelligence level-ups to factor in how
 many levels are granted by a single-source of XP
 <ul>
-<li><strong>Not</strong>e: This change does not retroactively address
+<li><strong>Note</strong>: This change does not retroactively address
 loads with the incorrect amount of intelligence)</li>
 </ul></li>
 </ul>

@@ -17,7 +17,7 @@ output:
 - Updated the boat replacement system to handle two concurrent boats. (This also means that the refund functionality has been removed)
 - *Olympian Gemstone Shards* (Hyperion) now state the amount of charges in the generated save-code file
 - *Thundering Hammer of Zeus* (Olympian Relic) and *Savage War Axe of Hephaestus* (Aeacus) are now simultaneously equippable under the current item uniqueness framework. See [Bug Fixes] for the reason why this occurred
-- The *Fire Elemental* summon from the *Blaze o' Glory* item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration (just like the *Fire Elemental* adds in the Midas fight)
+- The *Fire Elemental* summon from the *Blaze o' Glory* item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration (just like the *Fire Elemental* adds in the *Midas* fight)
 
 <hr>
 
@@ -33,6 +33,12 @@ output:
 - The Hero Selection heroes now register 0 damage from all sources
 - Improved the language of *Silenus' Talisman* (Midas) and *Midas' Pendant of Wisdom* (Metalsmith Galen) to clarify that the effect doesn't proc for spell-enhanced auto-attacks if the target is already **Enfeebled**
 - Made further adjustments to how the map groups units for enumeration. This change should address the bug with *Winds of War* (Warlord), *Maelstrom* & *Thunderbolt* (Druid), *Death Wave* (Warlock) and *Sphinx*'s Chronowave mechanic that uses groups to track which units has been hit previously
+<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
+
+<hr>
+
+
+
 
 # Sedah Scarecrow
 <!-- Sedah Scarecrow (DPS Dummy) -->
@@ -65,6 +71,7 @@ We've removed the Noirepyh Scarecrow as the functionality of having two scarecro
 - The soundset changed to *Garithos* (from *Arthas with Frostmourne*)
 - **Dispatch**
   + Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 Strength and +0.5 Spell Damage). <small>(Previously 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 Strength and +0.5 Spell Damage)</small>
+  + [Bug Fix] The bleed component now deals pure magical damage. <small>(Instead of mixed damage)</small>
 - **Valor**
   + Restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing) health over 3 seconds
     - <small>(Previously it restored 960 / 1920 / 3120 / 45600 / 62240 / 8400 / 11400 / 15600 (+Spell Healing) health over 12 seconds)</small>
@@ -72,19 +79,20 @@ We've removed the Noirepyh Scarecrow as the functionality of having two scarecro
   + AoE decreased to 300. <small>(Previously 600)</small>
   + Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600. <small>(Previously 25 / 50 / 85 / 140 / 210 / 300 / 405 / 525)</small>
   + Cooldown decreased to 12 seconds (from 30 seconds)
+- **Throw Javelin**
+  + [Bug Fix] The base damage is properly calculated. <small>(Previously no base damage was being factored into the damage calculation)</small>
 - **Veteran's Set**
-
-<!-- - Now increases both Strength ratios on Dispatch (SW) to 3.0 (from 2.0). -->
-<!-- - Improved the language of Dispatch's (Spartan Warrior) tooltip to be more explicit that it is Spell Damage and Strength that contributes to the damage -->
+  + Now increases both Strength ratios on **Dispatch** (Spartan Warrior) to 3.0 from 2.0
 
 ## Guardian of Nature
 - **Embolden** <small>(replaces Roar)</small>
-  + Grants 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage. Lasts for 6.5 seconds
-  + AoE: 600
+  + Unleashes a mighty roar that grants nearby allies in a 600 AoE  0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage. Lasts for 6.5 seconds.
   + Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600
   + Cooldown: 15 seconds
-
-<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
+- **Cataclysm**
+  + [Typo Fix] The scaling calculation is properly listed as +6.0 Strength **and** +1.2 Spell Damage
+- **Tremor**
+  + [Bug Fix] The on-hit damage to the target is now magical damage. <small>(Instead of true damage that was only reduced by the target's armor value).</small>
 
 # Bug Fixes
 - *Transcendence* (Cleric) auto-attacks on the DPS dummy now properly calculates the heal
@@ -99,7 +107,7 @@ We've removed the Noirepyh Scarecrow as the functionality of having two scarecro
 - *Midas' Pendant of Wisdom*'s (Metalsmith Galen) Enfeeble proc for spell damage is functional again
 - Updated spawn regions in the *Tundra* and *Southern Highlands* to address mobs spawning on cliff faces
 - The save/load system now correctly encrypts and decrypts the value stored for the *You picked the wrong house, fool* achievement
-- Fixed typos in F9 help, *Gift of Wisdom* (Familiar Skill), and *Draught of the Phoenix*'s (Alchemist) crafting description
+- Fixed typos in F9 help, *Gift of Wisdom* (Familiar Skill), *Spartan Full Plate* (Armorsmith), *Spartan Full Plate* 's (Armorsmith) crafting description and *Draught of the Phoenix*'s (Alchemist) crafting description
 
 <hr>
 
@@ -108,7 +116,7 @@ We've removed the Noirepyh Scarecrow as the functionality of having two scarecro
 - Multi-clicking UI buttons no longer registers multiple trigger events
 - *Selene* (Hyperion) is now the damage source for her Meteor Shower ability (rather than *Hyperion*)
 - Updated the Warrior class intelligence level-ups to factor in how many levels are granted by a single-source of XP
-  + **Not**e: This change does not retroactively address loads with the incorrect amount of intelligence)
+  + **Note**: This change does not retroactively address loads with the incorrect amount of intelligence)
 
 <hr>
 
