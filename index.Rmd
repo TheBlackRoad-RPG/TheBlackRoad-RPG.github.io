@@ -33,38 +33,37 @@ output:
 - The Hero Selection heroes now register 0 damage from all sources
 - Improved the language of *Silenus' Talisman* (Midas) and *Midas' Pendant of Wisdom* (Metalsmith Galen) to clarify that the effect doesn't proc for spell-enhanced auto-attacks if the target is already **Enfeebled**
 - Made further adjustments to how the map groups units for enumeration. This change should address the bug with *Winds of War* (Warlord), *Maelstrom* & *Thunderbolt* (Druid), *Death Wave* (Warlock) and *Sphinx*'s Chronowave mechanic that uses groups to track which units has been hit previously
-<!-- - Updated the tooltips for Throw Javelin (SW), Charge (SW), Cataclysm (GoN), Tremor (GoN), and Impale (Warlord) be consistent with the new colour-coded style.  -->
-
-<hr>
-
-
-
 
 # Sedah Scarecrow
-<!-- Sedah Scarecrow (DPS Dummy) -->
-<!-- The Sedah Scarecrow has been overhauled for DPS feedback purposes. It is no longer hostile by default and requires you to manually activate it by "purchasing" a token within 1000 units of it. Upon purchase, it becomes hostile and an user interface pops-up above the command card which details: -->
-<!-- (1) Hero Information -->
-<!-- (2) DPS calculations for Total, Physical, and Magical DPS. The calculation for DPS uses an average (mean) updated every second -->
-<!-- (3) Misc. Statistics -->
-<!-- (4) Ability to adjust the durability of the Sedah Scarecrow -->
-<!-- (5) Buttons to configure the Sedah Scarecrow to Hades, Hyperion, and No Resistances durabilities
-Prints Base Stats
--->
-<!-- (6) Features a Close and Reset Timer button -->
+The Sedah Scarecrow has been overhauled for DPS feedback purposes. It is no longer hostile by default and requires you to manually activate it by "purchasing" a token within 1000 units of it. Upon purchase, it becomes hostile and an user interface pops-up above the command card which details:
 
-<!-- The user interface tracks only tracks the damage you've dealt to it and it doesn't start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it. -->
+1. Hero information, including: 
+    - Hero's class and level
+    - Profession and profession level
+    - Base stats
+    - Equipped items
+    - Familiar skills
+    - Active buffs
+2. DPS calculations for Total, Physical, and Magical DPS
+    - The calculation for DPS uses an average (mean) updated every second
+    - The total damage and duration is reported
+    - The minimum and maximum damage numbers for physical and magical damage are also reported
+3. The ability adjust the armor, magic resist, and armor type of the *Sedah Scarecrow*
+4. The ability to adjust how the DPS feedback's timer works
+    - Infinite timer and the DPS feedback tracks like Wc3's buff bar
+    - A fixed timer, either 30s, 60s, or 180s, and the DPS feedback "memorises" the buffs you use throughout the duration
+    - (Changing the timer will reset the DPS feedback)
+5. The ability to configure the Sedah Scarecrow to either *Hades*, *Hyperion*, or *No Resistances* durabilities
+6. Features a *Close* and *Reset Timer* button
 
-<!-- - The auto-close functionality when you're too far away from Sedah Scarecrow now runs as you open the UI -->
-
-<!-- Added timer length functionality to the DPS UI. This allows you to set an infinite, 30s, 60s, or 180s timer. Swapping between timer lengths resets your DPS numbers.  -->
-<!-- A fixed length timer "memorises" the buffs you had active when the timer is started. (The infinite length timer retains the old buff tracking functionality). -->
-
+The DPS feedback tracks only tracks the damage you have dealt to it. Also, the feedback does not start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it.
 
 We've removed the Noirepyh Scarecrow as the functionality of having two scarecrows has been superseded.
 
 # Heroes
 - *Impale* (Warlord): Agility modifier reduced to 5.0 (from 6.0).
 - *Grave Seize* (Khaos Champion): Strength modifier increased to 2.0 (from 1.0).
+- Polished the tooltips for *Dispatch* (Spartan Warrior), *Throw Javelin* (Spartan Warrior), *Charge* (Spartan Warrior), *Cataclysm* (Guardian of Nature), *Tremor* (Guardian of Nature), and *Impale* (Warlord).
 
 ## Spartan Warrior
 - Updated the model and icon
