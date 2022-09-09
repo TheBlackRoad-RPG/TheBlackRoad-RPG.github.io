@@ -82,7 +82,7 @@ output:
 > Cooldown: 30 seconds.
 
 ## Immortal Armor of Hephaestus <small>(Olympian Relic)</small>
-- Increases Mana Regeneration by 25 Mana per second. (Previously 65 Mana per second)
+- Decreased the Mana Regeneration stat bonus to 25 Mana per second. <small>(Previously 65 Mana per second)</small>
 - Replaced the "Regenerates 0.66% Maximum Health" effect with **Aphrodite's Favor** (Goldsmith)'s <u>Vivid Regeneration</u> effect.
 
 > *Vivid Regeneration*—Grants Health Regeneration per second depending on Maximum Health:<br>
