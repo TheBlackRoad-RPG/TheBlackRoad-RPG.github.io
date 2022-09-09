@@ -13,111 +13,84 @@ output:
 ---
 
 # General
-- *Backpack* have been renamed into *Familiar*
-- Updated the boat replacement system to handle two concurrent boats. (This also means that the refund functionality has been removed)
-- *Olympian Gemstone Shards* (Hyperion) now state the amount of charges in the generated save-code file
-- *Thundering Hammer of Zeus* (Olympian Relic) and *Savage War Axe of Hephaestus* (Aeacus) are now simultaneously equippable under the current item uniqueness framework. See [Bug Fixes] for the reason why this occurred
-- The *Fire Elemental* summon from the *Blaze o' Glory* item ability (Midas' Pendant of Wisdom) now has a mana pool which reflects it's duration (just like the *Fire Elemental* adds in the *Midas* fight)
+- Reformatted the hero selection on-screen text to:
+- Print whether it is a Warrior class 
+- Have the "Click the Green..." text to be on a new line
+- Updated the system that processes damage events in TBR
+- Updated the tooltip format for all forges
+- Disabled the hold functionality for the DPS UI's armor and magic resist adjustments. (Currently broken due to one of the 1.33 patches...)
 
-<hr>
-
-- The *Roar* ability on *Ares' Bloodthirsty Spear* (Olympian Relic) now features a unique icon to indicate that it does stack with *Scroll of the Lesser Beast* and *Scroll of the Beast* (Alchemy)
-- Added a section on item uniqueness to the TBR Mechanics F9 entry
-- Reformatted *Aphrodite's Favor*'s (Goldsmith) item tooltip to be like *Midas' Ring of Vigor* (Metalsmith Galen)
-- Defeating *Hades* now cleans up all *Ker* adds
-- The level requirement for a bank has been reduced to 60. <small>(Previously 85)</small>
-
-<hr>
-
-- A number of UI buttons now happen on-click rather than on-release as a side effect of addressing an UI bug. See [Bug Fixes] for more details
-- The Hero Selection heroes now register 0 damage from all sources
-- Improved the language of *Silenus' Talisman* (Midas) and *Midas' Pendant of Wisdom* (Metalsmith Galen) to clarify that the effect doesn't proc for spell-enhanced auto-attacks if the target is already **Enfeebled**
-- Made further adjustments to how the map groups units for enumeration. This change should address the bug with *Winds of War* (Warlord), *Maelstrom* & *Thunderbolt* (Druid), *Death Wave* (Warlock) and *Sphinx*'s Chronowave mechanic that uses groups to track which units has been hit previously
-
-# Sedah Scarecrow
-The Sedah Scarecrow has been overhauled for DPS feedback purposes. It is no longer hostile by default and requires you to manually activate it by "purchasing" a token within 1000 units of it. Upon purchase, it becomes hostile and an user interface pops-up above the command card which details:
-
-1. Hero information, including: 
-    - Hero's class and level
-    - Profession and profession level
-    - Base stats
-    - Equipped items
-    - Familiar skills
-    - Active buffs
-2. DPS calculations for Total, Physical, and Magical DPS
-    - The calculation for DPS uses an average (mean) updated every second
-    - The total damage and duration is reported
-    - The minimum and maximum damage numbers for physical and magical damage are also reported
-3. The ability adjust the armor, magic resist, and armor type of the *Sedah Scarecrow*
-4. The ability to adjust how the DPS feedback's timer works
-    - Infinite timer and the DPS feedback tracks like Wc3's buff bar
-    - A fixed timer, either 30s, 60s, or 180s, and the DPS feedback "memorises" the buffs you use throughout the duration
-    - (Changing the timer will reset the DPS feedback)
-5. The ability to configure the Sedah Scarecrow to either *Hades*, *Hyperion*, or *No Resistances* durabilities
-6. Features a *Close* and *Reset Timer* button
-
-The DPS feedback tracks only tracks the damage you have dealt to it. Also, the feedback does not start timing until it takes damage from you. Lastly, the user interface automatically closes if you are no longer within 1000 units of it.
-
-We've removed the Noirepyh Scarecrow as the functionality of having two scarecrows has been superseded.
 
 # Heroes
-- *Impale* (Warlord): Agility modifier reduced to 5.0 (from 6.0).
-- *Grave Seize* (Khaos Champion): Strength modifier increased to 2.0 (from 1.0).
-- Polished the tooltips for *Dispatch* (Spartan Warrior), *Throw Javelin* (Spartan Warrior), *Charge* (Spartan Warrior), *Cataclysm* (Guardian of Nature), *Tremor* (Guardian of Nature), and *Impale* (Warlord).
+In light of recent changes, we've decided to take a look at the mana costs of the shining class abilities and re-evaluated them using standardised scalings.
 
-## Spartan Warrior
-- Updated the model and icon
-- The soundset changed to *Garithos* (from *Arthas with Frostmourne*)
-- **Dispatch**
-  + Reduced the damage of the bleed component to 100 / 200 / 350 / 550 / 850 / 1250 / 2000 / 3000 (+2.0 Strength and +0.5 Spell Damage). <small>(Previously 200 / 400 / 700 / 1050 / 1700 / 2500 / 3750 / 5500 (+3.0 Strength and +0.5 Spell Damage)</small>
-  + [Bug Fix] The bleed component now deals pure magical damage. <small>(Instead of mixed damage)</small>
-- **Valor**
-  + Restores 75 / 150 / 250 / 500 / 750 / 1250 / 1875 / 2500 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Strength and +0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 Spell Healing) health over 3 seconds
-    - <small>(Previously it restored 960 / 1920 / 3120 / 45600 / 62240 / 8400 / 11400 / 15600 (+Spell Healing) health over 12 seconds)</small>
-  + No longer grants an armor bonus for the duration
-  + AoE decreased to 300. <small>(Previously 600)</small>
-  + Mana cost increased to 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600. <small>(Previously 25 / 50 / 85 / 140 / 210 / 300 / 405 / 525)</small>
-  + Cooldown decreased to 12 seconds (from 30 seconds)
-- **Throw Javelin**
-  + [Bug Fix] The base damage is properly calculated. <small>(Previously no base damage was being factored into the damage calculation)</small>
-- **Veteran's Set**
-  + Now increases both Strength ratios on **Dispatch** (Spartan Warrior) to 3.0 from 2.0
+*Guardian of Nature*
+> - **Embolden**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600)
+> - **Earth Shock**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 50 / 75 / 100 / 150 / 200 / 300 / 400 / 500)
+> - **Nature's Bulwark**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320. (Previously 50 / 75 / 125 / 150 / 200 / 225 / 275 / 300)
+> - **Cataclysm**: Mana costs adjusted to 75 / 150 / 225 / 375 / 525 / 750 / 975 / 1200. (Previously 100 / 150 / 200 / 300 / 450 / 600 /  900 / 1200)
 
-## Guardian of Nature
-- **Embolden** <small>(replaces Roar)</small>
-  + Unleashes a mighty roar that grants nearby allies in a 600 AoE  0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.325 Strength + 0.3 / 0.35 / 0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 Intelligence bonus damage. Lasts for 6.5 seconds.
-  + Mana cost: 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600
-  + Cooldown: 15 seconds
-- **Cataclysm**
-  + [Typo Fix] The scaling calculation is properly listed as +6.0 Strength **and** +1.2 Spell Damage
-- **Tremor**
-  + [Bug Fix] The on-hit damage to the target is now magical damage. <small>(Instead of true damage that was only reduced by the target's armor value).</small>
+*Spartan Warrior*
+> - **Dispatch**: Mana costs adjusted to 15 / 30 / 45 / 75 / 105 / 150 / 195 / 240. (Previously 20 / 40 / 70 / 110 / 160 / 220 / 310 / 400)
+> - **Valor**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560. (Previously 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600)
+> - **Throw Javelin**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 35 / 70 / 120 / 195 / 260 / 340 / 420 / 500)
+> - **Charge**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320. (Previously 20 / 35 / 60 / 100 / 160 / 220 / 310 / 400)
+> - **Phalanx**: 
+> -- Activation mana cost adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400. (Previously 20 / 30 / 45 / 65 / 90 / 120 / 155 / 200)
+> -- Mana drain adjusted to 2.5 / 5 / 7.5 / 12.5 / 17.5 / 25.0 / 32.5 / 40 per second. (Previously 5 / 8 / 12 / 17 / 23 / 31 / 40 / 50)
+
+*Temple Guardian*
+> - **Gift of the Gods**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560. (Previously 60 / 120 / 210 / 335 / 475 / 625 / 800 / 1000)
+> - **Mark of Artemis**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 20 / 35 / 55 / 80 / 115 / 160 / 220 / 300)
+> - **Fire of Apollo**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 45 / 90 / 155 / 250 / 375 / 565 / 775 / 1000)
+> - **Hammer of Zeus**: Mana costs adjusted to 15 / 30 / 45 / 75 / 105 / 150 / 195 / 240. (Previously 15 / 30 / 50 / 80 / 120 / 170 / 230 / 300)
+> - **Hestia's Touch**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320. (Previously 30 / 60 / 95 / 135 / 180 / 230 / 285 / 350)
+> - **Pray**: Mana costs adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400. (Previously 15 / 25 / 40 / 50 / 85 / 125 / 170 / 225)
+
+*Ranger*
+> - **Black Arrow**: Mana costs adjusted to 7 / 14 / 21 / 35 / 49 / 70 / 91 / 112. (Previously 10 / 15 / 25 / 35 / 50 / 65 / 85 / 105)
+> - **Moon Bind**: Mana costs adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400. (Previously 50 / 70 / 90 / 125 / 165 / 225 / 300 / 350)
+> - **Artemis' Blessing**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480. (Previously 30 / 46 / 67 / 95 / 132 / 180 / 245 / 300)
+>  - **Star Dust**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560. (Previously 150 / 155 / 160 / 200 / 240 / 320 / 420 / 600)
+
+# Items
+- All Relics (Champion's Armory) have their level requirement decreased to 180 (from 200).
+- All Relics (Champion's Armory) have their purchase costs decreased to 75,000 gold and 75,000 crafting materials (both were previously 100,000)
+- All Olympian Relics (Master Metalsmith Heletes) have their forging costs increased to 125,000 gold and 125,000 crafting materials (both were previously 100,000)
+- Wraithblade's (Champion's Armory) level requirement decreased to 180 (from 200).
+- Tweaked the wording of Wizard's Respite's (Metalsmith Theron) mana regeneration effect
+- Book of Skill Increase (Books and Sphinx) now sets the leveled spell's level instead of increasing it. Not under Bug Fixes as this doesn't address the underlying UI bug due to double-clicking with a high enough APM
+
+*Ares' Bloodthirsty Spear* (Olympian Relic)
+> - Included an apostrophe to the item's name
+> - Reworked the "Regenerate 0.35% Maximum Health on auto-attack" effect to the **Eternal Hunger** passive:
+> *Eternal Hunger*—Continually lose 0.75% Maximum Health per second. Regenerate the greater of 0.35% Maximum Health or 5% damage dealt on auto-attack. *Eternal Hunger* cannot decrease your health below 1% Maximum Health.
+> - Reworked the active self-50% roar effect to the **Hunt or be Hunted** active:
+> *Hunt or be Hunted*—Invoke Ares' spirit increasing auto-attack damage by 75% and tripling the health regenerated by *Eternal Hunger* for 10 seconds.
+> Cooldown: 30 seconds.
+
+*Wraithblade* (Champion's Armory)
+> - Removed the 30% Mana Regeneration stat bonus
+> - Added the **Wraithtouched** passive:
+> *Wraithtouched*—Auto-attacks have a 10% chance to fill the target with maddening visions causing 0.25 Intelligence magical damage over 4 seconds.
+
+*Immortal Armor of Hephaestus* (Olympian Relic)
+> - Increases Mana Regeneration by 25 Mana per second. (Previously 65 Mana per second)
+> - Replaced the "Regenerates 0.66% Maximum Health" effect with *Aphrodite's Favor* (Goldsmith)'s **Vivid Regeneration** effect.
+> *Vivid Regeneration*—Grants Health Regeneration per second depending on Maximum Health:
+>  • ≤ 24999: Regenerate 2% Maximum Health.
+>  • ≤ 49999: Regenerate 1% Maximum Health.
+>  • ≥ 50000: Regenerate 0.5% Maximum Health.
 
 # Bug Fixes
-- *Transcendence* (Cleric) auto-attacks on the DPS dummy now properly calculates the heal
-- *Adamantium Scythe* (Medusa) tooltip correctly states that it has a critical strike multiplier of 2.5
-- *Assassinate* (Assassin), *Bum Rush* (Warlord) and *Charge* (Spartan Warrior) path-finding has been updated to mimic pre-1.39b3 behaviour and attempts to find better placement options than before. It also has a better failsafe of simply closing the distance if a pathable spot cannot be found. Furthermore, all three spells now share the same trait that Assassinate (and previously Charge) has where the blink doesn't occur if you're within 125 units of the target
-- The item uniqueness check no longer prints error messages when a familiar picks up a unique item. This is because item uniqueness is only enforced for heroes
-- Picking up *Savage War Axe of Hephaestus* (Aeacus) no longer triggers the *Thundering Hammer of Zeus* (Olympian Relic) item uniqueness error message when you already have *Hephaestus Thundering Axe* (Weaponsmith)
+- Mage's War Staff (Weaponsmith) now grants the correct amount of intelligence
+- Adjusted Medusa's bossfight trigger region so that it properly triggers for heroes that hug the right-side's wall
+- The linear boss mechanics for Sphinx, Goretusk, and Manslayer no longer groups every enemy unit on the map 
+- Helios' (Hyperion) Fire Blast now targets enemy heroes properly again
+- Adjusted a spawn region in the Southern Highlands to prevent mobs from spawning on the cliff
+- Reverted the fountain underneath the Frost Wyrm familiar to the model file used in Wc3 Patch 1.32
+- Adjusted the size of the DPS UI text boxes to account for the new font size used in Wc3 Patch 1.33
 
-<hr>
-
-- Picking up Warrior class exclusive items now states that *Khaos Champion* is a Warrior class hero
-- *Midas' Pendant of Wisdom*'s (Metalsmith Galen) Enfeeble proc for spell damage is functional again
-- Updated spawn regions in the *Tundra* and *Southern Highlands* to address mobs spawning on cliff faces
-- The save/load system now correctly encrypts and decrypts the value stored for the *You picked the wrong house, fool* achievement
-- Fixed typos in F9 help, *Gift of Wisdom* (Familiar Skill), *Spartan Full Plate* (Armorsmith), *Spartan Full Plate* 's (Armorsmith) crafting description and *Draught of the Phoenix*'s (Alchemist) crafting description
-
-<hr>
-
-- *Dancing Dagger* (Assassin) no longer bounces to structures
-- Added a fail-safe for *Uranus*' item drops if neither the ground or air forms are currently in the arena
-- Multi-clicking UI buttons no longer registers multiple trigger events
-- *Selene* (Hyperion) is now the damage source for her Meteor Shower ability (rather than *Hyperion*)
-- Updated the Warrior class intelligence level-ups to factor in how many levels are granted by a single-source of XP
-  + **Note**: This change does not retroactively address loads with the incorrect amount of intelligence)
-
-<hr>
-
-- Applying *Ensnare* to an unit that is already *Ensnared* now correctly refreshes the duration to the incoming *Ensnare* debuff
-- Fly-height is properly reset to zero when *Mighty Leap* (Midas' Band of Vigor) is interrupted by an *Ensnare* effect
+# Known Bugs
+- DPS UI and Break
+- Rare Double-click lock-out 
