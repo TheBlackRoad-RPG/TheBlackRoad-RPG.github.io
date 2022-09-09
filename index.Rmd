@@ -24,7 +24,7 @@ output:
 
 # Heroes
 
-> In light of recent changes, we've decided to take a look at the mana costs of the shining class abilities and re-evaluated them using standardised scalings.
+> In light of recent changes, we've adjusted the mana costs for the Shining classes abilities using standardised scalings.
 
 ## Guardian of Nature
 - **Embolden**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600)</small>
