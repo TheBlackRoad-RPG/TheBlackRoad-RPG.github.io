@@ -62,6 +62,7 @@ output:
 - **All Olympian Relics** (Master Metalsmith Heletes) have their forging costs increased to 125,000 gold and 125,000 crafting materials <small>(both were previously 100,000)</small>
 - Tweaked the wording of **Wizard's Respite**'s (Metalsmith Theron) mana regeneration effect
 - **Book of Skill Increase** (Books and Sphinx) now sets the levelled spell's level instead of increasing it. This is not under <u>Bug Fixes</u> because it does not address the underlying UI bug, see [Known Bugs]
+- **Shining Olympian Regalia** (Master Metalsmith Heletes) also grants an additional 1500 Mana
 
 ## Wraithblade <small>(Champion's Armory)</small>
 - Level requirement decreased to 180 (from 200).
@@ -99,6 +100,7 @@ output:
 - Adjusted a spawn region in the **Southern Highlands** to prevent mobs from spawning on the cliff
 - Reverted the fountain underneath the **Frost Wyrm** familiar (Athens) to the model file used in Wc3 Patch 1.32
 - Adjusted the size of the **DPS UI** (Sedah Scarecrow) text boxes to account for the new font size used in Wc3 Patch 1.33
+- Adjusted the width of the **Quest Multiboard** to account for the new font size used in Wc3 Patch 1.33
 
 # Known Bugs {#Known}
 - Using the **DPS UI** to adjust the armour value while <u>Break</u>, <u>Thunderbolt</u>, or <u>Rend Armor</u> is active will increase the base armour value of the <u>Sedah Scarecrow</u>
