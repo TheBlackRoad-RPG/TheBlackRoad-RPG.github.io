@@ -59,6 +59,7 @@ output:
 - **All Relics** (Champion's Armory) have their:
   - Level requirement decreased to 180 <small>(from 200)</small>
   - Purchase costs decreased to 75,000 gold and 75,000 crafting materials <small>(both were previously 100,000)</small>
+  - Item purchase cooldown reduced to 3 minutes <small>(from 10 minutes)</small>
 - **All Olympian Relics** (Master Metalsmith Heletes) have their forging costs increased to 125,000 gold and 125,000 crafting materials <small>(both were previously 100,000)</small>
 - Tweaked the wording of **Wizard's Respite**'s (Metalsmith Theron) mana regeneration effect
 - **Book of Skill Increase** (Books and Sphinx) now sets the levelled spell's level instead of increasing it. This is not under <u>Bug Fixes</u> because it does not address the underlying UI bug, see [Known Bugs]
