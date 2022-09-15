@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39b5 --- Changelog"
+title: "The Black Road RPG v1.39b6 --- Changelog"
 author: "Unholy0ne and Alteisen (Av3n)"
 output: 
   html_document: 
@@ -12,97 +12,12 @@ output:
     css: TBR.css
 ---
 
-# General
-
-- Reformatted the hero selection on-screen text to:
-  - Print whether the selected class is a **Warrior class**
-  - Have the "Click the Green..." text to be on a new line
-- Updated the system that processes damage events in TBR
-- Updated the tooltip format for all forges
-- Disabled the hold functionality for the **DPS UI**'s armor and magic resist adjustments. This is because Wc3 patch 1.33 broke the functionality 
-
-
-# Heroes
-
-> In light of recent changes, we've adjusted the mana costs for the Shining classes abilities using standardised scalings.
-
-## Guardian of Nature
-- **Embolden**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 50 / 75 / 100 / 150 / 225 / 300 / 450 / 600)</small>
-- **Earth Shock**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 50 / 75 / 100 / 150 / 200 / 300 / 400 / 500)</small>
-- **Nature's Bulwark**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320 <br><small>&emsp;(Previously 50 / 75 / 125 / 150 / 200 / 225 / 275 / 300)</small>
-- **Cataclysm**: Mana costs adjusted to 75 / 150 / 225 / 375 / 525 / 750 / 975 / 1200 <br><small>&emsp;(Previously 100 / 150 / 200 / 300 / 450 / 600 /  900 / 1200)</small>
-
-## Spartan Warrior
-- **Dispatch**: Mana costs adjusted to 15 / 30 / 45 / 75 / 105 / 150 / 195 / 240 <br><small>&emsp;(Previously 20 / 40 / 70 / 110 / 160 / 220 / 310 / 400)</small>
-- **Valor**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560 <br><small>&emsp;(Previously 25 / 75 / 160 / 250 / 340 / 425 / 515 / 600)</small>
-- **Throw Javelin**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 35 / 70 / 120 / 195 / 260 / 340 / 420 / 500)</small>
-- **Charge**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320 <br><small>&emsp;(Previously 20 / 35 / 60 / 100 / 160 / 220 / 310 / 400)</small>
-- **Phalanx**: 
-  - Activation mana cost adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400 <br><small>&emsp;(Previously 20 / 30 / 45 / 65 / 90 / 120 / 155 / 200)</small>
-  - Mana drain adjusted to 2.5 / 5 / 7.5 / 12.5 / 17.5 / 25.0 / 32.5 / 40 per second <br><small>&emsp;(Previously 5 / 8 / 12 / 17 / 23 / 31 / 40 / 50)</small>
-
-## Temple Guardian
-- **Gift of the Gods**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560 <br><small>&emsp;(Previously 60 / 120 / 210 / 335 / 475 / 625 / 800 / 1000)</small>
-- **Mark of Artemis**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 20 / 35 / 55 / 80 / 115 / 160 / 220 / 300)</small>
-- **Fire of Apollo**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 45 / 90 / 155 / 250 / 375 / 565 / 775 / 1000)</small>
-- **Hammer of Zeus**: Mana costs adjusted to 15 / 30 / 45 / 75 / 105 / 150 / 195 / 240 <br><small>&emsp;(Previously 15 / 30 / 50 / 80 / 120 / 170 / 230 / 300)</small>
-- **Hestia's Touch**: Mana costs adjusted to 20 / 40 / 60 / 100 / 140 / 200 / 260 / 320 <br><small>&emsp;(Previously 30 / 60 / 95 / 135 / 180 / 230 / 285 / 350)</small>
-- **Pray**: Mana costs adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400 <br><small>&emsp;(Previously 15 / 25 / 40 / 50 / 85 / 125 / 170 / 225)</small>
-
-## Ranger
-- **Black Arrow**: Mana costs adjusted to 7 / 14 / 21 / 35 / 49 / 70 / 91 / 112 <br><small>&emsp;(Previously 10 / 15 / 25 / 35 / 50 / 65 / 85 / 105)</small>
-- **Moon Bind**: Mana costs adjusted to 25 / 50 / 75 / 125 / 175 / 250 / 325 / 400 <br><small>&emsp;(Previously 50 / 70 / 90 / 125 / 165 / 225 / 300 / 350)</small>
-- **Artemis' Blessing**: Mana costs adjusted to 30 / 60 / 90 / 150 / 210 / 300 / 390 / 480 <br><small>&emsp;(Previously 30 / 46 / 67 / 95 / 132 / 180 / 245 / 300)</small>
-- **Star Dust**: Mana costs adjusted to 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560 <br><small>&emsp;(Previously 150 / 155 / 160 / 200 / 240 / 320 / 420 / 600)</small>
-
-# Items
-- **All Relics** (Champion's Armory) have their:
-  - Level requirement decreased to 180 <small>(from 200)</small>
-  - Purchase costs decreased to 75,000 gold and 75,000 crafting materials <small>(both were previously 100,000)</small>
-  - Item purchase cooldown reduced to 3 minutes <small>(from 10 minutes)</small>
-- **All Olympian Relics** (Master Metalsmith Heletes) have their forging costs increased to 125,000 gold and 125,000 crafting materials <small>(both were previously 100,000)</small>
-- Tweaked the wording of **Wizard's Respite**'s (Metalsmith Theron) mana regeneration effect
-- **Book of Skill Increase** (Books and Sphinx) now sets the levelled spell's level instead of increasing it. This is not under <u>Bug Fixes</u> because it does not address the underlying UI bug, see [Known Bugs]
-- **Shining Olympian Regalia** (Master Metalsmith Heletes) also grants an additional 1500 Mana
-
-## Wraithblade <small>(Champion's Armory)</small>
-- Level requirement decreased to 180 (from 200).
-- Removed the 30% Mana Regeneration stat bonus
-- Added the **Wraithtouched** passive:
-
-> *Wraithtouched*—Auto-attacks have a 10% chance to fill the target with maddening visions causing 0.25 Intelligence magical damage over 4 seconds.
-
-## Ares' Bloodthirsty Spear <small>(Olympian Relic)</small>
-- Included an apostrophe to the item's name
-- Reworked the "Regenerate 0.35% Maximum Health on auto-attack" effect to the **Eternal Hunger** passive:
-
-> *Eternal Hunger*—Continually lose 0.75% Maximum Health per second. Regenerate the greater of 0.35% Maximum Health or 5% damage dealt on auto-attack. *Eternal Hunger* cannot decrease your health below 1% Maximum Health.
-
-- Reworked the active self-50% roar effect to the **Hunt or be Hunted** active:<br>
-
-> *Hunt or be Hunted*—Invoke Ares' spirit increasing auto-attack damage by 75% and tripling the health regenerated by *Eternal Hunger* for 10 seconds.<br>
-> Cooldown: 30 seconds.
-
-## Immortal Armor of Hephaestus <small>(Olympian Relic)</small>
-- Decreased the Mana Regeneration stat bonus to 25 Mana per second. <small>(Previously 65 Mana per second)</small>
-- Replaced the "Regenerates 0.66% Maximum Health" effect with **Aphrodite's Favor** (Goldsmith)'s <u>Vivid Regeneration</u> effect.
-
-> *Vivid Regeneration*—Grants Health Regeneration per second depending on Maximum Health:<br>
-> &nbsp; • ≤ 24999: Regenerate 2% Maximum Health.<br>
-> &nbsp; • ≤ 49999: Regenerate 1% Maximum Health.<br>
-> &nbsp; • ≥ 50000: Regenerate 0.5% Maximum Health.
+> **1.39b6 is a hot fix update.** See [the 1.36b5 changelog](https://theblackroad-rpg.github.io/index1.39b5.html) for a comprehensive list of update notes since 1.39b4.
 
 # Bug Fixes
+- **Thundering Hammer of Zeus** (Olympian Relic) now correctly grants its *Command Aura* ability
+- **Barbarian**'s mana regen when attacking enemies now registers on the *Sedah Scarecrow*
 
-- **Mage's War Staff** (Weaponsmith) now grants the stated Intelligence bonus
-- Adjusted **Medusa**'s trigger region so that it properly starts the bossfight for heroes that hug the right-hand side's wall
-- The linear boss mechanics for **Sphinx** (Barbaric Plains), **Goretusk** (Tribal Village), and **Manslayer** (Minotaur Burrows) no longer groups every enemy unit on the map 
-- **Helios**' (Hyperion) Fire Blast now targets enemy heroes properly again
-- Adjusted a spawn region in the **Southern Highlands** to prevent mobs from spawning on the cliff
-- Reverted the fountain underneath the **Frost Wyrm** familiar (Athens) to the model file used in Wc3 Patch 1.32
-- Adjusted the size of the **DPS UI** (Sedah Scarecrow) text boxes to account for the new font size used in Wc3 Patch 1.33
-- Adjusted the width of the **Quest Multiboard** to account for the new font size used in Wc3 Patch 1.33
-
-# Known Bugs {#Known}
+# Known Bugs
 - Using the **DPS UI** to adjust the armour value while <u>Break</u>, <u>Thunderbolt</u>, or <u>Rend Armor</u> is active will increase the base armour value of the <u>Sedah Scarecrow</u>
 - **Custom UI buttons** found in the <u>DPS UI</u>, <u>Book of Skill Increase</u>, <u>Book of Skill Reset</u>, and <u>Backpack Skills</u> may lock the player out of using them under unknown circumstances
