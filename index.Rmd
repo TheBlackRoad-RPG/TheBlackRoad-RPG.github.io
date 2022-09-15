@@ -15,8 +15,8 @@ output:
 > **1.39b6 is a hot fix update.** See [the 1.36b5 changelog](https://theblackroad-rpg.github.io/index1.39b5.html) for a comprehensive list of update notes since 1.39b4.
 
 # Bug Fixes
-- **Thundering Hammer of Zeus** (Olympian Relic) now correctly grants its *Command Aura* ability
-- **Barbarian**'s mana regen when attacking enemies now registers on the *Sedah Scarecrow*
+  - **Thundering Hammer of Zeus** (Olympian Relic) now correctly grants its *Command Aura* ability
+  - **Barbarian**'s mana regen when attacking enemies now registers on the *Sedah Scarecrow*
 
 # Known Bugs
 - Using the **DPS UI** to adjust the armour value while <u>Break</u>, <u>Thunderbolt</u>, or <u>Rend Armor</u> is active will increase the base armour value of the <u>Sedah Scarecrow</u>
