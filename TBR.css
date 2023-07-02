@@ -1,7 +1,12 @@
-body {
-  font-size: 18px;
+.blockquote {
+  font-size: 0.95em;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
 }
 
-blockquote {
-  font-size: inherit;
+.blockquote ul {
+  margin-left: -0.5em;
+}
+
+ul ul, table, .columns {
+  font-size: 0.95em;
 }
