@@ -297,35 +297,38 @@ have received updated FX
 
 *Phalanx*
 
-> -   Rewrote the description to state how much mana is drained per
->     second and to make it clear that it only affect other players'
->     heroes
-> -   *AoE* nerfed to 450. <small>(Previously 500)</small>
-> -   *Movement speed reduction* nerfed to 50% / 35%. <small>(Previously
->     20% / 20%)</small>
-> -   *Evasion* bonus nerfed to 25% / 30%. <small>(Previously 35% /
->     40%)</small>
-> -   The M*agic Resistance* bonus of 35% / 40% is converted to a
->     *Resist* bonus of 65 / 85
+-   Rewrote the description to state how much mana is drained per second
+    and to make it clear that it only affect other players' heroes
+-   *AoE* nerfed to 450. <small>(Previously 500)</small>
+-   *Movement speed reduction* nerfed to 50% / 35%. <small>(Previously
+    20% / 20%)</small>
+-   *Evasion* bonus nerfed to 25% / 30%. <small>(Previously 35% /
+    40%)</small>
+-   The M*agic Resistance* bonus of 35% / 40% is converted to a *Resist*
+    bonus of 65 / 85
 
 ## Temple Guardian
 
 *Gift of Zeus*
 
-> -   *Armor* bonus nerfed to 10 / 15 / 20 / 30 / 40 / 50 / 65 / 80.
->     <small>(Previously 20 / 30 / 40 / 50 / 60 / 70 / 85 / 100)</small>
-> -   *Magic Resistance* bonus of 33% is converted to a *Resist* bonus
->     of 10 / 15 / 20 / 30 / 40 / 50 / 65 / 80
+-   *Armor* bonus nerfed to 10 / 15 / 20 / 30 / 40 / 50 / 65 / 80.
+    <small>(Previously 20 / 30 / 40 / 50 / 60 / 70 / 85 / 100)</small>
+
+```{=html}
+<!-- -->
+```
+-   *Magic Resistance* bonus of 33% is converted to a *Resist* bonus of
+    10 / 15 / 20 / 30 / 40 / 50 / 65 / 80
 
 # Items
 
 *Item Abilities*
 
-> -   Evasion---Gain 5 / 10 / 15 / 20 / 25 % Evasion.
-> -   Mana Regeneration---­Gain 10 / 20 / 30 / 40 / 50 % increased Mana
->     Regeneration.
-> -   Bloodthirsty---Dealing fatal damage to an enemy increases
->     auto-attack damage by 10% for the next 8 seconds
+-   Evasion---Gain 5 / 10 / 15 / 20 / 25 % Evasion.
+-   Mana Regeneration---­Gain 10 / 15 / 20 / 25 / 30 / 35 / 40 / 45 / 50
+    / 55 / 60 % increased Mana Regeneration.
+-   Bloodthirsty---Dealing fatal damage to an enemy increases
+    auto-attack damage by 10% for the next 8 seconds
 
 *Ankh of Reincarnation* <small>(Alchemy)</small>, *Draught of the
 Phoenix* <small>(Alchemy)</small>, *Immortal Armor of Hephaestus*
@@ -333,13 +336,13 @@ Phoenix* <small>(Alchemy)</small>, *Immortal Armor of Hephaestus*
 Champion* <small>(Armorsmith)</small>, and *Plates of the Ancient*s
 <small>(Champion's Armory)</small>
 
-> These items now have their "Ankh of Reincarnation" effect reclassified
-> as the *Auto-Life* item ability
+These items now have their "Ankh of Reincarnation" effect reclassified
+as the *Auto-Life* item ability
 
 *Ares' Bloodthristy Spear* <small>(Master Metalsmith Heletes)</small>
 
-> Eternal Hunger's maximum health degeneration nerfed to 1% (from
-> 0.75%), and its current health threshold buffed to 5% (from 1%)
+*Eternal Hunger*'s maximum health degeneration nerfed to 1% (from
+0.75%), and its current health threshold buffed to 5% (from 1%)
 
 *Sword of the Olympians* <small>(Master Metalsmith Heletes)</small>
 
@@ -359,20 +362,18 @@ Champion* <small>(Armorsmith)</small>, and *Plates of the Ancient*s
 *Ring of Regret* <small>(Midas)</small> and *Midas' Band of Vigor*
 <small>(Metalsmith Galen)</small>
 
-> *Magic Protection* item ability nerfed to:
->
-> -   ≤ 24999: Reduces magical damage by 400. <small>(Previously
->     4000)</small>
->
-> -   ≤ 49999: Reduces magical damage by 200. <small>(Previously
->     2000)</small>
->
-> -   ≥ 50000: Reduces magical damage by 100. <small>(Previously
->     1000)</small>
+*Magic Protection* item ability nerfed to:
+
+-   ≤ 24999: Reduces magical damage by 400. <small>(Previously
+    4000)</small>
+-   ≤ 49999: Reduces magical damage by 200. <small>(Previously
+    2000)</small>
+-   ≥ 50000: Reduces magical damage by 100. <small>(Previously
+    1000)</small>
 
 *Amulet of Protection* <small>(Artifacts)</small>
 
-> Evasion bonus nerfed to 10%. <small>(Previously 20%)</small>
+Evasion bonus nerfed to 10%. <small>(Previously 20%)</small>
 
 *Silenus' Talisma*n <small>(Midas)</small> and *Midas' Pendant of
 Wisdom* <small>(Metalsmith Galen)</small>
@@ -388,70 +389,70 @@ Wisdom* <small>(Metalsmith Galen)</small>
 *Lesser Ether Dust, Ether Dust, Greater Ether Dust,* and *Superior Ether
 Dust* <small>(Goldsmith)</small>
 
-> The Ether Dust line of consumables now grant 10 / 20 / 35 / 50 Resist
-> for 10 minutes. <small>(Previously a 1000 / 3000 / 8000 / 20000 magic
-> damage shield for 10 minutes)</small>
+The Ether Dust line of consumables now grant 10 / 20 / 35 / 50 Resist
+for 10 minutes. <small>(Previously a 1000 / 3000 / 8000 / 20000 magic
+damage shield for 10 minutes)</small>
 
 *White Dragonscale Ring*, *Green Dragonscale Ring*, and *Red Dragonscale
 Ring* <small>(Ladon)</small>
 
-> The *Magic Resistance* bonus of 15% is converted to a *Resist* bonus
-> of 35
+The *Magic Resistance* bonus of 15% is converted to a *Resist* bonus of
+35
 
 *White Dragonscale Ring of Addiction*, *Green Dragonscale Ring of
 Addiction*, and *Red Dragonscale Ring of Addiction* <small>(Metalsmith
 Zoticus)</small>
 
-> The *Magic Resistance* bonus of 20% is converted to a *Resist* bonus
-> of 50
+The *Magic Resistance* bonus of 20% is converted to a *Resist* bonus of
+50
 
 *Talisman of Serious Addiction* and *Warrior's Talisman of Serious
 Addiction* <small>(Champion's Armory)</small>
 
-> The *Magic Resistance* bonus of 25% is converted to a *Resist* bonus
-> of 65
+The *Magic Resistance* bonus of 25% is converted to a *Resist* bonus of
+65
 
 *Bright Silver Shinguards* and *Bright Silver Bracers*
 <small>(Rare)</small>
 
-> The *Magic Resistance* bonus of 20% is converted to a *Resis*t bonus
-> of 50
+The *Magic Resistance* bonus of 20% is converted to a *Resis*t bonus of
+50
 
 *Bright Silver Plates* <small>(Metalsmith Galen)</small>
 
-> The *Magic Resistance* bonus of 30% is converted to a *Resist* bonus
-> of 85
+The *Magic Resistance* bonus of 30% is converted to a *Resist* bonus of
+85
 
 *Adamantium Helm* <small>(Armorsmith)</small>
 
-> The *Magic Resistance* bonus of 35% is converted to a *Resist* bonus
-> of 100
+The *Magic Resistance* bonus of 35% is converted to a *Resist* bonus of
+100
 
 I*ron Will of Hephaestus* <small>(Goldsmith)</small>
 
-> -   *Health* bonus buffed to 1000. <small>(Previously 900)</small>
-> -   Health Regeneration nerfed to 10. <small>(Previously 25)</small>
-> -   Now grants a *Resist* bonus of 25. <small>(Previously an active
->     that grants a 10000 magic damage shield)</small>
+-   *Health* bonus buffed to 1000. <small>(Previously 900)</small>
+-   Health Regeneration nerfed to 10. <small>(Previously 25)</small>
+-   Now grants a *Resist* bonus of 25. <small>(Previously an active that
+    grants a 10000 magic damage shield)</small>
 
 *Shield of Zeus* <small>(Goldsmith)</small>
 
-> -   No longer grants a *Health* bonus of 900
-> -   Now grants a *Resist* bonus of 25. <small>(Previously an active
->     that grants a magic immunity shield).</small>
+-   No longer grants a *Health* bonus of 900
+-   Now grants a *Resist* bonus of 25. <small>(Previously an active that
+    grants a magic immunity shield).</small>
 
 *Towering Shield of Athena* <small>(Master Metalsmith Heletes)</small>
 
-> -   Updated the typesetting of the tooltip and assigned item ability
->     names for each non-standard bonus
-> -   The *Magic Resistance* bonus of 50% is converted to a *Resist*
->     bonus of 175
-> -   *Towering Defense*, the auto-attack damage block, is nerfed to
->     50000 damage. <small>(Previously 200000)</small>
-> -   The *AoE* of *Protection Aura's* is nerfed to 450.
->     <small>(Previously 900)</small>
-> -   The *AoE* of *Turn the Tide*, the full health and mana restore
->     active, is nerfed to 450. <small>(Previously 900)</small>
+-   Updated the typesetting of the tooltip and assigned item ability
+    names for each non-standard bonus
+-   The *Magic Resistance* bonus of 50% is converted to a *Resist* bonus
+    of 175
+-   *Towering Defense*, the auto-attack damage block, is nerfed to 50000
+    damage. <small>(Previously 200000)</small>
+-   The *AoE* of *Protection Aura's* is nerfed to 450.
+    <small>(Previously 900)</small>
+-   The *AoE* of *Turn the Tide*, the full health and mana restore
+    active, is nerfed to 450. <small>(Previously 900)</small>
 
 ## Regalia Progression System Update
 
