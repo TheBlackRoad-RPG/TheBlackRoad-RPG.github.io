@@ -221,17 +221,17 @@ over the icon displays a tooltip with the current objective of the
 quest, and clicking the icon pings the location of the current
 objective.
 
-+----------------------------------------------------------+
-| **Heletes' Boon\                                         |
-| **This personal quest directs you on how to craft your   |
-| regalia once you hit Lvl 30 *or* if you loaded a 1.39b6  |
-| player character with regalia equipped.                  |
-+----------------------------------------------------------+
-| **Heletes' Ingenuity\                                    |
-| **This personal quest directs you on how to enhance your |
-| regalia for the first time once you hit Lvl 45 or higher |
-| with *at least* one Essence.                             |
-+----------------------------------------------------------+
++----------------------------------------------------------------------+
+| **Heletes' Boon\                                                     |
+| **This personal quest directs you on how to craft your regalia once  |
+| you hit Lvl 30 *or* if you loaded a 1.39b6 player character with     |
+| regalia equipped.                                                    |
++----------------------------------------------------------------------+
+| **Heletes' Ingenuity\                                                |
+| **This personal quest directs you on how to enhance your regalia for |
+| the first time once you hit Lvl 45 or higher with *at least* one     |
+| Essence.                                                             |
++----------------------------------------------------------------------+
 
 This particular style of questing is an experimental addition to the
 map. If the reception is positive, this may give us an idea of how to
@@ -481,157 +481,128 @@ Set items for each class and the Olympian regalia items, except for the
 crafted from Lvl 30 onwards and enhanced from Lvl 45 onwards. The
 progression requirements for each tier regalia are:
 
-+---------------------------+----------------------------+
-| **Tier I** <small>Lvl     | **Tier II** <small>Lvl     |
-| 30</small>                | 45</small>                 |
-|                           |                            |
-| Requires                  | Requires                   |
-|                           |                            |
-| -   Titan Fibre           | -   Tier I                 |
-| -   Titan Ore             | -   5 Essence              |
-+---------------------------+----------------------------+
-| **Tier III** <small>Lvl   | **Tier IV** <small>Lvl     |
-| 60</small>                | 75</small>                 |
-|                           |                            |
-| Requires                  | Requires                   |
-|                           |                            |
-| -   Tier II               | -   Tier III               |
-| -   25 Essence            | -   125 Essence            |
-| -   2 Meteoric Iron       | -   2 Ruby Heart           |
-| -   2 Runestone           | -   2 Transport Stone      |
-+---------------------------+----------------------------+
-| **Tier V** <small>Lvl     | **Tier VI** <small>Lvl     |
-| 90</small>                | 105</small>                |
-|                           |                            |
-| Requires                  | Requires                   |
-|                           |                            |
-| -   Tier IV               | -   Tier V                 |
-| -   375 Essence           | -   750 Essence            |
-| -   2 Blood Ruby          | -   2 Lump of Pure         |
-|                           |     Adamantium             |
-|                           | -   2 Sea Essence          |
-+---------------------------+----------------------------+
-| **Tier VII** <small>Lvl   | **Tier VIII** <small>Lvl   |
-| 120</small>               | 135</small>                |
-|                           |                            |
-| Requires                  | Requires                   |
-|                           |                            |
-| -   Tier VI               | -   Tier VII               |
-| -   1250 Essence          | -   2500 Essence           |
-| -   2 Heart of Frost      | -   2 Stone of Heaven      |
-| -   2 Lump of Pure        |                            |
-|     Adamantium            |                            |
-+---------------------------+----------------------------+
-| **Tier IX** <small>Lvl    | **Tier X** <small>Lvl      |
-| 150</small>               | 165</small>                |
-|                           |                            |
-| Requires                  | Requires                   |
-|                           |                            |
-| -   Tier VIII             | -   Tier IX                |
-| -   5000 Essence          | -   7500 Essence           |
-| -   2 Blood Ruby          | -   2 Blood Ruby           |
-| -   2 Stone of Heaven     | -   3 Stone of Heaven      |
-+---------------------------+----------------------------+
-| **Tier XI** <small>Lvl    |                            |
-| 180</small>               |                            |
-|                           |                            |
-| Requires                  |                            |
-|                           |                            |
-| -   Tier X                |                            |
-| -   10000 Essence         |                            |
-| -   Gemstone of the       |                            |
-|     Olympians             |                            |
-| -   Gem of the North      |                            |
-| -   Gem of the East       |                            |
-| -   Gem of the South      |                            |
-| -   Gem of the West       |                            |
-+---------------------------+----------------------------+
++-------------------------------------+--------------------------------------+
+| **Tier I** <small>Lvl 30</small>    | **Tier II** <small>Lvl 45</small>    |
+|                                     |                                      |
+| Requires                            | Requires                             |
+|                                     |                                      |
+| -   Titan Fibre                     | -   Tier I                           |
+| -   Titan Ore                       | -   5 Essence                        |
++-------------------------------------+--------------------------------------+
+| **Tier III** <small>Lvl 60</small>  | **Tier IV** <small>Lvl 75</small>    |
+|                                     |                                      |
+| Requires                            | Requires                             |
+|                                     |                                      |
+| -   Tier II                         | -   Tier III                         |
+| -   25 Essence                      | -   125 Essence                      |
+| -   2 Meteoric Iron                 | -   2 Ruby Heart                     |
+| -   2 Runestone                     | -   2 Transport Stone                |
++-------------------------------------+--------------------------------------+
+| **Tier V** <small>Lvl 90</small>    | **Tier VI** <small>Lvl 105</small>   |
+|                                     |                                      |
+| Requires                            | Requires                             |
+|                                     |                                      |
+| -   Tier IV                         | -   Tier V                           |
+| -   375 Essence                     | -   750 Essence                      |
+| -   2 Blood Ruby                    | -   2 Lump of Pure Adamantium        |
+|                                     | -   2 Sea Essence                    |
++-------------------------------------+--------------------------------------+
+| **Tier VII** <small>Lvl 120</small> | **Tier VIII** <small>Lvl 135</small> |
+|                                     |                                      |
+| Requires                            | Requires                             |
+|                                     |                                      |
+| -   Tier VI                         | -   Tier VII                         |
+| -   1250 Essence                    | -   2500 Essence                     |
+| -   2 Heart of Frost                | -   2 Stone of Heaven                |
+| -   2 Lump of Pure Adamantium       |                                      |
++-------------------------------------+--------------------------------------+
+| **Tier IX** <small>Lvl 150</small>  | **Tier X** <small>Lvl 165</small>    |
+|                                     |                                      |
+| Requires                            | Requires                             |
+|                                     |                                      |
+| -   Tier VIII                       | -   Tier IX                          |
+| -   5000 Essence                    | -   7500 Essence                     |
+| -   2 Blood Ruby                    | -   2 Blood Ruby                     |
+| -   2 Stone of Heaven               | -   3 Stone of Heaven                |
++-------------------------------------+--------------------------------------+
+| **Tier XI** <small>Lvl 180</small>  |                                      |
+|                                     |                                      |
+| Requires                            |                                      |
+|                                     |                                      |
+| -   Tier X                          |                                      |
+| -   10000 Essence                   |                                      |
+| -   Gemstone of the Olympians       |                                      |
+| -   Gem of the North                |                                      |
+| -   Gem of the East                 |                                      |
+| -   Gem of the South                |                                      |
+| -   Gem of the West                 |                                      |
++-------------------------------------+--------------------------------------+
 
 For brevity, the changelog only presents the first and final tier stat
 blocks.
 
-+------------------------+------------------------+
-| **Battleforge          | **Divine Regalia**     |
-| Regalia**              |                        |
-|                        | -   Strength: 20 → 70  |
-| -   Strength: 25 → 75  | -   Intelligence: 15 → |
-| -   Agility: 10 → 60   |     65                 |
-| -   Attack Damage: 15  | -   Mana: 75 → 825     |
-|     → 115              | -   Spell Power: 75 →  |
-| -   Armor: 10 → 80     |     825                |
-| -   Evasion I →        | -   Armor: 5 → 35      |
-|     Evasion V          | -   Resist: 5 → 35     |
-+------------------------+------------------------+
-| **Wild Regalia**       | **Ironwood Regalia**   |
-|                        |                        |
-| -   Agility: 5 → 55    | -   Agility: 25 → 75   |
-| -   Intelligence: 30 → | -   Intelligence: 10 → |
-|     80                 |     60                 |
-| -   Health: 100 → 1100 | -   Mana: 75 → 825     |
-| -   Mana: 100 → 1100   | -   Spell Power: 75 →  |
-| -   Spell Power: 100 → |     825                |
-|     1100               | -   Attack Damage: 25  |
-|                        |     → 175              |
-+------------------------+------------------------+
-| **Khaos Regalia**      | **Night Regalia**      |
-|                        |                        |
-| -   Strength: 25 → 75  | -   Strength: 5 → 55   |
-| -   Agility: 10 → 60   | -   Agility: 30 → 80   |
-| -   Health: 150 → 3000 | -   Flat Mana Regen: 1 |
-| -   Mana: 15 → 165     |     \> 3.5             |
-| -   Armor: 10 → 60     | -   Attack Damage: 30  |
-| -   Resist: 15 → 75    |     → 300              |
-|                        | -   Bloodthirsty       |
-|                        | -   Night Set---Lethal |
-|                        |     Poison's AGI Ratio |
-|                        |     set to 4.0 →       |
-|                        |     Lethal Poison's    |
-|                        |     AGI Ratio set to   |
-|                        |     8.0                |
-+------------------------+------------------------+
-| **Shadows Regalia**    | **Light Regalia**      |
-|                        |                        |
-| -   Intelligence: 35 → | -   Strength: 5 → 55   |
-|     135                | -   Intelligence: 30 → |
-| -   Flat Health Regen: |     80                 |
-|     1 → 17.5           | -   Spell Damage: 50 → |
-| -   Spell Damage: 125  |     750                |
-|     → 1375             | -   Spell Healing: 150 |
-|                        |     → 2250             |
-|                        | -   Mana Regeneration  |
-|                        |     I → Mana           |
-|                        |     Regeneration XI    |
-+------------------------+------------------------+
-| **Power Regalia**      | **Stone Regalia**      |
-|                        |                        |
-| -   Intelligence: 35 → | -   Strength: 15 → 65  |
-|     135                | -   Intelligence: 5 →  |
-| -   Health: 50 → 1000  |     55                 |
-| -   Mana: 100 → 1500   | -   Health: 150 → 1500 |
-| -   Spell Damage: 125  | -   Mana: 150 → 1500   |
-|     → 1375             | -   Spell Damage: 50 → |
-| -   Mana Regeneration  |     550                |
-|     I → Mana           | -   Armor: 5 → 35      |
-|     Regeneration XI    | -   Resist: 25 → 125   |
-+------------------------+------------------------+
-| **Veteran's Regalia**  | **Deathbringer         |
-|                        | Regalia**              |
-| -   Strength: 15 → 65  |                        |
-| -   Intelligence: 5 →  | -   Strength: 5 → 55   |
-|     55                 | -   Agility: 30 → 80   |
-| -   Health: 150 → 1500 | -   Health: 150 → 1500 |
-| -   Mana: 150 → 1500   | -   Attack Damage: 30  |
-| -   Spell Power: 50 →  |     → 300              |
-|     400                | -   Bloodthirsty       |
-| -   Armor: 10 → 60     | -   Critical Strike    |
-|                        |     2.5                |
-|                        | -   Deathbringer       |
-|                        |     Set---Base attack  |
-|                        |     speed set to 1.6   |
-|                        |     seconds → Base     |
-|                        |     attack speed set   |
-|                        |     to 1.5 seconds     |
-+------------------------+------------------------+
++----------------------------------+----------------------------------+
+| **Battleforge Regalia**          | **Divine Regalia**               |
+|                                  |                                  |
+| -   Strength: 25 → 75            | -   Strength: 20 → 70            |
+| -   Agility: 10 → 60             | -   Intelligence: 15 → 65        |
+| -   Attack Damage: 15 → 115      | -   Mana: 75 → 825               |
+| -   Armor: 10 → 80               | -   Spell Power: 75 → 825        |
+| -   Evasion I → Evasion V        | -   Armor: 5 → 35                |
+|                                  | -   Resist: 5 → 35               |
++----------------------------------+----------------------------------+
+| **Wild Regalia**                 | **Ironwood Regalia**             |
+|                                  |                                  |
+| -   Agility: 5 → 55              | -   Agility: 25 → 75             |
+| -   Intelligence: 30 → 80        | -   Intelligence: 10 → 60        |
+| -   Health: 100 → 1100           | -   Mana: 75 → 825               |
+| -   Mana: 100 → 1100             | -   Spell Power: 75 → 825        |
+| -   Spell Power: 100 → 1100      | -   Attack Damage: 25 → 175      |
++----------------------------------+----------------------------------+
+| **Khaos Regalia**                | **Night Regalia**                |
+|                                  |                                  |
+| -   Strength: 25 → 75            | -   Strength: 5 → 55             |
+| -   Agility: 10 → 60             | -   Agility: 30 → 80             |
+| -   Health: 150 → 3000           | -   Flat Mana Regen: 1 \> 3.5    |
+| -   Mana: 15 → 165               | -   Attack Damage: 30 → 300      |
+| -   Armor: 10 → 60               | -   Bloodthirsty                 |
+| -   Resist: 15 → 75              | -   Night Set---Lethal Poison's  |
+|                                  |     AGI Ratio set to 4.0 →       |
+|                                  |     Lethal Poison's AGI Ratio    |
+|                                  |     set to 8.0                   |
++----------------------------------+----------------------------------+
+| **Shadows Regalia**              | **Light Regalia**                |
+|                                  |                                  |
+| -   Intelligence: 35 → 135       | -   Strength: 5 → 55             |
+| -   Flat Health Regen: 1 → 17.5  | -   Intelligence: 30 → 80        |
+| -   Spell Damage: 125 → 1375     | -   Spell Damage: 50 → 750       |
+|                                  | -   Spell Healing: 150 → 2250    |
+|                                  | -   Mana Regeneration I → Mana   |
+|                                  |     Regeneration XI              |
++----------------------------------+----------------------------------+
+| **Power Regalia**                | **Stone Regalia**                |
+|                                  |                                  |
+| -   Intelligence: 35 → 135       | -   Strength: 15 → 65            |
+| -   Health: 50 → 1000            | -   Intelligence: 5 → 55         |
+| -   Mana: 100 → 1500             | -   Health: 150 → 1500           |
+| -   Spell Damage: 125 → 1375     | -   Mana: 150 → 1500             |
+| -   Mana Regeneration I → Mana   | -   Spell Damage: 50 → 550       |
+|     Regeneration XI              | -   Armor: 5 → 35                |
+|                                  | -   Resist: 25 → 125             |
++----------------------------------+----------------------------------+
+| **Veteran's Regalia**            | **Deathbringer Regalia**         |
+|                                  |                                  |
+| -   Strength: 15 → 65            | -   Strength: 5 → 55             |
+| -   Intelligence: 5 → 55         | -   Agility: 30 → 80             |
+| -   Health: 150 → 1500           | -   Health: 150 → 1500           |
+| -   Mana: 150 → 1500             | -   Attack Damage: 30 → 300      |
+| -   Spell Power: 50 → 400        | -   Bloodthirsty                 |
+| -   Armor: 10 → 60               | -   Critical Strike 2.5          |
+|                                  | -   Deathbringer Set---Base      |
+|                                  |     attack speed set to 1.6      |
+|                                  |     seconds → Base attack speed  |
+|                                  |     set to 1.5 seconds           |
++----------------------------------+----------------------------------+
 
 ## Attack Damage Aura Related Changes
 
