@@ -1,9 +1,9 @@
 ---
-title: "The Black Road RPG v1.39b7 --- Changelog"
+title: "The Black Road RPG v1.39b8 --- Changelog"
 author: "Unholy0ne and Alteisen (Av3n)"
 format: html
 toc: true
-toc-depth: 2
+toc-depth: 3
 toc-location: left
 fontsize: "18px"
 page-layout: full
@@ -14,1071 +14,208 @@ editor:
     wrap: 72
 ---
 
-# General
-
--   Effects that increase **Spell Power** with a multiplier now stack
-    multiplicatively (previously they stacked additively)
--   Upon purchasing **Vigorous** <small>(Familiar Skill)</small>, your
-    current % health is set to the % health you had prior to purchasing
-    it
--   Updated the code that handles the item restrictions
--   Triggered error messages no longer uses Wc3's on-screen text frame
--   Updated **Saving and Loading** <small>(F9)</small> entry to better
-    describe where Wc3's places save/load codes on macOS
--   If multiple items grant a healing effect on auto-attacks, TBR now
-    only prints a single floating text element that displays the total
-    amount of healing. <small>(Previously TBR would print multiple
-    floating text elements)</small>
-
-## Armor and Resist
-
-*Resist* is a new visible stat that functions like *Armor*, except for
-magical damage! This change provides a straightforward framework for
-magical damage resistance stacking. The formula for magical damage
-reduction (%) granted by *Resist* is
-
-$$
-\text{Magical D.R.} ~ (\%) =  \frac{0.005 \times \text{Resist}}{1 + 0.005 \times \text{Resist}}.
-$$You can view the magical damage reduction (%) by hovering over the
-*Resist* stat in the game UI (underneath the *Armor* stat).
-
-Consequently, the constant for physical damage reduction (%) granted by
-*Armo*r was reduced to 0.5% (previously 2%). This changes the formula
-to:
-
-$$
-\text{Physical D.R.} ~ (\%) =  \frac{0.005 \times \text{Armor}}{1 + 0.005 \times \text{Armor}}.
-$$
-
-Furthermore, this means that **all** physical damage from any source
-will now be reduced by the physical damage reduction (%) granted by
-*Armor* (in addition to armor type).
-
-## Auto-attack types
-
-Auto-attacks are now classified as physical damage or magical damage
-with the introduction of *Resist*. We will continue using two icons for
-physical auto-attacks, but only a single icon is used for magical
-auto-attacks. Lastly, the following <u>notable</u> changes have been
-made to the auto-attack types of playable characters. Please see the
-[Forces of Hell] section for auto-attack type changes to non-player
-characters.
-
-::: columns
-::: column
-**Classes with *physical* auto-attacks**
-
--   Warlord
--   Temple Guardian
--   Spartan Warrior
--   Assassin
--   Barbarian
--   Ranger
-:::
-
-::: column
-**Classes with *magical* auto-attacks**
-
--   Cleric
--   Khaos Champion
--   Druid
--   Magician
--   Guardian of Nature
--   Warlock
-:::
-:::
-
-## Armor types
-
-The non-exclusive armor types for non-player characters have been
-applied to playable characters with the introduction of *Resist*. This
-change includes revising the original three armor types and introducing
-an additional armor type for a total of four armor types for playable
-characters and NPCs.
-
--   Heavy Armor: 20% additional physical damage reduction
--   Medium Armor: 10% additional physical *and* magical damage reduction
--   Warded Armor: 20% additional magical damage reduction
--   Light Armor: No additional physical damage reduction
-
-Lastly, the following <u>notable</u> changes have been made to the armor
-types of playable characters. Please see the [Forces of Hell] section
-for armor type changes to non-player characters.
-
-::: columns
-::: column
-**Classes with *heavy* armor**
-
--   Barbarian
--   Spartan Warrior
--   Khaos Champion
-:::
-
-::: column
-**Classes with medium armor**
-
--   Guardian of Nature
--   Temple Guardian
--   Druid
-:::
-
-::: column
-**Classes with *warded* armor**
-
--   Cleric
--   Warlock
--   Magician
-:::
-
-::: column
-**Classes with *light* armor**
-
--   Ranger
--   Assassin
--   Warlord
-:::
-:::
-
-## Essence
-
-Introduced a new resource, **Essence**, that will be used as a resource
-to progress your regalia. Loading in a [pre-1.39b7]{.underline}
-character will grant the following:
-
--   Class regalia component: 5 Essence
--   Class regalia: 25 Essence *and* your character's base regalia item
--   Olympian regalia component: 250 Essence
--   Olympian regalia: 1000 Essence *and* a Gemstone of the Olympians
-
-Killing the following notable enemies grants **Essence** to player
-characters if their level is greater than or equal to the enemies'
-level:
-
-::: columns
-::: column
--   Themis: 5 Essence
--   Hallowed One: 5 Essence
--   Cronus: 10 Essence
--   Medusa: 16 Essence
--   Shadowslayer: 19 Essence
--   Uranus: 19 Essence
--   Rhea: 32 Essence
--   Persephone: 44 Essence
-:::
-
-::: column
--   Hydra: 44 Essence
--   Oceanus: 50 Essence
--   Gaea: 75 Essence
--   Ladon: 84 Essence
--   Midas: 106 Essence
--   Sphinx: 106 Essence
--   Hades: 145 Essence
--   Hyperion: 205 Essence
-:::
-:::
-
-## Quests
-
--   Increased the width of the <u>Quest Board</u> to no longer truncate
-    quests that tracks a non-count objective
--   **Quest Helper** now always pings the location of the **Strange
-    Note** <small>(Serius)</small> once it is discovered
--   Once **Captain Sepheus** <small>(Calliope)</small> is discovered,
-    the chance to drop **Tattered Patch of Cloth** has been increased to
-    26% (from 10%)
--   **History's Teachings** <small>(Dolios)</small> now presents two
-    count objectives on the <u>Quest Board</u> to differentiate between
-    the artifacts and the **Pactolus' Essence** objectives (previously
-    one count objective)
--   Updated the quest levels of the following quests:
-
-::: {.columns style="margin-left: 2.5%;"}
-::: {.column width="48.75%"}
--   Lord of Nature <small>(Serius)</small>: 15 → 25
--   Lord of Justice <small>(Serius)</small>: 30 → 40
--   Lord of Death <small>(Serius)</small>: 40 → 55
--   Lord of the Sky <small>(Serius)</small>: 45 → 70
--   Queen of Sacrifice <small>(Serius)</small>: 55 → 85
--   Lord of the Sea <small>(Serius)</small>: 70 → 100
-:::
-
-::: {.column width="48.75%"}
--   Mother of the Earth <small>(Serius)</small>: 85 → 115
--   Lord of the Isles <small>(Gorgias)</small>: 60 → 70
--   A Rare Specimen <small>(Damien)</small>: 85 → 120
--   Speak with Heletes <small>(Heletes)</small>: 70 → 165
--   Restoring the Key <small>(Heletes)</small>: 85 → 165
-:::
-:::
-
-## Personal Quests
-
-Personal quests appear once per character until completed and are
-automatically discovered once certain conditions are met. Information
-about the quest is presented next to the Idle Familiar icon. Mousing
-over the icon displays a tooltip with the current objective of the
-quest, and clicking the icon pings the location of the current
-objective.
-
-+---------------------------------------------------------------------+
-| **Heletes' Boon\                                                    |
-| **This personal quest directs you on how to craft your regalia once |
-| you hit Lvl 30 *or* if you loaded a 1.39b6 player character with    |
-| regalia equipped.                                                   |
-+---------------------------------------------------------------------+
-| **Heletes' Ingenuity\                                               |
-| **This personal quest directs you on how to enhance your regalia    |
-| for the first time once you hit Lvl 45 or higher with *at least*    |
-| one Essence.                                                        |
-+---------------------------------------------------------------------+
-
-This particular style of questing is an experimental addition to the
-map. If the reception is positive, this may give us an idea of how to
-push questing in TBR in the *very* distant future.
-
-## Game Messages, Typos, & Typesetting
-
--   **Rejuvenation** <small>(Druid)</small>: Addressed the grammar issue
-    with the ability tooltip
--   **Cataclysm** <small>(Guardian of Nature)</small>: Typesetting in
-    spell level increase UI
--   **Walk in the Shadows** <small>(Assassin)</small>: Improved the
-    description of mana regeneration mechanic.
--   **Pray** <small>(Temple Guardian)</small>: Tweaked the description
-    of the ability tooltip.
--   **Tome of Stat Increase +X** <small>(Books & Forces of
-    Hell)</small>: Improved the description of mechanic
--   Updated the game message that prints when the **Gates of Hell**
-    become vulnerable
--   **Gaea's** form change mechanic prints game messages that are now
-    timed for 5 seconds
--   **Cerberus'** pull mechanic prints game messages that are now timed
-    for 5 seconds
--   Updated the colour code for class items to use a *slightly*
-    different purple
-
-# Bug Fixes
-
--   If **Atlas** is reset during the *Berserk* phase, it no longer
-    permanently removes his ability to enter the *Berserk* phase in
-    subsequent retries
--   **Cronus'** reset now works as intended
--   **Rhea's** reset now works as intended
--   Defeating **Gaea** now checks whether the defeated form is in the
-    arena. If the defeated form is not in the arena, items instead spawn
-    in the centre of **Gaea's** arena rather than in the "storage" zone
--   **Sphinx** can no longer target heroes under an *Auto-Life* effect
-    with her *Entomb* mechanic
--   If **Sphinx** is reset during the *Vengeful Gaze* phase, it no
-    longer permanently removes her ability to auto-attack in subsequent
-    retries
--   **Sphinx**'s *Vengeful Gaze* now defaults to target the front of her
-    if there are no valid targets
--   The triggered component of **Aeacus'** *Life Drain* was recoded to
-    mitigate the chances of a crash because of enhanced auto-attacks
--   `-save`/`-s` without a filename now uses the player character's
-    exact class name *in English*
--   Addressed a regression in the previous `-roll`/`-r` functionality.
-    You can now initiate a `-roll`/`-r` without requiring a string and
-    `-roll`/`-r` to add to the leaderboard without requiring trailing
-    characters, e.g. trailing whitespace
--   **Frost Fire Orb** <small>(Magician)</small> trail component now
-    deals damage over time as intended
--   The tooltip for **Sadism** <small>(Warlock)</small> while it is on
-    cooldown now matches the tooltip while it is *not* on cooldown
--   **Sadism** <small>(Warlock)</small> now also checks whether lethal
-    damage dealt by **Torment** to increment stacks
-
-# Heroes
-
--   The majority of over time spell effects now apply their effects,
-    e.g. damage or healing, every second. <small>(Previously, they
-    applied at a much faster rate).</small>
-
-## Assassin
-
-***Assassinate***, ***Dancing Dagger***, ***Eviscerate*** and ***Walk in
-the Shadows*** have received updated FX
-
-## Spartan Warrior
-
-***Phalanx***
-
--   Rewrote the description to state how much mana is drained per
-    second, in addition to clarifying that the bonuses and base movement
-    speed reduction only apply to the **Spartan Warrior** and other
-    players' heroes in range
--   *AoE* nerfed to 450. <small>(Previously 500)</small>
--   *Base movement speed reduction* nerfed to 45% / 30%.
-    <small>(Previously 20% / 20%)</small>
--   *Evasion* bonus nerfed to 25% / 30%. <small>(Previously 35% /
-    40%)</small>
--   The M*agic Resistance* bonus of 35% / 40% is converted to a *Resist*
-    bonus of 65 / 85
-
-## Temple Guardian
-
-***Gift of Zeus***
-
--   *Armor* bonus nerfed to 10 / 15 / 20 / 30 / 40 / 50 / 65 / 80.
-    <small>(Previously 20 / 30 / 40 / 50 / 60 / 70 / 85 / 100)</small>
--   *Magic Resistance* bonus of 33% is converted to a *Resist* bonus of
-    10 / 15 / 20 / 30 / 40 / 50 / 65 / 80
-
-# Items
-
-***Item Abilities***
-
--   Evasion---Gain 5 / 10 / 15 / 20 / 25 % Evasion.
--   Mana Regeneration---­Gain 10 / 15 / 20 / 25 / 30 / 35 / 40 / 45 / 50
-    / 55 / 60 % increased Mana Regeneration.
--   Bloodthirsty---Dealing fatal damage to an enemy increases
-    auto-attack damage by 10% for the next 8 seconds
-
-***Ankh of Reincarnation*** <small>(Alchemy)</small>, ***Draught of the
-Phoenix*** <small>(Alchemy)</small>, ***Immortal Armor of Hephaestus***
-<small>(Master Metalsmith Heletes)</small>, ***Chestguard of Aphrodite's
-Champion*** <small>(Armorsmith)</small>, and ***Plates of the
-Ancient*****s** <small>(Champion's Armory)</small>
-
-These items now have their "Ankh of Reincarnation" effect reclassified
-as the *Auto-Life* item ability
-
-***Ares' Bloodthristy Spear*** <small>(Master Metalsmith
-Heletes)</small>
-
-*Eternal Hunger*'s maximum health degeneration nerfed to 1% (from
-0.75%), and its current health threshold buffed to 5% (from 1%)
-
-***Sword of the Olympians*** <small>(Master Metalsmith Heletes)</small>
-
--   Item has been redesigned now that it is no longer part of the
-    **Regalia Progression System**
-
-> Increases Attack Damage by 100 and Attack Speed by 150%. Grants
-> Versatile and Olympian.
->
-> Versatile---Increases the hero's primary attribute by 75.
->
-> Olympian---Your auto-attacks now deal 50% physical and 50% magical
-> damage instead.
->
-> Requires Level 165
-
-***Ring of Regret*** <small>(Midas)</small> and ***Midas' Band of
-Vigor*** <small>(Metalsmith Galen)</small>
-
-*Magic Protection* item ability nerfed to:
-
--   ≤ 24999: Reduces magical damage by 400. <small>(Previously
-    4000)</small>
--   ≤ 49999: Reduces magical damage by 200. <small>(Previously
-    2000)</small>
--   ≥ 50000: Reduces magical damage by 100. <small>(Previously
-    1000)</small>
-
-***Amulet of Protection*** <small>(Artifacts)</small>
-
-Evasion bonus nerfed to 10%. <small>(Previously 20%)</small>
-
-***Silenus' Talisma*****n** <small>(Midas)</small> and ***Midas' Pendant
-of Wisdom*** <small>(Metalsmith Galen)</small>
-
-The item ability to apply Enfeeble I is now formally written out as one,
-alongside a few mechanical changes.
-
-> Lower Resist---Spell effects have an 8% chance to Enfeeble I their
-> target(s) for 8 seconds, which amplifies any magical damage dealt to
-> them by 5%. If Lower Resist is applied by a spell-enhanced auto-attack
-> or damage over time effect, Lower Resist cannot be applied on that
-> target by either spell type for the next 12 seconds.
-
-Notably, the chance to apply Lower Resist on a target is nerfed for
-one-shot spell effects to 8%. However, all damage over time effects had
-a significantly lower chance as they damaged units at a much faster rate
-than 1 second. This change, coupled with the standardisation for all
-damage over time spells, means that all spell effects that can apply
-Lower Resist have an 8% chance to apply it for any type of spell.
-
-## Resist Related Changes
-
-***Lesser Ether Dust**, **Ether Dust**, **Greater Ether Dust**,* and
-***Superior Ether Dust*** <small>(Goldsmith)</small>
-
-The Ether Dust line of consumables now grant 10 / 20 / 35 / 50 Resist
-for 10 minutes. <small>(Previously a 1000 / 3000 / 8000 / 20000 magic
-damage shield for 10 minutes)</small>
-
-***White Dragonscale Ring*****,** ***Green Dragonscale Ring***, and
-***Red Dragonscale Ring*** <small>(Ladon)</small>
-
-The *Magic Resistance* bonus of 15% is converted to a *Resist* bonus of
-35
-
-***White Dragonscale Ring of Addiction***, ***Green Dragonscale Ring of
-Addiction***, and ***Red Dragonscale Ring of Addiction***
-<small>(Metalsmith Zoticus)</small>
-
-The *Magic Resistance* bonus of 20% is converted to a *Resist* bonus of
-50
-
-***Talisman of Serious Addiction*** and ***Warrior's Talisman of Serious
-Addiction*** <small>(Champion's Armory)</small>
-
-The *Magic Resistance* bonus of 25% is converted to a *Resist* bonus of
-65
-
-***Bright Silver Shinguards*** and ***Bright Silver Bracers***
-<small>(Rare)</small>
-
-The *Magic Resistance* bonus of 20% is converted to a *Resis*t bonus of
-50
-
-***Bright Silver Plates*** <small>(Metalsmith Galen)</small>
-
-The *Magic Resistance* bonus of 30% is converted to a *Resist* bonus of
-85
-
-***Adamantium Helm*** <small>(Armorsmith)</small>
-
-The *Magic Resistance* bonus of 35% is converted to a *Resist* bonus of
-100
-
-**I*ron Will of Hephaestus*** <small>(Goldsmith)</small>
-
--   *Health* bonus buffed to 1000. <small>(Previously 900)</small>
--   Health Regeneration nerfed to 10. <small>(Previously 25)</small>
--   Now grants a *Resist* bonus of 25. <small>(Previously an active that
-    grants a 10000 magic damage shield)</small>
-
-***Shield of Zeus*** <small>(Goldsmith)</small>
-
--   No longer grants a *Health* bonus of 900
--   Now grants a *Resist* bonus of 25. <small>(Previously an active that
-    grants a magic immunity shield).</small>
-
-***Towering Shield of Athena*** <small>(Master Metalsmith
-Heletes)</small>
-
--   Updated the typesetting of the tooltip and assigned item ability
-    names for each non-standard bonus
--   The *Magic Resistance* bonus of 50% is converted to a *Resist* bonus
-    of 175
--   *Towering Defense*, the auto-attack damage block, is nerfed to 50000
-    damage. <small>(Previously 200000)</small>
--   The *AoE* of *Protection Aura's* is nerfed to 450.
-    <small>(Previously 900)</small>
--   The *AoE* of *Turn the Tide*, the full health and mana restore
-    active, is nerfed to 450. <small>(Previously 900)</small>
-
-## Regalia Progression System Update
-
-Set items for each class and the Olympian regalia items, except for the
-*Sword of the Olympians*, have been removed. Instead, the regalia can be
-crafted from Lvl 30 onwards and enhanced from Lvl 45 onwards. The
-progression requirements for each tier regalia are:
-
-+----------------------------------+-----------------------------------+
-| **Tier I** <small>Lvl 30</small> | **Tier II** <small>Lvl 45</small> |
-|                                  |                                   |
-| Requires                         | Requires                          |
-|                                  |                                   |
-| -   Titan Fibre                  | -   Tier I                        |
-| -   Titan Ore                    | -   5 Essence                     |
-+----------------------------------+-----------------------------------+
-| **Tier III** <small>Lvl          | **Tier IV** <small>Lvl 75</small> |
-| 60</small>                       |                                   |
-|                                  | Requires                          |
-| Requires                         |                                   |
-|                                  | -   Tier III                      |
-| -   Tier II                      | -   125 Essence                   |
-| -   25 Essence                   | -   2 Ruby Heart                  |
-| -   2 Meteoric Iron              | -   2 Transport Stone             |
-| -   2 Runestone                  |                                   |
-+----------------------------------+-----------------------------------+
-| **Tier V** <small>Lvl 90</small> | **Tier VI** <small>Lvl            |
-|                                  | 105</small>                       |
-| Requires                         |                                   |
-|                                  | Requires                          |
-| -   Tier IV                      |                                   |
-| -   375 Essence                  | -   Tier V                        |
-| -   2 Blood Ruby                 | -   750 Essence                   |
-|                                  | -   2 Lump of Pure Adamantium     |
-|                                  | -   2 Sea Essence                 |
-+----------------------------------+-----------------------------------+
-| **Tier VII** <small>Lvl          | **Tier VIII** <small>Lvl          |
-| 120</small>                      | 135</small>                       |
-|                                  |                                   |
-| Requires                         | Requires                          |
-|                                  |                                   |
-| -   Tier VI                      | -   Tier VII                      |
-| -   1250 Essence                 | -   2500 Essence                  |
-| -   2 Heart of Frost             | -   2 Stone of Heaven             |
-| -   2 Lump of Pure Adamantium    |                                   |
-+----------------------------------+-----------------------------------+
-| **Tier IX** <small>Lvl           | **Tier X** <small>Lvl 165</small> |
-| 150</small>                      |                                   |
-|                                  | Requires                          |
-| Requires                         |                                   |
-|                                  | -   Tier IX                       |
-| -   Tier VIII                    | -   7500 Essence                  |
-| -   5000 Essence                 | -   2 Blood Ruby                  |
-| -   2 Blood Ruby                 | -   3 Stone of Heaven             |
-| -   2 Stone of Heaven            |                                   |
-+----------------------------------+-----------------------------------+
-| **Tier XI** <small>Lvl           |                                   |
-| 180</small>                      |                                   |
-|                                  |                                   |
-| Requires                         |                                   |
-|                                  |                                   |
-| -   Tier X                       |                                   |
-| -   10000 Essence                |                                   |
-| -   Gemstone of the Olympians    |                                   |
-| -   Gem of the North             |                                   |
-| -   Gem of the East              |                                   |
-| -   Gem of the South             |                                   |
-| -   Gem of the West              |                                   |
-+----------------------------------+-----------------------------------+
-
-For brevity, the changelog only presents the first and final tier stat
-blocks.
-
-+---------------------------------+---------------------------------+
-| **Battleforge Regalia**         | **Divine Regalia**              |
-|                                 |                                 |
-| -   Strength: 25 → 75           | -   Strength: 20 → 70           |
-| -   Agility: 10 → 60            | -   Intelligence: 15 → 65       |
-| -   Attack Damage: 15 → 115     | -   Mana: 75 → 825              |
-| -   Armor: 10 → 80              | -   Spell Power: 75 → 825       |
-| -   Evasion I → Evasion V       | -   Armor: 5 → 35               |
-|                                 | -   Resist: 5 → 35              |
-+---------------------------------+---------------------------------+
-| **Wild Regalia**                | **Ironwood Regalia**            |
-|                                 |                                 |
-| -   Agility: 5 → 55             | -   Agility: 25 → 75            |
-| -   Intelligence: 30 → 80       | -   Intelligence: 10 → 60       |
-| -   Health: 100 → 1100          | -   Mana: 75 → 825              |
-| -   Mana: 100 → 1100            | -   Spell Power: 75 → 825       |
-| -   Spell Power: 100 → 1100     | -   Attack Damage: 25 → 175     |
-+---------------------------------+---------------------------------+
-| **Khaos Regalia**               | **Night Regalia**               |
-|                                 |                                 |
-| -   Strength: 25 → 75           | -   Strength: 5 → 55            |
-| -   Agility: 10 → 60            | -   Agility: 30 → 80            |
-| -   Health: 150 → 3000          | -   Flat Mana Regen: 1 \> 3.5   |
-| -   Mana: 15 → 165              | -   Attack Damage: 30 → 300     |
-| -   Armor: 10 → 60              | -   Bloodthirsty                |
-| -   Resist: 15 → 75             | -   Night Set---Lethal Poison's |
-|                                 |     AGI Ratio set to 4.0 →      |
-|                                 |     Lethal Poison's AGI Ratio   |
-|                                 |     set to 8.0                  |
-+---------------------------------+---------------------------------+
-| **Shadows Regalia**             | **Light Regalia**               |
-|                                 |                                 |
-| -   Intelligence: 35 → 135      | -   Strength: 5 → 55            |
-| -   Flat Health Regen: 1 → 17.5 | -   Intelligence: 30 → 80       |
-| -   Spell Damage: 125 → 1375    | -   Spell Damage: 50 → 750      |
-|                                 | -   Spell Healing: 150 → 2250   |
-|                                 | -   Mana Regeneration I → Mana  |
-|                                 |     Regeneration XI             |
-+---------------------------------+---------------------------------+
-| **Power Regalia**               | **Stone Regalia**               |
-|                                 |                                 |
-| -   Intelligence: 35 → 135      | -   Strength: 15 → 65           |
-| -   Health: 50 → 1000           | -   Intelligence: 5 → 55        |
-| -   Mana: 100 → 1500            | -   Health: 150 → 1500          |
-| -   Spell Damage: 125 → 1375    | -   Mana: 150 → 1500            |
-| -   Mana Regeneration I → Mana  | -   Spell Damage: 50 → 550      |
-|     Regeneration XI             | -   Armor: 5 → 35               |
-|                                 | -   Resist: 25 → 125            |
-+---------------------------------+---------------------------------+
-| **Veteran's Regalia**           | **Deathbringer Regalia**        |
-|                                 |                                 |
-| -   Strength: 15 → 65           | -   Strength: 5 → 55            |
-| -   Intelligence: 5 → 55        | -   Agility: 30 → 80            |
-| -   Health: 150 → 1500          | -   Health: 150 → 1500          |
-| -   Mana: 150 → 1500            | -   Attack Damage: 30 → 300     |
-| -   Spell Power: 50 → 400       | -   Bloodthirsty                |
-| -   Armor: 10 → 60              | -   Critical Strike 2.5         |
-|                                 | -   Deathbringer Set---Base     |
-|                                 |     attack speed set to 1.6     |
-|                                 |     seconds → Base attack speed |
-|                                 |     set to 1.5 seconds          |
-+---------------------------------+---------------------------------+
-
-## Attack Damage Aura Related Changes
-
-***Bow of Artemis*** <small>(Weaponsmith)</small>
-
--   No longer a Ranger only item
--   The damage bonus granted to ranged attacks was nerfed to 15% (from
-    20%)
--   The AoE of the damage bonus granted to ranged attacks was nerfed to
-    450 units (from 900 units)
-
-> Increases Strength, Agility and Intelligence by 25 and Attack Damage
-> by 50. Grants Trueshot Aura I.
->
-> Trueshot Aura I---Gives allies within 450 units 15% bonus damage to
-> their ranged attacks.
->
-> Requires Level 85\
-> Cannot be used by Warrior classes.
-
-***Hunting Spear of Atalanta*** <small>(Makarios)</small>
-
--   Previously known as *Hunting Spear of Artemis*
--   Increased attack damage was nerfed to 25 (from 45)
--   Updated its icon
-
-> Increases Strength, Agility and Intelligence by 15, Attack Damage by
-> 25 and Attack Speed by 25%.
->
-> Requires Level 50\
-> Cannot be used by Warrior classes.
-
-***Boots of Marathon*** <small>(Armorsmith)</small>
-
--   **Familiars**' can no longer use its active effect, Swift Return.
-
-> Increases Strength by 50 and Movement Speed by 100. Grants 25% Evasion
-> and Swift Return.
->
-> Swift Return---Teleports you to Athens.\
-> Cooldown: 3 minutes.
->
-> Requires Level 85
-
-***Hunting Garb of Atalanta*** <small>(Metalsmith Arcadios)</small>
-
--   A new item crafted by **Metalsmith Arcadios** <small>(New
-    Issus)</small> and requires:
-    -   Boots of Marathon; Bow of Artemis; Hunting Spear of Atalanta;
-        Gem of the South; Gem of the East; 3 Stone of Heaven; 2
-        Transport Stone
-
-> Increases Strength by 80, Agility and Intelligence by 40, Attack
-> Damage by 75, Attack Speed by 25% and Movement Speed by 100. Grants
-> 25% Evasion, Trueshot Aura II, and Swift Return.
->
-> Trueshot Aura II---Gives allies within 450 units 25% bonus damage to
-> their ranged attacks.
->
-> Swift Return---Teleports you to Athens.\
-> Cooldown: 3 minutes.
->
-> Requires Level 150\
-> Cannot be used by Warrior classes.
-
-***Blade of Ares*** <small>(Serpent of Hades)</small>
-
--   Level requirement increased to 75 (previously 55)
--   Attack damage bonus buffed to 75 (from 40)
--   Now grants Bloody Fervor I instead of regenerating 35 health per
-    auto-attack
-
-> Increases Attack Damage by 75 and Attack Speed by 30%. Grants Bloody
-> Fervor.
->
-> Bloody Fervor---Auto-attacks regenerate health equal to 1.5% of the
-> damage dealt.
->
-> Requires Level 75
-
-***Sword of Might*** <small>(Oceanus, Gaea)</small>
-
--   Previously known as *Sword of Command*
--   Level requirement increased to 75 (previously 40)
--   Srength and agility bonus buffed to 40 (from 10)
--   Attack damage bonus buffed to 45 (from 40)
--   The damage bonus is now only granted to melee attacks (previously
-    all attacks)
--   The damage bonus granted to melee attacks was buffed to 15% (from
-    10%)
--   The AoE of the damage bonus granted to melee attacks was nerfed to
-    450 units (from 900 units)
-
-> Increases Strength and Agility by 30, and Attack Damage by 45. Grants
-> Might Aura I.
->
-> Might Aura I---Gives allies within 450 units 15% bonus damage to their
-> melee attacks.
->
-> Requires Level 40
-
-***Burning Hand of the War God*** <small>(Goldsmith)</small>
-
--   Now grants Bloody Fervor I instead of "Auto-attacks regenerating
-    health equal to 5% of the damage dealt"
--   No longer grants "Auto-attacks dealing 100 splash damage in an AoE:
--   Burning Hand of the War God <small>(Goldsmith)</small> crafting
-    components changed to:
-    -   2 Stone of Heaven; 2 Blood Ruby; 2 Ruby Heart.
-        <small>(Previously 2 Stone of Heaven; 1 Blood Ruby; 1 Gemstone
-        of Apollo; 2 Ruby Heart)</small>
-
-> Increases Strength and Agility by 35, and Attack Speed by 30%. Grants
-> Bloody Fervor I.
->
-> Bloody Fervor I---Auto-attacks regenerate health equal to 1.5% of the
-> damage dealt.
->
-> Requires Level 85
-
-***Ares' Blade of Might*** <small>(Metalsmith Arcadios)</small>
-
--   Previously known as *Ares' Blade of Command*
--   Level requirement increased to 150 (previously 125)
--   Grants a strength and agility bonus of 65
--   Attack damage bonus buffed to 120 (from 90)
--   Grants Bloody Fervor II instead of regenerating 35 health per
-    auto-attack
--   The damage bonus is now only granted to melee attacks (previously
-    all attacks)
--   The damage bonus granted to melee attacks was buffed to 25% (from
-    15%)
--   The AoE of the damage bonus granted to melee attacks was nerfed to
-    450 units (from 900 units)
--   Crafting components changed to:
-    -   Blade of Ares; Sword of Might; Burning Hand of the War God; Gem
-        of the North; Gem of the West; 3 Stone of Heaven; 2 Ruby Heart.
-        <small>(Previously Blade of Ares; Sword of Might; 2 Stone of
-        Heaven; Gemstone of Apollo; 3 Heart of Frost)</small>
-
-> Increases Strength and Agility by 65, Attack Damage by 120, and Attack
-> Speed by 60%. Grants Bloody Fervor II and Might Aura II
->
-> Bloody Fervor II---Auto-attacks regenerate health equal to 3% of the
-> damage dealt.
->
-> Might Aura II---Gives allies within 450 units 25% bonus damage to
-> their melee attacks.
->
-> Requires Level 150
-
-***Sword of the High Commander*** <small>(Champion's Armory)</small>
-
--   Updated the aura FX
--   No longer increases armor by 30
--   The AoE of the damage bonus granted to attacks was nerfed to 450
-    units (from 900 units)
-
-> Increases Strength and Agility by 50, and Attack Damage by 100. Grants
-> Command Aura I.
->
-> Command Aura I---Gives allies within 450 units 20% bonus damage to
-> their attacks.
->
-> Relic\
-> Requires Level 180
-
-***Thundering Hammer of Zeus*** <small>(Master Metalsmith
-Heletes)</small>
-
--   Updated the aura FX
--   The damage bonus granted to attacks was nerfed to 30% (from 33%)
--   The AoE of the damage bonus granted to attacks was nerfed to 450
-    units (from 900 units)
-
-> Increases Strength and Agility by 150 and Intelligence by 5. Grants
-> auto-attacks have a 6.5% chance to Break III the target for 3.25
-> seconds reducing its Armor by 25, Command Aura II, and Chain
-> Lightning.
->
-> Command Aura II---Gives allies within 450 units 30% bonus damage to
-> their attacks.
->
-> Chain Lightning---Auto-attacks have a 15% chance to deal 4000 bonus
-> magical damage, which then bounces to three other targets.
->
-> Olympian Relic\
-> Requires Level 200
-
-# Forces of Hell
-
--   Adds in various boss fights no longer grant XP and Gold
--   ***Lich*** and ***Cursed Weapon*** <small>(The Fools'
-    Mausoleum)</small> now play their decay animation after being slain
--   Whenever ***Hallowed Offspring*** <small>(Minotaur Burrows)</small>
-    charges into a wall, they now are applied a debuff that causes it to
-    take 35% more damage for the next 4 seconds
--   Adjusted the arena for ***Goretusk*****'s** <small>(Tribal
-    Village)</small> boss fight
--   ***Pelias**'* <small>(Southern Highlands)</small> drops changed to
-    the following now that set items for each class have been removed:
-    -   *High Oracle's Staff*; *High Oracle's Robes*; *Ring of Power*;
-        and *Talisman of Wisdom*
--   ***Neleus**'* <small>(Southern Highlands)</small> drops changed to
-    the following now that set items for each class have been removed:
-    -   *Spartan Long Sword*; *Spartan Plate Mail*; *Ring of Might*;and
-        *Amulet of Protection*
--   ***Hallowed One*****'s** <small>(Minotaur Burrows)</small> *Minotaur
-    Warlock* adds now have an acquisition range of 1500.
-    <small>(Previously 1000)</small>
--   Updated the code that runs when you engage ***Hallowed One***
-    <small>(Minotaur Burrows)</small>, ***Midas*** <small>(The Fools'
-    Mausoleum)</small>, ***Manslayer*** <small>(Minotaur
-    Burrows)</small> and ***Lightbane*** <small>(Minotaur
-    Burrows)</small>. This changes the acquisition range to 1500 units
-    <small>(from 1000 units)</small> and now issues an attack-move order
-    to the source of the damage *if* engagement occurs because of player
-    characters
-
-## Titans
-
-***Atlas***
-
-> -   Now becomes an interactive corpse upon death
-> -   Once you're Level 30, you can interact with *Atlas*' corpse to
->     obtain *Titan Ore*
-
-***Thea***
-
-> -   Updated model
-> -   Now becomes an interactive corpse upon death
-> -   Once you're Level 30, you can interact with *Thea's* corpse to
->     obtain *Titan Fibre*
-> -   Additional item drops changed to the following:
->     -   *Boots of Agility*; *Gauntlets of Might*; *Robes of
->         Enlightenment*; *Orb of Mana Regeneration*; *Orb of Life
->         Regeneration*; *Medallion of Stamina*; *Pendant of Mana*; and
->         *Ring of Evasion\
->         *<small>(Previously: *Boots of Lesser Agility*; *Gauntlets of
->         Lesser Might*; *Robes of Lesser Enlightenment*; *Orb of Lesser
->         Mana Regeneration*; *Orb of Lesser Life Regeneration*;
->         *Medallion of Lesser Stamina*; *Pendant of Lesser Mana*; and
->         *Ring of Lesser Evasion*)</small>
-
-***Themis***
-
-> -   Additional item drops changed to the following:
->     -   *Blade of the Chosen; Rod of the Chosen; Full Plate; Medallion
->         of Greater Stamina; Pendant of Greater Mana;* and *Robes of
->         the Chosen\
->         *<small>(Previously: *Boots of Agility; Gauntlets of Might;
->         Robes of Enlightenment; Ring of Evasion; Medallion of
->         Stamina;* and *Pendant of Mana*)</small>
-
-***Cronus***
-
-> -   Additional item drops changed to the following:
->     -   *Medallion of Superior Stamina; Pendant of Superior Mana;
->         Surprisingly Good War Pick; Mage's War Staff; Voodoo Suit;*
->         and *Towering Shield\
->         *<small>(Previously: *Boots of Agility; Robes of
->         Enlightenment; Staff of Spell Power; Gauntlets of Might;
->         Champion's Blade;* and *Champion's Plate*)</small>
-
-***Uranus***
-
-> -   Additional item drops changed to the following:
->     -   *Ripping Claws; Jeweled Ring; Adamantium Shield; Chestguard of
->         Aphrodite's Champion;* and *Talisman of the Winged God\
->         *<small>(Previously: *Champion's Blade; Boots of Agility;
->         Robes of Enlightenment; Champion's Plate;* and *Gauntlets of
->         Might*)</small>
-
-***Rhea***
-
-> -   Item drops changed to the following:
->     -   *Ripping Claws; Jeweled Ring; Iron Will of Hephaestus;* and
->         *Shield of Warding\
->         *<small>(Previously Class set items)</small>
-
-***Oceanus***
-
-> -   Additional item drops changed to the following:
->     -   *Shield of Warding; Aphrodite's Blessed Orb; Eris' Golden
->         Apple of Discord; Shield of Zeus;* and *Sword of Might\
->         *<small>(Previously: *Bone Wreath; Heart Blade; Eris' Golden
->         Apple of Discord; Myrmidon Scale;* and *Sword of
->         Might*)</small>
-
-***Gaea***
-
-> -   Additional item drops changed to the following:
->     -   *Warrior's Talisman of Addiction; Talisman of Addiction; Eris'
->         Golden Apple of Discord; Iron Will of Hephaestus;* and *Sword
->         of Might.\
->         *<small>(Previously: *Bone Wreath; Heart Blade; Eris' Golden
->         Apple of Discord; Myrmidon Scale;* and *Sword of
->         Might*)</small>
-
-## Sphinx
-
-***Sphinx*** now has contribution checkpoints. If the fight finishes and
-you meet two of these checkpoints, you'll receive the crafting materials
-and ***Book of Skill Increase, Level 7*** rewards even if you're not in
-proximity of ***Sphinx***.
-
--   When ***Sphinx*** reaches 50% of its Maximum HP
--   When ***Sphinx*** enters the *Vengeful Gaze* phase
--   When ***Sphinx*** enters the *Meteor* phase
-
-## Resist Related Changes
-
-Bosses that deal magical damage in the form of a spell or mechanic now
-are nerfed because of the *Armor Type* and *Resist* changes to playable
-characters.
-
-::: panel-tabset
-## Bosses / Minibosses
-
-::: columns
-::: {.column style="padding-left: 0.5em; padding-right: 0.5em;"}
-***Thea*** <small>(Northern Trail)</small>\
-• *Retaliation Entangling Roots* mechanic nerfed to 150 damage per tick
-<small>(from 220)</small>
-
-***Hallowed*** ***One*** <small>(Minotaur Burrows)</small>\
-• *Charge* damage reduced to 1875 <small>(from 2500)</small>
-
-***Manslayer*** <small>(Minotaur Burrows)</small>\
-• *Deafening Bellow* damage reduced to 1875 <small>(from 2500)</small>
-
-***Cyclops*** <small>(Eastern Highlands)</small>\
-• *Hurl Boulder* damage nerfed to 1500 <small>(from 2000)</small>
-
-***Cronus*** <small>(Barbaric Plains)</small>\
-• *Death Coil* damage nerfed to 1500 <small>(from 2000)</small>
-
-***Gaea*** (Base Form) <small>(Eastern Highlands)</small>\
-• *Thunder Bolt* mechanic nerfed to 1625 damage <small>(from
-2000)</small> and 812.5 AoE damage to all targets <small>(from
-1000)</small>
-
-***Shadowslayer*** <small>(Isle of Issus)</small>\
-• *Poison Sting* mechanic nerfed to 300 damage per tick <small>(from
-500)</small>
-
-***Hydra*** <small>(Eretria)</small>\
-• *Breath of Fire* initial damage nerfed to 1625 <small>(from
-2000)</small>\
-• *Drunken Haze* bonus DoT damage nerfed to 243.75 per tick
-<small></small>(from 300)</small>\
-• *Shadow Strike* initial damage nerfed to 812.5 <small>(from
-1000)</small> and DoT damage nerfed to 406.25 per tick <small>(from
-500)</small>
-:::
-
-::: {.column style="padding-left: 0.5em; padding-right: 0.5em;"}
-***Helios*** <small>(Corinth)</small>\
-• *Fire Blast* mechanic nerfed to deal 2000 damage per tick <small>(from
-2500)</small>
-
-***Selene*** <small>(Corinth)</small>\
-• *Meteor Shower* mechanic nerfed to deal 24375 damage <small>(from
-30000)</small> and now deals physical damage <small>(instead of magical
-damage)</small>
-
-***Theia*** <small>(Corinth)</small>\
-• *Frost Nova* nerfed to deal 8125 damage <small>(from 10000)</small>
-
-***Eos*** <small>(Corinth)</small>\
-• *Chain Lightning* nerfed to deal 6000 initial damage <small>(from
-7500)</small>
-
-***Hyperion*** <small>(Corinth)</small>\
-• The *Nova* mechanic nerfed to deal 20000 × (550 − ***d***) / 450
-damage, where ***d*** is the distance from the centre of the nova to the
-enumerated unit <small>(from 25000 × (550 − ***d***) / 450)</small>\
-• The *Thunder Bolt* mechanic damage nerfed to 9750 damage <small>(from
-12000)</small>
-:::
-:::
-
-## Mobs / Supermobs
-
-::: columns
-::: {.column style="padding-left: 0.5em; padding-right: 0.5em;"}
-***Nukacha*** <small>(Incursion Point)</small>\
-• *Chain Lightning* initial damage nerfed to 93.75 <small>(from
-125)</small>
-
-***Rokthul*** <small>(Northern Trail)</small>\
-• *Chain Lightning* initial damage nerfed to 375 <small>(from
-500)</small>
-
-***Forest Terror*** <small>(Infested Woods)</small>\
-• *Shadow Strike* damage nerfed to 130 <small>(from 175)</small> and DoT
-nerfed to 100 per tick <small>(from 175)</small>
-
-***Goretusk*** <small>(Tribal Village)</small>\
-• *Furious Charge* nerfed to 1400 magical damage <small>(from
-2500)</small>\
-• *Spike Barrage* nerfed to 1125 magical damage <small>(from
-2000)</small>
-
-***Gethos*** <small>(Corinth)</small>\
-• *Storm Bolt* damage nerfed to 375.5 <small>(from 500)</small>\
-• *Geyser* initial damage nerfed to 187.5 <small>(from 250)</small> and
-follow-up damage nerfed to 450 <small>(from 600)</small>
-
-***Lucas Farblaze*** <small>(Eastern Highlands)</small>\
-• *Firebolt* damage nerfed to 1500 <small>(from 2000)</small>
-:::
-
-::: {.column style="padding-left: 0.5em; padding-right: 0.5em;"}
-***Minotaur Warlock*** <small>(Minotaur Burrows)</small>\
-• *Fireball* damage nerfed to 1000 <small>(from 1333)</small>
-
-***Hallowed Offspring*** <small>(Minotaur Burrows)</small>\
-• *Charge* damage reduced to 1875 <small>(from 2500)</small>
-
-***Soulless*** <small>(Southern Highlands)</small>\
-• *Frost Bolt* damage nerfed to 300 <small>(from 400)</small>
-
-***Tormenter*** <small>(The Black Road)</small>\
-• *Chain Lightning* damage nerfed to 262.5 <small>(from 350)</small>
-
-***Ice Giant*** <small>(The Frozen Citadel)</small>\
-• *Ice Ring* damage nerfed to 3250 <small>(from 4000)</small>
-:::
-:::
-:::
-
-## Stat Block Changes
-
-A lot changes were made to the stat blocks of non-playerable characters
-throughout the development of [1.39b7]{.underline}. The following
-interactive table summarises all of them.
-
-```{r}
-#| include: false
-library(googlesheets4); library(DT); library(dplyr)
-bosses <- read_sheet("https://docs.google.com/spreadsheets/d/1IUeKLgC0J1M1xEdMZHyGvNMOoTf0CsICPGNkUDTAgpg/edit?usp=sharing", sheet = "Bosses / Minibosses") |> as.data.frame()
-row.names(bosses) <- bosses[, 1]
-bosses <- bosses[, -c(1, ncol(bosses))]
-
-mobs <- read_sheet("https://docs.google.com/spreadsheets/d/1IUeKLgC0J1M1xEdMZHyGvNMOoTf0CsICPGNkUDTAgpg/edit?usp=sharing", sheet = "Mobs / Supermobs") |> as.data.frame()
-row.names(mobs) <- mobs[, 1]
-mobs <- mobs[, -c(1, ncol(mobs))]
-
-wave <- read_sheet("https://docs.google.com/spreadsheets/d/1IUeKLgC0J1M1xEdMZHyGvNMOoTf0CsICPGNkUDTAgpg/edit?usp=sharing", sheet = "Wave") |> as.data.frame()
-row.names(wave) <- wave[, 1]
-wave <- wave[, -c(1, ncol(wave))]
-```
-
-::: panel-tabset
-## Bosses / Minibosses
-
-```{r}
-#| echo: false
-datatable(bosses, class = 'compact hover stripe')
-```
-
-## Mobs / Supermobs
-
-```{r}
-#| echo: false
-datatable(mobs, class = 'compact hover stripe')
-```
-
-## Wave
-
-```{r}
-#| echo: false
-datatable(wave, class = 'compact hover stripe')
-```
-:::
+## General
+
+-   The rendering of *Essence* in the UI now only runs whenever a
+    *Essence* value is updated
+-   The rendering of *Resist* in the UI now only runs whenever a
+    *Resist* value is updated *and* if the unit is selected
+-   Reconfigured the code behind the UI interactions for *Book of Skill
+    Increase*, *Book of Skill Reset*, and *Trainer Yegor* now uses
+    similar code as *Enhance Regalia*
+
+## Bug Fixes
+
+-   Enhancing *Deathbringer Regalia II* to *Deathbringer Regalia III*
+    now correctly requires two *Meteoric Iron*, two *Runestone*, and 60
+    *Essence*
+-   *Aptitude* now calculates your spell power bonus using *your* base
+    spell power <small>(from INT)</small> instead of using the base
+    spell power of the player directly above you
+-   Loading in a *Warlock* no longer prevents a *Warlock* of the player
+    directly above you from triggering *Sadism* <small>(Warlock)</small>
+-   1.39b6 and earlier save codes when converted into 1.39b7/8 codes now
+    checks if a regalia item was loaded in via the player character or
+    their bank
+-   *Hyperion* now grants 250 Essence as intended <small>(instead of
+    than 205)</small>
+-   *Red Dragonscale Ring of Addiction* nowgrants its intended stat
+    block
+
+------------------------------------------------------------------------
+
+-   Hydra correctly has 238 Armor (rather than 2388)
+-   *Regal Helm of Sparkling Crystal*can be forged again
+-   *Maelstrom* <small>(Druid)</small> damage over time component is now
+    calculated correctly
+-   *Flame Spire* <small>(Magician)</small> damage over time component
+    is now calculated correctly
+-   *Frost Fire Orb* <small>(Magician)</small> damage over time
+    component is now calculated correctly
+
+### Typesetting/Typos
+
+-   *Sword of the Olympians* description now matches its tooltip
+-   *Regal Helm of Sparkling Crystal* forge error message now correctly
+    spells its item components
+-   *Atalanta's Hunting Garb* now explicitly states that it is *Evasion
+    V*. <small>(It already had it)</small>
+-   *Evasion I* / *II* / *III* / *IV* / *V* ability descriptions' now
+    end with a full stop
+-   *Ares' Blade of Might's* forge error message now correctly refers to
+    *Sword of Might* <small>(as it was previously known as *Sword of
+    Command*)</small>
+-   Regalia names are correctly "numbered" I--XI instead of (0)--X in
+    the save code output
+
+## Heroes
+
+**Rend Armor** <small>(Barbarian)</small> \
+Now reduces armor by 10 / 15 / 20 / 25 / 30 / 35 / 40 /
+50. <small>(Previously 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25)</small>
+
+**Thunderbolt** <small>(Druid)</small>\
+*Aspect of the Nereid* bonus now reduces armor by 10 / 15 / 20 / 25 / 30
+/ 35 / 40 / 50. <small>(Previously 5 / 7 / 10 / 13 / 16 / 19 / 22 /
+25)</small>
+
+## Items
+
+-   *Ring of the Frozen Citadel* now grants *Mana Regeneration VIII*
+    <small>(Previously increases mana regeneration by 45%)</small>
+-   *Titan Ore* and *Titan Fibre* now have a 30 second cooldown between
+    harvests
+-   *Break I* / *II* / *III* now reduces armor by 15 / 30 / 45.
+    <small>(Previously 10 / 15 / 25)</small>
+
+### Regalia
+
++--------------------------------+-------------------------------+
+| **Power Regalia X**            | **Power Regalia XI**          |
+|                                |                               |
+| *INT*: 125 → 145\              | *INT*: 135 → 195\             |
+| *Health*: 905 → 1095\          | *Health*: 1000 → 1570\        |
+| *Mana*: 1360 → 1640\           | *Mana*: 1500 → 2340\          |
+| *Spell Damage*: 1250 → 1500    | *Spell Damage*: 1375 → 2125   |
++--------------------------------+-------------------------------+
+| **Stone Regalia X**            | **Stone Regalia XI**          |
+|                                |                               |
+| *STR*: 60 → 70\                | *STR*: 65 → 95\               |
+| *INT*: 50 → 60\                | *INT*: 55 → 85\               |
+| *Armor*: 32 → 38\              | *Armor*: 35 → 53\             |
+| *Resist*: 115 → 135\           | *Resist*: 125 → 185\          |
+| *Health*: 1365 → 1635\         | *Health*: 1500 → 2310\        |
+| *Mana*: 1365 → 1635\           | *Mana*: 1500 → 2310\          |
+| *Spell Damage*: 500 → 600      | *Spell Damage*: 550 → 850     |
++--------------------------------+-------------------------------+
+| **Veteran's Regalia X**        | **Veteran's Regalia XI**      |
+|                                |                               |
+| *STR*: 60 → 70\                | *STR*: 65 → 95\               |
+| *INT*: 50 → 60\                | *INT*: 55 → 85\               |
+| *Armor*: 55 → 65\              | *Armor*: 60 → 90\             |
+| *Health*: 1365 → 1635\         | *Health*: 1500 → 2310\        |
+| *Mana*: 1365 → 1635\           | *Mana*: 1500 → 2310\          |
+| *Spell Power*: 365 → 435       | *Spell Power*: 400 → 610      |
++--------------------------------+-------------------------------+
+| **Light Regalia X**            | **Light Regalia XI**          |
+|                                |                               |
+| *STR*: 50 → 60\                | *STR*: 55 → 85\               |
+| *INT*: 75 → 85\                | *INT*: 80 → 110\              |
+| *Spell Damage*: 680 → 820\     | *Spell Damage*: 750 → 1170\   |
+| *Spell Healing*: 2040 → 2460   | *Spell Healing*: 2250 → 3510  |
++--------------------------------+-------------------------------+
+| **Night Regalia X**            | **Night Regalia XI**          |
+|                                |                               |
+| *STR*: 50 → 75\                | *STR*: 55 → 85\               |
+| *AGI*: 75 → 85\                | *AGI*: 80 → 110\              |
+| *Attack Damage*: 273 → 327\    | *Attack Damage*: 300 → 462\   |
+| *Mana Regen*: 3.25 → 3.75      | *Mana Regen*: 1.75 → 5        |
++--------------------------------+-------------------------------+
+| **Ironwood Regalia X**         | **Ironwood Regalia XI**       |
+|                                |                               |
+| *AGI*: 70 → 80\                | *AGI*: 75 → 105\              |
+| *INT*: 55 → 65\                | *INT*: 60 → 90\               |
+| *Attack Damage*: 160 → 190\    | *Attack Damage*: 175 → 265\   |
+| *Mana*: 750 → 900\             | *Mana*: 825 → 1275\           |
+| *Spell Power*: 750 → 900       | *Spell Power*: 825 → 1125     |
++--------------------------------+-------------------------------+
+| **Divine Regalia X**           | **Divine Regalia XI**         |
+|                                |                               |
+| *STR*: 65 → 75\                | *STR*: 70 → 100\              |
+| *INT*: 60 → 70\                | *INT*: 65 → 95\               |
+| *Mana*: 750 → 900\             | *Mana*: 825 → 1275\           |
+| *Armor*: 32 → 38\              | *Armor*: 35 → 53\             |
+| *Resist*: 32 → 38\             | *Resist*: 35 → 53\            |
+| *Spell Power*: 750 → 900       | *Spell Power*: 825 → 1125     |
++--------------------------------+-------------------------------+
+| **Wild Regalia X**             | **Wild Regalia XI**           |
+|                                |                               |
+| *AGI*: 50 → 60\                | *AGI*: 55 → 85\               |
+| *INT*: 75 → 85\                | *INT*: 80 → 110\              |
+| *Health*: 1000 → 1200\         | *Health*: 1100 → 1700\        |
+| *Mana*: 1000 → 1200\           | *Mana*: 1100 → 1700\          |
+| *Spell Power*: 1000 → 1200     | *Spell Power*: 1100 → 1700    |
++--------------------------------+-------------------------------+
+| **Shadows Regalia X**          | **Shadows Regalia XI**        |
+|                                |                               |
+| *INT*: 125 → 145\              | *INT*: 135 → 195\             |
+| *Health Regen*: 15.85 → 19.15\ | *Health Regen*: 17.5 → 27.4\  |
+| *Spell Damage*: 1250 → 1500    | *Spell Damage*: 1375 → 2125   |
++--------------------------------+-------------------------------+
+| **Battleforge Regalia X**      | **Battleforge Regalia XI**    |
+|                                |                               |
+| *STR*: 70 → 80\                | *STR*: 75 → 105\              |
+| *AGI*: 55 → 125\               | *AGI*: 60 → 90\               |
+| *Attack Damage*: 105 → 125\    | *Attack Damage*: 115 → 175\   |
+| *Armor*: 73 → 87               | *Armor*: 80 → 122             |
++--------------------------------+-------------------------------+
+| **Deathbringer Regalia X**     | **Deathbringer Regalia XI**   |
+|                                |                               |
+| *STR*: 50 → 60\                | *STR*: 55 → 85\               |
+| *AGI*: 75 → 85\                | *AGI*: 80 → 110\              |
+| *Attack Damage*: 273 → 327\    | *Attack Damage*: 300 → 462\   |
+| *Health*: 1365 → 1635          | *Health*: 1500 → 2310         |
++--------------------------------+-------------------------------+
+| **Khaos Regalia X**            | **Khaos Regalia XI**          |
+|                                |                               |
+| *STR*: 70 → 80\                | *STR*: 75 → 105\              |
+| *AGI*: 55 → 65\                | *AGI*: 60 → 90\               |
+| *Armor*: 55 → 65\              | *Armor*: 60 → 90\             |
+| *Resist*: 69 → 81\             | *Resist*: 75 → 111\           |
+| *Health*: 2715 → 3285\         | *Health*: 3000 → 4710\        |
+| *Mana*: 150 → 180              | *Mana*: 165 → 255             |
++--------------------------------+-------------------------------+
+
+## Forces of Hell
+
+**Gaea**
+
+-   *Base form's* armor buffed to 100 <small>(from 42)</small>
+-   *Attack form's* armor buffed to 50 <small>(from 28)</small>
+-   *Defense form's* armor buffed to 200 <small>(from 84)</small>
+
+**Hades\
+**The previous *Chestguard of the Olympians* drops are replaced with:
+
+1.  *Thunder Lance*, *Shield of Living Bone*, or *Burning Hand of the
+    War God*
+2.  *Blood Ruby*
+
+-   Armor buffed to 180 <small>(from 126)</small>
+-   *Ker* auto-attack damage reduced to 12003--12255 from 15003--15255
+
+**Persephone\
+**The previous *Helm of the Olympians* drop is now replaced with:
+
+1.  *Talisman of Addiction* or *Warrior's Talisman of Addiction*
+2.  *Stone of Heaven*
+
+**Sphinx\
+**Armor buffed to 200 (from 140)
+
+### Essence
+
+-   *Cyclops* and *Manslayer/Lightbane* now drops 5 essence
+-   *Aescus* and *Makarios* now drops 10 essence
+-   *Chillhand* now drops 27 Essence
+-   *Chimaera*, *Cerebus*, and *Sisters* now drops 32 essence
