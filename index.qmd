@@ -34,18 +34,19 @@ editor:
     spell power of the player directly above you
 -   Loading in a *Warlock* no longer prevents a *Warlock* of the player
     directly above you from triggering *Sadism* <small>(Warlock)</small>
+    from that point onwards
 -   1.39b6 and earlier save codes when converted into 1.39b7/8 codes now
     checks if a regalia item was loaded in via the player character or
     their bank
 -   *Hyperion* now grants 250 Essence as intended <small>(instead of
     than 205)</small>
--   *Red Dragonscale Ring of Addiction* nowgrants its intended stat
+-   *Red Dragonscale Ring of Addiction* now grants its intended stat
     block
 
 ------------------------------------------------------------------------
 
 -   Hydra correctly has 238 Armor (rather than 2388)
--   *Regal Helm of Sparkling Crystal*can be forged again
+-   *Regal Helm of Sparkling Crystal* can be forged again
 -   *Maelstrom* <small>(Druid)</small> damage over time component is now
     calculated correctly
 -   *Flame Spire* <small>(Magician)</small> damage over time component
@@ -70,9 +71,9 @@ editor:
 
 ## Heroes
 
-**Rend Armor** <small>(Barbarian)</small> \
-Now reduces armor by 10 / 15 / 20 / 25 / 30 / 35 / 40 /
-50. <small>(Previously 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25)</small>
+**Rend Armor** <small>(Barbarian)</small>\
+Now reduces armor by 10 / 15 / 20 / 25 / 30 / 35 / 40 / 50.
+<small>(Previously 5 / 7 / 10 / 13 / 16 / 19 / 22 / 25)</small>
 
 **Thunderbolt** <small>(Druid)</small>\
 *Aspect of the Nereid* bonus now reduces armor by 10 / 15 / 20 / 25 / 30
@@ -90,101 +91,102 @@ Now reduces armor by 10 / 15 / 20 / 25 / 30 / 35 / 40 /
 
 ### Regalia
 
-+--------------------------------+-------------------------------+
-| **Power Regalia X**            | **Power Regalia XI**          |
-|                                |                               |
-| *INT*: 125 → 145\              | *INT*: 135 → 195\             |
-| *Health*: 905 → 1095\          | *Health*: 1000 → 1570\        |
-| *Mana*: 1360 → 1640\           | *Mana*: 1500 → 2340\          |
-| *Spell Damage*: 1250 → 1500    | *Spell Damage*: 1375 → 2125   |
-+--------------------------------+-------------------------------+
-| **Stone Regalia X**            | **Stone Regalia XI**          |
-|                                |                               |
-| *STR*: 60 → 70\                | *STR*: 65 → 95\               |
-| *INT*: 50 → 60\                | *INT*: 55 → 85\               |
-| *Armor*: 32 → 38\              | *Armor*: 35 → 53\             |
-| *Resist*: 115 → 135\           | *Resist*: 125 → 185\          |
-| *Health*: 1365 → 1635\         | *Health*: 1500 → 2310\        |
-| *Mana*: 1365 → 1635\           | *Mana*: 1500 → 2310\          |
-| *Spell Damage*: 500 → 600      | *Spell Damage*: 550 → 850     |
-+--------------------------------+-------------------------------+
-| **Veteran's Regalia X**        | **Veteran's Regalia XI**      |
-|                                |                               |
-| *STR*: 60 → 70\                | *STR*: 65 → 95\               |
-| *INT*: 50 → 60\                | *INT*: 55 → 85\               |
-| *Armor*: 55 → 65\              | *Armor*: 60 → 90\             |
-| *Health*: 1365 → 1635\         | *Health*: 1500 → 2310\        |
-| *Mana*: 1365 → 1635\           | *Mana*: 1500 → 2310\          |
-| *Spell Power*: 365 → 435       | *Spell Power*: 400 → 610      |
-+--------------------------------+-------------------------------+
-| **Light Regalia X**            | **Light Regalia XI**          |
-|                                |                               |
-| *STR*: 50 → 60\                | *STR*: 55 → 85\               |
-| *INT*: 75 → 85\                | *INT*: 80 → 110\              |
-| *Spell Damage*: 680 → 820\     | *Spell Damage*: 750 → 1170\   |
-| *Spell Healing*: 2040 → 2460   | *Spell Healing*: 2250 → 3510  |
-+--------------------------------+-------------------------------+
-| **Night Regalia X**            | **Night Regalia XI**          |
-|                                |                               |
-| *STR*: 50 → 75\                | *STR*: 55 → 85\               |
-| *AGI*: 75 → 85\                | *AGI*: 80 → 110\              |
-| *Attack Damage*: 273 → 327\    | *Attack Damage*: 300 → 462\   |
-| *Mana Regen*: 3.25 → 3.75      | *Mana Regen*: 1.75 → 5        |
-+--------------------------------+-------------------------------+
-| **Ironwood Regalia X**         | **Ironwood Regalia XI**       |
-|                                |                               |
-| *AGI*: 70 → 80\                | *AGI*: 75 → 105\              |
-| *INT*: 55 → 65\                | *INT*: 60 → 90\               |
-| *Attack Damage*: 160 → 190\    | *Attack Damage*: 175 → 265\   |
-| *Mana*: 750 → 900\             | *Mana*: 825 → 1275\           |
-| *Spell Power*: 750 → 900       | *Spell Power*: 825 → 1125     |
-+--------------------------------+-------------------------------+
-| **Divine Regalia X**           | **Divine Regalia XI**         |
-|                                |                               |
-| *STR*: 65 → 75\                | *STR*: 70 → 100\              |
-| *INT*: 60 → 70\                | *INT*: 65 → 95\               |
-| *Mana*: 750 → 900\             | *Mana*: 825 → 1275\           |
-| *Armor*: 32 → 38\              | *Armor*: 35 → 53\             |
-| *Resist*: 32 → 38\             | *Resist*: 35 → 53\            |
-| *Spell Power*: 750 → 900       | *Spell Power*: 825 → 1125     |
-+--------------------------------+-------------------------------+
-| **Wild Regalia X**             | **Wild Regalia XI**           |
-|                                |                               |
-| *AGI*: 50 → 60\                | *AGI*: 55 → 85\               |
-| *INT*: 75 → 85\                | *INT*: 80 → 110\              |
-| *Health*: 1000 → 1200\         | *Health*: 1100 → 1700\        |
-| *Mana*: 1000 → 1200\           | *Mana*: 1100 → 1700\          |
-| *Spell Power*: 1000 → 1200     | *Spell Power*: 1100 → 1700    |
-+--------------------------------+-------------------------------+
-| **Shadows Regalia X**          | **Shadows Regalia XI**        |
-|                                |                               |
-| *INT*: 125 → 145\              | *INT*: 135 → 195\             |
-| *Health Regen*: 15.85 → 19.15\ | *Health Regen*: 17.5 → 27.4\  |
-| *Spell Damage*: 1250 → 1500    | *Spell Damage*: 1375 → 2125   |
-+--------------------------------+-------------------------------+
-| **Battleforge Regalia X**      | **Battleforge Regalia XI**    |
-|                                |                               |
-| *STR*: 70 → 80\                | *STR*: 75 → 105\              |
-| *AGI*: 55 → 125\               | *AGI*: 60 → 90\               |
-| *Attack Damage*: 105 → 125\    | *Attack Damage*: 115 → 175\   |
-| *Armor*: 73 → 87               | *Armor*: 80 → 122             |
-+--------------------------------+-------------------------------+
-| **Deathbringer Regalia X**     | **Deathbringer Regalia XI**   |
-|                                |                               |
-| *STR*: 50 → 60\                | *STR*: 55 → 85\               |
-| *AGI*: 75 → 85\                | *AGI*: 80 → 110\              |
-| *Attack Damage*: 273 → 327\    | *Attack Damage*: 300 → 462\   |
-| *Health*: 1365 → 1635          | *Health*: 1500 → 2310         |
-+--------------------------------+-------------------------------+
-| **Khaos Regalia X**            | **Khaos Regalia XI**          |
-|                                |                               |
-| *STR*: 70 → 80\                | *STR*: 75 → 105\              |
-| *AGI*: 55 → 65\                | *AGI*: 60 → 90\               |
-| *Armor*: 55 → 65\              | *Armor*: 60 → 90\             |
-| *Resist*: 69 → 81\             | *Resist*: 75 → 111\           |
-| *Health*: 2715 → 3285\         | *Health*: 3000 → 4710\        |
-| *Mana*: 150 → 180              | *Mana*: 165 → 255             |
-+--------------------------------+-------------------------------+
++-------------------------------+------------------------------+
+| **Power Regalia X**           | **Power Regalia XI**         |
+|                               |                              |
+| *INT*: 125 → 145\             | *INT*: 135 → 195\            |
+| *Health*: 905 → 1095\         | *Health*: 1000 → 1570\       |
+| *Mana*: 1360 → 1640\          | *Mana*: 1500 → 2340\         |
+| *Spell Damage*: 1250 → 1500   | *Spell Damage*: 1375 → 2125  |
++-------------------------------+------------------------------+
+| **Stone Regalia X**           | **Stone Regalia XI**         |
+|                               |                              |
+| *STR*: 60 → 70\               | *STR*: 65 → 95\              |
+| *INT*: 50 → 60\               | *INT*: 55 → 85\              |
+| *Armor*: 32 → 38\             | *Armor*: 35 → 53\            |
+| *Resist*: 115 → 135\          | *Resist*: 125 → 185\         |
+| *Health*: 1365 → 1635\        | *Health*: 1500 → 2310\       |
+| *Mana*: 1365 → 1635\          | *Mana*: 1500 → 2310\         |
+| *Spell Damage*: 500 → 600     | *Spell Damage*: 550 → 850    |
++-------------------------------+------------------------------+
+| **Veteran's Regalia X**       | **Veteran's Regalia XI**     |
+|                               |                              |
+| *STR*: 60 → 70\               | *STR*: 65 → 95\              |
+| *INT*: 50 → 60\               | *INT*: 55 → 85\              |
+| *Armor*: 55 → 65\             | *Armor*: 60 → 90\            |
+| *Health*: 1365 → 1635\        | *Health*: 1500 → 2310\       |
+| *Mana*: 1365 → 1635\          | *Mana*: 1500 → 2310\         |
+| *Spell Power*: 365 → 435      | *Spell Power*: 400 → 610     |
++-------------------------------+------------------------------+
+| **Light Regalia X**           | **Light Regalia XI**         |
+|                               |                              |
+| *STR*: 50 → 60\               | *STR*: 55 → 85\              |
+| *INT*: 75 → 85\               | *INT*: 80 → 110\             |
+| *Spell Damage*: 680 → 820\    | *Spell Damage*: 750 → 1170\  |
+| *Spell Healing*: 2040 → 2460  | *Spell Healing*: 2250 → 3510 |
++-------------------------------+------------------------------+
+| **Night Regalia X**           | **Night Regalia XI**         |
+|                               |                              |
+| *STR*: 50 → 75\               | *STR*: 55 → 85\              |
+| *AGI*: 75 → 85\               | *AGI*: 80 → 110\             |
+| *Attack Damage*: 273 → 327\   | *Attack Damage*: 300 → 462\  |
+| *Mana Regen*: 3.25 → 3.75     | *Mana Regen*: 1.75 → 5       |
++-------------------------------+------------------------------+
+| **Ironwood Regalia X**        | **Ironwood Regalia XI**      |
+|                               |                              |
+| *AGI*: 70 → 80\               | *AGI*: 75 → 105\             |
+| *INT*: 55 → 65\               | *INT*: 60 → 90\              |
+| *Attack Damage*: 160 → 190\   | *Attack Damage*: 175 → 265\  |
+| *Mana*: 750 → 900\            | *Mana*: 825 → 1275\          |
+| *Spell Power*: 750 → 900      | *Spell Power*: 825 → 1125    |
++-------------------------------+------------------------------+
+| **Divine Regalia X**          | **Divine Regalia XI**        |
+|                               |                              |
+| *STR*: 65 → 75\               | *STR*: 70 → 100\             |
+| *INT*: 60 → 70\               | *INT*: 65 → 95\              |
+| *Mana*: 750 → 900\            | *Mana*: 825 → 1275\          |
+| *Armor*: 32 → 38\             | *Armor*: 35 → 53\            |
+| *Resist*: 32 → 38\            | *Resist*: 35 → 53\           |
+| *Spell Power*: 750 → 900      | *Spell Power*: 825 → 1125    |
++-------------------------------+------------------------------+
+| **Wild Regalia X**            | **Wild Regalia XI**          |
+|                               |                              |
+| *AGI*: 50 → 60\               | *AGI*: 55 → 85\              |
+| *INT*: 75 → 85\               | *INT*: 80 → 110\             |
+| *Health*: 1000 → 1200\        | *Health*: 1100 → 1700\       |
+| *Mana*: 1000 → 1200\          | *Mana*: 1100 → 1700\         |
+| *Spell Power*: 1000 → 1200    | *Spell Power*: 1100 → 1700   |
++-------------------------------+------------------------------+
+| **Shadows Regalia X**         | **Shadows Regalia XI**       |
+|                               |                              |
+| *INT*: 125 → 145\             | *INT*: 135 → 195\            |
+| *Health Regen*: 15.85 →       | *Health Regen*: 17.5 → 27.4\ |
+| 19.15\                        | *Spell Damage*: 1375 → 2125  |
+| *Spell Damage*: 1250 → 1500   |                              |
++-------------------------------+------------------------------+
+| **Battleforge Regalia X**     | **Battleforge Regalia XI**   |
+|                               |                              |
+| *STR*: 70 → 80\               | *STR*: 75 → 105\             |
+| *AGI*: 55 → 125\              | *AGI*: 60 → 90\              |
+| *Attack Damage*: 105 → 125\   | *Attack Damage*: 115 → 175\  |
+| *Armor*: 73 → 87              | *Armor*: 80 → 122            |
++-------------------------------+------------------------------+
+| **Deathbringer Regalia X**    | **Deathbringer Regalia XI**  |
+|                               |                              |
+| *STR*: 50 → 60\               | *STR*: 55 → 85\              |
+| *AGI*: 75 → 85\               | *AGI*: 80 → 110\             |
+| *Attack Damage*: 273 → 327\   | *Attack Damage*: 300 → 462\  |
+| *Health*: 1365 → 1635         | *Health*: 1500 → 2310        |
++-------------------------------+------------------------------+
+| **Khaos Regalia X**           | **Khaos Regalia XI**         |
+|                               |                              |
+| *STR*: 70 → 80\               | *STR*: 75 → 105\             |
+| *AGI*: 55 → 65\               | *AGI*: 60 → 90\              |
+| *Armor*: 55 → 65\             | *Armor*: 60 → 90\            |
+| *Resist*: 69 → 81\            | *Resist*: 75 → 111\          |
+| *Health*: 2715 → 3285\        | *Health*: 3000 → 4710\       |
+| *Mana*: 150 → 180             | *Mana*: 165 → 255            |
++-------------------------------+------------------------------+
 
 ## Forces of Hell
 
