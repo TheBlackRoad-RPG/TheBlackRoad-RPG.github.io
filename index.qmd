@@ -78,8 +78,10 @@ editor:
 -   *Towering Shield of Athena*, *Unyielding Tower*, *Adamantium Tower*,
     *Adamantium Shield,* and *Shield of Living Bone* auto-attack damage
     block mechanic now works with magical auto-attacks as intended
--   *Atalanta's Hunting Garb* can no longer activate the *Swift Return*
-    item ability from a familiar's inventory as intended
+-   *Atalanta's Hunting Garb*
+    -   You can no longer activate the *Swift Return* item ability from
+        a familiar's inventory as intended
+    -   Grants 40 Agility as intended
 -   *Ironwood Regalia XI* grants the intended amount of 1275 Spell Power
 -   *Shadow Blade* grants its *Attack Damage +25%* item ability as
     intended
@@ -114,6 +116,25 @@ editor:
 
 ### Assassin
 
+*Dancing Dagger*
+
+> -   `(NEW)` *Lethal Poison* is now applied to subsequent targets
+
+*Lethal Poison*
+
+> -   Damage type: Physical ⇒ Magical
+> -   Agility ratio: 3.0 ⇒ 4.0
+
+*Night Set*
+
+> -   `(REMOVED)` *Lethal Poison* now deals 4.0 / 4.4 / 4.8 / 5.2 / 5.6
+>     / 6.0 / 6.4 / 6.8 / 7.2 / 7.6 / 8.0 Agility physical damage over 4
+>     seconds
+> -   *Dancing Dagger* now applies *Lethal Poison* on each target
+> -   `(NEW)` Physical damage dealt by *Assassinate* and *Eviscerate*
+>     now ignores half of armor value's damage reduction (if the
+>     target's armor is greater than 0)
+
 ### Barbarian
 
 ### Cleric
@@ -121,6 +142,11 @@ editor:
 ### Guardian of Nature
 
 ### Khaos Champion
+
+*Khaos Set*
+
+> -   Restore 2.0 Armor Damage Reduction (%) health ⇒ Restore 0.2
+>     (Armor + Resist) health
 
 ### Magician
 
@@ -408,123 +434,99 @@ editor:
 
 <!-- >     active, your Spell Damage also increases by 50% -->
 
-<!-- *Assassin* -->
-
-<!-- > *Lethal Poison* -->
-
-<!-- > -->
-
-<!-- > -   Damage type: Physical ⇒ Magical -->
-
-<!-- > -->
-
-<!-- > -   Agility ratio: 3.0 ⇒ 4.0 -->
-
-<!-- > -->
-
-<!-- > *Dancing Dagger* -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Lethal Poison is now applied to subsequent targets -->
-
-<!-- > -->
-
-<!-- > *Night Set* -->
-
-<!-- > -->
-
-<!-- > -   `(REMOVED)` Lethal Poison now deals 4.0 / 4.4 / 4.8 / 5.2 / 5.6 / -->
-
-<!-- >     6.0 / 6.4 / 6.8 / 7.2 / 7.6 / 8.0 Agility physical damage over 4 -->
-
-<!-- >     seconds -->
-
-<!-- > -->
-
-<!-- > -   `(REMOVED)` Dancing Dagger now applies Lethal Poison (on each -->
-
-<!-- >     bounce) -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Physical damage dealt by Assassinate and Eviscerate now -->
-
-<!-- >     ignores half of armor value's damage reduction -->
-
-<!-- *Khaos Champion* -->
-
-<!-- > *Khaos Set* -->
-
-<!-- > -->
-
-<!-- > -   Restore 2.0 Armor Damage Reduction (%) health ⇒ Restore 0.2 -->
-
-<!-- >     (Armor + Resist) health -->
-
 ## Items
 
 ::: panel-tabset
 ## General
 
--   <!-- New items and updated items are progressively being updated to a new colour code system. -->
+-   New items and updated items from **1.39b9** onwrads have the
+    following characteristics:
+    -   An updated colour coding system for item types
+    -   A budget based approach that depends on item level ***and***
+        item type for item balancing
+    -   Item uniqueness is determined by the item's name
+    -   Item restrictions will be written out in full, or use a
+        shorthand (e.g. Relics and Olympian Relics)
+-   Relics and Olympian Relics now share the same colour code
+-   If you target the *Mighty Leap* (Midas' Band of Vigor) and *Blaze o'
+    Glory* (Midas' Pendant of Wisdom) abilities on their respective item
+    slots, they'll 99% of the time target the user's origin
+-   The buff granted by % attack damage bonus item ability found on
+    *Blackfire Staff*, *Searing Flame of Prometheus*, *Shadow Blade*,
+    and *Blazing Sword of Helios* has been renamed to avoid confusion
+    with the buff from the *Command Aura I* / *Command Aura II* item
+    abilities
+-   A variety of items, primarily consumables and white colour coded
+    items, now persist on the map for approximately 10-20 minutes of
+    game time before being removed from the map
 
 ## Dragonscale
 
 ## The Frozen Citadel
+
+## Other
+
+*Gem of Birth*
+
+> -   Icon updated
+> -   Model updated
+
+*Gem of Death*
+
+> -   Icon updated
+> -   Model updated
+
+*Gem of Life*
+
+> -   Icon updated
+> -   Model updated
+
+*Talisman of Addiction*
+
+> -   Strength: 60 ⇒ 30
+> -   Agility: 60 ⇒ 30
+> -   Intelligence: 60 ⇒ 30
+
+*Warrior's Talisman of Addiction*
+
+> -   Icon updated
+> -   Strength: 80 ⇒ 50
+> -   Agility: 80 ⇒ 50
+> -   `(NO CHANGE)` Intelligence: 2
+
+*Dark Wizard's Dagger*
+
+> -   Level: 85 ⇒ 90
+> -   Agility: 50 ⇒ 25
+> -   Intelligence: 50 ⇒ 30
+> -   Spell Power: 450 ⇒ 0
+> -   Item ability codified to *Warmage*
+>     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
+
+*Hera's Blessing*
+
+> -   Level: 85 ⇒ 90
+> -   Intelligence: 75 ⇒ 0
+> -   Spell Power: 500 ⇒ 650
+> -   Grants *Brilliance Aura I* instead of "... increases the Mana
+>     Regeneration of nearby allies by 10 Mana per second. Warriors will
+>     only..."
+>     -   *Brilliance Aura I*---Allies within a 450 AoE have their mana
+>         regeneration increased by 5 mana per second
+
+*Wizard's Respite*
+
+> -   `(UNCHANGED)` Components: Dark Wizard's Dagger, Hera's Blessing,
+>     Gem of the East, Gem of the North, 2 Sea Essence, 2 Heart of Frost
+> -   Level: 150 ⇒ 165
+> -   Agility: 50 ⇒ 35
+> -   Intelligence: 125 ⇒ 75
+> -   Spell Power: 950 ⇒ 1100
+> -   Mana Regeneration (p/ sec): 0 ⇒ 30
+> -   Grants *Warmage* instead of "... Also increases Mana Regeneration
+>     by 20 Mana per second, and this effect does not..."
+>     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
 :::
-
-<!-- -   *Gem of Death*, *Gem of Birth*, and *Gem of Life* have updated item -->
-
-<!--     models and icons -->
-
-<!-- -   If you target the *Mighty Leap* (Midas' Band of Vigor) and *Blaze o' -->
-
-<!--     Glory* (Midas' Pendant of Wisdom) abilities on their respective -->
-
-<!--     items, they now target the user's origin. -->
-
-<!-- -   The attack damage % buff granted by *Blackfire Staff*, *Searing -->
-
-<!--     Flame of Prometheus*, *Blazing Sword of Helios*, and *Shadow Blade* -->
-
-<!--     has been renamed to avoid confusion with the *Command Aura* item -->
-
-<!--     ability -->
-
-<!-- -   A variety of items, primarily consumables and "white" colour coded -->
-
-<!--     permanents, are checked for cleaning every 5 minutes -->
-
-<!-- -   Relics and Olympian Relics now share the same colour code -->
-
-<!-- -   *Scepter of the Chosen Ones* now requires *Sea Essence* instead of -->
-
-<!--     *Burning Heart of Ladon* to be forged -->
-
-<!-- -   *Talisman of Addiction* -->
-
-<!-- > -   Strength: 60 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 60 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 60 ⇒ 30 -->
-
-<!-- -   *Warrior's Talisman of Addiction* -->
-
-<!-- > -   New icon -->
-
-<!-- > -->
-
-<!-- > -   Strength: 80 ⇒ 50 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 80 ⇒ 50 -->
 
 <!-- -   *Deathchill Blade* -->
 
@@ -884,86 +886,6 @@ editor:
 
 <!-- >     mana regeneration increased by 15 mana per second. -->
 
-<!-- -   *Dark Wizard's Dagger* -->
-
-<!-- > -   Level: 85 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 50 ⇒ 25 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 50 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 450 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Item ability codified to Warmage -->
-
-<!-- > -->
-
-<!-- > -   Warmage---Whenever you cast a spell: You restore 50 mana -->
-
-<!-- -   *Hera's Blessing* -->
-
-<!-- > -   Level: 85 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 75 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 500 ⇒ 650 -->
-
-<!-- > -->
-
-<!-- > -   Grants Brilliance Aura I instead of "\... increases the Mana -->
-
-<!-- >     Regeneration of nearby allies by 10 Mana per second. Warriors will -->
-
-<!-- >     only\..." -->
-
-<!-- > -->
-
-<!-- > -   Brilliance Aura I---Allies within a 450 AoE have their mana -->
-
-<!-- >     regeneration increased by 5 mana per second -->
-
-<!-- -   *Wizard's Respite* -->
-
-<!-- > -   Level: 150 ⇒ 165 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 50 ⇒ 35 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 125 ⇒ 75 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 950 ⇒ 1100 -->
-
-<!-- > -->
-
-<!-- > -   Mana Regeneration (p/ sec): 0 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Grants Warmage instead of "\... Also increases Mana Regeneration -->
-
-<!-- >     by 20 Mana per second, and this effect does not\..." -->
-
-<!-- > -->
-
-<!-- > -   Warmage---Whenever you cast a spell: You restore 50 mana -->
-
 <!-- -   *Green Dragonscale* -->
 
 <!-- > -   Previously Green Dragonscale Ring -->
@@ -1186,7 +1108,7 @@ editor:
 
 <!-- > -   Spell Power: 500 ⇒ 700 -->
 
-## Forces of Hell
+## Forces of Hell {#forces-of-hell}
 
 -   Added a leash check for rewarding Essence from the *Hallowed One*
     and *Manslayer & Lightbane* fights
