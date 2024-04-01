@@ -196,83 +196,42 @@ editor:
 
 ### Cleric
 
-<!-- > *Holy Light* -->
+*Holy Light*
 
-<!-- > -->
+> -   Spell Healing Ratio: 1 ⇒ 0.9 / 0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2
+>     / 1.25
+> -   Cooldown: 4.5 seconds ⇒ 3.5 seconds
 
-<!-- > -   Spell Healing Ratio: 1 ⇒ 0.9 / 0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 -->
+*Hallowed Ground*
 
-<!-- >     / 1.25 -->
+> -   Spell Healing Ratio: 1 ⇒ 1.1
 
-<!-- > -->
+*Transcendence*
 
-<!-- > -   Cooldown: 4.5 seconds ⇒ 3.5 seconds -->
-
-<!-- > -->
-
-<!-- > *Hallowed Ground* -->
-
-<!-- > -->
-
-<!-- > -   Spell Healing Ratio: 1 ⇒ 1.1 -->
-
-<!-- > -->
-
-<!-- > *Transcendence* -->
-
-<!-- > -->
-
-<!-- > -   Your next Agility / 18 auto-attacks are enhanced ⇒ Your next -->
-
-<!-- >     Agility / 22 auto-attacks are enhanced -->
-
-<!-- > -->
-
-<!-- > -   Heal for 50% total damage inflicted ⇒ Heal for 35% total damage -->
-
-<!-- >     inflicted -->
+> -   Your next Agility / 18 auto-attacks are enhanced ⇒ Your next
+>     Agility / 22 auto-attacks are enhanced
+> -    Heal for 50% total damage inflicted ⇒ Heal for 35% total damage
+>     inflicted
 
 ### Guardian of Nature
 
-<!-- > *Embolden* -->
+*Embolden*
 
-<!-- > -->
+> -   Duration: 6.5 seconds ⇒ 15 seconds
+> -   Cooldown: 15 seconds ⇒ 35 seconds
 
-<!-- > -   Duration: 6.5 seconds ⇒ 15 seconds -->
+*Shatter*
 
-<!-- > -->
-
-<!-- > -   Cooldown: 15 seconds ⇒ 35 seconds -->
-
-<!-- > -->
-
-<!-- > *Shatter* -->
-
-<!-- > -->
-
-<!-- > -   Replaces *Earth Shock* -->
-
-<!-- > -->
-
-<!-- > -   Mana Cost: 45 / 90 / 135 / 225 / 315 / 450 / 585 / 720 -->
-
-<!-- > -->
-
-<!-- > -   Enemies in a 450 by 200 line are applied Break I for 5 seconds, -->
-
-<!-- >     then are dealt 150 / 250 / 450 / 750 / 1250 / 2000 / 3500 / 6000 + -->
-
-<!-- >     (0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 / 1.5 STR + 0.15 / -->
-
-<!-- >     0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Spell Damage) physical -->
-
-<!-- >     damage. If only a single enemy is struck by Shatter, Break II is -->
-
-<!-- >     applied instead of Break I for 5 seconds. -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 13 seconds -->
+> -   Replaces *Earth Shock*
+> -   Mana Cost: 45 / 90 / 135 / 225 / 315 / 450 / 585 / 720
+> -   *Break I* all enemies in a 450 by 200 line, reducing their Armor
+>     by 15 for 5 seconds, and then deal 150 / 250 / 450 / 750 / 1250 /
+>     2000 / 3500 / 6000 (0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 /
+>     1.5 STR + 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Spell
+>     Damage) physical damage to these enemies. If only a single enemy
+>     is struck by *Shatter*, *Break II* is applied instead of *Break
+>     I*, which reduces its Armor by 30 for 5 seconds.
+> -   Cooldown: 13 seconds
 
 ### Khaos Champion
 
@@ -283,57 +242,24 @@ editor:
 
 ### Magician
 
-<!-- > -   No longer has jazz (fire) hands -->
+-   No longer has jazz (fire) hands
 
-<!-- > -->
+*Freezing Field*
 
-<!-- > *Freezing Field* -->
-
-<!-- > -->
-
-<!-- > -   `(NOTE)` Freezing Field never dealt reduced damage to subsequent -->
-
-<!-- >     targets -->
-
-<!-- > -->
-
-<!-- > -   Explosions now properly follows a spatially uniform random -->
-
-<!-- >     distribution -->
-
-<!-- > -->
-
-<!-- > -   Updated FX -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Now increases Armor and Resist by 1 / 2 / 3 / 4 / 5 / 6 / -->
-
-<!-- >     7 / 8 per 1800 Maximum Health for the duration -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Now ensnares targets for 3 seconds the first time they are -->
-
-<!-- >     hit by Freezing Field -->
-
-<!-- > -->
-
-<!-- > -   Mana Cost: 125 / 250 / 400 / 575 / 800 / 1000 / 1000 / 1000 ⇒ 125 -->
-
-<!-- >     / 250 / 400 / 575 / 775 / 1000 / 1250 / 1525 -->
-
-<!-- > -->
-
-<!-- > -   Channel Duration: 4 seconds ⇒ 8 seconds -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 75 / 70 / 65 / 60 / 55 / 50 / 45 / 45 ⇒ 40 seconds -->
-
-<!-- > -->
-
-<!-- > -   Explosions every 0.05 seconds ⇒ 0.1 seconds -->
+> -   `(NOTE)` *Freezing Field* never dealt reduced damage to subsequent
+>     targets
+> -   Mana Cost: 125 / 250 / 400 / 575 / 800 / 1000 / 1000 / 1000 ⇒ 125
+>     / 250 / 400 / 575 / 775 / 1000 / 1250 / 1525
+> -   Updated FX
+> -   Explosions are now generated according to a spatially uniform
+>     probability distribution
+> -   Explosions every 0.05 seconds ⇒ 0.1 seconds
+> -   `(NEW)` Now increases Armor and Resist by 1 / 2 / 3 / 4 / 5 / 6 /
+>     7 / 8 per 1800 Maximum Health for the duration
+> -   `(NEW)` Now *Ensnares* targets for 3 seconds the first time they
+>     are hit by *Freezing Field*
+> -   Channel Duration: 4 seconds ⇒ 8 seconds
+> -   Cooldown: 75 / 70 / 65 / 60 / 55 / 50 / 45 / 45 ⇒ 40 seconds
 
 ### Ranger
 
@@ -473,21 +399,66 @@ editor:
 
 *Midnight Cloak*
 
+> -   Previously *Orb of Chill Midnight*
+> -   Level: 55 ⇒ 90
+> -   Strength: 10 ⇒ 0
+> -   Agility: 10 ⇒ 0
+> -   Intelligence: 10 ⇒ 20
+> -   Health Regeneration (p/ sec): 30 ⇒ 0
+> -   Mana: 0 ⇒ 200
+> -   Armor: 0 ⇒ 20
+> -   Grants *Mana Shield* instead of *Mana Regeneration IX*
+>     -   *Mana Shield*---Activate to convert 20% of your current mana
+>         into a post-mitigation damage shield for 5 seconds. Cooldown:
+>         60 seconds.
+
 *Chillstone Ring*
 
 *Ring of the Frozen Citadel*
 
 *Deathchill Blade*
 
+> -   Level: 55 ⇒ 90
+> -   Attack Damage: 90 ⇒ 150
+> -   Grants *Cleave I* instead of "... 35% of your melee base
+>     damage..."
+>     -   *Cleave I*---Your auto-attacks now deal 0.10 Primary Attribute
+>         physical damage in a 200 AoE of the target. Melee only.
+
 *Scepter of the Ice Queen*
 
 *Amphirite's Cloak*
+
+> -   Level: 135
+> -   Components: Midnight Cloak, Circlet of the Mother Goddess, 2 Stone
+>     of Heaven, 2 Heart of Frost, 2 Sea Essence
+> -   Intelligence: 45
+> -   Mana: 2000
+> -   Mana Regeneration (p/ sec): 20
+> -   Armor: 50
+> -   Grants *Mana Shield*
+>     -   *Mana Shield*---Activate to convert 20% of your current mana
+>         into a post-mitigation damage shield for 5 seconds. Cooldown:
+>         60 seconds.
 
 *Chillstone Ring of Midnight*
 
 *Aegis of the Frozen Citadel*
 
 *Deathchill Greatsword*
+
+> -   Level: 125 ⇒ 150
+> -   Components: Deathchill Blade, Savage War Axe of Hephaestus,
+>     Spartan Greatsword, 2 Stone of Heaven, Blood Ruby, 3 Heart of
+>     Frost
+> -   Strength: 50 ⇒ 80
+> -   Agility: 50 ⇒ 80
+> -   Attack Damage: 150 ⇒ 200
+> -   Grants *Cleave II* instead of "... 35% of your melee base
+>     damage..."
+>     -   *Cleave II*---Your auto-attacks now deal 0.20 Primary
+>         Attribute physical damage in a 200 AoE of the target. Melee
+>         only.
 
 *Scepter of the Chosen Ones*
 
@@ -512,6 +483,10 @@ editor:
 
 > -   Attack Damage: 100 ⇒ 125
 > -   Attack Speed: 150% ⇒ 125%
+> -   `(NO CHANGE)` Grants *Versatile* and *Olympian*
+>     -   *Versatile*---Increases the hero's primary attribute by 75.
+>     -   *Olympian*---Your auto-attacks now deal 50% physical and 50%
+>         magical damage instead.
 
 *Talisman of Addiction*
 
@@ -524,10 +499,13 @@ editor:
 > -   Icon updated
 > -   Strength: 80 ⇒ 50
 > -   Agility: 80 ⇒ 50
+> -   `(NO CHANGE)` Intelligence: 2
 
 *Dark Wizard's Dagger*
 
 > -   Level: 85 ⇒ 90
+> -   `(NO CHANGE)` Components: 5000 crafting materials, 2 Stone of
+>     Heaven, 2 Blood Ruby, Runestone, Ruby Heart
 > -   Agility: 50 ⇒ 25
 > -   Intelligence: 50 ⇒ 30
 > -   Spell Power: 450 ⇒ 0
@@ -537,6 +515,8 @@ editor:
 *Hera's Blessing*
 
 > -   Level: 85 ⇒ 90
+> -   `(NO CHANGE)` Components: 5000 crafting materials, Gemstone of
+>     Apollo, 2 Stone of Heaven, Blood Ruby, Heart of Frost, Sea Essence
 > -   Intelligence: 75 ⇒ 0
 > -   Spell Power: 500 ⇒ 650
 > -   Grants *Brilliance Aura I* instead of "... increases the Mana
@@ -548,6 +528,8 @@ editor:
 *Wizard's Respite*
 
 > -   Level: 150 ⇒ 165
+> -   `(NO CHANGE)` Components: Dark Wizard's Dagger, Hera's Blessing,
+>     Gem of the East, Gem of the North, 2 Sea Essence, 2 Heart of Frost
 > -   Agility: 50 ⇒ 35
 > -   Intelligence: 125 ⇒ 75
 > -   Spell Power: 950 ⇒ 1100
@@ -556,144 +538,6 @@ editor:
 >     by 20 Mana per second, and this effect does not..."
 >     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
 :::
-
-<!-- -   *Deathchill Blade* -->
-
-<!-- > -   Level: 55 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Attack Damage: 90 ⇒ 150 -->
-
-<!-- > -->
-
-<!-- > -   Grants Cleave I instead of "\... 35% of your melee base -->
-
-<!-- >     damage\..." -->
-
-<!-- > -->
-
-<!-- > -   Cleave I---Your auto-attacks now deal 0.10 Primary Attribute -->
-
-<!-- >     physical damage in a 200 AoE of the target. Melee only. -->
-
-<!-- -   *Deathchill Greatsword* -->
-
-<!-- > -   Components: Deathchill Blade, Savage War Axe of Hephaestus, -->
-
-<!-- >     Spartan Greatsword, 2 Stone of Heaven, Blood Ruby, 3 Heart of -->
-
-<!-- >     Frost -->
-
-<!-- > -->
-
-<!-- > -   Level: 125 ⇒ 150 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 50 ⇒ 80 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 50 ⇒ 80 -->
-
-<!-- > -->
-
-<!-- > -   Attack Damage: 150 ⇒ 200 -->
-
-<!-- > -->
-
-<!-- > -   Grants Cleave II instead of "\... 35% of your melee base -->
-
-<!-- >     damage\..." -->
-
-<!-- > -->
-
-<!-- > -   Cleave II---Your auto-attacks now deal 0.20 Primary Attribute -->
-
-<!-- >     physical damage in a 200 AoE of the target. Melee only. -->
-
-<!-- -   *Sword of the Olympians* -->
-
-<!-- > Attack Damage: 100 ⇒ 150 -->
-
-<!-- -   The *Talisman* and *Dragonscale* line of items now only follows the -->
-
-<!--     item name uniqueness rule for item restrictions -->
-
-<!-- -   *Midnight Cloak* -->
-
-<!-- > -   Previously Orb of Chill Midnight -->
-
-<!-- > -->
-
-<!-- > -   Level: 55 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 10 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 10 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 10 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Health Regeneration: 30 ⇒ 0 per second -->
-
-<!-- > -->
-
-<!-- > -   Mana: 0 ⇒ 200 -->
-
-<!-- > -->
-
-<!-- > -   Armor: 0 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Grants Mana Shield instead of Mana Regeneration IX -->
-
-<!-- > -->
-
-<!-- > -   Mana Shield---Activate to convert 20% of your current mana into a -->
-
-<!-- >     post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds. -->
-
-<!-- -   *Amphirite's Cloak* -->
-
-<!-- > -   Components: Midnight Cloak, Circlet of the Mother Goddess, 2 Stone -->
-
-<!-- >     of Heaven, 2 Heart of Frost, 2 Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Level: 150 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 40 -->
-
-<!-- > -->
-
-<!-- > -   Mana: 2000 -->
-
-<!-- > -->
-
-<!-- > -   Mana Regeneration: 20 mana per second -->
-
-<!-- > -->
-
-<!-- > -   Armor: 50 -->
-
-<!-- > -->
-
-<!-- > -   Mana Shield---Activate to convert 20% of your current mana into a -->
-
-<!-- >     post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds. -->
 
 <!-- -   *Chillstone Ring* -->
 
