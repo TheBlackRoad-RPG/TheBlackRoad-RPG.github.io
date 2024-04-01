@@ -127,19 +127,152 @@ editor:
 
 *Night Set*
 
-> -   `(REMOVED)` *Lethal Poison* now deals 4.0 / 4.4 / 4.8 / 5.2 / 5.6
->     / 6.0 / 6.4 / 6.8 / 7.2 / 7.6 / 8.0 Agility physical damage over 4
->     seconds
-> -   *Dancing Dagger* now applies *Lethal Poison* on each target
+> -   `(REMOVED)` ~~*Lethal Poison* now deals 4.0 / 4.4 / 4.8 / 5.2 /
+>     5.6 / 6.0 / 6.4 / 6.8 / 7.2 / 7.6 / 8.0 Agility physical damage
+>     over 4 seconds~~
+> -   `(REMOVED)` ~~*Dancing Dagger* now applies *Lethal Poison* on each
+>     target~~
 > -   `(NEW)` Physical damage dealt by *Assassinate* and *Eviscerate*
 >     now ignores half of armor value's damage reduction (if the
 >     target's armor is greater than 0)
 
 ### Barbarian
 
+<!-- > *Mighty Stomp* -->
+
+<!-- > -->
+
+<!-- > -   Cast Point: 0 seconds ⇒ 0.3 seconds -->
+
+<!-- > -->
+
+<!-- > *Rage* -->
+
+<!-- > -->
+
+<!-- > -   `(NEW)` Now on the command card -->
+
+<!-- > -->
+
+<!-- > -   `(REMOVED)` Restore 0.02 \* Level + 0.4 mana when taking a -->
+
+<!-- >     successful auto-attack -->
+
+<!-- > -->
+
+<!-- > -   Base Mana Regen: -0.25 - 4/3 \* 0.01 Level mana per second ⇒ 0 -->
+
+<!-- >     mana per second -->
+
+<!-- > -->
+
+<!-- > -   Whenever you land a successful auto-attack: You restore 0.02 \* -->
+
+<!-- >     Level mana ⇒ 0.03 \* Level mana -->
+
+<!-- > -->
+
+<!-- > *Infuriate* -->
+
+<!-- > -->
+
+<!-- > -   Replaces *Taunt* -->
+
+<!-- > -->
+
+<!-- > -   Mana cost: 0 -->
+
+<!-- > -->
+
+<!-- > -   Taunt all units in a 450 by 200 line for 6 seconds. If at least -->
+
+<!-- >     one unit was taunted, restore 25 mana and an additional 7.5 / 10 / -->
+
+<!-- >     12.5 / 15 / 17.5 / 20 / 22.5 / 25 mana for each unit taunted -->
+
+<!-- > -->
+
+<!-- > -   Cooldown: 17 / 16 / 15 / 14 / 13 / 12 / 11 / 10 seconds -->
+
 ### Cleric
 
+<!-- > *Holy Light* -->
+
+<!-- > -->
+
+<!-- > -   Spell Healing Ratio: 1 ⇒ 0.9 / 0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 -->
+
+<!-- >     / 1.25 -->
+
+<!-- > -->
+
+<!-- > -   Cooldown: 4.5 seconds ⇒ 3.5 seconds -->
+
+<!-- > -->
+
+<!-- > *Hallowed Ground* -->
+
+<!-- > -->
+
+<!-- > -   Spell Healing Ratio: 1 ⇒ 1.1 -->
+
+<!-- > -->
+
+<!-- > *Transcendence* -->
+
+<!-- > -->
+
+<!-- > -   Your next Agility / 18 auto-attacks are enhanced ⇒ Your next -->
+
+<!-- >     Agility / 22 auto-attacks are enhanced -->
+
+<!-- > -->
+
+<!-- > -   Heal for 50% total damage inflicted ⇒ Heal for 35% total damage -->
+
+<!-- >     inflicted -->
+
 ### Guardian of Nature
+
+<!-- > *Embolden* -->
+
+<!-- > -->
+
+<!-- > -   Duration: 6.5 seconds ⇒ 15 seconds -->
+
+<!-- > -->
+
+<!-- > -   Cooldown: 15 seconds ⇒ 35 seconds -->
+
+<!-- > -->
+
+<!-- > *Shatter* -->
+
+<!-- > -->
+
+<!-- > -   Replaces *Earth Shock* -->
+
+<!-- > -->
+
+<!-- > -   Mana Cost: 45 / 90 / 135 / 225 / 315 / 450 / 585 / 720 -->
+
+<!-- > -->
+
+<!-- > -   Enemies in a 450 by 200 line are applied Break I for 5 seconds, -->
+
+<!-- >     then are dealt 150 / 250 / 450 / 750 / 1250 / 2000 / 3500 / 6000 + -->
+
+<!-- >     (0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 / 1.5 STR + 0.15 / -->
+
+<!-- >     0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Spell Damage) physical -->
+
+<!-- >     damage. If only a single enemy is struck by Shatter, Break II is -->
+
+<!-- >     applied instead of Break I for 5 seconds. -->
+
+<!-- > -->
+
+<!-- > -   Cooldown: 13 seconds -->
 
 ### Khaos Champion
 
@@ -150,11 +283,59 @@ editor:
 
 ### Magician
 
+<!-- > -   No longer has jazz (fire) hands -->
+
+<!-- > -->
+
+<!-- > *Freezing Field* -->
+
+<!-- > -->
+
+<!-- > -   `(NOTE)` Freezing Field never dealt reduced damage to subsequent -->
+
+<!-- >     targets -->
+
+<!-- > -->
+
+<!-- > -   Explosions now properly follows a spatially uniform random -->
+
+<!-- >     distribution -->
+
+<!-- > -->
+
+<!-- > -   Updated FX -->
+
+<!-- > -->
+
+<!-- > -   `(NEW)` Now increases Armor and Resist by 1 / 2 / 3 / 4 / 5 / 6 / -->
+
+<!-- >     7 / 8 per 1800 Maximum Health for the duration -->
+
+<!-- > -->
+
+<!-- > -   `(NEW)` Now ensnares targets for 3 seconds the first time they are -->
+
+<!-- >     hit by Freezing Field -->
+
+<!-- > -->
+
+<!-- > -   Mana Cost: 125 / 250 / 400 / 575 / 800 / 1000 / 1000 / 1000 ⇒ 125 -->
+
+<!-- >     / 250 / 400 / 575 / 775 / 1000 / 1250 / 1525 -->
+
+<!-- > -->
+
+<!-- > -   Channel Duration: 4 seconds ⇒ 8 seconds -->
+
+<!-- > -->
+
+<!-- > -   Cooldown: 75 / 70 / 65 / 60 / 55 / 50 / 45 / 45 ⇒ 40 seconds -->
+
+<!-- > -->
+
+<!-- > -   Explosions every 0.05 seconds ⇒ 0.1 seconds -->
+
 ### Ranger
-
-### Warlock
-
-<!-- *Ranger* -->
 
 <!-- > *Ironwood Set* -->
 
@@ -220,199 +401,7 @@ editor:
 
 <!-- >     damage. -->
 
-<!-- *Guardian of Nature* -->
-
-<!-- > *Embolden* -->
-
-<!-- > -->
-
-<!-- > -   Duration: 6.5 seconds ⇒ 15 seconds -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 15 seconds ⇒ 35 seconds -->
-
-<!-- > -->
-
-<!-- > *Shatter* -->
-
-<!-- > -->
-
-<!-- > -   Replaces *Earth Shock* -->
-
-<!-- > -->
-
-<!-- > -   Mana Cost: 45 / 90 / 135 / 225 / 315 / 450 / 585 / 720 -->
-
-<!-- > -->
-
-<!-- > -   Enemies in a 450 by 200 line are applied Break I for 5 seconds, -->
-
-<!-- >     then are dealt 150 / 250 / 450 / 750 / 1250 / 2000 / 3500 / 6000 + -->
-
-<!-- >     (0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 / 1.5 STR + 0.15 / -->
-
-<!-- >     0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Spell Damage) physical -->
-
-<!-- >     damage. If only a single enemy is struck by Shatter, Break II is -->
-
-<!-- >     applied instead of Break I for 5 seconds. -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 13 seconds -->
-
-<!-- *Magician* -->
-
-<!-- > -   No longer has jazz (fire) hands -->
-
-<!-- > -->
-
-<!-- > *Freezing Field* -->
-
-<!-- > -->
-
-<!-- > -   `(NOTE)` Freezing Field never dealt reduced damage to subsequent -->
-
-<!-- >     targets -->
-
-<!-- > -->
-
-<!-- > -   Explosions now properly follows a spatially uniform random -->
-
-<!-- >     distribution -->
-
-<!-- > -->
-
-<!-- > -   Updated FX -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Now increases Armor and Resist by 1 / 2 / 3 / 4 / 5 / 6 / -->
-
-<!-- >     7 / 8 per 1800 Maximum Health for the duration -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Now ensnares targets for 3 seconds the first time they are -->
-
-<!-- >     hit by Freezing Field -->
-
-<!-- > -->
-
-<!-- > -   Mana Cost: 125 / 250 / 400 / 575 / 800 / 1000 / 1000 / 1000 ⇒ 125 -->
-
-<!-- >     / 250 / 400 / 575 / 775 / 1000 / 1250 / 1525 -->
-
-<!-- > -->
-
-<!-- > -   Channel Duration: 4 seconds ⇒ 8 seconds -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 75 / 70 / 65 / 60 / 55 / 50 / 45 / 45 ⇒ 40 seconds -->
-
-<!-- > -->
-
-<!-- > -   Explosions every 0.05 seconds ⇒ 0.1 seconds -->
-
-<!-- *Barbarian* -->
-
-<!-- > *Mighty Stomp* -->
-
-<!-- > -->
-
-<!-- > -   Cast Point: 0 seconds ⇒ 0.3 seconds -->
-
-<!-- > -->
-
-<!-- > *Rage* -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Now on the command card -->
-
-<!-- > -->
-
-<!-- > -   `(REMOVED)` Restore 0.02 \* Level + 0.4 mana when taking a -->
-
-<!-- >     successful auto-attack -->
-
-<!-- > -->
-
-<!-- > -   Base Mana Regen: -0.25 - 4/3 \* 0.01 Level mana per second ⇒ 0 -->
-
-<!-- >     mana per second -->
-
-<!-- > -->
-
-<!-- > -   Whenever you land a successful auto-attack: You restore 0.02 \* -->
-
-<!-- >     Level mana ⇒ 0.03 \* Level mana -->
-
-<!-- > -->
-
-<!-- > *Infuriate* -->
-
-<!-- > -->
-
-<!-- > -   Replaces *Taunt* -->
-
-<!-- > -->
-
-<!-- > -   Mana cost: 0 -->
-
-<!-- > -->
-
-<!-- > -   Taunt all units in a 450 by 200 line for 6 seconds. If at least -->
-
-<!-- >     one unit was taunted, restore 25 mana and an additional 7.5 / 10 / -->
-
-<!-- >     12.5 / 15 / 17.5 / 20 / 22.5 / 25 mana for each unit taunted -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 17 / 16 / 15 / 14 / 13 / 12 / 11 / 10 seconds -->
-
-<!-- *Cleric* -->
-
-<!-- > *Holy Light* -->
-
-<!-- > -->
-
-<!-- > -   Spell Healing Ratio: 1 ⇒ 0.9 / 0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 -->
-
-<!-- >     / 1.25 -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 4.5 seconds ⇒ 3.5 seconds -->
-
-<!-- > -->
-
-<!-- > *Hallowed Ground* -->
-
-<!-- > -->
-
-<!-- > -   Spell Healing Ratio: 1 ⇒ 1.1 -->
-
-<!-- > -->
-
-<!-- > *Transcendence* -->
-
-<!-- > -->
-
-<!-- > -   Your next Agility / 18 auto-attacks are enhanced ⇒ Your next -->
-
-<!-- >     Agility / 22 auto-attacks are enhanced -->
-
-<!-- > -->
-
-<!-- > -   Heal for 50% total damage inflicted ⇒ Heal for 35% total damage -->
-
-<!-- >     inflicted -->
-
-<!-- *Warlock* -->
+### Warlock
 
 <!-- > *Twisted Font* -->
 
@@ -462,7 +451,45 @@ editor:
 
 ## Dragonscale
 
+*Red Dragonscale*
+
+*Green Dragonscale*
+
+*White Dragonscale*
+
+*Red Dragonscale Ring of Addiction*
+
+*Green Dragonscale Ring of Addiction*
+
+*White Dragonscale Ring of Addiction*
+
+*Red Dragonscale Ring of Serious Addiction*
+
+*Green Dragonscale Ring of Serious Addiction*
+
+*White Dragonscale Ring of Serious Addiction*
+
 ## The Frozen Citadel
+
+*Midnight Cloak*
+
+*Chillstone Ring*
+
+*Ring of the Frozen Citadel*
+
+*Deathchill Blade*
+
+*Scepter of the Ice Queen*
+
+*Amphirite's Cloak*
+
+*Chillstone Ring of Midnight*
+
+*Aegis of the Frozen Citadel*
+
+*Deathchill Greatsword*
+
+*Scepter of the Chosen Ones*
 
 ## Other
 
@@ -481,6 +508,11 @@ editor:
 > -   Icon updated
 > -   Model updated
 
+*Sword of the Olympians*
+
+> -   Attack Damage: 100 ⇒ 125
+> -   Attack Speed: 150% ⇒ 125%
+
 *Talisman of Addiction*
 
 > -   Strength: 60 ⇒ 30
@@ -492,7 +524,6 @@ editor:
 > -   Icon updated
 > -   Strength: 80 ⇒ 50
 > -   Agility: 80 ⇒ 50
-> -   `(NO CHANGE)` Intelligence: 2
 
 *Dark Wizard's Dagger*
 
@@ -516,8 +547,6 @@ editor:
 
 *Wizard's Respite*
 
-> -   `(UNCHANGED)` Components: Dark Wizard's Dagger, Hera's Blessing,
->     Gem of the East, Gem of the North, 2 Sea Essence, 2 Heart of Frost
 > -   Level: 150 ⇒ 165
 > -   Agility: 50 ⇒ 35
 > -   Intelligence: 125 ⇒ 75
@@ -665,14 +694,6 @@ editor:
 <!-- > -   Mana Shield---Activate to convert 20% of your current mana into a -->
 
 <!-- >     post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds. -->
-
-<!-- -   *Sword of the Olympians* -->
-
-<!-- > -   Attack Damage: 100 ⇒ 125 -->
-
-<!-- > -->
-
-<!-- > -   Attack Speed: 150% ⇒ 125% -->
 
 <!-- -   *Chillstone Ring* -->
 
