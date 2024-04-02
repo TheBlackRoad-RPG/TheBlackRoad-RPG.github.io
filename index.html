@@ -3071,7 +3071,6 @@ vertical-align: -.125em;
 </ul>
 <hr>
 <ul>
-<li>The conversion from a decimal number to an integer number for <em>Transcendence’s</em> (Cleric) number of enhanced auto-attacks outputs a rounded integer number <small>(instead of ceiled integer number)</small></li>
 <li><em>Soothing Presence’s</em> (Druid) AoE health and mana % restoration works for the full duration</li>
 <li><em>Unbridled Khaos</em>’ (Khaos Champion) bonus auto-attack is typed as magical damage <small>(instead of physical damage)</small></li>
 </ul>
@@ -3102,6 +3101,10 @@ vertical-align: -.125em;
 <li><em>Soul Blade</em></li>
 <li><em>Ares’ Bloodthristy Spear</em></li>
 <li><em>Leather Armor</em></li>
+<li><em>Oracle’s Staff</em></li>
+<li><em>Chestguard of Aphrodite’s Champion</em></li>
+<li><em>Ankh of Reincarnation</em></li>
+<li><em>Draught of the Phoenix</em></li>
 <li><em>Battleforge Regalia VIII</em> <code>[8]</code></li>
 <li><em>Deathbringer Regalia V</em> <code>[5]</code></li>
 <li><em>Deathbringer Regalia VI</em> <code>[6]</code></li>
@@ -3336,6 +3339,16 @@ vertical-align: -.125em;
 </ul>
 </blockquote>
 <p><em>Chillstone Ring</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 55 ⇒ 90</li>
+<li>Strength: 15 ⇒ 20</li>
+<li>Agility: 15 ⇒ 20</li>
+<li>Intelligence: 15 ⇒ 20</li>
+<li>Health: 500 ⇒ 0</li>
+<li>Spell Power: 300 ⇒ 350</li>
+</ul>
+</blockquote>
 <p><em>Ring of the Frozen Citadel</em></p>
 <p><em>Deathchill Blade</em></p>
 <blockquote class="blockquote">
@@ -3349,6 +3362,15 @@ vertical-align: -.125em;
 </ul>
 </blockquote>
 <p><em>Scepter of the Ice Queen</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 55 ⇒ 90</li>
+<li>Intelligence: 0 ⇒ 50</li>
+<li>Attack Damage: 25 ⇒ 0</li>
+<li>Attack Speed: 25% ⇒ 0%</li>
+<li>Spell Healing: 600 ⇒ 700</li>
+</ul>
+</blockquote>
 <p><em>Amphirite’s Cloak</em></p>
 <blockquote class="blockquote">
 <ul>
@@ -3365,6 +3387,16 @@ vertical-align: -.125em;
 </ul>
 </blockquote>
 <p><em>Chillstone Ring of Midnight</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 135</li>
+<li>Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2 Heart of Frost, 2 Sea Essence</li>
+<li>Strength: 45</li>
+<li>Agility: 45</li>
+<li>Intelligence: 45</li>
+<li>Spell Power: 1200</li>
+</ul>
+</blockquote>
 <p><em>Aegis of the Frozen Citadel</em></p>
 <p><em>Deathchill Greatsword</em></p>
 <blockquote class="blockquote">
@@ -3381,6 +3413,21 @@ vertical-align: -.125em;
 </ul>
 </blockquote>
 <p><em>Scepter of the Chosen Ones</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 120 ⇒ 150</li>
+<li>Components: Scepter of the Ice Queen, Hera’s Blessing, Priam’s Scepter, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost</li>
+<li>Intelligence: 80</li>
+<li><code>(NO CHANGE)</code> Attack Damage: 40</li>
+<li><code>(NO CHANGE)</code> Attack Speed: 40%</li>
+<li>Spell Damage: 800 ⇒ 700</li>
+<li>Spell Healing: 800 ⇒ 1400</li>
+<li><code>(NEW)</code> Grants <em>Brilliance Aura II</em>
+<ul>
+<li><em>Brilliance Aura II</em>—Allies within a 450 AoE have their mana regeneration increased by 15 mana per second</li>
+</ul></li>
+</ul>
+</blockquote>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p><em>Gem of Birth</em></p>
@@ -3478,28 +3525,6 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<!-- -   *Chillstone Ring* -->
-<!-- > -   Level: 55 ⇒ 90 -->
-<!-- > -->
-<!-- > -   Strength: 15 ⇒ 20 -->
-<!-- > -->
-<!-- > -   Agility: 15 ⇒ 20 -->
-<!-- > -->
-<!-- > -   Intelligence: 15 ⇒ 20 -->
-<!-- > -->
-<!-- > -   Health: 500 ⇒ 0 -->
-<!-- > -->
-<!-- > -   Spell Power: 300 ⇒ 350 -->
-<!-- -   *Scepter of the Ice Queen* -->
-<!-- > -   Level: 55 ⇒ 90 -->
-<!-- > -->
-<!-- > -   Intelligence: 0 ⇒ 50 -->
-<!-- > -->
-<!-- > -   Attack Damage: 25 ⇒ 0 -->
-<!-- > -->
-<!-- > -   Attack Speed: 25 ⇒ 0 -->
-<!-- > -->
-<!-- > -   Spell Healing: 600 ⇒ 700 -->
 <!-- -   *Aegis of the Frozen Citadel* -->
 <!-- > -   Previously Ring of the Frozen Citadel -->
 <!-- > -->
@@ -3553,37 +3578,6 @@ vertical-align: -.125em;
 <!-- > -->
 <!-- > -   Frigid Aura I---Enemies within a 450 AoE have their attack speed -->
 <!-- >     reduced by 7.5% and movement speed reduced by 15% -->
-<!-- -   *Chillstone Ring of Midnight* -->
-<!-- > -   Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2 -->
-<!-- >     Heart of Frost, 2 Sea Essence -->
-<!-- > -->
-<!-- > -   Level: 135 -->
-<!-- > -->
-<!-- > -   Strength: 45 -->
-<!-- > -->
-<!-- > -   Agility: 45 -->
-<!-- > -->
-<!-- > -   Intelligence: 45 -->
-<!-- > -->
-<!-- > -   Spell Power: 1200 -->
-<!-- -   *Scepter of the Chosen Ones* -->
-<!-- > -   Components: Scepter of the Ice Queen, Hera's Blessing, Priam's -->
-<!-- >     Scepter, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost -->
-<!-- > -->
-<!-- > -   Level: 120 ⇒ 150 -->
-<!-- > -->
-<!-- > -   Intelligence: 80 -->
-<!-- > -->
-<!-- > -   `(NO CHANGE)` Attack Damage: 40 -->
-<!-- > -->
-<!-- > -   `(NO CHANGE)` Attack Speed: 40% -->
-<!-- > -->
-<!-- > -   Spell Damage: 800 ⇒ 700 -->
-<!-- > -->
-<!-- > -   Spell Healing: 800 ⇒ 1400 -->
-<!-- > -->
-<!-- > -   `(NEW)` Brilliance Aura II---Allies within a 450 AoE have their -->
-<!-- >     mana regeneration increased by 15 mana per second. -->
 <!-- -   *Green Dragonscale* -->
 <!-- > -   Previously Green Dragonscale Ring -->
 <!-- > -->

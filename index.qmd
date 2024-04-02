@@ -62,10 +62,6 @@ editor:
 
 ------------------------------------------------------------------------
 
--   The conversion from a decimal number to an integer number for
-    *Transcendence's* (Cleric) number of enhanced auto-attacks outputs a
-    rounded integer number <small>(instead of ceiled integer
-    number)</small>
 -   *Soothing Presence's* (Druid) AoE health and mana % restoration
     works for the full duration
 -   *Unbridled Khaos*' (Khaos Champion) bonus auto-attack is typed as
@@ -107,6 +103,10 @@ editor:
 -   *Soul Blade*
 -   *Ares' Bloodthristy Spear*
 -   *Leather Armor*
+-   *Oracle's Staff*
+-   *Chestguard of Aphrodite's Champion*
+-   *Ankh of Reincarnation*
+-   *Draught of the Phoenix*
 -   *Battleforge Regalia VIII* `[8]`
 -   *Deathbringer Regalia V* `[5]`
 -   *Deathbringer Regalia VI* `[6]`
@@ -210,7 +210,7 @@ editor:
 
 > -   Your next Agility / 18 auto-attacks are enhanced ⇒ Your next
 >     Agility / 22 auto-attacks are enhanced
-> -    Heal for 50% total damage inflicted ⇒ Heal for 35% total damage
+> -   Heal for 50% total damage inflicted ⇒ Heal for 35% total damage
 >     inflicted
 
 ### Guardian of Nature
@@ -414,6 +414,13 @@ editor:
 
 *Chillstone Ring*
 
+> -   Level: 55 ⇒ 90
+> -   Strength: 15 ⇒ 20
+> -   Agility: 15 ⇒ 20
+> -   Intelligence: 15 ⇒ 20
+> -   Health: 500 ⇒ 0
+> -   Spell Power: 300 ⇒ 350
+
 *Ring of the Frozen Citadel*
 
 *Deathchill Blade*
@@ -426,6 +433,12 @@ editor:
 >         physical damage in a 200 AoE of the target. Melee only.
 
 *Scepter of the Ice Queen*
+
+> -   Level: 55 ⇒ 90
+> -   Intelligence: 0 ⇒ 50
+> -   Attack Damage: 25 ⇒ 0
+> -   Attack Speed: 25% ⇒ 0%
+> -   Spell Healing: 600 ⇒ 700
 
 *Amphirite's Cloak*
 
@@ -442,6 +455,14 @@ editor:
 >         60 seconds.
 
 *Chillstone Ring of Midnight*
+
+> -   Level: 135
+> -   Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2
+>     Heart of Frost, 2 Sea Essence
+> -   Strength: 45
+> -   Agility: 45
+> -   Intelligence: 45
+> -   Spell Power: 1200
 
 *Aegis of the Frozen Citadel*
 
@@ -461,6 +482,18 @@ editor:
 >         only.
 
 *Scepter of the Chosen Ones*
+
+> -   Level: 120 ⇒ 150
+> -   Components: Scepter of the Ice Queen, Hera's Blessing, Priam's
+>     Scepter, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost
+> -   Intelligence: 80
+> -   `(NO CHANGE)` Attack Damage: 40
+> -   `(NO CHANGE)` Attack Speed: 40%
+> -   Spell Damage: 800 ⇒ 700
+> -   Spell Healing: 800 ⇒ 1400
+> -   `(NEW)` Grants *Brilliance Aura II*
+>     -   *Brilliance Aura II*---Allies within a 450 AoE have their mana
+>         regeneration increased by 15 mana per second
 
 ## Other
 
@@ -538,50 +571,6 @@ editor:
 >     by 20 Mana per second, and this effect does not..."
 >     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
 :::
-
-<!-- -   *Chillstone Ring* -->
-
-<!-- > -   Level: 55 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 15 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 15 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 15 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Health: 500 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 300 ⇒ 350 -->
-
-<!-- -   *Scepter of the Ice Queen* -->
-
-<!-- > -   Level: 55 ⇒ 90 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 0 ⇒ 50 -->
-
-<!-- > -->
-
-<!-- > -   Attack Damage: 25 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Attack Speed: 25 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Spell Healing: 600 ⇒ 700 -->
 
 <!-- -   *Aegis of the Frozen Citadel* -->
 
@@ -688,68 +677,6 @@ editor:
 <!-- > -   Frigid Aura I---Enemies within a 450 AoE have their attack speed -->
 
 <!-- >     reduced by 7.5% and movement speed reduced by 15% -->
-
-<!-- -   *Chillstone Ring of Midnight* -->
-
-<!-- > -   Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2 -->
-
-<!-- >     Heart of Frost, 2 Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Level: 135 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 45 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 45 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 45 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 1200 -->
-
-<!-- -   *Scepter of the Chosen Ones* -->
-
-<!-- > -   Components: Scepter of the Ice Queen, Hera's Blessing, Priam's -->
-
-<!-- >     Scepter, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost -->
-
-<!-- > -->
-
-<!-- > -   Level: 120 ⇒ 150 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 80 -->
-
-<!-- > -->
-
-<!-- > -   `(NO CHANGE)` Attack Damage: 40 -->
-
-<!-- > -->
-
-<!-- > -   `(NO CHANGE)` Attack Speed: 40% -->
-
-<!-- > -->
-
-<!-- > -   Spell Damage: 800 ⇒ 700 -->
-
-<!-- > -->
-
-<!-- > -   Spell Healing: 800 ⇒ 1400 -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Brilliance Aura II---Allies within a 450 AoE have their -->
-
-<!-- >     mana regeneration increased by 15 mana per second. -->
 
 <!-- -   *Green Dragonscale* -->
 
