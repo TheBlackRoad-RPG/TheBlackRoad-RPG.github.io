@@ -144,10 +144,10 @@ editor:
 >     command card
 > -   `(REMOVED)` ~~Restore 0.02 \\\* Level + 0.4 mana when taking a
 >     successful auto-attack~~
-> -   Base Mana Regen: -0.25 &minus; (4 &divide; 3) &times; 0.01 Level
->     mana p/ sec ⇒ 0 mana p/ sec
-> -   Whenever you land a successful auto-attack: You restore 0.02
->     &times; Level mana ⇒ 0.03 &times; Level mana
+> -   Base Mana Regen: -0.25 − (4 ÷ 3) × 0.01 Level mana p/ sec ⇒ 0 mana
+>     p/ sec
+> -   Whenever you land a successful auto-attack: You restore 0.02 ×
+>     Level mana ⇒ 0.03 × Level mana
 
 *Mighty Stomp*
 
@@ -303,21 +303,196 @@ editor:
 
 *Red Dragonscale*
 
+> -   Previously *Red Dragonscale Ring*
+> -   Level: 55 ⇒ 120
+> -   `(NO CHANGE)` Strength: 50
+> -   Agility: 25 ⇒ 50
+> -   Intelligence: 1 ⇒ 2
+> -   Resist: 35 ⇒ 20
+
 *Green Dragonscale*
+
+> -   Previously *Green Dragonscale Ring*
+> -   Level: 55 ⇒ 120
+> -   Strength: 25 ⇒ 20
+> -   Agility: 40 ⇒ 0
+> -   Intelligence: 10 ⇒ 65
+> -   Resist: 35 ⇒ 20
 
 *White Dragonscale*
 
+> -   Previously *White Dragonscale Ring*
+> -   Level: 55 ⇒ 120
+> -   Strength: 25 ⇒ 40
+> -   Agility: 0 ⇒ 40
+> -   Intelligence: 50 ⇒ 20
+> -   Resist: 35 ⇒ 20
+
 *Red Dragonscale Ring of Addiction*
+
+> -   Level: 115 ⇒ 135
+> -   Components: Red Dragonscale, Warrior's Talisman of Addiction,
+>     Burning Heart of Ladon, Blood Ruby, 2 Sea Essence
+> -   Strength: 130 ⇒ 100
+> -   Agility: 105 ⇒ 100
+> -   Intelligence: 3 ⇒ 4
+> -   Resist: 50 ⇒ 45
 
 *Green Dragonscale Ring of Addiction*
 
+> -   Level: 115 ⇒ 135
+> -   Components: Green Dragonscale, Talisman of Addiction, Burning
+>     Heart of Ladon, Blood Ruby, 2 Sea Essence
+> -   Strength: 85 ⇒ 50
+> -   Agility: 100 ⇒ 30
+> -   Intelligence: 70 ⇒ 95
+> -   Resist: 50 ⇒ 45
+
 *White Dragonscale Ring of Addiction*
+
+> -   Level: 115 ⇒ 135
+> -   Components: White Dragonscale, Talisman of Addiction, Burning
+>     Heart of Ladon, Blood Ruby, 2 Sea Essence
+> -   Strength: 85 ⇒ 70
+> -   Agiltiy: 60 ⇒ 70
+> -   Intelligence: 110 ⇒ 50
+> -   Resist: 50 ⇒ 45
 
 *Red Dragonscale Ring of Serious Addiction*
 
+<!-- > -   Previously Warrior's Talisman of Serious Addiction -->
+
+<!-- > -->
+
+<!-- > -   Craft at: Athens ⇒ Locris -->
+
+<!-- > -->
+
+<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
+
+<!-- > -->
+
+<!-- > -   Components: Red Dragonscale Ring of Addiction; Deathchill Blade; -->
+
+<!-- >     Gem of the South; Stone of Heaven -->
+
+<!-- > -->
+
+<!-- > -   Level: 200 ⇒ 180 -->
+
+<!-- > -->
+
+<!-- > -   Strength: 160 ⇒ 100 -->
+
+<!-- > -->
+
+<!-- > -   Agility: 160 ⇒ 100 -->
+
+<!-- > -->
+
+<!-- > -   Attack Damage: 0 ⇒ 75 -->
+
+<!-- > -->
+
+<!-- > -   `(UNCHANGED)` Intelligence: 4 -->
+
+<!-- > -->
+
+<!-- > -   Resist: 65 ⇒ 60 -->
+
+<!-- > -->
+
+<!-- > -   Grants Cleave I instead of "\… 35% of your melee base -->
+
+<!-- >     damage\…" -->
+
+<!-- > -->
+
+<!-- > -   Cleave I—Your auto-attacks now deal 0.10 Primary Attribute -->
+
+<!-- >     physical damage in a 150 AoE of the target. Melee only -->
+
 *Green Dragonscale Ring of Serious Addiction*
 
+<!-- > -   Previously Talisman of Serious Addiction -->
+
+<!-- > -->
+
+<!-- > -   Craft at: Athens ⇒ Locris -->
+
+<!-- > -->
+
+<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
+
+<!-- > -->
+
+<!-- > -   Level: 200 ⇒ 180 -->
+
+<!-- > -->
+
+<!-- > -   Components: Green Dragonscale Ring of Addiction; Chillstone Ring; -->
+
+<!-- >     Gem of the East; Stone of Heaven -->
+
+<!-- > -->
+
+<!-- > -   Strength: 120 ⇒ 60 -->
+
+<!-- > -->
+
+<!-- > -   Agility: 120 ⇒ 30 -->
+
+<!-- > -->
+
+<!-- > -   Intelligence: 120 ⇒ 95 -->
+
+<!-- > -->
+
+<!-- > -   Resist: 65 ⇒ 60 -->
+
+<!-- > -->
+
+<!-- > -   Spell Power: 500 ⇒ 700 -->
+
 *White Dragonscale Ring of Serious Addiction*
+
+<!-- > -   Craft at: Locris -->
+
+<!-- > -->
+
+<!-- > -   Components: White Dragonscale Ring of Addiction; Frozen Ring of -->
+
+<!-- >     the Ice Queen; Gem of the North; Stone of Heaven -->
+
+<!-- > -->
+
+<!-- > -   Level: 180 -->
+
+<!-- > -->
+
+<!-- > -   Strength: 70 -->
+
+<!-- > -->
+
+<!-- > -   Agility: 70 -->
+
+<!-- > -->
+
+<!-- > -   Intelligence: 50 -->
+
+<!-- > -->
+
+<!-- > -   Resist: 80 -->
+
+<!-- > -->
+
+<!-- > -   Grants Frigid Aura I -->
+
+<!-- > -->
+
+<!-- > -   Frigid Aura I—Enemies within a 450 AoE have their attack speed -->
+
+<!-- >     reduced by 7.5% and movement speed reduced by 15% -->
 
 ## The Frozen Citadel
 
@@ -524,268 +699,6 @@ editor:
 >     by 20 Mana per second, and this effect does not..."
 >     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
 :::
-
-<!-- -   *White Dragonscale Ring of Serious Addiction* -->
-
-<!-- > -   Craft at: Locris -->
-
-<!-- > -->
-
-<!-- > -   Components: White Dragonscale Ring of Addiction; Frozen Ring of -->
-
-<!-- >     the Ice Queen; Gem of the North; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Level: 180 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 70 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 70 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 50 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 80 -->
-
-<!-- > -->
-
-<!-- > -   Grants Frigid Aura I -->
-
-<!-- > -->
-
-<!-- > -   Frigid Aura I---Enemies within a 450 AoE have their attack speed -->
-
-<!-- >     reduced by 7.5% and movement speed reduced by 15% -->
-
-<!-- -   *Green Dragonscale* -->
-
-<!-- > -   Previously Green Dragonscale Ring -->
-
-<!-- > -->
-
-<!-- > -   Level: 55 ⇒ 120 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 25 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 40 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 10 ⇒ 65 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 35 ⇒ 20 -->
-
-<!-- -   *White Dragonscale* -->
-
-<!-- > -   Previously White Dragonscale Ring -->
-
-<!-- > -->
-
-<!-- > -   Level: 55 ⇒ 120 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 25 ⇒ 40 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 0 ⇒ 40 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 50 ⇒ 20 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 35 ⇒ 20 -->
-
-<!-- -   *Red Dragonscale Ring of Addiction* -->
-
-<!-- > -   Level: 115 ⇒ 135 -->
-
-<!-- > -->
-
-<!-- > -   Components: Red Dragonscale; Warrior's Talisman of Addiction; -->
-
-<!-- >     Burning Heart of Ladon; Blood Ruby; Sea Essence; Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Strength: 130 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 105 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 3 ⇒ 4 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 50 ⇒ 45 -->
-
-<!-- -   *Green Dragonscale Ring of Addiction* -->
-
-<!-- > -   Level: 115 ⇒ 135 -->
-
-<!-- > -->
-
-<!-- > -   Components: Green Dragonscale; Talisman of Addiction; Burning -->
-
-<!-- >     Heart of Ladon; Blood Ruby; Sea Essence; Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Strength: 85 ⇒ 50 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 100 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 70 ⇒ 95 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 50 ⇒ 45 -->
-
-<!-- -   *White Dragonscale Ring of Addiction* -->
-
-<!-- > -   Level: 115 ⇒ 135 -->
-
-<!-- > -->
-
-<!-- > -   Components: White Dragonscale; Talisman of Addiction; Burning -->
-
-<!-- >     Heart of Ladon; Blood Ruby; Sea - Essence; Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Strength: 85 ⇒ 70 -->
-
-<!-- > -->
-
-<!-- > -   Agiltiy: 60 ⇒ 70 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 110 ⇒ 50 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 50 ⇒ 45 -->
-
-<!-- -   *Red Dragonscale Ring of Serious Addiction* -->
-
-<!-- > -   Previously Warrior's Talisman of Serious Addiction -->
-
-<!-- > -->
-
-<!-- > -   Craft at: Athens ⇒ Locris -->
-
-<!-- > -->
-
-<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
-
-<!-- > -->
-
-<!-- > -   Components: Red Dragonscale Ring of Addiction; Deathchill Blade; -->
-
-<!-- >     Gem of the South; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Level: 200 ⇒ 180 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 160 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 160 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Attack Damage: 0 ⇒ 75 -->
-
-<!-- > -->
-
-<!-- > -   `(UNCHANGED)` Intelligence: 4 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 65 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Grants Cleave I instead of "\... 35% of your melee base -->
-
-<!-- >     damage\..." -->
-
-<!-- > -->
-
-<!-- > -   Cleave I---Your auto-attacks now deal 0.10 Primary Attribute -->
-
-<!-- >     physical damage in a 150 AoE of the target. Melee only -->
-
-<!-- -   *Green Dragonscale Ring of Serious Addiction* -->
-
-<!-- > -   Previously Talisman of Serious Addiction -->
-
-<!-- > -->
-
-<!-- > -   Craft at: Athens ⇒ Locris -->
-
-<!-- > -->
-
-<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
-
-<!-- > -->
-
-<!-- > -   Level: 200 ⇒ 180 -->
-
-<!-- > -->
-
-<!-- > -   Components: Green Dragonscale Ring of Addiction; Chillstone Ring; -->
-
-<!-- >     Gem of the East; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Strength: 120 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 120 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 120 ⇒ 95 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 65 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 500 ⇒ 700 -->
 
 ## Forces of Hell {#forces-of-hell}
 
