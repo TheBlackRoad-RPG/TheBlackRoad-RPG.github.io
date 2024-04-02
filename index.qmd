@@ -138,61 +138,29 @@ editor:
 
 ### Barbarian
 
-<!-- > *Mighty Stomp* -->
+*Rage*
 
-<!-- > -->
+> -   `(NEW)` Shifted Quest Log (F9) information to the Barbarian's
+>     command card
+> -   `(REMOVED)` ~~Restore 0.02 \\\* Level + 0.4 mana when taking a
+>     successful auto-attack~~
+> -   Base Mana Regen: -0.25 &minus; (4 &divide; 3) &times; 0.01 Level
+>     mana p/ sec ⇒ 0 mana p/ sec
+> -   Whenever you land a successful auto-attack: You restore 0.02
+>     &times; Level mana ⇒ 0.03 &times; Level mana
 
-<!-- > -   Cast Point: 0 seconds ⇒ 0.3 seconds -->
+*Mighty Stomp*
 
-<!-- > -->
+> -   Cast Point: 0 seconds ⇒ 0.3 seconds
 
-<!-- > *Rage* -->
+*Infuriate*
 
-<!-- > -->
-
-<!-- > -   `(NEW)` Now on the command card -->
-
-<!-- > -->
-
-<!-- > -   `(REMOVED)` Restore 0.02 \* Level + 0.4 mana when taking a -->
-
-<!-- >     successful auto-attack -->
-
-<!-- > -->
-
-<!-- > -   Base Mana Regen: -0.25 - 4/3 \* 0.01 Level mana per second ⇒ 0 -->
-
-<!-- >     mana per second -->
-
-<!-- > -->
-
-<!-- > -   Whenever you land a successful auto-attack: You restore 0.02 \* -->
-
-<!-- >     Level mana ⇒ 0.03 \* Level mana -->
-
-<!-- > -->
-
-<!-- > *Infuriate* -->
-
-<!-- > -->
-
-<!-- > -   Replaces *Taunt* -->
-
-<!-- > -->
-
-<!-- > -   Mana cost: 0 -->
-
-<!-- > -->
-
-<!-- > -   Taunt all units in a 450 by 200 line for 6 seconds. If at least -->
-
-<!-- >     one unit was taunted, restore 25 mana and an additional 7.5 / 10 / -->
-
-<!-- >     12.5 / 15 / 17.5 / 20 / 22.5 / 25 mana for each unit taunted -->
-
-<!-- > -->
-
-<!-- > -   Cooldown: 17 / 16 / 15 / 14 / 13 / 12 / 11 / 10 seconds -->
+> -   Replaces *Taunt*
+> -   Mana cost: 0
+> -   Taunt all units in a 450 by 200 line for 6 seconds. If at least
+>     one unit was taunted, restore 25 mana and an additional 7.5 / 10 /
+>     12.5 / 15 / 17.5 / 20 / 22.5 / 25 mana for each unit taunted
+> -   Cooldown: 17 / 16 / 15 / 14 / 13 / 12 / 11 / 10 seconds
 
 ### Cleric
 
@@ -263,91 +231,47 @@ editor:
 
 ### Ranger
 
-<!-- > *Ironwood Set* -->
+*Soul-Piercing Shot*
 
-<!-- > -->
+> -   `(REMOVED)` ~~Whenever you land a successful auto-attack, you have
+>     a 15 / 18 / 20 / 21 / 22 / 23 / 24 / 25 % chance to deal an
+>     additional 1.75 Agility damage that ignores damage reduction
+>     because of armor-type~~
+> -   `(NEW)` Whenever you land your next successful auto-attack: Deal
+>     an additional 0.25 Agility + 0.25 Intelligence true damage to the
+>     target
+> -   `(NEW)` Cooldown: 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 seconds
 
-<!-- > -   `(REMOVED)` Auto-attacks fire 2 (+1 if Agility ≥ 900) more arrows -->
+*Strafe*
 
-<!-- >     in 0.1s intervals. Each arrow deals the greatest of 0.3 Agility or -->
+> -   Replaces *Prevailing Winds*
+> -   Auto-attacks fire 1 + Agility / 700 bonus arrows at random enemies
+>     within 375 AoE of the attacked target. Each bonus arrow deals 0.1
+>     / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Agility + 0.1 / 0.15
+>     / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Intelligence physical
+>     damage
 
-<!-- >     0.3 Intelligence magical damage to an enemy within a 375 AoE of -->
+*Ironwood Set*
 
-<!-- >     the target -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Gives allies within 450 units 20% bonus damage to their -->
-
-<!-- >     ranged attacks -->
-
-<!-- > -->
-
-<!-- > *Soul-Piercing Shot* -->
-
-<!-- > -->
-
-<!-- > -   `(REMOVED)` Whenever you land a successful auto-attack, you have a -->
-
-<!-- >     15 / 18 / 20 / 21 / 22 / 23 / 24 / 25 % chance to deal an -->
-
-<!-- >     additional 1.75 Agility damage that ignores damage reduction -->
-
-<!-- >     because of armor-type. -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Whenever you land your next successful auto-attack: Deal -->
-
-<!-- >     an additional 0.25 Agility + 0.25 Intelligence true damage to the -->
-
-<!-- >     target. -->
-
-<!-- > -->
-
-<!-- > -   `(NEW)` Cooldown: 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 seconds. -->
-
-<!-- > -->
-
-<!-- > *Strafe* -->
-
-<!-- > -->
-
-<!-- > -   Replaces Prevailing Winds -->
-
-<!-- > -->
-
-<!-- > -   Auto-attacks fire 1 + Agility / 700 bonus arrows at random enemies -->
-
-<!-- >     within 375 AoE of the attacked target. Each bonus arrow deals 0.1 -->
-
-<!-- >     / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Agility + 0.1 / 0.15 -->
-
-<!-- >     / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Intelligence physical -->
-
-<!-- >     damage. -->
+> -   `(REMOVED)` ~~Auto-attacks fire 2 (+1 if Agility ≥ 900) more
+>     arrows in 0.1s intervals. Each arrow deals the greatest of 0.3
+>     Agility or 0.3 Intelligence magical damage to an enemy within a
+>     375 AoE of the target~~
+> -   `(NEW)` Gives allies within 450 units 20% bonus damage to their
+>     ranged attacks
 
 ### Warlock
 
-<!-- > *Twisted Font* -->
+*Twisted Font*
 
-<!-- > -->
+> -   Cooldown: 18.0 / 17.5 / 17.0 / 16.5 / 16.0 / 15.5 / 15.0 / 14.5
+>     seconds ⇒ 32 / 30 / 28 / 26 / 24 / 22 / 20 / 18 seconds
 
-<!-- > -   Cooldown: 18.0 / 17.5 / 17.0 / 16.5 / 16.0 / 15.5 / 15.0 / 14.5 -->
+*Shadows Set*
 
-<!-- >     seconds ⇒ 32 / 30 / 28 / 26 / 24 / 22 / 20 / 18 seconds -->
-
-<!-- > -->
-
-<!-- > *Shadows Set* -->
-
-<!-- > -->
-
-<!-- > -   Whenever you cast a spell you had 20% chance to increase your -->
-
-<!-- >     Spell Damage by 50% for 20 seconds. ⇒ While Twisted Font is -->
-
-<!-- >     active, your Spell Damage also increases by 50% -->
+> -   Whenever you cast a spell you had 20% chance to increase your
+>     Spell Damage by 50% for 20 seconds. ⇒ While Twisted Font is
+>     active, your Spell Damage also increases by 50%
 
 ## Items
 
@@ -423,6 +347,16 @@ editor:
 
 *Ring of the Frozen Citadel*
 
+> -   Previously *Frozen Ring of the Ice Queen*
+> -   Level: 55 ⇒ 90
+> -   Health: 500 ⇒ 1500
+> -   Armor: 35 ⇒ 10
+> -   Resist: 0 ⇒ 10
+> -   Grants *Frigid Aura I* instead of "In addition, any enemy that
+>     strikes you..."
+>     -   *Frigid Aura I*---Enemies within a 450 AoE have their attack
+>         speed reduced by 7.5% and movement speed reduced by 15%
+
 *Deathchill Blade*
 
 > -   Level: 55 ⇒ 90
@@ -465,6 +399,25 @@ editor:
 > -   Spell Power: 1200
 
 *Aegis of the Frozen Citadel*
+
+> -   Previously *Ring of the Frozen Citadel*
+> -   Level 105 ⇒ 150
+> -   No longer has a class restriction
+> -   Components: Ring of the Frozen Citadel, Iron Will of Hephaestus, 2
+>     Stone of Heaven, 2 Heart of Frost, 2 Sea Essence
+> -   Strength: 25 ⇒ 0
+> -   Agility: 25 ⇒ 0
+> -   Intelligence: 25 ⇒ 0
+> -   Health: 0 ⇒ 3000
+> -   Health Regeneration (p/ sec): 30 ⇒ 0
+> -   Armor: 40 ⇒ 60
+> -   Resist: 0 ⇒ 60
+> -   Spell Power: 300 ⇒ 0
+> -   No longer grants *Mana Regeneration VIII*
+> -   Grants *Frigid Aura II* instead of "In addition, any enemy that
+>     strikes you..."
+>     -   Frigid Aura II---Enemies within a 450 AoE have their attack
+>         speed reduced by 15% and movement speed reduced by 30%
 
 *Deathchill Greatsword*
 
@@ -571,72 +524,6 @@ editor:
 >     by 20 Mana per second, and this effect does not..."
 >     -   *Warmage*---Whenever you cast a spell: You restore 50 mana
 :::
-
-<!-- -   *Aegis of the Frozen Citadel* -->
-
-<!-- > -   Previously Ring of the Frozen Citadel -->
-
-<!-- > -->
-
-<!-- > -   Components: Ring of the Frozen Citadel, Iron Will of Hephaestus, 2 -->
-
-<!-- >     Stone of Heaven, 2 Heart of Frost, 2 Sea Essence -->
-
-<!-- > -->
-
-<!-- > -   Level 105 ⇒ 150 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 25 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 25 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 25 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Health 0 ⇒ 3000 -->
-
-<!-- > -->
-
-<!-- > -   Health Regeneration (p/ sec): 30 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   Armor: 40 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 0 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 300 ⇒ 0 -->
-
-<!-- > -->
-
-<!-- > -   No longer grants Mana Regeneration VIII -->
-
-<!-- > -->
-
-<!-- > -   Grants Frigid Aura II instead of "In addition, any enemy that -->
-
-<!-- >     strikes you\..." -->
-
-<!-- > -->
-
-<!-- > -   Frigid Aura II---Enemies within a 450 AoE have their attack speed -->
-
-<!-- >     reduced by 15% and movement speed reduced by 30% -->
-
-<!-- > -->
-
-<!-- > -   No longer class restricted -->
 
 <!-- -   *White Dragonscale Ring of Serious Addiction* -->
 
