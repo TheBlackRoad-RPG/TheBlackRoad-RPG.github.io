@@ -360,139 +360,48 @@ editor:
 
 *Red Dragonscale Ring of Serious Addiction*
 
-<!-- > -   Previously Warrior's Talisman of Serious Addiction -->
-
-<!-- > -->
-
-<!-- > -   Craft at: Athens ⇒ Locris -->
-
-<!-- > -->
-
-<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
-
-<!-- > -->
-
-<!-- > -   Components: Red Dragonscale Ring of Addiction; Deathchill Blade; -->
-
-<!-- >     Gem of the South; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Level: 200 ⇒ 180 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 160 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 160 ⇒ 100 -->
-
-<!-- > -->
-
-<!-- > -   Attack Damage: 0 ⇒ 75 -->
-
-<!-- > -->
-
-<!-- > -   `(UNCHANGED)` Intelligence: 4 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 65 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Grants Cleave I instead of "\… 35% of your melee base -->
-
-<!-- >     damage\…" -->
-
-<!-- > -->
-
-<!-- > -   Cleave I—Your auto-attacks now deal 0.10 Primary Attribute -->
-
-<!-- >     physical damage in a 150 AoE of the target. Melee only -->
+> -   Previously *Warrior's Talisman of Serious Addiction*
+> -   Level: 200 ⇒ 180
+> -   Forge at: Athens ⇒ Locris
+> -   Cost: 10000 / 20000 ⇒ 0 / 0
+> -   Components: Red Dragonscale Ring of Addiction, Deathchill Blade,
+>     Gem of the South, Stone of Heaven
+> -   Strength: 160 ⇒ 120
+> -   Agility: 160 ⇒ 120
+> -   `(NO CHANGE)` Intelligence: 4
+> -   Resist: 65 ⇒ 60
+> -   Grants *Cleave I* instead of "... 35% of your melee base
+>     damage..."
+>     -   *Cleave I*---Your auto-attacks now deal 0.10 Primary Attribute
+>         physical damage in a 150 AoE of the target. Melee only
 
 *Green Dragonscale Ring of Serious Addiction*
 
-<!-- > -   Previously Talisman of Serious Addiction -->
-
-<!-- > -->
-
-<!-- > -   Craft at: Athens ⇒ Locris -->
-
-<!-- > -->
-
-<!-- > -   Cost: 10000 / 20000 ⇒ 0 / 0 -->
-
-<!-- > -->
-
-<!-- > -   Level: 200 ⇒ 180 -->
-
-<!-- > -->
-
-<!-- > -   Components: Green Dragonscale Ring of Addiction; Chillstone Ring; -->
-
-<!-- >     Gem of the East; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Strength: 120 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 120 ⇒ 30 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 120 ⇒ 95 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 65 ⇒ 60 -->
-
-<!-- > -->
-
-<!-- > -   Spell Power: 500 ⇒ 700 -->
+> -   Previously *Talisman of Serious Addiction*
+> -   Level: 200 ⇒ 180
+> -   Forge at: Athens ⇒ Locris
+> -   Cost: 10000 / 20000 ⇒ 0 / 0
+> -   Components: Green Dragonscale Ring of Addiction, Chillstone Ring,
+>     Gem of the East, Stone of Heaven
+> -   Strength: 120 ⇒ 60
+> -   Agility: 120 ⇒ 30
+> -   Intelligence: 120 ⇒ 110
+> -   Resist: 65 ⇒ 60
+> -   Spell Power: 500 ⇒ 375
 
 *White Dragonscale Ring of Serious Addiction*
 
-<!-- > -   Craft at: Locris -->
-
-<!-- > -->
-
-<!-- > -   Components: White Dragonscale Ring of Addiction; Frozen Ring of -->
-
-<!-- >     the Ice Queen; Gem of the North; Stone of Heaven -->
-
-<!-- > -->
-
-<!-- > -   Level: 180 -->
-
-<!-- > -->
-
-<!-- > -   Strength: 70 -->
-
-<!-- > -->
-
-<!-- > -   Agility: 70 -->
-
-<!-- > -->
-
-<!-- > -   Intelligence: 50 -->
-
-<!-- > -->
-
-<!-- > -   Resist: 80 -->
-
-<!-- > -->
-
-<!-- > -   Grants Frigid Aura I -->
-
-<!-- > -->
-
-<!-- > -   Frigid Aura I—Enemies within a 450 AoE have their attack speed -->
-
-<!-- >     reduced by 7.5% and movement speed reduced by 15% -->
+> -   Level: 180
+> -   Forge at: Locris
+> -   Components: White Dragonscale Ring of Addiction, Ring of the
+>     Frozen Citadel, Gem of the North, Stone of Heaven
+> -   Strength: 75
+> -   Agility: 70
+> -   Intelligence: 50
+> -   Resist: 75
+> -   Grants *Frigid Aura I*
+>     -   *Frigid Aura I*---Enemies within a 450 AoE have their attack
+>         speed reduced by 7.5% and movement speed reduced by 15%
 
 ## The Frozen Citadel
 
@@ -552,6 +461,7 @@ editor:
 *Amphirite's Cloak*
 
 > -   Level: 135
+> -   Forge at: Delphi
 > -   Components: Midnight Cloak, Circlet of the Mother Goddess, 2 Stone
 >     of Heaven, 2 Heart of Frost, 2 Sea Essence
 > -   Intelligence: 45
@@ -566,6 +476,7 @@ editor:
 *Chillstone Ring of Midnight*
 
 > -   Level: 135
+> -   Forge at: Delphi
 > -   Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2
 >     Heart of Frost, 2 Sea Essence
 > -   Strength: 45
