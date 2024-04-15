@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alteisen (Av3n)">
 
-<title>The Black Road RPG v1.39b10 — Changelog</title>
+<title>The Black Road RPG v1.39b9 — Changelog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -2992,8 +2992,23 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
-  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a>
+  <ul class="collapse">
+  <li><a href="#typesettingtypos" id="toc-typesettingtypos" class="nav-link" data-scroll-target="#typesettingtypos">Typesetting/Typos</a></li>
+  </ul></li>
+  <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a>
+  <ul class="collapse">
+  <li><a href="#assassin" id="toc-assassin" class="nav-link" data-scroll-target="#assassin">Assassin</a></li>
+  <li><a href="#barbarian" id="toc-barbarian" class="nav-link" data-scroll-target="#barbarian">Barbarian</a></li>
+  <li><a href="#cleric" id="toc-cleric" class="nav-link" data-scroll-target="#cleric">Cleric</a></li>
+  <li><a href="#guardian-of-nature" id="toc-guardian-of-nature" class="nav-link" data-scroll-target="#guardian-of-nature">Guardian of Nature</a></li>
+  <li><a href="#khaos-champion" id="toc-khaos-champion" class="nav-link" data-scroll-target="#khaos-champion">Khaos Champion</a></li>
+  <li><a href="#magician" id="toc-magician" class="nav-link" data-scroll-target="#magician">Magician</a></li>
+  <li><a href="#ranger" id="toc-ranger" class="nav-link" data-scroll-target="#ranger">Ranger</a></li>
+  <li><a href="#warlock" id="toc-warlock" class="nav-link" data-scroll-target="#warlock">Warlock</a></li>
+  </ul></li>
   <li><a href="#items" id="toc-items" class="nav-link" data-scroll-target="#items">Items</a></li>
+  <li><a href="#forces-of-hell" id="toc-forces-of-hell" class="nav-link" data-scroll-target="#forces-of-hell">Forces of Hell</a></li>
   </ul>
 </nav>
 </div>
@@ -3003,7 +3018,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Black Road RPG v1.39b10 — Changelog</h1>
+<h1 class="title">The Black Road RPG v1.39b9 — Changelog</h1>
 </div>
 
 
@@ -3027,40 +3042,633 @@ vertical-align: -.125em;
 <section id="general" class="level2">
 <h2 class="anchored" data-anchor-id="general">General</h2>
 <ul>
-<li>Hero Selection now displays Tier XI Regalia alongside the Tier I Regalia</li>
-<li>The DPS Dummy no longer classifies true damage as physical DPS for tracking</li>
-<li><em>Barbarians</em> initial mana value is now a non-zero value</li>
+<li>The map now enforces <strong>SD</strong> graphics for all players</li>
+<li><em>Passive abilities</em> with a cooldown component are updated to display the icon’s disabled button render while on cooldown. This is because there are scenarios where Warcraft 3 does not render the blue overlay texture for triggered cooldowns</li>
+<li>Whenever a sub-goal of the <em>Lack of Oil</em> (Aeson) quest is completed: The collectable items associated with the sub-goal are now cleaned up, rather than at quest completion itself</li>
+<li>Tweaked the town teleporters’ tooltips</li>
+<li>Teleports from <em>Alcon</em>, <em>Temple of Apollo</em>, <em>Phylas</em>, and <em>Obelisk of Poseidon</em> now use the same framework as the town teleporters</li>
+<li>All floating text tag presentations of Essence now use the same colour</li>
+<li>Added the <em>Statuette of the Tyche</em> to the <em>Island of Storms</em>. You can offer the following to the <em>Statuette</em> for essence:
+<ul>
+<li><em>Olympian Gemstone Fragment</em> for 125 essence</li>
+<li><em>Two Olympian Gemstone Fragments</em> for 250 essence</li>
+<li><em>Three Olympian Gemstone Fragments</em> for 375 essence</li>
+<li><em>Gemstone of the Olympians</em> for 500 essence</li>
+</ul></li>
+<li>Acquisition cooldowns for <em>Titan Fibre</em> and <em>Titan Ore</em>: 30 seconds ⇒ 15 seconds</li>
+<li>Updated the underlying code for the item forging system, that is, the metalsmiths. The <em>only</em> visible change is that it prints error messages in the same style as the regalia forging system’s error messages</li>
+<li>Updated the underlying code for the addition and removal of triggered abilities for a variety of items. It now explicitly checks for the hero typing instead of checking that they are not familiars nor banks</li>
+<li>Updated the buff icons for <em>Trueshot Aura I</em> and <em>Trueshot Aura II</em> (Item Abilities)</li>
 </ul>
 </section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
 <ul>
-<li>The <code>-s</code> and <code>-save</code> commands now correctly saves the <code>_lastsave.txt</code> file to the intended <code>v1.39</code> subfolder</li>
-<li><em>Book of Skill Increase</em> descriptions for <em>Shatter</em> (Guardian of Nature), <em>Freezing Field</em> (Magician), and <em>Soul-Piercing Shot</em> (Ranger) are now correct</li>
-<li><em>Book of Skill Increase</em> and <em>Book of Skill Reset</em> now works for <em>Strafe</em> (Ranger)</li>
-<li>An internal change to timer functionality for ‘old’ code has been reverted</li>
-<li><em>Book of Skill Increase - Level 6</em> now spawns as intended for <em>Infuriate</em> (Barbarian) and <em>Strafe</em> (Ranger)</li>
-<li>Native XP floating text tags are now properly hidden as intended</li>
-<li><em>Wizard’s Respite</em> correctly grants 30 mana regeneration per second instead of 30 health regeneration per second</li>
-<li>The DPS Dummy displays the correct icon for <em>Ironwood Set</em></li>
-<li>The “level up” FX now occurs again</li>
+<li>TBR no longer presents the Warcraft 3 default floating text tag for experience gain</li>
+<li>Misspelling the <code>-load</code> chat command no longer loads the previously saved hero</li>
+<li>Updates of the quest multiboard (<code>-q</code>) no longer produces overlapping rows</li>
+<li>Health and Mana bonuses for recently implemented items and for <em>Vigorous</em> (Familiar Skills) now calculates the correct % Health and Mana values when applying and removing the bonus(es)</li>
 </ul>
+<hr>
+<ul>
+<li><em>Soothing Presence’s</em> (Druid) AoE health and mana % restoration works for the full duration</li>
+<li><em>Unbridled Khaos</em>’ (Khaos Champion) bonus auto-attack is typed as magical damage <small>(instead of physical damage)</small></li>
+</ul>
+<hr>
+<ul>
+<li>Goldsmith’s <em>Ether Dust</em> series of consumables now lasts for 10 minutes as intended</li>
+<li><em>Towering Shield of Athena</em>, <em>Unyielding Tower</em>, <em>Adamantium Tower</em>, <em>Adamantium Shield,</em> and <em>Shield of Living Bone</em> auto-attack damage block mechanic now works with magical auto-attacks as intended</li>
+<li><em>Atalanta’s Hunting Garb</em>
+<ul>
+<li>You can no longer activate the <em>Swift Return</em> item ability from a familiar’s inventory as intended</li>
+<li>Grants 40 Agility as intended</li>
+</ul></li>
+<li><em>Ironwood Regalia XI</em> grants the intended amount of 1275 Spell Power</li>
+<li><em>Shadow Blade</em> grants its <em>Attack Damage +25%</em> item ability as intended</li>
+<li>Unequipping <em>Ares’ Bloodthirsty Spear</em> now deactivates the <em>Eternal Hunger</em> item ability for a wider set of possible scenarios</li>
+<li><em>Mighty Leap</em> (Midas’ Band of Vigor) correctly modifies the users’ animation speed as intended</li>
+</ul>
+<hr>
+<ul>
+<li><em>Hyperion</em> and family’s auto-attack pattern of four attacks to the closest player hero has been recoded to be more consistently enforced. See <a href="#forces-of-hell">Forces of Hell</a> for an additional change to this mechanic</li>
+<li><em>Uranus’</em> form changes checks if he is alive before completing the form change</li>
+<li>When <em>Thea</em> resets, their retaliatory entangling roots mechanic consistently works in further attempts</li>
+<li>When <em>Rhea</em> resets, her bonus stats properly set back to 0 points</li>
+</ul>
+<section id="typesettingtypos" class="level3">
+<h3 class="anchored" data-anchor-id="typesettingtypos">Typesetting/Typos</h3>
+<ul>
+<li><em>Soul Blade</em></li>
+<li><em>Ares’ Bloodthristy Spear</em></li>
+<li><em>Leather Armor</em></li>
+<li><em>Oracle’s Staff</em></li>
+<li><em>Chestguard of Aphrodite’s Champion</em></li>
+<li><em>Ankh of Reincarnation</em></li>
+<li><em>Draught of the Phoenix</em></li>
+<li><em>Battleforge Regalia VIII</em> <code>[8]</code></li>
+<li><em>Deathbringer Regalia V</em> <code>[5]</code></li>
+<li><em>Deathbringer Regalia VI</em> <code>[6]</code></li>
+<li><em>Battleforge Regalia IX</em> <code>[9]</code></li>
+</ul>
+</section>
+</section>
+<section id="heroes" class="level2">
+<h2 class="anchored" data-anchor-id="heroes">Heroes</h2>
+<section id="assassin" class="level3">
+<h3 class="anchored" data-anchor-id="assassin">Assassin</h3>
+<p><em>Dancing Dagger</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(NEW)</code> <em>Lethal Poison</em> is now applied to subsequent targets</li>
+</ul>
+</blockquote>
+<p><em>Lethal Poison</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Damage type: Physical ⇒ Magical</li>
+<li>Agility ratio: 3.0 ⇒ 4.0</li>
+</ul>
+</blockquote>
+<p><em>Night Set</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(REMOVED)</code> <del><em>Lethal Poison</em> now deals 4.0 / 4.4 / 4.8 / 5.2 / 5.6 / 6.0 / 6.4 / 6.8 / 7.2 / 7.6 / 8.0 Agility physical damage over 4 seconds</del></li>
+<li><code>(REMOVED)</code> <del><em>Dancing Dagger</em> now applies <em>Lethal Poison</em> on each target</del></li>
+<li><code>(NEW)</code> Physical damage dealt by <em>Assassinate</em> and <em>Eviscerate</em> now ignores half of armor value’s damage reduction (if the target’s armor is greater than 0)</li>
+</ul>
+</blockquote>
+</section>
+<section id="barbarian" class="level3">
+<h3 class="anchored" data-anchor-id="barbarian">Barbarian</h3>
+<p><em>Rage</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(NEW)</code> Shifted Quest Log (F9) information to the Barbarian’s command card</li>
+<li><code>(REMOVED)</code> <del>Restore 0.02 \* Level + 0.4 mana when taking a successful auto-attack</del></li>
+<li>Base Mana Regen: -0.25 − (4 ÷ 3) × 0.01 Level mana p/ sec ⇒ 0 mana p/ sec</li>
+<li>Whenever you land a successful auto-attack: You restore 0.02 × Level mana ⇒ 0.03 × Level mana</li>
+</ul>
+</blockquote>
+<p><em>Mighty Stomp</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Cast Point: 0 seconds ⇒ 0.3 seconds</li>
+</ul>
+</blockquote>
+<p><em>Infuriate</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Replaces <em>Taunt</em></li>
+<li>Mana cost: 0</li>
+<li>Taunt all units in a 450 by 200 line for 6 seconds. If at least one unit was taunted, restore 25 mana and an additional 7.5 / 10 / 12.5 / 15 / 17.5 / 20 / 22.5 / 25 mana for each unit taunted</li>
+<li>Cooldown: 17 / 16 / 15 / 14 / 13 / 12 / 11 / 10 seconds</li>
+</ul>
+</blockquote>
+</section>
+<section id="cleric" class="level3">
+<h3 class="anchored" data-anchor-id="cleric">Cleric</h3>
+<p><em>Holy Light</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Spell Healing Ratio: 1 ⇒ 0.9 / 0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 / 1.25</li>
+<li>Cooldown: 4.5 seconds ⇒ 3.5 seconds</li>
+</ul>
+</blockquote>
+<p><em>Hallowed Ground</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Spell Healing Ratio: 1 ⇒ 1.1</li>
+</ul>
+</blockquote>
+<p><em>Transcendence</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Your next Agility / 18 auto-attacks are enhanced ⇒ Your next Agility / 22 auto-attacks are enhanced</li>
+<li>Heal for 50% total damage inflicted ⇒ Heal for 35% total damage inflicted</li>
+</ul>
+</blockquote>
+</section>
+<section id="guardian-of-nature" class="level3">
+<h3 class="anchored" data-anchor-id="guardian-of-nature">Guardian of Nature</h3>
+<p><em>Embolden</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Duration: 6.5 seconds ⇒ 15 seconds</li>
+<li>Cooldown: 15 seconds ⇒ 35 seconds</li>
+</ul>
+</blockquote>
+<p><em>Shatter</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Replaces <em>Earth Shock</em></li>
+<li>Mana Cost: 45 / 90 / 135 / 225 / 315 / 450 / 585 / 720</li>
+<li><em>Break I</em> all enemies in a 450 by 200 line, reducing their Armor by 15 for 5 seconds, and then deal 150 / 250 / 450 / 750 / 1250 / 2000 / 3500 / 6000 (0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 / 1.5 STR + 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Spell Damage) physical damage to these enemies. If only a single enemy is struck by <em>Shatter</em>, <em>Break II</em> is applied instead of <em>Break I</em>, which reduces its Armor by 30 for 5 seconds.</li>
+<li>Cooldown: 13 seconds</li>
+</ul>
+</blockquote>
+</section>
+<section id="khaos-champion" class="level3">
+<h3 class="anchored" data-anchor-id="khaos-champion">Khaos Champion</h3>
+<p><em>Khaos Set</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Restore 2.0 Armor Damage Reduction (%) health ⇒ Restore 0.2 (Armor + Resist) health</li>
+</ul>
+</blockquote>
+</section>
+<section id="magician" class="level3">
+<h3 class="anchored" data-anchor-id="magician">Magician</h3>
+<ul>
+<li>No longer has jazz (fire) hands</li>
+</ul>
+<p><em>Freezing Field</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(NOTE)</code> <em>Freezing Field</em> never dealt reduced damage to subsequent targets</li>
+<li>Mana Cost: 125 / 250 / 400 / 575 / 800 / 1000 / 1000 / 1000 ⇒ 125 / 250 / 400 / 575 / 775 / 1000 / 1250 / 1525</li>
+<li>Updated FX</li>
+<li>Explosions are now generated according to a spatially uniform probability distribution</li>
+<li>Explosions every 0.05 seconds ⇒ 0.1 seconds</li>
+<li><code>(NEW)</code> Now increases Armor and Resist by 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 per 1800 Maximum Health for the duration</li>
+<li><code>(NEW)</code> Now <em>Ensnares</em> targets for 3 seconds the first time they are hit by <em>Freezing Field</em></li>
+<li>Channel Duration: 4 seconds ⇒ 8 seconds</li>
+<li>Cooldown: 75 / 70 / 65 / 60 / 55 / 50 / 45 / 45 ⇒ 40 seconds</li>
+</ul>
+</blockquote>
+</section>
+<section id="ranger" class="level3">
+<h3 class="anchored" data-anchor-id="ranger">Ranger</h3>
+<p><em>Soul-Piercing Shot</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(REMOVED)</code> <del>Whenever you land a successful auto-attack, you have a 15 / 18 / 20 / 21 / 22 / 23 / 24 / 25 % chance to deal an additional 1.75 Agility damage that ignores damage reduction because of armor-type</del></li>
+<li><code>(NEW)</code> Whenever you land your next successful auto-attack: Deal an additional 0.25 Agility + 0.25 Intelligence true damage to the target</li>
+<li><code>(NEW)</code> Cooldown: 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 seconds</li>
+</ul>
+</blockquote>
+<p><em>Strafe</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Replaces <em>Prevailing Winds</em></li>
+<li>Auto-attacks fire 1 + Agility / 700 bonus arrows at random enemies within 375 AoE of the attacked target. Each bonus arrow deals 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Agility + 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45 Intelligence physical damage</li>
+</ul>
+</blockquote>
+<p><em>Ironwood Set</em></p>
+<blockquote class="blockquote">
+<ul>
+<li><code>(REMOVED)</code> <del>Auto-attacks fire 2 (+1 if Agility ≥ 900) more arrows in 0.1s intervals. Each arrow deals the greatest of 0.3 Agility or 0.3 Intelligence magical damage to an enemy within a 375 AoE of the target</del></li>
+<li><code>(NEW)</code> Gives allies within 450 units 20% bonus damage to their ranged attacks</li>
+</ul>
+</blockquote>
+</section>
+<section id="warlock" class="level3">
+<h3 class="anchored" data-anchor-id="warlock">Warlock</h3>
+<p><em>Twisted Font</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Cooldown: 18.0 / 17.5 / 17.0 / 16.5 / 16.0 / 15.5 / 15.0 / 14.5 seconds ⇒ 32 / 30 / 28 / 26 / 24 / 22 / 20 / 18 seconds</li>
+</ul>
+</blockquote>
+<p><em>Shadows Set</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Whenever you cast a spell you had 20% chance to increase your Spell Damage by 50% for 20 seconds. ⇒ While Twisted Font is active, your Spell Damage also increases by 50%</li>
+</ul>
+</blockquote>
+</section>
 </section>
 <section id="items" class="level2">
 <h2 class="anchored" data-anchor-id="items">Items</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href>General</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href>Dragonscale</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href>The Frozen Citadel</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href>Other</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
-<li><p><em>Cleave I</em></p>
+<li>New items and updated items from <strong>1.39b9</strong> onwrads have the following characteristics:
+<ul>
+<li>An updated colour coding system for item types</li>
+<li>A budget based approach that depends on item level <strong><em>and</em></strong> item type for item balancing</li>
+<li>Item uniqueness is determined by the item’s name</li>
+<li>Item restrictions will be written out in full, or use a shorthand (e.g. Relics and Olympian Relics)</li>
+</ul></li>
+<li>Relics and Olympian Relics now share the same colour code</li>
+<li>If you target the <em>Mighty Leap</em> (Midas’ Band of Vigor) and <em>Blaze o’ Glory</em> (Midas’ Pendant of Wisdom) abilities on their respective item slots, they’ll 99% of the time target the user’s origin</li>
+<li>The buff granted by % attack damage bonus item ability found on <em>Blackfire Staff</em>, <em>Searing Flame of Prometheus</em>, <em>Shadow Blade</em>, and <em>Blazing Sword of Helios</em> has been renamed to avoid confusion with the buff from the <em>Command Aura I</em> / <em>Command Aura II</em> item abilities</li>
+<li>A variety of items, primarily consumables and white colour coded items, now persist on the map for approximately 10-20 minutes of game time before being removed from the map</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><em>Red Dragonscale</em></p>
 <blockquote class="blockquote">
 <ul>
-<li>0.10 Primary Attribute physical damage ⇒ 0.40 Primary Attribute physical damage</li>
+<li>Previously <em>Red Dragonscale Ring</em></li>
+<li>Level: 55 ⇒ 120</li>
+<li><code>(NO CHANGE)</code> Strength: 50</li>
+<li>Agility: 25 ⇒ 50</li>
+<li>Intelligence: 1 ⇒ 2</li>
+<li>Resist: 35 ⇒ 20</li>
 </ul>
-</blockquote></li>
-<li><p><em>Cleave II</em></p>
+</blockquote>
+<p><em>Green Dragonscale</em></p>
 <blockquote class="blockquote">
 <ul>
-<li>0.20 Primary Attribute physical damage ⇒ 0.70 Primary Attribute physical damage</li>
+<li>Previously <em>Green Dragonscale Ring</em></li>
+<li>Level: 55 ⇒ 120</li>
+<li>Strength: 25 ⇒ 20</li>
+<li>Agility: 40 ⇒ 0</li>
+<li>Intelligence: 10 ⇒ 65</li>
+<li>Resist: 35 ⇒ 20</li>
 </ul>
-</blockquote></li>
+</blockquote>
+<p><em>White Dragonscale</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>White Dragonscale Ring</em></li>
+<li>Level: 55 ⇒ 120</li>
+<li>Strength: 25 ⇒ 40</li>
+<li>Agility: 0 ⇒ 40</li>
+<li>Intelligence: 50 ⇒ 20</li>
+<li>Resist: 35 ⇒ 20</li>
+</ul>
+</blockquote>
+<p><em>Red Dragonscale Ring of Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 115 ⇒ 135</li>
+<li>Components: Red Dragonscale, Warrior’s Talisman of Addiction, Burning Heart of Ladon, Blood Ruby, 2 Sea Essence</li>
+<li>Strength: 130 ⇒ 100</li>
+<li>Agility: 105 ⇒ 100</li>
+<li>Intelligence: 3 ⇒ 4</li>
+<li>Resist: 50 ⇒ 45</li>
+</ul>
+</blockquote>
+<p><em>Green Dragonscale Ring of Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 115 ⇒ 135</li>
+<li>Components: Green Dragonscale, Talisman of Addiction, Burning Heart of Ladon, Blood Ruby, 2 Sea Essence</li>
+<li>Strength: 85 ⇒ 50</li>
+<li>Agility: 100 ⇒ 30</li>
+<li>Intelligence: 70 ⇒ 95</li>
+<li>Resist: 50 ⇒ 45</li>
+</ul>
+</blockquote>
+<p><em>White Dragonscale Ring of Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 115 ⇒ 135</li>
+<li>Components: White Dragonscale, Talisman of Addiction, Burning Heart of Ladon, Blood Ruby, 2 Sea Essence</li>
+<li>Strength: 85 ⇒ 70</li>
+<li>Agiltiy: 60 ⇒ 70</li>
+<li>Intelligence: 110 ⇒ 50</li>
+<li>Resist: 50 ⇒ 45</li>
+</ul>
+</blockquote>
+<p><em>Red Dragonscale Ring of Serious Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>Warrior’s Talisman of Serious Addiction</em></li>
+<li>Level: 200 ⇒ 180</li>
+<li>Forge at: Athens ⇒ Locris</li>
+<li>Cost: 10000 / 20000 ⇒ 0 / 0</li>
+<li>Components: Red Dragonscale Ring of Addiction, Deathchill Blade, Gem of the South, Stone of Heaven</li>
+<li>Strength: 160 ⇒ 120</li>
+<li>Agility: 160 ⇒ 120</li>
+<li><code>(NO CHANGE)</code> Intelligence: 4</li>
+<li>Resist: 65 ⇒ 60</li>
+<li>Grants <em>Cleave I</em> instead of “… 35% of your melee base damage…”
+<ul>
+<li><em>Cleave I</em>—Your auto-attacks now deal 0.10 Primary Attribute physical damage in a 150 AoE of the target. Melee only</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Green Dragonscale Ring of Serious Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>Talisman of Serious Addiction</em></li>
+<li>Level: 200 ⇒ 180</li>
+<li>Forge at: Athens ⇒ Locris</li>
+<li>Cost: 10000 / 20000 ⇒ 0 / 0</li>
+<li>Components: Green Dragonscale Ring of Addiction, Chillstone Ring, Gem of the East, Stone of Heaven</li>
+<li>Strength: 120 ⇒ 60</li>
+<li>Agility: 120 ⇒ 30</li>
+<li>Intelligence: 120 ⇒ 110</li>
+<li>Resist: 65 ⇒ 60</li>
+<li>Spell Power: 500 ⇒ 375</li>
+</ul>
+</blockquote>
+<p><em>White Dragonscale Ring of Serious Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 180</li>
+<li>Forge at: Locris</li>
+<li>Components: White Dragonscale Ring of Addiction, Ring of the Frozen Citadel, Gem of the North, Stone of Heaven</li>
+<li>Strength: 75</li>
+<li>Agility: 70</li>
+<li>Intelligence: 50</li>
+<li>Resist: 75</li>
+<li>Grants <em>Frigid Aura I</em>
+<ul>
+<li><em>Frigid Aura I</em>—Enemies within a 450 AoE have their attack speed reduced by 7.5% and movement speed reduced by 15%</li>
+</ul></li>
+</ul>
+</blockquote>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><em>Midnight Cloak</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>Orb of Chill Midnight</em></li>
+<li>Level: 55 ⇒ 90</li>
+<li>Strength: 10 ⇒ 0</li>
+<li>Agility: 10 ⇒ 0</li>
+<li>Intelligence: 10 ⇒ 20</li>
+<li>Health Regeneration (p/ sec): 30 ⇒ 0</li>
+<li>Mana: 0 ⇒ 200</li>
+<li>Armor: 0 ⇒ 20</li>
+<li>Grants <em>Mana Shield</em> instead of <em>Mana Regeneration IX</em>
+<ul>
+<li><em>Mana Shield</em>—Activate to convert 20% of your current mana into a post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Chillstone Ring</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 55 ⇒ 90</li>
+<li>Strength: 15 ⇒ 20</li>
+<li>Agility: 15 ⇒ 20</li>
+<li>Intelligence: 15 ⇒ 20</li>
+<li>Health: 500 ⇒ 0</li>
+<li>Spell Power: 300 ⇒ 350</li>
+</ul>
+</blockquote>
+<p><em>Ring of the Frozen Citadel</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>Frozen Ring of the Ice Queen</em></li>
+<li>Level: 55 ⇒ 90</li>
+<li>Health: 500 ⇒ 1500</li>
+<li>Armor: 35 ⇒ 10</li>
+<li>Resist: 0 ⇒ 10</li>
+<li>Grants <em>Frigid Aura I</em> instead of “In addition, any enemy that strikes you…”
+<ul>
+<li><em>Frigid Aura I</em>—Enemies within a 450 AoE have their attack speed reduced by 7.5% and movement speed reduced by 15%</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Deathchill Blade</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 55 ⇒ 90</li>
+<li>Attack Damage: 90 ⇒ 150</li>
+<li>Grants <em>Cleave I</em> instead of “… 35% of your melee base damage…”
+<ul>
+<li><em>Cleave I</em>—Your auto-attacks now deal 0.10 Primary Attribute physical damage in a 200 AoE of the target. Melee only.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Scepter of the Ice Queen</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 55 ⇒ 90</li>
+<li>Intelligence: 0 ⇒ 50</li>
+<li>Attack Damage: 25 ⇒ 0</li>
+<li>Attack Speed: 25% ⇒ 0%</li>
+<li>Spell Healing: 600 ⇒ 700</li>
+</ul>
+</blockquote>
+<p><em>Amphirite’s Cloak</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 135</li>
+<li>Forge at: Delphi</li>
+<li>Components: Midnight Cloak, Circlet of the Mother Goddess, 2 Stone of Heaven, 2 Heart of Frost, 2 Sea Essence</li>
+<li>Intelligence: 45</li>
+<li>Mana: 2000</li>
+<li>Mana Regeneration (p/ sec): 20</li>
+<li>Armor: 50</li>
+<li>Grants <em>Mana Shield</em>
+<ul>
+<li><em>Mana Shield</em>—Activate to convert 20% of your current mana into a post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Chillstone Ring of Midnight</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 135</li>
+<li>Forge at: Delphi</li>
+<li>Components: Chillstone Ring, Robes of Delphi, 2 Stone of Heaven, 2 Heart of Frost, 2 Sea Essence</li>
+<li>Strength: 45</li>
+<li>Agility: 45</li>
+<li>Intelligence: 45</li>
+<li>Spell Power: 1200</li>
+</ul>
+</blockquote>
+<p><em>Aegis of the Frozen Citadel</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Previously <em>Ring of the Frozen Citadel</em></li>
+<li>Level 105 ⇒ 150</li>
+<li>No longer has a class restriction</li>
+<li>Components: Ring of the Frozen Citadel, Iron Will of Hephaestus, 2 Stone of Heaven, 2 Heart of Frost, 2 Sea Essence</li>
+<li>Strength: 25 ⇒ 0</li>
+<li>Agility: 25 ⇒ 0</li>
+<li>Intelligence: 25 ⇒ 0</li>
+<li>Health: 0 ⇒ 3000</li>
+<li>Health Regeneration (p/ sec): 30 ⇒ 0</li>
+<li>Armor: 40 ⇒ 60</li>
+<li>Resist: 0 ⇒ 60</li>
+<li>Spell Power: 300 ⇒ 0</li>
+<li>No longer grants <em>Mana Regeneration VIII</em></li>
+<li>Grants <em>Frigid Aura II</em> instead of “In addition, any enemy that strikes you…”
+<ul>
+<li>Frigid Aura II—Enemies within a 450 AoE have their attack speed reduced by 15% and movement speed reduced by 30%</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Deathchill Greatsword</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 125 ⇒ 150</li>
+<li>Components: Deathchill Blade, Savage War Axe of Hephaestus, Spartan Greatsword, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost</li>
+<li>Strength: 50 ⇒ 80</li>
+<li>Agility: 50 ⇒ 80</li>
+<li>Attack Damage: 150 ⇒ 200</li>
+<li>Grants <em>Cleave II</em> instead of “… 35% of your melee base damage…”
+<ul>
+<li><em>Cleave II</em>—Your auto-attacks now deal 0.20 Primary Attribute physical damage in a 200 AoE of the target. Melee only.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Scepter of the Chosen Ones</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 120 ⇒ 150</li>
+<li>Components: Scepter of the Ice Queen, Hera’s Blessing, Priam’s Scepter, 2 Stone of Heaven, Blood Ruby, 3 Heart of Frost</li>
+<li>Intelligence: 80</li>
+<li><code>(NO CHANGE)</code> Attack Damage: 40</li>
+<li><code>(NO CHANGE)</code> Attack Speed: 40%</li>
+<li>Spell Damage: 800 ⇒ 700</li>
+<li>Spell Healing: 800 ⇒ 1400</li>
+<li><code>(NEW)</code> Grants <em>Brilliance Aura II</em>
+<ul>
+<li><em>Brilliance Aura II</em>—Allies within a 450 AoE have their mana regeneration increased by 15 mana per second</li>
+</ul></li>
+</ul>
+</blockquote>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><em>Gem of Birth</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Icon updated</li>
+<li>Model updated</li>
+</ul>
+</blockquote>
+<p><em>Gem of Death</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Icon updated</li>
+<li>Model updated</li>
+</ul>
+</blockquote>
+<p><em>Gem of Life</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Icon updated</li>
+<li>Model updated</li>
+</ul>
+</blockquote>
+<p><em>Sword of the Olympians</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Attack Damage: 100 ⇒ 125</li>
+<li>Attack Speed: 150% ⇒ 125%</li>
+<li><code>(NO CHANGE)</code> Grants <em>Versatile</em> and <em>Olympian</em>
+<ul>
+<li><em>Versatile</em>—Increases the hero’s primary attribute by 75.</li>
+<li><em>Olympian</em>—Your auto-attacks now deal 50% physical and 50% magical damage instead.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Talisman of Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Strength: 60 ⇒ 30</li>
+<li>Agility: 60 ⇒ 30</li>
+<li>Intelligence: 60 ⇒ 30</li>
+</ul>
+</blockquote>
+<p><em>Warrior’s Talisman of Addiction</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Icon updated</li>
+<li>Strength: 80 ⇒ 50</li>
+<li>Agility: 80 ⇒ 50</li>
+<li><code>(NO CHANGE)</code> Intelligence: 2</li>
+</ul>
+</blockquote>
+<p><em>Dark Wizard’s Dagger</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 85 ⇒ 90</li>
+<li><code>(NO CHANGE)</code> Components: 5000 crafting materials, 2 Stone of Heaven, 2 Blood Ruby, Runestone, Ruby Heart</li>
+<li>Agility: 50 ⇒ 25</li>
+<li>Intelligence: 50 ⇒ 30</li>
+<li>Spell Power: 450 ⇒ 0</li>
+<li>Item ability codified to <em>Warmage</em>
+<ul>
+<li><em>Warmage</em>—Whenever you cast a spell: You restore 50 mana</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Hera’s Blessing</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 85 ⇒ 90</li>
+<li><code>(NO CHANGE)</code> Components: 5000 crafting materials, Gemstone of Apollo, 2 Stone of Heaven, Blood Ruby, Heart of Frost, Sea Essence</li>
+<li>Intelligence: 75 ⇒ 0</li>
+<li>Spell Power: 500 ⇒ 650</li>
+<li>Grants <em>Brilliance Aura I</em> instead of “… increases the Mana Regeneration of nearby allies by 10 Mana per second. Warriors will only…”
+<ul>
+<li><em>Brilliance Aura I</em>—Allies within a 450 AoE have their mana regeneration increased by 5 mana per second</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><em>Wizard’s Respite</em></p>
+<blockquote class="blockquote">
+<ul>
+<li>Level: 150 ⇒ 165</li>
+<li><code>(NO CHANGE)</code> Components: Dark Wizard’s Dagger, Hera’s Blessing, Gem of the East, Gem of the North, 2 Sea Essence, 2 Heart of Frost</li>
+<li>Agility: 50 ⇒ 35</li>
+<li>Intelligence: 125 ⇒ 75</li>
+<li>Spell Power: 950 ⇒ 1100</li>
+<li>Mana Regeneration (p/ sec): 0 ⇒ 30</li>
+<li>Grants <em>Warmage</em> instead of “… Also increases Mana Regeneration by 20 Mana per second, and this effect does not…”
+<ul>
+<li><em>Warmage</em>—Whenever you cast a spell: You restore 50 mana</li>
+</ul></li>
+</ul>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="forces-of-hell" class="level2">
+<h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
+<ul>
+<li>Added a leash check for rewarding Essence from the <em>Hallowed One</em> and <em>Manslayer &amp; Lightbane</em> fights</li>
+<li><em>Hyperion</em> and family’s auto-attack pattern of four attacks now checks for player heroes <strong><em>and</em></strong> units</li>
+<li>If at least one <em>Minotaur Stronghold</em> was kept alive upon <em>Hyperion’s</em> defeat: Each participant receives 2 additional stat points for each <em>Minotaur Stronghold</em> that was kept alive</li>
+<li>In light of the stat block adjustments in <strong>v1.39b8</strong>, the 3000 crafting materials previously granted by defeating <em>Hades</em> has been redistributed as follows:
+<ul>
+<li><em>Rhea</em>: 250 crafting materials</li>
+<li><em>Oceanus</em>: 500 crafting materials</li>
+<li><em>Gaea</em>: 750 crafting materials</li>
+<li><em>Hades</em>: 1500 crafting materials</li>
+</ul></li>
 </ul>
 </section>
 
