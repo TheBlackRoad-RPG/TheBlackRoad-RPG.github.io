@@ -1,0 +1,92 @@
+---
+title: "Item Library"
+format:
+  html:
+    page-layout: full
+editor: source
+---
+
+```{r setup}
+#| include: false
+
+library(dplyr)
+library(DT)
+
+item.lines <- readLines("../the-black-road-rpg/src/table/item.ini")
+# unit.lines <- readLines("unit.ini")
+# crafting.lines <- readLines("02-Initilization.j")
+# forging.lines <- readLines("Forge-Craftmen.j")
+# regalia.lines <- readLines("Forge-Regalia.j")
+
+item.rawcode.pos <- grep("\\[I...\\]", item.lines)
+
+item_helpr <- \(start, end, field) {
+  x <- item.lines[start:end]
+  which.line <- grep(paste0("^", field), x)
+  
+  out <- switch(
+    field,
+    "Name" = gsub("Name = \"(.+)\"", "\\1", x[which.line]),
+    "class" = gsub("class = \"(.+)\"", "\\1", x[which.line]),
+    "_parent" = gsub("_parent = \"(.+)\"", "\\1", x[which.line]),
+    "Level" = gsub("Level = ([0-9]+)", "\\1", x[which.line]),
+    "Ubertip" = gsub("Ubertip = \"(.+)\"", "\\1", x[which.line])
+  )
+  
+  return (ifelse(is.null(out), "", out))
+}
+
+item_wrapr <- \(field) {
+  out <- sapply(1:length(item.rawcode.pos), \(x) {
+    item_helpr(item.rawcode.pos[x], if_else(x == length(item.rawcode.pos), length(item.lines), item.rawcode.pos[x + 1] - 1), field)
+  })
+  
+  if (field == "Name") {
+    x <- gsub("\\|r", "</span>", out)
+    out <- if_else(grepl("</span>", x), sub("\\|?c?[A-Za-z0-9]?[A-Za-z0-9]?([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", x)  , x)
+  }
+  
+  if (field == "Ubertip") {
+    x <- gsub("\\|r", "</span>", out)
+    y <- gsub("\\|n", "<br>", x)
+    out <- if_else(grepl("</span>", y), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", y), y)
+  }
+
+  return (out)
+}
+
+item.df <- tibble(
+  rawcode = item.lines[grep("\\[I...\\]", item.lines)],
+  parentcode = item_wrapr("_parent"),
+  name = item_wrapr("Name"),
+  class = item_wrapr("class"),
+  level = item_wrapr("Level"),
+  tooltip = item_wrapr("Ubertip")
+  # who can equip
+  # acquisition
+  # class of item
+) |> mutate(
+  class = if_else(is.na(class), case_match(parentcode,
+                                           c("kymn", "kybl", "azhr", "sehr", "kygh", "bzbf") ~ "Campaign",
+                                           c("rwiz", "evtl", "rlif", "mcou", "penr", "rat6", "pmna", "rde1", "rhth", "bgst", "belv", "cnob", "clsd", "ciri") ~ "Permanent",
+                                           c("sreg", "k3m3", "wneg", "phea", "pman", "shea", "spro", "stwp", "shas", "sman") ~ "Purchasable",
+                                           c("rnsp", "oslo", "frhg") ~ "Miscellaneous",
+                                           c("ckng", "desc") ~ "Artifact",
+                                           c("ankh", "pghe", "pgma", "sror", "rej3") ~ "Charged",
+                                           c("rres", "gold", "lmbr") ~ "PowerUp"), class),
+  name = if_else(is.na(name), case_match(parentcode,
+                                         "kymn" ~ "Moon Key",
+                                         "cnob" ~ "Circlet of Nobility",
+                                         "frhg" ~ "Firehand Gauntlets",
+                                         "rres" ~ "Rune of Restoration",
+                                         "gold" ~ "Gold Coins"), name))
+  # level 
+```
+
+```{r display_items}
+#| echo: false
+item.df |>
+  filter(class != "PowerUp", class != "Campaign") |>
+  select(name, level, tooltip) |>
+  datatable(rownames = FALSE, escape = FALSE)
+```

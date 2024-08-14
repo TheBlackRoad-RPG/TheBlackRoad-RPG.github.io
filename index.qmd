@@ -412,7 +412,7 @@ doing by a fraction.
 **Hyperion**
 
 -   HP Regen p/s: 3375 ⇒ 2700
--   *Fireball* magicaldamage: 30000 ⇒ 25500
+-   *Fireball* magical damage: 30000 ⇒ 25500
 
 **Helios** (Hyperion)
 
