@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39b10 --- Changelog"
+title: "The Black Road RPG v1.39c --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -16,39 +16,405 @@ editor:
 
 ## General
 
--   Hero Selection now displays Tier XI Regalia alongside the Tier I
-    Regalia
--   The DPS Dummy no longer classifies true damage as physical DPS for
-    tracking
--   *Barbarians* initial mana value is now a non-zero value
+-   Updated the model of the Alchemy profession's crafting materials
+    (*Goldpetal*, *Shrooms!*, *Blood of Helios*, and *Godsleaf*).
+-   Updated the FX for when *Olympian Gemstone Fragments* are combined
+    into a *Gemstone of the Olympians*.
+-   *Tome of Attribute Increase +2/+3/+4/+8* objects are now dynamically
+    updated to match the corresponding boss' name and level (instead of
+    having unique item objects).
+-   The *Resist* stat can now enter negative values and follows the same
+    formula as the negative *Armor* stat:\
+    <blockquote>Amplification = 2 - 0.94\^(-1 \* Resist
+    Value`)`{=html}.</blockquote>
+-   *Enfeeble I* now reduces *Resist* by 15 for the duration (previously
+    amplifies any magical damage dealth to them by 5%).
+-   *Cleave* (Item Ability) FX reverted back to the default Wc3 FX.
+-   *Move* is now visible on a unit's command card. (Previously, it was
+    hidden.)
+-   The runes for *The Fools' Mausoleum*'s crystal puzzle have their
+    size increased by a factor of 1.5 and they no longer have a glow
+    effect.
 
 ## Bug Fixes
 
--   The `-s` and `-save` commands now correctly saves the
-    `_lastsave.txt` file to the intended `v1.39` subfolder
--   *Book of Skill Increase* descriptions for *Shatter* (Guardian of
-    Nature), *Freezing Field* (Magician), and *Soul-Piercing Shot*
-    (Ranger) are now correct
--   *Book of Skill Increase* and *Book of Skill Reset* now works for
-    *Strafe* (Ranger)
--   An internal change to timer functionality for 'old' code has been
-    reverted
--   *Book of Skill Increase - Level 6* now spawns as intended for
-    *Infuriate* (Barbarian) and *Strafe* (Ranger)
--   Native XP floating text tags are now properly hidden as intended
--   *Wizard's Respite* correctly grants 30 mana regeneration per second
-    instead of 30 health regeneration per second
--   The DPS Dummy displays the correct icon for *Ironwood Set*
--   The "level up" FX now occurs again
+-   *Ares' Blade of Might* now correctly consumes all listed forge
+    components.
+-   *Vengeance* (Warlock) and *Eviscerate* (Assassin) now correctly
+    respects spell immunity.
+-   *Soulless*' storm bolt derivative now no longer bypasses stun
+    immunity checks.
+-   *Frigid Aura I* and *Frigid Aura II* correctly applies to enemies
+    within 450 AoE (instead of 600 AoE).
+-   *Medallion of Stamina* craft correctly requires 105 crafting
+    materials (instead of 80).
+-   Health Regeneration and Mana Regeneration stat implemented for new
+    and reworked items now works in transports and now uses the same
+    clock frequency as base Health Regeneration and Mana Regeneration
+    stat.
+-   *Cleave* (Item Ability) now replicates the default Wc3 ability in
+    bypassing Spell/Magic Immunity.
+-   Replay desyncs due to the creation of custom frames should no longer
+    occur \~ This does may not fix the root cause of replay desyncs, but
+    it is a step towards it.
+
+## Typos and Typesetting 
+
+-   *Cleave* (Deathchill Blade and Deathchill Greatsword).
+-   *Sword of the Olympians*.
+-   *Infuriate* (Barbarian).
+-   *Green Dragonscale Ring of Serious Addiction*.
+-   `-roll`/`-r`.
+-   *Trueshot Aura* (Item Ability).
+-   *Evasion* (Item Ability).
+-   *Staff of Delphi*.
+-   Craft *Rod of the Chosen*.
+-   Craft *Staff of Delphi*.
+-   Craft *Gem of the North*.
+-   Craft *Buckler*.
+-   Craft *High Oracle's Robes*.
+-   Craft *Thespian Boiled Leather*.
+-   Craft *Robes of the Chosen*.
+-   Craft *Robes of Delphi*.
+-   Craft *Towering Shield*.
+-   Craft *Gem of the South*.
+-   Craft *Elixir of Agility*.
+-   Craft *Orb of Lesser Mana Regeneration*.
+-   Craft *Ring of Evasion*.
+-   Craft *Spirit Charm*.
+-   Craft *Soul Charm*.
+-   Craft *Well of Souls*.
+-   Craft *Medallion of Superior Stamina*.
+-   Craft *Pendant of Superior Mana*.
+-   Craft *Circlet of the Mother Goddess*.
+-   Craft *Gem of the East*.
+-   Craft *Gem of the West*.
+-   Craft *Aphrodite's Favor*.
+-   *Winds of War* (Warlord).
+-   *Flash Point* (Magician).
+-   *Mighty Stomp* (Barbarian).
+-   *Charge* (Spartan Warrior).
+-   *Frost Fire Orb* (Magician).
+-   *Blood Bath* (Barbarian).
+-   *Bleed* (Warlord).
+-   *Counter* (Warlord).
+-   *Flame Spire* (Magician).
+-   *Throw Javelin* (Spartan Warrior).
+-   *Frost Chain* (Magician).
+
+## Heroes
+
+### Magician
+
+**Flame Spire**
+
+-   Mana Cost: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800 ⇒ 35 / 75
+    / 125 / 200 / 300 / 415 / 600 / 900
+
+### Ranger
+
+**Black Arrow**
+
+-   Mana Cost: 7 / 14 / 21 / 35 / 49 / 70 / 91 / 112 ⇒ 9 / 18 / 27 / 44
+    / 52 / 88 / 114 / 140
+
+**Star Dust**
+
+-   Cast Range: 650 ⇒ 700
+-   Damage: 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+Spell
+    Damage) ⇒ 0
+-   Single target ⇒ AoE target
+-   AoE: 750 ⇒ 300
+-   Heal: 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+0.4 Spell
+    Healing) ⇒ 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+0.45
+    / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing).
+
+**Strafe**
+
+-   Each bonus arrow deals 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 /
+    0.45 Agility + 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45
+    Intelligence physical damage ⇒ Each bonus arrow deals 0.075 / 0.1 /
+    0.125 / 0.15 / 0.175 / 0.2 / 0.225 / 0.25 Agility + 0.15 / 0.2 /
+    0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Intelligence physical damage.
+
+### Spartan Warrior 
+
+**Valor**
+
+-   AoE: 300 ⇒ 450
+
+### Temple Guardian
+
+**Gift of the Gods** ⇒ **Invigorate**
+
+-   Cast Range: 700
+-   Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
+-   Heals 200 / 400 / 800 / 1200 / 2000 / 3000 / 4500 / 8000 (+0.9 /
+    0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 / 1.25 Spell Healing) health to
+    an ally. If you self-target Invigorate: Heal an additional 0.5 / 0.7
+    / 0.9 / 1.15 / 1.35 / 1.6 / 1.8 / 2.0 Strength health.
+-   Cooldown: 7 seconds.
+
+**Hammer of Zeus**
+
+-   Cooldown: 6 seconds ⇒ 3 seconds.
 
 ## Items
 
--   *Cleave I*
+**Green Dragonscale Ring of Serious Addiction**
 
-    > -   0.10 Primary Attribute physical damage ⇒ 0.40 Primary
-    >     Attribute physical damage
+Forge Components:
 
--   *Cleave II*
+-   Green Dragonscale Ring of Addiction
+-   Chillstone Ring
+-   Gem of the East ⇒ Gem of the West
+-   Stone of Heaven
 
-    > -   0.20 Primary Attribute physical damage ⇒ 0.70 Primary
-    >     Attribute physical damage
+**Crown of Liquid Darkness**
+
+-   Damages nearby enemies for 50 damage per second within 900 AoE ⇒
+    Damages nearby enemies for 50 damage per second within 450 AoE.
+
+**Amphirite's Cloak**
+
+-   Mana: 2000 ⇒ 1500
+-   Armor: 50 ⇒ 30
+-   Resist: 0 ⇒ 30
+
+**Dark Lance**
+
+-   Updated icon
+-   Level: 70 ⇒ 90
+-   Attack Damage: 125 ⇒ 150
+-   “You have 10% chance on auto-attack to cause an additional 1000
+    damage” ⇒ \
+    *Gloom*—Whenever you deal physical damage that is not from an
+    auto-attack, deal an additional 250 true damage.
+
+**Bright Lance**
+
+-   Updated icon
+-   Level: 70 ⇒ 90
+-   Attack Damage: 125
+-   “Your attacks will slow the target’s attack speed by 25% for up to 8
+    seconds” ⇒\
+    *Dazzle*—Your auto-attacks also reduces the target's attack speed by
+    20% for 6 seconds.
+
+**The Winged God's Blessed Boots**
+
+-   Updated icon
+-   Level: 110 ⇒ 105
+
+**Shimmering Lance**
+
+-   Level: 105 ⇒ 120
+-   Attack Damage: 250 ⇒ 300
+-   Attack Speed: 0% ⇒ 50%
+-   “You have 10% chance on auto-attack to cause an additional 1000
+    damage” ⇒ \
+    *Gloom*—Whenever you deal physical damage that is not from an
+    auto-attack, deal an additional 250 true damage.
+-   “Your attacks will slow the target’s attack speed by 25% for up to 8
+    seconds” ⇒ \
+    *Dazzle*—Your auto-attacks also reduces the target's attack speed by
+    20% for 6 seconds.
+
+**Boots of Hermes**
+
+-   Updated icon
+-   Level 50 ⇒ 60
+-   Agility: 50 ⇒ 0
+-   Movement Speed: 60 ⇒ 50
+-   *Evasion IV* ⇒\
+    *Evasion II*—Gives a 10% chance to avoid an auto-attack
+
+**Boots of Marathon**
+
+-   Updated icon
+-   Strength: 50 ⇒ 40
+-   Movement Speed: 100 ⇒ 50
+-   *Evasion V* ⇒\
+    *Evasion II*—Gives a 10% chance to avoid an auto-attack
+
+**Hunting Spear of Atalanta**
+
+-   Level: 50 ⇒ 60
+-   Strength: 15 ⇒ 20
+-   Agility: 15 ⇒ 20
+-   Intelligence: 15 ⇒ 20
+-   Attack Damage: 25 ⇒ 0
+-   Attack Speed: 25% ⇒ 0
+-   Cannot be used by Warrior classes
+
+**Bow of Artemis**
+
+-   Level 85 ⇒ 90
+-   Strength: 25 ⇒ 20
+-   Agility: 25 ⇒ 20
+-   Intelligence: 25 ⇒ 20
+-   Attack Damage: 50 ⇒ 0
+
+**Atalanta's Hunting Garb**
+
+-   Attack Damage: 75 ⇒ 0
+-   Attack Speed: 25% ⇒ 0
+-   Movement Speed: 100 ⇒ 50
+-   *Evasion V* ⇒ \
+    *Evasion IV*—Gives a 20% chance to avoid an auto-attack
+
+**Priam's Scepter**
+
+-   Updated icon
+-   Level 50 ⇒ 60
+
+**Savage War Axe of Hephaestus**
+
+-   Level 50 ⇒ 60
+-   Attack Damage: 60 ⇒ 85
+-   "Grants 6.5% chance to Break I an auto-attack target for 3.25
+    seconds, reducing its Armor by 15" ⇒ \
+    *Crush I*—Your auto-attacks have a 6.5% chance to apply Break I for
+    3.25 seconds on the target, which reduces their armor by 15 for the
+    duration.
+
+**Thunder Lance**
+
+-   Updated icon
+-   Level: 85 ⇒ 90
+-   Attack Damage: 75 ⇒ 0
+-   "Grants 6.5% chance to Break II an auto-attack target for 3.25
+    seconds, reducing its Armor by 30" ⇒ \
+    *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
+    for 3.25 seconds on the target, which reduces their armor by 30 for
+    the duration.
+
+**Hephaestus' Thundering Axe**
+
+-   Updated icon
+-   Strength: 50 ⇒ 70
+-   Agility: 50 ⇒ 70
+-   Attack Damage: 100 ⇒ 250
+-   "Grants 6.5% chance to Break II an auto-attack target for 3.25
+    seconds, reducing its Armor by 30" ⇒ \
+    *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
+    for 3.25 seconds on the target, which reduces their armor by 30 for
+    the duration.
+
+**Armor of Hera**
+
+-   Updated icon
+-   Armor: 40 ⇒ 15
+-   Health: 600 ⇒ 750
+-   Health Regen p/ sec: 15 ⇒ 0
+-   “Restores 1200 Health. Cooldown: 30 seconds” ⇒ \
+    *Hera’s Cure I*—Heals 2000 health to yourself. Cooldown: 30 seconds
+    -   *Hera's Cure I* can only be activated on heroes.
+
+**Armor of Zeus**
+
+-   Updated icon
+-   Level: 55 ⇒ 75
+-   Strength: 10 ⇒ 0
+-   Armor: 45 ⇒ 20
+-   Resist: 0 ⇒ 20
+-   Health: 800 ⇒ 1000
+
+**Armor of the Firstborn**
+
+-   Updated icon
+-   Level: 115 ⇒ 120
+-   Armor: 80 ⇒ 40
+-   Resist: 0 ⇒ 40
+-   “Restores 3000 Health. Cooldown: 30 seconds” ⇒ \
+    *Hera’s Cure II*—Heals 4500 health to yourself. Cooldown: 30 seconds
+    -   *Hera's Cure II* can only be activated on heroes.
+
+**Adamantium Blade** (previously *Adamantium Scythe*)
+
+-   Updated icon
+-   Attack Damage: 60 ⇒ 75
+-   Attack Speed: 30% ⇒ 35%
+-   `[REMOVED]` ~~"Your attacks cause 150 additional damage against
+    Uranus"~~
+-   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
+    damage. This ability stacks with similar effects. ⇒\
+    *Critical Strike I*—Gives a 6.5% chance to do 1.5 times damage on an
+    auto-attack. This stacks with other instances of Critical Strike.
+
+**Adamantium Lance**
+
+-   Updated icon
+-   Level: 140 ⇒ 135
+-   Strength: 50 ⇒ 45
+-   Agility: 50 ⇒ 90
+-   Attack Damage: 125 ⇒ 150
+-   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
+    damage. This ability stacks with similar effects. ⇒ \
+    *Critical Strike III*—Gives a 6.5% chance to do 2.0 times damage on
+    an auto-attack. This stacks with other instances of Critical Strike.
+
+**Aphrodite's Blessed Orb**
+
+-   Intelligence: 20 ⇒ 0
+-   `[REMOVED]` ~~Mana Regeneration V—Gain 30% increased Mana
+    Regeneration.~~
+-   “Increase your Spell Power by 2000 for 30 seconds. Cooldown: 60
+    seconds.” ⇒\
+    *Gift of Aphrodite*—Increase your Spell Power by 3000 for 15
+    seconds. Cooldown: 60 seconds.
+    -   *Gift of Aphrodite* can only be activated on heroes.
+
+## Forces of Hell
+
+The durability update for the bosses of TBR is in the intended
+direction, but perhaps the HP Regen p/s values as-is made their
+effective HP a lot higher than anticipated. Hence, I am tuning them
+doing by a fraction.
+
+-   **Atlas**: 37.5 ⇒ 33.75
+-   **Thea**: 60 ⇒ 54
+-   **Themis**: 90 ⇒ 81
+-   **Cyclops**: 27 ⇒ 24
+-   **Manslayer**: 45 ⇒ 40.5
+-   **Lightbane**: 30 ⇒ 27
+-   **Hallowed One**: 135 ⇒ 121
+-   **Cronus**: 150 ⇒ 135
+-   **Makarios**: 77.5 ⇒ 69.75
+-   **Aeacus**: 87.5 ⇒ 78.75
+-   **Medusa**: 87 ⇒ 78.3
+-   **Uranus**: 187.5 ⇒ 168.75
+-   **Shadowslayer**: 225 ⇒ 202.5
+-   **Chillhand**: 286.59 ⇒ 257.931
+-   **Chimaera**: 558 ⇒ 502.2
+-   **Cerberus**: 506 ⇒ 455.4
+-   **Tisiphone**: 377 ⇒ 339.3
+-   **Megaera**: 310.33 ⇒ 279.297
+-   **Alecto**: 320 ⇒ 288
+-   **Rhea**: 375 ⇒ 337.5
+-   **Persephone**: 1007 ⇒ 885.95
+-   **Hydra**: 722.66 ⇒ 614.261
+-   **Oceanus**: 750 ⇒ 637.5
+-   **Gaea**: 1500 ⇒ 1275
+-   **Ladon**: 1125 ⇒ 956.25
+-   **Sphinx**: 2493 ⇒ 2119.05
+-   **Hades**: 3000 ⇒ 2400
+-   **Eos**: 3375 ⇒ 2700
+-   **Selene**: 2850 ⇒ 2280
+-   **Theia**: 2625 ⇒ 2100
+
+**Midas**
+
+-   Failing *The Fools' Mausoleum*'s crystal puzzle now spawns five
+    glaives (previously two glaives).
+-   HP Regen p/s: 1275 ⇒ 1083.75
+
+**Hyperion**
+
+-   HP Regen p/s: 3375 ⇒ 2700
+-   *Fireball* magicaldamage: 30000 ⇒ 25500
+
+**Helios** (Hyperion)
+
+-   HP Regen p/s: 3150 ⇒ 2520
+-   Armor: 268 ⇒ 108
