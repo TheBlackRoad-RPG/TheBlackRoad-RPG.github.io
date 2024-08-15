@@ -30,6 +30,7 @@ item_helpr <- \(start, end, field) {
     "class" = gsub("class = \"(.+)\"", "\\1", x[which.line]),
     "_parent" = gsub("_parent = \"(.+)\"", "\\1", x[which.line]),
     "Level" = gsub("Level = ([0-9]+)", "\\1", x[which.line]),
+    "prio" = gsub("prio = ([0-9]+)", "\\1", x[which.line]),
     "Ubertip" = gsub("Ubertip = \"(.+)\"", "\\1", x[which.line])
   )
   
@@ -47,9 +48,14 @@ item_wrapr <- \(field) {
   }
   
   if (field == "Ubertip") {
-    x <- gsub("\\|r", "</span>", out)
-    y <- gsub("\\|n", "<br>", x)
-    out <- if_else(grepl("</span>", y), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", y), y)
+    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", out)
+    
+    b <- gsub("\\|r", "</span>", a)
+    d <- gsub("\\|n", "<br>", b)
+    e <- if_else(grepl("</span>", d), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", d), d)
+    f <- sub("(<br>)*<span style='color: #ff0000'>.*</span>", "", e)
+    
+    out <- f
   }
 
   return (out)
@@ -61,10 +67,13 @@ item.df <- tibble(
   name = item_wrapr("Name"),
   class = item_wrapr("class"),
   level = item_wrapr("Level"),
+  prio = item_wrapr("prio"),
   tooltip = item_wrapr("Ubertip")
-  # who can equip
   # acquisition
+  # Drop Consumable, Crafting Component, Unique Crafting Component from tooltip
+  # Colour scheme
   # class of item
+  # level
 ) |> mutate(
   class = if_else(is.na(class), case_match(parentcode,
                                            c("kymn", "kybl", "azhr", "sehr", "kygh", "bzbf") ~ "Campaign",
@@ -79,14 +88,32 @@ item.df <- tibble(
                                          "cnob" ~ "Circlet of Nobility",
                                          "frhg" ~ "Firehand Gauntlets",
                                          "rres" ~ "Rune of Restoration",
-                                         "gold" ~ "Gold Coins"), name))
-  # level 
+                                         "gold" ~ "Gold Coins"), name),
+  prio = if_else(!is.na(prio), case_match(prio,
+                                          "1" ~ "Forge Dummy",
+                                          "1001" ~ "Cannot be used by Warrior classes",
+                                          "1002" ~ "Khaos Champion, Barbarian, Warlord, Assassin only",
+                                          "1003" ~ "Barbarian Only",
+                                          "1004" ~ "Warlord Only",
+                                          "1005" ~ "Temple Guardian Only",
+                                          "1006" ~ "Ranger Only",
+                                          "1007" ~ "Khaos Champion Only",
+                                          "1008" ~ "Cleric only",
+                                          "1009" ~ "Assassin only",
+                                          "1010" ~ "Magician only",
+                                          "1011" ~ "Warlock only",
+                                          "1012" ~ "Guardian of Nature only",
+                                          "1013" ~ "Spartan Warrior only",
+                                          "1014" ~ "Druid only"
+                                          ), NA_character_))
 ```
 
 ```{r display_items}
 #| echo: false
 item.df |>
   filter(class != "PowerUp", class != "Campaign") |>
-  select(name, level, tooltip) |>
+  select(name, level, tooltip, prio) |>
+  mutate(name.aug = paste0(name, "<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>", if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), ""))) |>
+  select(name.aug, tooltip) |>
   datatable(rownames = FALSE, escape = FALSE)
 ```

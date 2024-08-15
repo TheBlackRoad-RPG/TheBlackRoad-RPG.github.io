@@ -24,9 +24,8 @@ editor:
     updated to match the corresponding boss' name and level (instead of
     having unique item objects).
 -   The *Resist* stat can now enter negative values and follows the same
-    formula as the negative *Armor* stat:\
-    <blockquote>Amplification = 2 - 0.94\^(-1 \* Resist
-    Value`)`{=html}.</blockquote>
+    formula as the negative *Armor* stat: <blockquote>Amplification =
+    2 - 0.94\^(-1 \* Resist Value`)`{=html}.</blockquote>
 -   *Enfeeble I* now reduces *Resist* by 15 for the duration (previously
     amplifies any magical damage dealth to them by 5%).
 -   *Cleave* (Item Ability) FX reverted back to the default Wc3 FX.
@@ -57,8 +56,10 @@ editor:
 -   Replay desyncs due to the creation of custom frames should no longer
     occur \~ This does may not fix the root cause of replay desyncs, but
     it is a step towards it.
+-   The disabled command buttons for *Amphirite's Cloak* and *Midnight
+    Cloak* have been corrected.
 
-## Typos and Typesetting 
+## Typos and Typesetting
 
 -   *Cleave* (Deathchill Blade and Deathchill Greatsword).
 -   *Sword of the Olympians*.
@@ -137,7 +138,7 @@ editor:
     0.125 / 0.15 / 0.175 / 0.2 / 0.225 / 0.25 Agility + 0.15 / 0.2 /
     0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Intelligence physical damage.
 
-### Spartan Warrior 
+### Spartan Warrior
 
 **Valor**
 
@@ -187,7 +188,7 @@ Forge Components:
 -   Level: 70 ⇒ 90
 -   Attack Damage: 125 ⇒ 150
 -   “You have 10% chance on auto-attack to cause an additional 1000
-    damage” ⇒ \
+    damage” ⇒\
     *Gloom*—Whenever you deal physical damage that is not from an
     auto-attack, deal an additional 250 true damage.
 
@@ -212,11 +213,11 @@ Forge Components:
 -   Attack Damage: 250 ⇒ 300
 -   Attack Speed: 0% ⇒ 50%
 -   “You have 10% chance on auto-attack to cause an additional 1000
-    damage” ⇒ \
+    damage” ⇒\
     *Gloom*—Whenever you deal physical damage that is not from an
     auto-attack, deal an additional 250 true damage.
 -   “Your attacks will slow the target’s attack speed by 25% for up to 8
-    seconds” ⇒ \
+    seconds” ⇒\
     *Dazzle*—Your auto-attacks also reduces the target's attack speed by
     20% for 6 seconds.
 
@@ -260,7 +261,7 @@ Forge Components:
 -   Attack Damage: 75 ⇒ 0
 -   Attack Speed: 25% ⇒ 0
 -   Movement Speed: 100 ⇒ 50
--   *Evasion V* ⇒ \
+-   *Evasion V* ⇒\
     *Evasion IV*—Gives a 20% chance to avoid an auto-attack
 
 **Priam's Scepter**
@@ -273,7 +274,7 @@ Forge Components:
 -   Level 50 ⇒ 60
 -   Attack Damage: 60 ⇒ 85
 -   "Grants 6.5% chance to Break I an auto-attack target for 3.25
-    seconds, reducing its Armor by 15" ⇒ \
+    seconds, reducing its Armor by 15" ⇒\
     *Crush I*—Your auto-attacks have a 6.5% chance to apply Break I for
     3.25 seconds on the target, which reduces their armor by 15 for the
     duration.
@@ -284,7 +285,7 @@ Forge Components:
 -   Level: 85 ⇒ 90
 -   Attack Damage: 75 ⇒ 0
 -   "Grants 6.5% chance to Break II an auto-attack target for 3.25
-    seconds, reducing its Armor by 30" ⇒ \
+    seconds, reducing its Armor by 30" ⇒\
     *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
     for 3.25 seconds on the target, which reduces their armor by 30 for
     the duration.
@@ -296,7 +297,7 @@ Forge Components:
 -   Agility: 50 ⇒ 70
 -   Attack Damage: 100 ⇒ 250
 -   "Grants 6.5% chance to Break II an auto-attack target for 3.25
-    seconds, reducing its Armor by 30" ⇒ \
+    seconds, reducing its Armor by 30" ⇒\
     *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
     for 3.25 seconds on the target, which reduces their armor by 30 for
     the duration.
@@ -307,7 +308,7 @@ Forge Components:
 -   Armor: 40 ⇒ 15
 -   Health: 600 ⇒ 750
 -   Health Regen p/ sec: 15 ⇒ 0
--   “Restores 1200 Health. Cooldown: 30 seconds” ⇒ \
+-   “Restores 1200 Health. Cooldown: 30 seconds” ⇒\
     *Hera’s Cure I*—Heals 2000 health to yourself. Cooldown: 30 seconds
     -   *Hera's Cure I* can only be activated on heroes.
 
@@ -326,7 +327,7 @@ Forge Components:
 -   Level: 115 ⇒ 120
 -   Armor: 80 ⇒ 40
 -   Resist: 0 ⇒ 40
--   “Restores 3000 Health. Cooldown: 30 seconds” ⇒ \
+-   “Restores 3000 Health. Cooldown: 30 seconds” ⇒\
     *Hera’s Cure II*—Heals 4500 health to yourself. Cooldown: 30 seconds
     -   *Hera's Cure II* can only be activated on heroes.
 
@@ -350,7 +351,7 @@ Forge Components:
 -   Agility: 50 ⇒ 90
 -   Attack Damage: 125 ⇒ 150
 -   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
-    damage. This ability stacks with similar effects. ⇒ \
+    damage. This ability stacks with similar effects. ⇒\
     *Critical Strike III*—Gives a 6.5% chance to do 2.0 times damage on
     an auto-attack. This stacks with other instances of Critical Strike.
 
