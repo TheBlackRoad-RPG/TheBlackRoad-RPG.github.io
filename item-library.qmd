@@ -1,10 +1,31 @@
 ---
-title: "Item Library"
+title: "[BETA] TBR 1.39c Item Library"
 format:
   html:
     page-layout: full
+    theme: darkly
+date: last-modified
 editor: source
 ---
+
+<!-- 
+To-do: 
+- CSS Theme of the Item Library... 
+- Table filters
+- Table functionality
+- Icons: https://docs.google.com/spreadsheets/d/1OMMIJZ8maoltPFcY_ZSSS4WaUr9ReJKe1DqFHDrFmYQ/edit?gid=583245039#gid=583245039&fvid=383852340
+- Acquisition
+-->
+
+```{css, echo = FALSE}
+.dataTable, .dataTables_wrapper .dataTables_info, label {
+  color: white;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: white !important;
+}
+```
 
 ```{r setup}
 #| include: false
@@ -48,14 +69,15 @@ item_wrapr <- \(field) {
   }
   
   if (field == "Ubertip") {
-    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", out)
+    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", out) |>
+      gsub("\\|r", "</span>", x = _) |>
+      gsub("\\|n", "<br>", x = _)
     
-    b <- gsub("\\|r", "</span>", a)
-    d <- gsub("\\|n", "<br>", b)
-    e <- if_else(grepl("</span>", d), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", d), d)
-    f <- sub("(<br>)*<span style='color: #ff0000'>.*</span>", "", e)
-    
-    out <- f
+    b <- if_else(grepl("</span>", a), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", a), a)
+    out <- b |>
+      sub("(<br>)*<span style='color: #ff0000'>.*</span>", "", x = _) |>
+      sub("(<br>)*<span style='color: #fa8072'>.*</span>", "", x = _) |>
+      sub("(<br>)*<span style='color: #73C2FB'>.*</span>", "", x = _)
   }
 
   return (out)
@@ -69,11 +91,6 @@ item.df <- tibble(
   level = item_wrapr("Level"),
   prio = item_wrapr("prio"),
   tooltip = item_wrapr("Ubertip")
-  # acquisition
-  # Drop Consumable, Crafting Component, Unique Crafting Component from tooltip
-  # Colour scheme
-  # class of item
-  # level
 ) |> mutate(
   class = if_else(is.na(class), case_match(parentcode,
                                            c("kymn", "kybl", "azhr", "sehr", "kygh", "bzbf") ~ "Campaign",
@@ -105,15 +122,36 @@ item.df <- tibble(
                                           "1012" ~ "Guardian of Nature only",
                                           "1013" ~ "Spartan Warrior only",
                                           "1014" ~ "Druid only"
-                                          ), NA_character_))
+                                          ), NA_character_),
+  level = as.numeric(level),
+  level = if_else(is.na(level), case_match(parentcode,
+                                            "rlif" ~ 3,
+                                            "mcou" ~ 5,
+                                            "rej3" ~ 2,
+                                            c("kymn", "kybl") ~ 0),
+                  level),
+  rarity = case_when(grepl("#00ffff", name) ~ "Uncommon",
+                     grepl("#fa8072", name) ~ "Consumables",
+                     grepl("#ff7700", name) ~ "Rare",
+                     grepl("#ffdead", name) ~ "Artifact",
+                     grepl("#32cd32", name) ~ "Epic",
+                     grepl("#A1045A", name) ~ "Regalia",
+                     grepl("#1E90FF", name) ~ "Relic / Olympian Relic",
+                     grepl("#73C2FB", name) ~ "Crafting Component / Unique Crafting Component",
+                     .default = "Common"),
+  name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name))
 ```
 
 ```{r display_items}
 #| echo: false
 item.df |>
-  filter(class != "PowerUp", class != "Campaign") |>
+  filter(class != "PowerUp", class != "Campaign", name.clean != "Rune of Restoration", !grepl("Tome of Attribute Increase", name.clean)) |>
+  mutate(rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
+  arrange(rarity, level, name.clean) |>
   select(name, level, tooltip, prio) |>
-  mutate(name.aug = paste0(name, "<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>", if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), ""))) |>
+  mutate(name.aug = paste0(name, 
+                           if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""), 
+                           if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), ""))) |>
   select(name.aug, tooltip) |>
-  datatable(rownames = FALSE, escape = FALSE)
+  datatable(rownames = FALSE, escape = FALSE, colnames = c("Item", "Description"))
 ```
