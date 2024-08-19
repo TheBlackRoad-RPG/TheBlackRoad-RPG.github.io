@@ -15,6 +15,7 @@ To-do:
 - Table functionality
 - Icons: https://docs.google.com/spreadsheets/d/1OMMIJZ8maoltPFcY_ZSSS4WaUr9ReJKe1DqFHDrFmYQ/edit?gid=583245039#gid=583245039&fvid=383852340
 - Acquisition
+- Filter out Olympian Gemstone Fragments; Iron Key
 -->
 
 ```{css, echo = FALSE}
@@ -33,11 +34,11 @@ To-do:
 library(dplyr)
 library(DT)
 
-item.lines <- readLines("../the-black-road-rpg/src/table/item.ini")
-# unit.lines <- readLines("unit.ini")
-# crafting.lines <- readLines("02-Initilization.j")
-# forging.lines <- readLines("Forge-Craftmen.j")
-# regalia.lines <- readLines("Forge-Regalia.j")
+item.lines <- readLines("./data/item.ini")
+# unit.lines <- readLines("./data/unit.ini")
+# crafting.lines <- readLines("./data/02-Initilization.j")
+# forging.lines <- readLines("./data/Forge-Craftmen.j")
+# regalia.lines <- readLines("./data/Forge-Regalia.j")
 
 item.rawcode.pos <- grep("\\[I...\\]", item.lines)
 
