@@ -18,19 +18,28 @@ editor:
 
 -   Updated the model of the Alchemy profession's crafting materials
     (*Goldpetal*, *Shrooms!*, *Blood of Helios*, and *Godsleaf*).
+
 -   Updated the FX for when *Olympian Gemstone Fragments* are combined
     into a *Gemstone of the Olympians*.
+
 -   *Tome of Attribute Increase +2/+3/+4/+8* objects are now dynamically
     updated to match the corresponding boss' name and level (instead of
     having unique item objects).
+
 -   The *Resist* stat can now enter negative values and follows the same
-    formula as the negative *Armor* stat: <blockquote>Amplification =
-    2 - 0.94\^(-1 \* Resist Value`)`{=html}.</blockquote>
+    formula as the negative *Armor* stat:
+
+    <blockquote>Amplification = 2 - 0.94\^(-1 \* Resist
+    Value`)`{=html}.</blockquote>
+
 -   *Enfeeble I* now reduces *Resist* by 15 for the duration (previously
     amplifies any magical damage dealth to them by 5%).
+
 -   *Cleave* (Item Ability) FX reverted back to the default Wc3 FX.
+
 -   *Move* is now visible on a unit's command card. (Previously, it was
     hidden.)
+
 -   The runes for *The Fools' Mausoleum*'s crystal puzzle have their
     size increased by a factor of 1.5 and they no longer have a glow
     effect.
@@ -178,9 +187,16 @@ Forge Components:
 
 **Amphirite's Cloak**
 
+-   Level: 135
 -   Mana: 2000 ⇒ 1500
+-   Intelligence: 45
+-   Mana: 1500
+-   Mana Regen p/ second: 20
 -   Armor: 50 ⇒ 30
 -   Resist: 0 ⇒ 30
+-   *Mana Shield*—Activate to convert 20% of your current mana into a
+    post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds.
+-   Cannot be used by Warrior classes
 
 **Dark Lance**
 
@@ -224,8 +240,9 @@ Forge Components:
 **Boots of Hermes**
 
 -   Updated icon
--   Level 50 ⇒ 60
+-   Level: 50 ⇒ 60
 -   Agility: 50 ⇒ 0
+-   Health: 500
 -   Movement Speed: 60 ⇒ 50
 -   *Evasion IV* ⇒\
     *Evasion II*—Gives a 10% chance to avoid an auto-attack
@@ -233,10 +250,12 @@ Forge Components:
 **Boots of Marathon**
 
 -   Updated icon
+-   Level: 90
 -   Strength: 50 ⇒ 40
 -   Movement Speed: 100 ⇒ 50
 -   *Evasion V* ⇒\
     *Evasion II*—Gives a 10% chance to avoid an auto-attack
+-   *Swift Return*—Teleports you to Athens. Cooldown: 3 minutes
 
 **Hunting Spear of Atalanta**
 
@@ -250,28 +269,39 @@ Forge Components:
 
 **Bow of Artemis**
 
--   Level 85 ⇒ 90
+-   Level: 85 ⇒ 90
 -   Strength: 25 ⇒ 20
 -   Agility: 25 ⇒ 20
 -   Intelligence: 25 ⇒ 20
 -   Attack Damage: 50 ⇒ 0
+-   *Trueshot Aura I*—Allies within 450 units deal 15% bonus damage with
+    their ranged auto-attacks
+-   Cannot be used by Warrior classes
 
 **Atalanta's Hunting Garb**
 
+-   Level: 150
+-   Strength: 80
+-   Agility: 40
+-   Intelligence: 40
 -   Attack Damage: 75 ⇒ 0
 -   Attack Speed: 25% ⇒ 0
 -   Movement Speed: 100 ⇒ 50
 -   *Evasion V* ⇒\
     *Evasion IV*—Gives a 20% chance to avoid an auto-attack
+-   *Trueshot Aura II*—Allies within 450 units deal 25% bonus damage
+    with their ranged auto-attacks
+-   *Swift Return*—Teleports you to Athens. Cooldown: 3 minutes
+-   Cannot be used by Warrior classes
 
 **Priam's Scepter**
 
 -   Updated icon
--   Level 50 ⇒ 60
+-   Level: 50 ⇒ 60
 
 **Savage War Axe of Hephaestus**
 
--   Level 50 ⇒ 60
+-   Level: 50 ⇒ 60
 -   Attack Damage: 60 ⇒ 85
 -   "Grants 6.5% chance to Break I an auto-attack target for 3.25
     seconds, reducing its Armor by 15" ⇒\
@@ -283,6 +313,8 @@ Forge Components:
 
 -   Updated icon
 -   Level: 85 ⇒ 90
+-   Strength: 30
+-   Agility: 30
 -   Attack Damage: 75 ⇒ 0
 -   "Grants 6.5% chance to Break II an auto-attack target for 3.25
     seconds, reducing its Armor by 30" ⇒\
@@ -293,6 +325,7 @@ Forge Components:
 **Hephaestus' Thundering Axe**
 
 -   Updated icon
+-   Level: 150
 -   Strength: 50 ⇒ 70
 -   Agility: 50 ⇒ 70
 -   Attack Damage: 100 ⇒ 250
@@ -305,9 +338,10 @@ Forge Components:
 **Armor of Hera**
 
 -   Updated icon
+-   Level: 60
 -   Armor: 40 ⇒ 15
 -   Health: 600 ⇒ 750
--   Health Regen p/ sec: 15 ⇒ 0
+-   Health Regen p/ second: 15 ⇒ 0
 -   “Restores 1200 Health. Cooldown: 30 seconds” ⇒\
     *Hera’s Cure I*—Heals 2000 health to yourself. Cooldown: 30 seconds
     -   *Hera's Cure I* can only be activated on heroes.
@@ -325,6 +359,8 @@ Forge Components:
 
 -   Updated icon
 -   Level: 115 ⇒ 120
+-   Health: 2000
+-   Health Regen p/ second: 35
 -   Armor: 80 ⇒ 40
 -   Resist: 0 ⇒ 40
 -   “Restores 3000 Health. Cooldown: 30 seconds” ⇒\
@@ -334,6 +370,7 @@ Forge Components:
 **Adamantium Blade** (previously *Adamantium Scythe*)
 
 -   Updated icon
+-   Level: 60
 -   Attack Damage: 60 ⇒ 75
 -   Attack Speed: 30% ⇒ 35%
 -   `[REMOVED]` ~~"Your attacks cause 150 additional damage against
@@ -350,10 +387,12 @@ Forge Components:
 -   Strength: 50 ⇒ 45
 -   Agility: 50 ⇒ 90
 -   Attack Damage: 125 ⇒ 150
+-   Armor: 25
 -   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
     damage. This ability stacks with similar effects. ⇒\
     *Critical Strike III*—Gives a 6.5% chance to do 2.0 times damage on
     an auto-attack. This stacks with other instances of Critical Strike.
+-   *Adamantium Set* (1/3)—+50 Armor, +250 Attack Damage.
 
 **Aphrodite's Blessed Orb**
 

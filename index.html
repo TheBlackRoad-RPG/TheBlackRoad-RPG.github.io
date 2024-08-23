@@ -3090,17 +3090,17 @@ vertical-align: -.125em;
 <section id="general" class="level2">
 <h2 class="anchored" data-anchor-id="general">General</h2>
 <ul>
-<li>Updated the model of the Alchemy profession’s crafting materials (<em>Goldpetal</em>, <em>Shrooms!</em>, <em>Blood of Helios</em>, and <em>Godsleaf</em>).</li>
-<li>Updated the FX for when <em>Olympian Gemstone Fragments</em> are combined into a <em>Gemstone of the Olympians</em>.</li>
-<li><em>Tome of Attribute Increase +2/+3/+4/+8</em> objects are now dynamically updated to match the corresponding boss’ name and level (instead of having unique item objects).</li>
-<li>The <em>Resist</em> stat can now enter negative values and follows the same formula as the negative <em>Armor</em> stat:
+<li><p>Updated the model of the Alchemy profession’s crafting materials (<em>Goldpetal</em>, <em>Shrooms!</em>, <em>Blood of Helios</em>, and <em>Godsleaf</em>).</p></li>
+<li><p>Updated the FX for when <em>Olympian Gemstone Fragments</em> are combined into a <em>Gemstone of the Olympians</em>.</p></li>
+<li><p><em>Tome of Attribute Increase +2/+3/+4/+8</em> objects are now dynamically updated to match the corresponding boss’ name and level (instead of having unique item objects).</p></li>
+<li><p>The <em>Resist</em> stat can now enter negative values and follows the same formula as the negative <em>Armor</em> stat:</p>
 <blockquote class="blockquote">
-Amplification = 2 - 0.94^(-1 * Resist Value).
+<p>Amplification = 2 - 0.94^(-1 * Resist Value).</p>
 </blockquote></li>
-<li><em>Enfeeble I</em> now reduces <em>Resist</em> by 15 for the duration (previously amplifies any magical damage dealth to them by 5%).</li>
-<li><em>Cleave</em> (Item Ability) FX reverted back to the default Wc3 FX.</li>
-<li><em>Move</em> is now visible on a unit’s command card. (Previously, it was hidden.)</li>
-<li>The runes for <em>The Fools’ Mausoleum</em>’s crystal puzzle have their size increased by a factor of 1.5 and they no longer have a glow effect.</li>
+<li><p><em>Enfeeble I</em> now reduces <em>Resist</em> by 15 for the duration (previously amplifies any magical damage dealth to them by 5%).</p></li>
+<li><p><em>Cleave</em> (Item Ability) FX reverted back to the default Wc3 FX.</p></li>
+<li><p><em>Move</em> is now visible on a unit’s command card. (Previously, it was hidden.)</p></li>
+<li><p>The runes for <em>The Fools’ Mausoleum</em>’s crystal puzzle have their size increased by a factor of 1.5 and they no longer have a glow effect.</p></li>
 </ul>
 </section>
 <section id="bug-fixes" class="level2">
@@ -3229,9 +3229,15 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 </ul>
 <p><strong>Amphirite’s Cloak</strong></p>
 <ul>
+<li>Level: 135</li>
 <li>Mana: 2000 ⇒ 1500</li>
+<li>Intelligence: 45</li>
+<li>Mana: 1500</li>
+<li>Mana Regen p/ second: 20</li>
 <li>Armor: 50 ⇒ 30</li>
 <li>Resist: 0 ⇒ 30</li>
+<li><em>Mana Shield</em>—Activate to convert 20% of your current mana into a post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds.</li>
+<li>Cannot be used by Warrior classes</li>
 </ul>
 <p><strong>Dark Lance</strong></p>
 <ul>
@@ -3267,8 +3273,9 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <p><strong>Boots of Hermes</strong></p>
 <ul>
 <li>Updated icon</li>
-<li>Level 50 ⇒ 60</li>
+<li>Level: 50 ⇒ 60</li>
 <li>Agility: 50 ⇒ 0</li>
+<li>Health: 500</li>
 <li>Movement Speed: 60 ⇒ 50</li>
 <li><em>Evasion IV</em> ⇒<br>
 <em>Evasion II</em>—Gives a 10% chance to avoid an auto-attack</li>
@@ -3276,10 +3283,12 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <p><strong>Boots of Marathon</strong></p>
 <ul>
 <li>Updated icon</li>
+<li>Level: 90</li>
 <li>Strength: 50 ⇒ 40</li>
 <li>Movement Speed: 100 ⇒ 50</li>
 <li><em>Evasion V</em> ⇒<br>
 <em>Evasion II</em>—Gives a 10% chance to avoid an auto-attack</li>
+<li><em>Swift Return</em>—Teleports you to Athens. Cooldown: 3 minutes</li>
 </ul>
 <p><strong>Hunting Spear of Atalanta</strong></p>
 <ul>
@@ -3293,28 +3302,37 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 </ul>
 <p><strong>Bow of Artemis</strong></p>
 <ul>
-<li>Level 85 ⇒ 90</li>
+<li>Level: 85 ⇒ 90</li>
 <li>Strength: 25 ⇒ 20</li>
 <li>Agility: 25 ⇒ 20</li>
 <li>Intelligence: 25 ⇒ 20</li>
 <li>Attack Damage: 50 ⇒ 0</li>
+<li><em>Trueshot Aura I</em>—Allies within 450 units deal 15% bonus damage with their ranged auto-attacks</li>
+<li>Cannot be used by Warrior classes</li>
 </ul>
 <p><strong>Atalanta’s Hunting Garb</strong></p>
 <ul>
+<li>Level: 150</li>
+<li>Strength: 80</li>
+<li>Agility: 40</li>
+<li>Intelligence: 40</li>
 <li>Attack Damage: 75 ⇒ 0</li>
 <li>Attack Speed: 25% ⇒ 0</li>
 <li>Movement Speed: 100 ⇒ 50</li>
 <li><em>Evasion V</em> ⇒<br>
 <em>Evasion IV</em>—Gives a 20% chance to avoid an auto-attack</li>
+<li><em>Trueshot Aura II</em>—Allies within 450 units deal 25% bonus damage with their ranged auto-attacks</li>
+<li><em>Swift Return</em>—Teleports you to Athens. Cooldown: 3 minutes</li>
+<li>Cannot be used by Warrior classes</li>
 </ul>
 <p><strong>Priam’s Scepter</strong></p>
 <ul>
 <li>Updated icon</li>
-<li>Level 50 ⇒ 60</li>
+<li>Level: 50 ⇒ 60</li>
 </ul>
 <p><strong>Savage War Axe of Hephaestus</strong></p>
 <ul>
-<li>Level 50 ⇒ 60</li>
+<li>Level: 50 ⇒ 60</li>
 <li>Attack Damage: 60 ⇒ 85</li>
 <li>“Grants 6.5% chance to Break I an auto-attack target for 3.25 seconds, reducing its Armor by 15” ⇒<br>
 <em>Crush I</em>—Your auto-attacks have a 6.5% chance to apply Break I for 3.25 seconds on the target, which reduces their armor by 15 for the duration.</li>
@@ -3323,6 +3341,8 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <ul>
 <li>Updated icon</li>
 <li>Level: 85 ⇒ 90</li>
+<li>Strength: 30</li>
+<li>Agility: 30</li>
 <li>Attack Damage: 75 ⇒ 0</li>
 <li>“Grants 6.5% chance to Break II an auto-attack target for 3.25 seconds, reducing its Armor by 30” ⇒<br>
 <em>Crush II</em>—Your auto-attacks have a 6.5% chance to apply Break II for 3.25 seconds on the target, which reduces their armor by 30 for the duration.</li>
@@ -3330,6 +3350,7 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <p><strong>Hephaestus’ Thundering Axe</strong></p>
 <ul>
 <li>Updated icon</li>
+<li>Level: 150</li>
 <li>Strength: 50 ⇒ 70</li>
 <li>Agility: 50 ⇒ 70</li>
 <li>Attack Damage: 100 ⇒ 250</li>
@@ -3339,9 +3360,10 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <p><strong>Armor of Hera</strong></p>
 <ul>
 <li>Updated icon</li>
+<li>Level: 60</li>
 <li>Armor: 40 ⇒ 15</li>
 <li>Health: 600 ⇒ 750</li>
-<li>Health Regen p/ sec: 15 ⇒ 0</li>
+<li>Health Regen p/ second: 15 ⇒ 0</li>
 <li>“Restores 1200 Health. Cooldown: 30 seconds” ⇒<br>
 <em>Hera’s Cure I</em>—Heals 2000 health to yourself. Cooldown: 30 seconds
 <ul>
@@ -3361,6 +3383,8 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <ul>
 <li>Updated icon</li>
 <li>Level: 115 ⇒ 120</li>
+<li>Health: 2000</li>
+<li>Health Regen p/ second: 35</li>
 <li>Armor: 80 ⇒ 40</li>
 <li>Resist: 0 ⇒ 40</li>
 <li>“Restores 3000 Health. Cooldown: 30 seconds” ⇒<br>
@@ -3372,6 +3396,7 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <p><strong>Adamantium Blade</strong> (previously <em>Adamantium Scythe</em>)</p>
 <ul>
 <li>Updated icon</li>
+<li>Level: 60</li>
 <li>Attack Damage: 60 ⇒ 75</li>
 <li>Attack Speed: 30% ⇒ 35%</li>
 <li><code>[REMOVED]</code> <del>“Your attacks cause 150 additional damage against Uranus”</del></li>
@@ -3385,8 +3410,10 @@ Amplification = 2 - 0.94^(-1 * Resist Value).
 <li>Strength: 50 ⇒ 45</li>
 <li>Agility: 50 ⇒ 90</li>
 <li>Attack Damage: 125 ⇒ 150</li>
+<li>Armor: 25</li>
 <li><em>Critical Strike</em>—Grants a 10% chance to inflict 2.5x auto-attack damage. This ability stacks with similar effects. ⇒<br>
 <em>Critical Strike III</em>—Gives a 6.5% chance to do 2.0 times damage on an auto-attack. This stacks with other instances of Critical Strike.</li>
+<li><em>Adamantium Set</em> (1/3)—+50 Armor, +250 Attack Damage.</li>
 </ul>
 <p><strong>Aphrodite’s Blessed Orb</strong></p>
 <ul>
