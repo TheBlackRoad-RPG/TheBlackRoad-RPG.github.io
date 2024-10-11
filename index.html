@@ -3143,6 +3143,7 @@ vertical-align: -.125em;
 <li><em>Phalanx</em> (Spartan Warrior) now uses the same range checking logic as other AoE spells.</li>
 <li><em>Midas</em>’ <em>Alerted!</em> mechanic now properly cleans up upon defeat and reset.</li>
 <li><code>-stab</code> now deals 75% of your current health as true damage. (Previously, it dealt 100% of your current health as magical damage).</li>
+<li>Reconfigured how <code>-repick</code> and <code>-load</code> banks are cleaned up to prevent item duplication.</li>
 </ul>
 </section>
 <section id="typos-and-typesetting" class="level2">
@@ -3185,139 +3186,75 @@ vertical-align: -.125em;
 </ul>
 <hr>
 <p><strong>Rejuvenation</strong></p>
+<ul>
+<li>Cast Range: 700</li>
+<li>Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750</li>
+<li>Heals a target friendly unit for 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+0.95 / +1.1 / +1.25 / +1.4 / +1.55 / +1.7 / +1.85 / +2.0 Spell Healing) health over 15 seconds.</li>
+<li>Cooldown: 2.5 seconds.</li>
+</ul>
 <p><strong>Wall of Roots</strong></p>
+<ul>
+<li>Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1000</li>
+<li>Create a wall of roots at target location which deals 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0 Spell Damage) physical damage to enemies over 4 seconds. Whenever an enemy enters <em>Wall of Roots</em> for the first time: They are Ensnared, which prevents their movement for 2 seconds.</li>
+<li>Cooldown: 10 seconds.</li>
+</ul>
 <p><strong>Soothing Presence</strong></p>
+<ul>
+<li><p>Mana Cost: 40 / 80 / 140 / 220 / 320 / 440 / 640 / 800</p></li>
+<li><p>Allies within a 450 AoE restore 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing)</p>
+<p>Every second afterwards: Allies within a 450 AoE restore 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing) health and 1.75% Maximum Mana is drained from the <em>Druid</em>. <em>Soothing Presence</em> deactivates if sufficient mana cannot be drained.</p></li>
+<li><p>Cooldown: 10 seconds.</p></li>
+</ul>
 <p><strong>Aspect of the Dryad</strong></p>
+<ul>
+<li>Whenever you cast <em>Rejuvenation</em> and <em>Wall of Roots</em>, or activate <em>Soothing Presence</em>: Restore 5% missing mana to allies within a 450 AoE.</li>
+</ul>
 <p><strong>Storm Form</strong></p>
+<ul>
+<li>Transform into <em>Storm Elemental Form</em> form, which has the following traits:
+<ul>
+<li>Attack type changes to <em>Physical</em>.</li>
+<li>Armor type changes to <em>Warded</em>.</li>
+<li>Access to <em>Preordain Lightning</em>, <em>Thunderbolt</em>, <em>Maelstrom</em>, and <em>Aspect of the Nereid</em>.</li>
+</ul></li>
+<li>Cooldown: 10 seconds.</li>
+</ul>
 <hr>
 <p><strong>Preordain Lightning</strong></p>
+<ul>
+<li>Cast Range: 700</li>
+<li>Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850</li>
+<li>After 1.2 seconds: Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250 / 3500 (+0.8 / 0.9 / 1 / 1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage) magical damage to enemies in a 300 AoE</li>
+<li>Cooldown: 7 seconds.</li>
+</ul>
 <p><strong>Thunderbolt</strong></p>
+<ul>
+<li>Cast Range: 700</li>
+<li>Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200</li>
+<li>Blasts out a bolt thunder towards target location, dealing 100 / 175 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+0.8 / 0.9 / 1.0 / 1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage) magical damage to enemies in a line and reduces their armor by 10 / 15 / 20 / 25 / 30 / 35 / 40 / 45 for 8 seconds.</li>
+<li>Cooldown: 13 seconds.</li>
+</ul>
 <p><strong>Maelstrom</strong></p>
+<ul>
+<li>Cast Range: 700</li>
+<li>Mana Cost: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800</li>
+<li>Create a 350 AoE zone which deals a total of 600 / 1200 / 1800 / 3000 / 4200 / 6600 / 10000 / 15000 (+1.5 Spell Damage) magical damage over 3 seconds. Whenever an enemy enters the zone, <em>Maelstrom</em> will attempt to <em>Stun</em> it once for the remaining duration. Also, <em>Maelstrom</em> drags <em>Stunned</em> enemies towards the zone’s center.</li>
+<li>Cooldown: 19 seconds.</li>
+</ul>
 <p><strong>Aspect of the Nereid</strong></p>
+<ul>
+<li>Whenever you cast <em>Preordain Lightning</em>, <em>Thunderbolt</em>, and <em>Maelstrom</em>: Your auto-attack cooldown becomes 1 second (previously 2.5 seconds). Lasts for 3 seconds.</li>
+</ul>
 <p><strong>Human Form</strong></p>
-<!--
-
-> **Rejuvenation**
->
-> -   Cast Range: 700
->
-> -   Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750
->
-> -   Heals a target friendly unit for 300 / 600 / 1000 / 2000 / 3000 /
->     5000 / 7500 / 10000 (+0.95 / +1.1 / +1.25 / +1.4 / +1.55 / +1.7 /
->     +1.85 / +2.0 Spell Healing) health over 15 seconds.
->
-> -   Cooldown: 2.5 seconds.
->
-> **Wall of Roots**
->
-> -   Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1000
->
-> -   Create a wall of roots at target location which deals 300 / 600 /
->     1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+0.3 / 0.4 / 0.5 / 0.6 /
->     0.7 / 0.8 / 0.9 / 1.0 Spell Damage) physical damage to enemies
->     over 4 seconds. Whenever an enemy enters *Wall of Roots* for the
->     first time: They are Ensnared, which prevents their movement for 2
->     seconds.
->
-> -   Cooldown: 10 seconds.
->
-> **Soothing Presence**
->
-> -   Mana Cost: 40 / 80 / 140 / 220 / 320 / 440 / 640 / 800
->
-> -   Allies within a 450 AoE restore 1% / 1.2% / 1.5% / 1.8% / 2.1% /
->     2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075
->     / 0.0875 / 0.1 Spell Healing)
->
->     Every second afterwards: Allies within a 450 AoE restore 1% / 1.2%
->     / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375
->     / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing) health and
->     1.75% Maximum Mana is drained from the *Druid*. *Soothing
->     Presence* deactivates if sufficient mana cannot be drained.
->
-> -   Cooldown: 10 seconds.
->
-> **Aspect of the Dryad**
->
-> -   Whenever you cast *Rejuvenation* and *Wall of Roots*, or activate
->     *Soothing Presence*: Restore 5% missing mana to allies within a
->     450 AoE
->
-> **Storm Form**
->
-> -   Transform the Druid into a Storm Elemental that has the following
->     traits:
->
->     -   Attack type changes to Physical.
->
->     -   Armor type changes to Warded.
->
->     -   Access to *Preordain Lightning*, *Thunderbolt*, *Maelstrom*,
->         and *Aspect of the Nereid*.
->
-> -   Cooldown: 10 seconds.
->
-> **Preordain Lightning**
->
-> -   Cast Range: 700
->
-> -   Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
->
-> -   After 1.2 seconds: Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250
->     / 3500 (+0.8 / 0.9 / 1 / 1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage)
->     magical damage to enemies in a 300 AoE
->
-> -   Cooldown: 7 seconds.
->
-> **Thunderbolt**
->
-> -   Cast Range: 700
->
-> -   Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200
->
-> -   Blasts out a bolt thunder towards target location, dealing 100 /
->     175 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+0.8 / 0.9 / 1.0 /
->     1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage) magical damage to
->     enemies in a line and reduces their armor by 10 / 15 / 20 / 25 /
->     30 / 35 / 40 / 45 for 8 seconds.
->
-> -   Cooldown: 13 seconds.
->
-> **Maelstrom**
->
-> -   Cast Range: 700
->
-> -   Mana Cost: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800
->
-> -   Create a 350 AoE zone which deals a total of 600 / 1200 / 1800 /
->     3000 / 4200 / 6600 / 10000 / 15000 (+1.5 Spell Damage) magical
->     damage over 3 seconds. Whenever an enemy enters the zone,
->     *Maelstrom* will attempt to Stun it once for the remaining
->     duration. Also, *Maelstrom* drags Stunned enemies towards the
->     zone's center.
->
-> -   Cooldown: 19 seconds.
->
-> **Aspect of the Nereid**
->
-> -   Whenever you cast *Preordain Lightning*, *Thunderbolt*, and
->     *Maelstrom*: Your auto-attack cooldown becomes 1 second
->     (previously 2.5 seconds). Lasts for 3 seconds.
->
-> **Human Form**
->
-> -   Transform the Druid into a Human that has the following traits:
->
->     -   Attack type changes to Magical.
->
->     -   Armor type changes to Medium.
->
->     -   Access to *Rejuvenation*, *Wall of Roots*, *Soothing
->         Presence*, and *Aspect of the Dryad*.
->
-> -   Cooldown: 10 seconds.
--->
+<ul>
+<li>Transform into <em>Human</em> form, which has the following traits:
+<ul>
+<li>Attack type changes to <em>Magical</em>.</li>
+<li>Armor type changes to <em>Medium</em>.</li>
+<li>Access to <em>Rejuvenation</em>, <em>Wall of Roots</em>, <em>Soothing Presence</em>, and <em>Aspect of the Dryad</em>.</li>
+</ul></li>
+<li>Cooldown: 10 seconds.</li>
+</ul>
 </section>
 <section id="ranger" class="level3">
 <h3 class="anchored" data-anchor-id="ranger">Ranger</h3>
@@ -3463,19 +3400,19 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
 <p><strong>Hades</strong></p>
 <ul>
-<li><em>Flame Wave</em> moves and deals damage every 0.3 seconds (previously every 0.1 seconds). Its travel distance <em>has not been</em> changed</li>
+<li><em>Flame Wave</em> moves and deals damage every 0.3 seconds (previously every 0.1 seconds). Its travel distance <em>has not been</em> changed.</li>
 </ul>
 <p><strong>Helios</strong> (Hyperion)</p>
 <ul>
-<li><em>Flame Blast</em> moves and deals damage every 0.2 seconds (previously every 0.1 seconds). Its travel distance <em>has not been</em> changed</li>
+<li><em>Flame Blast</em> moves and deals damage every 0.2 seconds (previously every 0.1 seconds). Its travel distance <em>has not been</em> changed.</li>
 </ul>
 <p><strong>Ladon</strong></p>
 <ul>
-<li><em>Mega Flare</em> now deals damage every second (previously every 0.5 seconds)</li>
+<li><em>Mega Flare</em> now deals damage every second (previously every 0.5 seconds).</li>
 </ul>
 <p><strong>Midas</strong></p>
 <ul>
-<li><em>Burning</em> debuff deals damage every second (previously every 0.1 seconds)</li>
+<li><em>Burning</em> debuff deals damage every second (previously every 0.1 seconds).</li>
 </ul>
 </section>
 
