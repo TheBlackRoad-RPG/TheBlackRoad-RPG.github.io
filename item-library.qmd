@@ -1,5 +1,5 @@
 ---
-title: "[BETA] TBR 1.39c Item Library"
+title: "[BETA] TBR 1.39c2 Item Library"
 format:
   html:
     page-layout: full
@@ -16,6 +16,7 @@ To-do:
 - Icons: https://docs.google.com/spreadsheets/d/1OMMIJZ8maoltPFcY_ZSSS4WaUr9ReJKe1DqFHDrFmYQ/edit?gid=583245039#gid=583245039&fvid=383852340
 - Acquisition
 - Filter out Olympian Gemstone Fragments; Iron Key
+- https://uploadcare.com/pricing/
 -->
 
 ```{css, echo = FALSE}
@@ -34,7 +35,7 @@ To-do:
 library(dplyr)
 library(DT)
 
-item.lines <- readLines("./data/item.ini")
+item.lines <- readLines("../the-black-road-rpg/src/table/item.ini")
 # unit.lines <- readLines("./data/unit.ini")
 # crafting.lines <- readLines("./data/02-Initilization.j")
 # forging.lines <- readLines("./data/Forge-Craftmen.j")

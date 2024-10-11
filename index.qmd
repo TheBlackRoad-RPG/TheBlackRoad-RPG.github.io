@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39c --- Changelog"
+title: "The Black Road RPG v1.39c2 --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -16,445 +16,442 @@ editor:
 
 ## General
 
--   Updated the model of the Alchemy profession's crafting materials
-    (*Goldpetal*, *Shrooms!*, *Blood of Helios*, and *Godsleaf*).
+-   Adding the `-craftkey`/`-ck` chat command. This changes the crafting
+    menu hotkey from **TAB** to **U** and vice versa. The Save/Load
+    system will remember your setting for it at a character-level.
+-   The model for *Obelisk of Poseidon* has been updated.
+-   *Teleport to the Obelisk of Poseidon* no longer requires a *Teleport
+    Stone*.
+-   Defeating *Hyperion* now unlocks the ability to *Teleport to the
+    Obelisk of Poseidon* from *Corinth*.
+-   *Phylas* no longer has the ability to *Teleport to the Obelisk of
+    Poseidon* at map start.
+-   Updated *Enfeeble*'s (Generic Debuff) FX and icon.
+-   *Statuette of the Tych*e now has a passive which lists the Essence
+    exchange rates for *Olympian Gemstone Fragments* and the *Gemstone
+    of the Olympians*.
+-   Redefined a notch of *The Fools' Mausoleum* zone to prevent a bug
+    where triggered movement, e.g. *Winds of War*, can cause a hero to
+    enter it from the *Minotaur Burrows*.
 
--   Updated the FX for when *Olympian Gemstone Fragments* are combined
-    into a *Gemstone of the Olympians*.
+## Quests
 
--   *Tome of Attribute Increase +2/+3/+4/+8* objects are now dynamically
-    updated to match the corresponding boss' name and level (instead of
-    having unique item objects).
+**Stabilize the Aether** (Phylas), Quest level 55
 
--   The *Resist* stat can now enter negative values and follows the same
-    formula as the negative *Armor* stat:
-
-    <blockquote>Amplification = 2 - 0.94\^(-1 \* Resist
-    Value`)`{=html}.</blockquote>
-
--   *Enfeeble I* now reduces *Resist* by 15 for the duration (previously
-    amplifies any magical damage dealth to them by 5%).
-
--   *Cleave* (Item Ability) FX reverted back to the default Wc3 FX.
-
--   *Move* is now visible on a unit's command card. (Previously, it was
-    hidden.)
-
--   The runes for *The Fools' Mausoleum*'s crystal puzzle have their
-    size increased by a factor of 1.5 and they no longer have a glow
-    effect.
+-   Rewards 4500 gold and 500 crafting materials.
+-   Bring *Phylas* a *Transport Stone.*
+-   Quest completion unlocks travel to the *Island of Storms*.
 
 ## Bug Fixes
 
--   *Ares' Blade of Might* now correctly consumes all listed forge
-    components.
--   *Vengeance* (Warlock) and *Eviscerate* (Assassin) now correctly
-    respects spell immunity.
--   *Soulless*' storm bolt derivative now no longer bypasses stun
-    immunity checks.
--   *Frigid Aura I* and *Frigid Aura II* correctly applies to enemies
-    within 450 AoE (instead of 600 AoE).
--   *Medallion of Stamina* craft correctly requires 105 crafting
-    materials (instead of 80).
--   Health Regeneration and Mana Regeneration stat implemented for new
-    and reworked items now works in transports and now uses the same
-    clock frequency as base Health Regeneration and Mana Regeneration
-    stat.
--   *Cleave* (Item Ability) now replicates the default Wc3 ability in
-    bypassing Spell/Magic Immunity.
--   Replay desyncs due to the creation of custom frames should no longer
-    occur \~ This does may not fix the root cause of replay desyncs, but
-    it is a step towards it.
--   The disabled command buttons for *Amphirite's Cloak* and *Midnight
-    Cloak* have been corrected.
+-   *Towering Shield of Athena* no longer grants the *Dazzle* item
+    ability as a hidden passive.
+-   The *Cleave* item ability applies physical damage as intended.
+    -   Affects *Deathchill Blade*, *Deathchill Greatsword*, and *Red
+        Dragonscale Ring of Serious Addiction* downstream.
+-   *Scepter of the Chosen Ones* grants the correct values of Spell
+    Damage and Spell Healing.
+-   The following enemies have their base health regeneration per second
+    flag turned on as intended:
+    -   *Cronus*
+    -   *Cronus* adds
+    -   *Aeacus*
+    -   *Makarios*
+    -   *Makarios* adds
+    -   *Rhea* adds
+-   *Phalanx* (Spartan Warrior) now uses the same range checking logic
+    as other AoE spells.
+-   *Midas*' *Alerted!* mechanic now properly cleans up upon defeat and
+    reset.
+-   `-stab` now deals 75% of your current health as true damage.
+    (Previously, it dealt 100% of your current health as magical
+    damage).
 
 ## Typos and Typesetting
 
--   *Cleave* (Deathchill Blade and Deathchill Greatsword).
--   *Sword of the Olympians*.
--   *Infuriate* (Barbarian).
--   *Green Dragonscale Ring of Serious Addiction*.
--   `-roll`/`-r`.
--   *Trueshot Aura* (Item Ability).
--   *Evasion* (Item Ability).
--   *Staff of Delphi*.
--   Craft *Rod of the Chosen*.
--   Craft *Staff of Delphi*.
--   Craft *Gem of the North*.
--   Craft *Buckler*.
--   Craft *High Oracle's Robes*.
--   Craft *Thespian Boiled Leather*.
--   Craft *Robes of the Chosen*.
--   Craft *Robes of Delphi*.
--   Craft *Towering Shield*.
--   Craft *Gem of the South*.
--   Craft *Elixir of Agility*.
--   Craft *Orb of Lesser Mana Regeneration*.
--   Craft *Ring of Evasion*.
--   Craft *Spirit Charm*.
--   Craft *Soul Charm*.
--   Craft *Well of Souls*.
--   Craft *Medallion of Superior Stamina*.
--   Craft *Pendant of Superior Mana*.
--   Craft *Circlet of the Mother Goddess*.
--   Craft *Gem of the East*.
--   Craft *Gem of the West*.
--   Craft *Aphrodite's Favor*.
--   *Winds of War* (Warlord).
--   *Flash Point* (Magician).
--   *Mighty Stomp* (Barbarian).
--   *Charge* (Spartan Warrior).
--   *Frost Fire Orb* (Magician).
--   *Blood Bath* (Barbarian).
--   *Bleed* (Warlord).
--   *Counter* (Warlord).
--   *Flame Spire* (Magician).
--   *Throw Javelin* (Spartan Warrior).
--   *Frost Chain* (Magician).
+-   *Fire of Apollo*
+-   *Trueshot Aura I* & *Trueshot Aura II*
+-   *Might Aura I* & *Might Aura II*
+-   *Bloody Fervor I* & *Bloody Fervor II*
+-   *Lower Resist*
+-   *Mighty Leap*
+-   *Blaze o' Glory*
+-   *Bow of Artemis*
+-   *Ring of the Frozen Citadel*
+-   *Midnight Cloak*
+-   *Adamantium Blade*
+-   *Aegis of the Frozen Citadel*
+-   *Star Dust*
 
 ## Heroes
 
-### Magician
+### Barbarian
 
-**Flame Spire**
+**Rage**
 
--   Mana Cost: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800 ⇒ 35 / 75
-    / 125 / 200 / 300 / 415 / 600 / 900
+-   Whenever you land a successful auto-attack: You restore 0.03 Level
+    mana. ⇒ Whenever you land a successful auto-attack: You restore 4 +
+    0.03 Level mana.
 
+### Druid
+<!--
+> **Base Stats**
+>
+> -   Attack Range: 600 ⇒ 450
+>
+> -   Attack Cooldown: 2.25 ⇒ 2.5
+>
+> **Wild Set**
+>
+> -   Whenever you change form: Gain 25% bonus movement speed for 2.5
+>     seconds.
+>
+> **Rejuvenation**
+>
+> -   Cast Range: 700
+>
+> -   Mana Cost: 30 / 60 / 105 / 170 / 250 / 340 / 510 / 750
+>
+> -   Heals a target friendly unit for 300 / 600 / 1000 / 2000 / 3000 /
+>     5000 / 7500 / 10000 (+0.95 / +1.1 / +1.25 / +1.4 / +1.55 / +1.7 /
+>     +1.85 / +2.0 Spell Healing) health over 15 seconds.
+>
+> -   Cooldown: 2.5 seconds.
+>
+> **Wall of Roots**
+>
+> -   Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1000
+>
+> -   Create a wall of roots at target location which deals 300 / 600 /
+>     1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+0.3 / 0.4 / 0.5 / 0.6 /
+>     0.7 / 0.8 / 0.9 / 1.0 Spell Damage) physical damage to enemies
+>     over 4 seconds. Whenever an enemy enters *Wall of Roots* for the
+>     first time: They are Ensnared, which prevents their movement for 2
+>     seconds.
+>
+> -   Cooldown: 10 seconds.
+>
+> **Soothing Presence**
+>
+> -   Mana Cost: 40 / 80 / 140 / 220 / 320 / 440 / 640 / 800
+>
+> -   Allies within a 450 AoE restore 1% / 1.2% / 1.5% / 1.8% / 2.1% /
+>     2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075
+>     / 0.0875 / 0.1 Spell Healing)
+>
+>     Every second afterwards: Allies within a 450 AoE restore 1% / 1.2%
+>     / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% (+0.0125 / 0.025 / 0.0375
+>     / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing) health and
+>     1.75% Maximum Mana is drained from the *Druid*. *Soothing
+>     Presence* deactivates if sufficient mana cannot be drained.
+>
+> -   Cooldown: 10 seconds.
+>
+> **Aspect of the Dryad**
+>
+> -   Whenever you cast *Rejuvenation* and *Wall of Roots*, or activate
+>     *Soothing Presence*: Restore 5% missing mana to allies within a
+>     450 AoE
+>
+> **Storm Form**
+>
+> -   Transform the Druid into a Storm Elemental that has the following
+>     traits:
+>
+>     -   Attack type changes to Physical.
+>
+>     -   Armor type changes to Warded.
+>
+>     -   Access to *Preordain Lightning*, *Thunderbolt*, *Maelstrom*,
+>         and *Aspect of the Nereid*.
+>
+> -   Cooldown: 10 seconds.
+>
+> **Preordain Lightning**
+>
+> -   Cast Range: 700
+>
+> -   Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
+>
+> -   After 1.2 seconds: Deal 200 / 450 / 600 / 900 / 1200 / 1600 / 2250
+>     / 3500 (+0.8 / 0.9 / 1 / 1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage)
+>     magical damage to enemies in a 300 AoE
+>
+> -   Cooldown: 7 seconds.
+>
+> **Thunderbolt**
+>
+> -   Cast Range: 700
+>
+> -   Mana Cost: 50 / 100 / 175 / 275 / 400 / 550 / 800 / 1200
+>
+> -   Blasts out a bolt thunder towards target location, dealing 100 /
+>     175 / 350 / 700 / 1250 / 2500 / 3750 / 5000 (+0.8 / 0.9 / 1.0 /
+>     1.1 / 1.2 / 1.3 / 1.4 / 1.5 Spell Damage) magical damage to
+>     enemies in a line and reduces their armor by 10 / 15 / 20 / 25 /
+>     30 / 35 / 40 / 45 for 8 seconds.
+>
+> -   Cooldown: 13 seconds.
+>
+> **Maelstrom**
+>
+> -   Cast Range: 700
+>
+> -   Mana Cost: 75 / 150 / 250 / 400 / 600 / 825 / 1200 / 1800
+>
+> -   Create a 350 AoE zone which deals a total of 600 / 1200 / 1800 /
+>     3000 / 4200 / 6600 / 10000 / 15000 (+1.5 Spell Damage) magical
+>     damage over 3 seconds. Whenever an enemy enters the zone,
+>     *Maelstrom* will attempt to Stun it once for the remaining
+>     duration. Also, *Maelstrom* drags Stunned enemies towards the
+>     zone's center.
+>
+> -   Cooldown: 19 seconds.
+>
+> **Aspect of the Nereid**
+>
+> -   Whenever you cast *Preordain Lightning*, *Thunderbolt*, and
+>     *Maelstrom*: Your auto-attack cooldown becomes 1 second
+>     (previously 2.5 seconds). Lasts for 3 seconds.
+>
+> **Human Form**
+>
+> -   Transform the Druid into a Human that has the following traits:
+>
+>     -   Attack type changes to Magical.
+>
+>     -   Armor type changes to Medium.
+>
+>     -   Access to *Rejuvenation*, *Wall of Roots*, *Soothing
+>         Presence*, and *Aspect of the Dryad*.
+>
+> -   Cooldown: 10 seconds.
+-->
 ### Ranger
-
-**Black Arrow**
-
--   Mana Cost: 7 / 14 / 21 / 35 / 49 / 70 / 91 / 112 ⇒ 9 / 18 / 27 / 44
-    / 52 / 88 / 114 / 140
 
 **Star Dust**
 
--   Cast Range: 650 ⇒ 700
--   Damage: 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+Spell
-    Damage) ⇒ 0
--   Single target ⇒ AoE target
--   AoE: 750 ⇒ 300
--   Heal: 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+0.4 Spell
-    Healing) ⇒ 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (+0.45
-    / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing).
-
-**Strafe**
-
--   Each bonus arrow deals 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 /
-    0.45 Agility + 0.1 / 0.15 / 0.2 / 0.25 / 0.3 / 0.35 / 0.4 / 0.45
-    Intelligence physical damage ⇒ Each bonus arrow deals 0.075 / 0.1 /
-    0.125 / 0.15 / 0.175 / 0.2 / 0.225 / 0.25 Agility + 0.15 / 0.2 /
-    0.25 / 0.3 / 0.35 / 0.4 / 0.45 / 0.5 Intelligence physical damage.
-
-### Spartan Warrior
-
-**Valor**
-
--   AoE: 300 ⇒ 450
-
-### Temple Guardian
-
-**Gift of the Gods** ⇒ **Invigorate**
-
--   Cast Range: 700
--   Mana Cost: 35 / 65 / 115 / 190 / 280 / 380 / 570 / 850
--   Heals 200 / 400 / 800 / 1200 / 2000 / 3000 / 4500 / 8000 (+0.9 /
-    0.95 / 1 / 1.05 / 1.1 / 1.15 / 1.2 / 1.25 Spell Healing) health to
-    an ally. If you self-target Invigorate: Heal an additional 0.5 / 0.7
-    / 0.9 / 1.15 / 1.35 / 1.6 / 1.8 / 2.0 Strength health.
--   Cooldown: 7 seconds.
-
-**Hammer of Zeus**
-
--   Cooldown: 6 seconds ⇒ 3 seconds.
+-   Mana Cost: 35 / 70 / 105 / 175 / 245 / 350 / 455 / 560 ⇒ 40 / 85 /
+    125 / 210 / 295 / 420 / 545 / 670
 
 ## Items
 
-**Green Dragonscale Ring of Serious Addiction**
+### Abilities
+<!--
+-   Brilliance Aura I
 
-Forge Components:
+> Allies within a 450 AoE have their mana regeneration increased by 5
+> mana per second. **Warrior class allies have their mana regeneration
+> increased by 1 mana per second instead.**
+>
+> -   Affects *Hera's Blessing*
 
--   Green Dragonscale Ring of Addiction
--   Chillstone Ring
--   Gem of the East ⇒ Gem of the West
--   Stone of Heaven
+-   Brilliance Aura II
 
-**Crown of Liquid Darkness**
+> Allies within a 450 AoE have their mana regeneration increased by 15
+> mana per second. **Warrior class allies have their mana regeneration
+> increased by 3 mana per second instead.**
+>
+> -   Affects *Scepter of the Chosen Ones*
 
--   Damages nearby enemies for 50 damage per second within 900 AoE ⇒
-    Damages nearby enemies for 50 damage per second within 450 AoE.
+-   *Hera's Cure I* and *Hera's Cure II*
 
-**Amphirite's Cloak**
+> -   It can no longer be activated at full health
+>
+> -   Affects *Armor of Hera* and *Armor of the Firstborn* downstream
 
--   Level: 135
--   Mana: 2000 ⇒ 1500
--   Intelligence: 45
--   Mana: 1500
--   Mana Regen p/ second: 20
--   Armor: 50 ⇒ 30
--   Resist: 0 ⇒ 30
--   *Mana Shield*—Activate to convert 20% of your current mana into a
-    post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds.
--   Cannot be used by Warrior classes
+-   *Gloom*
 
-**Dark Lance**
+> -   Whenever you deal physical damage that is not from an auto-attack,
+>     deal an additional 250 true damage. ⇒ Whenever you deal physical
+>     damage that is not from an auto-attack: Deal an additional 250
+>     piercing magical damage, which ignores magical damage reduction
+>     granted by Resist.
+>
+> -   Affects *Dark Lance* and *Shimmering Lance* downstream
 
--   Updated icon
--   Level: 70 ⇒ 90
--   Attack Damage: 125 ⇒ 150
--   “You have 10% chance on auto-attack to cause an additional 1000
-    damage” ⇒\
-    *Gloom*—Whenever you deal physical damage that is not from an
-    auto-attack, deal an additional 250 true damage.
+-   **Dark Lance**
 
-**Bright Lance**
+> -   Attack Damage: 150 ⇒ 125
 
--   Updated icon
--   Level: 70 ⇒ 90
--   Attack Damage: 125
--   “Your attacks will slow the target’s attack speed by 25% for up to 8
-    seconds” ⇒\
-    *Dazzle*—Your auto-attacks also reduces the target's attack speed by
-    20% for 6 seconds.
+-   **Shimmering Lance**
 
-**The Winged God's Blessed Boots**
-
--   Updated icon
--   Level: 110 ⇒ 105
-
-**Shimmering Lance**
-
--   Level: 105 ⇒ 120
--   Attack Damage: 250 ⇒ 300
--   Attack Speed: 0% ⇒ 50%
--   “You have 10% chance on auto-attack to cause an additional 1000
-    damage” ⇒\
-    *Gloom*—Whenever you deal physical damage that is not from an
-    auto-attack, deal an additional 250 true damage.
--   “Your attacks will slow the target’s attack speed by 25% for up to 8
-    seconds” ⇒\
-    *Dazzle*—Your auto-attacks also reduces the target's attack speed by
-    20% for 6 seconds.
-
-**Boots of Hermes**
-
--   Updated icon
--   Level: 50 ⇒ 60
--   Agility: 50 ⇒ 0
--   Health: 500
--   Movement Speed: 60 ⇒ 50
--   *Evasion IV* ⇒\
-    *Evasion II*—Gives a 10% chance to avoid an auto-attack
-
-**Boots of Marathon**
-
--   Updated icon
--   Level: 90
--   Strength: 50 ⇒ 40
--   Movement Speed: 100 ⇒ 50
--   *Evasion V* ⇒\
-    *Evasion II*—Gives a 10% chance to avoid an auto-attack
--   *Swift Return*—Teleports you to Athens. Cooldown: 3 minutes
-
-**Hunting Spear of Atalanta**
-
--   Level: 50 ⇒ 60
--   Strength: 15 ⇒ 20
--   Agility: 15 ⇒ 20
--   Intelligence: 15 ⇒ 20
--   Attack Damage: 25 ⇒ 0
--   Attack Speed: 25% ⇒ 0
--   Cannot be used by Warrior classes
-
-**Bow of Artemis**
-
--   Level: 85 ⇒ 90
--   Strength: 25 ⇒ 20
--   Agility: 25 ⇒ 20
--   Intelligence: 25 ⇒ 20
--   Attack Damage: 50 ⇒ 0
--   *Trueshot Aura I*—Allies within 450 units deal 15% bonus damage with
-    their ranged auto-attacks
--   Cannot be used by Warrior classes
-
-**Atalanta's Hunting Garb**
-
--   Level: 150
--   Strength: 80
--   Agility: 40
--   Intelligence: 40
--   Attack Damage: 75 ⇒ 0
--   Attack Speed: 25% ⇒ 0
--   Movement Speed: 100 ⇒ 50
--   *Evasion V* ⇒\
-    *Evasion IV*—Gives a 20% chance to avoid an auto-attack
--   *Trueshot Aura II*—Allies within 450 units deal 25% bonus damage
-    with their ranged auto-attacks
--   *Swift Return*—Teleports you to Athens. Cooldown: 3 minutes
--   Cannot be used by Warrior classes
-
-**Priam's Scepter**
-
--   Updated icon
--   Level: 50 ⇒ 60
-
-**Savage War Axe of Hephaestus**
-
--   Level: 50 ⇒ 60
--   Attack Damage: 60 ⇒ 85
--   "Grants 6.5% chance to Break I an auto-attack target for 3.25
-    seconds, reducing its Armor by 15" ⇒\
-    *Crush I*—Your auto-attacks have a 6.5% chance to apply Break I for
-    3.25 seconds on the target, which reduces their armor by 15 for the
-    duration.
-
-**Thunder Lance**
-
--   Updated icon
--   Level: 85 ⇒ 90
--   Strength: 30
--   Agility: 30
--   Attack Damage: 75 ⇒ 0
--   "Grants 6.5% chance to Break II an auto-attack target for 3.25
-    seconds, reducing its Armor by 30" ⇒\
-    *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
-    for 3.25 seconds on the target, which reduces their armor by 30 for
-    the duration.
-
+> -   Attack Speed: 50% ⇒ 30%
+-->
+### Objects
+<!--
 **Hephaestus' Thundering Axe**
 
--   Updated icon
--   Level: 150
--   Strength: 50 ⇒ 70
--   Agility: 50 ⇒ 70
--   Attack Damage: 100 ⇒ 250
--   "Grants 6.5% chance to Break II an auto-attack target for 3.25
-    seconds, reducing its Armor by 30" ⇒\
-    *Crush II*—Your auto-attacks have a 6.5% chance to apply Break II
-    for 3.25 seconds on the target, which reduces their armor by 30 for
-    the duration.
-
-**Armor of Hera**
-
--   Updated icon
--   Level: 60
--   Armor: 40 ⇒ 15
--   Health: 600 ⇒ 750
--   Health Regen p/ second: 15 ⇒ 0
--   “Restores 1200 Health. Cooldown: 30 seconds” ⇒\
-    *Hera’s Cure I*—Heals 2000 health to yourself. Cooldown: 30 seconds
-    -   *Hera's Cure I* can only be activated on heroes.
-
-**Armor of Zeus**
-
--   Updated icon
--   Level: 55 ⇒ 75
--   Strength: 10 ⇒ 0
--   Armor: 45 ⇒ 20
--   Resist: 0 ⇒ 20
--   Health: 800 ⇒ 1000
-
-**Armor of the Firstborn**
-
--   Updated icon
--   Level: 115 ⇒ 120
--   Health: 2000
--   Health Regen p/ second: 35
--   Armor: 80 ⇒ 40
--   Resist: 0 ⇒ 40
--   “Restores 3000 Health. Cooldown: 30 seconds” ⇒\
-    *Hera’s Cure II*—Heals 4500 health to yourself. Cooldown: 30 seconds
-    -   *Hera's Cure II* can only be activated on heroes.
-
-**Adamantium Blade** (previously *Adamantium Scythe*)
-
--   Updated icon
--   Level: 60
--   Attack Damage: 60 ⇒ 75
--   Attack Speed: 30% ⇒ 35%
--   `[REMOVED]` ~~"Your attacks cause 150 additional damage against
-    Uranus"~~
--   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
-    damage. This ability stacks with similar effects. ⇒\
-    *Critical Strike I*—Gives a 6.5% chance to do 1.5 times damage on an
-    auto-attack. This stacks with other instances of Critical Strike.
+-   Reverted icon change
 
 **Adamantium Lance**
 
 -   Updated icon
--   Level: 140 ⇒ 135
--   Strength: 50 ⇒ 45
--   Agility: 50 ⇒ 90
--   Attack Damage: 125 ⇒ 150
--   Armor: 25
--   *Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
-    damage. This ability stacks with similar effects. ⇒\
-    *Critical Strike III*—Gives a 6.5% chance to do 2.0 times damage on
-    an auto-attack. This stacks with other instances of Critical Strike.
--   *Adamantium Set* (1/3)—+50 Armor, +250 Attack Damage.
 
-**Aphrodite's Blessed Orb**
+**Thunder Lance**
 
--   Intelligence: 20 ⇒ 0
--   `[REMOVED]` ~~Mana Regeneration V—Gain 30% increased Mana
-    Regeneration.~~
--   “Increase your Spell Power by 2000 for 30 seconds. Cooldown: 60
-    seconds.” ⇒\
-    *Gift of Aphrodite*—Increase your Spell Power by 3000 for 15
-    seconds. Cooldown: 60 seconds.
-    -   *Gift of Aphrodite* can only be activated on heroes.
+-   Updated icon
 
+**Blade of Ares**
+
+-   Level: 75
+
+-   Attack Damage: 75 ⇒ 120
+
+-   Attack Speed: 30% ⇒ 25%
+
+-   *Bloody Fervor I*—Your auto-attacks restores health equal to 1.5% of
+    the damage dealt.
+
+**Staff of Poseidon**
+
+-   Updated icon
+
+-   Level: 55 ⇒ 75
+
+-   Intelligence: 0 ⇒ 25
+
+-   Spell Damage: 700 ⇒ 1000
+
+-   Cannot be used by Warrior classes
+
+**Sword of Might**
+
+-   Level: 75
+
+-   Strength: 30 ⇒ 25
+
+-   Agility: 30 ⇒ 25
+
+-   Attack Damage: 45 ⇒ 0
+
+-   *Might Aura I*—Allies within a 450 AoE deal 15% bonus damage with
+    their melee auto-attacks.
+
+**Burning Hand of the War God**
+
+-   Level: 85 ⇒ 90
+
+-   Strength: 35 ⇒ 45
+
+-   Agility: 35 ⇒ 45
+
+-   Attack Speed: 30% ⇒ 0%
+
+-   *Bloody Fervor I*—Your auto-attacks restores health equal to 1.5% of
+    the damage dealt.
+
+**Ares' Blade of Might**
+
+-   Level: 150
+
+-   Strength: 65 ⇒ 75
+
+-   Agility: 65 ⇒ 75
+
+-   Attack Damage: 120
+
+-   Attack Speed: 60% ⇒ 25%
+
+-   *Bloody Fervor II*—Your auto-attacks restores health equal to 3% of
+    the damage dealt.
+
+-   *Might Aura II*—Allies within a 450 AoE deal 25% bonus damage with
+    their melee auto-attacks.
+
+**Ring of Regret**
+
+-   Level: 120
+
+-   Strength: 120 ⇒ 85
+
+-   *Magic Protection*—Reduces magical damage taken depending on Maximum
+    Health.
+
+-   ≤ 24999: Reduces magical damage by 400 ⇒ 1600.
+
+-   ≤ 49999: Reduces magical damage by 200 ⇒ 800.
+
+-   ≥ 50000: Reduces magical damage by 100 ⇒ 400.
+
+-   Khaos Champion, Barbarian, Warlord, Assassin only
+
+**Silenus' Talisman**
+
+-   Level: 120
+
+-   Strength: 60 ⇒ 50
+
+-   Intelligence: 60 ⇒ 50
+
+-   *Lower Resist*—Spell effects have an 8% chance to Enfeeble I their
+    target(s) for 8 seconds, which reduces their Resist by 15 for the
+    duration. If Lower Resist is applied by a spell-enhanced auto-attack
+    or damage over time effect: Lower Resist cannot be applied on that
+    target by either spell type for the next 12 seconds.
+
+-   Cannot be used by Warrior classes
+
+**Midas' Band of Vigor**
+
+-   Level: 135
+
+-   Strength: 160 ⇒ 170
+
+-   *Magic Protection*—Reduces magical damage taken depending on Maximum
+    Health.
+
+-   ≤ 24999: Reduces magical damage by 400 ⇒ 1600.
+
+-   ≤ 49999: Reduces magical damage by 200 ⇒ 800.
+
+-   ≥ 50000: Reduces magical damage by 100 ⇒ 400.
+
+-   *Mighty Leap*—Leap to target point within range to inflict 5000
+    physical damage in a 300 AoE and Stun affected targets for 3 seconds
+    upon impact. Cooldown: 60 seconds
+
+-   Khaos Champion, Barbarian, Warlord, Assassin only
+
+**Midas' Pendant of Wisdom**
+
+-   Level: 135
+
+-   Strength: 100 ⇒ 110
+
+-   Intelligence: 60 ⇒ 65
+
+-   *Lower Resist*—Spell effects have an 8% chance to Enfeeble I their
+    target(s) for 8 seconds, which reduces their Resist by 15 for the
+    duration. If Lower Resist is applied by a spell-enhanced auto-attack
+    or damage over time effect: Lower Resist cannot be applied on that
+    target by either spell type for the next 12 seconds.
+
+-   *Blaze o' Glory*—Summon a Fire Elemental at target point that emits
+    flames in a 164 AoE for 10 seconds. Effected targets suffer from
+    Burning which inflicts 7500 magical damage over 3.5 seconds.
+    Cooldown: 60 seconds
+
+-   Cannot be used by Warrior classes
+-->
 ## Forces of Hell
 
-The durability update for the bosses of TBR is in the intended
-direction, but perhaps the HP Regen p/s values as-is made their
-effective HP a lot higher than anticipated. Hence, I am tuning them
-doing by a fraction.
+**Hades**
 
--   **Atlas**: 37.5 ⇒ 33.75
--   **Thea**: 60 ⇒ 54
--   **Themis**: 90 ⇒ 81
--   **Cyclops**: 27 ⇒ 24
--   **Manslayer**: 45 ⇒ 40.5
--   **Lightbane**: 30 ⇒ 27
--   **Hallowed One**: 135 ⇒ 121
--   **Cronus**: 150 ⇒ 135
--   **Makarios**: 77.5 ⇒ 69.75
--   **Aeacus**: 87.5 ⇒ 78.75
--   **Medusa**: 87 ⇒ 78.3
--   **Uranus**: 187.5 ⇒ 168.75
--   **Shadowslayer**: 225 ⇒ 202.5
--   **Chillhand**: 286.59 ⇒ 257.931
--   **Chimaera**: 558 ⇒ 502.2
--   **Cerberus**: 506 ⇒ 455.4
--   **Tisiphone**: 377 ⇒ 339.3
--   **Megaera**: 310.33 ⇒ 279.297
--   **Alecto**: 320 ⇒ 288
--   **Rhea**: 375 ⇒ 337.5
--   **Persephone**: 1007 ⇒ 885.95
--   **Hydra**: 722.66 ⇒ 614.261
--   **Oceanus**: 750 ⇒ 637.5
--   **Gaea**: 1500 ⇒ 1275
--   **Ladon**: 1125 ⇒ 956.25
--   **Sphinx**: 2493 ⇒ 2119.05
--   **Hades**: 3000 ⇒ 2400
--   **Eos**: 3375 ⇒ 2700
--   **Selene**: 2850 ⇒ 2280
--   **Theia**: 2625 ⇒ 2100
-
-**Midas**
-
--   Failing *The Fools' Mausoleum*'s crystal puzzle now spawns five
-    glaives (previously two glaives).
--   HP Regen p/s: 1275 ⇒ 1083.75
-
-**Hyperion**
-
--   HP Regen p/s: 3375 ⇒ 2700
--   *Fireball* magical damage: 30000 ⇒ 25500
+-   *Flame Wave* moves and deals damage every 0.3 seconds (previously
+    every 0.1 seconds). Its travel distance *has not been* changed
 
 **Helios** (Hyperion)
 
--   HP Regen p/s: 3150 ⇒ 2520
--   Armor: 268 ⇒ 108
+-   *Flame Blast* moves and deals damage every 0.2 seconds (previously
+    every 0.1 seconds). Its travel distance *has not been* changed
+
+**Ladon**
+
+-   *Mega Flare* now deals damage every second (previously every 0.5
+    seconds)
+
+**Midas**
+
+-   *Burning* debuff deals damage every second (previously every 0.1
+    seconds)
