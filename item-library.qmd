@@ -1,11 +1,12 @@
 ---
-title: "[BETA] TBR 1.39c2 Item Library"
+title: "[BETA] TBR 1.39c3 Item Library"
 format:
   html:
     page-layout: full
     theme: darkly
 date: last-modified
 editor: source
+embed-resources: true
 ---
 
 <!-- 
@@ -15,7 +16,6 @@ To-do:
 - Table functionality
 - Icons: https://docs.google.com/spreadsheets/d/1OMMIJZ8maoltPFcY_ZSSS4WaUr9ReJKe1DqFHDrFmYQ/edit?gid=583245039#gid=583245039&fvid=383852340
 - Acquisition
-- Filter out Olympian Gemstone Fragments; Iron Key
 - https://uploadcare.com/pricing/
 -->
 
@@ -147,7 +147,13 @@ item.df <- tibble(
 ```{r display_items}
 #| echo: false
 item.df |>
-  filter(class != "PowerUp", class != "Campaign", name.clean != "Rune of Restoration", !grepl("Tome of Attribute Increase", name.clean)) |>
+  filter(class != "PowerUp",
+         class != "Campaign", 
+         name.clean != "Rune of Restoration", 
+         !grepl("Tome of Attribute Increase", name.clean),
+         name.clean != "Iron Key",
+         !rawcode %in% c("[I0EX]", "[I0EY]")
+         ) |>
   mutate(rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
   arrange(rarity, level, name.clean) |>
   select(name, level, tooltip, prio) |>
