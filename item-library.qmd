@@ -14,9 +14,8 @@ To-do:
 - CSS Theme of the Item Library... 
 - Table filters
 - Table functionality
-- Icons: https://docs.google.com/spreadsheets/d/1OMMIJZ8maoltPFcY_ZSSS4WaUr9ReJKe1DqFHDrFmYQ/edit?gid=583245039#gid=583245039&fvid=383852340
 - Acquisition
-- https://uploadcare.com/pricing/
+- Embed icons images into item Item block?
 -->
 
 ```{css, echo = FALSE}
@@ -36,6 +35,8 @@ library(dplyr)
 library(DT)
 
 item.lines <- readLines("../the-black-road-rpg/src/table/item.ini")
+icon.lines <- read.csv("./data/icons.csv") |>
+  mutate(icon = gsub(".*/(.*)\\.png", "\\1", path))
 # unit.lines <- readLines("./data/unit.ini")
 # crafting.lines <- readLines("./data/02-Initilization.j")
 # forging.lines <- readLines("./data/Forge-Craftmen.j")
@@ -50,6 +51,7 @@ item_helpr <- \(start, end, field) {
   out <- switch(
     field,
     "Name" = gsub("Name = \"(.+)\"", "\\1", x[which.line]),
+    "Art" = gsub("Art = \"ReplaceableTextures\\\\\\\\CommandButtons\\\\\\\\(.*)\\.[Bb][Ll][Pp]\"", "\\1", x[which.line]),
     "class" = gsub("class = \"(.+)\"", "\\1", x[which.line]),
     "_parent" = gsub("_parent = \"(.+)\"", "\\1", x[which.line]),
     "Level" = gsub("Level = ([0-9]+)", "\\1", x[which.line]),
@@ -89,6 +91,7 @@ item.df <- tibble(
   rawcode = item.lines[grep("\\[I...\\]", item.lines)],
   parentcode = item_wrapr("_parent"),
   name = item_wrapr("Name"),
+  icon = item_wrapr("Art"),
   class = item_wrapr("class"),
   level = item_wrapr("Level"),
   prio = item_wrapr("prio"),
@@ -125,6 +128,37 @@ item.df <- tibble(
                                           "1013" ~ "Spartan Warrior only",
                                           "1014" ~ "Druid only"
                                           ), NA_character_),
+  icon = if_else(is.na(icon), case_match(parentcode,
+                                         "rlif" ~ "BTNRingSkull",
+                                         "belv" ~ "BTNBoots",
+                                         "frhg" ~ "BTNAdvancedUnholyStrength",
+                                         "pmna" ~ "BTNPendantOfMana",
+                                         "cnob" ~ "BTNCirclet",
+                                         "penr" ~ "BTNPendantOfEnergy",
+                                         "ckng" ~ "BTNHelmutPurple",
+                                         "rat6" ~ "BTNClawsOfAttack",
+                                         "shas" ~ "BTNScrollOfHaste",
+                                         "stwp" ~ "BTNScrollUber",
+                                         "ankh" ~ "BTNAnkh",
+                                         "sreg" ~ "BTNScrollOfRegenerationGreen",
+                                         "phea" ~ "BTNPotionGreenSmall",
+                                         "pman" ~ "BTNPotionBlueSmall",
+                                         "shea" ~ "BTNScrollOfTownPortal",
+                                         "sman" ~ "BTNScrollOfProtection",
+                                         "spro" ~ "BTNScroll",
+                                         "sror" ~ "BTNSnazzyScrollGreen",
+                                         "wneg" ~ "BTNWandSkull",
+                                         "pghe" ~ "BTNPotionGreen",
+                                         "pgma" ~ "BTNPotionBlueBig",
+                                         "oslo" ~ "BTNOrbofSlowness",
+                                         "sehr" ~ "BTNHeartOfSearinox",
+                                         "bzbf" ~ "BTNVialFull",
+                                         "rhth" ~ "BTNPeriapt1",
+                                         "k3m3" ~ "BTN3M3",
+                                         "rwiz" ~ "BTNSobiMask",
+                                         ), icon),
+  icon = if_else(rawcode == "[I037]", "BTNBlink2", icon),
+  icon = if_else(icon == "BTNFrostmourne", "BTNFrostMourne", icon),
   level = as.numeric(level),
   level = if_else(is.na(level), case_match(parentcode,
                                             "rlif" ~ 3,
@@ -141,7 +175,8 @@ item.df <- tibble(
                      grepl("#1E90FF", name) ~ "Relic / Olympian Relic",
                      grepl("#73C2FB", name) ~ "Crafting Component / Unique Crafting Component",
                      .default = "Common"),
-  name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name))
+  name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name)) |>
+  left_join(y = icon.lines, by = join_by(icon))
 ```
 
 ```{r display_items}
@@ -154,12 +189,14 @@ item.df |>
          name.clean != "Iron Key",
          !rawcode %in% c("[I0EX]", "[I0EY]")
          ) |>
-  mutate(rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
+  mutate(
+    rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
   arrange(rarity, level, name.clean) |>
-  select(name, level, tooltip, prio) |>
+  select(name, level, tooltip, prio, path) |>
   mutate(name.aug = paste0(name, 
                            if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""), 
-                           if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), ""))) |>
-  select(name.aug, tooltip) |>
-  datatable(rownames = FALSE, escape = FALSE, colnames = c("Item", "Description"))
+                           if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
+         icon_block = paste0("<img src=\"", path, "\"/>")) |>
+  select(icon_block, name.aug, tooltip) |>
+  datatable(rownames = FALSE, escape = FALSE, colnames = c("", "Item", "Description"))
 ```
