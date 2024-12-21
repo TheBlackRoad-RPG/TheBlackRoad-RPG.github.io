@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alteisen (Av3n)">
 
-<title>The Black Road RPG v1.39c4 — Changelog</title>
+<title>The Black Road RPG v1.39c3 — Changelog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3052,12 +3052,11 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
-  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
-  <li><a href="#typos-and-typesetting" id="toc-typos-and-typesetting" class="nav-link" data-scroll-target="#typos-and-typesetting">Typos and Typesetting</a></li>
-  <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a></li>
-  <li><a href="#items" id="toc-items" class="nav-link" data-scroll-target="#items">Items</a></li>
-  <li><a href="#forces-of-hell" id="toc-forces-of-hell" class="nav-link" data-scroll-target="#forces-of-hell">Forces of Hell</a></li>
+  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link active" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a>
+  <ul class="collapse">
+  <li><a href="#druid" id="toc-druid" class="nav-link" data-scroll-target="#druid">Druid</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -3067,7 +3066,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Black Road RPG v1.39c4 — Changelog</h1>
+<h1 class="title">The Black Road RPG v1.39c3 — Changelog</h1>
 </div>
 
 
@@ -3090,226 +3089,42 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="general" class="level2">
-<h2 class="anchored" data-anchor-id="general">General</h2>
-<p>The maximum number of attribute points depended on the hero level. ⇒ The maximum number of attribute points is 3500 for all levels.</p>
-<p>The number of attribute points granted per level depended on the hero level ⇒ Eight attribute points granted per level.</p>
-<p>You gain approximately 90 more attribute points from Level 1 to Level 200.</p>
-<p>Statuette of Tyche can now Retrain all Strength attribute points, Retrain all Agility attribute points, and Retrain all Intelligence attribute points.</p>
-<p>Cost: 100 Essence</p>
-<p>Set Strength/Agility/Intelligence to 1. Grant attribute points equal to the amount lost by setting your attribute(s) to 1.</p>
-<p>Warrior classes cannot Retrain all Intelligence attribute points.</p>
-<p>The -kill chat command has been removed.</p>
-<p>The -disarm chat command now only applies to crafting components &amp; generic quest items. This functions behaves like the functionality when a player leaves a game, but doesn’t drop the items in town.</p>
-<p>Updated two components of how TBR’s stun is coded and specified</p>
-<p>It might be downstream bug fix for the TBR’s stun being dispelled on application</p>
-<p>The DPS Dummy now has a preconfigured template to replicate Persephone’s defensive stats</p>
-<p>Book of Skill Increase/Reset, DPS Dummy, Forge Regalia, and Familiar Passive custom UI is now locked to a fixed scale</p>
-<p>Properly anchored the Essence tooltips, Resist tooltip, and Personal Quest UI to be scaleable.</p>
-<p>Enabling “Always Visible” in lobby creation options no longer end the lobby and insteads reinstates fog of war (as if the terrain was explored)</p>
-<p>The lobby description now states the Discord invite link</p>
-<p>The triggered damage reduction formulas for Armor and Resist now returns a fixed value for damage amplication for values less than and equal to -20 (as per base Wc3 mechanics)</p>
-</section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
-<p>Tome of Attribute Increase dropped by a boss are now correctly aligned with the boss’ level</p>
-<p>The actives for Rune of Restoration, Scroll of Lesser Health, Scroll of Health, Scroll of Lesser Mana, Scroll of Mana, Scroll of Lesser Regeneration, Scroll of Regeneration, and Towering Shield of Athena now work as intended for Warrior classes</p>
-<p>Gift of Aphrodite, Trueshot Aura I, Trueshot Aura II, and Aspect of the Nereid now render correctly in the DPS UI</p>
-<p>Aphrodite’s Blessed Orb no longer grants the Mana Regeneration V item ability</p>
-<p>Poison Blade enhanced auto-attacks no longer allow you to target items</p>
-<p>Poison Blade now works with other enhanced auto-attack abilities</p>
-<p>Poison Blade’s damage-over-time debuff now lasts for 10 seconds as intended</p>
-<p>If you reforge your regalia and already completed Heletes’ Ingenuity (Personal Quest), you no longer re-discover Heletes’ Ingenuity</p>
-<p>-check on Druid’s Storm Form now correctly pulls the ability data</p>
-<p>-check on Druid now correctly displays Level 0 if Maelstrom hasn’t been acquired</p>
-<p>Swiftness (Familiar skill) Rank I now has its intended cooldown of 7 minutes</p>
-<p>Druid icon is now correctly rendered</p>
-<p>Portrait models are now correctly rendered</p>
-<p>Warrior classes no longer have pseudo spell-immunity</p>
-<p>Updated the leash code for the Furies</p>
-</section>
-<section id="typos-and-typesetting" class="level2">
-<h2 class="anchored" data-anchor-id="typos-and-typesetting">Typos and Typesetting</h2>
-<p>Tome of Attribute Increase</p>
-<p>Strength</p>
-<p>Agility</p>
-<p>Intelligence</p>
-<p>Book of Skill Reset</p>
-<p>Book of Skill Increase</p>
-<p>Counter (Warlord)</p>
-<p>Sadism (Warlock)</p>
-<p>Star Dust (Ranger)</p>
-<p>Soul-Piercing Shot (Ranger)</p>
-<p>Black Arrow (Ranger)</p>
-<p>Artemis’ Blessing (Ranger)</p>
-<p>Moon Bind (Ranger)</p>
-<p>Aspect of the Nereid (Druid)</p>
-<p>Aspect of the Dryad (Druid)</p>
-<p>Robes of Delphi</p>
-<p>Claw Charm</p>
-<p>Crackling Charm</p>
-<p>Medallion of Superior Stamina</p>
-<p>Green Dragonscale Ring of Serious Addiction</p>
-<p>Soothing Presence</p>
-<p>Rejuvenation</p>
-<p>Maelstrom</p>
-<p>F9 - TBR Mechanics</p>
-<p>Wall of Roots</p>
-<p>Shield of Faith</p>
-<p>Holy Light</p>
-<p>Hallowed Ground</p>
+<ul>
+<li><em>Human Form</em> and <em>Storm Form</em> (Druid) no longer:
+<ul>
+<li>Stacks <em>Resist</em> when under the effects of <em>Phalanx</em> (Spartan Warrior)</li>
+<li>Removes the effect of familiar (backpack) passives</li>
+<li>Removes the effect of Stun Immunity</li>
+<li>Removes the buff indicator for failing The Fools’ Mausoleum’s crystal lamp puzzle</li>
+<li>Removes <em>Embolden</em>’s (Guardian of Nature) damage bonus</li>
+<li>Removes <em>Curse</em>’s (Warlock) damage amplification bonus</li>
+<li>Removes <em>Pray</em>’s (Temple Guardian) bonuses</li>
+<li>Removes <em>Eris’ Golden Apple of Discord</em>’s Battle Power bonus</li>
+<li>Removes the effect of Elixir consumables</li>
+<li>Removes the effect of Draught consumables</li>
+<li>Removes the effect of Health Regen and Mana Regen granted by items*</li>
+</ul></li>
+<li><code>-l</code>/<code>-load</code> no longer sets your boat skin to the default skin</li>
+<li><em>Ares Blade of Command</em> now grants the stated amount of Attack Speed (%)</li>
+<li><em>Soothing Presence</em> (Druid) properly triggers every second instead of every 0.5 seconds</li>
+<li><em>Soothing Presence</em> (Druid) no longer ends a second early if your current mana equals the required amount to keep it active</li>
+</ul>
 </section>
 <section id="heroes" class="level2">
 <h2 class="anchored" data-anchor-id="heroes">Heroes</h2>
-<p>Assassin</p>
-<p>Gushing Wound</p>
-<p>Wounds stack two times ⇒ Wounds stack three times</p>
-<p>Cleric</p>
-<p>Hallowed Ground</p>
-<p>A valid target can only be affected by one instance of Hallowed Ground ⇒ A target can be affected by multiple instances of Hallowed Ground</p>
-<p>Druid</p>
-<p>Rejuvenation</p>
-<p>Unique caster instances now stack</p>
-<p>Soothing Presence</p>
-<p>Mana cost per second: 1.75% Maximum Mana ⇒ 8 / 16 / 28 / 44 / 64 / 88 / 128 / 160 (+1.75% Maximum Mana)</p>
-<p>Updated the FX to better visualise the 450 AoE</p>
-<p>Ranger</p>
-<p>Star Dust</p>
-<p>Restore 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (0.45 / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing) health over 4 seconds. ⇒ Restore 300 / 400 / 600 / 900 / 1350 / 1900 / 3000 / 4000 (0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 Spell Healing) health over 4 seconds.</p>
-<p>Unique caster instances now stack</p>
+<section id="druid" class="level3">
+<h3 class="anchored" data-anchor-id="druid">Druid</h3>
+<p><strong>Wild Set</strong></p>
+<ul>
+<li>Whenever you change form: Gain 25% bonus movement speed for 2.5 seconds. ⇒ Whenever you change form: You restore 0.5 Intelligence mana.</li>
+</ul>
+<p><strong>Soothing Presence</strong></p>
+<ul>
+<li>Active FX updated</li>
+</ul>
 </section>
-<section id="items" class="level2">
-<h2 class="anchored" data-anchor-id="items">Items</h2>
-<p>Scroll of the Beast, Potion of Superior Regeneration, Elixir of Superior Agility, Elixir of Superior Intelligence, Elixir of Superior Strength, Elixir of Superior Spell Power, Superior Armor Plates, Superior Whetstone, Superior Ether Dust, Draught of the Phoenix, Draught of Heaven, Draught of Life, &amp; Draught of Destruction</p>
-<p>Clean-up ticks: 2 ⇒ 7</p>
-<p>They persist “on the ground” for approximately 20-25 minutes longer.</p>
-<p>Book of Skill Increase - Level 2</p>
-<p>Level: 7 ⇒ 15</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 3</p>
-<p>Level: 15 ⇒ 45</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 4</p>
-<p>Level: 30 ⇒ 75</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 5</p>
-<p>Level: 50 ⇒ 105</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 6</p>
-<p>Level: 85 ⇒ 135</p>
-<p>Acquisition: Purchase from Books ⇒ Drop from Sphinx</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 7</p>
-<p>Level: 135 ⇒ 165</p>
-<p>Acquisition: Drop from Sphinx ⇒ Purchase from Books</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Book of Skill Increase - Level 8</p>
-<p>Level: 200 ⇒ 180</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Tome of Attribute Increase</p>
-<p>Previously known as Tome of Attribute Increase +8</p>
-<p>Model: Purple Book ⇒ Red Book</p>
-<p>The number of charges (uses) now represents the number of attribute points granted.</p>
-<p>&lt;X&gt;’s Tome</p>
-<p>Model: Purple Book ⇒ Red Book</p>
-<p>The number of charges (uses) now represents the number of attribute points granted.</p>
-<p>Book of Skill Reset</p>
-<p>Model: Green Book ⇒ Purple Book</p>
-<p>Ring of the Magi</p>
-<p>Previously Jeweled Ring</p>
-<p>Updated icon</p>
-<p>Level: 60</p>
-<p>Intelligence: 40 ⇒ 15</p>
-<p>Attack Damage: 35 ⇒ 0</p>
-<p>Attack Speed: 35% ⇒ 0%</p>
-<p>Spell Damage: 400 ⇒ 1000</p>
-<p>Spell Healing: 400 ⇒ 0</p>
-<p>Weaponsmith (Level 75)</p>
-<p>600 Crafting Materials</p>
-<p>1 Sea Essence</p>
-<p>2 Lump of Pure Adamantium</p>
-<p>1 Blood Ruby</p>
-<p>1 Ruby Heart</p>
-<p>Gemstone of Apollo</p>
-<p>Gift of Poseidon</p>
-<p>Level: 120</p>
-<p>Intelligence: 70</p>
-<p>Spell Damage: 3000</p>
-<p>Metalsmith Zoticus (Locris)</p>
-<p>Staff of Poseidon</p>
-<p>Ring of the Magi</p>
-<p>Gem of the West</p>
-<p>4 Stone of Heaven</p>
-<p>2 Sea Essence</p>
-<p>Barbaric Helm</p>
-<p>Updated icon</p>
-<p>Level: 40 ⇒ 45</p>
-<p>Strength: 25 ⇒ 15</p>
-<p>Armor: 25 ⇒ 15</p>
-<p>Retaliation I—Whenever you take damage: Deal 0.5 Strength physical damage to enemies within a 150 AoE of you.</p>
-<p>Cooldown: 2 seconds</p>
-<p>In addition, any enemies who attack you will take 75 damage.</p>
-<p>Crown of Thorns</p>
-<p>Previously Crown of Liquid Darkness</p>
-<p>Level: 60 ⇒ 75</p>
-<p>Strength: 0 ⇒ 25</p>
-<p>Health: 800 ⇒ 0</p>
-<p>Armor: 20 ⇒ 25</p>
-<p>Retaliation II—Whenever you take damage: Deal 0.75 Strength physical damage to enemies within a 150 AoE of you.</p>
-<p>Cooldown: 2 seconds</p>
-<p>Grants an aura that damages nearby enemies for 50 damage per second while healing nearby allies for 10 health per second.</p>
-<p>Armorsmith (Level 75)</p>
-<p>775 Crafting Materials</p>
-<p>1 Sea Essence</p>
-<p>1 Heart of Frost</p>
-<p>1 Ruby Heart</p>
-<p>1 Blood Ruby</p>
-<p>2 Lump of Pure Adamantium</p>
-<p>Savage Helm</p>
-<p>Updated icon</p>
-<p>Level: 50 ⇒ 90</p>
-<p>Strength: 40 ⇒ 80</p>
-<p>Agility: 40 ⇒ 0</p>
-<p>Armor: 35 ⇒ 50</p>
-<p>Retaliation II—Whenever you take damage: Deal 0.75 Strength physical damage to enemies within a 150 AoE of you.</p>
-<p>Cooldown: 2 seconds</p>
-<p>In addition, each attacking enemy will suffer 125 damage.</p>
-<p>Metalsmith Arcadios (New Issus)</p>
-<p>Barbaric Helm</p>
-<p>Crown of Liquid Darkness</p>
-<p>1 Lump of Pure Adamantium</p>
-<p>1 Green Power Crystal</p>
-<p>1 Blood Ruby</p>
-<p>1 Meteoric Iron</p>
-<p>2 Tempered Steel</p>
-<p>Regal Crown</p>
-<p>Updated icon</p>
-<p>Level: 40 ⇒ 45</p>
-<p>Intelligence: 20</p>
-<p>Spell Damage: 450</p>
-<p>Mana Regeneration III</p>
-<p>Crystal Helm</p>
-<p>Updated icon</p>
-<p>Level: 40 ⇒ 45</p>
-<p>Intelligence: 20</p>
-<p>Spell Healing: 450</p>
-<p>Mana Regeneration III</p>
-<p>Regal Helm of Sparkling Crystal</p>
-<p>Level: 45 ⇒ 75</p>
-<p>Intelligence: 40 ⇒ 50</p>
-<p>Spell Damage: 400 ⇒ 500</p>
-<p>Spell Healing: 400 ⇒ 1200</p>
-<p>Mana Regeneration V</p>
-<p>Gift of Hera</p>
-<p>Updated icon</p>
-<p>Level: 145 ⇒ 120</p>
-<p>Intelligence: 50 ⇒ 70</p>
-<p>Spell Healing: 3000</p>
-</section>
-<section id="forces-of-hell" class="level2">
-<h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
-<p>Neleus now has a leash</p>
-<p>Adjusted the AI routines for Neleus and Pelias such that they no longer deliberately cancel their auto-attacks</p>
 </section>
 
 </main>

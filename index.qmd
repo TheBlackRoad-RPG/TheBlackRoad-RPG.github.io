@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39c3 --- Changelog"
+title: "The Black Road RPG v1.39c4 --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -14,41 +14,463 @@ editor:
     wrap: 72
 ---
 
+## General
+
+The maximum number of attribute points depended on the hero level. ⇒ The
+maximum number of attribute points is 3500 for all levels.
+
+The number of attribute points granted per level depended on the hero
+level ⇒ Eight attribute points granted per level.
+
+You gain approximately 90 more attribute points from Level 1 to Level
+200.
+
+Statuette of Tyche can now Retrain all Strength attribute points,
+Retrain all Agility attribute points, and Retrain all Intelligence
+attribute points.
+
+Cost: 100 Essence
+
+Set Strength/Agility/Intelligence to 1. Grant attribute points equal to
+the amount lost by setting your attribute(s) to 1.
+
+Warrior classes cannot Retrain all Intelligence attribute points.
+
+The -kill chat command has been removed.
+
+The -disarm chat command now only applies to crafting components &
+generic quest items. This functions behaves like the functionality when
+a player leaves a game, but doesn't drop the items in town.
+
+Updated two components of how TBR's stun is coded and specified
+
+It might be downstream bug fix for the TBR's stun being dispelled on
+application
+
+The DPS Dummy now has a preconfigured template to replicate Persephone's
+defensive stats
+
+Book of Skill Increase/Reset, DPS Dummy, Forge Regalia, and Familiar
+Passive custom UI is now locked to a fixed scale
+
+Properly anchored the Essence tooltips, Resist tooltip, and Personal
+Quest UI to be scaleable.
+
+Enabling "Always Visible" in lobby creation options no longer end the
+lobby and insteads reinstates fog of war (as if the terrain was
+explored)
+
+The lobby description now states the Discord invite link
+
+The triggered damage reduction formulas for Armor and Resist now returns
+a fixed value for damage amplication for values less than and equal to
+-20 (as per base Wc3 mechanics)
+
 ## Bug Fixes
 
--   *Human Form* and *Storm Form* (Druid) no longer:
-    -   Stacks *Resist* when under the effects of *Phalanx* (Spartan
-        Warrior)
-    -   Removes the effect of familiar (backpack) passives
-    -   Removes the effect of Stun Immunity
-    -   Removes the buff indicator for failing The Fools' Mausoleum's
-        crystal lamp puzzle
-    -   Removes *Embolden*'s (Guardian of Nature) damage bonus
-    -   Removes *Curse*'s (Warlock) damage amplification bonus
-    -   Removes *Pray*'s (Temple Guardian) bonuses
-    -   Removes *Eris' Golden Apple of Discord*'s Battle Power bonus
-    -   Removes the effect of Elixir consumables
-    -   Removes the effect of Draught consumables
-    -   Removes the effect of Health Regen and Mana Regen granted by
-        items\*
--   `-l`/`-load` no longer sets your boat skin to the default skin
--   *Ares Blade of Command* now grants the stated amount of Attack Speed
-    (%)
--   *Soothing Presence* (Druid) properly triggers every second instead
-    of every 0.5 seconds
--   *Soothing Presence* (Druid) no longer ends a second early if your
-    current mana equals the required amount to keep it active
+Tome of Attribute Increase dropped by a boss are now correctly aligned
+with the boss' level
+
+The actives for Rune of Restoration, Scroll of Lesser Health, Scroll of
+Health, Scroll of Lesser Mana, Scroll of Mana, Scroll of Lesser
+Regeneration, Scroll of Regeneration, and Towering Shield of Athena now
+work as intended for Warrior classes
+
+Gift of Aphrodite, Trueshot Aura I, Trueshot Aura II, and Aspect of the
+Nereid now render correctly in the DPS UI
+
+Aphrodite's Blessed Orb no longer grants the Mana Regeneration V item
+ability
+
+Poison Blade enhanced auto-attacks no longer allow you to target items
+
+Poison Blade now works with other enhanced auto-attack abilities
+
+Poison Blade's damage-over-time debuff now lasts for 10 seconds as
+intended
+
+If you reforge your regalia and already completed Heletes' Ingenuity
+(Personal Quest), you no longer re-discover Heletes' Ingenuity
+
+-check on Druid's Storm Form now correctly pulls the ability data
+
+-check on Druid now correctly displays Level 0 if Maelstrom hasn't been
+acquired
+
+Swiftness (Familiar skill) Rank I now has its intended cooldown of 7
+minutes
+
+Druid icon is now correctly rendered
+
+Portrait models are now correctly rendered
+
+Warrior classes no longer have pseudo spell-immunity
+
+Updated the leash code for the Furies
+
+## Typos and Typesetting
+
+Tome of Attribute Increase
+
+Strength
+
+Agility
+
+Intelligence
+
+Book of Skill Reset
+
+Book of Skill Increase
+
+Counter (Warlord)
+
+Sadism (Warlock)
+
+Star Dust (Ranger)
+
+Soul-Piercing Shot (Ranger)
+
+Black Arrow (Ranger)
+
+Artemis' Blessing (Ranger)
+
+Moon Bind (Ranger)
+
+Aspect of the Nereid (Druid)
+
+Aspect of the Dryad (Druid)
+
+Robes of Delphi
+
+Claw Charm
+
+Crackling Charm
+
+Medallion of Superior Stamina
+
+Green Dragonscale Ring of Serious Addiction
+
+Soothing Presence
+
+Rejuvenation
+
+Maelstrom
+
+F9 - TBR Mechanics
+
+Wall of Roots
+
+Shield of Faith
+
+Holy Light
+
+Hallowed Ground
 
 ## Heroes
 
-### Druid
+Assassin
 
-**Wild Set**
+Gushing Wound
 
--   Whenever you change form: Gain 25% bonus movement speed for 2.5
-    seconds. ⇒ Whenever you change form: You restore 0.5 Intelligence
-    mana.
+Wounds stack two times ⇒ Wounds stack three times
 
-**Soothing Presence**
+Cleric
 
--   Active FX updated
+Hallowed Ground
+
+A valid target can only be affected by one instance of Hallowed Ground ⇒
+A target can be affected by multiple instances of Hallowed Ground
+
+Druid
+
+Rejuvenation
+
+Unique caster instances now stack
+
+Soothing Presence
+
+Mana cost per second: 1.75% Maximum Mana ⇒ 8 / 16 / 28 / 44 / 64 / 88 /
+128 / 160 (+1.75% Maximum Mana)
+
+Updated the FX to better visualise the 450 AoE
+
+Ranger
+
+Star Dust
+
+Restore 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (0.45 / 0.5 /
+0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing) health over 4
+seconds. ⇒ Restore 300 / 400 / 600 / 900 / 1350 / 1900 / 3000 / 4000
+(0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 Spell Healing) health
+over 4 seconds.
+
+Unique caster instances now stack
+
+## Items
+
+Scroll of the Beast, Potion of Superior Regeneration, Elixir of Superior
+Agility, Elixir of Superior Intelligence, Elixir of Superior Strength,
+Elixir of Superior Spell Power, Superior Armor Plates, Superior
+Whetstone, Superior Ether Dust, Draught of the Phoenix, Draught of
+Heaven, Draught of Life, & Draught of Destruction
+
+Clean-up ticks: 2 ⇒ 7
+
+They persist "on the ground" for approximately 20-25 minutes longer.
+
+Book of Skill Increase - Level 2
+
+Level: 7 ⇒ 15
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 3
+
+Level: 15 ⇒ 45
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 4
+
+Level: 30 ⇒ 75
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 5
+
+Level: 50 ⇒ 105
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 6
+
+Level: 85 ⇒ 135
+
+Acquisition: Purchase from Books ⇒ Drop from Sphinx
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 7
+
+Level: 135 ⇒ 165
+
+Acquisition: Drop from Sphinx ⇒ Purchase from Books
+
+Model: Green Book ⇒ Purple Book
+
+Book of Skill Increase - Level 8
+
+Level: 200 ⇒ 180
+
+Model: Green Book ⇒ Purple Book
+
+Tome of Attribute Increase
+
+Previously known as Tome of Attribute Increase +8
+
+Model: Purple Book ⇒ Red Book
+
+The number of charges (uses) now represents the number of attribute
+points granted.
+
+\<X\>'s Tome
+
+Model: Purple Book ⇒ Red Book
+
+The number of charges (uses) now represents the number of attribute
+points granted.
+
+Book of Skill Reset
+
+Model: Green Book ⇒ Purple Book
+
+Ring of the Magi
+
+Previously Jeweled Ring
+
+Updated icon
+
+Level: 60
+
+Intelligence: 40 ⇒ 15
+
+Attack Damage: 35 ⇒ 0
+
+Attack Speed: 35% ⇒ 0%
+
+Spell Damage: 400 ⇒ 1000
+
+Spell Healing: 400 ⇒ 0
+
+Weaponsmith (Level 75)
+
+600 Crafting Materials
+
+1 Sea Essence
+
+2 Lump of Pure Adamantium
+
+1 Blood Ruby
+
+1 Ruby Heart
+
+Gemstone of Apollo
+
+Gift of Poseidon
+
+Level: 120
+
+Intelligence: 70
+
+Spell Damage: 3000
+
+Metalsmith Zoticus (Locris)
+
+Staff of Poseidon
+
+Ring of the Magi
+
+Gem of the West
+
+4 Stone of Heaven
+
+2 Sea Essence
+
+Barbaric Helm
+
+Updated icon
+
+Level: 40 ⇒ 45
+
+Strength: 25 ⇒ 15
+
+Armor: 25 ⇒ 15
+
+Retaliation I—Whenever you take damage: Deal 0.5 Strength physical
+damage to enemies within a 150 AoE of you.
+
+Cooldown: 2 seconds
+
+In addition, any enemies who attack you will take 75 damage.
+
+Crown of Thorns
+
+Previously Crown of Liquid Darkness
+
+Level: 60 ⇒ 75
+
+Strength: 0 ⇒ 25
+
+Health: 800 ⇒ 0
+
+Armor: 20 ⇒ 25
+
+Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
+damage to enemies within a 150 AoE of you.
+
+Cooldown: 2 seconds
+
+Grants an aura that damages nearby enemies for 50 damage per second
+while healing nearby allies for 10 health per second.
+
+Armorsmith (Level 75)
+
+775 Crafting Materials
+
+1 Sea Essence
+
+1 Heart of Frost
+
+1 Ruby Heart
+
+1 Blood Ruby
+
+2 Lump of Pure Adamantium
+
+Savage Helm
+
+Updated icon
+
+Level: 50 ⇒ 90
+
+Strength: 40 ⇒ 80
+
+Agility: 40 ⇒ 0
+
+Armor: 35 ⇒ 50
+
+Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
+damage to enemies within a 150 AoE of you.
+
+Cooldown: 2 seconds
+
+In addition, each attacking enemy will suffer 125 damage.
+
+Metalsmith Arcadios (New Issus)
+
+Barbaric Helm
+
+Crown of Liquid Darkness
+
+1 Lump of Pure Adamantium
+
+1 Green Power Crystal
+
+1 Blood Ruby
+
+1 Meteoric Iron
+
+2 Tempered Steel
+
+Regal Crown
+
+Updated icon
+
+Level: 40 ⇒ 45
+
+Intelligence: 20
+
+Spell Damage: 450
+
+Mana Regeneration III
+
+Crystal Helm
+
+Updated icon
+
+Level: 40 ⇒ 45
+
+Intelligence: 20
+
+Spell Healing: 450
+
+Mana Regeneration III
+
+Regal Helm of Sparkling Crystal
+
+Level: 45 ⇒ 75
+
+Intelligence: 40 ⇒ 50
+
+Spell Damage: 400 ⇒ 500
+
+Spell Healing: 400 ⇒ 1200
+
+Mana Regeneration V
+
+Gift of Hera
+
+Updated icon
+
+Level: 145 ⇒ 120
+
+Intelligence: 50 ⇒ 70
+
+Spell Healing: 3000
+
+## Forces of Hell
+
+Neleus now has a leash
+
+Adjusted the AI routines for Neleus and Pelias such that they no longer
+deliberately cancel their auto-attacks
