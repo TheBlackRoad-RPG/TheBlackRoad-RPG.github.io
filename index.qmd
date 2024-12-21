@@ -110,367 +110,294 @@ Updated the leash code for the Furies
 
 ## Typos and Typesetting
 
-Tome of Attribute Increase
+-   TBR Mechanics (F9)
+-   *Strength* (Heroes)
+-   *Agility* (Heroes)
+-   *Intelligence* (Heroes)
+-   *Book of Skill Reset* (Seryo)
+-   *Book of Skill Increase* (Books)
+-   *Tome of Attribute Increase* (Books and Bosses)
+-   *Robes of Delphi* (Armorsmith)
+-   *Claw Charm* (Goldsmith)
+-   *Crackling Charm* (Goldsmith)
+-   *Medallion of Superior Stamina* (Goldsmith)
+-   *Green Dragonscale Ring of Serious Addiction* (Metalsmith Zotiucus)
 
-Strength
+------------------------------------------------------------------------
 
-Agility
-
-Intelligence
-
-Book of Skill Reset
-
-Book of Skill Increase
-
-Counter (Warlord)
-
-Sadism (Warlock)
-
-Star Dust (Ranger)
-
-Soul-Piercing Shot (Ranger)
-
-Black Arrow (Ranger)
-
-Artemis' Blessing (Ranger)
-
-Moon Bind (Ranger)
-
-Aspect of the Nereid (Druid)
-
-Aspect of the Dryad (Druid)
-
-Robes of Delphi
-
-Claw Charm
-
-Crackling Charm
-
-Medallion of Superior Stamina
-
-Green Dragonscale Ring of Serious Addiction
-
-Soothing Presence
-
-Rejuvenation
-
-Maelstrom
-
-F9 - TBR Mechanics
-
-Wall of Roots
-
-Shield of Faith
-
-Holy Light
-
-Hallowed Ground
+-   *Counter* (Warlord)
+-   *Sadism* (Warlock)
+-   *Star Dust* (Ranger)
+-   *Soul-Piercing Shot* (Ranger)
+-   *Black Arrow* (Ranger)
+-   *Artemis' Blessing* (Ranger)
+-   *Moon Bind* (Ranger)
+-   *Aspect of the Nereid* (Druid)
+-   *Aspect of the Dryad* (Druid)
+-   *Soothing Presence* (Druid)
+-   *Rejuvenation* (Druid)
+-   *Maelstrom* (Druid)
+-   *Wall of Roots* (Druid)
+-   *Shield of Faith* (Cleric)
+-   *Holy Light* (Cleric)
+-   *Hallowed Ground* (Cleric)
+-   *Transcendence* (Cleric)
+-   *Rebirth* (Cleric)
 
 ## Heroes
 
-Assassin
+### Assassin
 
-Gushing Wound
+**Gushing Wound**
 
-Wounds stack two times ⇒ Wounds stack three times
+-   Wounds stack two times ⇒ Wounds stack three times
 
-Cleric
+### Cleric
 
-Hallowed Ground
+**Hallowed Ground**
 
-A valid target can only be affected by one instance of Hallowed Ground ⇒
-A target can be affected by multiple instances of Hallowed Ground
+-   A valid target can only be affected by one instance of *Hallowed
+    Ground* ⇒ A target can be affected by multiple instances of
+    *Hallowed Ground*
 
-Druid
+### Druid
 
-Rejuvenation
+**Rejuvenation**
 
-Unique caster instances now stack
+-   Unique caster instances now stack
 
-Soothing Presence
+**Soothing Presence**
 
-Mana cost per second: 1.75% Maximum Mana ⇒ 8 / 16 / 28 / 44 / 64 / 88 /
-128 / 160 (+1.75% Maximum Mana)
+-   Mana cost per second: 1.75% Maximum Mana ⇒ 8 / 16 / 28 / 44 / 64 /
+    88 / 128 / 160 (+1.75% Maximum Mana)
+-   Updated the FX to better visualise the 450 AoE
 
-Updated the FX to better visualise the 450 AoE
+### Ranger
 
-Ranger
+**Star Dust**
 
-Star Dust
-
-Restore 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (0.45 / 0.5 /
-0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing) health over 4
-seconds. ⇒ Restore 300 / 400 / 600 / 900 / 1350 / 1900 / 3000 / 4000
-(0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 Spell Healing) health
-over 4 seconds.
-
-Unique caster instances now stack
+-   Restore 300 / 430 / 630 / 930 / 1350 / 1900 / 3000 / 4300 (0.45 /
+    0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 / 0.8 Spell Healing) health
+    over 4 seconds. ⇒ Restore 300 / 400 / 600 / 900 / 1350 / 1900 / 3000
+    / 4000 (0.4 / 0.45 / 0.5 / 0.55 / 0.6 / 0.65 / 0.7 / 0.75 Spell
+    Healing) health over 4 seconds.
+-   Unique caster instances now stack
 
 ## Items
 
-Scroll of the Beast, Potion of Superior Regeneration, Elixir of Superior
-Agility, Elixir of Superior Intelligence, Elixir of Superior Strength,
-Elixir of Superior Spell Power, Superior Armor Plates, Superior
-Whetstone, Superior Ether Dust, Draught of the Phoenix, Draught of
-Heaven, Draught of Life, & Draught of Destruction
+### General
 
-Clean-up ticks: 2 ⇒ 7
+**Scroll of the Beast**; **Potion of Superior Regeneration**; **Elixir
+of Superior Agility**; **Elixir of Superior Intelligence**; **Elixir of
+Superior Strength; Elixir of Superior Spell Power**; **Superior Armor
+Plates**; **Superior Whetstone**; **Superior Ether Dust**; **Draught of
+the Phoenix**; **Draught of Heaven**; **Draught of Life**; & **Draught
+of Destruction**
 
-They persist "on the ground" for approximately 20-25 minutes longer.
+-   Clean-up ticks: 2 ⇒ 7
 
-Book of Skill Increase - Level 2
+    <blockquote>
 
-Level: 7 ⇒ 15
+    They persist "on the ground" for approximately 20-25 minutes
+    longer`.</blockquote>`{=html}
 
-Model: Green Book ⇒ Purple Book
+### Objects
 
-Book of Skill Increase - Level 3
+**Book of Skill Increase - Level 2**
 
-Level: 15 ⇒ 45
+-   Level: 7 ⇒ 15
+-   Model: Green Book ⇒ Purple Book
 
-Model: Green Book ⇒ Purple Book
+**Book of Skill Increase - Level 3**
 
-Book of Skill Increase - Level 4
+-   Level: 15 ⇒ 45
+-   Model: Green Book ⇒ Purple Book
 
-Level: 30 ⇒ 75
+**Book of Skill Increase - Level 4**
 
-Model: Green Book ⇒ Purple Book
+-   Level: 30 ⇒ 75
+-   Model: Green Book ⇒ Purple Book
 
-Book of Skill Increase - Level 5
+**Book of Skill Increase - Level 5**
 
-Level: 50 ⇒ 105
+-   Level: 50 ⇒ 105
+-   Model: Green Book ⇒ Purple Book
 
-Model: Green Book ⇒ Purple Book
+**Book of Skill Increase - Level 6**
 
-Book of Skill Increase - Level 6
+-   Level: 85 ⇒ 135
+-   Acquisition: Purchase from Books ⇒ Drop from *Sphinx*
+-   Model: Green Book ⇒ Purple Book
 
-Level: 85 ⇒ 135
+**Book of Skill Increase - Level 7**
 
-Acquisition: Purchase from Books ⇒ Drop from Sphinx
+-   Level: 135 ⇒ 165
+-   Acquisition: Drop from *Sphinx* ⇒ Purchase from *Books*
+-   Model: Green Book ⇒ Purple Book
 
-Model: Green Book ⇒ Purple Book
+**Book of Skill Increase - Level 8**
 
-Book of Skill Increase - Level 7
+-   Level: 200 ⇒ 180
+-   Model: Green Book ⇒ Purple Book
 
-Level: 135 ⇒ 165
+**Tome of Attribute Increase**
 
-Acquisition: Drop from Sphinx ⇒ Purchase from Books
+-   Previously known as Tome of Attribute Increase +8
+-   Model: Purple Book ⇒ Red Book
+-   The number of charges (uses) now represents the number of attribute
+    points granted.
 
-Model: Green Book ⇒ Purple Book
+**\<X\>'s Tome**
 
-Book of Skill Increase - Level 8
+-   Model: Purple Book ⇒ Red Book
+-   The number of charges (uses) now represents the number of attribute
+    points granted.
 
-Level: 200 ⇒ 180
+**Book of Skill Reset**
 
-Model: Green Book ⇒ Purple Book
+-   Model: Green Book ⇒ Purple Book
 
-Tome of Attribute Increase
+------------------------------------------------------------------------
 
-Previously known as Tome of Attribute Increase +8
+**Ring of the Magi**
 
-Model: Purple Book ⇒ Red Book
+-   Previously *Jeweled Ring*
+-   Updated icon
+-   Level: 60
+-   Intelligence: 40 ⇒ 15
+-   Attack Damage: 35 ⇒ 0
+-   Attack Speed: 35% ⇒ 0%
+-   Spell Damage: 400 ⇒ 1000
+-   Spell Healing: 400 ⇒ 0
+-   *Weaponsmith* (Level 75 Craft)
+    -   600 Crafting Materials
+    -   1 Sea Essence
+    -   2 Lump of Pure Adamantium
+    -   1 Blood Ruby
+    -   1 Ruby Heart
+    -   *Gemstone of Apollo*
 
-The number of charges (uses) now represents the number of attribute
-points granted.
+**Gift of Poseidon**
 
-\<X\>'s Tome
+-   Level: 120
+-   Intelligence: 70
+-   Spell Damage: 3000
+-   Forge at *Metalsmith Zoticus* (Locris)
+    -   *Staff of Poseidon*
+    -   *Ring of the Magi*
+    -   *Gem of the West*
+    -   4 Stone of Heaven
+    -   2 Sea Essence
 
-Model: Purple Book ⇒ Red Book
+------------------------------------------------------------------------
 
-The number of charges (uses) now represents the number of attribute
-points granted.
+**Barbaric Helm**
 
-Book of Skill Reset
+-   Updated icon
 
-Model: Green Book ⇒ Purple Book
+-   Level: 40 ⇒ 45
 
-Ring of the Magi
+-   Strength: 25 ⇒ 15
 
-Previously Jeweled Ring
+-   Armor: 25 ⇒ 15
 
-Updated icon
+-   Retaliation I—Whenever you take damage: Deal 0.5 Strength physical
+    damage to enemies within a 150 AoE of you.
 
-Level: 60
+    Cooldown: 2 seconds
 
-Intelligence: 40 ⇒ 15
+-   ~~In addition, any enemies who attack you will take 75 damage.~~
 
-Attack Damage: 35 ⇒ 0
+-   Drops from *Cyclops.*
 
-Attack Speed: 35% ⇒ 0%
+**Crown of Thorns**
 
-Spell Damage: 400 ⇒ 1000
+-   Previously *Crown of Liquid Darkness*
 
-Spell Healing: 400 ⇒ 0
+-   Level: 60 ⇒ 75
 
-Weaponsmith (Level 75)
+-   Strength: 0 ⇒ 25
 
-600 Crafting Materials
+-   Health: 800 ⇒ 0
 
-1 Sea Essence
+-   Armor: 20 ⇒ 25
 
-2 Lump of Pure Adamantium
+-   Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
+    damage to enemies within a 150 AoE of you.
 
-1 Blood Ruby
+    Cooldown: 2 seconds
 
-1 Ruby Heart
+-   ~~Grants an aura that damages nearby enemies for 50 damage per
+    second while healing nearby allies for 10 health per second.~~
 
-Gemstone of Apollo
+-   *Armorsmith* (Level 75 Craft)
 
-Gift of Poseidon
+    -   775 Crafting Materials
+    -   1 Sea Essence
+    -   1 Heart of Frost
+    -   1 Ruby Heart
+    -   1 Blood Ruby
+    -   2 Lump of Pure Adamantium
 
-Level: 120
+**Savage Helm**
 
-Intelligence: 70
+-   Updated icon
+-   Level: 50 ⇒ 90
+-   Strength: 40 ⇒ 80
+-   Agility: 40 ⇒ 0
+-   Armor: 35 ⇒ 50
+-   Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
+    damage to enemies within a 150 AoE of you.
+-   Cooldown: 2 seconds
+-   ~~In addition, each attacking enemy will suffer 125 damage.~~
+-   Forge at *Metalsmith Arcadios* (New Issus)
+    -   *Barbaric Helm*
+    -   *Crown of Liquid Darkness*
+    -   1 Lump of Pure Adamantium
+    -   1 Green Power Crystal
+    -   1 Blood Ruby
+    -   1 Meteoric Iron
+    -   2 Tempered Steel
 
-Spell Damage: 3000
+------------------------------------------------------------------------
 
-Metalsmith Zoticus (Locris)
+**Regal Crown**
 
-Staff of Poseidon
+-   Updated icon
+-   Level: 40 ⇒ 45
+-   Intelligence: 20
+-   Spell Damage: 450
+-   ~~Mana Regeneration III~~
+-   Drops from *Cyclops*
 
-Ring of the Magi
+**Crystal Helm**
 
-Gem of the West
+-   Updated icon
+-   Level: 40 ⇒ 45
+-   Intelligence: 20
+-   Spell Healing: 450
+-   ~~Mana Regeneration III~~
+-   Drops from *Cyclops*
 
-4 Stone of Heaven
+**Regal Helm of Sparkling Crystal**
 
-2 Sea Essence
+-   Level: 45 ⇒ 75
+-   Intelligence: 40 ⇒ 50
+-   Spell Damage: 400 ⇒ 500
+-   Spell Healing: 400 ⇒ 1200
+-   ~~Mana Regeneration V~~
+-   Forge at *Metalsmith Arcadios* (New Issus)
 
-Barbaric Helm
+**Gift of Hera**
 
-Updated icon
-
-Level: 40 ⇒ 45
-
-Strength: 25 ⇒ 15
-
-Armor: 25 ⇒ 15
-
-Retaliation I—Whenever you take damage: Deal 0.5 Strength physical
-damage to enemies within a 150 AoE of you.
-
-Cooldown: 2 seconds
-
-In addition, any enemies who attack you will take 75 damage.
-
-Crown of Thorns
-
-Previously Crown of Liquid Darkness
-
-Level: 60 ⇒ 75
-
-Strength: 0 ⇒ 25
-
-Health: 800 ⇒ 0
-
-Armor: 20 ⇒ 25
-
-Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
-damage to enemies within a 150 AoE of you.
-
-Cooldown: 2 seconds
-
-Grants an aura that damages nearby enemies for 50 damage per second
-while healing nearby allies for 10 health per second.
-
-Armorsmith (Level 75)
-
-775 Crafting Materials
-
-1 Sea Essence
-
-1 Heart of Frost
-
-1 Ruby Heart
-
-1 Blood Ruby
-
-2 Lump of Pure Adamantium
-
-Savage Helm
-
-Updated icon
-
-Level: 50 ⇒ 90
-
-Strength: 40 ⇒ 80
-
-Agility: 40 ⇒ 0
-
-Armor: 35 ⇒ 50
-
-Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
-damage to enemies within a 150 AoE of you.
-
-Cooldown: 2 seconds
-
-In addition, each attacking enemy will suffer 125 damage.
-
-Metalsmith Arcadios (New Issus)
-
-Barbaric Helm
-
-Crown of Liquid Darkness
-
-1 Lump of Pure Adamantium
-
-1 Green Power Crystal
-
-1 Blood Ruby
-
-1 Meteoric Iron
-
-2 Tempered Steel
-
-Regal Crown
-
-Updated icon
-
-Level: 40 ⇒ 45
-
-Intelligence: 20
-
-Spell Damage: 450
-
-Mana Regeneration III
-
-Crystal Helm
-
-Updated icon
-
-Level: 40 ⇒ 45
-
-Intelligence: 20
-
-Spell Healing: 450
-
-Mana Regeneration III
-
-Regal Helm of Sparkling Crystal
-
-Level: 45 ⇒ 75
-
-Intelligence: 40 ⇒ 50
-
-Spell Damage: 400 ⇒ 500
-
-Spell Healing: 400 ⇒ 1200
-
-Mana Regeneration V
-
-Gift of Hera
-
-Updated icon
-
-Level: 145 ⇒ 120
-
-Intelligence: 50 ⇒ 70
-
-Spell Healing: 3000
+-   Updated icon
+-   Level: 145 ⇒ 120
+-   Intelligence: 50 ⇒ 70
+-   Spell Healing: 3000
+-   *Goldsmith* (Level 100 Craft)
 
 ## Forces of Hell
 
-Neleus now has a leash
-
-Adjusted the AI routines for Neleus and Pelias such that they no longer
-deliberately cancel their auto-attacks
+-   *Neleus* now has a leash
+-   Adjusted the AI routines for *Neleus* and *Pelias* so that they no
+    longer deliberately cancel their auto-attacks
