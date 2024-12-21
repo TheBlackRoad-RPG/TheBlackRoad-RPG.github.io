@@ -3102,41 +3102,56 @@ vertical-align: -.125em;
 
 <section id="general" class="level2">
 <h2 class="anchored" data-anchor-id="general">General</h2>
-<p>The maximum number of attribute points depended on the hero level. ⇒ The maximum number of attribute points is 3500 for all levels.</p>
-<p>The number of attribute points granted per level depended on the hero level ⇒ Eight attribute points granted per level.</p>
-<p>You gain approximately 90 more attribute points from Level 1 to Level 200.</p>
-<p>Statuette of Tyche can now Retrain all Strength attribute points, Retrain all Agility attribute points, and Retrain all Intelligence attribute points.</p>
-<p>Cost: 100 Essence</p>
-<p>Set Strength/Agility/Intelligence to 1. Grant attribute points equal to the amount lost by setting your attribute(s) to 1.</p>
-<p>Warrior classes cannot Retrain all Intelligence attribute points.</p>
-<p>The -kill chat command has been removed.</p>
-<p>The -disarm chat command now only applies to crafting components &amp; generic quest items. This functions behaves like the functionality when a player leaves a game, but doesn’t drop the items in town.</p>
-<p>Updated two components of how TBR’s stun is coded and specified</p>
-<p>It might be downstream bug fix for the TBR’s stun being dispelled on application</p>
-<p>The DPS Dummy now has a preconfigured template to replicate Persephone’s defensive stats</p>
-<p>Book of Skill Increase/Reset, DPS Dummy, Forge Regalia, and Familiar Passive custom UI is now locked to a fixed scale</p>
-<p>Properly anchored the Essence tooltips, Resist tooltip, and Personal Quest UI to be scaleable.</p>
-<p>Enabling “Always Visible” in lobby creation options no longer end the lobby and insteads reinstates fog of war (as if the terrain was explored)</p>
-<p>The lobby description now states the Discord invite link</p>
-<p>The triggered damage reduction formulas for Armor and Resist now returns a fixed value for damage amplication for values less than and equal to -20 (as per base Wc3 mechanics)</p>
+<ul>
+<li>The maximum number of attribute points depended on the hero level. ⇒ The maximum number of attribute points is 3500 for all levels</li>
+<li>The number of attribute points granted per level depended on the hero level ⇒ Eight attribute points granted per level
+<ul>
+<li>You gain approximately 90 more attribute points from Level 1 to Level 200</li>
+</ul></li>
+<li><em>Statuette of Tyche</em> can now <em>Retrain all Strength</em> attribute points, <em>Retrain all Agility</em> attribute points, and <em>Retrain all Intelligence</em> attribute points
+<ul>
+<li>Cost: 100 Essence</li>
+<li>Set Strength/Agility/Intelligence to 1. Grant attribute points equal to the amount lost by setting your attribute(s) to 1</li>
+<li>Warrior classes cannot <em>Retrain all Intelligence</em> attribute points</li>
+</ul></li>
+<li>The <code>-kill</code> chat command has been removed</li>
+<li>The <code>-disarm</code> chat command now only applies to crafting components &amp; generic quest items. This functions behaves like the functionality when a player leaves a game, but doesn’t drop the items in town</li>
+<li>Updated how TBR’s stun is coded
+<ul>
+<li>It might be downstream bug fix for the TBR’s stun being dispelled on application</li>
+</ul></li>
+<li>The <em>DPS Dummy</em> now has a preconfigured template to replicate <em>Persephone</em>’s defensive stats</li>
+<li><em>Book of Skill Increase</em>/<em>Reset</em>, <em>DPS Dummy</em>, <em>Forge Regalia</em>, and <em>Familiar Passive</em> custom UI is now locked to a fixed scale</li>
+<li>Properly anchored the Essence tooltips, Resist tooltip, and Personal Quest UI to be scalable</li>
+<li>Enabling “Always Visible” in lobby creation options no longer end the lobby and instead reinstates fog of war (as if the terrain was explored)</li>
+<li>The lobby description now states the Discord invite link</li>
+<li>The triggered damage reduction formulas for Armor and Resist now returns a fixed value for damage amplification for values less than and equal to -20 (as per base Wc3 mechanics)</li>
+</ul>
 </section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
-<p>Tome of Attribute Increase dropped by a boss are now correctly aligned with the boss’ level</p>
-<p>The actives for Rune of Restoration, Scroll of Lesser Health, Scroll of Health, Scroll of Lesser Mana, Scroll of Mana, Scroll of Lesser Regeneration, Scroll of Regeneration, and Towering Shield of Athena now work as intended for Warrior classes</p>
-<p>Gift of Aphrodite, Trueshot Aura I, Trueshot Aura II, and Aspect of the Nereid now render correctly in the DPS UI</p>
-<p>Aphrodite’s Blessed Orb no longer grants the Mana Regeneration V item ability</p>
-<p>Poison Blade enhanced auto-attacks no longer allow you to target items</p>
-<p>Poison Blade now works with other enhanced auto-attack abilities</p>
-<p>Poison Blade’s damage-over-time debuff now lasts for 10 seconds as intended</p>
-<p>If you reforge your regalia and already completed Heletes’ Ingenuity (Personal Quest), you no longer re-discover Heletes’ Ingenuity</p>
-<p>-check on Druid’s Storm Form now correctly pulls the ability data</p>
-<p>-check on Druid now correctly displays Level 0 if Maelstrom hasn’t been acquired</p>
-<p>Swiftness (Familiar skill) Rank I now has its intended cooldown of 7 minutes</p>
-<p>Druid icon is now correctly rendered</p>
-<p>Portrait models are now correctly rendered</p>
-<p>Warrior classes no longer have pseudo spell-immunity</p>
-<p>Updated the leash code for the Furies</p>
+<ul>
+<li><em>Tome of Attribute Increase</em> dropped by a boss are now correctly aligned with the boss’ level</li>
+<li>Warrior classes no longer have pseudo spell immunity to boss and item effects</li>
+<li><em>Gift of Aphrodite</em>, <em>Trueshot Aura I</em>, <em>Trueshot Aura II</em>, and <em>Aspect of the Nereid</em> now render correctly in the DPS UI</li>
+<li><em>Aphrodite’s Blessed Orb</em> (Medusa) no longer grants the <em>Mana Regeneration V</em> item ability</li>
+<li><em>Poison Blade</em> (Weaponsmith)
+<ul>
+<li>Enhanced auto-attacks no longer allow you to target items</li>
+<li>Now works with other enhanced auto-attack abilities</li>
+<li>Its damage-over-time debuff now lasts for 10 seconds as intended</li>
+</ul></li>
+<li>If you reforge your regalia and already completed <em>Heletes’ Ingenuity</em> (Personal Quest), you no longer re-discover <em>Heletes’ Ingenuity</em></li>
+<li><code>-check</code>
+<ul>
+<li>It now correctly pulls the ability data if used on a <em>Druid</em> in <em>Storm Form</em></li>
+<li>Correctly displays Level 0 for <em>Maelstrom</em> if it hasn’t been acquired</li>
+</ul></li>
+<li><em>Swiftness</em> (Familiar skill) Rank I now has its intended cooldown of 7 minutes</li>
+<li><em>Druid</em> icon is now correctly rendered</li>
+<li>Portrait models are now correctly rendered</li>
+<li>Updated the leash code for the <em>Furies</em> (Frozen Citadel)</li>
+</ul>
 </section>
 <section id="typos-and-typesetting" class="level2">
 <h2 class="anchored" data-anchor-id="typos-and-typesetting">Typos and Typesetting</h2>
@@ -3316,26 +3331,26 @@ vertical-align: -.125em;
 <hr>
 <p><strong>Barbaric Helm</strong></p>
 <ul>
-<li><p>Updated icon</p></li>
-<li><p>Level: 40 ⇒ 45</p></li>
-<li><p>Strength: 25 ⇒ 15</p></li>
-<li><p>Armor: 25 ⇒ 15</p></li>
-<li><p>Retaliation I—Whenever you take damage: Deal 0.5 Strength physical damage to enemies within a 150 AoE of you.</p>
-<p>Cooldown: 2 seconds</p></li>
-<li><p><del>In addition, any enemies who attack you will take 75 damage.</del></p></li>
-<li><p>Drops from <em>Cyclops.</em></p></li>
+<li>Updated icon</li>
+<li>Level: 40 ⇒ 45</li>
+<li>Strength: 25 ⇒ 15</li>
+<li>Armor: 25 ⇒ 15</li>
+<li>Retaliation I—Whenever you take damage: Deal 0.5 Strength physical damage to enemies within a 150 AoE of you.<br>
+Cooldown: 2 seconds</li>
+<li><del>In addition, any enemies who attack you will take 75 damage.</del></li>
+<li>Drops from <em>Cyclops.</em></li>
 </ul>
 <p><strong>Crown of Thorns</strong></p>
 <ul>
-<li><p>Previously <em>Crown of Liquid Darkness</em></p></li>
-<li><p>Level: 60 ⇒ 75</p></li>
-<li><p>Strength: 0 ⇒ 25</p></li>
-<li><p>Health: 800 ⇒ 0</p></li>
-<li><p>Armor: 20 ⇒ 25</p></li>
-<li><p>Retaliation II—Whenever you take damage: Deal 0.75 Strength physical damage to enemies within a 150 AoE of you.</p>
-<p>Cooldown: 2 seconds</p></li>
-<li><p><del>Grants an aura that damages nearby enemies for 50 damage per second while healing nearby allies for 10 health per second.</del></p></li>
-<li><p><em>Armorsmith</em> (Level 75 Craft)</p>
+<li>Previously <em>Crown of Liquid Darkness</em></li>
+<li>Level: 60 ⇒ 75</li>
+<li>Strength: 0 ⇒ 25</li>
+<li>Health: 800 ⇒ 0</li>
+<li>Armor: 20 ⇒ 25</li>
+<li>Retaliation II—Whenever you take damage: Deal 0.75 Strength physical damage to enemies within a 150 AoE of you.<br>
+Cooldown: 2 seconds</li>
+<li><del>Grants an aura that damages nearby enemies for 50 damage per second while healing nearby allies for 10 health per second.</del></li>
+<li><em>Armorsmith</em> (Level 75 Craft)
 <ul>
 <li>775 Crafting Materials</li>
 <li>1 Sea Essence</li>
