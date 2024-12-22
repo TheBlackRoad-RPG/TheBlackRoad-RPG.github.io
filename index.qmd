@@ -78,6 +78,10 @@ editor:
 -   *Druid* icon is now correctly rendered
 -   Portrait models are now correctly rendered
 -   Updated the leash code for the *Furies* (Frozen Citadel)
+-   The *Gift of Aphrodite* and *Mana Shield* item abilities should no
+    longer be disabled
+-   *Boats* and *Boat Skins* no longer have a map start cooldown before
+    they are available for purchase
 
 ## Typos and Typesetting
 
@@ -92,7 +96,7 @@ editor:
 -   *Claw Charm* (Goldsmith)
 -   *Crackling Charm* (Goldsmith)
 -   *Medallion of Superior Stamina* (Goldsmith)
--   *Green Dragonscale Ring of Serious Addiction* (Metalsmith Zotiucus)
+-   *Green Dragonscale Ring of Serious Addiction* (Metalsmith Zoticus)
 
 ------------------------------------------------------------------------
 
