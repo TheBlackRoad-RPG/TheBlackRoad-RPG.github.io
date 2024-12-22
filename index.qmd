@@ -311,7 +311,7 @@ of Destruction**
 -   ~~In addition, each attacking enemy will suffer 125 damage.~~
 -   Forge at *Metalsmith Arcadios* (New Issus)
     -   *Barbaric Helm*
-    -   *Crown of Liquid Darkness*
+    -   *Crown of Thorns*
     -   1 Lump of Pure Adamantium
     -   1 Green Power Crystal
     -   1 Blood Ruby
