@@ -306,8 +306,8 @@ of Destruction**
 -   Agility: 40 ⇒ 0
 -   Armor: 35 ⇒ 50
 -   Retaliation II—Whenever you take damage: Deal 0.75 Strength physical
-    damage to enemies within a 150 AoE of you.
--   Cooldown: 2 seconds
+    damage to enemies within a 150 AoE of you.\
+    Cooldown: 2 seconds
 -   ~~In addition, each attacking enemy will suffer 125 damage.~~
 -   Forge at *Metalsmith Arcadios* (New Issus)
     -   *Barbaric Helm*

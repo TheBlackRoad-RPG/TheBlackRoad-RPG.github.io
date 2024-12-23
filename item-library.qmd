@@ -1,5 +1,5 @@
 ---
-title: "[BETA] TBR 1.39c3 Item Library"
+title: "[BETA] TBR 1.39c4 Item Library"
 format:
   html:
     page-layout: full
@@ -26,77 +26,152 @@ To-do:
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: white !important;
 }
+
+.basic-block {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+}
+
+.basic-block > div {
+  padding: 0 0.5em;
+}
 ```
 
 ```{r setup}
 #| include: false
 
 library(dplyr)
+library(jsonlite)
 library(DT)
 
-item.lines <- readLines("../the-black-road-rpg/src/table/item.ini")
+# Load in raw data
+item.data <- read_json("../the-black-road-rpg/map/war3map.w3t.json")$custom
+item.wts.data <- read_json("../the-black-road-rpg/map/war3mapSkin.w3t.json")$custom
+wts.data <- read_json("../the-black-road-rpg/map/war3map.wts.json")
 icon.lines <- read.csv("./data/icons.csv") |>
   mutate(icon = gsub(".*/(.*)\\.png", "\\1", path))
+
 # unit.lines <- readLines("./data/unit.ini")
 # crafting.lines <- readLines("./data/02-Initilization.j")
 # forging.lines <- readLines("./data/Forge-Craftmen.j")
 # regalia.lines <- readLines("./data/Forge-Regalia.j")
 
-item.rawcode.pos <- grep("\\[I...\\]", item.lines)
+# Construct spline
+df <- tibble(
+  rawcode = item.data |> names() |> gsub(pattern = "(I...):.*", replacement = "\\1"),
+  parentcode = item.data |> names() |> gsub(pattern = "I...:(.*)", replacement = "\\1")
+)
 
-item_helpr <- \(start, end, field) {
-  x <- item.lines[start:end]
-  which.line <- grep(paste0("^", field), x)
-  
-  out <- switch(
-    field,
-    "Name" = gsub("Name = \"(.+)\"", "\\1", x[which.line]),
-    "Art" = gsub("Art = \"ReplaceableTextures\\\\\\\\CommandButtons\\\\\\\\(.*)\\.[Bb][Ll][Pp]\"", "\\1", x[which.line]),
-    "class" = gsub("class = \"(.+)\"", "\\1", x[which.line]),
-    "_parent" = gsub("_parent = \"(.+)\"", "\\1", x[which.line]),
-    "Level" = gsub("Level = ([0-9]+)", "\\1", x[which.line]),
-    "prio" = gsub("prio = ([0-9]+)", "\\1", x[which.line]),
-    "Ubertip" = gsub("Ubertip = \"(.+)\"", "\\1", x[which.line])
-  )
-  
-  return (ifelse(is.null(out), "", out))
-}
+# Update names for item.*
+names(item.data) <- df$rawcode
+names(item.wts.data) <- df$rawcode
 
-item_wrapr <- \(field) {
-  out <- sapply(1:length(item.rawcode.pos), \(x) {
-    item_helpr(item.rawcode.pos[x], if_else(x == length(item.rawcode.pos), length(item.lines), item.rawcode.pos[x + 1] - 1), field)
-  })
-  
-  if (field == "Name") {
-    x <- gsub("\\|r", "</span>", out)
-    out <- if_else(grepl("</span>", x), sub("\\|?c?[A-Za-z0-9]?[A-Za-z0-9]?([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", x)  , x)
+# Update names for wts.data
+names(wts.data) <- paste("TRIGSTR", names(wts.data), sep = "_")
+
+# Build fields
+df$name <- sapply(item.wts.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "unam") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    a <- gsub(
+      "\\|r",
+      "</span>",
+      wts.data[[x[[which_index]]$value]]
+    )
+    
+    return (ifelse(
+      grepl("</span>", a), 
+      sub(
+        "\\|?c?[A-Za-z0-9]?[A-Za-z0-9]?([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])",
+        "<span style='color: #\\1'>", 
+        a
+      ), 
+      a
+    ))
   }
   
-  if (field == "Ubertip") {
-    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", out) |>
+  return (NA)
+})
+
+df$icon <- sapply(item.wts.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "iico") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    return (gsub(
+      "ReplaceableTextures\\\\CommandButtons\\\\(.*)\\.[Bb][Ll][Pp]", 
+      "\\1",
+      x[[which_index]]$value
+    ))
+  }
+  
+  return (NA)
+})
+
+df$class <- sapply(item.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "icla") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    return (x[[which_index]]$value)
+  }
+  
+  return (NA)
+})
+
+df$level <- sapply(item.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "ilev") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    return (x[[which_index]]$value)
+  }
+  
+  return (NA)
+})
+
+df$prio <- sapply(item.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "ipri") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    return (x[[which_index]]$value)
+  }
+  
+  return (NA)
+})
+
+df$tooltip <- sapply(item.wts.data, \(x) {
+  which_index <- sapply(x, \(y) y$id %in% "utub") |> 
+    which()
+
+  if (length(which_index) > 0) {
+    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", wts.data[[x[[which_index]]$value]]) |>
       gsub("\\|r", "</span>", x = _) |>
       gsub("\\|n", "<br>", x = _)
     
-    b <- if_else(grepl("</span>", a), gsub("\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])", "<span style='color: #\\1'>", a), a)
-    out <- b |>
-      sub("(<br>)*<span style='color: #ff0000'>.*</span>", "", x = _) |>
-      sub("(<br>)*<span style='color: #fa8072'>.*</span>", "", x = _) |>
-      sub("(<br>)*<span style='color: #73C2FB'>.*</span>", "", x = _)
+    b <- ifelse(
+      grepl("</span>", a), 
+      gsub(
+        "\\|c[A-Za-z0-9][A-Za-z0-9]([A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9])",
+        "<span style='color: #\\1'>",
+        a), 
+      a
+    )
+    
+    return (sub("(<br>)*<span style='color: #ff0000'>.*</span>", "", x = b) |>
+              sub("(<br>)*<span style='color: #fa8072'>.*</span>", "", x = _) |>
+              sub("(<br>)*<span style='color: #73C2FB'>.*</span>", "", x = _))
   }
+  
+  return (NA)
+})
 
-  return (out)
-}
-
-item.df <- tibble(
-  rawcode = item.lines[grep("\\[I...\\]", item.lines)],
-  parentcode = item_wrapr("_parent"),
-  name = item_wrapr("Name"),
-  icon = item_wrapr("Art"),
-  class = item_wrapr("class"),
-  level = item_wrapr("Level"),
-  prio = item_wrapr("prio"),
-  tooltip = item_wrapr("Ubertip")
-) |> mutate(
+item.df <- df |> mutate(
   class = if_else(is.na(class), case_match(parentcode,
                                            c("kymn", "kybl", "azhr", "sehr", "kygh", "bzbf") ~ "Campaign",
                                            c("rwiz", "evtl", "rlif", "mcou", "penr", "rat6", "pmna", "rde1", "rhth", "bgst", "belv", "cnob", "clsd", "ciri") ~ "Permanent",
@@ -112,21 +187,21 @@ item.df <- tibble(
                                          "rres" ~ "Rune of Restoration",
                                          "gold" ~ "Gold Coins"), name),
   prio = if_else(!is.na(prio), case_match(prio,
-                                          "1" ~ "Forge Dummy",
-                                          "1001" ~ "Cannot be used by Warrior classes",
-                                          "1002" ~ "Khaos Champion, Barbarian, Warlord, Assassin only",
-                                          "1003" ~ "Barbarian Only",
-                                          "1004" ~ "Warlord Only",
-                                          "1005" ~ "Temple Guardian Only",
-                                          "1006" ~ "Ranger Only",
-                                          "1007" ~ "Khaos Champion Only",
-                                          "1008" ~ "Cleric only",
-                                          "1009" ~ "Assassin only",
-                                          "1010" ~ "Magician only",
-                                          "1011" ~ "Warlock only",
-                                          "1012" ~ "Guardian of Nature only",
-                                          "1013" ~ "Spartan Warrior only",
-                                          "1014" ~ "Druid only"
+                                          1 ~ "Forge Dummy",
+                                          1001 ~ "Cannot be used by Warrior classes",
+                                          1002 ~ "Khaos Champion, Barbarian, Warlord, Assassin only",
+                                          1003 ~ "Barbarian Only",
+                                          1004 ~ "Warlord Only",
+                                          1005 ~ "Temple Guardian Only",
+                                          1006 ~ "Ranger Only",
+                                          1007 ~ "Khaos Champion Only",
+                                          1008 ~ "Cleric only",
+                                          1009 ~ "Assassin only",
+                                          1010 ~ "Magician only",
+                                          1011 ~ "Warlock only",
+                                          1012 ~ "Guardian of Nature only",
+                                          1013 ~ "Spartan Warrior only",
+                                          1014 ~ "Druid only"
                                           ), NA_character_),
   icon = if_else(is.na(icon), case_match(parentcode,
                                          "rlif" ~ "BTNRingSkull",
@@ -181,10 +256,11 @@ item.df <- tibble(
 
 ```{r display_items}
 #| echo: false
+
 item.df |>
   filter(class != "PowerUp",
-         class != "Campaign", 
-         name.clean != "Rune of Restoration", 
+         class != "Campaign",
+         name.clean != "Rune of Restoration",
          !grepl("Tome of Attribute Increase", name.clean),
          name.clean != "Iron Key",
          !rawcode %in% c("[I0EX]", "[I0EY]")
@@ -193,10 +269,11 @@ item.df |>
     rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
   arrange(rarity, level, name.clean) |>
   select(name, level, tooltip, prio, path) |>
-  mutate(name.aug = paste0(name, 
-                           if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""), 
+  mutate(name.aug = paste0(name,
+                           if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""),
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
-         icon_block = paste0("<img src=\"", path, "\"/>")) |>
-  select(icon_block, name.aug, tooltip) |>
-  datatable(rownames = FALSE, escape = FALSE, colnames = c("", "Item", "Description"))
+         icon.block = paste0("<img src=\"", path, "\"/>"),
+         basic.block = paste0("<div class=\"basic-block\"><div>", icon.block, "</div><div>", name.aug, "</div>")) |>
+  select(basic.block, tooltip) |>
+  datatable(rownames = FALSE, escape = FALSE, colnames = c("Item", "Description"))
 ```
