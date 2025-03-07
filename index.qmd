@@ -110,7 +110,7 @@ editor:
 -   Throw an enchanted dagger at an enemy, which deals 75 / 150 / 300 /
     600 / 1200 / 2400 / 3750 / 5000 (+3.0 Agility) physical damage and
     bounces up to 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 time(s). Each bounce
-    deals 5% less damage.
+    deals 5% less damage.\
     If you break *Stealth* with *Dancing Dagger*: It also applies
     *Gushing Wound*.
 -   Cooldown: 8 seconds.
