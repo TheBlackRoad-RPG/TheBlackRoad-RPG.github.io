@@ -1,5 +1,5 @@
 ---
-title: "[BETA] TBR 1.39c5 Item Library"
+title: "[BETA] TBR 1.39c6 Item Library"
 format:
   html:
     grid:
@@ -61,9 +61,12 @@ wts.data <- read_json("../the-black-road-rpg/map/war3map.wts.json")
 
 icon.data <- read.csv("./data/icons.csv") |> mutate(icon = gsub(".*/(.*)\\.png", "\\1", path))
 
-# crafting.lines <- readLines("./data/02-Initilization.j")
-# forging.lines <- readLines("./data/Forge-Craftmen.j")
-# regalia.lines <- readLines("./data/Forge-Regalia.j")
+crafting.lines <- readLines("../the-black-road-rpg/map/src/50-crafting/Initilization.j") |>
+  gsub(pattern = "\t", replacement = "")
+forging.lines <- readLines("../the-black-road-rpg/map/src/49-Vendors/Forge Craftmen.j") |>
+  gsub(pattern = "\t", replacement = "")
+regalia.lines <- readLines("../the-black-road-rpg/map/src/49-Vendors/Forge Regalia.j") |>
+  gsub(pattern = "\t", replacement = "")
 
 # Construct spline
 df <- tibble(
@@ -86,6 +89,32 @@ names(unit.wts.data) <- unit.df$rawcode
 
 # Update names for wts.data
 names(wts.data) <- paste("TRIGSTR", names(wts.data), sep = "_")
+
+# Build fields from regalia.lines ----------------------------------------------
+regalia.df <- tibble(
+  vendor = "Master Metalsmith Heletes",
+  items.sold = grep(pattern = "set generatorID\\[[0-9]+\\] = '.*'", x = regalia.lines, value = TRUE) |>
+    gsub(pattern = "^set generatorID\\[[0-9]+\\] = '(.*)'", x = _, replacement = "\\1")
+)
+
+# Build fields from crafting.lines ---------------------------------------------
+x <- grep(pattern = "set udg_zNewCraftingXPreq\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
+  gsub(pattern = "^set udg_zNewCraftingXPreq\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1")
+
+crafting.df <- tibble(
+  vendor = "",
+  items.sold = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingItem\\[[0-9]+\\]='(.*)'", x = _, replacement = "\\1"),
+  craft.level = x[x != "101"] |> as.numeric(),
+  internal.index = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingItem\\[([0-9]+)\\]='.*'", x = _, replacement = "\\1") |>
+    as.numeric()) |>
+  mutate(craft.profession = case_when(between(internal.index, 0, 59) ~ "Weaponsmith",
+                                      between(internal.index, 60, 119) ~ "Armorsmith",
+                                      between(internal.index, 120, 179) ~ "Alchemist",
+                                      between(internal.index, 180, 239) ~ "Goldsmith"),
+         vendor = paste(craft.profession, "Level", craft.level))
+
 
 # Build fields from unit.* -----------------------------------------------------
 unit.df$name <- sapply(unit.wts.data, \(x) {
@@ -113,6 +142,7 @@ unit.df$items.sold <- sapply(unit.data, \(x) {
 })
 
 # Filter down to shopkeepers
+# This is borked?
 unit.df <- unit.df |>
   filter(!is.na(items.sold)) |>
   separate_longer_delim(items.sold, delim = ",")
@@ -241,6 +271,34 @@ df$crafting.material <- sapply(item.data, \(x) {
 
 df$essence <- NA
 
+# Update other tables wrt to df ------------------------------------------------
+toMerge <- unit.df |> 
+  select(name, items.sold) |>
+  rename(vendor = name) |> 
+  bind_rows(regalia.df) |>
+  bind_rows(crafting.df |> select(vendor, items.sold)) |>
+  left_join(df |> select(rawcode, name) |> rename(item.name = name), by = join_by(items.sold == rawcode)) |>
+  mutate(forge.flag = grepl("^Forge", item.name),
+         item.name = if_else(forge.flag, gsub(pattern = "Forge (.*)", replacement = "\\1", x = item.name), item.name)) |>
+  chop(vendor)
+
+forge.item.name.vector <- toMerge |> 
+  filter(forge.flag) |>
+  pull(item.name)
+
+forge.item.rawcode <- df |>
+  select(rawcode, name) |>
+  rename(forge.link = rawcode) |>
+  filter(name %in% forge.item.name.vector)
+
+toMerge <- toMerge |>
+  left_join(forge.item.rawcode, by = join_by(item.name == name)) |>
+  mutate(items.sold = if_else(forge.flag, forge.link, items.sold))
+
+toMerge$vendor <- sapply(toMerge$vendor, paste, collapse = "; ")
+
+# Hard-coded updates to item.df ------------------------------------------------
+
 item.df <- df |> mutate(
   class = if_else(is.na(class), case_match(parentcode,
                                            c("kymn", "kybl", "azhr", "sehr", "kygh", "bzbf") ~ "Campaign",
@@ -321,7 +379,7 @@ item.df <- df |> mutate(
                      .default = "Common"),
   name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name)) |>
   left_join(y = icon.data, by = join_by(icon)) |>
-  left_join(y = unit.df |> select(name, items.sold) |> rename(vendor = name), by = join_by(rawcode == items.sold))
+  left_join(y = toMerge, by = join_by(rawcode == items.sold))
 ```
 
 ```{r display_items}
@@ -333,22 +391,22 @@ item.df |>
          name.clean != "Rune of Restoration",
          !grepl("Tome of Attribute Increase", name.clean),
          name.clean != "Iron Key",
-         !rawcode %in% c("[I0EX]", "[I0EY]")
+         !rawcode %in% c("I0EX", "I0EY")
          ) |>
   mutate(
     rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
   arrange(rarity, level, name.clean) |>
-  select(name, level, tooltip, prio, path) |>
+  select(name, level, tooltip, prio, path, vendor) |>
   mutate(name.aug = paste0(name,
                            if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""),
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
          icon.block = paste0("<img src=\"", path, "\"/>"),
          basic.block = paste0("<div class=\"basic-block\"><div>", icon.block, "</div><div>", name.aug, "</div>")) |>
-  select(basic.block, tooltip) |>
+  select(basic.block, tooltip, vendor) |>
   datatable(
     rownames = FALSE, 
     escape = FALSE, 
-    colnames = c("Item", "Description"),
+    colnames = c("Item", "Description", "Acquisition"),
     options = list(columnDefs = list(list(width = "400px", targets = 0)))
   )
 ```

@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39c5 --- Changelog"
+title: "The Black Road RPG v1.39c6 --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -16,243 +16,51 @@ editor:
 
 ## General
 
--   Rewrote the code that displays the floating text tags for lifesteal
-    -   This *should* result in a downstream bug fix when melee
-        characters do not display a floating text tag for lifesteal,
-        even though the effect occurred "underneath the hood"
--   Updated *Retrain Strength*, *Retrain Agility*, and *Retrain
-    Intelligence* to be in the same style as *Retrain all Strength
-    attribute points*, *Retrain all Agility attribute points*, and
-    *Retrain all Intelligence attribute points.*
--   The source code of the underlying damage detection engine has been
-    updated
--   If a unit's base Resist changes and it is selected: It is now
-    updated on the UI
--   The tracking of affected units for *Maelstrom* (Druid), *Death Wave*
-    (Warlock), *Wall of Roots* (Druid), *Winds of War* (Warlord), and
-    *Freezing Field* (Magician) has been updated to a recycling
-    implementation
-    -   This may result in a downstream bug fix for where these spells
-        can fail after an unspecified amount of gametime
--   The "affected" FX of *Hallowed Ground* (Cleric) and *Soothing
-    Presence* (Druid) now only renders once per unit
+-   *Gold Coins* now display their "value" as the number of item
+    charges, like Crafting Material drops.
+-   *Shield of Zeus* (Athens) renamed to *Bulwark of Zeus*.
+-   Familiars (backpacks) now ignores class restrictions when picking up
+    items.
+-   Mobs that do not grant Gold and XP can no longer drop *The Strange
+    Note* (Serius).
 
 ## Bug Fixes
 
--   *Gift of Poseidon* (Metalsmith Zoticus) can now be forged at the
-    intended level of 120 (instead of 135)
--   *Rebate* (Cleric) now correctly procs for *Books of Skill Increase -
-    Level 7* (Books)
--   The *Furies* (Frozen Citadel) no longer reset after they are slain
--   *Hallowed Ground*'s (Cleric) dummy unit now has the `Ancient` unit
-    classification. This prevents a rare bug where it (the dummy unit)
-    teleports with you via Scroll of Town Portal
--   Doodad placement has been successfully converted back to how it was
-    in 1.39c3
--   Item restrictions now use a 0 second timer trick to drop items.
--   The attribute points granted upon levelling up now correctly account
-    for the current number of unused attribute points
+-   *Gushing Wound* (Assassin) now correctly calculates how much damage
+    it does per tick.
+-   *Wand of Lesser Spell Power* (Weaponsmith ) grants the 75 Spell
+    Power (as intended).
+-   *Bum Rush* (Warlord), *Curse* (Warlock), *Grave Seize* (Khaos
+    Champion), *Gushing Wound* (Assassin), *Holy Light* (Cleric), *Rend
+    Armor* (Barbarian), *Blood Bath* (Barbarian), *Rejuvenation*
+    (Druid), *Hestia's Touch* (Temple Guardian), and *Vengeance*
+    (Warlock) can no longer target neutral units.
+-   *Freezing Field* (Magician), *Wall of Roots* (Druid), *Thunderbolt*
+    (Druid), and *Maelstrom* (Druid) can now successfully apply their
+    effects consistently to targets.
+-   A several spells can now target Warrior Class heroes in a `-duel`
+    scenario.
 
 ## Typos and Typesetting
 
--   *Ring of the Magi* (Goldsmith)
--   *Soothing Presence* (Druid)
--   *Assassinate* (Assassin)
--   *Gushing Wound* (Assassin)
--   *White Dragonscale Ring of Serious Addiction* (Metalsmith Zoticus)
--   *Rebirth* (Cleric)
--   *Black Arrow* (Ranger)
+-   *Eviscerate* (Assassin).
+-   *Wall of Roots* (Druid).
+-   *Hallowed Ground* (Cleric).
+-   *Flame Spire* (Magician).
 
 ## Heroes
 
-### Assassin
-
--   Mana regeneration: 0.75
-    -   This is longer spelt out explicitly in *Walk in the Shadows*,
-        and will be visible when `-info` is updated.
-
-**Gushing Wound**
-
--   Stacks up to three times ⇒ Stacks up to five times
--   Total Damage per stack: 200 / 400 / 750 / 1500 / 3000 / 5000 / 7500
-    / 10000 (+10 Agility) ⇒ 200 / 400 / 750 / 1500 / 3000 / 5000 / 7500
-    / 10000 (+6 Agility)
--   Damage type: Physical ⇒ Magical
-
-**Walk in the Shadows**
-
--   You restore 10% / 15% / 20% / 25% / 30% / 35% / 40% / 45% missing
-    mana and enter *Stealth* for 5 seconds.\
-    *Passive*—Whenever you cast a spell unstealthed: Reduce the cooldown
-    of *Walk in the Shadows* by 1 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 /
-    3 second(s).
--   Cooldown: 22 / 21 / 20 / 19 / 18 / 17 / 16 / 15 seconds.
-
-**Lethal Poison**
-
--   Removed
-
-**Eviscerate**
-
--   Cast Range: 125
--   Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32
--   Deal 100 / 200 / 400 / 800 / 1600 / 3200 / 5000 / 7000 (+2.5
-    Agility) physical damage to an enemy. Whenever you cast *Eviscerate*
-    behind an enemy: Increase the total damage dealt by 25%.\
-    If you break *Stealth* with *Eviscerate*: It deals an additional 1.0
-    Agility physical damage for each *Wound* stack (Personal).
--   Cooldown: 5 seconds.
-
-**Dancing Dagger**
-
--   Cast Range: 500
--   Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32
--   Throw an enchanted dagger at an enemy, which deals 75 / 150 / 300 /
-    600 / 1200 / 2400 / 3750 / 5000 (+3.0 Agility) physical damage and
-    bounces up to 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 time(s). Each bounce
-    deals 5% less damage.\
-    If you break *Stealth* with *Dancing Dagger*: It also applies
-    *Gushing Wound*.
--   Cooldown: 8 seconds.
-
-**Night Set**
-
--   Physical damage dealt by *Assassinate*, *Eviscerate*, and *Dancing
-    Dagger* ignores 5% \[+(Strength / 35)%\] of the physical damage
-    reduction granted by Armor.
-
-### Cleric
-
-**Hallowed Ground**
-
--   Restore: 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+1.1
-    Spell Healing) ⇒ 255 / 510 / 850 / 1700 / 2550 / 4250 / 6375 / 8500
-    (+Spell Healing)
--   Damage: 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+1.0
-    Spell Damage) ⇒ 255 / 510 / 850 / 1700 / 2550 / 4250 / 6375 / 8500
-    (+Spell Damage)
-
-**Transcendence**
-
--   Spell damage ratio: 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3
-    / 0.35 ⇒ 0.125 / 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3
--   AoE: 650 (unit-to-point) ⇒ 600 (unit-to-unit)
-
 ### Druid
 
-**Rejuvenation**
+**Storm Form**
 
--   Cooldown: 2.5 seconds ⇒ 2 seconds
+-   Hotkey: R ⇒ F.
 
-**Soothing Presence**
+**Human Form**
 
--   Restore on cast: 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3%
-    of their Maximum Health (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 /
-    0.075 / 0.0875 / 0.1 Spell Healing) health ⇒ 1% / 1.2% / 1.5% / 1.8%
-    / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0375 / 0.05 /
-    0.0625 / 0.075 / 0.0875 / 0.1 / 0.1125 / 0.125 Spell Healing) health
--   Restore per second: 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% /
-    3% of their Maximum Health (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625
-    / 0.075 / 0.0875 / 0.1 Spell Healing) health ⇒ 1% / 1.2% / 1.5% /
-    1.8% / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0375 /
-    0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 / 0.1125 / 0.125 Spell Healing)
-    health
+-   Hotkey: R ⇒ F.
 
-### Ranger
+## Forces of Hell
 
-**Star Dust**
-
--   AoE: 300 ⇒ 275
-
-## Items
-
-**Tooth of the Hallowed One** (Hallowed One)
-
--   Level: 45
--   Rare ⇒ Unique
--   Agility: 45
--   *Critical Strike IV* — Gives a 10% chance to do 2 times damage on an
-    auto-attack. This stacks with other instances of Critical Strike.
--   ~~*Critical Strike*—Grants a 10% chance to inflict 2.5x auto-attack
-    damage. This ability stacks with similar effects.~~
-
-**Heartstone Ring of Strength**
-
--   Level: 75 ⇒ 70
--   Strength: 130 ⇒ 80
-
-**Heartstone Ring of Agility**
-
--   Level: 75 ⇒ 70
--   Agility: 130 ⇒ 80
-
-**Heartstone Ring of Intelligence**
-
--   Level: 75 ⇒ 70
--   Intelligence: 130 ⇒ 60
-
-**Magefire Ring**
-
--   Level: 75 ⇒ 70
--   Spell Power: 1100 ⇒ 800
-
-**Unyielding Breastplate**
-
--   Level: 75 ⇒ 70
--   Armor: 90 ⇒ 50
-
-**Hexfire Ring**
-
--   Previously *Magefire Ring of Intelligence*
--   Level: 130 ⇒ 165
--   Intelligence: 130 ⇒ 150
--   Spell Power: 1100
--   *Lower Resist*—Spell effects have an 8% chance to *Enfeeble I* their
-    target(s) for 8 seconds, which reduces their Resist by 15 for the
-    duration. If *Lower Resist* is applied by a spell-enhanced
-    auto-attack or damage over time effect: *Lower Resist* cannot be
-    applied on that target by either spell type for the next 12 seconds.
--   Metalsmith Zoticus (Locris)
-    -   Magefire Ring
-    -   Heartstone Ring of Intelligence
-    -   Silenus' Talisman
-    -   Gem of the East
-    -   Gem of the West
-    -   2 Stone of Heaven
-    -   2 Blood Ruby
-    -   2 Heart of Frost
-
-**Bristleback**
-
--   Previously *Unyielding Breastplate of Strength*
--   Level: 120 ⇒ 165
--   Strength: 130 ⇒ 150
--   Armor: 90 ⇒ 100
--   *Retaliation II*—Whenever you take damage: Deal 0.75 Strength
-    physical damage to enemies within a 150 AoE of you. Cooldown: 2
-    seconds.
--   Metalsmith Galen (Estallah)
-    -   Unyielding Breastplate
-    -   Heartstone Ring of Strength
-    -   Savage Helm
-    -   Gem of the South
-    -   2 Stone of Heaven
-    -   2 Blood Ruby
-    -   2 Meteoric Iron
-
-**The Winged God's Clamys**
-
--   Previously *Unyielding Breastplate of Agility*
--   Level: 120 ⇒ 165
--   Agility: 130 ⇒ 150
--   Armor: 90 ⇒ 70
--   Movement Speed: 0 ⇒ 50
--   *Evasion V*—Gives a 25% chance to avoid an auto-attack.
--   Metalsmith Galen (Estallah)
-    -   Unyielding Breastplate
-    -   Heartstone Ring of Agility
-    -   Boots of Hermes
-    -   Gem of the South
-    -   2 Stone of Heaven
-    -   2 Blood Ruby
-    -   2 Sea Essence
+-   *Necromancers* (Cavern of Dread) skeletons no longer grant Gold and
+    XP like other mobs that could be summoned.

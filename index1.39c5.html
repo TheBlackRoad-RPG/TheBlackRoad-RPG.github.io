@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alteisen (Av3n)">
 
-<title>The Black Road RPG v1.39c6 — Changelog</title>
+<title>The Black Road RPG v1.39c5 — Changelog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3057,9 +3057,12 @@ vertical-align: -.125em;
   <li><a href="#typos-and-typesetting" id="toc-typos-and-typesetting" class="nav-link" data-scroll-target="#typos-and-typesetting">Typos and Typesetting</a></li>
   <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a>
   <ul class="collapse">
+  <li><a href="#assassin" id="toc-assassin" class="nav-link" data-scroll-target="#assassin">Assassin</a></li>
+  <li><a href="#cleric" id="toc-cleric" class="nav-link" data-scroll-target="#cleric">Cleric</a></li>
   <li><a href="#druid" id="toc-druid" class="nav-link" data-scroll-target="#druid">Druid</a></li>
+  <li><a href="#ranger" id="toc-ranger" class="nav-link" data-scroll-target="#ranger">Ranger</a></li>
   </ul></li>
-  <li><a href="#forces-of-hell" id="toc-forces-of-hell" class="nav-link" data-scroll-target="#forces-of-hell">Forces of Hell</a></li>
+  <li><a href="#items" id="toc-items" class="nav-link" data-scroll-target="#items">Items</a></li>
   </ul>
 </nav>
 </div>
@@ -3069,7 +3072,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Black Road RPG v1.39c6 — Changelog</h1>
+<h1 class="title">The Black Road RPG v1.39c5 — Changelog</h1>
 </div>
 
 
@@ -3095,49 +3098,214 @@ vertical-align: -.125em;
 <section id="general" class="level2">
 <h2 class="anchored" data-anchor-id="general">General</h2>
 <ul>
-<li><em>Gold Coins</em> now display their “value” as the number of item charges, like Crafting Material drops.</li>
-<li><em>Shield of Zeus</em> (Athens) renamed to <em>Bulwark of Zeus</em>.</li>
-<li>Familiars (backpacks) now ignores class restrictions when picking up items.</li>
-<li>Mobs that do not grant Gold and XP can no longer drop <em>The Strange Note</em> (Serius).</li>
+<li>Rewrote the code that displays the floating text tags for lifesteal
+<ul>
+<li>This <em>should</em> result in a downstream bug fix when melee characters do not display a floating text tag for lifesteal, even though the effect occurred “underneath the hood”</li>
+</ul></li>
+<li>Updated <em>Retrain Strength</em>, <em>Retrain Agility</em>, and <em>Retrain Intelligence</em> to be in the same style as <em>Retrain all Strength attribute points</em>, <em>Retrain all Agility attribute points</em>, and <em>Retrain all Intelligence attribute points.</em></li>
+<li>The source code of the underlying damage detection engine has been updated</li>
+<li>If a unit’s base Resist changes and it is selected: It is now updated on the UI</li>
+<li>The tracking of affected units for <em>Maelstrom</em> (Druid), <em>Death Wave</em> (Warlock), <em>Wall of Roots</em> (Druid), <em>Winds of War</em> (Warlord), and <em>Freezing Field</em> (Magician) has been updated to a recycling implementation
+<ul>
+<li>This may result in a downstream bug fix for where these spells can fail after an unspecified amount of gametime</li>
+</ul></li>
+<li>The “affected” FX of <em>Hallowed Ground</em> (Cleric) and <em>Soothing Presence</em> (Druid) now only renders once per unit</li>
 </ul>
 </section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
 <ul>
-<li><em>Gushing Wound</em> (Assassin) now correctly calculates how much damage it does per tick.</li>
-<li><em>Wand of Lesser Spell Power</em> (Weaponsmith ) grants the 75 Spell Power (as intended).</li>
-<li><em>Bum Rush</em> (Warlord), <em>Curse</em> (Warlock), <em>Grave Seize</em> (Khaos Champion), <em>Gushing Wound</em> (Assassin), <em>Holy Light</em> (Cleric), <em>Rend Armor</em> (Barbarian), <em>Blood Bath</em> (Barbarian), <em>Rejuvenation</em> (Druid), <em>Hestia’s Touch</em> (Temple Guardian), and <em>Vengeance</em> (Warlock) can no longer target neutral units.</li>
-<li><em>Freezing Field</em> (Magician), <em>Wall of Roots</em> (Druid), <em>Thunderbolt</em> (Druid), and <em>Maelstrom</em> (Druid) can now successfully apply their effects consistently to targets.</li>
-<li>A several spells can now target Warrior Class heroes in a <code>-duel</code> scenario.</li>
+<li><em>Gift of Poseidon</em> (Metalsmith Zoticus) can now be forged at the intended level of 120 (instead of 135)</li>
+<li><em>Rebate</em> (Cleric) now correctly procs for <em>Books of Skill Increase - Level 7</em> (Books)</li>
+<li>The <em>Furies</em> (Frozen Citadel) no longer reset after they are slain</li>
+<li><em>Hallowed Ground</em>’s (Cleric) dummy unit now has the <code>Ancient</code> unit classification. This prevents a rare bug where it (the dummy unit) teleports with you via Scroll of Town Portal</li>
+<li>Doodad placement has been successfully converted back to how it was in 1.39c3</li>
+<li>Item restrictions now use a 0 second timer trick to drop items.</li>
+<li>The attribute points granted upon levelling up now correctly account for the current number of unused attribute points</li>
 </ul>
 </section>
 <section id="typos-and-typesetting" class="level2">
 <h2 class="anchored" data-anchor-id="typos-and-typesetting">Typos and Typesetting</h2>
 <ul>
-<li><em>Eviscerate</em> (Assassin).</li>
-<li><em>Wall of Roots</em> (Druid).</li>
-<li><em>Hallowed Ground</em> (Cleric).</li>
-<li><em>Flame Spire</em> (Magician).</li>
+<li><em>Ring of the Magi</em> (Goldsmith)</li>
+<li><em>Soothing Presence</em> (Druid)</li>
+<li><em>Assassinate</em> (Assassin)</li>
+<li><em>Gushing Wound</em> (Assassin)</li>
+<li><em>White Dragonscale Ring of Serious Addiction</em> (Metalsmith Zoticus)</li>
+<li><em>Rebirth</em> (Cleric)</li>
+<li><em>Black Arrow</em> (Ranger)</li>
 </ul>
 </section>
 <section id="heroes" class="level2">
 <h2 class="anchored" data-anchor-id="heroes">Heroes</h2>
+<section id="assassin" class="level3">
+<h3 class="anchored" data-anchor-id="assassin">Assassin</h3>
+<ul>
+<li>Mana regeneration: 0.75
+<ul>
+<li>This is longer spelt out explicitly in <em>Walk in the Shadows</em>, and will be visible when <code>-info</code> is updated.</li>
+</ul></li>
+</ul>
+<p><strong>Gushing Wound</strong></p>
+<ul>
+<li>Stacks up to three times ⇒ Stacks up to five times</li>
+<li>Total Damage per stack: 200 / 400 / 750 / 1500 / 3000 / 5000 / 7500 / 10000 (+10 Agility) ⇒ 200 / 400 / 750 / 1500 / 3000 / 5000 / 7500 / 10000 (+6 Agility)</li>
+<li>Damage type: Physical ⇒ Magical</li>
+</ul>
+<p><strong>Walk in the Shadows</strong></p>
+<ul>
+<li>You restore 10% / 15% / 20% / 25% / 30% / 35% / 40% / 45% missing mana and enter <em>Stealth</em> for 5 seconds.<br>
+<em>Passive</em>—Whenever you cast a spell unstealthed: Reduce the cooldown of <em>Walk in the Shadows</em> by 1 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 / 3 second(s).</li>
+<li>Cooldown: 22 / 21 / 20 / 19 / 18 / 17 / 16 / 15 seconds.</li>
+</ul>
+<p><strong>Lethal Poison</strong></p>
+<ul>
+<li>Removed</li>
+</ul>
+<p><strong>Eviscerate</strong></p>
+<ul>
+<li>Cast Range: 125</li>
+<li>Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32</li>
+<li>Deal 100 / 200 / 400 / 800 / 1600 / 3200 / 5000 / 7000 (+2.5 Agility) physical damage to an enemy. Whenever you cast <em>Eviscerate</em> behind an enemy: Increase the total damage dealt by 25%.<br>
+If you break <em>Stealth</em> with <em>Eviscerate</em>: It deals an additional 1.0 Agility physical damage for each <em>Wound</em> stack (Personal).</li>
+<li>Cooldown: 5 seconds.</li>
+</ul>
+<p><strong>Dancing Dagger</strong></p>
+<ul>
+<li>Cast Range: 500</li>
+<li>Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32</li>
+<li>Throw an enchanted dagger at an enemy, which deals 75 / 150 / 300 / 600 / 1200 / 2400 / 3750 / 5000 (+3.0 Agility) physical damage and bounces up to 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 time(s). Each bounce deals 5% less damage.<br>
+If you break <em>Stealth</em> with <em>Dancing Dagger</em>: It also applies <em>Gushing Wound</em>.</li>
+<li>Cooldown: 8 seconds.</li>
+</ul>
+<p><strong>Night Set</strong></p>
+<ul>
+<li>Physical damage dealt by <em>Assassinate</em>, <em>Eviscerate</em>, and <em>Dancing Dagger</em> ignores 5% [+(Strength / 35)%] of the physical damage reduction granted by Armor.</li>
+</ul>
+</section>
+<section id="cleric" class="level3">
+<h3 class="anchored" data-anchor-id="cleric">Cleric</h3>
+<p><strong>Hallowed Ground</strong></p>
+<ul>
+<li>Restore: 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+1.1 Spell Healing) ⇒ 255 / 510 / 850 / 1700 / 2550 / 4250 / 6375 / 8500 (+Spell Healing)</li>
+<li>Damage: 300 / 600 / 1000 / 2000 / 3000 / 5000 / 7500 / 10000 (+1.0 Spell Damage) ⇒ 255 / 510 / 850 / 1700 / 2550 / 4250 / 6375 / 8500 (+Spell Damage)</li>
+</ul>
+<p><strong>Transcendence</strong></p>
+<ul>
+<li>Spell damage ratio: 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3 / 0.35 ⇒ 0.125 / 0.15 / 0.175 / 0.2 / 0.225 / 0.25 / 0.275 / 0.3</li>
+<li>AoE: 650 (unit-to-point) ⇒ 600 (unit-to-unit)</li>
+</ul>
+</section>
 <section id="druid" class="level3">
 <h3 class="anchored" data-anchor-id="druid">Druid</h3>
-<p><strong>Storm Form</strong></p>
+<p><strong>Rejuvenation</strong></p>
 <ul>
-<li>Hotkey: R ⇒ F.</li>
+<li>Cooldown: 2.5 seconds ⇒ 2 seconds</li>
 </ul>
-<p><strong>Human Form</strong></p>
+<p><strong>Soothing Presence</strong></p>
 <ul>
-<li>Hotkey: R ⇒ F.</li>
+<li>Restore on cast: 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing) health ⇒ 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 / 0.1125 / 0.125 Spell Healing) health</li>
+<li>Restore per second: 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0125 / 0.025 / 0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 Spell Healing) health ⇒ 1% / 1.2% / 1.5% / 1.8% / 2.1% / 2.4% / 2.7% / 3% of their Maximum Health (+0.0375 / 0.05 / 0.0625 / 0.075 / 0.0875 / 0.1 / 0.1125 / 0.125 Spell Healing) health</li>
+</ul>
+</section>
+<section id="ranger" class="level3">
+<h3 class="anchored" data-anchor-id="ranger">Ranger</h3>
+<p><strong>Star Dust</strong></p>
+<ul>
+<li>AoE: 300 ⇒ 275</li>
 </ul>
 </section>
 </section>
-<section id="forces-of-hell" class="level2">
-<h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
+<section id="items" class="level2">
+<h2 class="anchored" data-anchor-id="items">Items</h2>
+<p><strong>Tooth of the Hallowed One</strong> (Hallowed One)</p>
 <ul>
-<li><em>Necromancers</em> (Cavern of Dread) skeletons no longer grant Gold and XP like other mobs that could be summoned.</li>
+<li>Level: 45</li>
+<li>Rare ⇒ Unique</li>
+<li>Agility: 45</li>
+<li><em>Critical Strike IV</em> — Gives a 10% chance to do 2 times damage on an auto-attack. This stacks with other instances of Critical Strike.</li>
+<li><del><em>Critical Strike</em>—Grants a 10% chance to inflict 2.5x auto-attack damage. This ability stacks with similar effects.</del></li>
+</ul>
+<p><strong>Heartstone Ring of Strength</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70</li>
+<li>Strength: 130 ⇒ 80</li>
+</ul>
+<p><strong>Heartstone Ring of Agility</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70</li>
+<li>Agility: 130 ⇒ 80</li>
+</ul>
+<p><strong>Heartstone Ring of Intelligence</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70</li>
+<li>Intelligence: 130 ⇒ 60</li>
+</ul>
+<p><strong>Magefire Ring</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70</li>
+<li>Spell Power: 1100 ⇒ 800</li>
+</ul>
+<p><strong>Unyielding Breastplate</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70</li>
+<li>Armor: 90 ⇒ 50</li>
+</ul>
+<p><strong>Hexfire Ring</strong></p>
+<ul>
+<li>Previously <em>Magefire Ring of Intelligence</em></li>
+<li>Level: 130 ⇒ 165</li>
+<li>Intelligence: 130 ⇒ 150</li>
+<li>Spell Power: 1100</li>
+<li><em>Lower Resist</em>—Spell effects have an 8% chance to <em>Enfeeble I</em> their target(s) for 8 seconds, which reduces their Resist by 15 for the duration. If <em>Lower Resist</em> is applied by a spell-enhanced auto-attack or damage over time effect: <em>Lower Resist</em> cannot be applied on that target by either spell type for the next 12 seconds.</li>
+<li>Metalsmith Zoticus (Locris)
+<ul>
+<li>Magefire Ring</li>
+<li>Heartstone Ring of Intelligence</li>
+<li>Silenus’ Talisman</li>
+<li>Gem of the East</li>
+<li>Gem of the West</li>
+<li>2 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+<li>2 Heart of Frost</li>
+</ul></li>
+</ul>
+<p><strong>Bristleback</strong></p>
+<ul>
+<li>Previously <em>Unyielding Breastplate of Strength</em></li>
+<li>Level: 120 ⇒ 165</li>
+<li>Strength: 130 ⇒ 150</li>
+<li>Armor: 90 ⇒ 100</li>
+<li><em>Retaliation II</em>—Whenever you take damage: Deal 0.75 Strength physical damage to enemies within a 150 AoE of you. Cooldown: 2 seconds.</li>
+<li>Metalsmith Galen (Estallah)
+<ul>
+<li>Unyielding Breastplate</li>
+<li>Heartstone Ring of Strength</li>
+<li>Savage Helm</li>
+<li>Gem of the South</li>
+<li>2 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+<li>2 Meteoric Iron</li>
+</ul></li>
+</ul>
+<p><strong>The Winged God’s Clamys</strong></p>
+<ul>
+<li>Previously <em>Unyielding Breastplate of Agility</em></li>
+<li>Level: 120 ⇒ 165</li>
+<li>Agility: 130 ⇒ 150</li>
+<li>Armor: 90 ⇒ 70</li>
+<li>Movement Speed: 0 ⇒ 50</li>
+<li><em>Evasion V</em>—Gives a 25% chance to avoid an auto-attack.</li>
+<li>Metalsmith Galen (Estallah)
+<ul>
+<li>Unyielding Breastplate</li>
+<li>Heartstone Ring of Agility</li>
+<li>Boots of Hermes</li>
+<li>Gem of the South</li>
+<li>2 Stone of Heaven</li>
+<li>2 Blood Ruby</li>
+<li>2 Sea Essence</li>
+</ul></li>
 </ul>
 </section>
 
