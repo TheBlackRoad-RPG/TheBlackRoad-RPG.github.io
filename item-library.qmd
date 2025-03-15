@@ -57,6 +57,8 @@ item.wts.data <- read_json("../the-black-road-rpg/map/war3mapSkin.w3t.json")$cus
 unit.data <- read_json("../the-black-road-rpg/map/war3map.w3u.json")$custom
 unit.wts.data <- read_json("../the-black-road-rpg/map/war3mapSkin.w3u.json")$custom
 
+drop.data <- read.csv("./data/drop-table.csv")
+
 wts.data <- read_json("../the-black-road-rpg/map/war3map.wts.json")
 
 icon.data <- read.csv("./data/icons.csv") |> mutate(icon = gsub(".*/(.*)\\.png", "\\1", path))
@@ -277,6 +279,7 @@ toMerge <- unit.df |>
   rename(vendor = name) |> 
   bind_rows(regalia.df) |>
   bind_rows(crafting.df |> select(vendor, items.sold)) |>
+  bind_rows(drop.data |> select(source, item.rawcode) |> rename(items.sold = item.rawcode, vendor = source)) |>
   left_join(df |> select(rawcode, name) |> rename(item.name = name), by = join_by(items.sold == rawcode)) |>
   mutate(forge.flag = grepl("^Forge", item.name),
          item.name = if_else(forge.flag, gsub(pattern = "Forge (.*)", replacement = "\\1", x = item.name), item.name)) |>
