@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39c6 --- Changelog"
+title: "The Black Road RPG v1.39c7 --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -14,53 +14,26 @@ editor:
     wrap: 72
 ---
 
-## General
-
--   *Gold Coins* now display their "value" as the number of item
-    charges, like Crafting Material drops.
--   *Shield of Zeus* (Athens) renamed to *Bulwark of Zeus*.
--   Familiars (backpacks) now ignores class restrictions when picking up
-    items.
--   Mobs that do not grant Gold and XP can no longer drop *The Strange
-    Note* (Serius).
-
 ## Bug Fixes
 
--   *Gushing Wound* (Assassin) now correctly calculates how much damage
-    it does per tick.
--   *Wand of Lesser Spell Power* (Weaponsmith ) grants the 75 Spell
-    Power (as intended).
--   *Bum Rush* (Warlord), *Curse* (Warlock), *Grave Seize* (Khaos
-    Champion), *Gushing Wound* (Assassin), *Holy Light* (Cleric), *Rend
-    Armor* (Barbarian), *Blood Bath* (Barbarian), *Rejuvenation*
-    (Druid), *Hestia's Touch* (Temple Guardian), and *Vengeance*
-    (Warlock) can no longer target neutral units.
--   *Freezing Field* (Magician), *Wall of Roots* (Druid), *Thunderbolt*
-    (Druid), and *Maelstrom* (Druid) can now successfully apply their
-    effects consistently to targets.
--   A several spells can now target Warrior Class heroes in a `-duel`
-    scenario.
+-   Class skill books now check if the user is the correct class.
+-   *Elixir of Lesser Intelligence*, *Elixir of Intelligence*, *Elixir
+    of Greater Intelligence*, *Elixir of Superior Intelligence*, and
+    *Draught of Hera* can no longer be used by familiars (backpacks) of
+    Warrior class heroes.
 
-## Typos and Typesetting
+## Items
 
--   *Eviscerate* (Assassin).
--   *Wall of Roots* (Druid).
--   *Hallowed Ground* (Cleric).
--   *Flame Spire* (Magician).
-
-## Heroes
-
-### Druid
-
-**Storm Form**
-
--   Hotkey: R ⇒ F.
-
-**Human Form**
-
--   Hotkey: R ⇒ F.
+-   *Ring of Health*, *Life Gem*, *Charm of Speed*, *Athenian Cloak*,
+    *Berzerker Helm*, *Cataphract*, *Shifting Cloak*. *Maul of
+    Destruction*, *Scroll of Greater Regneration*, and *Scroll of
+    Superior Regeneration* have been removed.
 
 ## Forces of Hell
 
--   *Necromancers* (Cavern of Dread) skeletons no longer grant Gold and
-    XP like other mobs that could be summoned.
+-   Oceanus' drop table:
+    -   *Shielding of Warding*
+    -   ~~*Aphrodite's Blessed Orb*~~
+    -   *Eris' Golden Apple of Discord*
+    -   *Shield of Zeus*
+    -   *Sword of Command*

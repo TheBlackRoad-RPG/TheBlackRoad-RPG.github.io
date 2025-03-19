@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alteisen (Av3n)">
 
-<title>The Black Road RPG v1.39c7 — Changelog</title>
+<title>The Black Road RPG v1.39c6 — Changelog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3052,8 +3052,13 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link active" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
-  <li><a href="#items" id="toc-items" class="nav-link" data-scroll-target="#items">Items</a></li>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
+  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  <li><a href="#typos-and-typesetting" id="toc-typos-and-typesetting" class="nav-link" data-scroll-target="#typos-and-typesetting">Typos and Typesetting</a></li>
+  <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a>
+  <ul class="collapse">
+  <li><a href="#druid" id="toc-druid" class="nav-link" data-scroll-target="#druid">Druid</a></li>
+  </ul></li>
   <li><a href="#forces-of-hell" id="toc-forces-of-hell" class="nav-link" data-scroll-target="#forces-of-hell">Forces of Hell</a></li>
   </ul>
 </nav>
@@ -3064,7 +3069,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Black Road RPG v1.39c7 — Changelog</h1>
+<h1 class="title">The Black Road RPG v1.39c6 — Changelog</h1>
 </div>
 
 
@@ -3087,30 +3092,52 @@ vertical-align: -.125em;
 </header>
 
 
+<section id="general" class="level2">
+<h2 class="anchored" data-anchor-id="general">General</h2>
+<ul>
+<li><em>Gold Coins</em> now display their “value” as the number of item charges, like Crafting Material drops.</li>
+<li><em>Shield of Zeus</em> (Athens) renamed to <em>Bulwark of Zeus</em>.</li>
+<li>Familiars (backpacks) now ignores class restrictions when picking up items.</li>
+<li>Mobs that do not grant Gold and XP can no longer drop <em>The Strange Note</em> (Serius).</li>
+</ul>
+</section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
 <ul>
-<li>Class skill books now check if the user is the correct class.</li>
-<li><em>Elixir of Lesser Intelligence</em>, <em>Elixir of Intelligence</em>, <em>Elixir of Greater Intelligence</em>, <em>Elixir of Superior Intelligence</em>, and <em>Draught of Hera</em> can no longer be used by familiars (backpacks) of Warrior class heroes.</li>
+<li><em>Gushing Wound</em> (Assassin) now correctly calculates how much damage it does per tick.</li>
+<li><em>Wand of Lesser Spell Power</em> (Weaponsmith ) grants the 75 Spell Power (as intended).</li>
+<li><em>Bum Rush</em> (Warlord), <em>Curse</em> (Warlock), <em>Grave Seize</em> (Khaos Champion), <em>Gushing Wound</em> (Assassin), <em>Holy Light</em> (Cleric), <em>Rend Armor</em> (Barbarian), <em>Blood Bath</em> (Barbarian), <em>Rejuvenation</em> (Druid), <em>Hestia’s Touch</em> (Temple Guardian), and <em>Vengeance</em> (Warlock) can no longer target neutral units.</li>
+<li><em>Freezing Field</em> (Magician), <em>Wall of Roots</em> (Druid), <em>Thunderbolt</em> (Druid), and <em>Maelstrom</em> (Druid) can now successfully apply their effects consistently to targets.</li>
+<li>A several spells can now target Warrior Class heroes in a <code>-duel</code> scenario.</li>
 </ul>
 </section>
-<section id="items" class="level2">
-<h2 class="anchored" data-anchor-id="items">Items</h2>
+<section id="typos-and-typesetting" class="level2">
+<h2 class="anchored" data-anchor-id="typos-and-typesetting">Typos and Typesetting</h2>
 <ul>
-<li><em>Ring of Health</em>, <em>Life Gem</em>, <em>Charm of Speed</em>, <em>Athenian Cloak</em>, <em>Berzerker Helm</em>, <em>Cataphract</em>, <em>Shifting Cloak</em>. <em>Maul of Destruction</em>, <em>Scroll of Greater Regneration</em>, and <em>Scroll of Superior Regeneration</em> have been removed.</li>
+<li><em>Eviscerate</em> (Assassin).</li>
+<li><em>Wall of Roots</em> (Druid).</li>
+<li><em>Hallowed Ground</em> (Cleric).</li>
+<li><em>Flame Spire</em> (Magician).</li>
 </ul>
+</section>
+<section id="heroes" class="level2">
+<h2 class="anchored" data-anchor-id="heroes">Heroes</h2>
+<section id="druid" class="level3">
+<h3 class="anchored" data-anchor-id="druid">Druid</h3>
+<p><strong>Storm Form</strong></p>
+<ul>
+<li>Hotkey: R ⇒ F.</li>
+</ul>
+<p><strong>Human Form</strong></p>
+<ul>
+<li>Hotkey: R ⇒ F.</li>
+</ul>
+</section>
 </section>
 <section id="forces-of-hell" class="level2">
 <h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
 <ul>
-<li>Oceanus’ drop table:
-<ul>
-<li><em>Shielding of Warding</em></li>
-<li><del><em>Aphrodite’s Blessed Orb</em></del></li>
-<li><em>Eris’ Golden Apple of Discord</em></li>
-<li><em>Shield of Zeus</em></li>
-<li><em>Sword of Command</em></li>
-</ul></li>
+<li><em>Necromancers</em> (Cavern of Dread) skeletons no longer grant Gold and XP like other mobs that could be summoned.</li>
 </ul>
 </section>
 
