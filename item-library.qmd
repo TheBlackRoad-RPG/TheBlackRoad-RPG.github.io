@@ -388,7 +388,7 @@ item.df <- df |> mutate(
 ```{r display_items}
 #| echo: false
 
-item.df |>
+item.cleaned.df <- item.df |>
   filter(class != "PowerUp",
          class != "Campaign",
          name.clean != "Rune of Restoration",
@@ -398,8 +398,16 @@ item.df |>
          ) |>
   mutate(
     rarity = factor(rarity, levels = c("Common", "Uncommon", "Consumables", "Crafting Component / Unique Crafting Component", "Rare", "Artifact", "Epic", "Relic / Olympian Relic", "Regalia"), ordered = TRUE)) |>
-  arrange(rarity, level, name.clean) |>
-  select(name, level, tooltip, prio, path, vendor) |>
+  arrange(rarity, level, name.clean)
+
+item.cleaned.df |>
+  select(name, path, level, rarity, tooltip, prio, vendor) |>
+  rename(restriction = prio, acquisition = vendor) |>
+  rowwise() |>
+  mutate(tooltip = unlist(tooltip)) |>
+  write.csv("./data/item_data.csv", row.names = FALSE)
+
+item.cleaned.df |>
   mutate(name.aug = paste0(name,
                            if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""),
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
