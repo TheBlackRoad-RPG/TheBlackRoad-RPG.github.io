@@ -1,5 +1,5 @@
 ---
-title: "[BETA] TBR 1.39c7 Item Library"
+title: "[BETA] TBR 1.39d Item Library"
 format:
   html:
     grid:
