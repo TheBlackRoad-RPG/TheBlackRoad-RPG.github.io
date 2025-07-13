@@ -108,6 +108,8 @@ crafting.df <- tibble(
   items.sold = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
     gsub(pattern = "^set udg_zNewCraftingItem\\[[0-9]+\\]='(.*)'", x = _, replacement = "\\1"),
   craft.level = x[x != "101"] |> as.numeric(),
+  craft.mats = grep(pattern = "set udg_zNewCraftingMats\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingMats\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1"),
   internal.index = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
     gsub(pattern = "^set udg_zNewCraftingItem\\[([0-9]+)\\]='.*'", x = _, replacement = "\\1") |>
     as.numeric()) |>
@@ -117,6 +119,16 @@ crafting.df <- tibble(
                                       between(internal.index, 180, 239) ~ "Goldsmith"),
          vendor = paste(craft.profession, "Level", craft.level))
 
+for (i in 1:8) {
+  crafting.df[, paste0("item.req.", i)] <- sapply(crafting.df$internal.index, \(x) {
+    y <- grep(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='.*'"), x = crafting.lines, value = TRUE) |>
+      gsub(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='(.*)'"), x = _, replacement = "\\1")
+    
+    if (length(y) == 0) return ("")
+    
+    return (y)
+  })
+}
 
 # Build fields from unit.* -----------------------------------------------------
 unit.df$name <- sapply(unit.wts.data, \(x) {

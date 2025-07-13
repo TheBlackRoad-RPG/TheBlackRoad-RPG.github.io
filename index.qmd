@@ -24,6 +24,7 @@ editor:
 -   `-craftkey` / `-ck` chat command is now documented inside F9.
 -   Tripled the visible duration of custom error messages, e.g., missing forge requirements.
 -   Whenever a player leaves and if another player has their `-ui` visible, their `-ui` is removed.
+-   The selection scale of the Sedah Scarecrow is now doubled.
 
 ## Typos & Typsetting
 
@@ -56,7 +57,7 @@ editor:
 - Cast Point: 0.25 seconds
 - Cast Range: 175
 - Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32
-- Deal 150 / 270 / 485 / 870 / 1560 / 2795 / 5015 / 9000 (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Strength) (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Agility) physical damage to an enemy. This spell effect is treated as an auto-attack.  
+- Deal 135 / 245 / 440 / 785 / 1405 / 2515 / 4515 / 8100 (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Strength) (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Agility) physical damage to an enemy. This spell effect is treated as an auto-attack.  
   If you break *Stealth* with *Shiv*: It also stuns the target for 2 seconds.
 - Cooldown: 5 seconds.
 
@@ -65,7 +66,7 @@ editor:
 - Replaces *Dancing Daggers*
 - Cast Point: 0 seconds
 - Mana Cost: 5 / 10 / 15 / 20 / 25 / 30 / 35 / 40
-- Deal a total of 250 / 450 / 800 / 1450 / 2600 / 4675 / 8375 / 15000 (+1.5 Strength) (+0.9 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 / 3.0 Agility) physical damage to enemies within a 250 AoE.  
+- Deal a total of 225 / 405 / 720 / 1305 / 2340 / 4210 / 7540 / 13500 (+1.5 Strength) (+0.9 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 / 3.0 Agility) physical damage to enemies within a 250 AoE.  
   If you break *Stealth* with *Pirouette*: It also applies *Numbing Poison* on the targets.
 - Cooldown: 4 seconds.
 
@@ -74,8 +75,8 @@ editor:
 - Cast Range: 600
 - Cast Point: 0.25 seconds
 - Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32
-- Deal 100 / 200 / 400 / 800 / 1600 / 3200 / 5000 / 7000 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) magical damage to an enemy. If *Walk in the Shadows* is on cooldown: Reduce its cooldown by 10% [+(2.5 Intelligence)%).
-  If you break *Stealth* with *Shadowstrike*: Teleport behind the target, then deal 100 / 210 / 440 / 925 / 1945 / 4085 / 8575 / 18000 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Strength) (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) physical damage to the target.  
+- Deal 90 / 180 / 360 / 720 / 1440 / 2880 / 4500 / 6300 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) magical damage to an enemy. If *Walk in the Shadows* is on cooldown: Reduce its cooldown by 10% [+(2.5 Intelligence)%).
+  If you break *Stealth* with *Shadowstrike*: Teleport behind the target, then deal 90 / 190 / 400 / 835 / 1750 / 3680 / 7720 / 16200 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Strength) (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) physical damage to the target.  
 - Cooldown: 7 seconds.
 
 **Walk in the Shadows**
