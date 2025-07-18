@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alteisen (Av3n)">
 
-<title>The Black Road RPG v1.39e — Changelog</title>
+<title>The Black Road RPG v1.39d — Changelog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3055,7 +3055,18 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link active" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
+  <li><a href="#typos-typsetting" id="toc-typos-typsetting" class="nav-link" data-scroll-target="#typos-typsetting">Typos &amp; Typsetting</a></li>
+  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  <li><a href="#heroes" id="toc-heroes" class="nav-link" data-scroll-target="#heroes">Heroes</a>
+  <ul class="collapse">
+  <li><a href="#assassin" id="toc-assassin" class="nav-link" data-scroll-target="#assassin">Assassin</a></li>
+  <li><a href="#druid" id="toc-druid" class="nav-link" data-scroll-target="#druid">Druid</a></li>
+  <li><a href="#ranger" id="toc-ranger" class="nav-link" data-scroll-target="#ranger">Ranger</a></li>
+  <li><a href="#temple-guardian" id="toc-temple-guardian" class="nav-link" data-scroll-target="#temple-guardian">Temple Guardian</a></li>
+  </ul></li>
+  <li><a href="#items" id="toc-items" class="nav-link" data-scroll-target="#items">Items</a></li>
+  <li><a href="#forces-of-hell" id="toc-forces-of-hell" class="nav-link" data-scroll-target="#forces-of-hell">Forces of Hell</a></li>
   </ul>
 </nav>
 </div>
@@ -3065,7 +3076,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Black Road RPG v1.39e — Changelog</h1>
+<h1 class="title">The Black Road RPG v1.39d — Changelog</h1>
 </div>
 
 
@@ -3088,13 +3099,436 @@ vertical-align: -.125em;
 </header>
 
 
-<blockquote class="blockquote">
-<p>v1.39e is a hotfix release. See <a href="https://theblackroad-rpg.github.io/index1.39d.html" class="uri">https://theblackroad-rpg.github.io/index1.39d.html</a> for the full changelog.</p>
-</blockquote>
+<section id="general" class="level2">
+<h2 class="anchored" data-anchor-id="general">General</h2>
+<ul>
+<li>Serius and Therin are now unit objects instead of hero objects.</li>
+<li>Upon completion of <em>True Stone</em> (Seryo), Serius’ model is updated to wield a sword.</li>
+<li>Component name tooltips in the <em>Enhance Class Regalia</em> UI stretches to fit the item name instead presenting it fixed width tooltips.</li>
+<li>The majority of the information displayed by the <code>-check</code> and <code>-info</code> chat commands has been streamlined into the <code>-info</code> chat command.
+<ul>
+<li>As a result, <code>-check</code> is no longer chat command.</li>
+</ul></li>
+<li><code>-craftkey</code> / <code>-ck</code> chat command is now documented inside F9.</li>
+<li>Tripled the visible duration of custom error messages, e.g., missing forge requirements.</li>
+<li>Whenever a player leaves and if another player has their <code>-ui</code> visible, their <code>-ui</code> is removed.</li>
+<li>The selection scale of the Sedah Scarecrow is now doubled.</li>
+</ul>
+</section>
+<section id="typos-typsetting" class="level2">
+<h2 class="anchored" data-anchor-id="typos-typsetting">Typos &amp; Typsetting</h2>
+<ul>
+<li><em>Soothing Presence</em> (Druid).</li>
+<li><em>Blazing Sword of Helios</em> (Olympian Relic).</li>
+<li><em>Circlet of Nobility</em> (Goldsmith).</li>
+<li><em>Valor</em> (Spartan Warrior).</li>
+</ul>
+</section>
 <section id="bug-fixes" class="level2">
 <h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
 <ul>
-<li><em>Cabeiri</em> and <em>Phaethon</em> now save properly.</li>
+<li><code>-save</code>/<code>-s</code> default file names for <em>Assassin</em> and <em>Khaos Champion</em> are <code>assassin.txt</code> and <code>khaos champion.txt</code> respectively.</li>
+<li>Attribute points granted by <em>Tome of Stat Increase</em> now correctly adds to the internal counter used to override default Warcraft 3 behaviour.</li>
+<li>Quest rewards correctly grant rewards to characters who at most 15 levels lower than its (quest) level.</li>
+<li><em>Soothing Presence</em> (Druid) now cancels as intended when the persistent mana cost cannot be met.</li>
+<li><em>Strafe</em> (Ranger) correctly determines the number of arrows to fire per auto-attack.
+<ul>
+<li>Effectively, this results in one less arrow under all scenarios.</li>
+</ul></li>
+<li><em>Phalanx</em> (Spartan Warrior) auto-level-up is now aligned with the new <em>Book of Skill Increase</em> (Books) level thresholds.</li>
+<li><em>Eris’ Golden Apple of Discord</em>’s negative roll that causes knockback can no longer affect “stationary” units.</li>
+<li>Forge <em>Aegis of the Frozen Citadel</em> now appears in the correct slot in <em>Metalsmith Theron</em>’s command card.</li>
+<li>Updated the logic for <em>Book of &lt;Ultimate Skill&gt;</em> to no longer cause units to learn ultimate skills they cannot learn due to the minification process.</li>
+<li><em>Shatter</em> (Guardian of Nature) now correctly factors in the <em>Break</em> effect before dealing physical damage.</li>
+</ul>
+</section>
+<section id="heroes" class="level2">
+<h2 class="anchored" data-anchor-id="heroes">Heroes</h2>
+<section id="assassin" class="level3">
+<h3 class="anchored" data-anchor-id="assassin">Assassin</h3>
+<p><strong>Shiv</strong></p>
+<ul>
+<li>Replaces <em>Assassinate</em></li>
+<li>Cast Point: 0.25 seconds</li>
+<li>Cast Range: 175</li>
+<li>Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32</li>
+<li>Deal 135 / 245 / 440 / 785 / 1405 / 2515 / 4515 / 8100 (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Strength) (+1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 Agility) physical damage to an enemy. This spell effect is treated as an auto-attack.<br>
+If you break <em>Stealth</em> with <em>Shiv</em>: It also stuns the target for 2 seconds.</li>
+<li>Cooldown: 5 seconds.</li>
+</ul>
+<p><strong>Pirouette</strong></p>
+<ul>
+<li>Replaces <em>Dancing Daggers</em></li>
+<li>Cast Point: 0 seconds</li>
+<li>Mana Cost: 5 / 10 / 15 / 20 / 25 / 30 / 35 / 40</li>
+<li>Deal a total of 225 / 405 / 720 / 1305 / 2340 / 4210 / 7540 / 13500 (+1.5 Strength) (+0.9 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 / 3.0 Agility) physical damage to enemies within a 250 AoE.<br>
+If you break <em>Stealth</em> with <em>Pirouette</em>: It also applies <em>Numbing Poison</em> on the targets.</li>
+<li>Cooldown: 4 seconds.</li>
+</ul>
+<p><strong>Shadowstrike</strong></p>
+<ul>
+<li>Cast Range: 600</li>
+<li>Cast Point: 0.25 seconds</li>
+<li>Mana Cost: 4 / 8 / 12 / 16 / 20 / 24 / 28 / 32</li>
+<li>Deal 90 / 180 / 360 / 720 / 1440 / 2880 / 4500 / 6300 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) magical damage to an enemy. If <em>Walk in the Shadows</em> is on cooldown: Reduce its cooldown by 10% [+(2.5 Intelligence)%). If you break <em>Stealth</em> with <em>Shadowstrike</em>: Teleport behind the target, then deal 90 / 190 / 400 / 835 / 1750 / 3680 / 7720 / 16200 (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Strength) (+2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 Agility) physical damage to the target.<br>
+</li>
+<li>Cooldown: 7 seconds.</li>
+</ul>
+<p><strong>Walk in the Shadows</strong></p>
+<ul>
+<li>You restore 10% / 15% / 20% / 25% / 30% / 35% / 40% / 45% missing mana. You then enter Stealth and increase your movement speed by 25%. Lasts for 5 seconds.<br>
+If you break <em>Stealth</em> with an auto-attack: It also applies <em>Numbing Poison</em> on the target.</li>
+<li>Cooldown: 14 / 13 / 12 / 11 / 10 / 9 / 8 / 7 seconds.</li>
+</ul>
+<p><strong>Preparation</strong></p>
+<ul>
+<li>Replaces <em>Gushing Wound</em></li>
+<li>Whenever you cast a spell: Gain a charge, stacking up to two times. (These charges last until death.)<br>
+Whenever you auto-attack with two charges: Expend two charges. You then apply <em>Numbing Poison</em> on the target, which deals 100 / 300 / 700 / 1500 / 2500 / 3700 / 4900 / 6400 (+0.25 / 0.5 / 0.75 / 1.0 / 1.25 / 1.5 / 1.75 / 2.0 Strength) (+0.5 / 1.0 / 1.5 / 2.0 / 2.5 / 3.0 / 3.5 / 4.0 Agility) magical damage over 10 seconds and reduces their attack speed by 15% for the duration.</li>
+</ul>
+<p><strong>Night Set</strong></p>
+<ul>
+<li>Physical damage dealt by <em>Shiv</em>, <em>Pirouette</em>, and <em>Shadowstrike</em> ignores 5% [+(Strength / 35)%] of the physical damage reduction granted by Armor.</li>
+</ul>
+</section>
+<section id="druid" class="level3">
+<h3 class="anchored" data-anchor-id="druid">Druid</h3>
+<p><strong>Storm Form</strong></p>
+<ul>
+<li>No longer interrupts orders.</li>
+</ul>
+<p><strong>Human Form</strong></p>
+<ul>
+<li>No longer interrupts orders.</li>
+</ul>
+</section>
+<section id="ranger" class="level3">
+<h3 class="anchored" data-anchor-id="ranger">Ranger</h3>
+<p><strong>Star Dust</strong></p>
+<ul>
+<li>AoE: 275 ⇒ 325.</li>
+</ul>
+</section>
+<section id="temple-guardian" class="level3">
+<h3 class="anchored" data-anchor-id="temple-guardian">Temple Guardian</h3>
+<p><strong>Hammer of Zeus</strong></p>
+<ul>
+<li>Spell Damage ratio: 1.0 ⇒ 2.0.</li>
+</ul>
+</section>
+</section>
+<section id="items" class="level2">
+<h2 class="anchored" data-anchor-id="items">Items</h2>
+<ul>
+<li>Familiars can no longer passively grant aura item abilities.
+<ul>
+<li>Affects <em>Sword of Might</em>, <em>Ares’ Blade of Might</em>, <em>Ring of the Frozen Citadel</em>, <em>Aegis of the Frozen Citadel</em>, <em>Atalanta’s Hunting Garb</em>, <em>Scepter of the Chosen Ones</em>, <em>White Dragonscale Ring of Serious Addiction</em>, <em>Talisman of the Winged God</em>, <em>Hera’s Blessing</em>, and <em>Shield of Warding</em> downstream.</li>
+<li><strong>Note:</strong> <em>Relics</em> and <em>Oly Relics</em> were not listed above as they cannot be picked up by familiars.</li>
+</ul></li>
+<li><em>Eris’ Golden Apple of Discord</em>’s negative rolls now deals physical damage instead of piercing magical damage.</li>
+<li><em>Retaliation I</em> / <em>II</em>
+<ul>
+<li>Cooldown: 2 seconds ⇒ 1 second.</li>
+<li>Affects <em>Barbaric Helm</em>, <em>Crown of Thorns</em>, <em>Savage Helm</em>, and <em>Bristleback</em> downstream.</li>
+</ul></li>
+<li><em>Frigid Aura I</em> / <em>II</em>
+<ul>
+<li>Attack Speed Reduction: 7.5% / 15% ⇒ 15% / 30%.</li>
+<li>Movement Speed Reduction: 15% / 30% ⇒ 5% / 10%.</li>
+<li>Affects <em>Ring of the Frozen Citadel</em>, <em>White Dragonscale Ring of Serious Addiction</em>, and <em>Aegis of the Frozen Citadel</em> downstream.</li>
+</ul></li>
+</ul>
+<p><strong>Thespian Halbred</strong></p>
+<ul>
+<li>Components:
+<ul>
+<li>Level 45 Weaponsmith</li>
+<li>300 Crafting Materials</li>
+<li>Tempered Steel</li>
+<li><code>(NEW)</code> 2 Runestone</li>
+<li><del>Meteoric Iron</del></li>
+<li>Sapphire</li>
+</ul></li>
+</ul>
+<p><strong>Midnight Cloak</strong></p>
+<ul>
+<li>Mana: 200 ⇒ 500</li>
+</ul>
+<p><strong>Amphirite’s Cloak</strong></p>
+<ul>
+<li>Armor: 30 ⇒ 20</li>
+<li>Resist: 30 ⇒ 50</li>
+</ul>
+<p><strong>Regalia XI</strong><br>
+Forge requirements:</p>
+<ul>
+<li>Essence: 10000</li>
+<li>Level: 180</li>
+<li>Components:
+<ul>
+<li><em>Regalia X</em></li>
+<li><del><em>Gemstone of the Olympians</em></del></li>
+<li><em>Gem of the North</em></li>
+<li><em>Gem of the East</em></li>
+<li><em>Gem of the South</em></li>
+<li><em>Gem of the East</em></li>
+</ul></li>
+<li><strong>Note:</strong> Until the final component of the regalia system is implemented, the <em>Gem of the Olympians</em> will not be required to forge from <em>Regalia X</em> to <em>Regalia XI</em>.</li>
+</ul>
+<p><strong>Biting Blade</strong></p>
+<ul>
+<li>Level: 75 ⇒ 70.</li>
+<li>Attack Damage: 200 ⇒ 160.</li>
+<li>Acquisition: Boss Level ≥ 70.</li>
+</ul>
+<p><strong>Hide of the Hallowed One</strong></p>
+<ul>
+<li>Level: 45.</li>
+<li>Health: 0 ⇒ 1000.</li>
+<li>Health Regeneration (p/s): 30 ⇒ 0.</li>
+<li>Armor: 30 ⇒ 0.</li>
+<li>Resist: 0 ⇒ 20.</li>
+<li>Acquisition: Hallowed One.</li>
+</ul>
+<p><strong>Great Axe of the Minotaur Chieftain</strong></p>
+<ul>
+<li>Level: 45.</li>
+<li>Strength: 45 ⇒ 25.</li>
+<li>Agility: 0 ⇒ 25.</li>
+<li>Attack Damage: 70 ⇒ 0.</li>
+<li>Acquisition: Manslayer &amp; Lightbane.</li>
+</ul>
+<p><strong>Minotauri Focus</strong></p>
+<ul>
+<li>Level: 45.</li>
+<li>Updated icon.</li>
+<li>Intelligence: 45 ⇒ 25.</li>
+<li>Spell Damage: 350 ⇒ 200.</li>
+<li>Spell Healing: 350 ⇒ 200.</li>
+<li>Acquisition: Manslayer &amp; Lightbane.</li>
+</ul>
+<p><strong>Bright Silver Bracers</strong></p>
+<ul>
+<li>Level: 85 ⇒ 70.</li>
+<li>Strength: 50 ⇒ 15.</li>
+<li>Agility: 50 ⇒ 0.</li>
+<li>Attack Damage: 60 ⇒ 0.</li>
+<li>Health Regeneration (p/s): 0 ⇒ 20.</li>
+<li>Armor: 15 ⇒ 20.</li>
+<li>Resist: 50 ⇒ 30.</li>
+<li>Acquisition: Boss Level ≥ 70.</li>
+</ul>
+<p><strong>Bright Silver Shinguards</strong></p>
+<ul>
+<li>Level: 85 ⇒ 70.</li>
+<li>Strength: 40 ⇒ 0.</li>
+<li>Agility: 40 ⇒ 15.</li>
+<li>Health: 1000 ⇒ 0.</li>
+<li>Health Regeneration (p/s): 0 ⇒ 20.</li>
+<li>Armor: 25 ⇒ 0.</li>
+<li>Resist: 50 ⇒ 30.</li>
+<li>Acquisition: Boss Level ≥ 70.</li>
+</ul>
+<p><strong>Bright Silver Plates</strong></p>
+<ul>
+<li>Level: 135.</li>
+<li>Strength: 90 ⇒ 30.</li>
+<li>Agility: 90 ⇒ 30.</li>
+<li>Health: 1200 ⇒ 1000.</li>
+<li>Health Regeneration (p/s): 0 ⇒ 65.</li>
+<li>Armor: 40 ⇒ 0.</li>
+<li>Resist: 85 ⇒ 80.</li>
+<li>Forged by Metalsmith Galen.</li>
+<li>Components:
+<ul>
+<li><em>Bright Silver Bracers</em></li>
+<li><em>Bright Silver Shinguards</em></li>
+<li><code>(NEW)</code> <em>Hide of the Hallowed One</em></li>
+<li><em>Gem of the South</em></li>
+<li>2 <em>Stone of Heaven</em></li>
+<li>2 <em>Blood Ruby</em></li>
+<li>2 <em>Ruby Heart</em></li>
+</ul></li>
+</ul>
+<p><strong>Deathchill Greatsword</strong></p>
+<ul>
+<li>Components:
+<ul>
+<li><em>Deathchill Blade</em></li>
+<li><em>Savage War Axe of Hephaestus</em></li>
+<li><em>Spartan Greatsword</em> ⇒ <em>Great Axe of the Minotaur Chieftain</em></li>
+<li>2 <em>Stone of Heaven</em></li>
+<li><em>Blood Ruby</em></li>
+<li>3 <em>Heart of Frost</em></li>
+</ul></li>
+</ul>
+<p><strong>Hera’s Blessing</strong></p>
+<ul>
+<li>Intelligence: 0 ⇒ 20.</li>
+<li>Spell Power: 650 ⇒ 600.</li>
+</ul>
+<p><strong>Ring of the Frozen Citadel</strong></p>
+<ul>
+<li>Armor: 10 ⇒ 15.</li>
+<li>Resist: 10 ⇒ 15.</li>
+</ul>
+<p><strong>White Dragonscale Ring of Serious Addiction</strong></p>
+<ul>
+<li>Agility: 70 ⇒ 75.</li>
+<li>Resist: 75 ⇒ 80.</li>
+</ul>
+<p><strong>Bow of Artemis</strong></p>
+<ul>
+<li>Strength: 20 ⇒ 25.</li>
+<li>Agility: 20 ⇒ 25.</li>
+<li>Intelligence: 20 ⇒ 25.</li>
+</ul>
+<p><strong>Sword of Might</strong></p>
+<ul>
+<li>Strength: 25 ⇒ 30.</li>
+<li>Agility: 25 ⇒ 30.</li>
+</ul>
+<p><strong>Scepter of the Chosen Ones</strong></p>
+<ul>
+<li>Spell Damage: 700 ⇒ 800.</li>
+<li>Spell Healing: 1400 ⇒ 1600.</li>
+</ul>
+<p><strong>Atalanta’s Hunting Garb</strong></p>
+<ul>
+<li>Agility: 40 ⇒ 45.</li>
+<li>Intelligence: 40 ⇒ 45.</li>
+</ul>
+<p><strong>Ares’ Blade of Command</strong></p>
+<ul>
+<li>Strength: 75 ⇒ 80.</li>
+<li>Agility: 75 ⇒ 80.</li>
+<li>Attack Damage: 120 ⇒ 130.</li>
+</ul>
+<p><strong>Talisman of the Winged God</strong></p>
+<ul>
+<li>Level: 60.</li>
+<li>Agility: 0 ⇒ 30.</li>
+<li>Health: 600 ⇒ 500.</li>
+<li>Health Regeneration (p/s): 20 ⇒ 0.</li>
+<li>Grants Endurance Aura I.
+<ul>
+<li>Allies within a 450 AoE have their attack speed and movement speed increased by 10%.</li>
+</ul></li>
+<li>Crafted by Goldsmith Level 75.</li>
+<li>Components:
+<ul>
+<li>750 Crafting Materials</li>
+<li>3 <em>Transport Stone</em></li>
+<li>2 <em>Lump of Pure Adamantium</em></li>
+<li><em>Blood Ruby</em></li>
+</ul></li>
+</ul>
+<p><strong>Shield of Warding</strong></p>
+<ul>
+<li>Updated icon.</li>
+<li>Level: 85 ⇒ 90.</li>
+<li>Strength: 50 ⇒ 30.</li>
+<li>Agility: 50 ⇒ 0.</li>
+<li>Armor: 30 ⇒ 0.</li>
+<li>Resist: 0 ⇒ 20.</li>
+<li>Grants Devotion Aura I.
+<ul>
+<li>Allies within a 450 AoE have their armor increased by 20.</li>
+</ul></li>
+<li>Crafted by Armorsmith Level 90.</li>
+<li>Components:
+<ul>
+<li>5000 Crafting Materials</li>
+<li>2 <em>Stone of Heaven</em></li>
+<li><em>Blood Ruby</em></li>
+<li><em>Gemstone of Apollo</em></li>
+<li><em>Transport Stone</em></li>
+<li><em>Heart of Frost</em></li>
+</ul></li>
+</ul>
+<p><strong>Phaethon</strong></p>
+<ul>
+<li><em>Previously Biting Blade of Strength</em>.</li>
+<li>Updated icon.</li>
+<li>Level: 125 ⇒ 165.</li>
+<li>Strength: 130 ⇒ 140.</li>
+<li>Attack Damage: 200 ⇒ 300.</li>
+<li>Grants Dazzle.
+<ul>
+<li>Your auto-attacks also reduces the target’s attack speed by 20% for 6 seconds.</li>
+</ul></li>
+<li>Forged by Metalsmith Galen.</li>
+<li>Components:
+<ul>
+<li><em>Biting Blade</em></li>
+<li><em>Heartstone Ring of Strength</em></li>
+<li><code>(NEW)</code> <em>Bright Lance</em></li>
+<li><em>Gem of the North</em></li>
+<li>2 <em>Stone of Heaven</em></li>
+<li>2 <em>Blood Ruby</em></li>
+<li>2 <em>Ruby Heart</em></li>
+</ul></li>
+</ul>
+<p><strong>Wraithblade</strong></p>
+<ul>
+<li>Rare ⇒ Artifact.</li>
+<li>Spell Power: 800 ⇒ 700.</li>
+<li>Grants Critical Strike ⇒ Grants Critical Strike III.
+<ul>
+<li>Gives a 6.5% chance to do 2 times damage on an auto-attack. This stacks with other instances of Critical Strike.</li>
+</ul></li>
+<li>Grants Wraithtouched ⇒ Grants Abrade.
+<ul>
+<li>Enfeeble II enemies in a 300 AoE, reducing their resist by 30 for 10 seconds, then deal 1.0 Primary Attribute magical damage to them. Cooldown: 90 seconds.</li>
+</ul></li>
+</ul>
+<p><strong>Skullcrack</strong></p>
+<ul>
+<li><em>Previously Ripping Claws</em></li>
+<li>Updated icon.</li>
+<li>Level: 60</li>
+<li>Attack Damage: 130 ⇒ 55.</li>
+<li>Grants Ravage.
+<ul>
+<li>Break II enemies in a 300 AoE, reducing their armor by 30 for 10 seconds, then deal 1.0 Primary Attribute physical damage to them.</li>
+</ul></li>
+<li>Crafted by Weaponsmith Level 70</li>
+<li>Components:
+<ul>
+<li>3 <em>Meteoric Iron</em></li>
+<li><em>Blood Ruby</em></li>
+<li>2 <em>Lump of Pure Adamantium</em></li>
+</ul></li>
+</ul>
+<p><strong>Cabeiri</strong></p>
+<ul>
+<li><em>Previously Biting Blade of Agility</em>.</li>
+<li>Updated icon.</li>
+<li>Level: 125 ⇒ 165.</li>
+<li>Agility: 130 ⇒ 140.</li>
+<li>Attack Damage: 200 ⇒ 300.</li>
+<li>Grants Ravage.
+<ul>
+<li>Break II enemies in a 300 AoE, reducing their armor by 30 for 10 seconds, then deal 1.0 Primary Attribute physical damage to them.</li>
+</ul></li>
+<li>Forged by Metalsmith Galen.</li>
+<li>Components:
+<ul>
+<li><em>Biting Blade</em></li>
+<li><em>Heartstone Ring of Agility</em></li>
+<li><code>(NEW)</code> <em>Skullcrack</em></li>
+<li><em>Gem of the North</em></li>
+<li>2 <em>Stone of Heaven</em></li>
+<li>2 <em>Blood Ruby</em></li>
+<li>2 <em>Runestone</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="forces-of-hell" class="level2">
+<h2 class="anchored" data-anchor-id="forces-of-hell">Forces of Hell</h2>
+<ul>
+<li><em>Cronus</em>’ gate timer is set to 20 seconds (previously 10 seconds).</li>
+<li><em>Hillcrusher</em> now has a hard leash if it leaves the <em>Eastern Highlands</em> region.</li>
 </ul>
 </section>
 

@@ -1,5 +1,5 @@
 ---
-title: "[BETA] TBR 1.39d Item Library"
+title: "[BETA] TBR 1.39e Item Library"
 format:
   html:
     grid:
@@ -30,7 +30,7 @@ To-do:
   color: white !important;
 }
 
-.basic-block {
+.basic-block, .component-block {
   display: flex;
   align-items: center;
   justify-content: left;
@@ -39,6 +39,13 @@ To-do:
 
 .basic-block > div {
   padding: 0 0.5em;
+}
+
+.component-block-col {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
 }
 ```
 
@@ -49,6 +56,15 @@ library(dplyr)
 library(jsonlite)
 library(DT)
 library(tidyr)
+
+# Gold icon path
+gold.path <- "https://ucarecdn.com/54aa03b3-111d-4f89-abf8-d4df2ef25ae2/gold.png"
+  
+# Crafting materials icon path
+crafting.materials.path <- "https://ucarecdn.com/50b3eec3-a8b8-4e50-a42c-a7bc38add381/materials.png"
+  
+# Essence icon path
+essence.path <- "https://ucarecdn.com/a22c7029-a47f-409a-89be-4efb7ff5ea40/essence.png"
 
 # Load in raw data
 item.data <- read_json("../the-black-road-rpg/map/war3map.w3t.json")$custom
@@ -117,10 +133,10 @@ crafting.df <- tibble(
                                       between(internal.index, 60, 119) ~ "Armorsmith",
                                       between(internal.index, 120, 179) ~ "Alchemist",
                                       between(internal.index, 180, 239) ~ "Goldsmith"),
-         vendor = paste(craft.profession, "Level", craft.level))
+         vendor = paste0(craft.profession, ", Level ", craft.level))
 
 for (i in 1:8) {
-  crafting.df[, paste0("item.req.", i)] <- sapply(crafting.df$internal.index, \(x) {
+  crafting.df[, paste0("index.", i)] <- sapply(crafting.df$internal.index, \(x) {
     y <- grep(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='.*'"), x = crafting.lines, value = TRUE) |>
       gsub(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='(.*)'"), x = _, replacement = "\\1")
     
@@ -286,11 +302,37 @@ df$crafting.material <- sapply(item.data, \(x) {
 df$essence <- NA
 
 # Update other tables wrt to df ------------------------------------------------
+# Crafting
+crafting.df <- crafting.df |>
+  pivot_longer(starts_with("index"), names_to = "index", values_to = "item.req") |>
+  left_join(df |> select(rawcode, name, icon), by = join_by(item.req == rawcode)) |>
+  left_join(icon.data, by = join_by(icon)) |>
+  select(-icon) |>
+  pivot_wider(id_cols = c(vendor:internal.index), names_from = index, values_from = c(item.req, name, path), names_sep = ".") |> 
+  mutate(plain.component.list = paste(name.index.1, name.index.2, name.index.3, name.index.4, name.index.5, name.index.6, name.index.7, name.index.8, sep = "; ") |>
+           gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>| NA;|; NA|NA)", replacement = "", x = _),
+         across(.cols = starts_with("name.index."), ~ if_else(!is.na(.x), gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>)", replacement = "", x = .x), ""), .names = "{.col}.plain"),
+         materials.div = paste0("<div class=\"component-block\" style=\"height: 25px;\"><div style=\"height: 100%;\"><img src=\"", crafting.materials.path, "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"/></div><div style=\"margin: auto 0.25em; font-size: 0.9em;\">", craft.mats, "</div></div>"))
+
+crafting.df$component.div <- if_else(crafting.df$plain.component.list != "", "<div class=\"component-block\" style=\"height: 25px;\"><div style=\"margin: auto 0; font-size: 0.9em;\">Components:&nbsp;</div>", "") 
+for (index in 1:8) {
+  i <- paste0("path.index.", index)
+  for (j in 1:nrow(crafting.df)) {
+    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+  }
+}
+
+for (i in 1:nrow(crafting.df)) {
+  crafting.df$component.div[i] <- if_else(crafting.df$plain.component.list[i] != "", paste0(crafting.df$component.div[i], "</div>"), "") 
+}
+
+crafting.df$present.div <- paste0("<div class=\"component-block-col\"><div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">", crafting.df$vendor, "</div>", crafting.df$materials.div, crafting.df$component.div, "</div>")
+
+# Prior to presenting the table
 toMerge <- unit.df |> 
   select(name, items.sold) |>
   rename(vendor = name) |> 
   bind_rows(regalia.df) |>
-  bind_rows(crafting.df |> select(vendor, items.sold)) |>
   bind_rows(drop.data |> select(source, item.rawcode) |> rename(items.sold = item.rawcode, vendor = source)) |>
   left_join(df |> select(rawcode, name) |> rename(item.name = name), by = join_by(items.sold == rawcode)) |>
   mutate(forge.flag = grepl("^Forge", item.name),
@@ -394,7 +436,8 @@ item.df <- df |> mutate(
                      .default = "Common"),
   name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name)) |>
   left_join(y = icon.data, by = join_by(icon)) |>
-  left_join(y = toMerge, by = join_by(rawcode == items.sold))
+  left_join(y = toMerge, by = join_by(rawcode == items.sold)) |>
+  left_join(y = crafting.df |> select(items.sold, present.div), by = join_by(rawcode == items.sold))
 ```
 
 ```{r display_items}
@@ -425,7 +468,9 @@ item.cleaned.df |>
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
          icon.block = paste0("<img src=\"", path, "\"/>"),
          basic.block = paste0("<div class=\"basic-block\"><div>", icon.block, "</div><div>", name.aug, "</div>")) |>
-  select(basic.block, tooltip, vendor) |>
+  select(basic.block, tooltip, vendor, present.div) |>
+  mutate(vendor = paste0("<div><div>", if_else(!is.na(vendor), vendor, ""), "</div>", if_else(!is.na(present.div), present.div, ""), "</div>") ,
+         present.div = NULL) |>
   datatable(
     rownames = FALSE, 
     escape = FALSE, 
