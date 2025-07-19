@@ -19,9 +19,9 @@ To-do:
 - Table filters
 - Table functionality
 - Acquisition
--- Forge
 -- Purchaseable
 -- Other
+- Metadata
 -->
 
 ```{css, echo = FALSE}
@@ -110,68 +110,6 @@ names(unit.wts.data) <- unit.df$rawcode
 
 # Update names for wts.data
 names(wts.data) <- paste("TRIGSTR", names(wts.data), sep = "_")
-
-# Build fields from regalia.lines ----------------------------------------------
-regalia.df <- tibble(
-  items.sold = grep(pattern = "set generatorID\\[[0-9]+\\] = '.*'", x = regalia.lines, value = TRUE) |>
-    gsub(pattern = "^set generatorID\\[[0-9]+\\] = '(.*)'", x = _, replacement = "\\1"),
-  internal.index = grep(pattern = "set generatorID\\[[0-9]+\\] = '.*'", x = regalia.lines, value = TRUE) |>
-    gsub(pattern = "^set generatorID\\[([0-9]+)\\] = '.*'", x = _, replacement = "\\1"),
-
-  vendor.div = "<div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">Master Metalsmith Heletes</div>",
-  cost.div = "",
-  reg.present.div = ""
-)
-
-for (i in 1:6) {
-  regalia.df[, paste0("index.", i)] <- sapply(regalia.df$internal.index, \(x) {
-    y <- grep(pattern = paste0("^set components\\[", x, " \\* 9 \\+ ", i, "\\]"), x = regalia.lines, value = TRUE) |>
-      gsub(pattern = paste0("^set components\\[", x, " \\* 9 \\+ ", i, "\\] = '(.*)'"), x = _, replacement = "\\1")
-    
-    
-    if (x %in% as.character(seq(1, 132, by = 11))) {
-      if (i == 1) {
-        return ("I00F")
-      } else if (i == 2) {
-        return ("I00G")
-      }
-    }
-    if (length(y) == 0) return ("")
-    
-    return (y)
-  })
-}
-
-# Build fields from crafting.lines ---------------------------------------------
-x <- grep(pattern = "set udg_zNewCraftingXPreq\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
-  gsub(pattern = "^set udg_zNewCraftingXPreq\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1")
-
-crafting.df <- tibble(
-  vendor = "",
-  items.sold = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
-    gsub(pattern = "^set udg_zNewCraftingItem\\[[0-9]+\\]='(.*)'", x = _, replacement = "\\1"),
-  craft.level = x[x != "101"] |> as.numeric(),
-  craft.mats = grep(pattern = "set udg_zNewCraftingMats\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
-    gsub(pattern = "^set udg_zNewCraftingMats\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1"),
-  internal.index = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
-    gsub(pattern = "^set udg_zNewCraftingItem\\[([0-9]+)\\]='.*'", x = _, replacement = "\\1") |>
-    as.numeric()) |>
-  mutate(craft.profession = case_when(between(internal.index, 0, 59) ~ "Weaponsmith",
-                                      between(internal.index, 60, 119) ~ "Armorsmith",
-                                      between(internal.index, 120, 179) ~ "Alchemist",
-                                      between(internal.index, 180, 239) ~ "Goldsmith"),
-         vendor = paste0(craft.profession, " &mdash; Level ", craft.level))
-
-for (i in 1:8) {
-  crafting.df[, paste0("index.", i)] <- sapply(crafting.df$internal.index, \(x) {
-    y <- grep(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='.*'"), x = crafting.lines, value = TRUE) |>
-      gsub(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='(.*)'"), x = _, replacement = "\\1")
-    
-    if (length(y) == 0) return ("")
-    
-    return (y)
-  })
-}
 
 # Build fields from unit.* -----------------------------------------------------
 unit.df$name <- sapply(unit.wts.data, \(x) {
@@ -360,38 +298,37 @@ df <- df |>
                                          ), icon),
   icon = if_else(icon == "BTNFrostmourne", "BTNFrostMourne", icon))
 
-# Build fields from forging.lines ---------------------------------------------
+# Build fields from regalia.lines ----------------------------------------------
+regalia.df <- tibble(
+  items.sold = grep(pattern = "set generatorID\\[[0-9]+\\] = '.*'", x = regalia.lines, value = TRUE) |>
+    gsub(pattern = "^set generatorID\\[[0-9]+\\] = '(.*)'", x = _, replacement = "\\1"),
+  internal.index = grep(pattern = "set generatorID\\[[0-9]+\\] = '.*'", x = regalia.lines, value = TRUE) |>
+    gsub(pattern = "^set generatorID\\[([0-9]+)\\] = '.*'", x = _, replacement = "\\1"),
 
-# forging.lines[136:597] |> head(n = 10)
+  vendor.div = "<div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">Master Metalsmith Heletes</div>",
+  cost.div = "",
+  reg.present.div = ""
+)
 
-# Update other tables wrt to df ------------------------------------------------
-# Crafting
-crafting.df <- crafting.df |>
-  pivot_longer(starts_with("index"), names_to = "index", values_to = "item.req") |>
-  left_join(df |> select(rawcode, name, icon), by = join_by(item.req == rawcode)) |>
-  left_join(icon.data, by = join_by(icon)) |>
-  select(-icon) |>
-  pivot_wider(id_cols = c(vendor:internal.index), names_from = index, values_from = c(item.req, name, path), names_sep = ".") |> 
-  mutate(plain.component.list = paste(name.index.1, name.index.2, name.index.3, name.index.4, name.index.5, name.index.6, name.index.7, name.index.8, sep = "; ") |>
-           gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>| NA;|; NA|NA)", replacement = "", x = _),
-         across(.cols = starts_with("name.index."), ~ if_else(!is.na(.x), gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>)", replacement = "", x = .x), ""), .names = "{.col}.plain"),
-         materials.div = paste0("<div class=\"component-block\" style=\"height: 25px;\"><div style=\"height: 100%;\"><img src=\"", crafting.materials.path, "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"/></div><div style=\"margin: auto 0.25em; font-size: 0.9em;\">", craft.mats, "</div></div>"))
-
-crafting.df$component.div <- if_else(crafting.df$plain.component.list != "", "<div class=\"component-block\" style=\"height: 25px;\"><div style=\"margin: auto 0; font-size: 0.9em;\">Components:&nbsp;</div>", "") 
-for (index in 1:8) {
-  i <- paste0("path.index.", index)
-  for (j in 1:nrow(crafting.df)) {
-    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
-  }
+for (i in 1:6) {
+  regalia.df[, paste0("index.", i)] <- sapply(regalia.df$internal.index, \(x) {
+    y <- grep(pattern = paste0("^set components\\[", x, " \\* 9 \\+ ", i, "\\]"), x = regalia.lines, value = TRUE) |>
+      gsub(pattern = paste0("^set components\\[", x, " \\* 9 \\+ ", i, "\\] = '(.*)'"), x = _, replacement = "\\1")
+    
+    
+    if (x %in% as.character(seq(1, 132, by = 11))) {
+      if (i == 1) {
+        return ("I00F")
+      } else if (i == 2) {
+        return ("I00G")
+      }
+    }
+    if (length(y) == 0) return ("")
+    
+    return (y)
+  })
 }
 
-for (i in 1:nrow(crafting.df)) {
-  crafting.df$component.div[i] <- if_else(crafting.df$plain.component.list[i] != "", paste0(crafting.df$component.div[i], "</div>"), "") 
-}
-
-crafting.df$present.div <- paste0("<div class=\"component-block-col\"><div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">", crafting.df$vendor, "</div>", crafting.df$materials.div, crafting.df$component.div, "</div>")
-
-# Regalia
 regalia.df <- regalia.df |>
   pivot_longer(starts_with("index"), names_to = "index", values_to = "item.req") |>
   left_join(df |> select(rawcode, name, icon), by = join_by(item.req == rawcode)) |>
@@ -423,30 +360,154 @@ for (index in 1:6) {
 
 regalia.df$reg.present.div <- paste0("<div class=\"component-block-col\" style=\"min-width: 200px;\">", regalia.df$vendor.div, regalia.df$cost.div, regalia.df$component.div, "</div>")
 
-# Prior to presenting the table
-toMerge <- unit.df |> 
+# Build fields from crafting.lines ---------------------------------------------
+x <- grep(pattern = "set udg_zNewCraftingXPreq\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
+  gsub(pattern = "^set udg_zNewCraftingXPreq\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1")
+
+crafting.df <- tibble(
+  vendor = "",
+  items.sold = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingItem\\[[0-9]+\\]='(.*)'", x = _, replacement = "\\1"),
+  craft.level = x[x != "101"] |> as.numeric(),
+  craft.mats = grep(pattern = "set udg_zNewCraftingMats\\[[0-9]+\\]=.*", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingMats\\[[0-9]+\\]=(.*)", x = _, replacement = "\\1"),
+  internal.index = grep(pattern = "set udg_zNewCraftingItem\\[[0-9]+\\]='.*'", x = crafting.lines, value = TRUE) |>
+    gsub(pattern = "^set udg_zNewCraftingItem\\[([0-9]+)\\]='.*'", x = _, replacement = "\\1") |>
+    as.numeric()) |>
+  mutate(craft.profession = case_when(between(internal.index, 0, 59) ~ "Weaponsmith",
+                                      between(internal.index, 60, 119) ~ "Armorsmith",
+                                      between(internal.index, 120, 179) ~ "Alchemist",
+                                      between(internal.index, 180, 239) ~ "Goldsmith"),
+         vendor = paste0(craft.profession, " &mdash; Level ", craft.level))
+
+for (i in 1:8) {
+  crafting.df[, paste0("index.", i)] <- sapply(crafting.df$internal.index, \(x) {
+    y <- grep(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='.*'"), x = crafting.lines, value = TRUE) |>
+      gsub(pattern = paste0("set udg_zNewCraftingReq", i, "\\[", x, "\\]='(.*)'"), x = _, replacement = "\\1")
+    
+    if (length(y) == 0) return ("")
+    
+    return (y)
+  })
+}
+
+crafting.df <- crafting.df |>
+  pivot_longer(starts_with("index"), names_to = "index", values_to = "item.req") |>
+  left_join(df |> select(rawcode, name, icon), by = join_by(item.req == rawcode)) |>
+  left_join(icon.data, by = join_by(icon)) |>
+  select(-icon) |>
+  pivot_wider(id_cols = c(vendor:internal.index), names_from = index, values_from = c(item.req, name, path), names_sep = ".") |> 
+  mutate(plain.component.list = paste(name.index.1, name.index.2, name.index.3, name.index.4, name.index.5, name.index.6, name.index.7, name.index.8, sep = "; ") |>
+           gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>| NA;|; NA|NA)", replacement = "", x = _),
+         across(.cols = starts_with("name.index."), ~ if_else(!is.na(.x), gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>)", replacement = "", x = .x), ""), .names = "{.col}.plain"),
+         materials.div = paste0("<div class=\"component-block\" style=\"height: 25px;\"><div style=\"height: 100%;\"><img src=\"", crafting.materials.path, "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"/></div><div style=\"margin: auto 0.25em; font-size: 0.9em;\">", craft.mats, "</div></div>"))
+
+crafting.df$component.div <- if_else(crafting.df$plain.component.list != "", "<div class=\"component-block\" style=\"height: 25px;\"><div style=\"margin: auto 0; font-size: 0.9em;\">Components:&nbsp;</div>", "") 
+for (index in 1:8) {
+  i <- paste0("path.index.", index)
+  for (j in 1:nrow(crafting.df)) {
+    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+  }
+}
+
+for (i in 1:nrow(crafting.df)) {
+  crafting.df$component.div[i] <- if_else(crafting.df$plain.component.list[i] != "", paste0(crafting.df$component.div[i], "</div>"), "") 
+}
+
+crafting.df$present.div <- paste0("<div class=\"component-block-col\"><div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">", crafting.df$vendor, "</div>", crafting.df$materials.div, crafting.df$component.div, "</div>")
+
+# Build fields from forging.lines ---------------------------------------------
+
+forge.df <- unit.df |> 
+  select(name, items.sold) |>
+  rename(vendor = name) |>
+  left_join(df |> select(rawcode, name) |> rename(item.name = name), by = join_by(items.sold == rawcode)) |>
+  mutate(forge.flag = grepl("^Forge", item.name),
+         item.name = if_else(forge.flag, gsub(pattern = "Forge (.*)", replacement = "\\1", x = item.name), item.name)) |>
+  filter(forge.flag) %>%
+  left_join(df |> select(rawcode, name) |> rename(forge.link = rawcode) |> filter(name %in% .$item.name), by = join_by(item.name == name))
+
+forge.spline <- tibble(.rows = nrow(forge.df))
+forge.spline$internal.index <- grep(pattern = "set components\\[[0-9]+ \\* 16 \\+ 15\\]", x = forging.lines, value = TRUE) |>
+    gsub(pattern = "^set components\\[([0-9]+) \\* 16 \\+ 15\\] = '.*'", x = _, replacement = "\\1")
+forge.spline$rawcode <- grep(pattern = "set components\\[[0-9]+ \\* 16 \\+ 15\\]", x = forging.lines, value = TRUE) |>
+    gsub(pattern = "^set components\\[[0-9]+ \\* 16 \\+ 15\\] = '(.*)'", x = _, replacement = "\\1")
+
+forge.df <- forge.df |>
+  left_join(forge.spline, by = join_by(forge.link == rawcode))
+
+forge.df$gold <- sapply(forge.df$internal.index, \(index) {
+  x <- grep(pattern = paste0("set components\\[", index, " \\* 16 \\+ 13\\]"), x = forging.lines, value = TRUE) |>
+    gsub(pattern = paste0("^set components\\[", index, " \\* 16 \\+ 13\\] = (.*)"), x = _, replacement = "\\1")
+  
+  if (length(x) == 0) return ("")
+  
+  return (x)
+})
+
+forge.df$crafting.mats <- sapply(forge.df$internal.index, \(index) {
+  x <- grep(pattern = paste0("set components\\[", index, " \\* 16 \\+ 14\\]"), x = forging.lines, value = TRUE) |>
+    gsub(pattern = paste0("^set components\\[", index, " \\* 16 \\+ 14\\] = (.*)"), x = _, replacement = "\\1")
+  
+  if (length(x) == 0) return ("")
+  
+  return (x)
+})
+
+for (i in 0:11) {
+  forge.df[, paste0("index.", i)] <- sapply(forge.df$internal.index, \(x) {
+    y <- grep(pattern = paste0("^set components\\[", x, " \\* 16 \\+ ", i, "\\]"), x = forging.lines, value = TRUE) |>
+      gsub(pattern = paste0("^set components\\[", x, " \\* 16 \\+ ", i, "\\] = '(.*)' //.*"), x = _, replacement = "\\1")
+    
+    if (length(y) == 0) return ("")
+    
+    return (y)
+  })
+}
+
+forge.df <- forge.df |>
+  pivot_longer(starts_with("index"), names_to = "index", values_to = "item.req") |>
+  left_join(df |> select(rawcode, name, icon), by = join_by(item.req == rawcode)) |>
+  left_join(icon.data, by = join_by(icon)) |>
+  select(-icon) |>
+  pivot_wider(id_cols = c(vendor:crafting.mats), names_from = index, values_from = c(item.req, name, path), names_sep = ".") |>
+  mutate(plain.component.list = paste(name.index.0, name.index.1, name.index.2, name.index.3, name.index.4, name.index.5, name.index.6, name.index.7, name.index.8, name.index.9, name.index.10, name.index.11, sep = "; ") |>
+           gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>| NA;|; NA|NA)", replacement = "", x = _),
+         across(.cols = starts_with("name.index."), ~ if_else(!is.na(.x), gsub(pattern = "(<span style='color: #[A-Za-z0-9]+'>|</span>)", replacement = "", x = .x), ""), .names = "{.col}.plain"),
+         vendor.div = paste0("<div style=\"height: 25px; margin: auto 0; font-size: 0.9em;\">", vendor, "</div>"))
+
+forge.df$cost.div <- sapply(1:nrow(forge.df), \(index) {
+  check.gold <- forge.df$gold[index] != ""
+  check.crafting.materials <- forge.df$crafting.mats[index] != ""
+  
+  if (!check.gold & !check.crafting.materials) return ("")
+  if (check.gold & check.crafting.materials) return (paste0("<div class=\"component-block\" style=\"height: 25px;\"><div style=\"height: 100%;\"><img src=\"", gold.path, "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"/></div><div style=\"margin: auto 0.25em; font-size: 0.9em;\">", forge.df$gold[index], "</div><div style=\"height: 100%;\"><img src=\"", crafting.materials.path, "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"/></div><div style=\"margin: auto 0.25em; font-size: 0.9em;\">", forge.df$crafting.mats[index], "</div></div>"))
+})
+
+forge.df$component.div <- "<div class=\"component-block\" style=\"height: 25px;\"><div style=\"margin: auto 0; font-size: 0.9em;\">Components:&nbsp;</div>"
+
+for (index in 0:11) {
+  i <- paste0("path.index.", index)
+  for (j in 1:nrow(forge.df)) {
+    forge.df$component.div[j] <- paste0(forge.df$component.div[j], if_else(!is.na(forge.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", forge.df[j, i], "\" title=\"", forge.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+  }
+}
+
+forge.df$forge.present.div <- paste0("<div class=\"component-block-col\" style=\"min-width: 200px;\">", forge.df$vendor.div, forge.df$cost.div, forge.df$component.div,  "</div>")
+
+# All other formatted info ------------------------------------------------
+
+other.df <- unit.df |> 
   select(name, items.sold) |>
   rename(vendor = name) |> 
   bind_rows(drop.data |> select(source, item.rawcode) |> rename(items.sold = item.rawcode, vendor = source)) |>
   left_join(df |> select(rawcode, name) |> rename(item.name = name), by = join_by(items.sold == rawcode)) |>
   mutate(forge.flag = grepl("^Forge", item.name),
          item.name = if_else(forge.flag, gsub(pattern = "Forge (.*)", replacement = "\\1", x = item.name), item.name)) |>
+  filter(!forge.flag) |>
   chop(vendor)
 
-forge.item.name.vector <- toMerge |> 
-  filter(forge.flag) |>
-  pull(item.name)
-
-forge.item.rawcode <- df |>
-  select(rawcode, name) |>
-  rename(forge.link = rawcode) |>
-  filter(name %in% forge.item.name.vector)
-
-toMerge <- toMerge |>
-  left_join(forge.item.rawcode, by = join_by(item.name == name)) |>
-  mutate(items.sold = if_else(forge.flag, forge.link, items.sold))
-
-toMerge$vendor <- sapply(toMerge$vendor, paste, collapse = "; ")
+other.df$vendor <- sapply(other.df$vendor, paste, collapse = "; ")
 
 # Hard-coded updates to item.df ------------------------------------------------
 
@@ -500,8 +561,9 @@ item.df <- df |> mutate(
                      .default = "Common"),
   name.clean = gsub("(</span>)|(<span style='color: #.*'>)", "", name)) |>
   left_join(y = icon.data, by = join_by(icon)) |>
-  left_join(y = toMerge, by = join_by(rawcode == items.sold)) |>
+  left_join(y = other.df, by = join_by(rawcode == items.sold)) |>
   left_join(y = crafting.df |> select(items.sold, present.div), by = join_by(rawcode == items.sold)) |>
+  left_join(y = forge.df |> select(forge.link, forge.present.div), by = join_by(rawcode == forge.link)) |>
   left_join(y = regalia.df |> select(items.sold, reg.present.div), by = join_by(rawcode == items.sold))
 ```
 
@@ -533,7 +595,7 @@ item.cleaned.df |>
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
          icon.block = paste0("<img src=\"", path, "\"/>"),
          basic.block = paste0("<div class=\"basic-block\"><div>", icon.block, "</div><div>", name.aug, "</div>")) |>
-  mutate(vendor = paste0("<div><div>", if_else(!is.na(vendor), vendor, ""), "</div>", if_else(!is.na(reg.present.div), reg.present.div, ""), if_else(!is.na(present.div), present.div, ""), "</div>") ,
+  mutate(vendor = paste0("<div><div>", if_else(!is.na(vendor), vendor, ""), "</div>", if_else(!is.na(forge.present.div), forge.present.div, ""), if_else(!is.na(reg.present.div), reg.present.div, ""), if_else(!is.na(present.div), present.div, ""), "</div>") ,
          present.div = NULL) |>
   select(basic.block, tooltip, vendor) |>
   datatable(
