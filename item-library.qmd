@@ -29,6 +29,10 @@ To-do:
   color: white;
 }
 
+.dataTables_wrapper .dataTables_length select {
+  background-color: rgb(34, 34, 34);
+}
+
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: white !important;
 }
