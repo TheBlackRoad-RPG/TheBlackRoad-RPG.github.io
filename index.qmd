@@ -413,6 +413,7 @@ Your auto-attacks also deal 0.4 / 0.7 Primary Attribute physical damage in a 200
 **Adamantium Lance**
 
 - Armor: 25 ⇒ 0
+- Grants Critical III ⇒ Critical Strike IV
 
 **Adamantium Shield**
 
