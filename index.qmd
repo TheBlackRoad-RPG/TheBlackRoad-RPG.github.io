@@ -1,5 +1,5 @@
 ---
-title: "The Black Road RPG v1.39e --- Changelog"
+title: "The Black Road RPG v1.39f --- Changelog"
 author: "Alteisen (Av3n)"
 format: html
 toc: true
@@ -14,8 +14,481 @@ editor:
     wrap: 72
 ---
 
-> v1.39e is a hotfix release. See <https://theblackroad-rpg.github.io/index1.39d.html> for the full changelog.
+## General
+
+- Heletes' Forge (Eastern Highlands) and Nicanor (The Frozen Citadel) no longer grant player vision.
+- The minimap has been updated to only display player heroes, player banks, town wayfinding markers, and select NPCs/Locations.
+- `-info` now displays the hero's total base stats and the stat cap.
+
+### Typos & Typesetting
+
+- Forge Ares' Bloodthirsty Spear
+- Forge Thundering Hammer of Zeus
+- Forge Searing Flame of Prometheus
+- Forge Immortal Armor of Hephaestus
+- Forge Blazing Sword of Helios
+- Forge Towering Shield of Athena
+- Thespian Halberd
+- Shadowstrike (Assassin)
+- Cleave (Item ability)
 
 ## Bug Fixes
 
--   *Cabeiri* and *Phaethon* now save properly.
+- Mana Shield [Item Ability] now correctly mitigates the damage received, not the damage dealt.
+- Grievious Wounds (Midas) and Striking the Heart (Gaiana) now retains their intended icon.
+- Chimaera's fireball mechanic should no longer fail due to game time.
+- Fountain of Restoration now restores mana to Warrior classes.
+- Statuette of the Tyche now faces towards the Obelisk of Poseidon again.
+- Auras granted from item abilities now persist through transformations.
+  - This affects Form Change (Druid) downstream.
+
+## Heroes
+
+### Barbarian
+
+- Base attack cooldown: 2.0 ⇒ 3.0 seconds
+
+### Guardian of Nature
+- Base attack cooldown: 2.0 ⇒ 3.0 seconds
+
+### Khaos Champion
+
+- Base attack cooldown: 2.0 ⇒ 3.0 seconds
+
+### Spartan Warrior
+
+- Base attack cooldown: 2.0 ⇒ 3.0 seconds
+
+### Temple Guardian
+
+- Base attack cooldown: 2.0 ⇒ 3.0 seconds
+
+### Assassin
+
+**Shiv**
+
+- Base damage: 135 / 245 / 440 / 785 / 1405 / 2515 / 4515 / 8100 ⇒ 70 / 115 / 220 / 400 / 700 / 1250 / 2250 / 4000
+- Agility ratio: 1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 ⇒ 0.9 / 1.2 / 1.5 / 1.8 / 2.1 / 2.4 / 2.7 / 3.0
+- Strength ratio: 1.2 / 1.6 / 2 / 2.4 / 2.8 / 3.2 / 3.6 / 4.0 ⇒ 0.45 / 0.6 / 0.75 / 0.9 / 1.05 / 1.2 / 1.35 / 1.50
+
+**Pirouette**
+
+- Strength ratio: 1.5 ⇒ 0.6 / 0.8 / 1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+
+**Shadowstrike**
+
+- [Base] Agility ratio: 2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 ⇒ 0.9 / 1.05 / 1.25 / 1.4 / 1.55 / 1.7 / 1.85 / 2
+- [Stealth] Agility ratio: 2.25 / 2.5 / 2.75 / 3 / 3.25 / 3.5 / 3.75 / 4 ⇒ 3.6 / 3.95 / 4.25 / 4.6 / 4.95 / 5.3 / 5.65 / 6
+
+## Items
+
+- Items now have models color-coded models that match their rarity.
+
+### Abilities
+
+**Mana Shield**
+
+Activate to convert 20% of your current mana into a post-mitigation damage shield for 5 seconds. Cooldown: 60 seconds. ⇒ Spend 20% of your current mana to create a post-mitigation damage shield of equivalent value on an ally for 5 seconds.
+
+> Affects Midnight Cloak and Amphirite's Cloak downstream
+
+**Adamantium Set**
+
+- Whenever you equip two or more items with Adamantium Set:  
+• 2+ Items: Increases Resist by 15. Grants Critical Strike IV.  
+• 3 Items: Increases Strength by 45 and Resist by 20. Grants Block II.
+- Previously, "3 Items: Increase your Attack Damage by 250 and Armor by 50."
+
+> Affects Adamantium Lance, Helm, and Shield downstream.
+
+**Devotion Aura I**
+Armor: 20 ⇒ 15.
+
+> Affects Shield of Warding downstream.
+
+**Bloodthirsty**
+
+Removed from the game.
+
+> Affects Deathbringer and Night Regalia downstream
+
+**Cleave I** / **Cleave II**
+
+Your auto-attacks also deal 0.4 / 0.7 Primary Attribute physical damage in a 200 AoE of the target. Melee only. ⇒ Your auto-attacks also deal 1.0 / 1.5 bonus Primary Attribute physical damage in a 200 AoE of the target. Melee only.
+
+> Affects Deathchill Blade, Deathchill Greatsword, and Red Dragonscale Ring of Serious Addiction downstream
+
+### Stat Blocks
+
+**Sword of the Olympians**
+
+- Attack Damage: 125 ⇒ 150
+- Attack Speed: 125% ⇒ 150%
+
+**Wraithblade**
+
+- Spell Power: 700 ⇒ 750
+
+**Shield of Warding**
+
+- Strength: 30 ⇒ 40
+- Resist: 20 ⇒ 0
+
+**Soul Blade**
+
+- 3% current health magical damage ⇒ 1.5% current health magical damage
+
+<hr>
+
+**Red Dragonscale**
+
+- Resist: 20 ⇒ 15
+
+**Green Dragonscale**
+
+- Intelligence: 65 ⇒ 80
+- Resist: 20 ⇒ 15
+
+**White Dragonscale**
+
+- Resist: 20 ⇒ 15
+
+**Talisman of Addiction**
+
+- Strength: 30 ⇒ 35
+- Agility: 30 ⇒ 35
+- Intelligence: 30 ⇒ 35
+
+**Red Dragonscale Ring of Addiction**
+
+- Strength: 100 ⇒ 95
+- Agility: 100 ⇒ 95
+- Resist: 45 ⇒ 30
+
+**Green Dragonscale Ring of Addiction**
+
+- Strength: 50 ⇒ 55
+- Agility: 30 ⇒ 35
+- Intelligence: 95 ⇒ 105
+- Resist: 45 ⇒ 30
+
+**White Dragonscale Ring of Addiction**
+
+- Intelligence: 50 ⇒ 55
+- Resist: 45 ⇒ 30
+
+**Red Dragonscale Ring of Serious Addiction**
+
+- Strength: 120 ⇒ 100
+- Agility: 120 ⇒ 100
+- Resist: 60 ⇒ 44
+
+**Green Dragonscale Ring of Serious Addiction**
+
+- Strength: 60 ⇒ 55
+- Agility: 30 ⇒ 35
+- Intelligence: 110 ⇒ 105
+- Spell Power: 375 ⇒ 350
+- Resist: 60 ⇒ 44
+
+**White Dragonscale Ring of Serious Addiction**
+
+- Agility: 70 ⇒ 75
+- Intelligence: 50 ⇒ 55
+- Resist: 80 ⇒ 55
+ 
+<hr>
+
+**Ring of the Frozen Citadel**
+
+- Health: 1500 ⇒ 1000
+- Armor: 15 ⇒ 0
+- Resist: 15 ⇒ 20
+
+**Midnight Cloak**
+
+- Intelligence: 20 ⇒ 0
+- Mana: 500 ⇒ 750
+- Armor: 20 ⇒ 0
+- Resist: 0 ⇒ 20
+
+**Chillstone Ring**
+
+- Strength: 20 ⇒ 15
+- Agility: 20 ⇒ 15
+- Intelligence: 20 ⇒ 15
+
+**Scepter of the Ice Queen**
+
+- Spell Healing: 700 ⇒ 650
+
+**Deathchill Blade**
+
+- Attack Damage: 150 ⇒ 100
+
+**Aegis of the Frozen Citadel**
+
+- Health: 3000 ⇒ 4000
+- Armor: 60 ⇒ 0
+
+**Amphirite's Cloak**
+
+- Mana Regeneration: 20 ⇒ 0 mana per second
+- Armor: 20 ⇒ 0
+- Resist: 50 ⇒ 60
+
+**Chillstone Ring of Midnight**
+
+- Strength: 45 ⇒ 30
+- Agility: 45 ⇒ 30
+- Intelligence: 45 ⇒ 30
+- Spell Power: 1200 ⇒ 1100
+
+**Scepter of the Chosen Ones**
+
+- Spell Damage: 800 ⇒ 750
+- Spell Healing: 1600 ⇒ 1500
+- Attack Damage: 40 ⇒ 0
+- Attack Speed: 40% ⇒ 0%
+
+**Deathchill Greatsword**
+
+- Strength: 80 ⇒ 90
+- Agility: 80 ⇒ 90
+- Attack Damage: 200 ⇒ 100
+
+**Dark Wizard's Dagger**
+
+- Agility: 25 ⇒ 20
+- Intelligence: 30 ⇒ 45
+
+**Hera's Blessing**
+
+- Spell Power: 600 ⇒ 400
+
+**Wizard's Respite**
+
+- Mana Regeneration: 30 ⇒ 0 mana per second
+
+<hr>
+
+**Armor of Hera**
+
+- Health: 750 ⇒ 500
+- Armor: 15 ⇒ 10
+
+**Armor of Zeus**
+
+- Health: 1000 ⇒ 500
+- Armor: 20 ⇒ 15
+- Resist: 20 ⇒ 15
+
+**Armor of the Firstborn**
+
+- Health Regeneration: 35 ⇒ 0 health per second
+- Armor: 40 ⇒ 30
+- Resist: 40 ⇒ 30
+
+**Crown of Thorns**
+
+- Strength: 25 ⇒ 0
+
+**Unyielding Breastplate**
+
+- Armor: 50 ⇒ 30
+
+**Bristleback**
+
+- Armor: 100 ⇒ 60
+
+**The Winged God's Clamys**
+
+- Armor: 70 ⇒ 40
+
+**Hide of the Hallowed One**
+
+- Resist: 20 ⇒ 10
+
+**Bright Silver Shinguards**
+
+- Health Regeneration: 20 ⇒ 15 health per second
+- Resist: 30 ⇒ 20
+
+**Bright Silver Bracers**
+
+- Health Regeneration: 20 ⇒ 15 health per second
+- Resist: 30 ⇒ 20
+
+**Bright Silver Plates**
+
+- Health Regeneration: 65 ⇒ 40 health per second
+- Resist: 80 ⇒ 60
+
+<hr>
+
+**Staff of Poseidon**
+
+- Spell Damage: 1000 ⇒ 750
+
+**Gift of Poseidon**
+
+- Spell Damage: 3000 ⇒ 2000
+
+**Silenus' Talisman**
+
+- Strength: 50 ⇒ 55
+- Intelligence: 50 ⇒ 55
+
+**Midas' Pendant of Wisdom**
+
+- Intelligence: 65 ⇒ 85
+
+**Ring of the Magi**
+
+- Intelligence: 15 ⇒ 0
+- Spell Damage: 1000 ⇒ 800
+
+**Heartstone Ring of Intelligence**
+
+- Intelligence: 60 ⇒ 80
+
+**Magefire Ring**
+
+- Spell Power: 800 ⇒ 500
+
+**Hexfire Ring**
+
+- Spell Power: 1100 ⇒ 900
+
+**Minotauri Focus**
+
+- Intelligence: 25 ⇒ 20
+
+<hr>
+
+**Barbaric Helm**
+
+- Strength: 15 ⇒ 0
+
+**Savage Helm**
+
+- Strength: 80 ⇒ 30
+
+**Regal Crown**
+
+- Intelligence: ~~20~~ 40 ⇒ 15
+ 
+**Crystal Helm**
+
+- Intelligence: 20 ⇒ 15
+
+**Regal Helm of Sparkling Crystal**
+
+- Intelligence: 50 ⇒ 40
+- Spell Damage: 500 ⇒ 450
+- Spell Healing: 1200 ⇒ 900
+
+**Gift of Hera**
+
+- Spell Healing: 3000 ⇒ 2000
+
+**Hunting Spear of Atalanta**
+
+- Strength: 20 ⇒ 22
+- Agility: 20 ⇒ 22
+- Intelligence: 20 ⇒ 22
+
+**Atalanta's Hunting Garb**
+
+- Strength: 80 ⇒ 85
+- Agility: 45 ⇒ 50
+- Intelligence: 45 ⇒ 50
+
+**Priam's Scepter**
+
+- Attack Speed: 25% ⇒ 0%
+
+<hr>
+
+**Adamantium Lance**
+
+- Armor: 25 ⇒ 0
+
+**Adamantium Shield**
+
+- New icon
+- Strength: 50 ⇒ 30
+- Armor: 20 ⇒ 0
+- Resist: 0 ⇒ 15
+- No longer grants "Reduces auto-attack damage dealt to you by 100"
+- Acquisition:
+  - Armorsmith — Level 65
+    - 800 Crafting Materials
+    - 3 Meteoric Iron, Blood Ruby, 3 Lump of Adamantium
+  - Uranus
+
+**Shield of Living Bone**
+
+- Level: 85 ⇒ 75
+- Strength: 50 ⇒ 0
+- Agility: 50 ⇒ 0
+- Health: 0 ⇒ 500
+- Armor: 30 ⇒ 20
+- No longer grants "a 50% chance to block 1000 auto-attack damage"
+- Grants Block I<br>Whenever you receive auto-attack damage: You have a 25% chance to reduce the (post-mitigation) damage received by 2000. This stacks with other instances of Block.
+- Acquisition:
+  - Armorsmith — Level 85
+    - 5000 Crafting Materials
+    - 2 Stone of Heaven, Ruby Heart, Blood Ruby, Heart of Frost, Sea Essence
+  - Hades
+
+**Adamantium Helm**
+
+- New icon
+- Strength: 50 ⇒ 0
+- Armor: 150 ⇒ 30
+- Resist: 100 ⇒ 55
+- Grants Adamantium Set
+- Acquisition -- Armorsmith — Level 100
+  - 35000 Crafting Materials
+  - Gem of the South, Adamantium Shield, 4 Stone of Heaven, Burning Heart of Ladon, Blood Ruby
+
+**Adamantium Tower**
+
+- New icon
+- Level: 160 ⇒ 150
+- Strength: 50 ⇒ 0
+- Agility: 50 ⇒ 0
+- Health: 0 ⇒ 2000
+- Armor: 50 ⇒ 70
+- No longer grants "a 50% chance to block 5000 auto-attack damage" and Evasion V
+- Grants Block II<br>Whenever you receive auto-attack damage: You have a 25% chance to reduce the (post-mitigation) damage received by 5000. This stacks with other instances of Block.
+- Grants Adamantium Set
+- Acquisition -- Armorsmith — Level 100
+  - 35000 Crafting Materials
+  - Gem of the South, Shield of Living Bone, 4 Stone of Heaven, Burning Heart of Ladon, Blood Ruby
+
+## Quests
+
+- Lord of Earth (Serius) -- Quest level: 10 ⇒ 15.
+- Lord of Nature (Serius) -- Quest level: 25 ⇒ 30.
+- Lord of Justice (Serius) -- Quest level: 40 ⇒ 45.
+- Lord of Death (Serius) -- Quest level: 55 ⇒ 60.
+- Lord of the Sky (Serius) -- Quest level: 70 ⇒ 75.
+- Queen of Sacrifice (Serius) -- Quest level: 85 ⇒ 90.
+- Lord of the Sea (Serius) -- Quest level: 100 ⇒ 105.
+- Mother of the Earth (Serius) -- Quest level: 115 ⇒ 120.
+
+## Forces of Hell
+
+- Cerebus' pull mechanic now uses player colour to print the target player's name.
+- Helius' fire blast mechanic now uses player colour to print the target player's name.
+- Medusa's gate timer reduced to 10 seconds (from 20 seconds).
+- Updated Uranus' the transformation mechanic. If you phase skip, Uranus will remain in his ground form.
+
+### Gaea
+
+- Gaea's gate timer reduced to 50 seconds (from 60 seconds).
+- Updated the transformation mechanic.
+- There is no longer a one second delay in sequentially spawning (a) two Earth Guardians; (b) Water and Nature Guardians.
+- No longer drops *Eris' Golden Apple of Discord*.
