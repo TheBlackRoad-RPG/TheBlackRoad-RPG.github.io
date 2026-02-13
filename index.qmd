@@ -446,9 +446,10 @@ Your auto-attacks also deal 0.4 / 0.7 Primary Attribute physical damage in a 200
 **Adamantium Helm**
 
 - New icon
-- Strength: 50 ⇒ 0
-- Armor: 150 ⇒ 30
-- Resist: 100 ⇒ 55
+- Strength: 50 ⇒ 90
+- Agility: 0 ⇒ 45
+- Armor: 150 ⇒ 0
+- Resist: 100 ⇒ 70
 - Grants Adamantium Set
 - Acquisition -- Armorsmith — Level 100
   - 35000 Crafting Materials
