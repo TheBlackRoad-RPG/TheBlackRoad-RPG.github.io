@@ -18,6 +18,7 @@ To-do:
 - CSS Theme of the Item Library... 
 - Table filters
 - Table functionality
+- Search tips...
 - Acquisition
 -- Purchaseable
 -- Other
@@ -358,7 +359,7 @@ regalia.df$component.div <- "<div class=\"component-block\" style=\"height: 25px
 for (index in 1:6) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(regalia.df)) {
-    regalia.df$component.div[j] <- paste0(regalia.df$component.div[j], if_else(!is.na(regalia.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", regalia.df[j, i], "\" title=\"", regalia.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+    regalia.df$component.div[j] <- paste0(regalia.df$component.div[j], if_else(!is.na(regalia.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", regalia.df[j, i], "\" title=\"", regalia.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", regalia.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
@@ -410,7 +411,7 @@ crafting.df$component.div <- if_else(crafting.df$plain.component.list != "", "<d
 for (index in 1:8) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(crafting.df)) {
-    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", crafting.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
@@ -493,7 +494,7 @@ forge.df$component.div <- "<div class=\"component-block\" style=\"height: 25px;\
 for (index in 0:11) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(forge.df)) {
-    forge.df$component.div[j] <- paste0(forge.df$component.div[j], if_else(!is.na(forge.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", forge.df[j, i], "\" title=\"", forge.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div>"), ""))
+    forge.df$component.div[j] <- paste0(forge.df$component.div[j], if_else(!is.na(forge.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", forge.df[j, i], "\" title=\"", forge.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", forge.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
