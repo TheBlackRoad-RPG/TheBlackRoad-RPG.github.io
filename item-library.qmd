@@ -30,6 +30,20 @@ To-do:
   color: white;
 }
 
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 10px;
+  margin-bottom: 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_length label, .dataTables_wrapper .dataTables_filter label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 .dataTables_wrapper .dataTables_length select {
   background-color: rgb(34, 34, 34);
 }
@@ -47,6 +61,46 @@ To-do:
 
 .basic-block > div {
   padding: 0 0.5em;
+}
+
+.search-help {
+  display: none;
+  margin: 0.5em 0 1em;
+  padding: 0.75em 1em;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #2b2b2b;
+  color: white;
+  font-size: 0.9em;
+}
+
+.search-help table {
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.search-help th, .search-help td {
+  padding: 0.25em 0.75em 0.25em 0;
+  vertical-align: top;
+  color: white;
+}
+
+.search-help th {
+  border-bottom: 1px solid #555;
+}
+
+.search-help code {
+  color: #ffcc00;
+  background: #1a1a1a;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.search-help-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.15em;
 }
 
 .component-block-col {
@@ -359,7 +413,7 @@ regalia.df$component.div <- "<div class=\"component-block\" style=\"height: 25px
 for (index in 1:6) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(regalia.df)) {
-    regalia.df$component.div[j] <- paste0(regalia.df$component.div[j], if_else(!is.na(regalia.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", regalia.df[j, i], "\" title=\"", regalia.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", regalia.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
+    regalia.df$component.div[j] <- paste0(regalia.df$component.div[j], if_else(!is.na(regalia.df[[i]][j]), paste0("<div style=\"height: 100%;\"><img src=\"", regalia.df[j, i], "\" title=\"", regalia.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", regalia.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
@@ -411,7 +465,7 @@ crafting.df$component.div <- if_else(crafting.df$plain.component.list != "", "<d
 for (index in 1:8) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(crafting.df)) {
-    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", crafting.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
+    crafting.df$component.div[j] <- paste0(crafting.df$component.div[j], if_else(!is.na(crafting.df[[i]][j]), paste0("<div style=\"height: 100%;\"><img src=\"", crafting.df[j, i], "\" title=\"", crafting.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", crafting.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
@@ -494,7 +548,7 @@ forge.df$component.div <- "<div class=\"component-block\" style=\"height: 25px;\
 for (index in 0:11) {
   i <- paste0("path.index.", index)
   for (j in 1:nrow(forge.df)) {
-    forge.df$component.div[j] <- paste0(forge.df$component.div[j], if_else(!is.na(forge.df[j, i]), paste0("<div style=\"height: 100%;\"><img src=\"", forge.df[j, i], "\" title=\"", forge.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", forge.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
+    forge.df$component.div[j] <- paste0(forge.df$component.div[j], if_else(!is.na(forge.df[[i]][j]), paste0("<div style=\"height: 100%;\"><img src=\"", forge.df[j, i], "\" title=\"", forge.df[j, paste0("name.index.", index, ".plain")], "\" style=\"width: 25px; vertical-align: unset; height: 25px;\"//></div><div style=\"position: absolute; visibility: hidden;\">", forge.df[j, paste0("name.index.", index, ".plain")], "</div>"), ""))
   }
 }
 
@@ -594,7 +648,42 @@ item.cleaned.df |>
   mutate(tooltip = unlist(tooltip)) |>
   write.csv("./data/item_data.csv", row.names = FALSE)
 
+all.classes <- c("Khaos Champion", "Barbarian", "Warlord", "Temple Guardian", "Spartan Warrior",
+                 "Assassin", "Ranger", "Cleric", "Magician", "Warlock", "Guardian of Nature", "Druid")
+warrior.classes <- c("Khaos Champion", "Barbarian", "Warlord", "Assassin", "Temple Guardian", "Spartan Warrior")
+
+allowed.classes <- function(restriction) {
+  if (is.na(restriction) || restriction == "Forge Dummy") return(all.classes)
+  if (grepl("^Cannot be used by Warrior", restriction)) return(setdiff(all.classes, warrior.classes))
+  all.classes[sapply(all.classes, grepl, x = restriction, fixed = TRUE)]
+}
+
+warrior.can.use <- function(restriction) {
+  any(allowed.classes(restriction) %in% warrior.classes)
+}
+
+is.equip <- function(name.clean, rarity, tooltip) {
+  if (grepl("Consumables|Crafting Component", rarity)) return(FALSE)
+  if (grepl("\\bbook\\b", name.clean, ignore.case = TRUE)) return(FALSE)
+  if (grepl("gem", name.clean, ignore.case = TRUE)) return(FALSE)
+  if (tolower(name.clean) %in% c("pactolus' essence", "summoning stone")) return(FALSE)
+  if (grepl("consumable", paste(unlist(tooltip), collapse = " "), ignore.case = TRUE)) return(FALSE)
+  TRUE
+}
+
+profession.df <- crafting.df |>
+  mutate(craft.profession = sub(" &mdash;.*", "", vendor)) |>
+  distinct(items.sold, craft.profession) |>
+  group_by(items.sold) |>
+  summarise(professions = paste0("|", paste(craft.profession, collapse = "|"), "|"))
+
 item.cleaned.df |>
+  mutate(
+    warrior.only = as.integer(sapply(prio, warrior.can.use)),
+    equip = as.integer(mapply(is.equip, name.clean, rarity, tooltip, USE.NAMES = FALSE))
+  ) |>
+  left_join(profession.df, by = join_by(rawcode == items.sold)) |>
+  mutate(professions = if_else(is.na(professions), "", professions)) |>
   mutate(name.aug = paste0(name,
                            if_else(level > 0, paste0("<br><span style='color: #ffcc00;'>Requires Level ", level, "</span>"), ""),
                            if_else(!is.na(prio), paste0("<br><span style='color: #ff0000;'>", prio, "</span>"), "")),
@@ -602,11 +691,112 @@ item.cleaned.df |>
          basic.block = paste0("<div class=\"basic-block\"><div>", icon.block, "</div><div>", name.aug, "</div>")) |>
   mutate(vendor = paste0("<div><div>", if_else(!is.na(vendor), vendor, ""), "</div>", if_else(!is.na(forge.present.div), forge.present.div, ""), if_else(!is.na(reg.present.div), reg.present.div, ""), if_else(!is.na(present.div), present.div, ""), "</div>") ,
          present.div = NULL) |>
-  select(basic.block, tooltip, vendor) |>
+  select(basic.block, tooltip, vendor, level, professions, warrior.only, equip) |>
   datatable(
     rownames = FALSE, 
     escape = FALSE, 
-    colnames = c("Item", "Description", "Acquisition"),
-    options = list(columnDefs = list(list(width = "400px", targets = 0)))
+    colnames = c("Item", "Description", "Acquisition", "Level", "Professions", "Warrior only", "Equip"),
+    options = list(columnDefs = list(list(width = "400px", targets = 0),
+                                     list(visible = FALSE, targets = c(3, 4, 5, 6)))),
+    callback = JS("
+      var api = table;
+      var dt = $.fn.dataTable;
+      var parsed = {level: null, profs: [], warrior: false, equip: false, help: false};
+      var helpHtml = [
+        '<div class=\\'search-help-title\\'>Search help</div>',
+        '<table>',
+        '<tr><th>For</th><th>Command</th><th></th></tr>',
+        '<tr><td>Level range</td><td><code>level:5-10</code></td><td>Required level from 5 to 10 (inclusive)</td></tr>',
+        '<tr><td>Level compare</td><td><code>level:&gt;5</code> <code>level:&lt;10</code> <code>level:&gt;=5</code> <code>level:&lt;=10</code></td><td>Above, below, at least, at most</td></tr>',
+        '<tr><td>Exact level</td><td><code>level:7</code></td><td>Required level is exactly 7</td></tr>',
+        '<tr><td>Profession</td><td><code>prof:ws</code> <code>prof:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
+        '<tr><td></td><td><code>prof:as</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
+        '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
+        '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
+        '<tr><td>Warrior</td><td><code>-w</code> <code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
+        '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gems, crafting materials)</td></tr>',
+        '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
+        '</table>',
+        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior level:>160</code>. Several <code>prof:</code> terms match any of them.'
+      ].join('');
+      var helpPanel = $('<div class=\\'search-help\\'></div>').html(helpHtml);
+      $(api.table().container()).find('.dataTables_filter').after(helpPanel);
+      var profAliases = {
+        weaponsmith: 'weaponsmith', ws: 'weaponsmith',
+        armorsmith: 'armorsmith', armoursmith: 'armorsmith', as: 'armorsmith',
+        goldsmith: 'goldsmith', gs: 'goldsmith',
+        alchemist: 'alchemist', al: 'alchemist'
+      };
+
+      function parseQuery(q) {
+        var out = {level: null, profs: [], warrior: false, equip: false, help: false, text: []};
+        (q.match(/\\S+/g) || []).forEach(function(tok) {
+          var m = /^(level|prof|profession):(.+)$/i.exec(tok), r;
+          if (/^-(h|help)$/i.test(tok)) {
+            out.help = true;
+          } else if (/^-(w|warrior)$/i.test(tok)) {
+            out.warrior = true;
+          } else if (/^-(e|equip)$/i.test(tok)) {
+            out.equip = true;
+          } else if (m && m[1].toLowerCase() === 'level') {
+            var v = m[2];
+            if ((r = /^(\\d+)(?:-|\\.\\.)(\\d+)$/.exec(v))) out.level = [+r[1], +r[2]];
+            else if ((r = /^>=(\\d+)$/.exec(v))) out.level = [+r[1], Infinity];
+            else if ((r = /^<=(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
+            else if ((r = /^>(\\d+)$/.exec(v))) out.level = [+r[1] + 1, Infinity];
+            else if ((r = /^<(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1] - 1];
+            else if ((r = /^(\\d+)$/.exec(v))) out.level = [+r[1], +r[1]];
+            else out.text.push(tok);
+          } else if (m && profAliases[m[2].toLowerCase()]) {
+            out.profs.push(profAliases[m[2].toLowerCase()]);
+          } else out.text.push(tok);
+        });
+        return out;
+      }
+
+      dt.ext.search.push(function(settings, data) {
+        if (settings.nTable !== api.table().node()) return true;
+        if (parsed.level) {
+          var lvl = parseFloat(data[3]);
+          if (isNaN(lvl) || lvl < parsed.level[0] || lvl > parsed.level[1]) return false;
+        }
+        if (parsed.warrior && data[5] !== '1') return false;
+        if (parsed.equip && data[6] !== '1') return false;
+        if (parsed.profs.length) {
+          var pr = data[4].toLowerCase();
+          return parsed.profs.some(function(p) { return pr.indexOf('|' + p + '|') !== -1; });
+        }
+        return true;
+      });
+
+      var input = $(api.table().container()).find('.dataTables_filter input');
+      input.attr('placeholder', '-help');
+
+      function applyQuery(value) {
+        parsed = parseQuery(value);
+        helpPanel.toggle(parsed.help);
+        api.search(parsed.text.join(' ')).draw();
+        if (input.val() !== value) input.val(value);
+      }
+
+      function syncUrl(value) {
+        try {
+          var url = new URL(window.location.href);
+          if (value) url.searchParams.set('q', value); else url.searchParams.delete('q');
+          window.history.replaceState(null, '', url);
+        } catch (e) {}
+      }
+
+      input.off('.DT').on('input.tbrquery keyup.tbrquery search.tbrquery', function() {
+        applyQuery(this.value);
+        syncUrl(this.value);
+      });
+
+      var initial = new URLSearchParams(window.location.search).get('q');
+      if (initial) {
+        input.val(initial);
+        applyQuery(initial);
+      }
+    ")
   )
 ```
