@@ -717,7 +717,7 @@ item.cleaned.df |>
         '<tr><td>No regalia</td><td><code>-nr</code> <code>-noregalia</code></td><td>Hide class regalia</td></tr>',
         '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
-        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>. Several <code>-p:</code> terms match any of them.'
+        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>.'
       ].join('');
       var helpPanel = $('<div class=\\'search-help\\'></div>').html(helpHtml);
       $(api.table().container()).find('.dataTables_filter').after(helpPanel);
