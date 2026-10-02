@@ -658,9 +658,8 @@ allowed.classes <- function(restriction) {
   all.classes[sapply(all.classes, grepl, x = restriction, fixed = TRUE)]
 }
 
-is.warrior.only <- function(restriction) {
-  a <- allowed.classes(restriction)
-  !is.na(restriction) && length(a) > 0 && all(a %in% warrior.classes)
+warrior.can.use <- function(restriction) {
+  any(allowed.classes(restriction) %in% warrior.classes)
 }
 
 profession.df <- crafting.df |>
@@ -670,7 +669,7 @@ profession.df <- crafting.df |>
   summarise(professions = paste0("|", paste(craft.profession, collapse = "|"), "|"))
 
 item.cleaned.df |>
-  mutate(warrior.only = as.integer(sapply(prio, is.warrior.only))) |>
+  mutate(warrior.only = as.integer(sapply(prio, warrior.can.use))) |>
   left_join(profession.df, by = join_by(rawcode == items.sold)) |>
   mutate(professions = if_else(is.na(professions), "", professions)) |>
   mutate(name.aug = paste0(name,
@@ -702,7 +701,7 @@ item.cleaned.df |>
         '<tr><td></td><td><code>prof:as</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
         '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
         '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
-        '<tr><td>Warrior only</td><td><code>-warrior</code></td><td>Items only warrior classes can use</td></tr>',
+        '<tr><td>Warrior</td><td><code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
         '<tr><td>Help</td><td><code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
         'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>level:5-10 prof:ws sword -warrior</code>. Several <code>prof:</code> terms match any of them.'
