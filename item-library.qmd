@@ -699,7 +699,7 @@ item.cleaned.df |>
         '<tr><td>Level compare</td><td><code>level:&gt;5</code> <code>level:&lt;10</code> <code>level:&gt;=5</code> <code>level:&lt;=10</code></td><td>Above, below, at least, at most</td></tr>',
         '<tr><td>Exact level</td><td><code>level:7</code></td><td>Required level is exactly 7</td></tr>',
         '<tr><td>Profession</td><td><code>prof:ws</code> <code>prof:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
-        '<tr><td></td><td><code>prof:ar</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
+        '<tr><td></td><td><code>prof:as</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
         '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
         '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
         '<tr><td>Warrior only</td><td><code>-warrior</code></td><td>Items only warrior classes can use</td></tr>',
@@ -711,7 +711,7 @@ item.cleaned.df |>
       $(api.table().container()).find('.dataTables_filter').after(helpPanel);
       var profAliases = {
         weaponsmith: 'weaponsmith', ws: 'weaponsmith',
-        armorsmith: 'armorsmith', armoursmith: 'armorsmith', ar: 'armorsmith',
+        armorsmith: 'armorsmith', armoursmith: 'armorsmith', as: 'armorsmith',
         goldsmith: 'goldsmith', gs: 'goldsmith',
         alchemist: 'alchemist', al: 'alchemist'
       };
@@ -756,11 +756,32 @@ item.cleaned.df |>
 
       var input = $(api.table().container()).find('.dataTables_filter input');
       input.attr('placeholder', '-help');
-      input.off('.DT').on('input.tbrquery keyup.tbrquery search.tbrquery', function() {
-        parsed = parseQuery(this.value);
+
+      function applyQuery(value) {
+        parsed = parseQuery(value);
         helpPanel.toggle(parsed.help);
         api.search(parsed.text.join(' ')).draw();
+        if (input.val() !== value) input.val(value);
+      }
+
+      function syncUrl(value) {
+        try {
+          var url = new URL(window.location.href);
+          if (value) url.searchParams.set('q', value); else url.searchParams.delete('q');
+          window.history.replaceState(null, '', url);
+        } catch (e) {}
+      }
+
+      input.off('.DT').on('input.tbrquery keyup.tbrquery search.tbrquery', function() {
+        applyQuery(this.value);
+        syncUrl(this.value);
       });
+
+      var initial = new URLSearchParams(window.location.search).get('q');
+      if (initial) {
+        input.val(initial);
+        applyQuery(initial);
+      }
     ")
   )
 ```
