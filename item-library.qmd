@@ -665,7 +665,7 @@ warrior.can.use <- function(restriction) {
 is.equip <- function(name.clean, rarity, tooltip) {
   if (isTRUE(rarity == "Consumables")) return(FALSE)
   if (grepl("\\bbook\\b", name.clean, ignore.case = TRUE)) return(FALSE)
-  if (grepl("gemstone", name.clean, ignore.case = TRUE)) return(FALSE)
+  if (grepl("gem", name.clean, ignore.case = TRUE)) return(FALSE)
   if (grepl("consumable", paste(unlist(tooltip), collapse = " "), ignore.case = TRUE)) return(FALSE)
   TRUE
 }
@@ -713,7 +713,7 @@ item.cleaned.df |>
         '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
         '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
         '<tr><td>Warrior</td><td><code>-w</code> <code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
-        '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gemstones)</td></tr>',
+        '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gems)</td></tr>',
         '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
         'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior level:>160</code>. Several <code>prof:</code> terms match any of them.'
