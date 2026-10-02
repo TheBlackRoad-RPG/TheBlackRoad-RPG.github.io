@@ -701,23 +701,23 @@ item.cleaned.df |>
     callback = JS("
       var api = table;
       var dt = $.fn.dataTable;
-      var parsed = {level: null, profs: [], warrior: false, equip: false, help: false};
+      var parsed = {level: null, profs: [], warrior: false, equip: false, noregalia: false, help: false};
       var helpHtml = [
         '<div class=\\'search-help-title\\'>Search help</div>',
         '<table>',
         '<tr><th>For</th><th>Command</th><th></th></tr>',
-        '<tr><td>Level range</td><td><code>level:5-10</code></td><td>Required level from 5 to 10 (inclusive)</td></tr>',
-        '<tr><td>Level compare</td><td><code>level:&gt;5</code> <code>level:&lt;10</code> <code>level:&gt;=5</code> <code>level:&lt;=10</code></td><td>Above, below, at least, at most</td></tr>',
-        '<tr><td>Exact level</td><td><code>level:7</code></td><td>Required level is exactly 7</td></tr>',
-        '<tr><td>Profession</td><td><code>prof:ws</code> <code>prof:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
-        '<tr><td></td><td><code>prof:as</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
-        '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
-        '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
+        '<tr><td>Level range</td><td><code>-l:85- l:-120 -l:85-120</code> <code>-level:85-120</code></td><td>Required level 85 or more, level 120 or less, levels from 85 to 120</td></tr>',
+        '<tr><td>Exact level</td><td><code>-l:180</code> <code>-level:180</code></td><td>Required level is exactly 180</td></tr>',
+        '<tr><td>Profession</td><td><code>-p:ws</code> <code>-profession:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
+        '<tr><td></td><td><code>-p:as</code> <code>-profession:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
+        '<tr><td></td><td><code>-p:gs</code> <code>-profession:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
+        '<tr><td></td><td><code>-p:al</code> <code>-profession:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
         '<tr><td>Warrior</td><td><code>-w</code> <code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
         '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gems, crafting materials)</td></tr>',
+        '<tr><td>No regalia</td><td><code>-nr</code> <code>-noregalia</code></td><td>Hide class regalia</td></tr>',
         '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
-        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior level:>160</code>. Several <code>prof:</code> terms match any of them.'
+        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>. Several <code>-p:</code> terms match any of them.'
       ].join('');
       var helpPanel = $('<div class=\\'search-help\\'></div>').html(helpHtml);
       $(api.table().container()).find('.dataTables_filter').after(helpPanel);
@@ -729,27 +729,27 @@ item.cleaned.df |>
       };
 
       function parseQuery(q) {
-        var out = {level: null, profs: [], warrior: false, equip: false, help: false, text: []};
+        var out = {level: null, profs: [], warrior: false, equip: false, noregalia: false, help: false, text: []};
         (q.match(/\\S+/g) || []).forEach(function(tok) {
-          var m = /^(level|prof|profession):(.+)$/i.exec(tok), r;
+          var m = /^-?(l|level|p|prof|profession):(.+)$/i.exec(tok), r;
           if (/^-(h|help)$/i.test(tok)) {
             out.help = true;
           } else if (/^-(w|warrior)$/i.test(tok)) {
             out.warrior = true;
           } else if (/^-(e|equip)$/i.test(tok)) {
             out.equip = true;
-          } else if (m && m[1].toLowerCase() === 'level') {
+          } else if (/^-(nr|noregalia)$/i.test(tok)) {
+            out.noregalia = true;
+          } else if (m && /^(l|level)$/i.test(m[1])) {
             var v = m[2];
             if ((r = /^(\\d+)(?:-|\\.\\.)(\\d+)$/.exec(v))) out.level = [+r[1], +r[2]];
-            else if ((r = /^>=(\\d+)$/.exec(v))) out.level = [+r[1], Infinity];
-            else if ((r = /^<=(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
-            else if ((r = /^>(\\d+)$/.exec(v))) out.level = [+r[1] + 1, Infinity];
-            else if ((r = /^<(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1] - 1];
+            else if ((r = /^(\\d+)-$/.exec(v))) out.level = [+r[1], Infinity];
+            else if ((r = /^-(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
             else if ((r = /^(\\d+)$/.exec(v))) out.level = [+r[1], +r[1]];
             else out.text.push(tok);
           } else if (m && profAliases[m[2].toLowerCase()]) {
             out.profs.push(profAliases[m[2].toLowerCase()]);
-          } else out.text.push(tok);
+          } else out.text.push(/^zues$/i.test(tok) ? 'zeus' : tok);
         });
         return out;
       }
@@ -762,6 +762,7 @@ item.cleaned.df |>
         }
         if (parsed.warrior && data[5] !== '1') return false;
         if (parsed.equip && data[6] !== '1') return false;
+        if (parsed.noregalia && /regalia/i.test(data[0])) return false;
         if (parsed.profs.length) {
           var pr = data[4].toLowerCase();
           return parsed.profs.some(function(p) { return pr.indexOf('|' + p + '|') !== -1; });
