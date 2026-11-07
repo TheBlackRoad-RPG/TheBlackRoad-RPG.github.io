@@ -701,7 +701,7 @@ item.cleaned.df |>
     callback = JS("
       var api = table;
       var dt = $.fn.dataTable;
-      var parsed = {level: null, profs: [], warrior: false, equip: false, noregalia: false, help: false};
+      var parsed = {level: null, profs: [], warrior: false, equip: false, noregalia: false, nameOnly: false, help: false, searchGroups: []};
       var helpHtml = [
         '<div class=\\'search-help-title\\'>Search help</div>',
         '<table>',
@@ -715,9 +715,12 @@ item.cleaned.df |>
         '<tr><td>Warrior</td><td><code>-w</code> <code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
         '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gems, crafting materials)</td></tr>',
         '<tr><td>No regalia</td><td><code>-nr</code> <code>-noregalia</code></td><td>Hide class regalia</td></tr>',
+        '<tr><td>Name only</td><td><code>-n:ares</code> <code>-name:ares</code></td><td>Match item names only (ignore descriptions)</td></tr>',
+        '<tr><td>Keyboard</td><td><code>Ctrl+K</code> <code>Esc</code></td><td>Focus the search box / clear it</td></tr>',
+        '<tr><td>Either / or</td><td><code>ares / heph / red</code></td><td>Show items matching any slash-separated search</td></tr>',
         '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
-        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>.'
+        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>.<br><br><code>Ctrl+K</code> focuses the search box; <code>Esc</code> clears it.'
       ].join('');
       var helpPanel = $('<div class=\\'search-help\\'></div>').html(helpHtml);
       $(api.table().container()).find('.dataTables_filter').after(helpPanel);
@@ -728,9 +731,20 @@ item.cleaned.df |>
         alchemist: 'alchemist', al: 'alchemist'
       };
 
+      function mapZues(tok) {
+        var t = tok.toLowerCase();
+        return t === 'zu' ? 'ze' : t === 'zue' ? 'zeu' : t === 'zues' ? 'zeus' : t;
+      }
+
       function parseQuery(q) {
-        var out = {level: null, profs: [], warrior: false, equip: false, noregalia: false, help: false, text: []};
-        (q.match(/\\S+/g) || []).forEach(function(tok) {
+        var out = {level: null, profs: [], warrior: false, equip: false, noregalia: false, nameOnly: false, help: false, groups: []};
+        var group = [];
+        (q.replace(/\\//g, ' / ').match(/\\S+/g) || []).forEach(function(tok) {
+          if (tok === '/') {
+            out.groups.push(group);
+            group = [];
+            return;
+          }
           var m = /^-?(l|level|p|prof|profession):(.+)$/i.exec(tok), r;
           if (/^-(h|help)$/i.test(tok)) {
             out.help = true;
@@ -740,21 +754,40 @@ item.cleaned.df |>
             out.equip = true;
           } else if (/^-(nr|noregalia)$/i.test(tok)) {
             out.noregalia = true;
+          } else if ((r = /^-(n|name):(.+)$/i.exec(tok))) {
+            out.nameOnly = true;
+            group.push(mapZues(r[2]));
           } else if (m && /^(l|level)$/i.test(m[1])) {
             var v = m[2];
             if ((r = /^(\\d+)(?:-|\\.\\.)(\\d+)$/.exec(v))) out.level = [+r[1], +r[2]];
             else if ((r = /^(\\d+)-$/.exec(v))) out.level = [+r[1], Infinity];
             else if ((r = /^-(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
             else if ((r = /^(\\d+)$/.exec(v))) out.level = [+r[1], +r[1]];
-            else out.text.push(tok);
+            else group.push(tok.toLowerCase());
           } else if (m && profAliases[m[2].toLowerCase()]) {
             out.profs.push(profAliases[m[2].toLowerCase()]);
-          } else out.text.push(/^zues$/i.test(tok) ? 'zeus' : tok);
+          } else group.push(mapZues(tok));
         });
+        out.groups.push(group);
         return out;
       }
 
-      dt.ext.search.push(function(settings, data) {
+      function itemName(html) {
+        var start = html.lastIndexOf('<div>');
+        if (start === -1) return '';
+        start += 5;
+        var end = html.indexOf('</div>', start);
+        if (end === -1) end = html.length;
+        var inner = html.slice(start, end);
+        var br = inner.indexOf('<br>');
+        if (br !== -1) inner = inner.slice(0, br);
+        return inner.replace(/<[^>]*>/g, '').trim();
+      }
+
+      var rowText = {};
+      var rowName = {};
+
+      dt.ext.search.push(function(settings, data, dataIndex, rowData) {
         if (settings.nTable !== api.table().node()) return true;
         if (parsed.level) {
           var lvl = parseFloat(data[3]);
@@ -765,7 +798,20 @@ item.cleaned.df |>
         if (parsed.noregalia && /regalia/i.test(data[0])) return false;
         if (parsed.profs.length) {
           var pr = data[4].toLowerCase();
-          return parsed.profs.some(function(p) { return pr.indexOf('|' + p + '|') !== -1; });
+          if (!parsed.profs.some(function(p) { return pr.indexOf('|' + p + '|') !== -1; })) return false;
+        }
+        if (parsed.searchGroups.length) {
+          var hay;
+          if (parsed.nameOnly) {
+            hay = rowName[dataIndex];
+            if (hay === undefined) hay = rowName[dataIndex] = itemName(rowData[0]).toLowerCase();
+          } else {
+            hay = rowText[dataIndex];
+            if (hay === undefined) hay = rowText[dataIndex] = data.join('  ').toLowerCase();
+          }
+          if (!parsed.searchGroups.some(function(g) {
+            return g.every(function(t) { return hay.indexOf(t) !== -1; });
+          })) return false;
         }
         return true;
       });
@@ -775,8 +821,9 @@ item.cleaned.df |>
 
       function applyQuery(value) {
         parsed = parseQuery(value);
+        parsed.searchGroups = parsed.groups.filter(function(g) { return g.length; });
         helpPanel.toggle(parsed.help);
-        api.search(parsed.text.join(' ')).draw();
+        api.search('').draw();
         if (input.val() !== value) input.val(value);
       }
 
@@ -791,6 +838,18 @@ item.cleaned.df |>
       input.off('.DT').on('input.tbrquery keyup.tbrquery search.tbrquery', function() {
         applyQuery(this.value);
         syncUrl(this.value);
+      });
+
+      $(document).on('keydown.tbrkeys', function(e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+          e.preventDefault();
+          input[0].focus();
+          input[0].select();
+        } else if (e.key === 'Escape' && document.activeElement === input[0]) {
+          e.preventDefault();
+          applyQuery('');
+          syncUrl('');
+        }
       });
 
       var initial = new URLSearchParams(window.location.search).get('q');
