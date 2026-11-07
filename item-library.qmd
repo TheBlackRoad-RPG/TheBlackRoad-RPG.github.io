@@ -150,33 +150,26 @@ regalia.lines <- readLines("../the-black-road-rpg/map/src/49-Vendors/Forge Regal
 
 # Construct spline
 df <- tibble(
-  rawcode = item.data |> names() |> gsub(pattern = "(I...):.*", replacement = "\\1"),
-  parentcode = item.data |> names() |> gsub(pattern = "I...:(.*)", replacement = "\\1")
+  rawcode = item.data |> names(),
+  parentcode = sapply(item.data, \(x) x$originalId)
 )
 
 unit.df <- tibble(
-  rawcode = unit.data |> names() |> gsub(pattern = "(....):.*", replacement = "\\1"),
-  parentcode = unit.data |> names() |> gsub(pattern = "....:(.*)", replacement = "\\1")
+  rawcode = unit.data |> names(),
+  parentcode = sapply(unit.data, \(x) x$originalId)
 )
-
-# Update names for item.*
-names(item.data) <- df$rawcode
-names(item.wts.data) <- df$rawcode
-
-# Update names for unit.*
-names(unit.data) <- unit.df$rawcode
-names(unit.wts.data) <- unit.df$rawcode
 
 # Update names for wts.data
 names(wts.data) <- paste("TRIGSTR", names(wts.data), sep = "_")
 
 # Build fields from unit.* -----------------------------------------------------
+
 unit.df$name <- sapply(unit.wts.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "unam")
+  which_index <- sapply(x$modifications, \(y) y$id) %in% "unam"
 
   if (any(which_index)) {
-    if (!is.null(wts.data[[x[[which(which_index)]]$value]])) {
-      return (wts.data[[x[[which(which_index)]]$value]])
+    if (!is.null(wts.data[[x$modifications[[which(which_index)]]$value]])) {
+      return (wts.data[[x$modifications[[which(which_index)]]$value]])
     }
   }
 
@@ -184,11 +177,11 @@ unit.df$name <- sapply(unit.wts.data, \(x) {
 })
 
 unit.df$items.sold <- sapply(unit.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "usei")
+  which_index <- sapply(x$modifications, \(y) y$id %in% "usei")
 
   if (any(which_index)) {
-    if (!is.null(x[[which(which_index)]]$value)) {
-      return (x[[which(which_index)]]$value)
+    if (!is.null(x$modifications[[which(which_index)]]$value)) {
+      return (x$modifications[[which(which_index)]]$value)
     }
   }
 
@@ -203,14 +196,14 @@ unit.df <- unit.df |>
 
 # Build fields for spline ------------------------------------------------------
 df$name <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "unam") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "unam") |> 
     which()
 
   if (length(which_index) > 0) {
     a <- gsub(
       "\\|r",
       "</span>",
-      wts.data[[x[[which_index]]$value]]
+      wts.data[[x$modifications[[which_index]]$value]]
     )
     
     return (ifelse(
@@ -228,14 +221,14 @@ df$name <- sapply(item.wts.data, \(x) {
 })
 
 df$icon <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "iico") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "iico") |> 
     which()
 
   if (length(which_index) > 0) {
     return (gsub(
       "ReplaceableTextures\\\\CommandButtons\\\\(.*)\\.[Bb][Ll][Pp]", 
       "\\1",
-      x[[which_index]]$value
+      x$modifications[[which_index]]$value
     ))
   }
   
@@ -243,44 +236,44 @@ df$icon <- sapply(item.wts.data, \(x) {
 })
 
 df$class <- sapply(item.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "icla") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "icla") |> 
     which()
 
   if (length(which_index) > 0) {
-    return (x[[which_index]]$value)
+    return (x$modifications[[which_index]]$value)
   }
   
   return (NA)
 })
 
 df$level <- sapply(item.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "ilev") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "ilev") |> 
     which()
 
   if (length(which_index) > 0) {
-    return (x[[which_index]]$value)
+    return (x$modifications[[which_index]]$value)
   }
   
   return (NA)
 })
 
 df$prio <- sapply(item.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "ipri") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "ipri") |> 
     which()
 
   if (length(which_index) > 0) {
-    return (x[[which_index]]$value)
+    return (x$modifications[[which_index]]$value)
   }
   
   return (NA)
 })
 
 df$tooltip <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "utub") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "utub") |> 
     which()
 
   if (length(which_index) > 0) {
-    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", wts.data[[x[[which_index]]$value]]) |>
+    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", wts.data[[x$modifications[[which_index]]$value]]) |>
       gsub("\\|r", "</span>", x = _) |>
       gsub("\\|n", "<br>", x = _)
     
@@ -302,22 +295,22 @@ df$tooltip <- sapply(item.wts.data, \(x) {
 })
 
 df$gold <- sapply(item.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "igol") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "igol") |> 
     which()
 
   if (length(which_index) > 0) {
-    return (x[[which_index]]$value)
+    return (x$modifications[[which_index]]$value)
   }
   
   return (NA)
 })
 
 df$crafting.material <- sapply(item.data, \(x) {
-  which_index <- sapply(x, \(y) y$id %in% "ilum") |> 
+  which_index <- sapply(x$modifications, \(y) y$id %in% "ilum") |> 
     which()
 
   if (length(which_index) > 0) {
-    return (x[[which_index]]$value)
+    return (x$modifications[[which_index]]$value)
   }
   
   return (NA)
@@ -699,6 +692,7 @@ item.cleaned.df |>
     options = list(columnDefs = list(list(width = "400px", targets = 0),
                                      list(visible = FALSE, targets = c(3, 4, 5, 6)))),
     callback = JS("
+
       var api = table;
       var dt = $.fn.dataTable;
       var parsed = {level: null, profs: [], warrior: false, equip: false, noregalia: false, nameOnly: false, help: false, searchGroups: []};
@@ -706,12 +700,13 @@ item.cleaned.df |>
         '<div class=\\'search-help-title\\'>Search help</div>',
         '<table>',
         '<tr><th>For</th><th>Command</th><th></th></tr>',
-        '<tr><td>Level range</td><td><code>-l:85- l:-120 -l:85-120</code> <code>-level:85-120</code></td><td>Required level 85 or more, level 120 or less, levels from 85 to 120</td></tr>',
-        '<tr><td>Exact level</td><td><code>-l:180</code> <code>-level:180</code></td><td>Required level is exactly 180</td></tr>',
-        '<tr><td>Profession</td><td><code>-p:ws</code> <code>-profession:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
-        '<tr><td></td><td><code>-p:as</code> <code>-profession:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
-        '<tr><td></td><td><code>-p:gs</code> <code>-profession:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
-        '<tr><td></td><td><code>-p:al</code> <code>-profession:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
+        '<tr><td>Level range</td><td><code>level:5-10</code></td><td>Required level from 5 to 10 (inclusive)</td></tr>',
+        '<tr><td>Level compare</td><td><code>level:&gt;5</code> <code>level:&lt;10</code> <code>level:&gt;=5</code> <code>level:&lt;=10</code></td><td>Above, below, at least, at most</td></tr>',
+        '<tr><td>Exact level</td><td><code>level:7</code></td><td>Required level is exactly 7</td></tr>',
+        '<tr><td>Profession</td><td><code>prof:ws</code> <code>prof:weaponsmith</code></td><td>Craftable by a Weaponsmith</td></tr>',
+        '<tr><td></td><td><code>prof:as</code> <code>prof:armorsmith</code></td><td>Craftable by an Armorsmith</td></tr>',
+        '<tr><td></td><td><code>prof:gs</code> <code>prof:goldsmith</code></td><td>Craftable by a Goldsmith</td></tr>',
+        '<tr><td></td><td><code>prof:al</code> <code>prof:alchemist</code></td><td>Craftable by an Alchemist</td></tr>',
         '<tr><td>Warrior</td><td><code>-w</code> <code>-warrior</code></td><td>Hide items warrior classes cannot use</td></tr>',
         '<tr><td>Equipment</td><td><code>-e</code> <code>-equip</code></td><td>Show equipment only (hide books, potions, consumables, gems, crafting materials)</td></tr>',
         '<tr><td>No regalia</td><td><code>-nr</code> <code>-noregalia</code></td><td>Hide class regalia</td></tr>',
@@ -720,7 +715,7 @@ item.cleaned.df |>
         '<tr><td>Either / or</td><td><code>ares / heph / red</code></td><td>Show items matching any slash-separated search</td></tr>',
         '<tr><td>Help</td><td><code>-h</code> <code>-help</code></td><td>Show this panel</td></tr>',
         '</table>',
-        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior -l:160-</code>.<br><br><code>Ctrl+K</code> focuses the search box; <code>Esc</code> clears it.'
+        'Filters are case-insensitive and can be combined with each other and with normal words, e.g. <code>-Help -EQUIP -warrior level:>160</code>. Several <code>prof:</code> terms match any of them.<br><br><code>Ctrl+K</code> focuses the search box; <code>Esc</code> clears it.'
       ].join('');
       var helpPanel = $('<div class=\\'search-help\\'></div>').html(helpHtml);
       $(api.table().container()).find('.dataTables_filter').after(helpPanel);
@@ -760,6 +755,10 @@ item.cleaned.df |>
           } else if (m && /^(l|level)$/i.test(m[1])) {
             var v = m[2];
             if ((r = /^(\\d+)(?:-|\\.\\.)(\\d+)$/.exec(v))) out.level = [+r[1], +r[2]];
+            else if ((r = /^>=(\\d+)$/.exec(v))) out.level = [+r[1], Infinity];
+            else if ((r = /^<=(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
+            else if ((r = /^>(\\d+)$/.exec(v))) out.level = [+r[1] + 1, Infinity];
+            else if ((r = /^<(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1] - 1];
             else if ((r = /^(\\d+)-$/.exec(v))) out.level = [+r[1], Infinity];
             else if ((r = /^-(\\d+)$/.exec(v))) out.level = [-Infinity, +r[1]];
             else if ((r = /^(\\d+)$/.exec(v))) out.level = [+r[1], +r[1]];
