@@ -109,6 +109,18 @@ To-do:
   justify-content: left;
   flex-direction: column;
 }
+
+.dataTable > thead > tr > th {
+  border-bottom: 2px solid #999 !important;
+}
+
+.dataTable > tbody > tr > td {
+  border-bottom: 1px solid #666 !important;
+}
+
+.dataTable > tbody > tr:last-child > td {
+  border-bottom: 0 !important;
+}
 ```
 
 ```{r setup}
@@ -838,79 +850,6 @@ item.cleaned.df |>
         applyQuery(this.value);
         syncUrl(this.value);
       });
-
-      var selected = {};
-      $('head').append($('<style>'
-        + '.compare-panel{display:none;clear:both;width:100%;box-sizing:border-box;margin:0 0 0.75em;padding:0.75em;border:1px solid #555;border-radius:6px;background:#2b2b2b;color:#fff;}'
-        + '.compare-head{display:flex;align-items:center;justify-content:space-between;gap:1em;margin-bottom:0.5em;font-weight:bold;}'
-        + '.compare-clear{cursor:pointer;background:none;border:1px solid #777;color:inherit;border-radius:4px;padding:0.15em 0.6em;}'
-        + '.compare-grid{display:flex;flex-wrap:wrap;gap:0.75em;}'
-        + '.compare-card{position:relative;flex:1 1 220px;max-width:320px;border:1px solid #555;border-radius:6px;padding:0.6em;background:#1f1f1f;}'
-        + '.compare-card .basic-block{padding-right:1.5em;}'
-        + '.compare-remove{position:absolute;top:0.2em;right:0.2em;background:none;border:0;color:#aaa;font-size:1.1em;cursor:pointer;}'
-        + '.compare-label{color:#9ad;font-size:0.8em;margin-top:0.5em;}'
-        + '.compare-toggle{margin-right:0.35em;vertical-align:middle;}'
-        + '</style>'));
-      var comparePanel = $('<div class="compare-panel"><div class="compare-head"><span>Compare</span><button type="button" class="compare-clear">Clear</button></div><div class="compare-grid"></div></div>');
-      helpPanel.after(comparePanel);
-
-      function asHtml(value) {
-        return Array.isArray(value) ? value.join('<br>') : (value == null ? '' : String(value));
-      }
-
-      function renderCompare() {
-        var indexes = Object.keys(selected).map(Number).filter(function(i) { return api.row(i).data() !== undefined; });
-        var grid = comparePanel.find('.compare-grid').empty();
-        comparePanel.toggle(indexes.length > 0);
-        indexes.forEach(function(idx) {
-          var row = api.row(idx);
-          var data = row.data();
-          if (!data) return;
-          var card = $('<div class="compare-card"></div>');
-          var remove = $('<button type="button" class="compare-remove" title="Remove">&times;</button>');
-          remove.on('click', function() {
-            delete selected[idx];
-            $(row.node()).find('.compare-toggle').prop('checked', false);
-            renderCompare();
-          });
-          card.append(remove);
-          card.append($('<div></div>').html(data[0]));
-          card.append($('<div class="compare-label">Description</div>'), $('<div></div>').html(asHtml(data[1])));
-          card.append($('<div class="compare-label">Acquisition</div>'), $('<div></div>').html(asHtml(data[2])));
-          grid.append(card);
-        });
-      }
-
-      function addCompareToggles() {
-        api.rows({page: 'current'}).nodes().toArray().forEach(function(node) {
-          var idx = api.row(node).index();
-          var nameDiv = $(node).children('td').eq(0).find('.basic-block > div').eq(1);
-          if (!nameDiv.length) return;
-          var cb = nameDiv.find('.compare-toggle');
-          if (!cb.length) {
-            cb = $('<input type="checkbox" class="compare-toggle" title="Compare this item"/>');
-            cb.on('change', function() {
-              if (this.checked) selected[idx] = true; else delete selected[idx];
-              renderCompare();
-            });
-            nameDiv.prepend(cb);
-          }
-          cb.prop('checked', !!selected[idx]);
-        });
-      }
-
-      comparePanel.find('.compare-clear').on('click', function() {
-        selected = {};
-        $('.compare-toggle').prop('checked', false);
-        renderCompare();
-      });
-
-      api.on('draw', function() {
-        addCompareToggles();
-        renderCompare();
-      });
-      addCompareToggles();
-      renderCompare();
 
       $(document).on('keydown.tbrkeys', function(e) {
         if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
