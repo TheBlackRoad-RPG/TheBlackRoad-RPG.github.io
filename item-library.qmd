@@ -177,24 +177,20 @@ names(wts.data) <- paste("TRIGSTR", names(wts.data), sep = "_")
 # Build fields from unit.* -----------------------------------------------------
 
 unit.df$name <- sapply(unit.wts.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id) %in% "unam"
+  which_index <- which(names(x$modifications) == "unam")
 
   if (any(which_index)) {
-    if (!is.null(wts.data[[x$modifications[[which(which_index)]]$value]])) {
-      return (wts.data[[x$modifications[[which(which_index)]]$value]])
-    }
+    return (x$modifications[[which_index]]$values[[1]])
   }
 
   return (NA)
 })
 
 unit.df$items.sold <- sapply(unit.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "usei")
+  which_index <- which(names(x$modifications) == "usei")
 
   if (any(which_index)) {
-    if (!is.null(x$modifications[[which(which_index)]]$value)) {
-      return (x$modifications[[which(which_index)]]$value)
-    }
+    return (x$modifications[[which_index]]$values[[1]])
   }
 
   return (NA_character_)
@@ -208,14 +204,13 @@ unit.df <- unit.df |>
 
 # Build fields for spline ------------------------------------------------------
 df$name <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "unam") |> 
-    which()
+  which_index <- which(names(x$modifications) == "unam")
 
   if (length(which_index) > 0) {
     a <- gsub(
       "\\|r",
       "</span>",
-      wts.data[[x$modifications[[which_index]]$value]]
+      x$modifications[[which_index]]$values[[1]]
     )
     
     return (ifelse(
@@ -233,14 +228,13 @@ df$name <- sapply(item.wts.data, \(x) {
 })
 
 df$icon <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "iico") |> 
-    which()
+  which_index <- which(names(x$modifications) == "iico")
 
   if (length(which_index) > 0) {
     return (gsub(
       "ReplaceableTextures\\\\CommandButtons\\\\(.*)\\.[Bb][Ll][Pp]", 
       "\\1",
-      x$modifications[[which_index]]$value
+      x$modifications[[which_index]]$values[[1]]
     ))
   }
   
@@ -248,44 +242,40 @@ df$icon <- sapply(item.wts.data, \(x) {
 })
 
 df$class <- sapply(item.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "icla") |> 
-    which()
+  which_index <- which(names(x$modifications) == "icla")
 
   if (length(which_index) > 0) {
-    return (x$modifications[[which_index]]$value)
+    return (x$modifications[[which_index]]$values[[1]])
   }
   
   return (NA)
 })
 
 df$level <- sapply(item.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "ilev") |> 
-    which()
+  which_index <- which(names(x$modifications) == "ilev")
 
   if (length(which_index) > 0) {
-    return (x$modifications[[which_index]]$value)
+    return (x$modifications[[which_index]]$values[[1]])
   }
   
   return (NA)
 })
 
 df$prio <- sapply(item.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "ipri") |> 
-    which()
+  which_index <- which(names(x$modifications) == "ipri")
 
   if (length(which_index) > 0) {
-    return (x$modifications[[which_index]]$value)
+    return (x$modifications[[which_index]]$values[[1]])
   }
   
   return (NA)
 })
 
 df$tooltip <- sapply(item.wts.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "utub") |> 
-    which()
+  which_index <- which(names(x$modifications) == "utub")
 
   if (length(which_index) > 0) {
-    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", wts.data[[x$modifications[[which_index]]$value]]) |>
+    a <- sub("(\\|n)*\\|c[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]Requires Level [0-9]*\\|r", "", x$modifications[[which_index]]$values[[1]]) |>
       gsub("\\|r", "</span>", x = _) |>
       gsub("\\|n", "<br>", x = _)
     
@@ -307,22 +297,20 @@ df$tooltip <- sapply(item.wts.data, \(x) {
 })
 
 df$gold <- sapply(item.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "igol") |> 
-    which()
+  which_index <- which(names(x$modifications) == "igol")
 
   if (length(which_index) > 0) {
-    return (x$modifications[[which_index]]$value)
+    return (x$modifications[[which_index]]$values[[1]])
   }
   
   return (NA)
 })
 
 df$crafting.material <- sapply(item.data, \(x) {
-  which_index <- sapply(x$modifications, \(y) y$id %in% "ilum") |> 
-    which()
+  which_index <- which(names(x$modifications) == "ilum")
 
   if (length(which_index) > 0) {
-    return (x$modifications[[which_index]]$value)
+    return (x$modifications[[which_index]]$values[[1]])
   }
   
   return (NA)
